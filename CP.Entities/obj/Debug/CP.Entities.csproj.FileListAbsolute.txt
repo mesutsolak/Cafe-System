@@ -1,0 +1,5 @@
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Entities\bin\Debug\CP.Entities.dll
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Entities\bin\Debug\CP.Entities.pdb
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Entities\obj\Debug\CP.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Entities\obj\Debug\CP.Entities.dll
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Entities\obj\Debug\CP.Entities.pdb

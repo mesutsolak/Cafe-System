@@ -1,0 +1,5 @@
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.BusinessLayer\bin\Debug\CP.BusinessLayer.dll
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.BusinessLayer\bin\Debug\CP.BusinessLayer.pdb
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.dll
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.pdb

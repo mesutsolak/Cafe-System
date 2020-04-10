@@ -1,0 +1,14 @@
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Mobile\CP.Mobile\bin\Debug\netstandard2.0\CP.Mobile.deps.json
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Mobile\CP.Mobile\bin\Debug\netstandard2.0\CP.Mobile.dll
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Mobile\CP.Mobile\bin\Debug\netstandard2.0\ref\CP.Mobile.dll
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Mobile\CP.Mobile\bin\Debug\netstandard2.0\CP.Mobile.pdb
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\CP.Mobile.csprojAssemblyReference.cache
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\CP.Mobile.csproj.CoreCompileInputs.cache
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\CP.Mobile.AssemblyInfoInputs.cache
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\CP.Mobile.AssemblyInfo.cs
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\CP.Mobile.dll
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\ref\CP.Mobile.dll
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\CP.Mobile.pdb

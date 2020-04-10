@@ -1,0 +1,5 @@
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.ServiceLayer\bin\Debug\CP.ServiceLayer.dll
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.ServiceLayer\bin\Debug\CP.ServiceLayer.pdb
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.csproj.CoreCompileInputs.cache
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.dll
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.pdb
