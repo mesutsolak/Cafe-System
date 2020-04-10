@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CafeProject.General", "CafeProject.General", "{C4A01D37-097C-4914-932B-4CE7A6408252}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CafeProject.Mobile", "CafeProject.Mobile", "{53623744-4819-4E85-BA7C-0C091DACCEE0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CafeProject.Desktop", "CafeProject.Desktop", "{5ADEB6C0-66C0-4BD9-8D1C-D9A95EEE2AE5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CafeProject.Web", "CafeProject.Web", "{2548C5F9-9EB4-429C-AF21-0D2A5B43587A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CP.Entities", "CP.Entities\CP.Entities.csproj", "{3846F46A-AFCD-46E0-9BC2-B17FCC756F8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3846F46A-AFCD-46E0-9BC2-B17FCC756F8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3846F46A-AFCD-46E0-9BC2-B17FCC756F8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3846F46A-AFCD-46E0-9BC2-B17FCC756F8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3846F46A-AFCD-46E0-9BC2-B17FCC756F8F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3846F46A-AFCD-46E0-9BC2-B17FCC756F8F} = {C4A01D37-097C-4914-932B-4CE7A6408252}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD03DAF6-6C11-4330-9DD5-13E7C790C010}
+	EndGlobalSection
+EndGlobal
