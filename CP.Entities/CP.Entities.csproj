@@ -31,8 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,7 +50,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CafeProjectModel.cs" />
+    <Compile Include="Campaign.cs" />
+    <Compile Include="CampProduct.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="Comment.cs" />
+    <Compile Include="CompanyInformation.cs" />
+    <Compile Include="Contact.cs" />
+    <Compile Include="Emails.cs" />
+    <Compile Include="Images.cs" />
+    <Compile Include="Locations.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="LogStatus.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="MusicClaim.cs" />
+    <Compile Include="MusicList.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderHistory.cs" />
+    <Compile Include="Phones.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Table.cs" />
+    <Compile Include="User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
