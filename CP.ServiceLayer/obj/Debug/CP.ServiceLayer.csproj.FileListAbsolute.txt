@@ -3,3 +3,4 @@ C:\Users\Mesut Solak\source\repos\CafeSystem\CP.ServiceLayer\bin\Debug\CP.Servic
 C:\Users\Mesut Solak\source\repos\CafeSystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.csproj.CoreCompileInputs.cache
 C:\Users\Mesut Solak\source\repos\CafeSystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.dll
 C:\Users\Mesut Solak\source\repos\CafeSystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.pdb
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.csprojAssemblyReference.cache
