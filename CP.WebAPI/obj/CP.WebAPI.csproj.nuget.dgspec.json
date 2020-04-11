@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.WebAPI\\CP.WebAPI.csproj": {}
+    "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.WebAPI\\CP.WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.WebAPI\\CP.WebAPI.csproj": {
+    "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.WebAPI\\CP.WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.WebAPI\\CP.WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.WebAPI\\CP.WebAPI.csproj",
         "projectName": "CP.WebAPI",
-        "projectPath": "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.WebAPI\\CP.WebAPI.csproj",
+        "projectPath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.WebAPI\\CP.WebAPI.csproj",
         "packagesPath": "C:\\Users\\Mesut Solak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

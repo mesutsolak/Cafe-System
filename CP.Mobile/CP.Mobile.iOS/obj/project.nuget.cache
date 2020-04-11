@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EH0vnNvLZXCJSBYieSOwHbUkqpN3kPkGkqi2TMp4f9cAzKKvwyjSNXFJT9rdBut5CpKNXwef/pmMnlfrw5EoYw==",
+  "dgSpecHash": "HJ2tpg1nmrrIB3agcirT3MTtFES3jJzj/0hpDrJFW1hhmyMjhkMt2pg7Eu+J92iR+gfQX9Dm1K1sqE9sxUhC8w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.Mobile\\CP.Mobile.iOS\\CP.Mobile.iOS.csproj",
+  "projectFilePath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile.iOS\\CP.Mobile.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",

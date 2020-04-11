@@ -1940,11 +1940,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.Mobile\\CP.Mobile.Android\\CP.Mobile.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile.Android\\CP.Mobile.Android.csproj",
       "projectName": "CP.Mobile.Android",
-      "projectPath": "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.Mobile\\CP.Mobile.Android\\CP.Mobile.Android.csproj",
+      "projectPath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile.Android\\CP.Mobile.Android.csproj",
       "packagesPath": "C:\\Users\\Mesut Solak\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.Mobile\\CP.Mobile.Android\\obj\\",
+      "outputPath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1965,8 +1965,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.Mobile\\CP.Mobile\\CP.Mobile.csproj": {
-              "projectPath": "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.Mobile\\CP.Mobile\\CP.Mobile.csproj"
+            "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile\\CP.Mobile.csproj": {
+              "projectPath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile\\CP.Mobile.csproj"
             }
           }
         }

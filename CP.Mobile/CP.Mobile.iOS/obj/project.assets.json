@@ -1024,11 +1024,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.Mobile\\CP.Mobile.iOS\\CP.Mobile.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile.iOS\\CP.Mobile.iOS.csproj",
       "projectName": "CP.Mobile.iOS",
-      "projectPath": "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.Mobile\\CP.Mobile.iOS\\CP.Mobile.iOS.csproj",
+      "projectPath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile.iOS\\CP.Mobile.iOS.csproj",
       "packagesPath": "C:\\Users\\Mesut Solak\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.Mobile\\CP.Mobile.iOS\\obj\\",
+      "outputPath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1049,8 +1049,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.Mobile\\CP.Mobile\\CP.Mobile.csproj": {
-              "projectPath": "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.Mobile\\CP.Mobile\\CP.Mobile.csproj"
+            "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile\\CP.Mobile.csproj": {
+              "projectPath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile\\CP.Mobile.csproj"
             }
           }
         }

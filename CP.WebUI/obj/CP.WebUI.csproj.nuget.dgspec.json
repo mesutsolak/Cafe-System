@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.WebUI\\CP.WebUI.csproj": {}
+    "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.WebUI\\CP.WebUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.WebUI\\CP.WebUI.csproj": {
+    "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.WebUI\\CP.WebUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.WebUI\\CP.WebUI.csproj",
+        "projectUniqueName": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.WebUI\\CP.WebUI.csproj",
         "projectName": "CP.WebUI",
-        "projectPath": "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.WebUI\\CP.WebUI.csproj",
+        "projectPath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.WebUI\\CP.WebUI.csproj",
         "packagesPath": "C:\\Users\\Mesut Solak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.WebUI\\obj\\",
+        "outputPath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.WebUI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
