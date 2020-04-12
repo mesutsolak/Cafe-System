@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3846F46A-AFCD-46E0-9BC2-B17FCC756F8F}</ProjectGuid>
+    <ProjectGuid>{BC027EB7-78F7-4106-9963-3426C8DC9C05}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CP.Entities</RootNamespace>
@@ -50,28 +50,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CafeProjectModel.cs" />
-    <Compile Include="Campaign.cs" />
-    <Compile Include="CampProduct.cs" />
-    <Compile Include="Category.cs" />
-    <Compile Include="Comment.cs" />
-    <Compile Include="CompanyInformation.cs" />
-    <Compile Include="Contact.cs" />
-    <Compile Include="Emails.cs" />
-    <Compile Include="Images.cs" />
-    <Compile Include="Locations.cs" />
-    <Compile Include="Log.cs" />
-    <Compile Include="LogStatus.cs" />
-    <Compile Include="Menu.cs" />
-    <Compile Include="MusicClaim.cs" />
-    <Compile Include="MusicList.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="OrderHistory.cs" />
-    <Compile Include="Phones.cs" />
-    <Compile Include="Product.cs" />
+    <Compile Include="Model\CafeProjectModel.cs" />
+    <Compile Include="Model\Campaign.cs" />
+    <Compile Include="Model\CampProduct.cs" />
+    <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Comment.cs" />
+    <Compile Include="Model\CompanyInformation.cs" />
+    <Compile Include="Model\Contact.cs" />
+    <Compile Include="Model\Emails.cs" />
+    <Compile Include="Model\Images.cs" />
+    <Compile Include="Model\Locations.cs" />
+    <Compile Include="Model\Log.cs" />
+    <Compile Include="Model\LogStatus.cs" />
+    <Compile Include="Model\Menu.cs" />
+    <Compile Include="Model\MusicClaim.cs" />
+    <Compile Include="Model\MusicList.cs" />
+    <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\OrderHistory.cs" />
+    <Compile Include="Model\Phones.cs" />
+    <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\Table.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Table.cs" />
-    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

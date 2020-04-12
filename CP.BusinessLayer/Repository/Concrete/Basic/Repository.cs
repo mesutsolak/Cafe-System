@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using CP.BusinessLayer.Repository.Abstract.Basic;
-using CP.Helper.Tools;
+using CP.BusinessLayer.Tools;
 
 namespace CP.BusinessLayer.Repository.Concrete.Basic
 {
@@ -100,6 +100,11 @@ namespace CP.BusinessLayer.Repository.Concrete.Basic
         public async Task<List<T>> GetFilterAllAsync(Expression<Func<T, bool>> expression)
         {
             return await _dbset.Where(expression).ToListAsync();
+        }
+
+        public async Task<T> GetByIdAsync(int id)
+        {
+            return await _dbset.FindAsync(id);
         }
     }
 }

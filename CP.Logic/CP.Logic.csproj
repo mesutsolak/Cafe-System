@@ -60,14 +60,6 @@
       <Project>{DF82C02B-D7D9-41FF-AC7D-F7C85BB56C3E}</Project>
       <Name>CP.BusinessLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CP.Entities\CP.Entities.csproj">
-      <Project>{3846F46A-AFCD-46E0-9BC2-B17FCC756F8F}</Project>
-      <Name>CP.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CP.Helper\CP.Helper.csproj">
-      <Project>{6BE2DF25-D637-4573-AA92-69C983C4E330}</Project>
-      <Name>CP.Helper</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

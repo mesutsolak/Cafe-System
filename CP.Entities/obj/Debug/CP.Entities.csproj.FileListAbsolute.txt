@@ -1,12 +1,12 @@
-C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Entities\bin\Debug\CP.Entities.dll
-C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Entities\bin\Debug\CP.Entities.pdb
-C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Entities\obj\Debug\CP.Entities.csproj.CoreCompileInputs.cache
-C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Entities\obj\Debug\CP.Entities.dll
-C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Entities\obj\Debug\CP.Entities.pdb
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\bin\Debug\CP.Entities.dll.config
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\bin\Debug\CP.Entities.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\bin\Debug\CP.Entities.pdb
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\bin\Debug\EntityFramework.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\bin\Debug\EntityFramework.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.csprojAssemblyReference.cache
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.csproj.CoreCompileInputs.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.csproj.CopyComplete
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.pdb

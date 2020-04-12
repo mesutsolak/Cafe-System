@@ -574,11 +574,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.Mobile\\CP.Mobile\\CP.Mobile.csproj",
+      "projectUniqueName": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile\\CP.Mobile.csproj",
       "projectName": "CP.Mobile",
-      "projectPath": "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.Mobile\\CP.Mobile\\CP.Mobile.csproj",
+      "projectPath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile\\CP.Mobile.csproj",
       "packagesPath": "C:\\Users\\Mesut Solak\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mesut Solak\\source\\repos\\CafeSystem\\CP.Mobile\\CP.Mobile\\obj\\",
+      "outputPath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -634,7 +634,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

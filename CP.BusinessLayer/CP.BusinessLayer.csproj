@@ -51,27 +51,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess.cs" />
+    <Compile Include="Operations\UserOperations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Abstract\Basic\IRepository.cs" />
     <Compile Include="Repository\Abstract\IUserRepository.cs" />
     <Compile Include="Repository\Concrete\Basic\Repository.cs" />
     <Compile Include="Repository\Concrete\UserRepository.cs" />
+    <Compile Include="Tools\Extension.cs" />
+    <Compile Include="Tools\SingletonClass.cs" />
     <Compile Include="UnitOfWork\Abstract\Basic\IUnitOfWork.cs" />
     <Compile Include="UnitOfWork\Concrete\Basic\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CP.Entities\CP.Entities.csproj">
-      <Project>{3846F46A-AFCD-46E0-9BC2-B17FCC756F8F}</Project>
-      <Name>CP.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CP.Helper\CP.Helper.csproj">
-      <Project>{6be2df25-d637-4573-aa92-69c983c4e330}</Project>
-      <Name>CP.Helper</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CP.Entities\CP.Entities.csproj">
+      <Project>{BC027EB7-78F7-4106-9963-3426C8DC9C05}</Project>
+      <Name>CP.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

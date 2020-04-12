@@ -1,6 +1,6 @@
 ﻿using CP.BusinessLayer.Repository.Abstract;
 using CP.BusinessLayer.Repository.Concrete.Basic;
-using CP.Entities;
+using CP.Entities.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
