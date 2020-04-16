@@ -3,8 +3,15 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "CP.Mobile.Android.dll" comes first in this list. */
 		"CP.Mobile.Android.dll",
+		"AutoMapper.dll",
 		"CP.Mobile.dll",
+		"FluentValidation.dll",
+		"FluentValidation.ValidatorAttribute.dll",
 		"FormsViewGroup.dll",
+		"Newtonsoft.Json.Bson.dll",
+		"Newtonsoft.Json.dll",
+		"Rg.Plugins.Popup.dll",
+		"System.Net.Http.Formatting.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",
@@ -47,6 +54,8 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",
+		"Xamarin.Plugins.FluentValidation.dll",
+		"CP.ServiceLayer.dll",
 	};
 	public static String[] Dependencies = new String[]{
 	};

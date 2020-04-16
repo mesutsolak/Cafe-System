@@ -2,22 +2,57 @@
 using CP.Entities.Model;
 using CP.ServiceLayer.Concrete;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using System.Web.Http.ModelBinding;
 
 namespace CP.WebAPI.Controllers
 {
+    [Route("api/User/")]
     public class UserController : ApiController
     {
         [HttpPost]
-        public async Task<int> Post([FromBody]User user)
+        [Route("api/User/PostCreate")]
+        public async Task<int> PostCreate([FromBody]User user)
         {
             return await UserOperations.UserAdd(user);
         }
+        [HttpPost]
+        [Route("api/User/GetLoginControl")]
+        public async  Task<HttpResponseMessage> GetLoginControl([FromBody]User user)
+        {
+            HttpResponseMessage httpResponseMessage = new HttpResponseMessage();
+            if (!ModelState.IsValid)
+            {
+
+                httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+
+                httpResponseMessage.Headers.Add("Message", "Doğrulana başarısız");
+            }
+            else
+            {
+                var result = await UserOperations.UserControl(user);
+
+                if (result.Contains("Başarıyla"))
+                {
+                    httpResponseMessage.StatusCode = HttpStatusCode.OK;
+                    httpResponseMessage.Headers.Add("Message", "Başarıyla Giriş Yaptınız");
+                }
+                else
+                {
+                    httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+                    httpResponseMessage.Headers.Add("Message", "Başarısız");
+                }
+            }
+            return httpResponseMessage;
+        }
 
         [HttpGet]
-        [Route("api/User")]
         public async Task<List<User>> Get()
         {
             return await UserOperations.GetUsers();
@@ -27,7 +62,6 @@ namespace CP.WebAPI.Controllers
         {
             return await UserOperations.UserFindAsync(id);
         }
-        [Route("api/User")]
         [AllowAnonymous]
         [HttpPut]
         [ResponseType(typeof(Task))]

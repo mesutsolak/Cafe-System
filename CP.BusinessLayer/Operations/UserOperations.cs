@@ -36,5 +36,16 @@ namespace CP.BusinessLayer.Operations
             _data.UserRepository.Remove(id);
             return await _data.CompleteAsync();
         }
+        public async static Task<string> UserControl(User user)
+        {
+            if (await _data.UserRepository.LoginControl(user))
+            {
+                return "Başarıyla Giriş Yapıldı";
+            }
+            else
+            {
+                return "Giriş Başarısız";
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CP.Mobile.ContentPages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,6 +17,16 @@ namespace CP.Mobile
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private async void btnRegister_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Register());
+        }
+
+        private async void btnSignIn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SignIn());
         }
     }
 }

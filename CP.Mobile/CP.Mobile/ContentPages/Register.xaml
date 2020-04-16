@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CP.Mobile.ContentPages.Register"
+             xmlns:custom="clr-namespace:Xamarin.Plugins.UnobtrusiveFluentValidation;assembly=Xamarin.Plugins.FluentValidation">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Kayıt Ol" TextColor="White" FontSize="20" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout Margin="5">
+            <Label Text="Kullanıcı Bilgileri"
+                TextColor="Blue"
+                   FontSize="20"
+                   Margin="10,5"
+                HorizontalOptions="StartAndExpand" />
+            <StackLayout x:Name="StlForm" x:Uid="StlForm" Margin="10">
+
+                <Label Text="İsim" x:Name="lblFirstName" x:Uid="lblFirstName"/>
+                    <custom:ValidatableEntryControl   x:Name="EntFirstName" x:Uid="EntLaName" BindingName="FirstName"></custom:ValidatableEntryControl>
+
+                <Label Text="Soyisim" x:Name="lblLastName" x:Uid="lblLastName"/>
+                <Entry Placeholder="Soyisim Giriniz" x:Name="EntLastName" x:Uid="EntLastName"/>
+
+                <Label Text="Kullanıcı Adı" x:Name="lblUserName" x:Uid="lblUserName"/>
+                <Entry Placeholder="Kullanıcı Adı Giriniz" x:Name="EntUserName" x:Uid="EntUserName"/>
+
+                <Label Text="Email" x:Name="lblEmail" x:Uid="lblEmail"/>
+                <Entry Placeholder="Email Giriniz" x:Name="EntEmail" x:Uid="EntEmail"/>
+
+                <Label Text="Parola" x:Name="lblPassword" x:Uid="lblPassword"/>
+                <Entry Placeholder="Parola Giriniz" IsPassword="True" x:Name="EntPassword" x:Uid="EntPassword"/>
+
+                <StackLayout Spacing="10" Margin="0,10,0,10" Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="Center">
+                    <Button Text="Temizle" CornerRadius="5" BackgroundColor="Red" TextColor="White" 
+                               x:Name="btnClear" x:Uid="btnClear" Clicked="btnClear_Clicked" />
+                    <Button Text="Kaydet" CornerRadius="5"  BackgroundColor="Green" TextColor="White" 
+                               x:Name="btnRegister" x:Uid="btnRegister" Clicked="btnRegister_Clicked" Command="{Binding ValidateCommand}" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

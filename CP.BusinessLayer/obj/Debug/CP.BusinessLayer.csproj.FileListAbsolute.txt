@@ -1,10 +1,6 @@
-C:\Users\Mesut Solak\source\repos\CafeSystem\CP.BusinessLayer\bin\Debug\CP.BusinessLayer.dll
-C:\Users\Mesut Solak\source\repos\CafeSystem\CP.BusinessLayer\bin\Debug\CP.BusinessLayer.pdb
-C:\Users\Mesut Solak\source\repos\CafeSystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.csproj.CoreCompileInputs.cache
-C:\Users\Mesut Solak\source\repos\CafeSystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.dll
-C:\Users\Mesut Solak\source\repos\CafeSystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.pdb
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.csprojAssemblyReference.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\bin\Debug\CP.BusinessLayer.dll.config
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\bin\Debug\CP.BusinessLayer.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\bin\Debug\CP.BusinessLayer.pdb
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\bin\Debug\CP.Entities.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\bin\Debug\EntityFramework.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
@@ -12,4 +8,8 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\bin\Debug\CP.Entit
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\bin\Debug\CP.Entities.dll.config
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\bin\Debug\EntityFramework.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.csproj.CoreCompileInputs.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.csproj.CopyComplete
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.pdb

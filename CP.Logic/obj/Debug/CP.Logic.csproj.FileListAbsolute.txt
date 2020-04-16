@@ -1,5 +1,0 @@
-C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Logic\bin\Debug\CP.Logic.dll
-C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Logic\bin\Debug\CP.Logic.pdb
-C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Logic\obj\Debug\CP.Logic.csproj.CoreCompileInputs.cache
-C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Logic\obj\Debug\CP.Logic.dll
-C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Logic\obj\Debug\CP.Logic.pdb

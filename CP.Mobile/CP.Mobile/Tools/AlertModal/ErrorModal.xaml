@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+             x:Class="CP.Mobile.Tools.AlertModal.ErrorModal"
+                xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" 
+                 xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 CloseWhenBackgroundIsClicked="True"
+                 BackgroundClicked="PopupPage_BackgroundClicked"
+                 Title="Kategori Ekle"
+                 >
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+
+
+
+    <StackLayout x:Name="StlForm" x:Uid="StlForm"
+        VerticalOptions="Center" 
+        HorizontalOptions="FillAndExpand"
+        BackgroundColor="Transparent"
+        Margin="15, 0, 15, 0"
+                 >
+        <Frame BackgroundColor="#EEEEEE" CornerRadius="10">
+            <StackLayout>
+
+                <Image Source="Error.png" WidthRequest="75" VerticalOptions="Center"  HorizontalOptions="Center" />
+
+                <Label Text="Kategori Ekle" HorizontalOptions="Center" TextColor="Blue" FontSize="20"/>
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                    <Button x:Name="btnClear" x:Uid="btnClear" Text="Temizle" BackgroundColor="Red" TextColor="White" />
+                    <Button x:Name="btnSave" x:Uid="btnSave" Text="Kaydet" BackgroundColor="Green" TextColor="White"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>

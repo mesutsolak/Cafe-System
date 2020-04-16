@@ -1,5 +1,5 @@
-﻿using CP.Entities.Model;
-using CP.ServiceLayer.Abstract.Basic;
+﻿using CP.ServiceLayer.Abstract.Basic;
+using CP.ServiceLayer.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +10,6 @@ namespace CP.ServiceLayer.Abstract
 {
     public interface IUserService : IService<User>
     {
+        Task<string> LoginControl(User loginControl);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CP.ServiceLayer.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,6 @@ namespace CP.ServiceLayer.Abstract.Basic
         Task<string> RemoveAsync(int id);
         Task<T> GetFindAsync(int id);
         Task<List<T>> GetAllAsync();
+
     }
 }

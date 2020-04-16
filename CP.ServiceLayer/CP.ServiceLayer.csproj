@@ -51,13 +51,9 @@
     <Compile Include="Abstract\IUserService.cs" />
     <Compile Include="Concrete\Basic\Service.cs" />
     <Compile Include="Concrete\UserService.cs" />
+    <Compile Include="DTO\LoginControl.cs" />
+    <Compile Include="DTO\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CP.Entities\CP.Entities.csproj">
-      <Project>{BC027EB7-78F7-4106-9963-3426C8DC9C05}</Project>
-      <Name>CP.Entities</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

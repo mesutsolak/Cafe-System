@@ -6,11 +6,18 @@
              mc:Ignorable="d"
              x:Class="CP.Mobile.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Sipariş Uygulamamıza Hoşgeldiniz" TextColor="White" FontSize="20" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    <StackLayout VerticalOptions="Center" Spacing="55" HorizontalOptions="Center" Orientation="Vertical">
+
+        <Image Source="cafe.png"/>
+        <Button Text="Giriş Yap" x:Name="btnSignIn" x:Uid="btnSignIn" Clicked="btnSignIn_Clicked" />
+        <Button Text="Kayıt Ol"  x:Name="btnRegister" x:Uid="btnRegister" Clicked="btnRegister_Clicked" />
+
     </StackLayout>
 
 </ContentPage>

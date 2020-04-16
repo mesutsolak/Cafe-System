@@ -1,4 +1,5 @@
 ﻿using CP.ServiceLayer.Abstract.Basic;
+using CP.ServiceLayer.DTO;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -13,14 +14,19 @@ namespace CP.ServiceLayer.Concrete.Basic
     public class Service<T> : IService<T> where T : class, new()
     {
         public string Url { get; set; }
-
-        string ResponseMessage;
-
-
-        HttpClient client = new HttpClient
+        public string ResponseMessage { get; set; }
+        public HttpClient client
         {
-            BaseAddress = new Uri("https://localhost:44318/")
-        };
+            get
+            {
+                return new HttpClient
+                {
+                    BaseAddress = new Uri("http://192.168.1.106:44318/")
+                };
+            }
+        }
+
+
 
         public async Task<string> AddAsync(T entity)
         {

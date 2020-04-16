@@ -123,8 +123,14 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client">
+      <Version>5.2.7</Version>
+    </PackageReference>
+    <PackageReference Include="Rg.Plugins.Popup">
+      <Version>2.0.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.617" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.2" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -132,5 +138,17 @@
       <Project>{A2B7431C-1205-4DF1-BD81-0B6E5E7CB4AA}</Project>
       <Name>CP.Mobile</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cafe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\success.png" />
   </ItemGroup>
 </Project>
