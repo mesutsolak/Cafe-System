@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("CP.Mobile.Tools.AlertModal.QuestionModal.xaml", "Tools/AlertModal/QuestionModal.xaml", typeof(global::CP.Mobile.Tools.AlertModal.QuestionModal))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("CP.Mobile.Tools.AlertModal.Page1.xaml", "Tools/AlertModal/Page1.xaml", typeof(global::CP.Mobile.Tools.AlertModal.Page1))]
 
 namespace CP.Mobile.Tools.AlertModal {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Tools\\AlertModal\\QuestionModal.xaml")]
-    public partial class QuestionModal : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Tools\\AlertModal\\Page1.xaml")]
+    public partial class Page1 : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(QuestionModal));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(Page1));
         }
     }
 }

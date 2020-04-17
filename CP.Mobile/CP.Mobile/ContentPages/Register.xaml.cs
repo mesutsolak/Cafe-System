@@ -1,10 +1,13 @@
 ﻿using CP.Mobile.Tools;
-using CP.Mobile.Tools.AlertModal;
+
+using CP.Mobile.Tools.AlertModals;
 using CP.Mobile.Validator;
 using CP.Mobile.ValidatorEntities;
 using CP.ServiceLayer.Concrete;
 using CP.ServiceLayer.DTO;
 using FluentValidation;
+using Rg.Plugins.Popup.Extensions;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +29,7 @@ namespace CP.Mobile.ContentPages
         {
             InitializeComponent();
             BindingContext = userViewModel;
+            this.IsBusy = false;
         }
 
         private void btnClear_Clicked(object sender, EventArgs e)
@@ -40,13 +44,19 @@ namespace CP.Mobile.ContentPages
 
         private async void btnRegister_Clicked(object sender, EventArgs e)
         {
+            await Navigation.PushPopupAsync(new SuccessModal("Debene"));
 
-           var _result = userViewModel.ModelResult();
+            //await Task.Delay(5000);
 
-            if (!_result)
-            {
-                await Navigation.PushAsync(new ErrorModal());
-            }
+            //await PopupNavigation.Instance.PopAsync(true); ;
+
+           //var _result = userViewModel.ModelResult();
+
+            // if (!_result)
+            // {
+            //     this.IsBusy = false;
+            //     await Navigation.PushPopupAsync(new ErrorModal("MMMMMMMMM"));
+            // }
 
             //try
             //{

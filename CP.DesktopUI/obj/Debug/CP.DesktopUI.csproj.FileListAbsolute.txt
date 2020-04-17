@@ -1,6 +1,7 @@
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\bin\Debug\CP.DesktopUI.exe.config
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\bin\Debug\CP.DesktopUI.exe
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\bin\Debug\CP.DesktopUI.pdb
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\obj\Debug\CP.DesktopUI.csprojAssemblyReference.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\obj\Debug\MainWindow.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\obj\Debug\App.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\obj\Debug\CP.DesktopUI_MarkupCompile.cache

@@ -5,6 +5,7 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\bin\Debug\EntityFramewo
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\bin\Debug\EntityFramework.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.csprojAssemblyReference.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.deneme.resources
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.csproj.GenerateResource.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.csproj.CoreCompileInputs.cache

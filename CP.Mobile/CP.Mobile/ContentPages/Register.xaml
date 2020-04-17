@@ -11,7 +11,9 @@
             <Label Text="Kayıt Ol" TextColor="White" FontSize="20" />
         </StackLayout>
     </NavigationPage.TitleView>
+
     <ContentPage.Content>
+
         <StackLayout Margin="5">
             <Label Text="Kullanıcı Bilgileri"
                 TextColor="Blue"
@@ -21,7 +23,7 @@
             <StackLayout x:Name="StlForm" x:Uid="StlForm" Margin="10">
 
                 <Label Text="İsim" x:Name="lblFirstName" x:Uid="lblFirstName"/>
-                    <custom:ValidatableEntryControl   x:Name="EntFirstName" x:Uid="EntLaName" BindingName="FirstName"></custom:ValidatableEntryControl>
+                <custom:ValidatableEntryControl   x:Name="EntFirstName" x:Uid="EntLaName" BindingName="FirstName"></custom:ValidatableEntryControl>
 
                 <Label Text="Soyisim" x:Name="lblLastName" x:Uid="lblLastName"/>
                 <Entry Placeholder="Soyisim Giriniz" x:Name="EntLastName" x:Uid="EntLastName"/>
@@ -42,6 +44,7 @@
                                x:Name="btnRegister" x:Uid="btnRegister" Clicked="btnRegister_Clicked" Command="{Binding ValidateCommand}" />
                 </StackLayout>
             </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,6 +1,5 @@
 ﻿using Rg.Plugins.Popup.Pages;
 using Rg.Plugins.Popup.Services;
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,18 +9,24 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace CP.Mobile.Tools.AlertModal
+namespace CP.Mobile.Tools.AlertModals
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public  partial class ErrorModal : PopupPage
-    {       
-        public ErrorModal()
+    public partial class LoaderModal : PopupPage
+    {
+        public LoaderModal()
         {
             InitializeComponent();
         }
-        private async void PopupPage_BackgroundClicked(object sender, EventArgs e)
+      
+        protected override bool OnBackButtonPressed()
         {
-            await PopupNavigation.Instance.PopAsync();
+            return true;
+        }
+
+        protected override bool OnBackgroundClicked()
+        {
+            return false;
         }
 
     }

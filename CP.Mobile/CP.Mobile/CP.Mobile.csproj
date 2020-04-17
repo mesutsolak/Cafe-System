@@ -33,13 +33,16 @@
     <EmbeddedResource Update="ContentPages\SignIn.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Tools\AlertModal\ErrorModal.xaml">
+    <EmbeddedResource Update="Tools\AlertModals\ErrorModal.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Tools\AlertModal\QuestionModal.xaml">
+    <EmbeddedResource Update="Tools\AlertModals\LoaderModal.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Tools\AlertModal\SuccessModal.xaml">
+    <EmbeddedResource Update="Tools\AlertModals\QuestionModal.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Tools\AlertModals\SuccessModal.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
