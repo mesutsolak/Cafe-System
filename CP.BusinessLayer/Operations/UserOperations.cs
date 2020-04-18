@@ -5,14 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using U = CP.BusinessLayer.UnitOfWork.Concrete.Basic;
 
 namespace CP.BusinessLayer.Operations
 {
-    public class UserOperations
+    public class UserOperations : BaseOperation
     {
-        static U.UnitOfWork _data = DataAccess<CafeProjectModel>._UnitOfWOrk;
-
         public async static Task<int> UserAdd(User user)
         {
             _data.UserRepository.Add(user);

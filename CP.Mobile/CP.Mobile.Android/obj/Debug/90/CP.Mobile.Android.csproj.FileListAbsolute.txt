@@ -538,3 +538,11 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Deb
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\close.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\order.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\save.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\trash.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\useradd.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\user.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\signin.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\add_user.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\splasscreen.png

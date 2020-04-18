@@ -6,12 +6,14 @@
              mc:Ignorable="d"
              x:Class="CP.Mobile.ContentPages.SignIn">
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal">
+        <StackLayout Orientation="Horizontal" Spacing="12">
+            <Image Source="SignIn.png" WidthRequest="30"/>
             <Label Text="Giriş Yapın" TextColor="White" FontSize="20" />
         </StackLayout>
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout Margin="5,25">
+            <Image Source="User.png" Margin="0,15" WidthRequest="150"/>
             <Label Text="Kullanıcı Bilgileri"
                 TextColor="Blue"
                    FontSize="20"
@@ -27,9 +29,9 @@
                 <Entry Placeholder="Parola Giriniz" IsPassword="True" x:Name="EntPassword" x:Uid="EntPassword"/>
 
                 <StackLayout Spacing="10" Margin="0,10,0,10" Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="Center">
-                    <Button Text="Temizle" CornerRadius="5" BackgroundColor="Red" TextColor="White" 
+                    <Button Text="Temizle" CornerRadius="5" ContentLayout="Left,5" WidthRequest="110" HorizontalOptions="Start" ImageSource="trash.png" BackgroundColor="Red" TextColor="White" 
                                x:Name="btnClear" x:Uid="btnClear" Clicked="btnClear_Clicked" />
-                    <Button Text="Giriş Yap" CornerRadius="5"  BackgroundColor="Green" TextColor="White" 
+                    <Button Text="Giriş Yap" CornerRadius="5" ContentLayout="Left,5" WidthRequest="130" HorizontalOptions="Start" ImageSource="SignIn.png"  BackgroundColor="Green" TextColor="White" 
                                x:Name="btnSignUp" x:Uid="btnSignUp" Clicked="btnSignUp_Clicked" />
                 </StackLayout>
             </StackLayout>

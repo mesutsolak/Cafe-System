@@ -33,6 +33,7 @@ namespace CP.Entities.Model
 
         [StringLength(150)]
         public string LastName { get; set; }
+        public byte[] ProfileImage { get; set; }
 
         public bool? IsConfirm { get; set; } = false;
 

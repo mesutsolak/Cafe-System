@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CP.Mobile.ContentPages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace CP.Mobile
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new SplashPage());
         }
         protected override void OnStart()
         {

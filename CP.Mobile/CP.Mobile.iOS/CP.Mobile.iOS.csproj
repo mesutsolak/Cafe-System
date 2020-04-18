@@ -154,4 +154,28 @@
   <ItemGroup>
     <BundleResource Include="Resources\Close.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\order.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\UserAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SignIn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Add_User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SplasScreen.png" />
+  </ItemGroup>
 </Project>

@@ -33,16 +33,16 @@ namespace CP.Mobile.ContentPages
 
         private async void btnClear_Clicked(object sender, EventArgs e)
         {
-            //FormClear();
+            await FormClear();
             //this.Navigation.PopAsync();
             //this.Navigation.PopToRootAsync();
             //await Application.Current.MainPage.Navigation.PopAsync();
-            await Navigation.PushAsync(new Register());
         }
 
-        private void FormClear()
+        private async Task FormClear()
         {
-            FormTools.FormClear(StlForm);
+            //FormTools.FormClear(StlForm);
+            await Navigation.PushAsync(new Register());
         }
 
         private async void btnRegister_Clicked(object sender, EventArgs e)
@@ -74,7 +74,7 @@ namespace CP.Mobile.ContentPages
                     {
                         await Navigation.PushPopupAsync(new SuccessModal("Başarıyla Kayıt Olundu"));
 
-                        FormClear();
+                        await FormClear();
                     }
                     else
                     {

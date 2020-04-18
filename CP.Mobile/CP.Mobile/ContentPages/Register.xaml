@@ -7,14 +7,17 @@
              x:Class="CP.Mobile.ContentPages.Register"
              xmlns:custom="clr-namespace:Xamarin.Plugins.UnobtrusiveFluentValidation;assembly=Xamarin.Plugins.FluentValidation">
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal">
+        <StackLayout Orientation="Horizontal" Spacing="12">
+            <Image Source="Add_User.png" BackgroundColor="Transparent"  WidthRequest="30"/>
             <Label Text="Kayıt Ol" TextColor="White" FontSize="20" />
         </StackLayout>
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
-
+        <ScrollView BackgroundColor="Transparent">
         <StackLayout Margin="5">
+            <Image Source="UserAdd.png" Margin="0,15" WidthRequest="150"/>
+
             <Label Text="Kullanıcı Bilgileri"
                 TextColor="Blue"
                    FontSize="20"
@@ -38,13 +41,13 @@
                 <Entry Placeholder="Parola Giriniz" IsPassword="True" x:Name="EntPassword" x:Uid="EntPassword"/>
 
                 <StackLayout Spacing="10" Margin="0,10,0,10" Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="Center">
-                    <Button Text="Temizle" CornerRadius="5" BackgroundColor="Red" TextColor="White" 
+                    <Button Text="Temizle" CornerRadius="5" WidthRequest="110" HorizontalOptions="Start" ImageSource="trash.png" BackgroundColor="Red" TextColor="White" 
                                x:Name="btnClear" x:Uid="btnClear" Clicked="btnClear_Clicked" />
-                    <Button Text="Kaydet" CornerRadius="5"  BackgroundColor="Green" TextColor="White" 
+                    <Button Text="Kaydet" ContentLayout="Left,5" WidthRequest="110" HorizontalOptions="Start" ImageSource="save.png" CornerRadius="5"  BackgroundColor="Blue" TextColor="White" 
                                x:Name="btnRegister" x:Uid="btnRegister" Clicked="btnRegister_Clicked" Command="{Binding ValidateCommand}" />
                 </StackLayout>
             </StackLayout>
-
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

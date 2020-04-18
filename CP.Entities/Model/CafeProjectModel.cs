@@ -8,7 +8,7 @@ namespace CP.Entities.Model
     public partial class CafeProjectModel : DbContext
     {
         public CafeProjectModel()
-            : base("name=CafeProjectModel")
+            : base("CafeProjectModel")
         {
             Database.SetInitializer<CafeProjectModel>(null);
             this.Configuration.LazyLoadingEnabled = false;

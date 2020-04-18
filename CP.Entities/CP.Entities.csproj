@@ -53,9 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202004151014196_deneme.cs" />
-    <Compile Include="Migrations\202004151014196_deneme.Designer.cs">
-      <DependentUpon>202004151014196_deneme.cs</DependentUpon>
+    <Compile Include="Migrations\202004181148115_UserProfileAddColumn.cs" />
+    <Compile Include="Migrations\202004181148115_UserProfileAddColumn.designer.cs">
+      <DependentUpon>202004181148115_UserProfileAddColumn.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\CafeProjectModel.cs" />
@@ -86,8 +86,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004151014196_deneme.resx">
-      <DependentUpon>202004151014196_deneme.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004181148115_UserProfileAddColumn.resx">
+      <DependentUpon>202004181148115_UserProfileAddColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
