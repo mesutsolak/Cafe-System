@@ -39,7 +39,7 @@ namespace CP.ServiceLayer.Concrete.Basic
 
                     if (response.IsSuccessStatusCode)
                     {
-                        ResponseMessage = "Başarıyla İşleminiz Gerçekleşti";
+                        ResponseMessage = response.Headers.GetValues("Message").FirstOrDefault().ToString();
                     }
                     else
                     {

@@ -9,4 +9,3 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.Servic
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.csproj.CopyComplete
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.pdb
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.csprojAssemblyReference.cache

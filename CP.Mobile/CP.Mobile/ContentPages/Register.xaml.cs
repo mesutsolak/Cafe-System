@@ -57,7 +57,7 @@ namespace CP.Mobile.ContentPages
                 {
                     await Navigation.PushPopupAsync(new LoaderModal());
 
-                    userService.Url = "/api/User";
+                    userService.Url = "/api/User/Post";
                     var _result = await userService.AddAsync(new User
                     {
                         FirstName = EntFirstName.EntryText,
