@@ -14,24 +14,40 @@ using System.Web.Http.ModelBinding;
 namespace CP.WebAPI.Controllers
 {
     [Route("api/User/")]
-    public class UserController : ApiController
+    public class UserController : BaseApiController
     {
         [HttpPost]
-        [Route("api/User/PostCreate")]
-        public async Task<int> PostCreate([FromBody]User user)
+        [Route("api/User/Post")]
+        public async Task<HttpResponseMessage> Post([FromBody]User user)
         {
-            return await UserOperations.UserAdd(user);
+            if (!ModelState.IsValid)
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+                httpResponseMessage.Headers.Add("Message", "Doğrulana başarısız");
+            }
+            else
+            {
+                var result = await UserOperations.UserAdd(user);
+                if (result >0)
+                {
+                    httpResponseMessage.StatusCode = HttpStatusCode.OK;
+                    httpResponseMessage.Headers.Add("Message", "Kullanıcı Başarıyla Eklendi");
+                }
+                else
+                {
+                    httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+                    httpResponseMessage.Headers.Add("Message", "Kullanıcı Ekleme Başarısız");
+                }
+            }
+            return httpResponseMessage;
         }
         [HttpPost]
         [Route("api/User/GetLoginControl")]
         public async  Task<HttpResponseMessage> GetLoginControl([FromBody]User user)
         {
-            HttpResponseMessage httpResponseMessage = new HttpResponseMessage();
             if (!ModelState.IsValid)
             {
-
                 httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
-
                 httpResponseMessage.Headers.Add("Message", "Doğrulana başarısız");
             }
             else
@@ -64,16 +80,47 @@ namespace CP.WebAPI.Controllers
         }
         [AllowAnonymous]
         [HttpPut]
-        [ResponseType(typeof(Task))]
-        public async Task Put([FromBody]User user)
+        [ResponseType(typeof(HttpResponseMessage))]
+        public async Task<HttpResponseMessage> Put([FromBody]User user)
         {
-            await UserOperations.UserUpdate(user);
+            if (!ModelState.IsValid)
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+                httpResponseMessage.Headers.Add("Message", "Doğrulana başarısız");
+            }
+            else
+            {
+                var result = await UserOperations.UserUpdate(user);
+                if (result > 0)
+                {
+                    httpResponseMessage.StatusCode = HttpStatusCode.OK;
+                    httpResponseMessage.Headers.Add("Message", "Kullanıcı Başarıyla Güncellendi");
+                }
+                else
+                {
+                    httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+                    httpResponseMessage.Headers.Add("Message", "Kullanıcı Güncelleme Başarısız");
+                }
+            }
+            return httpResponseMessage;
+
         }
         [HttpDelete]
         [Route("api/User/{id:int}")]
-        public async Task Delete(int id)
+        public async Task<HttpResponseMessage> Delete(int id)
         {
-            await UserOperations.UserRemove(id);
+           var _result = await UserOperations.UserRemove(id);
+            if (_result > 0)
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.OK;
+                httpResponseMessage.Headers.Add("Message", "Kullanıcı Başarıyla Silindi");
+            }
+            else
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+                httpResponseMessage.Headers.Add("Message", "Kullanıcı Silme Başarısız");
+            }
+            return httpResponseMessage;
         }
     }
 }

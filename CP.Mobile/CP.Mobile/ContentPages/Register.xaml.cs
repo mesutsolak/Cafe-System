@@ -29,12 +29,15 @@ namespace CP.Mobile.ContentPages
         {
             InitializeComponent();
             BindingContext = userViewModel;
-            this.IsBusy = false;
         }
 
-        private void btnClear_Clicked(object sender, EventArgs e)
+        private async void btnClear_Clicked(object sender, EventArgs e)
         {
-            FormClear();
+            //FormClear();
+            //this.Navigation.PopAsync();
+            //this.Navigation.PopToRootAsync();
+            //await Application.Current.MainPage.Navigation.PopAsync();
+            await Navigation.PushAsync(new Register());
         }
 
         private void FormClear()
@@ -44,47 +47,47 @@ namespace CP.Mobile.ContentPages
 
         private async void btnRegister_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushPopupAsync(new SuccessModal("Debene"));
+            if (!userViewModel.ModelResult())
+            {
+                await Navigation.PushPopupAsync(new ErrorModal("Lütfen Gerekli Yerleri Doldurun"));
+            }
+            else
+            {
+                try
+                {
+                    await Navigation.PushPopupAsync(new LoaderModal());
 
-            //await Task.Delay(5000);
+                    userService.Url = "/api/User";
+                    var _result = await userService.AddAsync(new User
+                    {
+                        FirstName = EntFirstName.EntryText,
+                        LastName = EntLastName.Text,
+                        Username = EntUserName.Text,
+                        Email = EntEmail.Text,
+                        Password = EntPassword.Text,
+                    });
 
-            //await PopupNavigation.Instance.PopAsync(true); ;
+                    await Navigation.PopPopupAsync(true);
 
-           //var _result = userViewModel.ModelResult();
 
-            // if (!_result)
-            // {
-            //     this.IsBusy = false;
-            //     await Navigation.PushPopupAsync(new ErrorModal("MMMMMMMMM"));
-            // }
+                    if (_result.Contains("Başarıyla"))
+                    {
+                        await Navigation.PushPopupAsync(new SuccessModal("Başarıyla Kayıt Olundu"));
 
-            //try
-            //{
-            //    userService.Url = "/api/User";
-            //    var _result = await userService.AddAsync(new User
-            //    {
-            //        FirstName = EntFirstName.Text,
-            //        LastName = EntLastName.Text,
-            //        Username = EntUserName.Text,
-            //        Email = EntEmail.Text,
-            //        Password = EntPassword.Text,
-            //    });
-            //    if (_result.Contains("Başarıyla"))
-            //    {
-            //        await DisplayAlert("Başarılı", "Başarıyla Kayıt Olundu", "Kapat");
-            //        FormClear();
-            //    }
-            //    else
-            //    {
-            //        await DisplayAlert("Başarısız", "İşlem Başarısız", "Kapat");
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
+                        FormClear();
+                    }
+                    else
+                    {
+                        await Navigation.PushPopupAsync(new ErrorModal("Kayıt Ekleme Başarısız"));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    await Navigation.PushPopupAsync(new ErrorModal("Kayıt Eklenirken Hata Meydana Geldi"));
 
-            //    throw;
-            //}
-
+                    throw ex;
+                }
+            }
         }
     }
 }
