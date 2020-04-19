@@ -18,8 +18,8 @@ namespace CP.Mobile.ContentPages
             splashImage = new Image
             {
               Source= "SplasScreen.png",
-              WidthRequest=100 ,
-              HeightRequest=100
+              WidthRequest=300 ,
+              HeightRequest=300
             };
             AbsoluteLayout.SetLayoutFlags(splashImage, AbsoluteLayoutFlags.PositionProportional);
             AbsoluteLayout.SetLayoutBounds(splashImage, new Rectangle(0.5, 0.5, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));

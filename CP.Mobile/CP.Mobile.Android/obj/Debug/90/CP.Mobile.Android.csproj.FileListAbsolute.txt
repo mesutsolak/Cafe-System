@@ -1,6 +1,7 @@
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\build.props
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\adb.props
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\CP.Mobile.Android.csprojAssemblyReference.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\_VerifyXamarinAndroidSupportVersions.stamp
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\stamp\_BuildLibraryImportsCache.stamp
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res.flag
@@ -30,7 +31,6 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Deb
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\R.txt
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\R.cs.flag
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\CP.Mobile.Android.csproj.CoreCompileInputs.cache
-C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\CP.Mobile.Android.csprojAssemblyReference.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\bin\Debug\CP.Mobile.Android.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\bin\Debug\CP.Mobile.Android.pdb
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\bin\Debug\com.companyname.cp.mobile.apk
@@ -71,6 +71,15 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Deb
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\cafe.png
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\question.png
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\success.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\close.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\order.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\trash.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\save.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\useradd.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\user.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\signin.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\add_user.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\splasscreen.png
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\uploadflags.txt
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\resolvedassemblies.hash
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\assets\AutoMapper.dll
@@ -537,12 +546,3 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Deb
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\close.png
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\order.png
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\save.png
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\trash.png
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\useradd.png
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\user.png
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\signin.png
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\add_user.png
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\splasscreen.png

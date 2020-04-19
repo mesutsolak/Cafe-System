@@ -25,5 +25,15 @@ namespace CP.Mobile.ValidatorEntities
         {
            return Validate();
         }
+        public void ErrorClear()
+        {
+            UserName.ClearError();
+            UserName.Message = "";
+
+            Password.ClearError();
+            Email.ClearError();
+            FirstName.ClearError();
+            LastName.ClearError();
+        }
     }
 }

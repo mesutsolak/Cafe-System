@@ -29,25 +29,25 @@ namespace CP.Mobile.ContentPages {
         private global::Xamarin.Forms.Label lblLastName;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry EntLastName;
+        private global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl EntLastName;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Label lblUserName;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry EntUserName;
+        private global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl EntUserName;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Label lblEmail;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry EntEmail;
+        private global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl EntEmail;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Label lblPassword;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry EntPassword;
+        private global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl EntPassword;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Button btnClear;
@@ -62,13 +62,13 @@ namespace CP.Mobile.ContentPages {
             lblFirstName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblFirstName");
             EntFirstName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl>(this, "EntFirstName");
             lblLastName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblLastName");
-            EntLastName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "EntLastName");
+            EntLastName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl>(this, "EntLastName");
             lblUserName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblUserName");
-            EntUserName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "EntUserName");
+            EntUserName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl>(this, "EntUserName");
             lblEmail = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblEmail");
-            EntEmail = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "EntEmail");
+            EntEmail = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl>(this, "EntEmail");
             lblPassword = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblPassword");
-            EntPassword = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "EntPassword");
+            EntPassword = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl>(this, "EntPassword");
             btnClear = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "btnClear");
             btnRegister = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "btnRegister");
         }

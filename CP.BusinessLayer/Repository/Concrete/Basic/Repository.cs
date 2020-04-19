@@ -87,9 +87,9 @@ namespace CP.BusinessLayer.Repository.Concrete.Basic
             return _context.Database.SqlQuery<int>(query).Single();
         }
 
-        public bool IsThere(Expression<Func<T, bool>> expression = null)
+        public Task<bool> IsThere(Expression<Func<T, bool>> expression = null)
         {
-            return _dbset.Any(expression);
+            return _dbset.AnyAsync(expression);
         }
 
         public async Task<List<T>> GetAllAsync()

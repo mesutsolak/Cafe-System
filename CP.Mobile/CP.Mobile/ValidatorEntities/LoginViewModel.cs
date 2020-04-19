@@ -23,5 +23,6 @@ namespace CP.Mobile.ValidatorEntities
         {
             return Validate();
         }
+
     }
 }

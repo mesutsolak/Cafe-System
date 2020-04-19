@@ -34,15 +34,13 @@ namespace CP.Mobile.ContentPages
         private async void btnClear_Clicked(object sender, EventArgs e)
         {
             await FormClear();
-            //this.Navigation.PopAsync();
-            //this.Navigation.PopToRootAsync();
-            //await Application.Current.MainPage.Navigation.PopAsync();
+          
         }
 
         private async Task FormClear()
         {
-            //FormTools.FormClear(StlForm);
-            await Navigation.PushAsync(new Register());
+            FormTools.FormClear(StlForm);
+            userViewModel.ErrorClear();
         }
 
         private async void btnRegister_Clicked(object sender, EventArgs e)
@@ -61,10 +59,10 @@ namespace CP.Mobile.ContentPages
                     var _result = await userService.AddAsync(new User
                     {
                         FirstName = EntFirstName.EntryText,
-                        LastName = EntLastName.Text,
-                        Username = EntUserName.Text,
-                        Email = EntEmail.Text,
-                        Password = EntPassword.Text,
+                        LastName = EntLastName.EntryText,
+                        Username = EntUserName.EntryText,
+                        Email = EntEmail.EntryText,
+                        Password = EntPassword.EntryText,
                     });
 
                     await Navigation.PopPopupAsync(true);

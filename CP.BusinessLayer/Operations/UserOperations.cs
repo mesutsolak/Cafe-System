@@ -44,5 +44,13 @@ namespace CP.BusinessLayer.Operations
                 return "Giriş Başarısız";
             }
         }
-    }
+        public async static Task<bool> UserNameControl(string UserName)
+        {
+           return await _data.UserRepository.IsThere(x=>x.Username == UserName);
+        }
+        public async static Task<bool> EmailControl(string Email)
+        {
+            return await _data.UserRepository.IsThere(x=>x.Email == Email);
+        }
+    }                                        
 }

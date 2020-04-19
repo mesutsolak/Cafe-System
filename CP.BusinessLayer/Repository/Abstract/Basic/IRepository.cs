@@ -28,6 +28,6 @@ namespace CP.BusinessLayer.Repository.Abstract.Basic
         void AddRange(IEnumerable<T> entities);
         void RemoveRange(IEnumerable<T> entities);
         int SqlFilterQuery(string query);
-        bool IsThere(Expression<Func<T, bool>> expression);
+        Task<bool> IsThere(Expression<Func<T, bool>> expression);
     }
 }

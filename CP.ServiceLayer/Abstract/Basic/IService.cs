@@ -14,6 +14,7 @@ namespace CP.ServiceLayer.Abstract.Basic
         Task<string> RemoveAsync(int id);
         Task<T> GetFindAsync(int id);
         Task<List<T>> GetAllAsync();
+   
 
     }
 }

@@ -78,6 +78,38 @@ namespace CP.WebAPI.Controllers
         {
             return await UserOperations.UserFindAsync(id);
         }
+        [HttpGet]
+        [Route("api/User/IsThereUserName/{UserName}")]
+        public async Task<HttpResponseMessage> IsThereUserName(string UserName)
+        {
+            var _bool = await UserOperations.UserNameControl(UserName);
+            if (_bool)
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+            }
+            else
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.OK;
+            }
+            return httpResponseMessage;
+        }
+
+        [HttpGet]
+        [Route("api/User/IsThereEmail")]
+        public async Task<HttpResponseMessage> IsThereEmail(string Email)
+        {
+            var _bool = await UserOperations.EmailControl(Email);
+            if (_bool)
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+            }
+            else
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.OK;
+            }
+            return httpResponseMessage;
+        }
+
         [AllowAnonymous]
         [HttpPut]
         [ResponseType(typeof(HttpResponseMessage))]

@@ -14,6 +14,54 @@ namespace CP.ServiceLayer.Concrete
 {
     public class UserService : Service<User>, IUserService
     {
+        bool Status;
+
+        public async Task<bool> IsThereEmail(string Email)
+        {
+            var u = Url;
+            try
+            {
+                await Task.Run(async () =>
+                {
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    var response = client.GetAsync(u).Result;
+
+                    Status =  (response.StatusCode == System.Net.HttpStatusCode.OK) ? false : true;
+
+                });
+            }
+            catch (Exception ex)
+            {
+                Status = false;
+                throw ex;
+            }
+            return Status;
+        }
+
+        public async Task<bool> IsThereUserName(string UserName)
+        {
+            var u = Url;
+            try
+            {
+                await Task.Run(async () =>
+                {
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    var response = client.GetAsync(u).Result;
+
+                    Status = (response.StatusCode == System.Net.HttpStatusCode.OK) ? false : true;
+
+                });
+            }
+            catch (Exception ex)
+            {
+                Status = false;
+                throw ex;
+            }
+            return Status;
+        }
+
 
         public async Task<string> LoginControl(User user)
         {
