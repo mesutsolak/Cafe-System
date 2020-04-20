@@ -546,3 +546,13 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Deb
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\money.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\cart.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\bg.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\profile.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\contact.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\information.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\logout.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\eat.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\drink.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\clock.png

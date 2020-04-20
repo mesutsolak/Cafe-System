@@ -33,9 +33,10 @@ namespace CP.Entities.Model
 
         [StringLength(150)]
         public string LastName { get; set; }
-        public byte[] ProfileImage { get; set; }
+        public byte[] Photo { get; set; }
 
         public bool? IsConfirm { get; set; } = false;
+        public bool Status { get; set; } = true;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comment { get; set; }

@@ -1,5 +1,6 @@
 ﻿using CP.BusinessLayer.Repository.Abstract.Basic;
 using CP.Entities.Model;
+using CP.ServiceLayer.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,6 +52,26 @@ namespace CP.BusinessLayer.Operations
         public async static Task<bool> EmailControl(string Email)
         {
             return await _data.UserRepository.IsThere(x=>x.Email == Email);
+        }
+        public static async Task<string> Login(LoginControl loginControl)
+        {
+            if (!_data.UserRepository.IsThere(x => x.Username == loginControl.UserName).Result)
+            {
+                return  "Kullanıcı Bulunmadı";
+            }
+
+            if (!(_data.UserRepository.GetByFilter(x => x.Username == loginControl.UserName).IsConfirm.Value))
+            {
+                return "Kullanıcı Onaylanmamıştır";
+            }
+
+            if (!_data.UserRepository.IsThere(x => x.Username == loginControl.UserName && x.Password == loginControl.Password).Result)
+                return "Kullanıcı veya Şifre Yanlış";
+
+            if (_data.UserRepository.GetByFilter(x => x.Username == loginControl.UserName).Status)
+                return "Kullanıcı Silinmiş";
+           
+            return "Başarıyla Giriş Yapıldı";
         }
     }                                        
 }

@@ -8,12 +8,44 @@
                   x:Class="CP.Mobile.MasterDetailPages.MainPage">
 
 
+ 
+    
     <MasterDetailPage.Master>
-        <local1:Main1 Title="Master" BackgroundColor="Red"/>
+        <ContentPage Title="Menu">
+            <Grid BackgroundColor="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Image Source="bg.png" Aspect="AspectFill" />
+                    <StackLayout Padding="0,12,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        <Image  Source="profile.png"  WidthRequest="24"  />
+                        <Label Text="Adam Pedley" TextColor="White" FontSize="Large" />
+                    </StackLayout>
+                </Grid>
+                <StackLayout  Grid.Row="1" Spacing="15">
+                    <!--
+                        
+                    -->
+                    <ListView x:Name="navigationDrawerList" RowHeight="60" SeparatorVisibility="Default" SeparatorColor="Gray" BackgroundColor="White" ItemSelected="OnMenuItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <!-- Main design for our menu items -->
+                                    <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="20,10,0,10" Spacing="20">
+                                        <Image Source="{Binding Icon}" WidthRequest="24" HeightRequest="40" VerticalOptions="Center" />
+                                        <Label Text="{Binding Title}" FontSize="Medium" VerticalOptions="Center" TextColor="Black" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Grid>
+        </ContentPage>
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-        <local:Main2 Title="Detail" BackgroundColor="Blue" />
-   
+        <NavigationPage></NavigationPage>
     </MasterDetailPage.Detail>
-
 </MasterDetailPage>

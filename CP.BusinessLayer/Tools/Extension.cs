@@ -17,12 +17,13 @@ namespace CP.BusinessLayer.Tools
         {
             return int.Parse(value);
         }
-        public static bool IsNull(this string value)
+        public static bool IsNullObject(this object value)
         {
-            if (string.IsNullOrEmpty(value))
-                return false;
-            else
-                return true;
+            return value == null ? true : false;
+        }
+        public static bool IsNullString(this string value)
+        {
+            return value == null ? false : true;
         }
         public static int ObjectIntConvert(this object value)
         {

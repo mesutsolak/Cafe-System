@@ -73,6 +73,10 @@
       <Project>{BC027EB7-78F7-4106-9963-3426C8DC9C05}</Project>
       <Name>CP.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CP.ServiceLayer\CP.ServiceLayer.csproj">
+      <Project>{B50E3529-B401-4EA7-9C5A-EAF8DE0FE60F}</Project>
+      <Name>CP.ServiceLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

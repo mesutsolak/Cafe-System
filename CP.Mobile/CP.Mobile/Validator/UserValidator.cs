@@ -17,7 +17,6 @@ namespace CP.Mobile.Validator
         UserService userService = new UserService();
         public UserValidator()
         {
-
             this.CascadeMode = CascadeMode.StopOnFirstFailure;
 
             RuleForProp(x => x.FirstName)

@@ -23,6 +23,10 @@ namespace CP.Mobile.ValidatorEntities
         {
             return Validate();
         }
-
+        public void ErrorClear()
+        {
+            UserName.ClearError();
+            Password.ClearError();
+        }
     }
 }

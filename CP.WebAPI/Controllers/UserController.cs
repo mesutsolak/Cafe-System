@@ -1,6 +1,8 @@
 ﻿using CP.BusinessLayer.Operations;
+using CP.BusinessLayer.Tools;
 using CP.Entities.Model;
 using CP.ServiceLayer.Concrete;
+using CP.ServiceLayer.DTO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,6 +12,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using System.Web.Http.ModelBinding;
+using System.Web.Script.Serialization;
 
 namespace CP.WebAPI.Controllers
 {
@@ -17,7 +20,7 @@ namespace CP.WebAPI.Controllers
     public class UserController : BaseApiController
     {
         [HttpPost]
-        [Route("api/User/Post")]
+        [Route("api/User/")]
         public async Task<HttpResponseMessage> Post([FromBody]User user)
         {
             if (!ModelState.IsValid)
@@ -42,13 +45,40 @@ namespace CP.WebAPI.Controllers
             return httpResponseMessage;
         }
         [HttpPost]
+        [Route("api/User/Login")]
+        public async Task<HttpResponseMessage> Login([FromBody]LoginControl loginControl)
+        {
+            if (!ModelState.IsValid)
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+                httpResponseMessage.Headers.Add("Message", "Doğrulama başarısız");
+            }
+            else
+            {
+                var result = await UserOperations.Login(loginControl);
+
+                if (result.Contains("Başarıyla"))
+                {
+                    httpResponseMessage.StatusCode = HttpStatusCode.OK;
+                    httpResponseMessage.Headers.Add("Message", "Başarıyla Giriş Yaptınız");
+                }
+                else
+                {
+                    httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+                    httpResponseMessage.Headers.Add("Message", "Başarısız");
+                }
+            }
+            return httpResponseMessage;
+        }
+
+        [HttpPost]
         [Route("api/User/GetLoginControl")]
         public async  Task<HttpResponseMessage> GetLoginControl([FromBody]User user)
         {
             if (!ModelState.IsValid)
             {
                 httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
-                httpResponseMessage.Headers.Add("Message", "Doğrulana başarısız");
+                httpResponseMessage.Headers.Add("Message", "Doğrulama başarısız");
             }
             else
             {
@@ -74,9 +104,22 @@ namespace CP.WebAPI.Controllers
             return await UserOperations.GetUsers();
         }
         [HttpGet]
-        public async Task<User> GetFind(int id)
+        public async Task<HttpResponseMessage> GetFind(int id)
         {
-            return await UserOperations.UserFindAsync(id);
+            var _user = await UserOperations.UserFindAsync(id);
+            if (_user.IsNullObject())
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.NotFound;
+                httpResponseMessage.Headers.Add("Message", "Kullanıcı Bulunamadı");
+            }
+            else
+            {
+                var json = new JavaScriptSerializer().Serialize(_user);
+
+                httpResponseMessage.StatusCode = HttpStatusCode.OK;
+                httpResponseMessage.Headers.Add("Message", json);
+            }
+            return httpResponseMessage;
         }
         [HttpGet]
         [Route("api/User/IsThereUserName/{UserName}")]

@@ -53,9 +53,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202004181148115_UserProfileAddColumn.cs" />
-    <Compile Include="Migrations\202004181148115_UserProfileAddColumn.designer.cs">
-      <DependentUpon>202004181148115_UserProfileAddColumn.cs</DependentUpon>
+    <Compile Include="Migrations\202004201726006_UserImage.cs" />
+    <Compile Include="Migrations\202004201726006_UserImage.designer.cs">
+      <DependentUpon>202004201726006_UserImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004201728170_UserImage1.cs" />
+    <Compile Include="Migrations\202004201728170_UserImage1.designer.cs">
+      <DependentUpon>202004201728170_UserImage1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004201731003_UserPhoto.cs" />
+    <Compile Include="Migrations\202004201731003_UserPhoto.designer.cs">
+      <DependentUpon>202004201731003_UserPhoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004201859073_UserStatus.cs" />
+    <Compile Include="Migrations\202004201859073_UserStatus.designer.cs">
+      <DependentUpon>202004201859073_UserStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\CafeProjectModel.cs" />
@@ -86,8 +98,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004181148115_UserProfileAddColumn.resx">
-      <DependentUpon>202004181148115_UserProfileAddColumn.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004201726006_UserImage.resx">
+      <DependentUpon>202004201726006_UserImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004201728170_UserImage1.resx">
+      <DependentUpon>202004201728170_UserImage1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004201731003_UserPhoto.resx">
+      <DependentUpon>202004201731003_UserPhoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004201859073_UserStatus.resx">
+      <DependentUpon>202004201859073_UserStatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

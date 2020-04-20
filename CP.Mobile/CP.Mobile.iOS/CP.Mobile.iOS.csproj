@@ -178,4 +178,34 @@
   <ItemGroup>
     <BundleResource Include="Resources\SplasScreen.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\eat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\clock.png" />
+  </ItemGroup>
 </Project>
