@@ -63,27 +63,24 @@ namespace CP.ServiceLayer.Concrete
         }
 
 
-        public async Task<string> LoginControl(User user)
+        public async Task<string> LoginControl(LoginControl loginControl)
         {
-
             try
             {
                 await Task.Run(async () =>
                 {
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    var response = client.PostAsJsonAsync<User>(Url, user);
+                    var response = client.PostAsJsonAsync(Url, loginControl);
                     response.Wait();
 
                     var result = response.Result;
-
-
 
                     IEnumerable<string> headerValues = result.Headers.GetValues("Message");
 
                     ResponseMessage = headerValues.FirstOrDefault().ToString();
 
-                });
+                 });
             }
             catch (Exception ex)
             {
@@ -93,7 +90,6 @@ namespace CP.ServiceLayer.Concrete
             }
 
             return ResponseMessage;
-
 
         }
     }

@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Rg.Plugins.Popup.Services;
+using Xamarin.Forms;
 
 namespace CP.Mobile.Droid
 {
@@ -31,6 +32,7 @@ namespace CP.Mobile.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
             Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
+            Forms.SetFlags("IndicatorView_Experimental");
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }

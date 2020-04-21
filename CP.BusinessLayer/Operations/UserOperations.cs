@@ -1,5 +1,5 @@
 ﻿using CP.BusinessLayer.Repository.Abstract.Basic;
-using CP.Entities.Model;
+using M = CP.Entities.Model;
 using CP.ServiceLayer.DTO;
 using System;
 using System.Collections.Generic;
@@ -11,20 +11,20 @@ namespace CP.BusinessLayer.Operations
 {
     public class UserOperations : BaseOperation
     {
-        public async static Task<int> UserAdd(User user)
+        public async static Task<int> UserAdd(M.User user)
         {
             _data.UserRepository.Add(user);
             return await _data.CompleteAsync();
         }
-        public async static Task<List<User>> GetUsers()
+        public async static Task<List<M.User>> GetUsers()
         {
             return await _data.UserRepository.GetAllAsync();
         }
-        public async static Task<User> UserFindAsync(int id)
+        public async static Task<M.User> UserFindAsync(int id)
         {
             return await _data.UserRepository.GetByIdAsync(id);
         }
-        public async static Task<int> UserUpdate(User user)
+        public async static Task<int> UserUpdate(M.User user)
         {
             _data.UserRepository.Update(user);
             return await _data.CompleteAsync();
@@ -34,17 +34,7 @@ namespace CP.BusinessLayer.Operations
             _data.UserRepository.Remove(id);
             return await _data.CompleteAsync();
         }
-        public async static Task<string> UserControl(User user)
-        {
-            if (await _data.UserRepository.LoginControl(user))
-            {
-                return "Başarıyla Giriş Yapıldı";
-            }
-            else
-            {
-                return "Giriş Başarısız";
-            }
-        }
+        
         public async static Task<bool> UserNameControl(string UserName)
         {
            return await _data.UserRepository.IsThere(x=>x.Username == UserName);
@@ -68,7 +58,7 @@ namespace CP.BusinessLayer.Operations
             if (!_data.UserRepository.IsThere(x => x.Username == loginControl.UserName && x.Password == loginControl.Password).Result)
                 return "Kullanıcı veya Şifre Yanlış";
 
-            if (_data.UserRepository.GetByFilter(x => x.Username == loginControl.UserName).Status)
+            if (!_data.UserRepository.GetByFilter(x => x.Username == loginControl.UserName).Status)
                 return "Kullanıcı Silinmiş";
            
             return "Başarıyla Giriş Yapıldı";

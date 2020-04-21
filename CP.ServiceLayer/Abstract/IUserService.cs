@@ -10,7 +10,7 @@ namespace CP.ServiceLayer.Abstract
 {
     public interface IUserService : IService<User>
     {
-        Task<string> LoginControl(User loginControl);
+        Task<string> LoginControl(LoginControl loginControl);
         Task<bool> IsThereUserName(string UserName);
         Task<bool> IsThereEmail(string Email);
     }

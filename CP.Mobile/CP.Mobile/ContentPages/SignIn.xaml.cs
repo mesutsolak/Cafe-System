@@ -1,6 +1,9 @@
 ﻿using CP.Mobile.Tools;
+using CP.Mobile.Tools.AlertModals;
+using CP.Mobile.ValidatorEntities;
 using CP.ServiceLayer.Concrete;
 using CP.ServiceLayer.DTO;
+using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +19,11 @@ namespace CP.Mobile.ContentPages
     public partial class SignIn : ContentPage
     {
         UserService userService = new UserService();
+        LoginViewModel userViewModel = new LoginViewModel();
         public SignIn()
         {
             InitializeComponent();
+            BindingContext = userViewModel;
         }
 
         private void btnClear_Clicked(object sender, EventArgs e)
@@ -30,20 +35,35 @@ namespace CP.Mobile.ContentPages
         {
             try
             {
-                userService.Url = "/api/User/GetLoginControl/";
-                var _result = await userService.LoginControl(new User
+                if (!userViewModel.ModelResult())
                 {
-                    Username = EntUserName.Text,
-                    Password = EntPassword.Text,
-                });
-                if (_result.Contains("Başarıyla"))
-                {
-                    await DisplayAlert("Başarılı", _result, "Kapat");
-                    FormTools.FormClear(StlForm);
+                    await Navigation.PushPopupAsync(new ErrorModal("Lütfen Gerekli Yerleri Doldurun"));
                 }
                 else
                 {
-                    await DisplayAlert("Başarısız", _result, "Kapat");
+                    userService.Url = "/api/User/Login";
+
+                    await Navigation.PushPopupAsync(new LoaderModal());
+
+                    var _result = await userService.LoginControl(new LoginControl
+                    {
+                        UserName = EntUserName.EntryText,
+                        Password = EntPassword.EntryText,
+                    });
+
+                    await Navigation.PopPopupAsync(true);
+                 
+                    if (_result.Contains("Başarıyla"))
+                    {
+                        Application.Current.Properties["UserName"] = EntUserName.EntryText;
+                        await Navigation.PushPopupAsync(new SuccessModal("Başarıyla Giriş Yapıldı"));
+
+                        FormTools.FormClear(StlForm);
+                    }
+                    else
+                    {
+                        await Navigation.PushPopupAsync(new ErrorModal("Giriş Başarısız"));
+                    }
                 }
             }
             catch (Exception ex)

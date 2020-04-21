@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Xamarin.Forms;
 
 namespace CP.Mobile.iOS
 {
@@ -26,6 +27,7 @@ namespace CP.Mobile.iOS
 
 
             global::Xamarin.Forms.Forms.Init();
+            Forms.SetFlags("IndicatorView_Experimental");
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

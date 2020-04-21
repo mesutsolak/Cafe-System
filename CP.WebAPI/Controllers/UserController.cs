@@ -1,6 +1,6 @@
 ﻿using CP.BusinessLayer.Operations;
 using CP.BusinessLayer.Tools;
-using CP.Entities.Model;
+using M = CP.Entities.Model;
 using CP.ServiceLayer.Concrete;
 using CP.ServiceLayer.DTO;
 using System.Collections.Generic;
@@ -21,7 +21,7 @@ namespace CP.WebAPI.Controllers
     {
         [HttpPost]
         [Route("api/User/")]
-        public async Task<HttpResponseMessage> Post([FromBody]User user)
+        public async Task<HttpResponseMessage> Post([FromBody]M.User user)
         {
             if (!ModelState.IsValid)
             {
@@ -71,35 +71,8 @@ namespace CP.WebAPI.Controllers
             return httpResponseMessage;
         }
 
-        [HttpPost]
-        [Route("api/User/GetLoginControl")]
-        public async  Task<HttpResponseMessage> GetLoginControl([FromBody]User user)
-        {
-            if (!ModelState.IsValid)
-            {
-                httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
-                httpResponseMessage.Headers.Add("Message", "Doğrulama başarısız");
-            }
-            else
-            {
-                var result = await UserOperations.UserControl(user);
-
-                if (result.Contains("Başarıyla"))
-                {
-                    httpResponseMessage.StatusCode = HttpStatusCode.OK;
-                    httpResponseMessage.Headers.Add("Message", "Başarıyla Giriş Yaptınız");
-                }
-                else
-                {
-                    httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
-                    httpResponseMessage.Headers.Add("Message", "Başarısız");
-                }
-            }
-            return httpResponseMessage;
-        }
-
         [HttpGet]
-        public async Task<List<User>> Get()
+        public async Task<List<M.User>> Get()
         {
             return await UserOperations.GetUsers();
         }
@@ -156,7 +129,7 @@ namespace CP.WebAPI.Controllers
         [AllowAnonymous]
         [HttpPut]
         [ResponseType(typeof(HttpResponseMessage))]
-        public async Task<HttpResponseMessage> Put([FromBody]User user)
+        public async Task<HttpResponseMessage> Put([FromBody]M.User user)
         {
             if (!ModelState.IsValid)
             {

@@ -18,10 +18,5 @@ namespace CP.BusinessLayer.Repository.Concrete
 
         }
         public CafeProjectModel CafeDB => _context as CafeProjectModel; //bu cast işlemine sürekli ihtiyac duyacağız.
-
-        public Task<bool> LoginControl(User user)
-        {
-            return CafeDB.User.AnyAsync(x => x.Username == user.Username && x.Password == user.Password && x.IsConfirm == true);
-        }
     }
 }

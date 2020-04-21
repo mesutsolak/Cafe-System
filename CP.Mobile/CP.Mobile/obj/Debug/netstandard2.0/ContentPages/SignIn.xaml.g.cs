@@ -23,13 +23,13 @@ namespace CP.Mobile.ContentPages {
         private global::Xamarin.Forms.Label lblUserName;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry EntUserName;
+        private global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl EntUserName;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Label lblPassword;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry EntPassword;
+        private global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl EntPassword;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Button btnClear;
@@ -42,9 +42,9 @@ namespace CP.Mobile.ContentPages {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(SignIn));
             StlForm = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "StlForm");
             lblUserName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblUserName");
-            EntUserName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "EntUserName");
+            EntUserName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl>(this, "EntUserName");
             lblPassword = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblPassword");
-            EntPassword = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "EntPassword");
+            EntPassword = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl>(this, "EntPassword");
             btnClear = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "btnClear");
             btnSignUp = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "btnSignUp");
         }

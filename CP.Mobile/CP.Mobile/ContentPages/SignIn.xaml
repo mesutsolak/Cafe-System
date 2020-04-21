@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:custom="clr-namespace:Xamarin.Plugins.UnobtrusiveFluentValidation;assembly=Xamarin.Plugins.FluentValidation"
              mc:Ignorable="d"
              x:Class="CP.Mobile.ContentPages.SignIn">
     <NavigationPage.TitleView>
@@ -23,16 +23,19 @@
 
             
                 <Label Text="Kullanıcı Adı" x:Name="lblUserName" x:Uid="lblUserName"/>
-                <Entry Placeholder="Kullanıcı Adı Giriniz" x:Name="EntUserName" x:Uid="EntUserName"/>
+                <custom:ValidatableEntryControl   x:Name="EntUserName" x:Uid="EntUserName" Placeholder="Kullanıcı Adı Giriniz" BindingName="UserName"></custom:ValidatableEntryControl>
 
-                 <Label Text="Parola" x:Name="lblPassword" x:Uid="lblPassword"/>
-                <Entry Placeholder="Parola Giriniz" IsPassword="True" x:Name="EntPassword" x:Uid="EntPassword"/>
+
+                <Label Text="Parola" x:Name="lblPassword" x:Uid="lblPassword"/>
+               <custom:ValidatableEntryControl   x:Name="EntPassword" x:Uid="EntPassword" IsPassword="True" Placeholder="Parola  Giriniz" BindingName="Password"></custom:ValidatableEntryControl>
+
+
 
                 <StackLayout Spacing="10" Margin="0,10,0,10" Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="Center">
                     <Button Text="Temizle" CornerRadius="5" ContentLayout="Left,5" WidthRequest="110" HorizontalOptions="Start" ImageSource="trash.png" BackgroundColor="Red" TextColor="White" 
                                x:Name="btnClear" x:Uid="btnClear" Clicked="btnClear_Clicked" />
                     <Button Text="Giriş Yap" CornerRadius="5" ContentLayout="Left,5" WidthRequest="130" HorizontalOptions="Start" ImageSource="SignIn.png"  BackgroundColor="Green" TextColor="White" 
-                               x:Name="btnSignUp" x:Uid="btnSignUp" Clicked="btnSignUp_Clicked" />
+                               x:Name="btnSignUp" x:Uid="btnSignUp" Clicked="btnSignUp_Clicked" Command="{Binding ValidateCommand}" />
                 </StackLayout>
             </StackLayout>
         </StackLayout>

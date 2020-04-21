@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:forms="http://xamarin.com/schemas/2014/forms"
              mc:Ignorable="d"
              x:Class="CP.Mobile.MasterDetailPages.Menus.TestPage1">
     <NavigationPage.TitleView>
@@ -23,10 +23,32 @@
     </NavigationPage.TitleView>
     
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text=" to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="400" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <CarouselView x:Name="CVMovies"  IndicatorView="indicatorView" Grid.Row="0" PeekAreaInsets="20">
+                <CarouselView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
+                </CarouselView.ItemsLayout>
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="30" Margin="20" BackgroundColor="{Binding Color}">
+                        <StackLayout>
+                            <Image Source="{Binding ImageUrl}" WidthRequest="300" HeightRequest="200" Aspect="AspectFill"/>
+                                <Label Text="{Binding Title}" FontSize="Title" HorizontalTextAlignment="Center"/>
+                                <Label Text="{Binding Cast}" FontSize="Title" HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+            <IndicatorView x:Name="indicatorView"  IndicatorColor="LightGray" SelectedIndicatorColor="Black" Grid.Row="1"/>
+            
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
