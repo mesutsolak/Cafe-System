@@ -42,6 +42,10 @@
       "frameworks": {
         "xamarinios10": {
           "dependencies": {
+            "DLToolkit.Forms.Controls.FlowListView": {
+              "target": "Package",
+              "version": "[2.0.11, )"
+            },
             "Microsoft.AspNet.WebApi.Client": {
               "target": "Package",
               "version": "[5.2.7, )"
@@ -118,6 +122,10 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "DLToolkit.Forms.Controls.FlowListView": {
+              "target": "Package",
+              "version": "[2.0.11, )"
             },
             "Microsoft.AspNet.WebApi.Client": {
               "target": "Package",

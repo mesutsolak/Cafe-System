@@ -31,7 +31,7 @@ namespace CP.Mobile.MasterDetailPages
             {
                 Title = "Yiyecekler",
                 Icon = "eat.png",
-                TargetType = typeof(TestPage1)
+                TargetType = typeof(Meals)
             });
             menuList.Add(new MasterPageItem()
             {

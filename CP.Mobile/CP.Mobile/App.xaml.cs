@@ -1,4 +1,5 @@
 ﻿using CP.Mobile.ContentPages;
+using DLToolkit.Forms.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace CP.Mobile
         public App()
         {
             InitializeComponent();
+            FlowListView.Init();
             MainPage = new NavigationPage(new SplashPage());
         }
         protected override void OnStart()

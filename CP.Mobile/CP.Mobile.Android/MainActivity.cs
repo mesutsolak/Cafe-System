@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using Rg.Plugins.Popup.Services;
 using Xamarin.Forms;
+using DLToolkit.Forms.Controls;
 
 namespace CP.Mobile.Droid
 {
@@ -33,6 +34,7 @@ namespace CP.Mobile.Droid
 
             Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             Forms.SetFlags("IndicatorView_Experimental");
+            FlowListView.Init();
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }

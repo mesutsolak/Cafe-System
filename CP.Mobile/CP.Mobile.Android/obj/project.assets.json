@@ -15,6 +15,18 @@
           "lib/netstandard2.0/AutoMapper.dll": {}
         }
       },
+      "DLToolkit.Forms.Controls.FlowListView/2.0.11": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.0.0.6482"
+        },
+        "compile": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+netstandard1.0/DLToolkit.Forms.Controls.FlowListView.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+netstandard1.0/DLToolkit.Forms.Controls.FlowListView.dll": {}
+        }
+      },
       "FluentValidation/8.0.101": {
         "type": "package",
         "dependencies": {
@@ -1527,6 +1539,7 @@
         "dependencies": {
           "AutoMapper": "9.0.0",
           "CP.ServiceLayer": "1.0.0",
+          "DLToolkit.Forms.Controls.FlowListView": "2.0.11",
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Rg.Plugins.Popup": "2.0.0.2",
           "Xamarin.Essentials": "1.5.2",
@@ -1567,6 +1580,19 @@
         "lib/netstandard2.0/AutoMapper.dll",
         "lib/netstandard2.0/AutoMapper.pdb",
         "lib/netstandard2.0/AutoMapper.xml"
+      ]
+    },
+    "DLToolkit.Forms.Controls.FlowListView/2.0.11": {
+      "sha512": "n/TIbW3a7q/h5wA5vt8VfkN3eecJN8nMlPVu3NS7hvFODg0YqFHXDgbX1O/a9agcuk5Km6DZqJqpxpcYRS9sOQ==",
+      "type": "package",
+      "path": "dltoolkit.forms.controls.flowlistview/2.0.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dltoolkit.forms.controls.flowlistview.2.0.11.nupkg.sha512",
+        "dltoolkit.forms.controls.flowlistview.nuspec",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+netstandard1.0/DLToolkit.Forms.Controls.FlowListView.dll",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+netstandard1.0/DLToolkit.Forms.Controls.FlowListView.xml"
       ]
     },
     "FluentValidation/8.0.101": {
@@ -6017,6 +6043,7 @@
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v9.0": [
       "CP.Mobile >= 1.0.0",
+      "DLToolkit.Forms.Controls.FlowListView >= 2.0.11",
       "Microsoft.AspNet.WebApi.Client >= 5.2.7",
       "Rg.Plugins.Popup >= 2.0.0.2",
       "Xamarin.Essentials >= 1.5.2",
@@ -6065,6 +6092,10 @@
     "frameworks": {
       "monoandroid90": {
         "dependencies": {
+          "DLToolkit.Forms.Controls.FlowListView": {
+            "target": "Package",
+            "version": "[2.0.11, )"
+          },
           "Microsoft.AspNet.WebApi.Client": {
             "target": "Package",
             "version": "[5.2.7, )"

@@ -5,6 +5,7 @@ public class MonoPackageManager_Resources {
 		"CP.Mobile.Android.dll",
 		"AutoMapper.dll",
 		"CP.Mobile.dll",
+		"DLToolkit.Forms.Controls.FlowListView.dll",
 		"FluentValidation.dll",
 		"FluentValidation.ValidatorAttribute.dll",
 		"FormsViewGroup.dll",

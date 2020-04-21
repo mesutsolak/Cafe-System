@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using DLToolkit.Forms.Controls;
 using Foundation;
 using UIKit;
 using Xamarin.Forms;
@@ -28,6 +28,7 @@ namespace CP.Mobile.iOS
 
             global::Xamarin.Forms.Forms.Init();
             Forms.SetFlags("IndicatorView_Experimental");
+            FlowListView.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
