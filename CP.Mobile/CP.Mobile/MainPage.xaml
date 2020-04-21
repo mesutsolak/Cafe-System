@@ -15,7 +15,7 @@
     
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="55"  Orientation="Vertical">
 
-        <Button Text="Geç" x:Name="btnAdd" x:Uid="btnAdd" Clicked="btnAdd_Clicked"/>
+     
         <Image Source="cafe.png" WidthRequest="200"/>
         <Label Text="Beyoğlu Kafesi" FontFamily="Lobster-Regular" FontSize="30"/>
         <Button Text="Giriş Yap" CornerRadius="5" ContentLayout="Left,5" WidthRequest="130" HorizontalOptions="Start" ImageSource="SignIn.png" BackgroundColor="Green" TextColor="White"  x:Name="btnSignIn" x:Uid="btnSignIn" Clicked="btnSignIn_Clicked" />

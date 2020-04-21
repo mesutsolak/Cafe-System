@@ -12,11 +12,10 @@
                 <Image Source="cart.png"  WidthRequest="24"/>
                 <Label Text="0" TextColor="White" FontSize="20"  Margin="0,0,8,0" />
 
-                <Image Source="money.png"  WidthRequest="24"/>
-                <Label Text="0" TextColor="White" FontSize="20" Margin="0,0,8,0" />
-
                 <Image Source="order.png"  WidthRequest="24"/>
                 <Label Text="0" TextColor="White" FontSize="20" Margin="0,0,8,0" />
+
+                <ImageButton Source="logout.png" WidthRequest="24" Margin="0,0,8,0" Clicked="ImageButton_Clicked"/>
 
             </StackLayout>
         </StackLayout>

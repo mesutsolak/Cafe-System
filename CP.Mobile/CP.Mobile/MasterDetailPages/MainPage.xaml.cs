@@ -1,10 +1,12 @@
 ﻿using CP.Mobile.MasterDetailPages.Menus;
+using CP.Mobile.Tools.AlertModals;
+using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,13 +15,13 @@ namespace CP.Mobile.MasterDetailPages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : MasterDetailPage
     {
-        public  List<MasterPageItem> menuList { get; set; }
+        public List<MasterPageItem> menuList { get; set; }
         public MainPage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             menuList = new List<MasterPageItem>();
-            
+
             // Adding menu items to menuList and you can define title ,page and icon  
             menuList.Add(new MasterPageItem()
             {
@@ -70,13 +72,8 @@ namespace CP.Mobile.MasterDetailPages
                 TargetType = typeof(TestPage3)
             });
 
-            menuList.Add(new MasterPageItem()
-            {
-                Title = "Çıkış",
-                Icon = "logout.png",
-                TargetType = typeof(TestPage3)
-            });
-           
+            
+
             // Setting our list to be ItemSource for ListView in MainPage.xaml  
             navigationDrawerList.ItemsSource = menuList;
             navigationDrawerList.SelectedItem = menuList[0];
@@ -88,12 +85,15 @@ namespace CP.Mobile.MasterDetailPages
         }
         // Event for Menu Item selection, here we are going to handle navigation based  
         // on user selection in menu ListView  
-        private void OnMenuItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void OnMenuItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var item = (MasterPageItem)e.SelectedItem;
-            Type page = item.TargetType;
-            Detail = new NavigationPage((Page)Activator.CreateInstance(page));
-            IsPresented = false;
+           
+                Type page = item.TargetType;
+                Detail = new NavigationPage((Page)Activator.CreateInstance(page));
+                IsPresented = false;
+  
         }
+       
     }
 }

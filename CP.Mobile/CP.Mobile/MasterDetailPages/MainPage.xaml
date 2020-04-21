@@ -11,7 +11,7 @@
  
     
     <MasterDetailPage.Master>
-        <ContentPage Title="Menu">
+        <ContentPage Title="Menu" BackgroundColor="Transparent">
             <Grid BackgroundColor="Transparent">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="200" />
@@ -46,6 +46,6 @@
         </ContentPage>
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-        <NavigationPage></NavigationPage>
+        <NavigationPage BackgroundColor="Transparent"></NavigationPage>
     </MasterDetailPage.Detail>
 </MasterDetailPage>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace CP.Mobile.ContentPages
@@ -37,7 +38,9 @@ namespace CP.Mobile.ContentPages
             await splashImage.ScaleTo(0.9, 1500, Easing.Linear);
             await splashImage.ScaleTo(150, 1200, Easing.Linear);
 
-            if (Application.Current.Properties.ContainsKey("UserName"))
+      
+
+            if (Preferences.ContainsKey("UserName"))
             {
                 Application.Current.MainPage = new CP.Mobile.MasterDetailPages.MainPage();
             }

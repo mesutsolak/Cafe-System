@@ -14,10 +14,12 @@ namespace CP.Mobile.Tools.AlertModals
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SuccessModal : PopupPage
     {
-        public SuccessModal(string Description)
+        Action _action;
+        public SuccessModal(string Description,Action action=null)
         {
             InitializeComponent();
             lblDescription.Text = Description;
+            _action = action;
         }
 
         private async void ImageButton_Clicked(object sender, EventArgs e)
@@ -37,6 +39,10 @@ namespace CP.Mobile.Tools.AlertModals
         private async void btnOk_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopPopupAsync(true);
+            if (!(_action==null))
+            {
+                _action.Invoke();
+            }
         }
     }
 }

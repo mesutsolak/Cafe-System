@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -52,11 +52,13 @@ namespace CP.Mobile.ContentPages
                     });
 
                     await Navigation.PopPopupAsync(true);
-                 
+
                     if (_result.Contains("Başarıyla"))
                     {
-                        Application.Current.Properties["UserName"] = EntUserName.EntryText;
-                        await Navigation.PushPopupAsync(new SuccessModal("Başarıyla Giriş Yapıldı"));
+
+                        Preferences.Set("UserName", EntUserName.EntryText);
+
+                        await Navigation.PushPopupAsync(new SuccessModal("Başarıyla Giriş Yapıldı",()=> { RootMain(); }));
 
                         FormTools.FormClear(StlForm);
                     }
@@ -64,13 +66,18 @@ namespace CP.Mobile.ContentPages
                     {
                         await Navigation.PushPopupAsync(new ErrorModal("Giriş Başarısız"));
                     }
-                }
-            }
+                    }
+                } 
+           
             catch (Exception ex)
             {
 
                 throw ex;
             }
+        }
+        public async void RootMain()
+        {
+            await Navigation.PushAsync(new CP.Mobile.MasterDetailPages.MainPage(),true);
         }
     }
 }

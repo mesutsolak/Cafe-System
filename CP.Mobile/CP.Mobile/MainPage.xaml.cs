@@ -28,10 +28,9 @@ namespace CP.Mobile
         {
             await Navigation.PushAsync(new SignIn());
         }
-
-        private async void btnAdd_Clicked(object sender, EventArgs e)
+        protected override bool OnBackButtonPressed()
         {
-            await Navigation.PushAsync(new MasterDetailPages.MainPage()); 
+            return true;
         }
     }
 }
