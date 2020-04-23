@@ -1,4 +1,5 @@
 ﻿using CP.Mobile.MasterDetailPages.Menus;
+using CP.Mobile.TabbedPage;
 using CP.Mobile.Tools.AlertModals;
 using Rg.Plugins.Popup.Extensions;
 using System;
@@ -33,13 +34,13 @@ namespace CP.Mobile.MasterDetailPages
             {
                 Title = "Yiyecekler",
                 Icon = "eat.png",
-                TargetType = typeof(Meals)
+                TargetType = typeof(MenuTabbed)
             });
             menuList.Add(new MasterPageItem()
             {
                 Title = "İçecekler",
                 Icon = "drink.png",
-                TargetType = typeof(TestPage1)
+                TargetType = typeof(DrinkTabbed)
             });
             menuList.Add(new MasterPageItem()
             {
@@ -71,8 +72,13 @@ namespace CP.Mobile.MasterDetailPages
                 Icon = "clock.png",
                 TargetType = typeof(TestPage3)
             });
+            menuList.Add(new MasterPageItem() {
+                Title = "Masalar",
+                Icon = "table.png",
+                TargetType = typeof(TestPage3)
+            });
 
-            
+
 
             // Setting our list to be ItemSource for ListView in MainPage.xaml  
             navigationDrawerList.ItemsSource = menuList;
@@ -88,12 +94,11 @@ namespace CP.Mobile.MasterDetailPages
         private async void OnMenuItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var item = (MasterPageItem)e.SelectedItem;
-           
-                Type page = item.TargetType;
-                Detail = new NavigationPage((Page)Activator.CreateInstance(page));
-                IsPresented = false;
-  
+
+            Type page = item.TargetType;
+            Detail = new NavigationPage((Page)Activator.CreateInstance(page));
+            IsPresented = false;
         }
-       
+
     }
 }

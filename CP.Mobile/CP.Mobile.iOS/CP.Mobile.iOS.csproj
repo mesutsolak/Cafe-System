@@ -211,4 +211,34 @@
   <ItemGroup>
     <BundleResource Include="Resources\clock.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cart2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\comment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\meat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\dessert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\soup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patato.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\HotDrink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ColdDrink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\table.png" />
+  </ItemGroup>
 </Project>

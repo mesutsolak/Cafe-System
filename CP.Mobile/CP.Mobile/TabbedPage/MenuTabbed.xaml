@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+            xmlns:local="clr-namespace:CP.Mobile.TabbedPage.MenuItemTabbed"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CP.Mobile.TabbedPage.MenuTabbed">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" Spacing="12">
+            <SearchBar 
+           CancelButtonColor="Orange"
+           PlaceholderColor="Orange"
+           TextColor="Orange"
+           HorizontalTextAlignment="Center"
+           FontSize="Medium"
+           FontAttributes="Italic" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <!--Pages can be added as references or inline-->
+    <local:Meals Title="Ana Yemekler" Icon="meat.png"  />
+    <local:Meals Title="Ara Sıcaklar" Icon="patato.png"  />
+    <local:Meals Title="Çorbalar" Icon="soup.png"  />
+    <local:Meals Title="Tatlılar" Icon="dessert.png"  />
+
+
+  
+
+</TabbedPage>

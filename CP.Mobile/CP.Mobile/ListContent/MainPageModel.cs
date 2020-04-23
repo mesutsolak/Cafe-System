@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CP.Mobile.MasterDetailPages.Menus;
+using Rg.Plugins.Popup.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
@@ -18,12 +20,19 @@ namespace CP.Mobile.ListContent
 
         private void AddItems()
         {
-            for (int i = 0; i < 20; i++)
-                Items.Add(string.Format("List Item at {0}", i));
+            for (int i = 0; i < 30; i++)
+                Items.Add(new Meal
+                {
+                    Id = i,
+                    Name = "Yiyecek" + i ,
+                    Image ="hamburger.jpg",
+                    Category ="Kategoriler"+i,
+                    Price="$10"+i
+                }) ;
         }
 
-        private ObservableCollection<string> _items = new ObservableCollection<string>();
-        public ObservableCollection<string> Items
+        private ObservableCollection<Meal> _items = new ObservableCollection<Meal>();
+        public ObservableCollection<Meal> Items
         {
             get
             {
@@ -45,7 +54,8 @@ namespace CP.Mobile.ListContent
             {
                 return new Command((data) =>
                 {
-                    mainPage.DisplayAlert("FlowListView", data + "", "Ok");
+                    var _meals = (data as CP.Mobile.ListContent.Meal);
+                    mainPage.Navigation.PushPopupAsync(new CP.Mobile.ListContent.CartModals.ProductDetails(_meals));
                 });
             }
         }

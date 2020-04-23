@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+             x:Class="CP.Mobile.ListContent.CartModals.ProductDetails"
+                xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" 
+                 xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 >
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+
+
+
+    <StackLayout x:Name="StlForm" x:Uid="StlForm"
+        VerticalOptions="Center" 
+        HorizontalOptions="FillAndExpand"
+        BackgroundColor="Transparent"
+        Margin="15, 0, 15, 0"
+                 >
+        <Frame BackgroundColor="#EEEEEE" CornerRadius="10">
+
+            <StackLayout x:Name="ProductDetail" x:Uid="ProductDetail" Orientation="Vertical">
+
+                <StackLayout Orientation="Horizontal">
+                    <Image x:Name="ImageMeal" x:Uid="ImageModal"  Margin="0,5" WidthRequest="125" HorizontalOptions="Center" />
+                    <StackLayout Orientation="Vertical">
+
+                        <StackLayout Orientation="Horizontal" Margin="5,8,0,0" Spacing="4">
+                            <Image Source="star.png" WidthRequest="24"/>
+                            <Label TextColor="Black" Text="9.3" VerticalTextAlignment="Center"/>
+                            <Image Source="comment.png" WidthRequest="24" Margin="7"/>
+                            <Label TextColor="Black" Text="5" VerticalTextAlignment="Center" />
+                            <Image Source="clock.png" WidthRequest="24" Margin="6"/>
+                                <Label TextColor="Black" Text="15 dk" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" Margin="5">
+                               <Label TextColor="Green" HorizontalOptions="Start" x:Name="LblName" x:Uid="LblName" Margin="0,2" FontSize="20"/>
+                            <Label TextColor="Red" Text="/ Yiyecek" Margin="0" FontSize="20"/>
+                        </StackLayout>
+                       
+                        <StackLayout Orientation="Horizontal">
+                            <Label  Text="Adet:" FontSize="17" VerticalTextAlignment="Center" TextColor="Black"/>
+                            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Orientation="Horizontal">
+                                <Button Text="+"  WidthRequest="40" HeightRequest="40" x:Name="btnPlus" x:Uid="btnPlus" Clicked="btnPlus_Clicked" />
+                                <Label x:Name="lblNumber" x:Uid="lblNumber"   Text="0" VerticalOptions="Center"></Label>
+                                <Button Text="-" WidthRequest="40" HeightRequest="40" x:Name="btnMinus" x:Uid="btnMinus" Clicked="btnMinus_Clicked"/>
+                            </StackLayout>
+                            <ImageButton Margin="10" BackgroundColor="Transparent" Source="cart2.png"  WidthRequest="28"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" Margin="5">
+                            <Label Text="Fiyat :"  FontSize="17" VerticalTextAlignment="Center" TextColor="Black"/>
+                            <Label Text="35 TL"  FontSize="17" VerticalTextAlignment="Center" TextColor="Black"/>
+                        </StackLayout>
+
+                    </StackLayout>
+                </StackLayout>
+
+
+
+                                                                              
+                <Label x:Name="lblDescription"  x:Uid="lblDescription" Margin="0,2" HorizontalOptions="Center" FontSize="16" TextColor="Black" />
+
+
+                <Button BackgroundColor="Red" x:Name="btnOk" x:Uid="btnOk" Text="Kapat" TextColor="White" Clicked="btnOk_Clicked" HorizontalOptions="Center" />
+            </StackLayout>
+
+
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>
