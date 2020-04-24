@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CP.Mobile.Tools.AlertModals;
+using Rg.Plugins.Popup.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,13 +15,15 @@ namespace CP.Mobile.TabbedPage
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MenuTabbed : Xamarin.Forms.TabbedPage
     {
-        public MenuTabbed()
+        public  MenuTabbed()
         {
+
             InitializeComponent();
             On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
             BarBackgroundColor = Color.FromHex("#eeeeee");
             BarTextColor = Color.Black;
+
         }
      
     }

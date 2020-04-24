@@ -1,0 +1,21 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @using (Html.BeginForm("ImageConvertByte", "Deneme", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input type="file" name="file2" id="file2" />
+        <button id="btnSend" type="submit">Gönder</button>
+    }
+
+</body>
+</html>

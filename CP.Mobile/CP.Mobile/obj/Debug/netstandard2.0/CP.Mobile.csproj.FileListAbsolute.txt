@@ -24,8 +24,6 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netst
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\CP.Mobile.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\ref\CP.Mobile.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\CP.Mobile.pdb
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\CP.Mobile.csproj.CoreCompileInputs.cache
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\ListContent\CartModals\ProductDetails.xaml.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\TabbedPage\MenuItemTabbed\Meals.xaml.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\TabbedPage\MenuTabbed.xaml.g.cs
@@ -33,3 +31,7 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netst
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\TabbedPage\DrinkItemTabbed\Cold.xaml.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\TabbedPage\DrinkItemTabbed\Hot.xaml.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\TabbedPage\DrinkTabbed.xaml.g.cs
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\ContentPages\Music.xaml.g.cs
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\ContentPages\Tables.xaml.g.cs
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\CP.Mobile.csproj.CoreCompileInputs.cache
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\XamlC.stamp

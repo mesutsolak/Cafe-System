@@ -1,4 +1,5 @@
-﻿using CP.Mobile.MasterDetailPages.Menus;
+﻿using CP.Mobile.ContentPages;
+using CP.Mobile.MasterDetailPages.Menus;
 using CP.Mobile.TabbedPage;
 using CP.Mobile.Tools.AlertModals;
 using Rg.Plugins.Popup.Extensions;
@@ -75,7 +76,7 @@ namespace CP.Mobile.MasterDetailPages
             menuList.Add(new MasterPageItem() {
                 Title = "Masalar",
                 Icon = "table.png",
-                TargetType = typeof(TestPage3)
+                TargetType = typeof(Tables)
             });
 
 

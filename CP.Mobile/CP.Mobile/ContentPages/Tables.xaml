@@ -3,9 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
              mc:Ignorable="d"
              x:Class="CP.Mobile.ContentPages.Tables">
     <ContentPage.Content>
-        
+        <flv:FlowListView FlowColumnCount="3"   
+                SeparatorVisibility="Default"   
+                HasUnevenRows="True"  
+                FlowItemTappedCommand="{Binding ItemTappedCommand}"   
+                FlowItemsSource="{Binding Items}">
+
+            <flv:FlowListView.FlowColumnTemplate>
+                <DataTemplate>
+                    
+                        <StackLayout>
+                        <Button WidthRequest="20" HeightRequest="80" Text="{Binding Text}" Clicked="Button_Clicked" TextColor="{Binding TextColor}" CommandParameter="{Binding Text}"/>
+                        </StackLayout>
+                </DataTemplate>
+            </flv:FlowListView.FlowColumnTemplate>
+        </flv:FlowListView>
     </ContentPage.Content>
 </ContentPage>
