@@ -4,6 +4,7 @@ using CP.BusinessLayer.UnitOfWork.Abstract.Basic;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,9 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
     {
 
         public IUserRepository UserRepository { get; private set; }
+        public IProductRepository  ProductRepository { get; private set; }
 
+        public ICategoryRepository CategoryRepository { get; private set; }
 
         private DbContext _context;
 
@@ -22,12 +25,21 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
         {
             _context = context;
             UserRepository = new UserRepository(_context);
+            ProductRepository = new ProductRepository(_context);
+            CategoryRepository = new CategoryRepository(_context);
         }
 
 
         public int Complete()
         {
-            return _context.SaveChanges();
+            try
+            {
+                return _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void Dispose()

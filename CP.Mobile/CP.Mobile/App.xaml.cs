@@ -18,8 +18,8 @@ namespace CP.Mobile
         {
             InitializeComponent();
             FlowListView.Init();
-            //MainPage = new NavigationPage(new SplashPage());
-            MainPage = new TestPage3();
+            MainPage = new NavigationPage(new SplashPage());
+            //MainPage = new TestPage3();
         }
         protected override void OnStart()
         {

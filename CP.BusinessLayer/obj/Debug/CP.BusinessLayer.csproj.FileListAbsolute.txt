@@ -20,3 +20,4 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\obj\Debug\CP.Busin
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.csproj.CopyComplete
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.pdb
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.BusinessLayer\bin\Debug\Firebase.Storage.dll

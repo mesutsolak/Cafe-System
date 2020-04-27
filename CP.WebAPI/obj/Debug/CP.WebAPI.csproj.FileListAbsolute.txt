@@ -84,3 +84,4 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\Owin.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.Cors.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\Microsoft.Owin.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\Microsoft.Owin.Security.xml
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\Firebase.Storage.dll

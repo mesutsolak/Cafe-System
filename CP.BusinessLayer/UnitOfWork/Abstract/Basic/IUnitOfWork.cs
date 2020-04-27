@@ -10,6 +10,8 @@ namespace CP.BusinessLayer.UnitOfWork.Abstract.Basic
     public interface IUnitOfWork : IDisposable
     {
         IUserRepository UserRepository { get; }
+        IProductRepository ProductRepository { get; }
+        ICategoryRepository CategoryRepository { get; }
         int Complete();
         Task<int> CompleteAsync();
     }

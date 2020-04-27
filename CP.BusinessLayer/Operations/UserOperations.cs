@@ -58,7 +58,7 @@ namespace CP.BusinessLayer.Operations
             if (!_data.UserRepository.IsThere(x => x.Username == loginControl.UserName && x.Password == loginControl.Password).Result)
                 return "Kullanıcı veya Şifre Yanlış";
 
-            if (!_data.UserRepository.GetByFilter(x => x.Username == loginControl.UserName).Status)
+            if (!_data.UserRepository.GetByFilter(x => x.Username == loginControl.UserName).Status.Value)
                 return "Kullanıcı Silinmiş";
            
             return "Başarıyla Giriş Yapıldı";

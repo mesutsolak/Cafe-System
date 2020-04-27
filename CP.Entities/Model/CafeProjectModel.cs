@@ -7,9 +7,15 @@ namespace CP.Entities.Model
 
     public partial class CafeProjectModel : DbContext
     {
-        public CafeProjectModel()
-            : base("CafeProjectModel")
+        static CafeProjectModel()
         {
+            Database.SetInitializer<CafeProjectModel>(null);
+        }
+
+        public CafeProjectModel()
+            : base("name=CafeProjectModel")
+        {
+            this.Database.Connection.Open();
             Database.SetInitializer<CafeProjectModel>(null);
             this.Configuration.LazyLoadingEnabled = false;
             this.Configuration.ProxyCreationEnabled = false;
@@ -35,6 +41,7 @@ namespace CP.Entities.Model
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<Table> Table { get; set; }
         public virtual DbSet<User> User { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -132,6 +139,14 @@ namespace CP.Entities.Model
             modelBuilder.Entity<User>()
                 .Property(e => e.LastName)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<User>()
+                .Property(e => e.Password)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<User>()
+                .Property(e => e.Photo)
+                .IsFixedLength();
         }
     }
 }

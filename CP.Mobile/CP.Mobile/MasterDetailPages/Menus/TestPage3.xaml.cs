@@ -1,4 +1,5 @@
 ﻿using CP.Mobile.Tools;
+using CP.ServiceLayer.Firebase;
 using Firebase.Storage;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
@@ -65,7 +66,7 @@ namespace CP.Mobile.MasterDetailPages.Menus
         {
             var result = Path.GetFileName(file.Path).Split('.');
             //son .dan sonrası alınmalı
-            await firebaseStorageHelper.UploadFile(file.GetStream(), Guid.NewGuid()+txtFileName.Text+"."+result[result.Length-1]);
+            //await firebaseStorageHelper.UploadFile(file.GetStream(), Guid.NewGuid()+txtFileName.Text+"."+result[result.Length-1]);
         }
      
 

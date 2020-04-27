@@ -20,7 +20,6 @@ namespace CP.Entities.Model
         public int Id { get; set; }
 
         [StringLength(150)]
-        [Required(ErrorMessage ="Kullanýcý Adý Gerekli")]
         public string Username { get; set; }
 
         [StringLength(150)]
@@ -29,14 +28,18 @@ namespace CP.Entities.Model
         [StringLength(150)]
         public string FirstName { get; set; }
 
-        public string Password { get; set; }
-
         [StringLength(150)]
         public string LastName { get; set; }
-        public byte[] Photo { get; set; }
 
-        public bool? IsConfirm { get; set; } = false;
-        public bool Status { get; set; } = true;
+        [StringLength(150)]
+        public string Password { get; set; }
+
+        public bool? IsConfirm { get; set; }
+
+        public bool? Status { get; set; }
+
+        [MaxLength(7000)]
+        public byte[] Photo { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comment { get; set; }

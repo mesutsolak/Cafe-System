@@ -26,7 +26,25 @@ namespace CP.BusinessLayer.Repository.Concrete.Basic
             _dbset.AddRange(entities);
         }
 
-        public List<T> GetAll() => _dbset.ToList();
+        public List<T> GetAll(Expression<Func<T, object>> expression = null)
+        {
+            try
+            {
+                if (expression == null)
+                {
+                    return _dbset.ToList();
+                }
+                else
+                {
+                    return _dbset.Include(expression).ToList();
+                }
+            }
+            catch (System.InvalidOperationException ex)
+            {
+
+                throw ex;
+            }
+        }
 
         public T GetByFilter(Expression<Func<T, bool>> expression = null)
         {

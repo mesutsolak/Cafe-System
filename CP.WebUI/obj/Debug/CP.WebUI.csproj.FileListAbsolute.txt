@@ -87,3 +87,11 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\System.Net.Http.Format
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\Newtonsoft.Json.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\EntityFramework.SqlServer.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\EntityFramework.SqlServer.xml
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\Firebase.Storage.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.WebUI\bin\Antlr3.Runtime.dll
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.WebUI\bin\System.Web.Optimization.dll
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.WebUI\bin\WebGrease.dll
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.WebUI\bin\Antlr3.Runtime.pdb
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.WebUI\bin\System.Web.Optimization.xml

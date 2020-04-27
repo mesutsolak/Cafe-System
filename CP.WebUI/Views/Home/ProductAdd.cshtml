@@ -1,0 +1,83 @@
+﻿@model CP.Entities.Model.Product
+
+<div class="modal inmodal" id="ProductAddModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fa fa-bars mr-2"></i>Ürüm Ekle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Ajax.BeginForm("ProductAddOperation", "Home", FormMethod.Post, new AjaxOptions()
+                {
+                    InsertionMode = InsertionMode.Replace,
+                    HttpMethod = "POST",
+                    OnSuccess = "returnPostProductAdd(data)",
+                    LoadingElementId = "loading-background",
+                },
+                new
+                {
+                    @class = "ProductAdd",
+                    @id = "frmProductAdd",
+                    @name = "frmProductAdd",
+                    @enctype = "multipart/form-data"
+                }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name)
+                        @Html.EditorFor(model => model.Name, "", new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger error-validate" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ProductDetail)
+                        @Html.TextAreaFor(model => model.ProductDetail, new { @class = "form-control", @spellcheck = "false" })
+                        @Html.ValidationMessageFor(model => model.ProductDetail, "", new { @class = "text-danger error-validate" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Information)
+                        @Html.TextAreaFor(model => model.Information, new { @class = "form-control", @spellcheck = "false" })
+                        @Html.ValidationMessageFor(model => model.Information, "", new { @class = "text-danger error-validate" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CategoryId)
+                        @Html.DropDownListFor(model => model.CategoryId, TempData["Categories"] as List<SelectListItem>, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger error-validate" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Price)
+                        @Html.TextBoxFor(model => model.Price, new { @class = "form-control",@type="number" })
+                        @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger error-validate" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Amount)
+                        @Html.TextBoxFor(model => model.Amount, new { @class = "form-control", @type = "number" })
+                        @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger error-validate" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Image)
+                        <div class="custom-file">
+                            @Html.TextBoxFor(model => model.Images, "", new { @type = "file", @class = "custom-file-input" })
+                            @Html.LabelFor(model => model.Image, "Resim Seçiniz", new { @class = "custom-file-label", @data_browse = "Seçiniz" })
+                            @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger error-validate" })
+                        </div>
+                    </div>
+
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="ProductClear">
+                    <i class="fa fa-trash mr-1"></i>
+                    Temizle
+                </button>
+                <button type="button" class="btn btn-primary" id="ProductSave">
+                    <i class="fa fa-save mr-1"></i>
+                    Kaydet
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

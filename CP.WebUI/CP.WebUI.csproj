@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,13 +45,148 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Firebase.Storage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FirebaseStorage.net.1.0.3\lib\netstandard1.1\Firebase.Storage.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.3.0\lib\net463\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.3.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tracing, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.Tracing.4.3.0\lib\net462\System.Diagnostics.Tracing.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq.Expressions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.0\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.4.3.0\lib\net463\System.Runtime.InteropServices.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.RegularExpressions.4.3.0\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -60,6 +196,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -67,6 +206,14 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Web.Razor">
@@ -95,22 +242,237 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\main.css" />
+    <Content Include="Content\framework\ckeditor\adapters\jquery.js" />
+    <Content Include="Content\framework\ckeditor\build-config.js" />
+    <Content Include="Content\framework\ckeditor\ckeditor.js" />
+    <Content Include="Content\framework\ckeditor\config.js" />
+    <Content Include="Content\framework\ckeditor\contents.css" />
+    <Content Include="Content\framework\ckeditor\lang\af.js" />
+    <Content Include="Content\framework\ckeditor\lang\ar.js" />
+    <Content Include="Content\framework\ckeditor\lang\az.js" />
+    <Content Include="Content\framework\ckeditor\lang\bg.js" />
+    <Content Include="Content\framework\ckeditor\lang\bn.js" />
+    <Content Include="Content\framework\ckeditor\lang\bs.js" />
+    <Content Include="Content\framework\ckeditor\lang\ca.js" />
+    <Content Include="Content\framework\ckeditor\lang\cs.js" />
+    <Content Include="Content\framework\ckeditor\lang\cy.js" />
+    <Content Include="Content\framework\ckeditor\lang\da.js" />
+    <Content Include="Content\framework\ckeditor\lang\de-ch.js" />
+    <Content Include="Content\framework\ckeditor\lang\de.js" />
+    <Content Include="Content\framework\ckeditor\lang\el.js" />
+    <Content Include="Content\framework\ckeditor\lang\en-au.js" />
+    <Content Include="Content\framework\ckeditor\lang\en-ca.js" />
+    <Content Include="Content\framework\ckeditor\lang\en-gb.js" />
+    <Content Include="Content\framework\ckeditor\lang\en.js" />
+    <Content Include="Content\framework\ckeditor\lang\eo.js" />
+    <Content Include="Content\framework\ckeditor\lang\es-mx.js" />
+    <Content Include="Content\framework\ckeditor\lang\es.js" />
+    <Content Include="Content\framework\ckeditor\lang\et.js" />
+    <Content Include="Content\framework\ckeditor\lang\eu.js" />
+    <Content Include="Content\framework\ckeditor\lang\fa.js" />
+    <Content Include="Content\framework\ckeditor\lang\fi.js" />
+    <Content Include="Content\framework\ckeditor\lang\fo.js" />
+    <Content Include="Content\framework\ckeditor\lang\fr-ca.js" />
+    <Content Include="Content\framework\ckeditor\lang\fr.js" />
+    <Content Include="Content\framework\ckeditor\lang\gl.js" />
+    <Content Include="Content\framework\ckeditor\lang\gu.js" />
+    <Content Include="Content\framework\ckeditor\lang\he.js" />
+    <Content Include="Content\framework\ckeditor\lang\hi.js" />
+    <Content Include="Content\framework\ckeditor\lang\hr.js" />
+    <Content Include="Content\framework\ckeditor\lang\hu.js" />
+    <Content Include="Content\framework\ckeditor\lang\id.js" />
+    <Content Include="Content\framework\ckeditor\lang\is.js" />
+    <Content Include="Content\framework\ckeditor\lang\it.js" />
+    <Content Include="Content\framework\ckeditor\lang\ja.js" />
+    <Content Include="Content\framework\ckeditor\lang\ka.js" />
+    <Content Include="Content\framework\ckeditor\lang\km.js" />
+    <Content Include="Content\framework\ckeditor\lang\ko.js" />
+    <Content Include="Content\framework\ckeditor\lang\ku.js" />
+    <Content Include="Content\framework\ckeditor\lang\lt.js" />
+    <Content Include="Content\framework\ckeditor\lang\lv.js" />
+    <Content Include="Content\framework\ckeditor\lang\mk.js" />
+    <Content Include="Content\framework\ckeditor\lang\mn.js" />
+    <Content Include="Content\framework\ckeditor\lang\ms.js" />
+    <Content Include="Content\framework\ckeditor\lang\nb.js" />
+    <Content Include="Content\framework\ckeditor\lang\nl.js" />
+    <Content Include="Content\framework\ckeditor\lang\no.js" />
+    <Content Include="Content\framework\ckeditor\lang\oc.js" />
+    <Content Include="Content\framework\ckeditor\lang\pl.js" />
+    <Content Include="Content\framework\ckeditor\lang\pt-br.js" />
+    <Content Include="Content\framework\ckeditor\lang\pt.js" />
+    <Content Include="Content\framework\ckeditor\lang\ro.js" />
+    <Content Include="Content\framework\ckeditor\lang\ru.js" />
+    <Content Include="Content\framework\ckeditor\lang\si.js" />
+    <Content Include="Content\framework\ckeditor\lang\sk.js" />
+    <Content Include="Content\framework\ckeditor\lang\sl.js" />
+    <Content Include="Content\framework\ckeditor\lang\sq.js" />
+    <Content Include="Content\framework\ckeditor\lang\sr-latn.js" />
+    <Content Include="Content\framework\ckeditor\lang\sr.js" />
+    <Content Include="Content\framework\ckeditor\lang\sv.js" />
+    <Content Include="Content\framework\ckeditor\lang\th.js" />
+    <Content Include="Content\framework\ckeditor\lang\tr.js" />
+    <Content Include="Content\framework\ckeditor\lang\tt.js" />
+    <Content Include="Content\framework\ckeditor\lang\ug.js" />
+    <Content Include="Content\framework\ckeditor\lang\uk.js" />
+    <Content Include="Content\framework\ckeditor\lang\vi.js" />
+    <Content Include="Content\framework\ckeditor\lang\zh-cn.js" />
+    <Content Include="Content\framework\ckeditor\lang\zh.js" />
+    <Content Include="Content\framework\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Content\framework\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="Content\framework\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Content\framework\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Content\framework\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Content\framework\ckeditor\plugins\dialog\styles\dialog.css" />
+    <Content Include="Content\framework\ckeditor\plugins\icons.png" />
+    <Content Include="Content\framework\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="Content\framework\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Content\framework\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Content\framework\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Content\framework\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="Content\framework\ckeditor\samples\css\samples.css" />
+    <Content Include="Content\framework\ckeditor\samples\img\github-top.png" />
+    <Content Include="Content\framework\ckeditor\samples\img\header-bg.png" />
+    <Content Include="Content\framework\ckeditor\samples\img\header-separator.png" />
+    <Content Include="Content\framework\ckeditor\samples\img\logo.png" />
+    <Content Include="Content\framework\ckeditor\samples\img\logo.svg" />
+    <Content Include="Content\framework\ckeditor\samples\img\navigation-tip.png" />
+    <Content Include="Content\framework\ckeditor\samples\index.html" />
+    <Content Include="Content\framework\ckeditor\samples\js\sample.js" />
+    <Content Include="Content\framework\ckeditor\samples\js\sf.js" />
+    <Content Include="Content\framework\ckeditor\samples\old\ajax.html" />
+    <Content Include="Content\framework\ckeditor\samples\old\api.html" />
+    <Content Include="Content\framework\ckeditor\samples\old\appendto.html" />
+    <Content Include="Content\framework\ckeditor\samples\old\assets\inlineall\logo.png" />
+    <Content Include="Content\framework\ckeditor\samples\old\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="Content\framework\ckeditor\samples\old\assets\posteddata.php" />
+    <Content Include="Content\framework\ckeditor\samples\old\assets\sample.jpg" />
+    <Content Include="Content\framework\ckeditor\samples\old\assets\uilanguages\languages.js" />
+    <Content Include="Content\framework\ckeditor\samples\old\datafiltering.html" />
+    <Content Include="Content\framework\ckeditor\samples\old\dialog\assets\my_dialog.js" />
+    <Content Include="Content\framework\ckeditor\samples\old\dialog\dialog.html" />
+    <Content Include="Content\framework\ckeditor\samples\old\divreplace.html" />
+    <Content Include="Content\framework\ckeditor\samples\old\enterkey\enterkey.html" />
+    <Content Include="Content\framework\ckeditor\samples\old\index.html" />
+    <Content Include="Content\framework\ckeditor\samples\old\inlineall.html" />
+    <Content Include="Content\framework\ckeditor\samples\old\inlinebycode.html" />
+    <Content Include="Content\framework\ckeditor\samples\old\inlinetextarea.html" />
+    <Content Include="Content\framework\ckeditor\samples\old\jquery.html" />
+    <Content Include="Content\framework\ckeditor\samples\old\readonly.html" />
+    <Content Include="Content\framework\ckeditor\samples\old\replacebyclass.html" />
+    <Content Include="Content\framework\ckeditor\samples\old\replacebycode.html" />
+    <Content Include="Content\framework\ckeditor\samples\old\sample.css" />
+    <Content Include="Content\framework\ckeditor\samples\old\sample.js" />
+    <Content Include="Content\framework\ckeditor\samples\old\sample_posteddata.php" />
+    <Content Include="Content\framework\ckeditor\samples\old\tabindex.html" />
+    <Content Include="Content\framework\ckeditor\samples\old\toolbar\toolbar.html" />
+    <Content Include="Content\framework\ckeditor\samples\old\uicolor.html" />
+    <Content Include="Content\framework\ckeditor\samples\old\uilanguages.html" />
+    <Content Include="Content\framework\ckeditor\samples\old\wysiwygarea\fullpage.html" />
+    <Content Include="Content\framework\ckeditor\samples\old\xhtmlstyle.html" />
+    <Content Include="Content\framework\ckeditor\samples\toolbarconfigurator\css\fontello.css" />
+    <Content Include="Content\framework\ckeditor\samples\toolbarconfigurator\font\fontello.svg" />
+    <Content Include="Content\framework\ckeditor\samples\toolbarconfigurator\font\LICENSE.txt" />
+    <Content Include="Content\framework\ckeditor\samples\toolbarconfigurator\index.html" />
+    <Content Include="Content\framework\ckeditor\samples\toolbarconfigurator\js\abstracttoolbarmodifier.js" />
+    <Content Include="Content\framework\ckeditor\samples\toolbarconfigurator\js\fulltoolbareditor.js" />
+    <Content Include="Content\framework\ckeditor\samples\toolbarconfigurator\js\toolbarmodifier.js" />
+    <Content Include="Content\framework\ckeditor\samples\toolbarconfigurator\js\toolbartextmodifier.js" />
+    <Content Include="Content\framework\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.css" />
+    <Content Include="Content\framework\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.js" />
+    <Content Include="Content\framework\ckeditor\samples\toolbarconfigurator\lib\codemirror\javascript.js" />
+    <Content Include="Content\framework\ckeditor\samples\toolbarconfigurator\lib\codemirror\neo.css" />
+    <Content Include="Content\framework\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.css" />
+    <Content Include="Content\framework\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.js" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\dialog.css" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\dialog_ie.css" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\dialog_ie8.css" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\dialog_iequirks.css" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\editor.css" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\editor_gecko.css" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\editor_ie.css" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\editor_ie8.css" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\editor_iequirks.css" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\icons.png" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\icons_hidpi.png" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\images\arrow.png" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\images\close.png" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\images\hidpi\close.png" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\images\hidpi\lock-open.png" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\images\hidpi\lock.png" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\images\hidpi\refresh.png" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\images\lock-open.png" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\images\lock.png" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\images\refresh.png" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\images\spinner.gif" />
+    <Content Include="Content\framework\ckeditor\styles.js" />
+    <Content Include="Content\framework\ckeditor\vendor\promise.js" />
+    <Content Include="Content\framework\DataTable\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\framework\DataTable\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Content\framework\DataTable\js\jquery.dataTables.min.js" />
+    <Content Include="Content\image\Loading2.gif" />
+    <Content Include="Content\image\no-image.png" />
+    <Content Include="Content\js\all.min.js" />
+    <Content Include="Content\js\boostrap.js" />
+    <Content Include="Content\js\jquery-cookie.js" />
+    <Content Include="Content\js\jquery.js" />
+    <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\Pagejs\Meal.js" />
+    <Content Include="Content\js\popper.js" />
+    <Content Include="Content\js\sweetalert2.js" />
+    <Content Include="Content\template\401.html" />
+    <Content Include="Content\template\404.html" />
+    <Content Include="Content\template\500.html" />
+    <Content Include="Content\template\assets\demo\chart-area-demo.js" />
+    <Content Include="Content\template\assets\demo\chart-bar-demo.js" />
+    <Content Include="Content\template\assets\demo\chart-pie-demo.js" />
+    <Content Include="Content\template\assets\demo\datatables-demo.js" />
+    <Content Include="Content\template\assets\img\error-404-monochrome.svg" />
+    <Content Include="Content\template\charts.html" />
+    <Content Include="Content\template\css\styles.css" />
+    <Content Include="Content\template\index.html" />
+    <Content Include="Content\template\js\scripts.js" />
+    <Content Include="Content\template\layout-sidenav-light.html" />
+    <Content Include="Content\template\layout-static.html" />
+    <Content Include="Content\template\login.html" />
+    <Content Include="Content\template\password.html" />
+    <Content Include="Content\template\register.html" />
+    <Content Include="Content\template\tables.html" />
     <Content Include="Global.asax" />
+    <Content Include="Content\js\jquery.unobtrusive-ajax.js" />
+    <Content Include="Content\js\jquery.validate.js" />
+    <Content Include="Content\js\jquery.validate.unobtrusive.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\DenemeController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\JsonResultModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="Content\framework\ckeditor\CHANGES.md" />
+    <Content Include="Content\framework\ckeditor\LICENSE.md" />
+    <Content Include="Content\framework\ckeditor\README.md" />
+    <Content Include="Content\framework\ckeditor\samples\toolbarconfigurator\font\config.json" />
+    <Content Include="Content\framework\ckeditor\samples\toolbarconfigurator\font\fontello.eot" />
+    <Content Include="Content\framework\ckeditor\samples\toolbarconfigurator\font\fontello.ttf" />
+    <Content Include="Content\framework\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
+    <Content Include="Content\framework\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
+    <Content Include="Content\framework\ckeditor\skins\moono-lisa\readme.md" />
     <None Include="packages.config" />
-    <Content Include="Views\Deneme\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Products.cshtml" />
+    <Content Include="Views\Home\Categories.cshtml" />
+    <Content Include="Views\Home\ProductAdd.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -120,12 +482,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\css\" />
-    <Folder Include="Content\framework\" />
-    <Folder Include="Content\image\" />
-    <Folder Include="Content\js\" />
-    <Folder Include="Content\template\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +492,10 @@
     <ProjectReference Include="..\CP.Entities\CP.Entities.csproj">
       <Project>{BC027EB7-78F7-4106-9963-3426C8DC9C05}</Project>
       <Name>CP.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CP.ServiceLayer\CP.ServiceLayer.csproj">
+      <Project>{B50E3529-B401-4EA7-9C5A-EAF8DE0FE60F}</Project>
+      <Name>CP.ServiceLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
