@@ -1,0 +1,15 @@
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\bin\Debug\CP.DesktopUI.exe.config
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\bin\Debug\CP.DesktopUI.exe
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\bin\Debug\CP.DesktopUI.pdb
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\obj\Debug\CP.DesktopUI.csprojAssemblyReference.cache
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\obj\Debug\MainWindow.g.cs
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\obj\Debug\App.g.cs
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\obj\Debug\CP.DesktopUI_MarkupCompile.cache
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\obj\Debug\CP.DesktopUI_MarkupCompile.lref
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\obj\Debug\MainWindow.baml
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\obj\Debug\CP.DesktopUI.g.resources
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\obj\Debug\CP.DesktopUI.Properties.Resources.resources
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\obj\Debug\CP.DesktopUI.csproj.GenerateResource.cache
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\obj\Debug\CP.DesktopUI.csproj.CoreCompileInputs.cache
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\obj\Debug\CP.DesktopUI.exe
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\obj\Debug\CP.DesktopUI.pdb

@@ -15,6 +15,7 @@ namespace CP.Entities.Model
             Comment = new HashSet<Comment>();
             Order = new HashSet<Order>();
             OrderHistory = new HashSet<OrderHistory>();
+            UserRoles = new HashSet<UserRoles>();
         }
 
         public int Id { get; set; }
@@ -38,8 +39,8 @@ namespace CP.Entities.Model
 
         public bool? Status { get; set; }
 
-        [MaxLength(7000)]
-        public byte[] Photo { get; set; }
+        [StringLength(200)]
+        public string Photo { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comment { get; set; }
@@ -49,5 +50,8 @@ namespace CP.Entities.Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderHistory> OrderHistory { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserRoles> UserRoles { get; set; }
     }
 }

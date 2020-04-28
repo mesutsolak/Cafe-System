@@ -19,7 +19,7 @@ namespace CP.ServiceLayer.DTO
         public string Password { get; set; }
 
         public string LastName { get; set; }
-        public byte[] Photo { get; set; }
+        public string Photo { get; set; }
 
         public bool? IsConfirm { get; set; } = false;
         public bool Status { get; set; } = true;

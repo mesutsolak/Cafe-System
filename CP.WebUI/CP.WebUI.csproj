@@ -417,6 +417,7 @@
     <Content Include="Content\js\jquery-cookie.js" />
     <Content Include="Content\js\jquery.js" />
     <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\Pagejs\LogOn.js" />
     <Content Include="Content\js\Pagejs\Meal.js" />
     <Content Include="Content\js\popper.js" />
     <Content Include="Content\js\sweetalert2.js" />
@@ -449,10 +450,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AccessDeniedAuthorizeAttribute.cs" />
     <Compile Include="Models\JsonResultModel.cs" />
+    <Compile Include="Models\UserRoleProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -473,6 +477,8 @@
     <Content Include="Views\Home\Products.cshtml" />
     <Content Include="Views\Home\Categories.cshtml" />
     <Content Include="Views\Home\ProductAdd.cshtml" />
+    <Content Include="Views\User\Logon.cshtml" />
+    <Content Include="Views\Base\AccessDenied.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -482,7 +488,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CP.BusinessLayer\CP.BusinessLayer.csproj">

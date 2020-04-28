@@ -61,9 +61,9 @@ namespace CP.BusinessLayer.Repository.Concrete.Basic
         public void Remove(int id)
         {
             var _entity = GetById(id);
-            if (_entity.GetType().GetProperty("Status") != null)
+            if (_entity.GetType().GetProperty("IsDeleted") != null)
             {
-                _context.Entry(_entity).Property("Status").CurrentValue = false;
+                _context.Entry(_entity).Property("IsDeleted").CurrentValue = false;
             }
             else
             {
@@ -73,9 +73,9 @@ namespace CP.BusinessLayer.Repository.Concrete.Basic
 
         public void Remove(T entity)
         {
-            if (entity.GetType().GetProperty("Status") != null)
+            if (entity.GetType().GetProperty("IsDeleted") != null)
             {
-                _context.Entry(entity).Property("Status").CurrentValue = false;
+                _context.Entry(entity).Property("IsDeleted").CurrentValue = false;
             }
             else
             {

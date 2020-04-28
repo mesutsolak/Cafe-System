@@ -7,15 +7,9 @@ namespace CP.Entities.Model
 
     public partial class CafeProjectModel : DbContext
     {
-        static CafeProjectModel()
-        {
-            Database.SetInitializer<CafeProjectModel>(null);
-        }
-
         public CafeProjectModel()
             : base("name=CafeProjectModel")
         {
-            this.Database.Connection.Open();
             Database.SetInitializer<CafeProjectModel>(null);
             this.Configuration.LazyLoadingEnabled = false;
             this.Configuration.ProxyCreationEnabled = false;
@@ -39,9 +33,10 @@ namespace CP.Entities.Model
         public virtual DbSet<OrderHistory> OrderHistory { get; set; }
         public virtual DbSet<Phones> Phones { get; set; }
         public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<Roles> Roles { get; set; }
         public virtual DbSet<Table> Table { get; set; }
         public virtual DbSet<User> User { get; set; }
-
+        public virtual DbSet<UserRoles> UserRoles { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -121,8 +116,17 @@ namespace CP.Entities.Model
                 .IsUnicode(false);
 
             modelBuilder.Entity<Product>()
-                .Property(e => e.Information)
+                .Property(e => e.Image)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<Roles>()
+                .Property(e => e.Name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Roles>()
+                .HasMany(e => e.UserRoles)
+                .WithOptional(e => e.Roles)
+                .HasForeignKey(e => e.RoleId);
 
             modelBuilder.Entity<User>()
                 .Property(e => e.Username)
@@ -146,7 +150,7 @@ namespace CP.Entities.Model
 
             modelBuilder.Entity<User>()
                 .Property(e => e.Photo)
-                .IsFixedLength();
+                .IsUnicode(false);
         }
     }
 }

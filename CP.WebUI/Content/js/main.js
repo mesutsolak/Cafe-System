@@ -141,6 +141,24 @@ function FormClear(FormId) {
             _children.html("Afiş Seçiniz");
         }
     });
+
+    CkEditorResetValue("ProductDetail");
+
+}
+
+
+/**
+ *  TextArea Convert CKEditor
+ * @param {string} Name CkEditorsName
+ * @param {string} language Language Type
+ * @returns {void}
+ */
+function ConvertCkEditor(Name, language) {
+    //txtCV,ckProjectContent,CkEditorUpdate,content
+    CKEDITOR.replace(Name, {
+        language: language,
+        fullPage: true
+    });
 }
 
 
@@ -151,6 +169,14 @@ function SweetAlert(erroricon, errortitle, errortext) {
         text: errortext,
         confirmButtonText: "Tamam"
     })
+}
+
+/**
+ *
+ * @param {string} CkEditorName CKEditorName
+ */
+function CkEditorResetValue(CkEditorName) {
+    CKEDITOR.instances[CkEditorName].content.setData('');
 }
 
 
@@ -239,3 +265,44 @@ function CookieRemoveAllValue(key, _values) {
 function CookieReset(key) {
     $.removeCookie(key);
 }
+
+
+function returnPostJson(data) {
+    SweetAlert(data.Icon, data.Title, data.Description);
+    if (!$.null(data.Url)) {
+        setTimeout(function () {
+            window.location.replace(data.Url);
+        },1500);
+    }
+}
+
+$.extend({
+    null: function (value) {
+        if (value == null) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+});
+
+$("#btnSignOut").on("click", function () {
+    Swal.fire({
+        title: 'Çıkış İşlemi?',
+        text: "Çıkmak İstiyor musunuz ?",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Evet',
+        cancelButtonText: 'Hayır'
+    }).then((result) => {
+        if (result.value) {
+            $.ajax({
+                type: 'POST',
+                url: "User/LogOut",
+            });
+        }
+    })
+});

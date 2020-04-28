@@ -1,6 +1,7 @@
 ﻿using CP.BusinessLayer.Operations;
 using CP.BusinessLayer.Tools;
 using CP.Entities.Model;
+using CP.WebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,11 +16,14 @@ namespace CP.WebUI.Controllers
     {
         // GET: Home
         [Route("Anasayfa")]
+        [AccessDeniedAuthorizeAttribute(Roles ="Admin")]
+        //[Authorize()]
         public ActionResult Index()
         {
             return View();
         }
         [Route("Ürünler")]
+        [AccessDeniedAuthorizeAttribute(Roles = "Customer,Admin")]
         public ActionResult Products()
         {
             return View(ProductOperation.GetUsers(x => x.Category));
@@ -45,7 +49,7 @@ namespace CP.WebUI.Controllers
 
             SelectListItems.Insert(0, new SelectListItem
             {
-                Text = "Menü Seçiniz",
+                Text = "Kategori Seçiniz",
                 Value = "0",
             });
 

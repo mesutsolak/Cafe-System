@@ -85,3 +85,14 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.Cors.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\Microsoft.Owin.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\Microsoft.Owin.Security.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\Firebase.Storage.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.Mvc.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.WebPages.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.WebPages.Razor.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.Razor.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.Mvc.xml
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.WebPages.xml
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.WebPages.Razor.xml
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.Razor.xml
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.WebPages.Deployment.xml

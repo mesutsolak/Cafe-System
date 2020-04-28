@@ -1,8 +1,23 @@
 ﻿
 $(function () {
     TableConvertDataTables("tblProduct");
+    ConvertCkEditor("ProductDetail", "tr");
 });
 
+
+$(document).on("click", "#ImageView", function () {
+   var _src = $(this).attr("src");
+
+    if (_src.startsWith("/Content")) {
+        debugger;
+        SweetAlert("error", "Hata", "Resim Bulunamadı");
+    }
+    else {
+        $("#ImgViewSrc").attr("src", _src);
+        $("#ImageShowModal").modal("show");
+    }
+
+});
 
 $("#ProductAdd").on("click", function () {
     $("#ProductAddModal").modal("show");
@@ -16,17 +31,12 @@ $("#ProductClear").on("click", function () {
     FormClear("frmProductAdd");
 });
 
-function returnPostProductAdd(data) {
-    debugger;
-    SweetAlert2(data.Icon, "Ekleme İşlemi",data.Description);
-}
 
 function SweetAlert2(erroricon, errortitle, errortext) {
     Swal.fire({
         icon: erroricon,
         title: errortitle,
-        text: errortext,
-        confirmButtonText: "Tamam"
+        text: errortext
     })
 }
 

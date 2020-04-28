@@ -40,12 +40,33 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,21 +75,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202004261114124_InitialCreate.cs" />
-    <Compile Include="Migrations\202004261114124_InitialCreate.designer.cs">
-      <DependentUpon>202004261114124_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004261133318_ProductImage.cs" />
-    <Compile Include="Migrations\202004261133318_ProductImage.designer.cs">
-      <DependentUpon>202004261133318_ProductImage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004261729127_araupdate.cs" />
-    <Compile Include="Migrations\202004261729127_araupdate.designer.cs">
-      <DependentUpon>202004261729127_araupdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004271037532_Aea.cs" />
-    <Compile Include="Migrations\202004271037532_Aea.designer.cs">
-      <DependentUpon>202004271037532_Aea.cs</DependentUpon>
+    <Compile Include="CustomValidator\IsUniqueProductName.cs" />
+    <Compile Include="Migrations\202004281418077_InitialCreate.cs" />
+    <Compile Include="Migrations\202004281418077_InitialCreate.designer.cs">
+      <DependentUpon>202004281418077_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\CafeProjectModel.cs" />
@@ -90,8 +100,10 @@
     <Compile Include="Model\OrderHistory.cs" />
     <Compile Include="Model\Phones.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\Roles.cs" />
     <Compile Include="Model\Table.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Model\UserRoles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -99,17 +111,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004261114124_InitialCreate.resx">
-      <DependentUpon>202004261114124_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004261133318_ProductImage.resx">
-      <DependentUpon>202004261133318_ProductImage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004261729127_araupdate.resx">
-      <DependentUpon>202004261729127_araupdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004271037532_Aea.resx">
-      <DependentUpon>202004271037532_Aea.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004281418077_InitialCreate.resx">
+      <DependentUpon>202004281418077_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

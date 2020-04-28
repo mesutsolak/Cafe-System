@@ -18,50 +18,40 @@ namespace CP.Entities.Model
             Order = new HashSet<Order>();
         }
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [StringLength(75)]
-        [Display(Name ="Adý")]
         [Required]
+        [StringLength(75)]
         public string Name { get; set; }
 
-        [Display(Name = "Kategori Adý")]
         public int? CategoryId { get; set; }
 
         [Column(TypeName = "text")]
-        [Display(Name = "Ürün Detayý")]
+        [Required]
         public string ProductDetail { get; set; }
 
-        [Column(TypeName = "text")]
-        [Display(Name = "Ürün Bilgileri")]
-        public string Information { get; set; }
-
-        [Display(Name = "Fiyat")]
         public int? Price { get; set; }
 
-        [Display(Name = "Miktar")]
         public int? Amount { get; set; }
-
-        [Display(Name = "Görüntülenme Sayýsý")]
 
         public int? Views { get; set; }
 
-        [Display(Name = "Puan")]
         public int? Rating { get; set; }
 
-        [NotMapped]
-        public HttpPostedFileBase Images  { get; set; }
-
-        [Column(TypeName = "varchar")]
-        [Display(Name = "Resim")]
+        [Column(TypeName = "text")]
         public string Image { get; set; }
+
+        public bool IsDeleted { get; set; }
+
+        public int Time { get; set; }
+
+        [NotMapped]
+        public HttpPostedFileBase Images { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CampProduct> CampProduct { get; set; }
 
-        public  Category Category { get; set; }
+        public virtual Category Category { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comment { get; set; }

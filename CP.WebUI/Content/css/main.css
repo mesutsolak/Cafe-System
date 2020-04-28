@@ -3,7 +3,7 @@
     pointer-events: all;
 }
 
-.ImgView, .no-image {
+#ImageView {
     cursor: pointer;
     pointer-events: all;
 }

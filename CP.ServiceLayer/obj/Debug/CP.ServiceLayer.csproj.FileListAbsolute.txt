@@ -9,7 +9,7 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.Servic
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.csproj.CopyComplete
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.pdb
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.csprojAssemblyReference.cache
 C:\Users\Mesut Solak\source\repos\CafeSystem\CP.ServiceLayer\bin\Debug\Firebase.Storage.dll
 C:\Users\Mesut Solak\source\repos\CafeSystem\CP.ServiceLayer\bin\Debug\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Mesut Solak\source\repos\CafeSystem\CP.ServiceLayer\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.csprojAssemblyReference.cache
