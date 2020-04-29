@@ -36,5 +36,10 @@ namespace CP.WebUI.Controllers
             ViewBag.Message = message;
             return View();
         }
+        [AllowAnonymous]
+        public ActionResult Error()
+        {
+            return View();
+        }
     }
 }

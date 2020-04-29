@@ -95,3 +95,11 @@ C:\Users\Mesut Solak\source\repos\CafeSystem\CP.WebUI\bin\System.Web.Optimizatio
 C:\Users\Mesut Solak\source\repos\CafeSystem\CP.WebUI\bin\WebGrease.dll
 C:\Users\Mesut Solak\source\repos\CafeSystem\CP.WebUI\bin\Antlr3.Runtime.pdb
 C:\Users\Mesut Solak\source\repos\CafeSystem\CP.WebUI\bin\System.Web.Optimization.xml
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\System.Buffers.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\System.Memory.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\System.Numerics.Vectors.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\System.Buffers.xml
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\System.Memory.xml
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\System.Numerics.Vectors.xml
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\System.Runtime.CompilerServices.Unsafe.xml

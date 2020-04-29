@@ -1,0 +1,25 @@
+﻿using CP.WebUI.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace CP.WebUI.App_Start
+{
+    public class FilterConfig
+    {
+        public static void RegisterGlobalFilters(GlobalFilterCollection filters)
+        {
+            filters.Add(new HandleErrors());
+            //filters.Add(new HandleErrors());
+            //filters.Add(new HandleErrors());
+            //filters.Add(new HandleErrorAttribute
+            //{
+            //    ExceptionType = typeof(System.Data.DataException),
+            //    View = "CommonBlogError"
+            //});
+            //filters.Add(new HandleErrorAttribute());
+        }
+    }
+}

@@ -37,6 +37,7 @@ namespace CP.Entities.Model
         public virtual DbSet<Table> Table { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<UserRoles> UserRoles { get; set; }
+        public virtual DbSet<LogInfo> LogInfo { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -80,10 +81,6 @@ namespace CP.Entities.Model
 
             modelBuilder.Entity<Locations>()
                 .Property(e => e.LocationName)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Log>()
-                .Property(e => e.Description)
                 .IsUnicode(false);
 
             modelBuilder.Entity<LogStatus>()

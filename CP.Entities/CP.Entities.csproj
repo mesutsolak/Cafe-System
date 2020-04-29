@@ -80,6 +80,10 @@
     <Compile Include="Migrations\202004281418077_InitialCreate.designer.cs">
       <DependentUpon>202004281418077_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004292021483_LogRemoveDescription.cs" />
+    <Compile Include="Migrations\202004292021483_LogRemoveDescription.designer.cs">
+      <DependentUpon>202004292021483_LogRemoveDescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\CafeProjectModel.cs" />
     <Compile Include="Model\Campaign.cs" />
@@ -92,6 +96,7 @@
     <Compile Include="Model\Images.cs" />
     <Compile Include="Model\Locations.cs" />
     <Compile Include="Model\Log.cs" />
+    <Compile Include="Model\LogInfo.cs" />
     <Compile Include="Model\LogStatus.cs" />
     <Compile Include="Model\Menu.cs" />
     <Compile Include="Model\MusicClaim.cs" />
@@ -113,6 +118,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202004281418077_InitialCreate.resx">
       <DependentUpon>202004281418077_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004292021483_LogRemoveDescription.resx">
+      <DependentUpon>202004292021483_LogRemoveDescription.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

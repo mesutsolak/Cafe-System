@@ -1,5 +1,7 @@
 ﻿using CP.BusinessLayer.Operations;
 using CP.ServiceLayer.DTO;
+using CP.WebUI.Models;
+using CP.WebUI.Models.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +13,19 @@ namespace CP.WebUI.Controllers
 {
     public class UserController : BaseController
     {
+        [AllowAnonymous]
+        [HandleErrors]
+        public ActionResult Deneme()
+        {
+            int i = 10;
+            if (i==11)
+            {
+                throw new MyException("Sayı 10 olamaz");
+            }
+            i = i / 0;
+            return View();
+        }
+
         // GET: User
         [Route("Giriş Yap")]
         [AllowAnonymous]
@@ -35,6 +50,7 @@ namespace CP.WebUI.Controllers
         }
 
        
+       
 
         [HttpPost]
         [AllowAnonymous]
@@ -55,7 +71,7 @@ namespace CP.WebUI.Controllers
                 else
                     jsonResultModel.Icon = "error";
 
-                jsonResultModel.Description = _result;
+                jsonResultModel.Description = _result ??"Bir hata meydana geldi";
             }
             else
             {

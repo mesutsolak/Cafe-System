@@ -34,7 +34,12 @@ namespace CP.BusinessLayer.Operations
             _data.UserRepository.Remove(id);
             return await _data.CompleteAsync();
         }
-        
+       
+        public static int UserFindId(string UserName)
+        {
+            return _data.UserRepository.GetByFilter(x => x.Username == UserName).Id;
+        }
+
         public async static Task<bool> UserNameControl(string UserName)
         {
            return await _data.UserRepository.IsThere(x=>x.Username == UserName);

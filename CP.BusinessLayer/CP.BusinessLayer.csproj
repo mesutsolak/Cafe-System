@@ -54,6 +54,7 @@
     <Compile Include="DataAccess.cs" />
     <Compile Include="Operations\BaseOperation.cs" />
     <Compile Include="Operations\CategoryOperation.cs" />
+    <Compile Include="Operations\LogOperation.cs" />
     <Compile Include="Operations\ProductOperation.cs" />
     <Compile Include="Operations\UserOperations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

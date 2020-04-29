@@ -24,3 +24,5 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\bin\Debug\System.Web.We
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.InitialCreate.resources
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.csproj.GenerateResource.cache
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.csprojAssemblyReference.cache
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.LogRemoveDescription.resources

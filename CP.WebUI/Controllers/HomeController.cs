@@ -16,14 +16,14 @@ namespace CP.WebUI.Controllers
     {
         // GET: Home
         [Route("Anasayfa")]
-        [AccessDeniedAuthorizeAttribute(Roles ="Admin")]
-        //[Authorize()]
+        [AccessDeniedAuthorize(Roles ="Admin")]
         public ActionResult Index()
         {
+
             return View();
         }
         [Route("Ürünler")]
-        [AccessDeniedAuthorizeAttribute(Roles = "Customer,Admin")]
+        [AccessDeniedAuthorize(Roles = "Customer,Admin")]
         public ActionResult Products()
         {
             return View(ProductOperation.GetUsers(x => x.Category));
