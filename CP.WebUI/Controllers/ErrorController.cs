@@ -15,54 +15,74 @@ namespace CP.WebUI.Controllers
 
         public ActionResult PageError(Exception exception=null)
         {
-            if (exception!=null)
+            if (exception != null)
             {
-                models.Exception = exception;
+                Session["Exception"]= exception;
             }
             return View(models);
         }
         public ActionResult Page404(string aspxerrorpath)
         {
+            Session["Source"] = null;
+
             if (!string.IsNullOrEmpty(aspxerrorpath))
-                models.Source = aspxerrorpath;
+                Session["Source"] = aspxerrorpath;
 
-            models.Title = "Sayfa Bulunamadı";
+            Session["Title"] = "Sayfa Bulunamadı";
 
-            models.Url = "~/Content/template/assets/img/error-404-monochrome.svg";
+            Session["Url"] = "/Content/template/assets/img/error-404-monochrome.svg";
 
-            return View("PageError",null);
+            return RedirectToAction("PageError");
         }
         public ActionResult Page403(string aspxerrorpath)
         {
-            if (!string.IsNullOrEmpty(aspxerrorpath))
-                models.Source = aspxerrorpath;
-            models.Title = "Sayfa Gizlenmiştir";
+            Session["Source"] = null;
 
-            models.Url = "https://cdn.dribbble.com/users/516732/screenshots/4527062/dribbble-403.png";
+            if (!string.IsNullOrEmpty(aspxerrorpath))
+                Session["Source"] = aspxerrorpath;
+
+            Session["Title"] = "Sayfa Gizlenmiştir";
+
+            Session["Url"] = "https://cdn.dribbble.com/users/516732/screenshots/4527062/dribbble-403.png";
 
             return View("PageError",null);
         }
         public ActionResult Page500(string aspxerrorpath)
         {
-            if (!string.IsNullOrEmpty(aspxerrorpath))
-                models.Source = aspxerrorpath;
-            models.Title = "Sunucuda bir hata oluştu ve istek karşılanamadı.";
+            Session["Source"] = null;
 
-            models.Url = "https://cdn1.iconfinder.com/data/icons/browser-5/100/ui-brower-go-25-512.png";
+            if (!string.IsNullOrEmpty(aspxerrorpath))
+                Session["Source"] = aspxerrorpath;
+
+            Session["Title"] = "Sunucuda bir hata oluştu ve istek karşılanamadı.";
+
+            Session["Url"] = "https://cdn1.iconfinder.com/data/icons/browser-5/100/ui-brower-go-25-512.png";
 
             return View("PageError",null);
         }
         public ActionResult Page401(string aspxerrorpath)
         {
+            Session["Source"] = null;
+
             if (!string.IsNullOrEmpty(aspxerrorpath))
-                models.Source = aspxerrorpath;
+                Session["Source"] = aspxerrorpath;
 
-            models.Url = "https://cdn1.iconfinder.com/data/icons/website-internet-browser/711/401_error_unauthorized_internet_window_browser-512.png";
+            Session["Url"] = "https://cdn1.iconfinder.com/data/icons/website-internet-browser/711/401_error_unauthorized_internet_window_browser-512.png";
 
-            models.Title = "İstek için kimlik doğrulaması gerekiyor.";
+            Session["Title"] = "İstek için kimlik doğrulaması gerekiyor.";
 
             return View("PageError",null);
         }
+        [Route("Hata")]
+        public ActionResult CustomError()
+        {
+            Session["Source"] = "Özel bir hata meydana geldi yetkililer en kısa zamanda sorunu çözecektir";
 
+            Session["Url"] = "https://lh3.googleusercontent.com/proxy/39ug6zrvJLzBlCzz78myctjjONdX9MaMSyaQJKKtsARHS2BHHanypNC8YIkUr5DXwZjSgQAIMHGPhOUdYaoAZLWpv7Sqsix4asQ653zBTGUC38XMF2Hl15fETA";
+
+            Session["Title"] = "Hata";
+
+            return View("PageError", null);
+        }
     }
 }

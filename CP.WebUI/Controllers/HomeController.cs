@@ -19,7 +19,6 @@ namespace CP.WebUI.Controllers
         [AccessDeniedAuthorize(Roles ="Admin")]
         public ActionResult Index()
         {
-
             return View();
         }
         [Route("Ürünler")]

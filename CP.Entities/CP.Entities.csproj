@@ -84,6 +84,10 @@
     <Compile Include="Migrations\202004292021483_LogRemoveDescription.designer.cs">
       <DependentUpon>202004292021483_LogRemoveDescription.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004301029118_LogDataColumnAdd.cs" />
+    <Compile Include="Migrations\202004301029118_LogDataColumnAdd.designer.cs">
+      <DependentUpon>202004301029118_LogDataColumnAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\CafeProjectModel.cs" />
     <Compile Include="Model\Campaign.cs" />
@@ -121,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004292021483_LogRemoveDescription.resx">
       <DependentUpon>202004292021483_LogRemoveDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004301029118_LogDataColumnAdd.resx">
+      <DependentUpon>202004301029118_LogDataColumnAdd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

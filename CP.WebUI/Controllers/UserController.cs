@@ -14,7 +14,6 @@ namespace CP.WebUI.Controllers
     public class UserController : BaseController
     {
         [AllowAnonymous]
-        [HandleErrors]
         public ActionResult Deneme()
         {
             int i = 10;

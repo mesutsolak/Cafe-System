@@ -25,8 +25,7 @@ namespace CP.Entities.Model
         [Column(TypeName = "varchar")]
         [MaxLength(150)]
         public string UrlAccessed { get; set; }
-        [Column(TypeName = "varchar")]
-        [MaxLength(150)]
+        [Column(TypeName = "text")]
         public string Data { get; set; }
         public long ExecutionMs { get; set; }
         public System.DateTime AddedDate { get; set; }

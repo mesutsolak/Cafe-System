@@ -470,7 +470,6 @@
     <Compile Include="Models\AccessDeniedAuthorize.cs" />
     <Compile Include="Models\ErrorModel.cs" />
     <Compile Include="Models\Exceptions\MyException.cs" />
-    <Compile Include="Models\HandleCatch.cs" />
     <Compile Include="Models\HandleErrors.cs" />
     <Compile Include="Models\JsonResultModel.cs" />
     <Compile Include="Models\UserRoleProvider.cs" />
@@ -508,6 +507,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\Abstract\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CP.BusinessLayer\CP.BusinessLayer.csproj">
