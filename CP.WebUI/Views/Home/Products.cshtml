@@ -1,4 +1,5 @@
 ﻿@model List<CP.Entities.Model.Product>
+
 @{
     ViewBag.Title = "Yemekler";
 }
@@ -50,7 +51,8 @@
                 </div>
             </div>
         </div>
-        <div class="card-text">
+        <div class="card-text product-body">
+
             <div class="table table-responsive tblresponsive">
                 <table class="table table-bordered display no-wrap" cellspacing="0" width="100%" id="tblProduct">
                     <thead>
@@ -99,7 +101,7 @@
 
                                     <img src="@(Url.Content(product.Image ?? "~/Content/image/no-image.png"))" height="30" class="avatar-sm" id="ImageView" />
                                 </td>
-                                <td>
+                                <td class="text-center">
                                     <i class="fas fa-pencil-alt ProductUpdate mr-2" data-id="@product.Id"></i>
 
                                     <i class="fa fa-trash ProductDelete" data-id="@product.Id"></i>
@@ -109,6 +111,7 @@
                     </tbody>
                 </table>
             </div>
+
         </div>
     </div>
 </div>
@@ -123,13 +126,15 @@
                 </button>
             </div>
             <div class="modal-body">
-               <img src="" id="ImgViewSrc" width="465"/>
+                <img src="" id="ImgViewSrc" width="465" />
             </div>
         </div>
     </div>
 </div>
 
+<div class="product-update-modal">
 
+</div>
 
 
 @Html.Action("ProductAdd", new { Controller = "Home", Action = "ProductAdd" })
@@ -137,7 +142,6 @@
 
 @section js{
 
-    <script src="~/Content/framework/ckeditor/ckeditor.js"></script>
     <script src="~/Content/framework/DataTable/js/jquery.dataTables.min.js"></script>
     <script src="~/Content/framework/DataTable/js/dataTables.bootstrap4.min.js"></script>
     <script src="~/Content/js/Pagejs/Meal.js"></script>

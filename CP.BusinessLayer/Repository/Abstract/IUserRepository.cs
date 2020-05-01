@@ -12,5 +12,6 @@ namespace CP.BusinessLayer.Repository.Abstract
 {
     public interface IUserRepository : IRepository<User>
     {
+      
     }
 }

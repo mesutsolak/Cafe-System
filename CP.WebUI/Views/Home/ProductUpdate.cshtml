@@ -1,6 +1,6 @@
 ﻿@model CP.Entities.Model.Product
 
-<div class="modal inmodal" id="ProductAddModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal inmodal" id="ProductUpdateModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content animated bounceInRight">
             <div class="modal-header">
@@ -10,23 +10,25 @@
                 </button>
             </div>
             <div class="modal-body">
-                @using (Ajax.BeginForm("ProductAddOperation", "Home", FormMethod.Post, new AjaxOptions()
+                @using (Ajax.BeginForm("ProductUpdateOperation", "Home", FormMethod.Post, new AjaxOptions()
                 {
                     InsertionMode = InsertionMode.Replace,
                     HttpMethod = "POST",
                     OnSuccess = "returnPostJson(data)",
                     LoadingElementId = "loading-background",
-                    OnComplete="ProductList()"
+                    OnComplete = "ProductList()"
                 },
                 new
                 {
-                    @class = "ProductAdd",
-                    @id = "frmProductAdd",
-                    @name = "frmProductAdd",
+                    @class = "ProductUpdateForm",
+                    @id = "frmProductUpdate",
+                    @name = "frmProductUpdate",
                     @enctype = "multipart/form-data"
                 }))
                 {
                     @Html.AntiForgeryToken()
+
+                    <input type="hidden" value="@Model.Id" name="Id" />
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.Name)
@@ -40,7 +42,7 @@
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(model => model.CategoryId)
-                        @Html.DropDownListFor(model => model.CategoryId, TempData["Categories"] as List<SelectListItem>,"Kategori Seçiniz", new { @class = "form-control" })
+                        @Html.DropDownListFor(model => model.CategoryId, TempData["Categories"] as List<SelectListItem>, "Kategori Seçiniz", new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger error-validate" })
                     </div>
                     <div class="form-group">
@@ -62,19 +64,19 @@
                         @Html.LabelFor(model => model.Image)
                         <div class="custom-file">
                             @Html.TextBoxFor(model => model.Images, "", new { @type = "file", @class = "custom-file-input" })
-                            @Html.LabelFor(model => model.Image, "Resim Seçiniz", new { @class = "custom-file-label", @data_browse = "Seçiniz" })
+                            @Html.LabelFor(model => model.Image, (ViewBag.ProductName as string) ??"Resim Seçiniz", new { @class = "custom-file-label", @data_browse = "Seçiniz" })
                             @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger error-validate" })
+                            <input type="hidden" value="@Model.Image" name="Image" />
                         </div>
                     </div>
-
                 }
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" id="ProductClear">
+                <button type="button" class="btn btn-danger" id="ProductUpdateClear">
                     <i class="fa fa-trash mr-1"></i>
                     Temizle
                 </button>
-                <button type="button" class="btn btn-primary" id="ProductSave">
+                <button type="button" class="btn btn-primary" id="ProductUpdateSave">
                     <i class="fa fa-save mr-1"></i>
                     Kaydet
                 </button>

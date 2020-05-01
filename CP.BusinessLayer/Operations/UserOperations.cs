@@ -6,11 +6,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.Http;
+using System.Web;
 
 namespace CP.BusinessLayer.Operations
 {
     public class UserOperations : BaseOperation
     {
+        static Random rnd = new Random();
+        public static string UserFirstAndLast(string username)
+        {
+           var user= _data.UserRepository.GetByFilter(x=>x.Username == username);
+            return user.FirstName + " " + user.LastName;
+        }
+
         public async static Task<int> UserAdd(M.User user)
         {
             _data.UserRepository.Add(user);
@@ -68,5 +77,19 @@ namespace CP.BusinessLayer.Operations
            
             return "Başarıyla Giriş Yapıldı";
         }
-    }                                        
+        //public static string PasswordForget(string Email)
+        //{
+        //    if (!_data.UserRepository.IsThere(x => x.Email == Email).Result)
+        //        return "Kullanıcı Bulunmadı";
+        //    else
+        //    {
+        //        HttpContext.Current.Session["Email"] = Email;
+                
+        //    }
+        //}
+        //public static string CreateCaptcha()
+        //{
+        //    return rnd.Next(10000000, 99999999).ToString();
+        //}
+    }                                       
 }

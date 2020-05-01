@@ -16,7 +16,7 @@ namespace CP.WebUI.Controllers
     {
         // GET: Home
         [Route("Anasayfa")]
-        [AccessDeniedAuthorize(Roles ="Admin")]
+        [AccessDeniedAuthorize(Roles = "Customer,Employee")]
         public ActionResult Index()
         {
             return View();
@@ -32,6 +32,87 @@ namespace CP.WebUI.Controllers
         {
             return View();
         }
+        [Route("ProductList")]
+        public PartialViewResult ProductList()
+        {
+            return PartialView(ProductOperation.GetUsers(x => x.Category));
+        }
+
+        [Route("ProductUpdate")]
+        [AllowAnonymous]
+        [HttpPost]
+        public PartialViewResult ProductUpdate(int id)
+        {
+            var product = ProductOperation.ProductFind(id);
+
+            if (product.Image!=null)
+            {             
+                   var productName = product.Image.Substring(124, product.Image.Length-124).Split('?');
+                ViewBag.ProductName = productName[0];
+            }
+           
+
+            SelectListItems.Clear();
+
+            foreach (var item in CategoryOperation.GetCategories())
+            {
+                if (product.CategoryId == item.Id)
+                {
+                    SelectListItems.Add(new SelectListItem
+                    {
+                        Text = item.Name,
+                        Value = item.Id.ToString(),
+                        Selected=true
+                    });
+                }
+                else
+                {
+                    SelectListItems.Add(new SelectListItem
+                    {
+                        Text = item.Name,
+                        Value = item.Id.ToString()
+                    });
+                }
+            }
+
+            TempData["Categories"] = SelectListItems;
+
+            return PartialView(product);
+        }  
+
+        [HttpPost]
+        public async Task<JsonResult> ProductUpdateOperation(Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                if (!product.Images.IsNullObject() && product.Images.ContentLength > 0)
+                {
+                    var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(product.Images.FileName);
+                    product.Image = await firebaseStorageHelper.UploadFile(product.Images.InputStream, ImageName, "Product");
+                }
+
+                int id = ProductOperation.ProductUpdate(product);
+
+                if (id > 0)
+                {
+                    jsonResultModel.Icon = "success";
+                    jsonResultModel.Description = "Ürün Başarıyla Güncellendi";
+                    jsonResultModel.Modal = "ProductUpdateModal";
+                }
+                else
+                {
+                    jsonResultModel.Icon = "error";
+                    jsonResultModel.Description = "Ürün Güncelleme Başarısız";
+                }
+            }
+            else
+            {
+                jsonResultModel.Icon = "error";
+                jsonResultModel.Description = "Lütfen eksiksiz doldurun";
+            }
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
+        }
+
         [Route("ProductAdd")]
         public PartialViewResult ProductAdd()
         {
@@ -45,12 +126,6 @@ namespace CP.WebUI.Controllers
                     Value = item.Id.ToString()
                 });
             }
-
-            SelectListItems.Insert(0, new SelectListItem
-            {
-                Text = "Kategori Seçiniz",
-                Value = "0",
-            });
 
             TempData["Categories"] = SelectListItems;
 

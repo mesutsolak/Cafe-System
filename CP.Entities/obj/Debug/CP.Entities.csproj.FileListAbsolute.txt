@@ -26,3 +26,4 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.M
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.csproj.GenerateResource.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.LogRemoveDescription.resources
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.LogDataColumnAdd.resources
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.csprojAssemblyReference.cache

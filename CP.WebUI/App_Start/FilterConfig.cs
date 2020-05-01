@@ -12,14 +12,6 @@ namespace CP.WebUI.App_Start
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrors());
-            //filters.Add(new HandleErrors());
-            //filters.Add(new HandleErrors());
-            //filters.Add(new HandleErrorAttribute
-            //{
-            //    ExceptionType = typeof(System.Data.DataException),
-            //    View = "CommonBlogError"
-            //});
-            //filters.Add(new HandleErrorAttribute());
         }
     }
 }

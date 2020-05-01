@@ -18,5 +18,6 @@ namespace CP.BusinessLayer.Repository.Concrete
 
         }
         public CafeProjectModel CafeDB => _context as CafeProjectModel; //bu cast işlemine sürekli ihtiyac duyacağız.
+
     }
 }

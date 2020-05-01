@@ -1,4 +1,4 @@
-﻿button, input[type='button,reset'] {
+﻿button, input[type='button,reset'], #btnSignOut {
     cursor: pointer;
     pointer-events: all;
 }

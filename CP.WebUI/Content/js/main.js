@@ -8,7 +8,7 @@ $(document).on("click", ".form-clear", function () {
     $(".CategoryUpdateModalContent").find('form').get(0).reset();
 });
 
-$('input[type="file"]').change(function (e) {
+$(document).on("change", "input[type='file']",function (e) {
     var fileName = e.target.files[0].name;
     $(this).next('.custom-file-label').html(fileName);
 });
@@ -142,8 +142,6 @@ function FormClear(FormId) {
         }
     });
 
-    CkEditorResetValue("ProductDetail");
-
 }
 
 
@@ -268,12 +266,18 @@ function CookieReset(key) {
 
 
 function returnPostJson(data) {
+
+    if (!$.null(data.Modal)) {
+        $(document).find("#" + data.Modal).modal("hide");
+    }
+
     SweetAlert(data.Icon, data.Title, data.Description);
     if (!$.null(data.Url)) {
         setTimeout(function () {
             window.location.replace(data.Url);
         },1500);
     }
+   
 }
 
 $.extend({
@@ -302,6 +306,9 @@ $("#btnSignOut").on("click", function () {
             $.ajax({
                 type: 'POST',
                 url: "User/LogOut",
+                success: function () {
+                    window.location.replace("/Giriş Yap");
+                }
             });
         }
     })

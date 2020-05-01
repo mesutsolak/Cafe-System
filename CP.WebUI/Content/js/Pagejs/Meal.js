@@ -1,8 +1,11 @@
 ﻿
 $(function () {
     TableConvertDataTables("tblProduct");
-    ConvertCkEditor("ProductDetail", "tr");
+    //ConvertCkEditor("ProductDetail", "tr");
 });
+
+
+
 
 
 $(document).on("click", "#ImageView", function () {
@@ -19,8 +22,50 @@ $(document).on("click", "#ImageView", function () {
 
 });
 
+function ProductList() {
+    $.get("/ProductList", null, function (result) {
+        $(document).find(".product-body").html(result);
+    });
+}
+
+
 $("#ProductAdd").on("click", function () {
     $("#ProductAddModal").modal("show");
+});
+
+$(document).on("click", ".ProductUpdate", function () {
+    var _id = $(this).data("id");
+
+    $.ajax({
+        type: 'POST',
+        url: "/ProductUpdate",
+        data: { id: _id },
+        dataType: 'html',
+        success: function (data) {
+            $(".product-update-modal").html(data);
+            $(document).find("#ProductUpdateModal").modal("show");
+        },
+        error: function (xhr) { // if error occured
+            alert("Error occured.please try again" + xhr.statusText + xhr.responseText);
+        },
+    });
+
+
+    //$.get("/ProductUpdate", , function (data) {
+    //    $(".product-update-modal").html(data);
+    //    $(document).find("#ProductUpdateModal").modal("show");
+    //});
+});
+
+
+$(document).on("click", "#ProductUpdateSave", function () {
+    FormPost('frmProductUpdate')
+});
+
+
+
+$(document).on("click", "#ProductUpdateClear", function () {
+    FormClear('frmProductUpdate');
 });
 
 $("#ProductSave").on("click", function () {

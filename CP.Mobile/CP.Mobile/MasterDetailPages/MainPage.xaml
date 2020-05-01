@@ -28,6 +28,7 @@
                     <!--
                         
                     -->
+                                   
                     <ListView x:Name="navigationDrawerList" RowHeight="60" SeparatorVisibility="Default" SeparatorColor="Gray" BackgroundColor="White" ItemSelected="OnMenuItemSelected">
                         <ListView.ItemTemplate>
                             <DataTemplate>

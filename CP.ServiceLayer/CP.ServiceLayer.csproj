@@ -186,6 +186,7 @@
     <Compile Include="Concrete\Basic\Service.cs" />
     <Compile Include="Concrete\UserService.cs" />
     <Compile Include="DTO\LoginControl.cs" />
+    <Compile Include="DTO\PasswordForgetDTO.cs" />
     <Compile Include="DTO\User.cs" />
     <Compile Include="Firebase\FirebaseStorageHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

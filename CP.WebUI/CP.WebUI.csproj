@@ -496,8 +496,10 @@
     <Content Include="Views\Home\ProductAdd.cshtml" />
     <Content Include="Views\User\Logon.cshtml" />
     <Content Include="Views\Base\AccessDenied.cshtml" />
-    <Content Include="Views\User\Deneme.cshtml" />
     <Content Include="Views\Error\PageError.cshtml" />
+    <Content Include="Views\User\PasswordForget.cshtml" />
+    <Content Include="Views\Home\ProductList.cshtml" />
+    <Content Include="Views\Home\ProductUpdate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

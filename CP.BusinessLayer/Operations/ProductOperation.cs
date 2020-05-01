@@ -24,5 +24,19 @@ namespace CP.BusinessLayer.Operations
             _data.ProductRepository.Add(product);
             return  _data.Complete();
         }
+        public static Product ProductFind(int id)
+        {
+            return _data.ProductRepository.GetById(id);
+        }
+        public static int ProductUpdate(Product product)
+        {
+            _data.ProductRepository.Update(product);
+            return _data.Complete();
+        }
+        public static int ProductRemove(int id)
+        {
+            _data.ProductRepository.Remove(id);
+            return _data.Complete();
+        }
     }
 }

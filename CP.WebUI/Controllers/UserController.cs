@@ -1,4 +1,5 @@
 ﻿using CP.BusinessLayer.Operations;
+using C=CP.Entities.Model;
 using CP.ServiceLayer.DTO;
 using CP.WebUI.Models;
 using CP.WebUI.Models.Exceptions;
@@ -13,18 +14,6 @@ namespace CP.WebUI.Controllers
 {
     public class UserController : BaseController
     {
-        [AllowAnonymous]
-        public ActionResult Deneme()
-        {
-            int i = 10;
-            if (i==11)
-            {
-                throw new MyException("Sayı 10 olamaz");
-            }
-            i = i / 0;
-            return View();
-        }
-
         // GET: User
         [Route("Giriş Yap")]
         [AllowAnonymous]
@@ -42,14 +31,38 @@ namespace CP.WebUI.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public ActionResult LogOut()
+        public void LogOut()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Logon","User");
+            Session.Abandon();
         }
 
-       
-       
+        [AllowAnonymous]
+        public PartialViewResult Register()
+        {
+            return PartialView(new C.User());
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public JsonResult RegisterOperation()
+        {
+            return null;
+        }
+
+        [AllowAnonymous]
+        public PartialViewResult PasswordForget()
+        {
+            return PartialView(new PasswordForgetDTO());
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public JsonResult PasswordOperation()
+        {
+            return null;
+        }
+
 
         [HttpPost]
         [AllowAnonymous]
@@ -63,6 +76,8 @@ namespace CP.WebUI.Controllers
 
                 if (_result.StartsWith("Başarıyla"))
                 {
+                    Session["FirstAndLast"] = UserOperations.UserFirstAndLast(loginControl.UserName);
+
                     jsonResultModel.Icon = "success";
                     jsonResultModel.Url = "/Anasayfa";
                     FormsAuthentication.SetAuthCookie(loginControl.UserName, false);
