@@ -5,6 +5,7 @@ namespace CP.Entities.Model
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web;
 
     [Table("User")]
     public partial class User
@@ -37,10 +38,13 @@ namespace CP.Entities.Model
 
         public bool? IsConfirm { get; set; }
 
-        public bool? Status { get; set; }
+        public bool? IsDeleted { get; set; }
 
         [StringLength(200)]
-        public string Photo { get; set; }
+        public string Image { get; set; }
+
+        [NotMapped]
+        public HttpPostedFileBase Images { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comment { get; set; }

@@ -76,17 +76,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomValidator\IsUniqueProductName.cs" />
-    <Compile Include="Migrations\202004281418077_InitialCreate.cs" />
-    <Compile Include="Migrations\202004281418077_InitialCreate.designer.cs">
-      <DependentUpon>202004281418077_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202005011922193_InitialCreate.cs" />
+    <Compile Include="Migrations\202005011922193_InitialCreate.designer.cs">
+      <DependentUpon>202005011922193_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004292021483_LogRemoveDescription.cs" />
-    <Compile Include="Migrations\202004292021483_LogRemoveDescription.designer.cs">
-      <DependentUpon>202004292021483_LogRemoveDescription.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004301029118_LogDataColumnAdd.cs" />
-    <Compile Include="Migrations\202004301029118_LogDataColumnAdd.designer.cs">
-      <DependentUpon>202004301029118_LogDataColumnAdd.cs</DependentUpon>
+    <Compile Include="Migrations\202005012041514_IsDeleted.cs" />
+    <Compile Include="Migrations\202005012041514_IsDeleted.designer.cs">
+      <DependentUpon>202005012041514_IsDeleted.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\CafeProjectModel.cs" />
@@ -97,7 +93,6 @@
     <Compile Include="Model\CompanyInformation.cs" />
     <Compile Include="Model\Contact.cs" />
     <Compile Include="Model\Emails.cs" />
-    <Compile Include="Model\Images.cs" />
     <Compile Include="Model\Locations.cs" />
     <Compile Include="Model\Log.cs" />
     <Compile Include="Model\LogInfo.cs" />
@@ -120,14 +115,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004281418077_InitialCreate.resx">
-      <DependentUpon>202004281418077_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005011922193_InitialCreate.resx">
+      <DependentUpon>202005011922193_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004292021483_LogRemoveDescription.resx">
-      <DependentUpon>202004292021483_LogRemoveDescription.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004301029118_LogDataColumnAdd.resx">
-      <DependentUpon>202004301029118_LogDataColumnAdd.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005012041514_IsDeleted.resx">
+      <DependentUpon>202005012041514_IsDeleted.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

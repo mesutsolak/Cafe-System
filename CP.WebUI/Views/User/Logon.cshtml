@@ -14,8 +14,9 @@
     <title>Giriş Yap</title>
     <link href="~/Content/template/css/styles.css" rel="stylesheet" />
     <link href="~/Content/css/main.css" rel="stylesheet" />
+    <link rel="Shortcut Icon" href="~/Content/image/cafe.ico" type="image/x-icon">
 </head>
-<body class="bg-primary">
+<body class="bg-primary background">
     <div id="loading-background">
         <div id="loading-img">
             <img width="100" src="~/Content/image/Loading2.gif" />
@@ -28,7 +29,10 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-5">
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                                <div class="card-header">
+                                    <img src="https://image.flaticon.com/icons/png/512/33/33308.png" class="center mt-2" width="75">
+                                    <h3 class="text-center text-bold font-weight-bold my-3">Login</h3>
+                                </div>
                                 <div class="card-body">
                                     @using (Ajax.BeginForm("LogonOperation", "User", FormMethod.Post, new AjaxOptions()
                                     {
@@ -37,13 +41,13 @@
                                         OnSuccess = "returnPostJson(data)",
                                         LoadingElementId = "loading-background",
                                     },
-                                    new
-                                    {
-                                        @class = "UserLogOn",
-                                        @id = "frmUserLogOn",
-                                        @name = "frmUserLogOn",
-                                    }))
-                                    {
+                            new
+                            {
+                            @class = "UserLogOn",
+                            @id = "frmUserLogOn",
+                            @name = "frmUserLogOn",
+                            }))
+                                                                {
                                         @Html.AntiForgeryToken()
                                         <div class="form-group">
                                             @Html.LabelFor(model => model.UserName, new { @class = "small mb-1" })
@@ -77,7 +81,7 @@
                                         </div>
                                         <div class="card-footer mt-3 text-center">
                                             <div class="small">
-                                                <a href="register.html">Hesabınız yok mu ? Kayıt Olun</a>
+                                                <a href="javascript:void(0)" id="btnRegister">Hesabınız yok mu ? Kayıt Olun</a>
                                             </div>
                                         </div>
                                     }
@@ -103,6 +107,15 @@
             </footer>
         </div>
     </div>
+
+    <div class="modal-register">
+
+    </div>
+
+
+    @*@{Html.RenderAction("Register","User","Register");}*@
+
+
 
     <script src="~/Content/js/all.min.js"></script>
     <script src="~/Content/js/jquery.js"></script>

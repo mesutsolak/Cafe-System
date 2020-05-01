@@ -13,9 +13,5 @@ namespace CP.Entities.Model
 
         [StringLength(150)]
         public string Name { get; set; }
-
-        public int? ImageId { get; set; }
-
-        public virtual Images Images { get; set; }
     }
 }

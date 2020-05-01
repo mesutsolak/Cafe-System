@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace CP.Entities.Model
 {
+    [Table("LogInfoes")]
     public class LogInfo
     {
 

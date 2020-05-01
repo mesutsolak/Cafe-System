@@ -22,7 +22,6 @@ namespace CP.Entities.Model
         public virtual DbSet<CompanyInformation> CompanyInformation { get; set; }
         public virtual DbSet<Contact> Contact { get; set; }
         public virtual DbSet<Emails> Emails { get; set; }
-        public virtual DbSet<Images> Images { get; set; }
         public virtual DbSet<Locations> Locations { get; set; }
         public virtual DbSet<Log> Log { get; set; }
         public virtual DbSet<LogStatus> LogStatus { get; set; }
@@ -65,19 +64,6 @@ namespace CP.Entities.Model
                 .Property(e => e.Email)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Images>()
-                .Property(e => e.Name)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Images>()
-                .HasMany(e => e.Category)
-                .WithOptional(e => e.Images)
-                .HasForeignKey(e => e.ImageId);
-
-            modelBuilder.Entity<Images>()
-                .HasMany(e => e.Menu)
-                .WithOptional(e => e.Images)
-                .HasForeignKey(e => e.ImageId);
 
             modelBuilder.Entity<Locations>()
                 .Property(e => e.LocationName)
@@ -145,9 +131,6 @@ namespace CP.Entities.Model
                 .Property(e => e.Password)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<User>()
-                .Property(e => e.Photo)
-                .IsUnicode(false);
         }
     }
 }

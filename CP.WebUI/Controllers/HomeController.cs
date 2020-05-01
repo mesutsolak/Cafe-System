@@ -21,6 +21,13 @@ namespace CP.WebUI.Controllers
         {
             return View();
         }
+        [Route("Panel")]
+        [AccessDeniedAuthorize(Roles = "Employee")]
+        public ActionResult Dashboard()
+        {
+            return View();
+        }
+
         [Route("Ürünler")]
         [AccessDeniedAuthorize(Roles = "Customer,Admin")]
         public ActionResult Products()

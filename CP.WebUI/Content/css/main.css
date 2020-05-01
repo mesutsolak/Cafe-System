@@ -8,6 +8,18 @@
     pointer-events: all;
 }
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:auto;
+}
+
+.background {
+    background-image: url('../image/background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
 
 .ProductUpdate, .ProductDelete {
     cursor: pointer;

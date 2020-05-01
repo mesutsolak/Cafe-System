@@ -28,7 +28,7 @@ namespace CP.BusinessLayer.Repository.Concrete.Basic
 
         public List<T> GetAll(Expression<Func<T, object>> expression = null, Expression<Func<T, bool>> condition=null)
         {
-            if (expression == null)
+            if (expression == null || condition == null)
             {
                 return _dbset.ToList();
             }

@@ -1,0 +1,79 @@
+﻿@using C = CP.Entities.Model;
+@model C.User
+
+<div class="modal inmodal" id="UserAddModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-users mr-2"></i>Kullanıcı Kayıt</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Ajax.BeginForm("UserAddOperation", "Home", FormMethod.Post, new AjaxOptions()
+                {
+                    InsertionMode = InsertionMode.Replace,
+                    HttpMethod = "POST",
+                    OnSuccess = "returnPostJson(data)",
+                    LoadingElementId = "loading-background"
+                },
+                new
+                {
+                    @class = "UserAdd",
+                    @id = "frmUserAdd",
+                    @name = "frmUserAdd",
+                    @enctype = "multipart/form-data"
+                }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.FirstName)
+                        @Html.EditorFor(model => model.FirstName, "", new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger error-validate" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.LastName)
+                        @Html.TextAreaFor(model => model.LastName, new { @class = "form-control text-editor", @spellcheck = "false" })
+                        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger error-validate" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Username)
+                        @Html.TextAreaFor(model => model.Username, new { @class = "form-control text-editor", @spellcheck = "false" })
+                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger error-validate" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email)
+                        @Html.TextAreaFor(model => model.Email, new { @class = "form-control text-editor", @spellcheck = "false" })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger error-validate" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Password)
+                        @Html.TextAreaFor(model => model.Password, new { @class = "form-control text-editor", @spellcheck = "false" })
+                        @Html.ValidationMessageFor(model => model., "", new { @class = "text-danger error-validate" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Image)
+                        <div class="custom-file">
+                            @Html.TextBoxFor(model => model.Images, "", new { @type = "file", @class = "custom-file-input" })
+                            @Html.LabelFor(model => model.Image, "Resim Seçiniz", new { @class = "custom-file-label", @data_browse = "Seçiniz" })
+                            @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger error-validate" })
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="UserClear">
+                    <i class="fa fa-trash mr-1"></i>
+                    Temizle
+                </button>
+                <button type="button" class="btn btn-primary" id="UserSave">
+                    <i class="fa fa-save mr-1"></i>
+                    Kaydet
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+

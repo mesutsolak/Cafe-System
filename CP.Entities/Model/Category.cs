@@ -12,19 +12,20 @@ namespace CP.Entities.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Category()
         {
-            Product = new HashSet<Product>();
+
         }
 
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [StringLength(100)]
+        [Display(Name = "Kategori Adý")]
+        [Required(ErrorMessage = "Kategori adý boþ býrakýlamaz")]
+        [MaxLength(75, ErrorMessage = "Kategori adý 75 karakterden fazla olamaz")]
+        [RegularExpression("^[a-zA-ZçÇðÐýÝöÖþÞüÜ]*$", ErrorMessage = "Sadece harflerden oluþmalýdýr")]
         public string Name { get; set; }
 
-        public int? ImageId { get; set; }
-
-        public virtual Images Images { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Product { get; set; }
+        [Display(Name = "Kategori Resmi")]
+        public string Image { get; set; }
     }
 }

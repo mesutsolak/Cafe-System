@@ -37,10 +37,14 @@ namespace CP.WebUI.Controllers
             Session.Abandon();
         }
 
+        [HttpGet]
+        [ChildActionOnly]
+        [AcceptVerbs(HttpVerbs.Get)]
+        [Route("Register")]
         [AllowAnonymous]
         public PartialViewResult Register()
         {
-            return PartialView(new C.User());
+            return PartialView("Register",new C.User());
         }
 
         [AllowAnonymous]
@@ -58,9 +62,29 @@ namespace CP.WebUI.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public JsonResult PasswordOperation()
+        public JsonResult PasswordOperation(PasswordForgetDTO passwordForgetDTO)
         {
-            return null;
+            jsonResultModel.Title = "Şifremi Unuttum";
+            if (ModelState.IsValid)
+            {
+                var result = UserOperations.PasswordForget(passwordForgetDTO.Email);
+
+                if (result.StartsWith("Başarıyla"))
+                {
+                    jsonResultModel.Icon = "success";
+                }
+                else
+                    jsonResultModel.Icon = "error";
+
+                jsonResultModel.Description = result ?? "Bir hata meydana geldi";
+
+            }
+            else
+            {
+                jsonResultModel.Description = "Lütfen formu eksiksiz doğrulayın";
+                jsonResultModel.Icon = "error";
+            }
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
         }
 
 

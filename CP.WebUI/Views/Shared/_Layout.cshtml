@@ -15,7 +15,10 @@
 
     <link href="~/Content/template/css/styles.css" rel="stylesheet" />
     <link href="~/Content/css/main.css" rel="stylesheet" />
- 
+
+    <link rel="Shortcut Icon" href="~/Content/image/cafe.ico" type="image/x-icon">
+
+
     @RenderSection("css", false)
 
 
@@ -59,12 +62,17 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Admin</div>
                         @{
                             if (Roles.IsUserInRole(HttpContext.Current.User.Identity.Name, "Admin") && User.IsInRole("Customer"))
                             {
-                                <a class="nav-link" href="index.html">
+                                <a class="nav-link" href="~/Panel">
                                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                    Dashboard
+                                    Panel
+                                </a>
+                                <a class="nav-link" href="~/Roller">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-user-tag"></i></div>
+                                    Roller
                                 </a>
                             }
 
