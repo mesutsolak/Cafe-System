@@ -15,9 +15,9 @@ namespace CP.BusinessLayer.Operations
         {
             return await _data.ProductRepository.GetAllAsync();
         }
-        public static List<Product> GetUsers(Expression<Func<Product, object>> expression = null)
+        public static List<Product> GetProducts(Expression<Func<Product, object>> expression = null, Expression<Func<Product, bool>> condition = null)
         {
-            return _data.ProductRepository.GetAll(expression);
+            return _data.ProductRepository.GetAll(expression,condition);
         }
         public  static int ProductAdd(Product product)
         {                    

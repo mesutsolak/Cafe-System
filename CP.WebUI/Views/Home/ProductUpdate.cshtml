@@ -4,7 +4,7 @@
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content animated bounceInRight">
             <div class="modal-header">
-                <h5 class="modal-title"><i class="fa fa-bars mr-2"></i>Ürün Ekle</h5>
+                <h5 class="modal-title"><i class="fa fa-box-open mr-2"></i>Ürün Güncelle</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -64,10 +64,16 @@
                         @Html.LabelFor(model => model.Image)
                         <div class="custom-file">
                             @Html.TextBoxFor(model => model.Images, "", new { @type = "file", @class = "custom-file-input" })
-                            @Html.LabelFor(model => model.Image, (ViewBag.ProductName as string) ??"Resim Seçiniz", new { @class = "custom-file-label", @data_browse = "Seçiniz" })
+                            @Html.LabelFor(model => model.Image, (ViewBag.ProductName as string) ?? "Resim Seçiniz", new { @class = "custom-file-label", @data_browse = "Seçiniz" })
                             @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger error-validate" })
                             <input type="hidden" value="@Model.Image" name="Image" />
                         </div>
+                        @if (Model.Image != null)
+                        {
+                            <div class="mt-2 ImageCancel">
+                                <i class="fas fa-times text-danger mr-2" style="color:red"></i><label class="text-danger">Resmi kaldır</label>
+                            </div>
+                        }
                     </div>
                 }
             </div>

@@ -60,16 +60,17 @@ function RemoveBasicOperations(RemoveItem) {
                     if (data.Description === "Başarıyla Silindi") {
                         SweetAlert(data.Icon, "Silme İşlemi", RemoveItem.fullname + " başarıyla silindi");
                         //RemoveItem.removeitem.remove();
-                        CategoryListFill();
-                        if (RemoveItem.checked == true) {
-                            CookieRemoveValue("Secilenler", RemoveItem.id.toString());
-                            CookieRemoveValue("SecilenName", RemoveItem.name.toString());
-                            CookieValueWrite("Secilenler");
-                            CategoryCheckedList();
-                        }
+                        RemoveItem.Method();
+                        //CategoryListFill();
+                        //if (RemoveItem.checked == true) {
+                        //    CookieRemoveValue("Secilenler", RemoveItem.id.toString());
+                        //    CookieRemoveValue("SecilenName", RemoveItem.name.toString());
+                        //    CookieValueWrite("Secilenler");
+                        //    CategoryCheckedList();
+                        //}
                     }
                     else {
-                        Message("error", "Bir hata oluştu");
+                        SweetAlert("error", "Bir hata oluştu");
                     }
                 },
                 error: function (xhr, ajaxOptions, thrownError) {

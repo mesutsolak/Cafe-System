@@ -26,23 +26,16 @@ namespace CP.BusinessLayer.Repository.Concrete.Basic
             _dbset.AddRange(entities);
         }
 
-        public List<T> GetAll(Expression<Func<T, object>> expression = null)
+        public List<T> GetAll(Expression<Func<T, object>> expression = null, Expression<Func<T, bool>> condition=null)
         {
-            try
+            if (expression == null)
             {
-                if (expression == null)
-                {
-                    return _dbset.ToList();
-                }
-                else
-                {
-                    return _dbset.Include(expression).ToList();
-                }
+                return _dbset.ToList();
             }
-            catch (System.InvalidOperationException ex)
+            else
             {
+                return _dbset.Include(expression).Where(condition).ToList();
 
-                throw ex;
             }
         }
 
@@ -63,7 +56,7 @@ namespace CP.BusinessLayer.Repository.Concrete.Basic
             var _entity = GetById(id);
             if (_entity.GetType().GetProperty("IsDeleted") != null)
             {
-                _context.Entry(_entity).Property("IsDeleted").CurrentValue = false;
+                _context.Entry(_entity).Property("IsDeleted").CurrentValue = true;
             }
             else
             {
@@ -75,7 +68,7 @@ namespace CP.BusinessLayer.Repository.Concrete.Basic
         {
             if (entity.GetType().GetProperty("IsDeleted") != null)
             {
-                _context.Entry(entity).Property("IsDeleted").CurrentValue = false;
+                _context.Entry(entity).Property("IsDeleted").CurrentValue = true;
             }
             else
             {

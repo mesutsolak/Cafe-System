@@ -5,7 +5,18 @@ $(function () {
 });
 
 
-
+$(document).on("click", ".ProductDelete", function () {
+    var _id = $(this).data("id");
+    var _fullname = $(this).parent().parent().children(":nth-child(2)").html().trim();
+    var RemoveItems = {
+        id: _id,
+        name: _fullname,
+        url: "/RemoveProduct",
+        fullname: _fullname + " isimli ürün",
+        Method: ProductList
+    };
+    RemoveBasicOperations(RemoveItems);
+});
 
 
 $(document).on("click", "#ImageView", function () {

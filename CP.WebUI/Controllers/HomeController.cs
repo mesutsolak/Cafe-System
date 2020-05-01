@@ -25,7 +25,7 @@ namespace CP.WebUI.Controllers
         [AccessDeniedAuthorize(Roles = "Customer,Admin")]
         public ActionResult Products()
         {
-            return View(ProductOperation.GetUsers(x => x.Category));
+            return View(ProductOperation.GetProducts(x => x.Category, x => x.IsDeleted == false));
         }
         [Route("Kategoriler")]
         public ActionResult Categories()
@@ -35,7 +35,7 @@ namespace CP.WebUI.Controllers
         [Route("ProductList")]
         public PartialViewResult ProductList()
         {
-            return PartialView(ProductOperation.GetUsers(x => x.Category));
+            return PartialView(ProductOperation.GetProducts(x => x.Category,x=>x.IsDeleted==false));
         }
 
         [Route("ProductUpdate")]
@@ -47,7 +47,7 @@ namespace CP.WebUI.Controllers
 
             if (product.Image!=null)
             {             
-                   var productName = product.Image.Substring(124, product.Image.Length-124).Split('?');
+                var productName = product.Image.Substring(124, product.Image.Length-124).Split('?');
                 ViewBag.ProductName = productName[0];
             }
            
@@ -161,6 +161,25 @@ namespace CP.WebUI.Controllers
                 jsonResultModel.Icon = "error";
                 jsonResultModel.Description = "Lütfen eksiksiz doldurun";
             }
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        [Route("RemoveProduct")]
+        public JsonResult RemoveProduct(int id)
+        {
+            int _id = ProductOperation.ProductRemove(id);
+
+            if (_id > 0)
+            {
+                jsonResultModel.Icon = "success";
+                jsonResultModel.Description = "Başarıyla Silindi";
+            }
+            else
+            {
+                jsonResultModel.Icon = "error";
+                jsonResultModel.Description = "Ürün Silme Başarısız";
+            }
+
             return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
         }
     }
