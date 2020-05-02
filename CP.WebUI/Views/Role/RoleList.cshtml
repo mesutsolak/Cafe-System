@@ -1,0 +1,41 @@
+﻿@model List<CP.Entities.Model.Roles>
+
+
+<div class="table table-responsive tblresponsive">
+    <table class="table table-bordered display no-wrap" cellspacing="0" width="100%" id="tblRole">
+        <thead>
+            <tr>
+                <th name="first">
+                    <div class="custom-control Checkall  custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="CheckAll">
+                        <label class="custom-control-label" for="CheckAll"></label>
+                    </div>
+                </th>
+                <th>Adı</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody id="TdRolesList">
+            @foreach (var Role in Model)
+            {
+                <tr>
+                    <td>
+                        <div class="custom-control  custom-checkbox">
+                            <input type="checkbox" class="custom-control-input check" value="@Role.Id" id="Check-@Role.Id">
+                            <label class="custom-control-label" for="Check-@Role.Id"></label>
+                        </div>
+                    </td>
+                    <td>
+                        @Role.Name
+                    </td>
+                    <td class="text-center">
+                        <i class="fas fa-pencil-alt RoleUpdate mr-2" data-id="@Role.Id"></i>
+
+                        <i class="fa fa-trash RoleDelete" data-id="@Role.Id"></i>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

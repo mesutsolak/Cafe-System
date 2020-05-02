@@ -43,11 +43,11 @@
                                     },
                             new
                             {
-                            @class = "UserLogOn",
-                            @id = "frmUserLogOn",
-                            @name = "frmUserLogOn",
+                                @class = "UserLogOn",
+                                @id = "frmUserLogOn",
+                                @name = "frmUserLogOn",
                             }))
-                                                                {
+                                    {
                                         @Html.AntiForgeryToken()
                                         <div class="form-group">
                                             @Html.LabelFor(model => model.UserName, new { @class = "small mb-1" })
@@ -63,7 +63,7 @@
                                         <div class="form-group">
                                             <div class="d-flex bd-highlight">
                                                 <div class="p-2 flex-grow-1 bd-highlight mt-2">
-                                                    <a class="small" href="password.html">Parolamı Unuttum</a>
+                                                    <a class="small" href="javascript:void(0)" id="PasswordForget">Parolamı Unuttum</a>
                                                 </div>
                                                 <div class="p-2 bd-highlight">
                                                     <button class="btn btn-danger" onclick="FormClear('frmUserLogOn')" type="button">
@@ -92,20 +92,6 @@
                 </div>
             </main>
         </div>
-        <div id="layoutAuthentication_footer">
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2019</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
     </div>
 
     <div class="modal-register">
@@ -113,7 +99,8 @@
     </div>
 
 
-    @*@{Html.RenderAction("Register","User","Register");}*@
+    @{Html.RenderAction("PasswordForget", "User");}
+    @{Html.RenderAction("Register", "User");}
 
 
 

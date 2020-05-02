@@ -36,7 +36,7 @@ namespace CP.Entities.Model
         public int? CategoryId { get; set; }
 
         [Column(TypeName = "text")]
-        //[Required(ErrorMessage ="Ürün detayý boþ býrakýlamaz")]
+        [Required(ErrorMessage = "Ürün detayý boþ býrakýlamaz")]
         [AllowHtml]
         [Display(Name = "Ürün Detayý")]
         public string ProductDetail { get; set; }

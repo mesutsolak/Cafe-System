@@ -19,6 +19,8 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
 
         public ICategoryRepository CategoryRepository { get; private set; }
 
+        public IRoleRepository RoleRepository { get; private set; }
+
         private DbContext _context;
 
         public UnitOfWork(DbContext context)
@@ -27,6 +29,7 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
             UserRepository = new UserRepository(_context);
             ProductRepository = new ProductRepository(_context);
             CategoryRepository = new CategoryRepository(_context);
+            RoleRepository = new RoleRepository(_context);
         }
 
 

@@ -1,0 +1,49 @@
+﻿@model CP.Entities.Model.Roles
+
+<div class="modal inmodal" id="RoleAddModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-bar mr-2"></i>Role Ekle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Ajax.BeginForm("RoleAddOperation", "Home", FormMethod.Post, new AjaxOptions()
+                {
+                    InsertionMode = InsertionMode.Replace,
+                    HttpMethod = "POST",
+                    OnSuccess = "returnPostJson(data)",
+                    LoadingElementId = "loading-background"
+                },
+                new
+                {
+                    @class = "RoleAdd",
+                    @id = "frmRoleAdd",
+                    @name = "frmRoleAdd",
+                    @enctype = "multipart/form-data"
+                }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name)
+                        @Html.EditorFor(model => model.Name, "", new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger error-validate" })
+                    </div>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="RoleClear">
+                    <i class="fa fa-trash mr-1"></i>
+                    Temizle
+                </button>
+                <button type="button" class="btn btn-primary" id="RoleSave">
+                    <i class="fa fa-save mr-1"></i>
+                    Kaydet
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

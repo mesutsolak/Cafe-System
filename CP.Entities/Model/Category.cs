@@ -5,6 +5,7 @@ namespace CP.Entities.Model
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web;
 
     [Table("Category")]
     public partial class Category
@@ -27,5 +28,8 @@ namespace CP.Entities.Model
 
         [Display(Name = "Kategori Resmi")]
         public string Image { get; set; }
+
+        [NotMapped]
+        public HttpPostedFileBase Images { get; set; }
     }
 }

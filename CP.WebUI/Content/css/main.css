@@ -21,7 +21,7 @@
     background-size: 100% 100%;
 }
 
-.ProductUpdate, .ProductDelete {
+.pencil-edit, .trash-edit, user-tag-edit {
     cursor: pointer;
     pointer-events: auto;
     font-size: 18px;
@@ -32,30 +32,44 @@
 }
 
 
-.ProductUpdate {
+.pencil-edit {
     color: rgb(0, 128, 0);
     opacity: 0.7;
     transform: scale(1);
 }
 
-    .ProductUpdate:hover {
+    .pencil-edit:hover {
         z-index: 2;
         color: rgb(0, 128, 0);
         opacity: 1;
         transform: scale(1.1);
     }
 
-.ProductDelete {
+.trash-edit {
     color: rgb(255, 0, 0);
     opacity: 0.7;
     transform: scale(1);
 }
 
-    .ProductDelete:hover {
+    .trash-edit :hover {
         color: rgb(255, 0, 0);
         opacity: 1;
         transform: scale(1.1);
     }
+
+.user-tag-edit {
+    color: rgb(0,0,250);
+    opacity: 0.7;
+    transform: scale(1);
+}
+
+    .user-tag-edit :hover {
+        color: rgb(0,0,255);
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+
 
 
 #btnSecilenler {

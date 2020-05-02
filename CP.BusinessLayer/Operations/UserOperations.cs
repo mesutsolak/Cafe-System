@@ -32,10 +32,11 @@ namespace CP.BusinessLayer.Operations
             _data.UserRepository.Add(user);
             return await _data.CompleteAsync();
         }
-        public async static Task<List<M.User>> GetUsers()
+        public async static Task<List<M.User>> GetUsersAsync()
         {
             return await _data.UserRepository.GetAllAsync();
         }
+        public static List<M.User> GetUsers() => _data.UserRepository.GetAll();
         public async static Task<M.User> UserFindAsync(int id)
         {
             return await _data.UserRepository.GetByIdAsync(id);

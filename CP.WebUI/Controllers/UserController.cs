@@ -29,6 +29,11 @@ namespace CP.WebUI.Controllers
             }
         }
 
+        public PartialViewResult UserList()
+        {
+            return PartialView(UserOperations.GetUsers());
+        }
+
         [HttpPost]
         [AllowAnonymous]
         public void LogOut()
@@ -37,21 +42,17 @@ namespace CP.WebUI.Controllers
             Session.Abandon();
         }
 
-        [HttpGet]
-        [ChildActionOnly]
-        [AcceptVerbs(HttpVerbs.Get)]
-        [Route("Register")]
         [AllowAnonymous]
-        public PartialViewResult Register()
+        [HttpPost]
+        public JsonResult RegisterOperation(User user)
         {
-            return PartialView("Register",new C.User());
+            return null;
         }
 
         [AllowAnonymous]
-        [HttpPost]
-        public JsonResult RegisterOperation()
+        public PartialViewResult Register()
         {
-            return null;
+            return PartialView(new C.User());
         }
 
         [AllowAnonymous]
@@ -59,6 +60,15 @@ namespace CP.WebUI.Controllers
         {
             return PartialView(new PasswordForgetDTO());
         }
+
+        [AllowAnonymous]
+        [Route("Kullanıcılar")]
+        public ActionResult Users()
+        {
+            return View();
+        }
+
+
 
         [AllowAnonymous]
         [HttpPost]
@@ -72,6 +82,7 @@ namespace CP.WebUI.Controllers
                 if (result.StartsWith("Başarıyla"))
                 {
                     jsonResultModel.Icon = "success";
+                    jsonResultModel.Modal = "PasswordModal";
                 }
                 else
                     jsonResultModel.Icon = "error";
@@ -86,7 +97,7 @@ namespace CP.WebUI.Controllers
             }
             return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
         }
-
+        
 
         [HttpPost]
         [AllowAnonymous]

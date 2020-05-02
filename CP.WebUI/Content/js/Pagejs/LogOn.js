@@ -11,3 +11,15 @@ function RegisterFill() {
         $(".modal-register").html(result);
     });
 }
+
+$("#PasswordForget").on("click", function () {
+    $("#PasswordModal").modal("show");
+});
+
+$("#PasswordClear").on("click", function () {
+    FormClear('frmPasswordForget');
+});
+
+$("#PasswordSave").on("click", function () {
+    FormPost('frmPasswordForget');
+});

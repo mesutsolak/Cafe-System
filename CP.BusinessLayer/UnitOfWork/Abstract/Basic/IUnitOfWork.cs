@@ -12,6 +12,7 @@ namespace CP.BusinessLayer.UnitOfWork.Abstract.Basic
         IUserRepository UserRepository { get; }
         IProductRepository ProductRepository { get; }
         ICategoryRepository CategoryRepository { get; }
+        IRoleRepository RoleRepository { get; }
         int Complete();
         Task<int> CompleteAsync();
     }

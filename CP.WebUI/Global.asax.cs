@@ -20,7 +20,7 @@ namespace CP.WebUI
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
         protected void Application_Error(object sender, EventArgs e)      
-         {
+        {
             var exception = Server.GetLastError(); //Oluþan hatayý deðiþkene atadýk.
                                                    //Eðer hata kaydý (log) tutulacak ise gerekli kodlar buraya.
             var httpException = exception as HttpException;

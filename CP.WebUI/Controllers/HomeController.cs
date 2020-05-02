@@ -21,23 +21,11 @@ namespace CP.WebUI.Controllers
         {
             return View();
         }
-        [Route("Panel")]
-        [AccessDeniedAuthorize(Roles = "Employee")]
-        public ActionResult Dashboard()
-        {
-            return View();
-        }
-
         [Route("Ürünler")]
         [AccessDeniedAuthorize(Roles = "Customer,Admin")]
         public ActionResult Products()
         {
             return View(ProductOperation.GetProducts(x => x.Category, x => x.IsDeleted == false));
-        }
-        [Route("Kategoriler")]
-        public ActionResult Categories()
-        {
-            return View();
         }
         [Route("ProductList")]
         public PartialViewResult ProductList()
