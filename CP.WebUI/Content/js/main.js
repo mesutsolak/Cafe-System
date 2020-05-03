@@ -273,6 +273,12 @@ function returnPostJson(data) {
     if (!$.null(data.Modal)) {
         $(document).find("#" + data.Modal).modal("hide");
     }
+    debugger;
+
+
+    if (!$.null(data.Function)) {
+        Function();
+    }
 
     SweetAlert(data.Icon, data.Title, data.Description);
     if (!$.null(data.Url)) {

@@ -55,8 +55,10 @@
                         <i class="fas fa-pencil-alt UserUpdate mr-2 pencil-edit" data-id="@user.Id"></i>
 
                         <i class="fa fa-trash UserDelete mr-2 trash-edit" data-id="@user.Id"></i>
-
-                        <i class="fa fa-user-tag UserRole user-tag-edit" data-id="@user.Id"  data-toggle="tooltip" data-placement="top" title="Rol Ata"></i>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <i class="fa fa-user-tag UserRole user-tag-edit" data-id="@user.Id" data-toggle="tooltip" data-placement="top" title="Rol Ata"></i>
+                        }
                     </td>
                 </tr>
             }

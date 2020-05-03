@@ -23,3 +23,12 @@ $("#PasswordClear").on("click", function () {
 $("#PasswordSave").on("click", function () {
     FormPost('frmPasswordForget');
 });
+
+$("#UserSave").on("click", function () {
+    FormPost('frmUserAdd');
+});
+
+$("#UserClear").on("click", function () {
+    FormClear('frmUserAdd');
+});
+

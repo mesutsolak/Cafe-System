@@ -95,12 +95,12 @@
     </div>
 
     <div class="modal-register">
-
+        @{Html.RenderAction("Register", "User");}
     </div>
 
-
-    @{Html.RenderAction("PasswordForget", "User");}
-    @{Html.RenderAction("Register", "User");}
+    <div class="modal-forget">
+        @{Html.RenderAction("PasswordForget", "User");}
+    </div>
 
 
 

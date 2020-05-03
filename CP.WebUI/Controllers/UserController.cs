@@ -9,6 +9,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using System.Threading.Tasks;
+using CP.BusinessLayer.Tools;
+using System.IO;
 
 namespace CP.WebUI.Controllers
 {
@@ -29,9 +32,25 @@ namespace CP.WebUI.Controllers
             }
         }
 
+        [Route("KullanıcıListele")]
         public PartialViewResult UserList()
         {
-            return PartialView(UserOperations.GetUsers());
+            return PartialView(UserOperations.GetUsers(x=>x.IsDeleted==false));
+        }
+
+        [Route("UserUpdate")]
+        [AllowAnonymous]
+        [HttpGet]
+        public PartialViewResult UserUpdate(int id)
+        {
+            var user = UserOperations.UserFind(id);
+            if (user.Image != null)
+            {
+                var CategoryName = user.Image.Substring(124, user.Image.Length - 124).Split('?');
+                ViewBag.CategoryName = CategoryName[0];
+            }
+
+            return PartialView(user);
         }
 
         [HttpPost]
@@ -42,12 +61,56 @@ namespace CP.WebUI.Controllers
             Session.Abandon();
         }
 
-        [AllowAnonymous]
         [HttpPost]
-        public JsonResult RegisterOperation(User user)
+        [ValidateAntiForgeryToken]
+        public async Task<JsonResult> RegisterOperation(C.User user)
         {
-            return null;
+            if (ModelState.IsValid)
+            {
+                jsonResultModel.Title = "Kayıt ol";
+
+                if (await UserOperations.UserNameControl(user.Username))
+                {
+                    jsonResultModel.Icon = "error";
+                    jsonResultModel.Description = "Kullanıcı adı alınmış";
+                    return Json(jsonResultModel,JsonRequestBehavior.AllowGet);
+                }
+
+                if (await UserOperations.EmailControl(user.Email))
+                {
+                    jsonResultModel.Icon = "error";
+                    jsonResultModel.Description = "Email alınmış";
+                    return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
+                }
+
+                if (!user.Images.IsNullObject() && user.Images.ContentLength > 0)
+                {
+                    var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(user.Images.FileName);
+                    user.Image = await firebaseStorageHelper.UploadFile(user.Images.InputStream, ImageName, "User");
+                }
+
+                int id = await UserOperations.UserAdd(user);
+
+                if (id > 0)
+                {
+                    jsonResultModel.Icon = "success";
+                    jsonResultModel.Description = "Kullanıcı Başarıyla Eklendi";
+                    jsonResultModel.Modal = "UserAddModal";
+                }
+                else
+                {
+                    jsonResultModel.Icon = "error";
+                    jsonResultModel.Description = "Kullanıcı Ekleme Başarısız";
+                }
+            }
+            else
+            {
+                jsonResultModel.Icon = "error";
+                jsonResultModel.Description = "Lütfen eksiksiz doldurun";
+            }
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
         }
+
 
         [AllowAnonymous]
         public PartialViewResult Register()
@@ -68,7 +131,57 @@ namespace CP.WebUI.Controllers
             return View();
         }
 
+        [AllowAnonymous]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<JsonResult> UserUpdateOperation(C.User user)
+        {
+            if (ModelState.IsValid)
+            {
+                jsonResultModel.Title = "Kullanıcı Güncelle";
 
+                if (await UserOperations.UserNameControl(user.Username))
+                {
+                    jsonResultModel.Icon = "error";
+                    jsonResultModel.Description = "Kullanıcı adı alınmış";
+                    return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
+                }
+
+                if (await UserOperations.EmailControl(user.Email))
+                {
+                    jsonResultModel.Icon = "error";
+                    jsonResultModel.Description = "Email alınmış";
+                    return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
+                }
+
+                if (!user.Images.IsNullObject() && user.Images.ContentLength > 0)
+                {
+                    var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(user.Images.FileName);
+                    user.Image = await firebaseStorageHelper.UploadFile(user.Images.InputStream, ImageName, "User");
+                }
+
+                int id = await UserOperations.UserUpdate(user);
+
+                if (id > 0)
+                {
+                    jsonResultModel.Icon = "success";
+                    jsonResultModel.Description = "Kullanıcı Başarıyla Güncellendi";
+                    jsonResultModel.Modal = "UserUpdateModal";
+                }
+                else
+                {
+                    jsonResultModel.Icon = "error";
+                    jsonResultModel.Description = "Kullanıcı Güncelle Başarısız";
+                }
+            }
+            else
+            {
+                jsonResultModel.Icon = "error";
+                jsonResultModel.Description = "Lütfen eksiksiz doldurun";
+            }
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
+
+        }
 
         [AllowAnonymous]
         [HttpPost]
@@ -129,5 +242,26 @@ namespace CP.WebUI.Controllers
             }
             return Json(jsonResultModel,JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        [Route("RemoveUser")]
+        public async Task<JsonResult> RemoveUser(int id)
+        {
+            var _id = await UserOperations.UserRemove(id);
+
+            if (_id > 0)
+            {
+                jsonResultModel.Icon = "success";
+                jsonResultModel.Description = "Başarıyla Silindi";
+            }
+            else
+            {
+                jsonResultModel.Icon = "error";
+                jsonResultModel.Description = "Kullanıcı Silme Başarısız";
+            }
+
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

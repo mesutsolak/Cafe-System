@@ -84,6 +84,14 @@
     <Compile Include="Migrations\202005012041514_IsDeleted.designer.cs">
       <DependentUpon>202005012041514_IsDeleted.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005031247548_LogTypeEdit.cs" />
+    <Compile Include="Migrations\202005031247548_LogTypeEdit.designer.cs">
+      <DependentUpon>202005031247548_LogTypeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005031412316_ExceptionMessage.cs" />
+    <Compile Include="Migrations\202005031412316_ExceptionMessage.designer.cs">
+      <DependentUpon>202005031412316_ExceptionMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\CafeProjectModel.cs" />
     <Compile Include="Model\Campaign.cs" />
@@ -120,6 +128,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005012041514_IsDeleted.resx">
       <DependentUpon>202005012041514_IsDeleted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005031247548_LogTypeEdit.resx">
+      <DependentUpon>202005031247548_LogTypeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005031412316_ExceptionMessage.resx">
+      <DependentUpon>202005031412316_ExceptionMessage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

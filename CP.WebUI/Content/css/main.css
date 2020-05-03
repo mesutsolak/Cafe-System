@@ -3,16 +3,20 @@
     pointer-events: all;
 }
 
-#ImageView {
+#ImageView, .product-detail {
     cursor: pointer;
     pointer-events: all;
+}
+
+.product-detail-modals {
+    word-wrap: break-word;
 }
 
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top:auto;
+    margin-top: auto;
 }
 
 .background {

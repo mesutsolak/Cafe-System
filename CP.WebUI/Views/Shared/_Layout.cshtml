@@ -31,7 +31,10 @@
     </div>
 
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">Start Bootstrap</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#">
+        <a class="navbar-brand" href="~/Anasayfa">
+            <img src="~/Content/image/cafe.png" width="38" />
+            <label class="mt-2 ml-2 text-center">Beyoğlu Kafesi</label>
+        </a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#">
             <i class="fas fa-bars"></i>
         </button><!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ml-auto mr-2 mr-md-3 my-2 my-md-0">
@@ -82,11 +85,11 @@
                             Kullanıcılar
                         </a>
 
-                        <div class="sb-sidenav-menu-heading">Admin</div>
-
-                        @{
+                         @{
                             if (Roles.IsUserInRole(HttpContext.Current.User.Identity.Name, "Admin") && User.IsInRole("Customer"))
                             {
+                                <div class="sb-sidenav-menu-heading">Admin</div>
+
                                 <a class="nav-link" href="~/Panel">
                                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                     Panel
@@ -94,6 +97,10 @@
                                 <a class="nav-link" href="~/Roller">
                                     <div class="sb-nav-link-icon"><i class="fas fa-user-tag"></i></div>
                                     Roller
+                                </a>
+                                <a class="nav-link" href="~/Raporlar">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-chart-pie"></i></div>
+                                    Raporlar
                                 </a>
                             }
 

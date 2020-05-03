@@ -29,10 +29,10 @@ namespace CP.Entities.Model
         public string Action { get; set; }
         public DateTime Date { get; set; }
         [Column(TypeName = "varchar")]
-        [MaxLength(50)]
+        [MaxLength(150)]
         public string Type { get; set; }
         [Column(TypeName = "varchar")]
-        [MaxLength(150)]
+        [MaxLength(500)]
         public string ExceptionMessage { get; set; }
         public int? LogStatusId { get; set; }
         public virtual LogStatus LogStatus { get; set; }

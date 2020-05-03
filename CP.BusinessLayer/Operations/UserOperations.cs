@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using System.Web;
 using System.Net.Mail;
+using System.Linq.Expressions;
 
 namespace CP.BusinessLayer.Operations
 {
@@ -19,6 +20,11 @@ namespace CP.BusinessLayer.Operations
         {
             var user = _data.UserRepository.GetByFilter(x => x.Username == username);
             return user.FirstName + " " + user.LastName;
+        }
+
+        public static M.User UserFind(int id)
+        {
+            return _data.UserRepository.GetById(id);
         }
 
         public static string PasswordFind(string Email)
@@ -36,7 +42,7 @@ namespace CP.BusinessLayer.Operations
         {
             return await _data.UserRepository.GetAllAsync();
         }
-        public static List<M.User> GetUsers() => _data.UserRepository.GetAll();
+        public static List<M.User> GetUsers(Expression<Func<M.User,bool>> expression=null) => _data.UserRepository.GetAll(null,expression);
         public async static Task<M.User> UserFindAsync(int id)
         {
             return await _data.UserRepository.GetByIdAsync(id);

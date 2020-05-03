@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace CP.WebUI.Controllers
 {
@@ -25,12 +26,15 @@ namespace CP.WebUI.Controllers
         [AccessDeniedAuthorize(Roles = "Customer,Admin")]
         public ActionResult Products()
         {
-            return View(ProductOperation.GetProducts(x => x.Category, x => x.IsDeleted == false));
+            return View();
         }
         [Route("ProductList")]
+        [AllowAnonymous]
+        [OutputCache(Duration = 0, Location = OutputCacheLocation.Server, VaryByParam = "none")]
         public PartialViewResult ProductList()
         {
-            return PartialView(ProductOperation.GetProducts(x => x.Category,x=>x.IsDeleted==false));
+            var a = ProductOperation.GetProducts(x => x.Category, x => x.IsDeleted == false);
+            return PartialView(a);
         }
 
         [Route("ProductUpdate")]

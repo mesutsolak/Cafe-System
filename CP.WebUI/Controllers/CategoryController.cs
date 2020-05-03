@@ -17,12 +17,21 @@ namespace CP.WebUI.Controllers
         [Route("Kategoriler")]
         public ActionResult Index()
         {
-            return View(CategoryOperation.GetCategories());
+            return View();
         }
+        
         public PartialViewResult CategoryAdd()
         {
             return PartialView(new Category());
         }
+
+        [Route("KategoriList")]
+        public PartialViewResult CategoryList()
+        {
+            return PartialView(CategoryOperation.GetCategories());
+        }
+
+        [Route("KategoriUpdate")]
         public PartialViewResult CategoryUpdate(int id)
         {
             var category = CategoryOperation.GetCategory(id);
@@ -54,7 +63,7 @@ namespace CP.WebUI.Controllers
                     jsonResultModel.Icon = "success";
                     jsonResultModel.Modal = "CategoryAddModal";
                     jsonResultModel.Description = "Kategori Ekleme Başarılı";
-
+                    jsonResultModel.Function = "CategoryList";
                 }
                 else
                 {

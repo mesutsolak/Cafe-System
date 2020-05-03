@@ -423,6 +423,7 @@
     <Content Include="Content\framework\DataTable\js\jquery.dataTables.min.js" />
     <Content Include="Content\image\background.jpg" />
     <Content Include="Content\image\cafe.ico" />
+    <Content Include="Content\image\cafe.png" />
     <Content Include="Content\image\Loading2.gif" />
     <Content Include="Content\image\no-image.png" />
     <Content Include="Content\js\all.min.js" />
@@ -430,8 +431,10 @@
     <Content Include="Content\js\jquery-cookie.js" />
     <Content Include="Content\js\jquery.js" />
     <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\Pagejs\category.js" />
     <Content Include="Content\js\Pagejs\LogOn.js" />
     <Content Include="Content\js\Pagejs\Meal.js" />
+    <Content Include="Content\js\Pagejs\user.js" />
     <Content Include="Content\js\popper.js" />
     <Content Include="Content\js\sweetalert2.js" />
     <Content Include="Content\template\401.html" />
@@ -466,6 +469,7 @@
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -504,7 +508,6 @@
     <Content Include="Views\Home\ProductList.cshtml" />
     <Content Include="Views\Home\ProductUpdate.cshtml" />
     <Content Include="Views\User\Register.cshtml" />
-    <Content Include="Views\User\UserAdd.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Views\User\Users.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
@@ -516,6 +519,9 @@
     <Content Include="Views\Role\RoleList.cshtml" />
     <Content Include="Views\User\UserList.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Report\Index.cshtml" />
+    <Content Include="Views\Category\CategoryList.cshtml" />
+    <Content Include="Views\User\UserUpdate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -26,3 +26,5 @@ C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Entities\obj\Debug\CP.Entities.d
 C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Entities\obj\Debug\CP.Entities.pdb
 C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Entities\obj\Debug\CP.Entities.csprojAssemblyReference.cache
 C:\Users\Mesut Solak\source\repos\CafeSystem\CP.Entities\obj\Debug\CP.Entities.Migrations.IsDeleted.resources
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.LogTypeEdit.resources
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.ExceptionMessage.resources

@@ -2,6 +2,7 @@
 $(function () {
     TableConvertDataTables("tblProduct");
     //ConvertCkEditor("ProductDetail", "tr");
+    ProductList();
 });
 
 
@@ -35,6 +36,7 @@ $(document).on("click", "#ImageView", function () {
 
 function ProductList() {
     $.get("/ProductList", null, function (result) {
+        debugger;
         $(document).find(".product-body").html(result);
     });
 }
@@ -60,12 +62,6 @@ $(document).on("click", ".ProductUpdate", function () {
             alert("Error occured.please try again" + xhr.statusText + xhr.responseText);
         },
     });
-
-
-    //$.get("/ProductUpdate", , function (data) {
-    //    $(".product-update-modal").html(data);
-    //    $(document).find("#ProductUpdateModal").modal("show");
-    //});
 });
 
 
@@ -87,6 +83,12 @@ $("#ProductClear").on("click", function () {
     FormClear("frmProductAdd");
 });
 
+
+$(document).on("click", ".product-detail", function () {
+    var value = $(this).attr("value");
+    $("#ProductDetailModal").modal("show");
+    $(".product-detail-modals").html(value);
+});
 
 function SweetAlert2(erroricon, errortitle, errortext) {
     Swal.fire({

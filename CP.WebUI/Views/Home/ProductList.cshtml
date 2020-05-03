@@ -33,7 +33,14 @@
                         @product.Name
                     </td>
                     <td>
-                        @product.ProductDetail
+                        @if (product.ProductDetail.Length>45)
+                        {
+                        <label class="product-detail" value="@(product.ProductDetail)"> @(product.ProductDetail.Substring(0, 25)+"...") </label>
+                        }
+                        else
+                        {
+                            @product.ProductDetail
+                        }
                     </td>
                     <td>
                         @product.Category.Name
@@ -49,9 +56,9 @@
                         <img src="@(Url.Content(product.Image ?? "~/Content/image/no-image.png"))" height="30" class="avatar-sm" id="ImageView" />
                     </td>
                     <td class="text-center">
-                        <i class="fas fa-pencil-alt ProductUpdate mr-2" data-id="@product.Id"></i>
+                        <i class="fas fa-pencil-alt pencil-edit ProductUpdate mr-2" data-id="@product.Id"></i>
 
-                        <i class="fa fa-trash ProductDelete" data-id="@product.Id"></i>
+                        <i class="fa fa-trash trash-edit ProductDelete" data-id="@product.Id"></i>
                     </td>
                 </tr>
             }

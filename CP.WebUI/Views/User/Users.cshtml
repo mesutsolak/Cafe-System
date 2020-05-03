@@ -34,18 +34,18 @@
                 <div class="col-5">
                     <div class="d-flex flex-row-reverse bd-highlight">
                         <div class="p-2 bd-highlight">
-                            <button class="btn btn-primary" id="CategoryAdd">
-                                <i class="fas fa-plus mr-1"></i> Kategori Ekle
+                            <button class="btn btn-primary" id="UserAdd">
+                                <i class="fas fa-plus mr-1"></i> Kullanıcı Ekle
                             </button>
-                            <button class="btn btn-danger" id="CategoryRemoveAll">
-                                <i class="fa fa-trash mr-1"></i> Kategorileri Sil
+                            <button class="btn btn-danger" id="UserRemoveAll">
+                                <i class="fa fa-trash mr-1"></i> Kullanıcıları Sil
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card-text category-body">
+        <div class="card-text User-body">
             @Html.Action("UserList","User")
         </div>
     </div>
@@ -54,3 +54,11 @@
 <div class="modal-user-add">
     @Html.Action("Register","User")
 </div>
+
+<div class="modal-user-update">
+
+</div>
+
+@section js{
+    <script src="~/Content/js/Pagejs/user.js"></script>
+}

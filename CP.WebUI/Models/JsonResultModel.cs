@@ -12,5 +12,6 @@ namespace CP.WebUI.Models
         public string Description { get; set; }
         public string Url { get; set; }
         public string Modal { get; set; }
+        public string Function { get; set; }
     }
 }
