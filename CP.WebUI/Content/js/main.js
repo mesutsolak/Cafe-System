@@ -123,15 +123,19 @@ function RemoveAllOperations(RemoveItems) {
     });
 }
 
+function ModalShow(FormId) {
+    $(document).find('#' + FormId).modal('show');
+}
+
 function FormPost(FormId) {
-    $("#" + FormId).submit();
+    $(document).find('#' + FormId).submit();
 }
 
 function FormClear(FormId) {
-    $("#" + FormId).trigger("reset");
-    $("#" + FormId).find(".error-validate").html("");
-    $("#" + FormId).find("input[type='file']").val('');
-    $("input[type='file']").each(function () {
+    $(document).find('#' + FormId).trigger("reset");
+    $(document).find('#' + FormId).find(".error-validate").html("");
+    $(document).find('#' + FormId).find("input[type='file']").val('');
+    $(document).find("input[type='file']").each(function () {
         var _name = $(this).attr("name");
         $(this).val('');
         var _children = $(this).next();

@@ -4,18 +4,19 @@
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content animated bounceInRight">
             <div class="modal-header">
-                <h5 class="modal-title"><i class="fas fa-bar mr-2"></i>Role Ekle</h5>
+                <h5 class="modal-title"><i class="fas fa-user-tag mr-2"></i>Role Ekle</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                @using (Ajax.BeginForm("RoleAddOperation", "Home", FormMethod.Post, new AjaxOptions()
+                @using (Ajax.BeginForm("RoleAddOperation", "Role", FormMethod.Post, new AjaxOptions()
                 {
                     InsertionMode = InsertionMode.Replace,
                     HttpMethod = "POST",
                     OnSuccess = "returnPostJson(data)",
-                    LoadingElementId = "loading-background"
+                    LoadingElementId = "loading-background",
+                    OnComplete="RoleList()"
                 },
                 new
                 {
@@ -35,11 +36,11 @@
                 }
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" id="RoleClear">
+                <button type="button" class="btn btn-danger" onclick="FormClear('frmRoleAdd')" id="RoleClear">
                     <i class="fa fa-trash mr-1"></i>
                     Temizle
                 </button>
-                <button type="button" class="btn btn-primary" id="RoleSave">
+                <button type="button" class="btn btn-primary"  onclick="FormPost('frmRoleAdd')"  id="RoleSave">
                     <i class="fa fa-save mr-1"></i>
                     Kaydet
                 </button>

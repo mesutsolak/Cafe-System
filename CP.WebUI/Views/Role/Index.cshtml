@@ -35,19 +35,19 @@
                 <div class="col-5">
                     <div class="d-flex flex-row-reverse bd-highlight">
                         <div class="p-2 bd-highlight">
-                            <button class="btn btn-primary" id="RoleAdd">
-                                <i class="fas fa-plus mr-1"></i> Ürün Ekle
+                            <button class="btn btn-primary" onclick="ModalShow('RoleAddModal')" id="RoleAdd">
+                                <i class="fas fa-plus mr-1"></i> Rol Ekle
                             </button>
                             <button class="btn btn-danger" id="RoleRemoveAll">
-                                <i class="fa fa-trash mr-1"></i> Ürünleri Sil
+                                <i class="fa fa-trash mr-1"></i> Rolleri Sil
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card-text Role-body">
-            @Html.Action("RoleList","Role")
+        <div class="card-text role-body">
+            @Html.Action("RoleList", "Role")
         </div>
     </div>
 </div>
@@ -59,3 +59,7 @@
 <div class="Role-Update-Modal">
 
 </div>
+
+@section js{
+   <script src="~/Content/js/Pagejs/Role.js"></script>
+}

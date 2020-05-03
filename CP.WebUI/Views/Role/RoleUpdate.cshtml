@@ -4,28 +4,31 @@
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content animated bounceInRight">
             <div class="modal-header">
-                <h5 class="modal-title"><i class="fas fa-bar mr-2"></i>Role Ekle</h5>
+                <h5 class="modal-title"><i class="fas fa-user-tag mr-2"></i>Rol Güncelle</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                @using (Ajax.BeginForm("RoleUpdateOperation", "Home", FormMethod.Post, new AjaxOptions()
+                @using (Ajax.BeginForm("RoleUpdateOperation", "Role", FormMethod.Post, new AjaxOptions()
                 {
                     InsertionMode = InsertionMode.Replace,
                     HttpMethod = "POST",
                     OnSuccess = "returnPostJson(data)",
-                    LoadingElementId = "loading-background"
+                    LoadingElementId = "loading-background",
+                    OnComplete = "RoleList()"
                 },
                 new
                 {
-                    @class = "RoleUpdate",
+                    @class = "RoleUpdatesModal",
                     @id = "frmRoleUpdate",
                     @name = "frmRoleUpdate",
                     @enctype = "multipart/form-data"
                 }))
                 {
                     @Html.AntiForgeryToken()
+
+                    <input type="hidden" value="@Model.Id" name="Id" />
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.Name)
@@ -35,11 +38,11 @@
                 }
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" id="RoleUpdateClear">
+                <button type="button" class="btn btn-danger" onclick="FormClear('frmRoleUpdate')"  id="RoleUpdateClear">
                     <i class="fa fa-trash mr-1"></i>
                     Temizle
                 </button>
-                <button type="button" class="btn btn-primary" id="RoleUpdateSave">
+                <button type="button" class="btn btn-primary" onclick="FormPost('frmRoleUpdate')"  id="RoleUpdateSave">
                     <i class="fa fa-save mr-1"></i>
                     Kaydet
                 </button>

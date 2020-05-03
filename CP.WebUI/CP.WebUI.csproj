@@ -434,6 +434,7 @@
     <Content Include="Content\js\Pagejs\category.js" />
     <Content Include="Content\js\Pagejs\LogOn.js" />
     <Content Include="Content\js\Pagejs\Meal.js" />
+    <Content Include="Content\js\Pagejs\Role.js" />
     <Content Include="Content\js\Pagejs\user.js" />
     <Content Include="Content\js\popper.js" />
     <Content Include="Content\js\sweetalert2.js" />

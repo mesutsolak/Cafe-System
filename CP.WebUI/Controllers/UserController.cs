@@ -32,6 +32,13 @@ namespace CP.WebUI.Controllers
             }
         }
 
+        [Route("KullanıcıRolleri")]
+        public PartialViewResult UserRoles(int id)
+        {
+
+            return PartialView();
+        }
+
         [Route("KullanıcıListele")]
         public PartialViewResult UserList()
         {

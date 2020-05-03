@@ -13,9 +13,10 @@
                 </th>
                 <th>Ad</th>
                 <th>Soyad</th>
+                <th>Kullanıcı Adı</th>
+                <th>Parola</th>
                 <th>Email</th>
                 <th>Fotograf</th>
-                <th>Onay</th>
                 <th>İşlemler</th>
             </tr>
         </thead>
@@ -36,20 +37,16 @@
                         @user.LastName
                     </td>
                     <td>
+                        @user.Username
+                    </td>
+                    <td>
+                        @user.Password
+                    </td>
+                    <td>
                         @user.Email
                     </td>
                     <td class="text-center">
                         <img src="@(Url.Content(user.Image ?? "~/Content/image/no-image.png"))" height="30" class="avatar-sm" id="ImageView" />
-                    </td>
-                    <td>
-                        @if (user.IsConfirm.Value)
-                        {
-                            <label>Onaylandı</label>
-                        }
-                        else
-                        {
-                            <label>Onaylanmadı</label>
-                        }
                     </td>
                     <td class="text-center">
                         <i class="fas fa-pencil-alt UserUpdate mr-2 pencil-edit" data-id="@user.Id"></i>
@@ -57,7 +54,15 @@
                         <i class="fa fa-trash UserDelete mr-2 trash-edit" data-id="@user.Id"></i>
                         @if (User.IsInRole("Admin"))
                         {
-                            <i class="fa fa-user-tag UserRole user-tag-edit" data-id="@user.Id" data-toggle="tooltip" data-placement="top" title="Rol Ata"></i>
+                            <i class="fa fa-user-tag UserRole user-tag-edit mr-1" data-id="@user.Id" data-toggle="tooltip" data-placement="top" title="Rol Ata"></i>
+                        }
+                        @if (user.IsConfirm.Value)
+                        {
+                            <i class="fas fa-times CancelConfirm" style="color:red" data-id="@user.Id"  data-toggle="tooltip" data-placement="top" title="Onay Kaldır" />
+                        }
+                        else
+                        {
+                            <i class="fas fa-check TrueConfirm" style="color:green" data-id="@user.Id"  data-toggle="tooltip" data-placement="top" title="Onayla" />
                         }
                     </td>
                 </tr>

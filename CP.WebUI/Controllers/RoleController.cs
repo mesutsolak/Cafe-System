@@ -20,11 +20,14 @@ namespace CP.WebUI.Controllers
         {
             return PartialView(new Roles()); 
         }
+
+        [Route("RoleUpdate")]
         public PartialViewResult RoleUpdate(int id)
         {
             return PartialView(RoleOperation.GetRole(id));
         }
 
+        [Route("RolList")]
         public PartialViewResult RoleList()
         {
             return PartialView(RoleOperation.GetRoles());
@@ -87,6 +90,25 @@ namespace CP.WebUI.Controllers
             }
             return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
 
+        }
+        [HttpPost]
+        [Route("RemoveRole")]
+        public JsonResult RemoveRole(int id)
+        {
+            int _id = RoleOperation.RoleRemove(id);
+
+            if (_id > 0)
+            {
+                jsonResultModel.Icon = "success";
+                jsonResultModel.Description = "Başarıyla Silindi";
+            }
+            else
+            {
+                jsonResultModel.Icon = "error";
+                jsonResultModel.Description = "Rol Silme Başarısız";
+            }
+
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
         }
     }
 }                                      
