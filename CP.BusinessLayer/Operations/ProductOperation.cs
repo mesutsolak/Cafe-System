@@ -11,10 +11,6 @@ namespace CP.BusinessLayer.Operations
 {
     public class ProductOperation : BaseOperation
     {
-        public async static Task<List<Product>> GetProductsAsync()
-        {
-            return await _data.ProductRepository.GetAllAsync();
-        }
         public static List<Product> GetProducts(Expression<Func<Product, object>> expression = null, Expression<Func<Product, bool>> condition = null)
         {
             return _data.ProductRepository.GetAll(expression,condition);
@@ -37,6 +33,10 @@ namespace CP.BusinessLayer.Operations
         {
             _data.ProductRepository.Remove(id);
             return _data.Complete();
+        }
+        public static async Task<List<Product>> GetProductsAsync()
+        {
+            return await _data.ProductRepository.GetProductAsync();
         }
     }
 }

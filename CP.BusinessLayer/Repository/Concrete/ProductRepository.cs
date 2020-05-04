@@ -16,5 +16,11 @@ namespace CP.BusinessLayer.Repository.Concrete
         {
 
         }
+        public CafeProjectModel CafeDB => _context as CafeProjectModel; //bu cast işlemine sürekli ihtiyac duyacağız.
+
+        public Task<List<Product>> GetProductAsync()
+        {
+            return CafeDB.Product.Include(x => x.Category).Where(x => x.IsDeleted==false).ToListAsync();
+        }
     }
 }

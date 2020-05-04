@@ -16,6 +16,7 @@ namespace CP.Entities.Model
         }
 
         public virtual DbSet<Campaign> Campaign { get; set; }
+        public virtual DbSet<Cart> Cart { get; set; }
         public virtual DbSet<CampProduct> CampProduct { get; set; }
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Comment> Comment { get; set; }

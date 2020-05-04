@@ -182,11 +182,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\Basic\IService.cs" />
+    <Compile Include="Abstract\ICartService.cs" />
+    <Compile Include="Abstract\IProductService.cs" />
     <Compile Include="Abstract\IUserService.cs" />
     <Compile Include="Concrete\Basic\Service.cs" />
+    <Compile Include="Concrete\CartService.cs" />
+    <Compile Include="Concrete\ProductService.cs" />
     <Compile Include="Concrete\UserService.cs" />
+    <Compile Include="DTO\CartDTO.cs" />
     <Compile Include="DTO\LoginControl.cs" />
     <Compile Include="DTO\PasswordForgetDTO.cs" />
+    <Compile Include="DTO\ProductDTO.cs" />
     <Compile Include="DTO\User.cs" />
     <Compile Include="Firebase\FirebaseStorageHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

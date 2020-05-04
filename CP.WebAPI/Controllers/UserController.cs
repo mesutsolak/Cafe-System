@@ -74,7 +74,7 @@ namespace CP.WebAPI.Controllers
         [HttpGet]
         public async Task<List<M.User>> Get()
         {
-            return await UserOperations.GetUsers();
+            return await UserOperations.GetUsersAsync();
         }
         [HttpGet]
         public async Task<HttpResponseMessage> GetFind(int id)

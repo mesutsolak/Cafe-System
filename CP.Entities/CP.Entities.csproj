@@ -92,10 +92,15 @@
     <Compile Include="Migrations\202005031412316_ExceptionMessage.designer.cs">
       <DependentUpon>202005031412316_ExceptionMessage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005041109205_cartAdd.cs" />
+    <Compile Include="Migrations\202005041109205_cartAdd.designer.cs">
+      <DependentUpon>202005041109205_cartAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\CafeProjectModel.cs" />
     <Compile Include="Model\Campaign.cs" />
     <Compile Include="Model\CampProduct.cs" />
+    <Compile Include="Model\Cart.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Comment.cs" />
     <Compile Include="Model\CompanyInformation.cs" />
@@ -134,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005031412316_ExceptionMessage.resx">
       <DependentUpon>202005031412316_ExceptionMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005041109205_cartAdd.resx">
+      <DependentUpon>202005041109205_cartAdd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

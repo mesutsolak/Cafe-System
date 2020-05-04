@@ -467,6 +467,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -523,6 +524,7 @@
     <Content Include="Views\Report\Index.cshtml" />
     <Content Include="Views\Category\CategoryList.cshtml" />
     <Content Include="Views\User\UserUpdate.cshtml" />
+    <Content Include="Views\Company\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

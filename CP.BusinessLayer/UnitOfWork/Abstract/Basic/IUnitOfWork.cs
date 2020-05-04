@@ -13,6 +13,7 @@ namespace CP.BusinessLayer.UnitOfWork.Abstract.Basic
         IProductRepository ProductRepository { get; }
         ICategoryRepository CategoryRepository { get; }
         IRoleRepository RoleRepository { get; }
+        ICartRepository CartRepository { get; }
         int Complete();
         Task<int> CompleteAsync();
     }

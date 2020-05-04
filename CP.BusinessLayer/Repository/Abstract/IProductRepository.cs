@@ -10,5 +10,6 @@ namespace CP.BusinessLayer.Repository.Abstract
 {
     public interface IProductRepository : IRepository<Product>
     {
+        Task<List<Product>> GetProductAsync();
     }
 }
