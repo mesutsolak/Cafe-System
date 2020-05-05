@@ -96,3 +96,13 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.WebPages.x
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.WebPages.Razor.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.Razor.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\Antlr3.Runtime.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.Helpers.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.Optimization.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\WebGrease.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\Antlr3.Runtime.pdb
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.Helpers.xml
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.Optimization.xml
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.WebAPI\bin\AutoMapper.dll
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.WebAPI\bin\AutoMapper.pdb
+C:\Users\Mesut Solak\source\repos\CafeSystem\CP.WebAPI\bin\AutoMapper.xml

@@ -21,7 +21,7 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
 
         public IRoleRepository RoleRepository { get; private set; }
 
-        public ICartRepository CartRepository { get; private set};
+        public ICartRepository CartRepository { get; private set; }
 
         private DbContext _context;
 

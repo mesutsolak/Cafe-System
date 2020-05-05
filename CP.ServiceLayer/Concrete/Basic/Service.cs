@@ -67,20 +67,20 @@ namespace CP.ServiceLayer.Concrete.Basic
                 {
                     client.DefaultRequestHeaders.Add("Accept", "application/json");
                     var _result = await client.GetStringAsync(Url);
-                    users = JsonConvert.DeserializeObject<List<T>>(_result);
+                     var a  = JsonConvert.DeserializeObject<List<T>>(_result);
                 });
             }
-            catch (Exception ex)
+            catch (HttpRequestException ex)
             {
                 throw ex;
             }
-            return users;
+            return  users;
         }
 
         public async Task<T> GetFindAsync(int id)
         {
             T user = null;
-            try
+            try                                   
             {
                 await Task.Run(async () =>
                 {

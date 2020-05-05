@@ -41,7 +41,7 @@
                     TextColor="Black"  
                     XAlign="Center"  
                     YAlign="Center"   
-                    Text="{Binding Category}"/>
+                    Text="{Binding Category}" />
                   
 
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="15" Margin="8">

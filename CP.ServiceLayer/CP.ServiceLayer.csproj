@@ -190,6 +190,7 @@
     <Compile Include="Concrete\ProductService.cs" />
     <Compile Include="Concrete\UserService.cs" />
     <Compile Include="DTO\CartDTO.cs" />
+    <Compile Include="DTO\Category.cs" />
     <Compile Include="DTO\LoginControl.cs" />
     <Compile Include="DTO\PasswordForgetDTO.cs" />
     <Compile Include="DTO\ProductDTO.cs" />

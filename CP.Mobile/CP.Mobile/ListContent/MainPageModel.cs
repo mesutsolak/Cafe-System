@@ -1,15 +1,20 @@
 ﻿using CP.Mobile.MasterDetailPages.Menus;
+using CP.ServiceLayer.Concrete;
+using CP.ServiceLayer.DTO;
 using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace CP.Mobile.ListContent
 {
-    public class MainPageModel: BindableObject
+    public class MainPageModel : BindableObject
     {
+        ProductService productService = new ProductService();
+
         private ContentPage mainPage;
 
         public MainPageModel(ContentPage mainPage)
@@ -18,21 +23,21 @@ namespace CP.Mobile.ListContent
             AddItems();
         }
 
-        private void AddItems()
+        private async void AddItems()
         {
-            for (int i = 0; i < 30; i++)
-                Items.Add(new Meal
-                {
-                    Id = i,
-                    Name = "Yiyecek" + i ,
-                    Image ="hamburger.jpg",
-                    Category ="Kategoriler"+i,
-                    Price="$10"+i
-                }) ;
+            productService.Url = "api/Product";
+            
+            var _ListProduct = await productService.GetAllAsync();
+
+            foreach (var item in _ListProduct)
+            {
+                Items.Add(item);
+            }
+
         }
 
-        private ObservableCollection<Meal> _items = new ObservableCollection<Meal>();
-        public ObservableCollection<Meal> Items
+        private ObservableCollection<ProductDTO> _items = new ObservableCollection<ProductDTO>();
+        public ObservableCollection<ProductDTO> Items
         {
             get
             {

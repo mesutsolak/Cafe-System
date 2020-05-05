@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Mesut Solak\source\repos\CafeSystem\CP.DesktopUI\obj\Debug\
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\obj\Debug\
 CP.DesktopUI
 none
 false
 DEBUG;TRACE
-C:\Users\Mesut Solak\source\repos\CafeSystem\CP.DesktopUI\App.xaml
-11151548125
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\App.xaml
+7-2082674500
 
-62035545546
-13-1505183044
-MainWindow.xaml;
+121411636936
+201333458475
+LoginScreen.xaml;Main.xaml;MainWindow.xaml;Pages\Cart.xaml;Pages\Home.xaml;Pages\Music.xaml;Pages\Table.xaml;
 
 True
 
