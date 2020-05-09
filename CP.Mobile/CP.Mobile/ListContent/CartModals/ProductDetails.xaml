@@ -40,16 +40,16 @@
 
                         <StackLayout Orientation="Horizontal" Margin="5,8,0,0" Spacing="4">
                             <Image Source="star.png" WidthRequest="24"/>
-                            <Label TextColor="Black" Text="9.3" VerticalTextAlignment="Center"/>
+                            <Label TextColor="Black" x:Name="lblRating" Text="9.3" VerticalTextAlignment="Center"/>
                             <Image Source="comment.png" WidthRequest="24" Margin="7"/>
-                            <Label TextColor="Black" Text="5" VerticalTextAlignment="Center" />
+                            <Label TextColor="Black" Text="5" x:Name="lblComment"  VerticalTextAlignment="Center" />
                             <Image Source="clock.png" WidthRequest="24" Margin="6"/>
-                                <Label TextColor="Black" Text="15 dk" VerticalTextAlignment="Center"/>
+                                <Label TextColor="Black" x:Name="lblClock" Text="15 dk" VerticalTextAlignment="Center"/>
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal" Margin="5">
                                <Label TextColor="Green" HorizontalOptions="Start" x:Name="LblName" x:Uid="LblName" Margin="0,2" FontSize="20"/>
-                            <Label TextColor="Red" Text="/ Yiyecek" Margin="0" FontSize="20"/>
+                            <Label TextColor="Red" Text="/ Yiyecek" x:Name="lblCategory" Margin="0" FontSize="20"/>
                         </StackLayout>
                        
                         <StackLayout Orientation="Horizontal">
@@ -64,7 +64,7 @@
 
                         <StackLayout Orientation="Horizontal" Margin="5">
                             <Label Text="Fiyat :"  FontSize="17" VerticalTextAlignment="Center" TextColor="Black"/>
-                            <Label Text="35 TL"  FontSize="17" VerticalTextAlignment="Center" TextColor="Black"/>
+                            <Label Text="35 TL" x:Name="lblPrice"  FontSize="17" VerticalTextAlignment="Center" TextColor="Black"/>
                         </StackLayout>
 
                     </StackLayout>

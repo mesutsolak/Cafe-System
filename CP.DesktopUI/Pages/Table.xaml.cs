@@ -24,5 +24,15 @@ namespace CP.DesktopUI.Pages
         {
             InitializeComponent();
         }
+
+        private void btnTrashRemove_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void btnConfirmTable_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

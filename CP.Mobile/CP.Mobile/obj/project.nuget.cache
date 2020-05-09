@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nwV9Jtmj/EY4siiOui2spE2mu4ShfzSIrm/IXT2xitD0g2f/JYGYFG+xTdobOLHWhPToH2Sc2b4bPQ9OrX7t2w==",
+  "dgSpecHash": "8gLctvaphWvc8oZQg36MKQZpLs3UOeJU2AWmgxJpiZ941MJTLw1JWFbCBjhsOqRDxDX1YDRafWK2dTYsML1ubw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile\\CP.Mobile.csproj",
   "expectedPackageFiles": [
@@ -64,8 +64,8 @@
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\xam.plugin.media\\5.0.1\\xam.plugin.media.5.0.1.nupkg.sha512",
-    "C:\\Users\\Mesut Solak\\.nuget\\packages\\xamarin.essentials\\1.5.2\\xamarin.essentials.1.5.2.nupkg.sha512",
-    "C:\\Users\\Mesut Solak\\.nuget\\packages\\xamarin.forms\\4.5.0.617\\xamarin.forms.4.5.0.617.nupkg.sha512",
+    "C:\\Users\\Mesut Solak\\.nuget\\packages\\xamarin.essentials\\1.5.3.1\\xamarin.essentials.1.5.3.1.nupkg.sha512",
+    "C:\\Users\\Mesut Solak\\.nuget\\packages\\xamarin.forms\\4.6.0.726\\xamarin.forms.4.6.0.726.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\xamarin.plugins.fluentvalidation\\3.0.64\\xamarin.plugins.fluentvalidation.3.0.64.nupkg.sha512"
   ],
   "logs": []

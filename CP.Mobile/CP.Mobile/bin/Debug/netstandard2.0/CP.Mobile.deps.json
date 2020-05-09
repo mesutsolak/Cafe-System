@@ -17,8 +17,8 @@
           "NETStandard.Library": "2.0.3",
           "Rg.Plugins.Popup": "2.0.0.2",
           "Xam.Plugin.Media": "5.0.1",
-          "Xamarin.Essentials": "1.5.2",
-          "Xamarin.Forms": "4.5.0.617",
+          "Xamarin.Essentials": "1.5.3.1",
+          "Xamarin.Forms": "4.6.0.726",
           "Xamarin.Plugins.FluentValidation": "3.0.64"
         },
         "runtime": {
@@ -39,7 +39,7 @@
       },
       "DLToolkit.Forms.Controls.FlowListView/2.0.11": {
         "dependencies": {
-          "Xamarin.Forms": "4.5.0.617"
+          "Xamarin.Forms": "4.6.0.726"
         },
         "runtime": {
           "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+netstandard1.0/DLToolkit.Forms.Controls.FlowListView.dll": {
@@ -162,7 +162,7 @@
       },
       "Rg.Plugins.Popup/2.0.0.2": {
         "dependencies": {
-          "Xamarin.Forms": "4.5.0.617"
+          "Xamarin.Forms": "4.6.0.726"
         },
         "runtime": {
           "lib/netstandard2.0/Rg.Plugins.Popup.dll": {
@@ -738,7 +738,7 @@
       },
       "Xam.Plugin.Media/5.0.1": {
         "dependencies": {
-          "Xamarin.Essentials": "1.5.2"
+          "Xamarin.Essentials": "1.5.3.1"
         },
         "runtime": {
           "lib/netstandard2.0/Plugin.Media.dll": {
@@ -747,7 +747,7 @@
           }
         }
       },
-      "Xamarin.Essentials/1.5.2": {
+      "Xamarin.Essentials/1.5.3.1": {
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
         },
@@ -758,19 +758,19 @@
           }
         }
       },
-      "Xamarin.Forms/4.5.0.617": {
+      "Xamarin.Forms/4.6.0.726": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.5.0.216"
+            "fileVersion": "4.6.0.446"
           },
           "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.5.0.216"
+            "fileVersion": "4.6.0.446"
           },
           "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.5.0.216"
+            "fileVersion": "4.6.0.446"
           }
         }
       },
@@ -778,7 +778,7 @@
         "dependencies": {
           "FluentValidation": "8.0.101",
           "FluentValidation.ValidatorAttribute": "8.0.100",
-          "Xamarin.Forms": "4.5.0.617"
+          "Xamarin.Forms": "4.6.0.726"
         },
         "runtime": {
           "lib/netstandard2.0/Xamarin.Plugins.FluentValidation.dll": {
@@ -1220,19 +1220,19 @@
       "path": "xam.plugin.media/5.0.1",
       "hashPath": "xam.plugin.media.5.0.1.nupkg.sha512"
     },
-    "Xamarin.Essentials/1.5.2": {
+    "Xamarin.Essentials/1.5.3.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-qHxkrkx5jIC0X/qWhxCPZ3MuuOJm8bfCzAoUtlpOBSE4oV0JhrkTezK0A+IV+k/MeJ3zKc8FexaIXah9rlCTIw==",
-      "path": "xamarin.essentials/1.5.2",
-      "hashPath": "xamarin.essentials.1.5.2.nupkg.sha512"
+      "sha512": "sha512-6sE3kGMhES7dsR8ll+ar+roEIFobjPfDskKNMsU4FF6cV27ZsdArGZHxe1QqPPJcMT6PzJsGvA3l5PNMZgw5ng==",
+      "path": "xamarin.essentials/1.5.3.1",
+      "hashPath": "xamarin.essentials.1.5.3.1.nupkg.sha512"
     },
-    "Xamarin.Forms/4.5.0.617": {
+    "Xamarin.Forms/4.6.0.726": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tB/h7bHEylOgNT+521SRnbmO+LCe5R3lPboD/icCMpa+FdjmxhZQ7+fIIPFDbhY2dqYetGRnAeJWXVx4NLbmAw==",
-      "path": "xamarin.forms/4.5.0.617",
-      "hashPath": "xamarin.forms.4.5.0.617.nupkg.sha512"
+      "sha512": "sha512-NI7iL5NnrQN/gCyoHLlexcDndNin67hFV7ObG8QQU2zbEi15B1SRaAsuiNeXVYAHfXg3/amqryqzGd+3R6lyZQ==",
+      "path": "xamarin.forms/4.6.0.726",
+      "hashPath": "xamarin.forms.4.6.0.726.nupkg.sha512"
     },
     "Xamarin.Plugins.FluentValidation/3.0.64": {
       "type": "package",

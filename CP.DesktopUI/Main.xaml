@@ -32,14 +32,16 @@
 
     <Grid Background="LightGray">
         <Grid Height="70" VerticalAlignment="Top" Background="#FF1368BD">
-            <TextBlock Text="Beyoğlu Kafesi" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Image Source="/Images/cafe.png" Margin="0,15,0,11" />
+                <TextBlock Text="Beyoğlu Kafesi"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" Margin="8,22,8,18" />
+            </StackPanel>
+
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock x:Name="FirstLast" Text="Abel Dutra" VerticalAlignment="Center" FontSize="18"/>
                 <materialDesign:PopupBox  Margin="10" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
-                    <StackPanel Width="150">
-                        <Button Content="Hesabım" />
-                        <Separator/>
-                        <Button x:Name="btnLogOut" Click="btnLogOut_Click" Content="Çıkış Yap"/>
+                    <StackPanel Width="150" Height="50">
+                        <Button x:Name="btnLogOut" Click="btnLogOut_Click" Width="150" Content="Çıkış Yap"/>
                     </StackPanel>
                 </materialDesign:PopupBox>
             </StackPanel>
@@ -54,7 +56,7 @@
                         <materialDesign:PackIcon Foreground="#FF1B3861" Kind="Menu" Margin="0,15" Width="25" Height="25" HorizontalAlignment="Center"/>
                     </Button>
                 </Grid>
-                <ListView  ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="#FF1368BD" SelectionMode="Single" SelectionChanged="ListView_SelectionChanged">
+                <ListView x:Name="MenuListView" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="#FF1368BD" SelectionMode="Single" SelectionChanged="ListView_SelectionChanged">
 
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
@@ -79,8 +81,8 @@
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Margin="10" Kind="Home" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Text="Anasayfa" VerticalAlignment="Center" Margin="20 10" />
-                        </StackPanel>  
-                    </ListViewItem> 
+                        </StackPanel>
+                    </ListViewItem>
                     <ListViewItem Height="60" x:Name="Cart" >
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Margin="10" Kind="Cart" Width="25" Height="25" VerticalAlignment="Center"/>

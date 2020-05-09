@@ -34,9 +34,9 @@ namespace CP.BusinessLayer.Operations
             _data.ProductRepository.Remove(id);
             return _data.Complete();
         }
-        public static async Task<List<Product>> GetProductsAsync()
+        public static List<Product> GetProducts()
         {
-            return await _data.ProductRepository.GetProductAsync();
+            return _data.ProductRepository.GetAll(x=>x.Category,y=>y.IsDeleted==false);
         }
     }
 }

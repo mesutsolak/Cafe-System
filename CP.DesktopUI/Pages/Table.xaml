@@ -3,10 +3,42 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:CP.DesktopUI.Pages"
+             xmlns:local="clr-namespace:CP.DesktopUI.Pages" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="530" d:DesignWidth="1020" Background="White">
     <Grid>
-        <Label Content="Table"/>
+        <Grid Height="55" Background="Transparent" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Masa Listesi" Margin="10,10,10,0" FontSize="24"/>
+            </StackPanel>
+            <Button x:Name="btnTableRefresh" Width="160" Margin="10"  HorizontalAlignment="Right">
+                <StackPanel Orientation="Horizontal" Cursor="Hand">
+                    <materialDesign:PackIcon Kind="Refresh" Width="25" Height="18" />
+                    <TextBlock><Run Text="Masaları Yenile"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Separator Background="Gray" Margin="2,30,-2,-26"></Separator>
+        </Grid>
+        <Grid>
+            <ListView x:Name="CartView" ItemsSource="{Binding users}" Margin="0,65,0,-65">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="Id" Width="50"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding FirstName}" Header="İsim" Width="75"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding LastName}" Header="Soyisim" Width="95"/>
+                        <GridViewColumn Header="İşlemler">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Left">
+                                        <materialDesign:PackIcon  x:Name="btnConfirmTable" Cursor="Hand" ToolTip="Tablo Onayla"   Kind="Tick"  Margin="5" Foreground="Green"  MouseDoubleClick="btnConfirmTable_MouseDoubleClick" Width="15" Tag="{Binding Id}"  Height="25" VerticalAlignment="Center"/>
+                                        <materialDesign:PackIcon  x:Name="btnTrashRemove" Cursor="Hand" ToolTip="Tablo Sil" MouseDoubleClick="btnTrashRemove_MouseDoubleClick"  Kind="Trash" Width="15" Foreground="Red" Height="25" Tag="{Binding Id}" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
     </Grid>
 </UserControl>

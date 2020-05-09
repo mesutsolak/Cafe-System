@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CP.DesktopUI"
         mc:Ignorable="d"
-        Title="Giriş Yap" Height="320" Width="300" WindowStartupLocation="CenterScreen" WindowStyle="None" FontSize="14" Background="#04c582">
+        Title="Giriş Yap" Height="359" Width="300" WindowStartupLocation="CenterScreen" WindowStyle="None" FontSize="14" Background="#04c582">
     <Border Background="#2e3137" CornerRadius="20" Margin="20">
     <StackPanel Margin="20">
-        <Label Content="Giriş Yap" Foreground="White" FontSize="25" HorizontalAlignment="Center"/>
+       <Image Source="/Images/User.png" Height="50" />
+ <Label Content="Giriş Yap" Foreground="White" FontSize="25" HorizontalAlignment="Center"/>
             <Separator></Separator>
             <Label Content="Kullanıcı Adı" Foreground="White"/>
             <TextBox Name="txtUserName" Background="#545d6a" Foreground="White" FontSize="18"/>

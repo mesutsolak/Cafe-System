@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7EsTtGngzPpfz9JS73oxKfFKz6jO5B0e+1ZizwFghV3UF6WEiCeA2G2H+mklpIH1+PrRMJHSIZvYWLejlXd5Sg==",
+  "dgSpecHash": "Ygv4sAHoymHfl0tmEXsogfCsZeygYnr5ae2g6FCq6x2hC4eq7d5yqGOSe2fOpsUwsTyeVC9L4G5ncThzfj6xdQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile.Android\\CP.Mobile.Android.csproj",
   "expectedPackageFiles": [
@@ -106,8 +106,8 @@
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.vector.drawable\\28.0.0.3\\xamarin.android.support.vector.drawable.28.0.0.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.versionedparcelable\\28.0.0.3\\xamarin.android.support.versionedparcelable.28.0.0.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.viewpager\\28.0.0.3\\xamarin.android.support.viewpager.28.0.0.3.nupkg.sha512",
-    "C:\\Users\\Mesut Solak\\.nuget\\packages\\xamarin.essentials\\1.5.2\\xamarin.essentials.1.5.2.nupkg.sha512",
-    "C:\\Users\\Mesut Solak\\.nuget\\packages\\xamarin.forms\\4.5.0.617\\xamarin.forms.4.5.0.617.nupkg.sha512",
+    "C:\\Users\\Mesut Solak\\.nuget\\packages\\xamarin.essentials\\1.5.3.1\\xamarin.essentials.1.5.3.1.nupkg.sha512",
+    "C:\\Users\\Mesut Solak\\.nuget\\packages\\xamarin.forms\\4.6.0.726\\xamarin.forms.4.6.0.726.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\xamarin.plugins.fluentvalidation\\3.0.64\\xamarin.plugins.fluentvalidation.3.0.64.nupkg.sha512"
   ],
   "logs": []

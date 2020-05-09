@@ -3,10 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:CP.DesktopUI.Pages"
+             xmlns:local="clr-namespace:CP.DesktopUI.Pages" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="530" d:DesignWidth="1020" Background="White">
     <Grid>
-        <Label Content="Home"/>
+        <Grid Height="55" Background="Transparent" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Anasayfa" Margin="10,10,10,0" FontSize="24"/>
+            </StackPanel>
+                <StackPanel Orientation="Horizontal" Panel.ZIndex="1"  VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand">
+                <TextBlock>hjjh</TextBlock>
+                    <materialDesign:PackIcon Kind="Cart" Width="25" Height="18" />
+                    <TextBlock x:Name="CartCount"><Run Text="10"/></TextBlock>
+                <materialDesign:PackIcon Kind="TableChair" Width="25" Height="18" />
+                <TextBlock x:Name="TableCount"><Run Text="10"/></TextBlock>
+                <materialDesign:PackIcon Kind="Music" Width="25" Height="18" />
+                <TextBlock x:Name="MusicCount" ><Run Text="10"/></TextBlock>
+            </StackPanel>
+            <Separator Background="Gray" Margin="2,36,-2,-32"></Separator>
+        </Grid>
+
+        <Grid>
+
+        </Grid>
     </Grid>
 </UserControl>

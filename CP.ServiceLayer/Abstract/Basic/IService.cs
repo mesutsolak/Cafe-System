@@ -13,6 +13,7 @@ namespace CP.ServiceLayer.Abstract.Basic
         Task<string> UpdateAsync(T entity);
         Task<string> RemoveAsync(int id);
         Task<T> GetFindAsync(int id);
-        Task<List<T>> GetAllAsync();
+        List<T> GetAll();
+        T GetFind(int id);
     }
 }

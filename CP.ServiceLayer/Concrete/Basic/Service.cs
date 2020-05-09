@@ -58,35 +58,62 @@ namespace CP.ServiceLayer.Concrete.Basic
             return ResponseMessage;
         }
 
-        public async Task<List<T>> GetAllAsync()
+
+        public List<T> GetAll()
         {
-            List<T> users = null;
+            List<T> entities = null;
+
+            try
+            {
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                var _result = Task.Run(() => client.GetStringAsync(Url)).Result;
+
+                entities = JsonConvert.DeserializeObject<List<T>>(_result, new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore
+                });
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+
+
+            return entities;
+        }
+
+        public T GetFind(int id)
+        {
+            T entity = null;
+            try
+            {
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                var _result = Task.Run(()=>client.GetStringAsync(Url + id)).Result;
+                entity = JsonConvert.DeserializeObject<T>(_result, new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore
+                });
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return entity;
+        }
+
+        public async Task<T> GetFindAsync(int id)
+        {
+            T entity = null;
             try
             {
                 await Task.Run(async () =>
                 {
                     client.DefaultRequestHeaders.Add("Accept", "application/json");
-                    var _result = await client.GetStringAsync(Url);
-                     var a  = JsonConvert.DeserializeObject<List<T>>(_result);
-                });
-            }
-            catch (HttpRequestException ex)
-            {
-                throw ex;
-            }
-            return  users;
-        }
-
-        public async Task<T> GetFindAsync(int id)
-        {
-            T user = null;
-            try                                   
-            {
-                await Task.Run(async () =>
-                {
-                    client.DefaultRequestHeaders.Add("Accept", "application/json");
                     var _result = await client.GetStringAsync(Url + id);
-                    user = JsonConvert.DeserializeObject<T>(_result);
+                    entity = JsonConvert.DeserializeObject<T>(_result);
 
                 });
             }
@@ -94,7 +121,7 @@ namespace CP.ServiceLayer.Concrete.Basic
             {
                 throw ex;
             }
-            return user;
+            return entity;
         }
 
         public async Task<string> RemoveAsync(int id)

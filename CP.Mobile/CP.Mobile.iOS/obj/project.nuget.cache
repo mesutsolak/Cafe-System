@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "lBehhJHwrYW/yJqjdUU+bGLtq4pBOZD/FFyzC4vvsGTMg57n9XWl2pKbwfOGtYWjmkneE+0LOZPX1j1ZL+tOug==",
+  "dgSpecHash": "tES9el5MiHpZI4XJU7wiG0oxOoHaEfgl/+sn/bt1Vu8qw5X3h88gBXep1BAQ4cDzsd/fWvVrIwOZzs4oidCCPw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile.iOS\\CP.Mobile.iOS.csproj",
   "expectedPackageFiles": [
@@ -42,7 +42,7 @@
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\system.net.sockets\\4.3.0\\system.net.sockets.4.3.0.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\system.objectmodel\\4.3.0\\system.objectmodel.4.3.0.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
-    "C:\\Users\\Mesut Solak\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512",
+    "C:\\Users\\Mesut Solak\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\system.reflection.extensions\\4.3.0\\system.reflection.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\system.reflection.primitives\\4.3.0\\system.reflection.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\system.resources.resourcemanager\\4.3.0\\system.resources.resourcemanager.4.3.0.nupkg.sha512",
@@ -69,8 +69,8 @@
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\xam.plugin.media\\5.0.1\\xam.plugin.media.5.0.1.nupkg.sha512",
-    "C:\\Users\\Mesut Solak\\.nuget\\packages\\xamarin.essentials\\1.5.2\\xamarin.essentials.1.5.2.nupkg.sha512",
-    "C:\\Users\\Mesut Solak\\.nuget\\packages\\xamarin.forms\\4.5.0.617\\xamarin.forms.4.5.0.617.nupkg.sha512",
+    "C:\\Users\\Mesut Solak\\.nuget\\packages\\xamarin.essentials\\1.5.3.1\\xamarin.essentials.1.5.3.1.nupkg.sha512",
+    "C:\\Users\\Mesut Solak\\.nuget\\packages\\xamarin.forms\\4.6.0.726\\xamarin.forms.4.6.0.726.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\xamarin.plugins.fluentvalidation\\3.0.64\\xamarin.plugins.fluentvalidation.3.0.64.nupkg.sha512"
   ],
   "logs": []

@@ -881,7 +881,7 @@
           "lib/netstandard2.0/Plugin.Media.dll": {}
         }
       },
-      "Xamarin.Essentials/1.5.2": {
+      "Xamarin.Essentials/1.5.3.1": {
         "type": "package",
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
@@ -893,7 +893,7 @@
           "lib/netstandard2.0/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.5.0.617": {
+      "Xamarin.Forms/4.6.0.726": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {},
@@ -4115,10 +4115,10 @@
         "xam.plugin.media.nuspec"
       ]
     },
-    "Xamarin.Essentials/1.5.2": {
-      "sha512": "qHxkrkx5jIC0X/qWhxCPZ3MuuOJm8bfCzAoUtlpOBSE4oV0JhrkTezK0A+IV+k/MeJ3zKc8FexaIXah9rlCTIw==",
+    "Xamarin.Essentials/1.5.3.1": {
+      "sha512": "6sE3kGMhES7dsR8ll+ar+roEIFobjPfDskKNMsU4FF6cV27ZsdArGZHxe1QqPPJcMT6PzJsGvA3l5PNMZgw5ng==",
       "type": "package",
-      "path": "xamarin.essentials/1.5.2",
+      "path": "xamarin.essentials/1.5.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4159,14 +4159,14 @@
         "lib/xamarinwatchos10/Xamarin.Essentials.pdb",
         "lib/xamarinwatchos10/Xamarin.Essentials.xml",
         "readme.txt",
-        "xamarin.essentials.1.5.2.nupkg.sha512",
+        "xamarin.essentials.1.5.3.1.nupkg.sha512",
         "xamarin.essentials.nuspec"
       ]
     },
-    "Xamarin.Forms/4.5.0.617": {
-      "sha512": "tB/h7bHEylOgNT+521SRnbmO+LCe5R3lPboD/icCMpa+FdjmxhZQ7+fIIPFDbhY2dqYetGRnAeJWXVx4NLbmAw==",
+    "Xamarin.Forms/4.6.0.726": {
+      "sha512": "NI7iL5NnrQN/gCyoHLlexcDndNin67hFV7ObG8QQU2zbEi15B1SRaAsuiNeXVYAHfXg3/amqryqzGd+3R6lyZQ==",
       "type": "package",
-      "path": "xamarin.forms/4.5.0.617",
+      "path": "xamarin.forms/4.6.0.726",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4429,8 +4429,8 @@
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/Microsoft.UI.Xaml/Themes/generic.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/PageControlStyle.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/PickerStyle.xaml",
+        "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/PromptDialog.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/Resources.xaml",
-        "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/Shell/ShellStyles.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/SliderStyle.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/StepperControl.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/TabbedPageStyle.xaml",
@@ -4461,6 +4461,7 @@
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/Microsoft.UI.Xaml/Themes/generic.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/PageControlStyle.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/PickerStyle.xaml",
+        "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/PromptDialog.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/Resources.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/Shell/ShellStyles.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/SliderStyle.xaml",
@@ -4471,7 +4472,7 @@
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.4.5.0.617.nupkg.sha512",
+        "xamarin.forms.4.6.0.726.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -4503,8 +4504,8 @@
       "NETStandard.Library >= 2.0.3",
       "Rg.Plugins.Popup >= 2.0.0.2",
       "Xam.Plugin.Media >= 5.0.1",
-      "Xamarin.Essentials >= 1.5.2",
-      "Xamarin.Forms >= 4.5.0.617",
+      "Xamarin.Essentials >= 1.5.3.1",
+      "Xamarin.Forms >= 4.6.0.726",
       "Xamarin.Plugins.FluentValidation >= 3.0.64"
     ]
   },
@@ -4586,11 +4587,11 @@
           },
           "Xamarin.Essentials": {
             "target": "Package",
-            "version": "[1.5.2, )"
+            "version": "[1.5.3.1, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[4.5.0.617, )"
+            "version": "[4.6.0.726, )"
           },
           "Xamarin.Plugins.FluentValidation": {
             "target": "Package",

@@ -21,19 +21,19 @@ namespace CP.Mobile.ListContent
         {
             this.mainPage = mainPage;
             AddItems();
+
         }
 
-        private async void AddItems()
+        private void AddItems()
         {
-            productService.Url = "api/Product";
-            
-            var _ListProduct = await productService.GetAllAsync();
+            productService.Url = "api/Product/ProductAll";
+
+            var _ListProduct = productService.GetAll();
 
             foreach (var item in _ListProduct)
             {
                 Items.Add(item);
             }
-
         }
 
         private ObservableCollection<ProductDTO> _items = new ObservableCollection<ProductDTO>();
@@ -59,8 +59,8 @@ namespace CP.Mobile.ListContent
             {
                 return new Command((data) =>
                 {
-                    var _meals = (data as CP.Mobile.ListContent.Meal);
-                    mainPage.Navigation.PushPopupAsync(new CP.Mobile.ListContent.CartModals.ProductDetails(_meals));
+                    var _product = (data as ProductDTO);
+                    mainPage.Navigation.PushPopupAsync(new CP.Mobile.ListContent.CartModals.ProductDetails(_product));
                 });
             }
         }

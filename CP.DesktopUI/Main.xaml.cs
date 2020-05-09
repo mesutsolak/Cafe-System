@@ -23,7 +23,8 @@ namespace CP.DesktopUI
         public Main()
         {
             InitializeComponent();
-            FirstLast.Text = Application.Current.Properties["Name"].ToString() ?? "İsim ve Soyisim";
+            FirstLast.Text = "İsim ve Soyisim";
+            MenuListView.SelectedIndex = 0;
         }
 
         private void btnLogOut_Click(object sender, RoutedEventArgs e)

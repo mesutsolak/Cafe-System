@@ -41,11 +41,11 @@
                     TextColor="Black"  
                     XAlign="Center"  
                     YAlign="Center"   
-                    Text="{Binding Category}" />
+                    Text="{Binding Category.Name}" />
                   
 
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="15" Margin="8">
-                            <Label Text="{Binding Price}" FontSize="16" TextColor="Black"/>
+                            <Label Text="{Binding Price,StringFormat='{0:N} TL'} " FontSize="16" TextColor="Black"/>
                                 <ImageButton x:Name="btnCart" BackgroundColor="Transparent" x:Uid="btnId" Clicked="btnCart_Clicked"  Source="cart.png" WidthRequest="20" CommandParameter="{Binding Id}"/>
                         </StackLayout>
 

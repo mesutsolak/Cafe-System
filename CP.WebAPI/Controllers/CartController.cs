@@ -73,7 +73,7 @@ namespace CP.WebAPI.Controllers
             if (!ModelState.IsValid)
             {
                 httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
-                httpResponseMessage.Headers.Add("Message", "Doğrulana başarısız");
+                httpResponseMessage.Headers.Add("Message", "Doğrulama başarısız");
             }
             else
             {

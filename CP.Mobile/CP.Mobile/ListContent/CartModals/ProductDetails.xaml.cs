@@ -1,4 +1,5 @@
-﻿using Rg.Plugins.Popup.Extensions;
+﻿using CP.ServiceLayer.DTO;
+using Rg.Plugins.Popup.Extensions;
 using Rg.Plugins.Popup.Pages;
 using System;
 using System.Collections.Generic;
@@ -14,12 +15,17 @@ namespace CP.Mobile.ListContent.CartModals
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProductDetails : PopupPage
     {
-        public ProductDetails(Meal Meals)
+        public ProductDetails(ProductDTO product)
         {
             InitializeComponent();
-            ImageMeal.Source = Meals.Image;
-            LblName.Text = Meals.Name;
-            lblDescription.Text = Meals.Category + "uhuıuıhgıgıghghlghlghghllghlhghghgghghghghghghghghghghghghghghjhbhjbhbhklhblbhbhlhbhblbhlbhbhlbhhjjjjjjjjjjjjjjjjjjjjjıghhgghghghghghghghghghghhgghhhhlhhllhjjhjh ";
+            ImageMeal.Source = product.Image;
+            lblCategory.Text = "/ " + product.Category.Name;
+            lblClock.Text = product.Time.ToString();
+            lblComment.Text = "5";
+            lblPrice.Text = product.Price + " TL";
+            lblRating.Text = product.Rating.ToString();
+            LblName.Text = product.Name;
+            lblDescription.Text = product.ProductDetail;
         }
         public void List()
         {

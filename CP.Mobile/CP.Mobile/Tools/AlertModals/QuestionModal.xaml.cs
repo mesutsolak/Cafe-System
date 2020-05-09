@@ -31,7 +31,7 @@ namespace CP.Mobile.Tools.AlertModals
             await Navigation.PopPopupAsync(true);
         }
 
-        private async  void btnOk_Clicked(object sender, EventArgs e)
+        private  void btnOk_Clicked(object sender, EventArgs e)
         {
             if (!(_action == null))
             {

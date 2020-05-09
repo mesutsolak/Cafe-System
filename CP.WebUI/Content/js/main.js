@@ -277,8 +277,6 @@ function returnPostJson(data) {
     if (!$.null(data.Modal)) {
         $(document).find("#" + data.Modal).modal("hide");
     }
-    debugger;
-
 
     if (!$.null(data.Function)) {
         Function();

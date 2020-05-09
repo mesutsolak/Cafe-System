@@ -92,7 +92,7 @@ namespace CP.Mobile.MasterDetailPages
         }
         // Event for Menu Item selection, here we are going to handle navigation based  
         // on user selection in menu ListView  
-        private async void OnMenuItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void OnMenuItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var item = (MasterPageItem)e.SelectedItem;
 

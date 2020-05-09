@@ -163,7 +163,12 @@
       <Name>CP.ServiceLayer</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\cafe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\User.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -24,5 +24,15 @@ namespace CP.DesktopUI.Pages
         {
             InitializeComponent();
         }
+
+        private void btnMusicConfirm_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void btnMusicTrash_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
