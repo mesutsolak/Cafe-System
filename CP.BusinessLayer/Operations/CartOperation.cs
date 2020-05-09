@@ -9,10 +9,16 @@ namespace CP.BusinessLayer.Operations
 {
     public class CartOperation:BaseOperation
     {
-        public static async Task<int> CartAdd(Cart cart)
+        public static async Task<int> CartAddAsync(Cart cart)
         {
             _data.CartRepository.Add(cart);
            return await _data.CompleteAsync();
+        }
+
+        public static int CartAdd(Cart cart)
+        {
+            _data.CartRepository.Add(cart);
+            return _data.Complete(); 
         }
         public static async Task<int> CartUpdate(Cart cart)
         {

@@ -1,6 +1,7 @@
 ﻿using CP.BusinessLayer.Operations;
 using CP.BusinessLayer.Tools;
 using CP.Entities.Model;
+using CP.ServiceLayer.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,8 @@ namespace CP.WebAPI.Controllers
     public class CartController : BaseApiController
     {
         [HttpPost]
-        public async Task<HttpResponseMessage> Post([FromBody]Cart cart)
+        [Route("Add")]
+        public  HttpResponseMessage Post([FromBody]CartDTO cart)
         {
             if (!ModelState.IsValid)
             {
@@ -26,7 +28,11 @@ namespace CP.WebAPI.Controllers
             }
             else
             {
-                var result = await CartOperation.CartAdd(cart);
+                var _value = mapper.Map<CartDTO, Cart>(cart);
+
+
+                var result =  CartOperation.CartAdd(_value);
+
                 if (result > 0)
                 {
                     httpResponseMessage.StatusCode = HttpStatusCode.OK;
@@ -76,7 +82,7 @@ namespace CP.WebAPI.Controllers
             }
             else
             {
-                var result = await CartOperation.CartAdd(cart);
+                var result = await CartOperation.CartUpdate(cart);
                 if (result > 0)
                 {
                     httpResponseMessage.StatusCode = HttpStatusCode.OK;

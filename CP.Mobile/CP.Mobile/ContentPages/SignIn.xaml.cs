@@ -55,13 +55,13 @@ namespace CP.Mobile.ContentPages
 
                     if (_result.Contains("Başarıyla"))
                     {
-                        userService.Url = "api/User/UserId";
-                        
+                        userService.Url = "api/User/UserId/";
+
                         Preferences.Set("UserName", EntUserName.EntryText);
 
-                        Preferences.Set("UserId", userService.UserId(EntUserName.EntryText));
+                        Preferences.Set("UserId",  userService.UserId(EntUserName.EntryText));
 
-                        await Navigation.PushPopupAsync(new SuccessModal("Başarıyla Giriş Yapıldı",()=> { RootMain(); }));
+                        await Navigation.PushPopupAsync(new SuccessModal("Başarıyla Giriş Yapıldı", () => { RootMain(); }));
 
                         FormTools.FormClear(StlForm);
                     }
@@ -69,9 +69,9 @@ namespace CP.Mobile.ContentPages
                     {
                         await Navigation.PushPopupAsync(new ErrorModal("Giriş Başarısız"));
                     }
-                    }
-                } 
-           
+                }
+            }
+
             catch (Exception ex)
             {
 
@@ -80,7 +80,7 @@ namespace CP.Mobile.ContentPages
         }
         public async void RootMain()
         {
-            await Navigation.PushAsync(new CP.Mobile.MasterDetailPages.MainPage(),true);
+            await Navigation.PushAsync(new CP.Mobile.MasterDetailPages.MainPage(), true);
         }
     }
 }

@@ -27,27 +27,54 @@ namespace CP.ServiceLayer.Concrete.Basic
             }
         }
 
+        public string Add(T entity)
+        {
+            try
+            {
 
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                var response = Task.Run(() => client.PostAsJsonAsync(Url, entity)).Result;
+
+                ResponseMessage = response.Headers.GetValues("Message").FirstOrDefault().ToString();
+
+                if (response.IsSuccessStatusCode)
+                {
+
+                }
+                else
+                {
+                    ResponseMessage = response.Headers.GetValues("Message").FirstOrDefault().ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ResponseMessage = "Gönderirken Hata Meydana Geldi";
+
+                throw ex;
+            }
+
+            return ResponseMessage;
+        }
 
         public async Task<string> AddAsync(T entity)
         {
             try
             {
-                await Task.Run(async () =>
+
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                var response = await client.PostAsJsonAsync(Url, entity);
+
+
+                if (response.IsSuccessStatusCode)
                 {
-                    client.DefaultRequestHeaders.Add("Accept", "application/json");
-                    var response = await client.PostAsJsonAsync(Url, entity);
+                    ResponseMessage = response.Headers.GetValues("Message").FirstOrDefault().ToString();
+                }
+                else
+                {
+                    ResponseMessage = "İşleminiz Başarısız Oldu";
+                }
 
-                    if (response.IsSuccessStatusCode)
-                    {
-                        ResponseMessage = response.Headers.GetValues("Message").FirstOrDefault().ToString();
-                    }
-                    else
-                    {
-                        ResponseMessage = "İşleminiz Başarısız Oldu";
-                    }
-
-                });
             }
             catch (Exception ex)
             {
@@ -92,7 +119,7 @@ namespace CP.ServiceLayer.Concrete.Basic
             try
             {
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
-                var _result = Task.Run(()=>client.GetStringAsync(Url + id)).Result;
+                var _result = Task.Run(() => client.GetStringAsync(Url + id)).Result;
                 entity = JsonConvert.DeserializeObject<T>(_result, new JsonSerializerSettings
                 {
                     NullValueHandling = NullValueHandling.Ignore

@@ -48,6 +48,8 @@ namespace CP.Mobile.MasterDetailPages.Menus
         {
             Preferences.Remove("UserName");
 
+            Preferences.Remove("UserId");
+
             await Navigation.PopPopupAsync();
 
             Application.Current.MainPage = new NavigationPage(new CP.Mobile.MainPage());

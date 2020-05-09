@@ -15,13 +15,13 @@ namespace CP.Entities.Model
             IsUse = false;
         }
 
-        public int Id { get; set; }
-        public int Count { get; set; }
-        public int Time { get; set; }
-        public int Price { get; set; }
-        public bool IsConfirm { get; set; }
-        public bool IsDeleted { get; set; }
-        public bool IsUse { get; set; }
+        public int? Id { get; set; }
+        public int? Count { get; set; }
+        public int? Time { get; set; }
+        public int? Price { get; set; }
+        public bool? IsConfirm { get; set; }
+        public bool? IsDeleted { get; set; }
+        public bool? IsUse { get; set; }
         public int? ProductId { get; set; }   
         public int? UserId { get; set; }
         public virtual Product Product { get; set; }

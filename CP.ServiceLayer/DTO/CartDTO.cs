@@ -8,6 +8,13 @@ namespace CP.ServiceLayer.DTO
 {
     public class CartDTO
     {
+        public CartDTO()
+        {
+            IsConfirm = false;
+            IsDeleted = false;
+            IsUse = false;
+        }
+        [System.ComponentModel.DataAnnotations.Key]
         public int Id { get; set; }
         public int Count { get; set; }
         public int Time { get; set; }

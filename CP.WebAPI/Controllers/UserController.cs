@@ -170,8 +170,9 @@ namespace CP.WebAPI.Controllers
             }
             return httpResponseMessage;
         }
+        
+        [HttpGet]
         [Route("UserId/{UserName}")]
-        [HttpPost]
         public HttpResponseMessage UserId(string UserName)
         {
             int _result = UserOperations.UserFindId(UserName);

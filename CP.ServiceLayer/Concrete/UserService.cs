@@ -94,10 +94,12 @@ namespace CP.ServiceLayer.Concrete
         }
         public int UserId(string UserName)
         {
-            client.DefaultRequestHeaders.Add("Accept", "application/json");
-            var response = Task.Run(()=>  client.PostAsJsonAsync(Url + UserName,UserName)).Result;
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            if (response.IsSuccessStatusCode)
+            var response = Task.Run(()=>  client.GetAsync(Url + UserName)).Result;
+
+             if (response.IsSuccessStatusCode)
             {
                 _Result = int.Parse(response.Headers.GetValues("Message").FirstOrDefault().ToString());
             }
