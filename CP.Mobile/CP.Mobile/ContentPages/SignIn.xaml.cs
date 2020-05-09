@@ -55,8 +55,11 @@ namespace CP.Mobile.ContentPages
 
                     if (_result.Contains("Başarıyla"))
                     {
-
+                        userService.Url = "api/User/UserId";
+                        
                         Preferences.Set("UserName", EntUserName.EntryText);
+
+                        Preferences.Set("UserId", userService.UserId(EntUserName.EntryText));
 
                         await Navigation.PushPopupAsync(new SuccessModal("Başarıyla Giriş Yapıldı",()=> { RootMain(); }));
 

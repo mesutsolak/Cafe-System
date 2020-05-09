@@ -92,5 +92,20 @@ namespace CP.ServiceLayer.Concrete
             return ResponseMessage;
 
         }
+        public int UserId(string UserName)
+        {
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            var response = Task.Run(()=>  client.PostAsJsonAsync(Url + UserName,UserName)).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                _Result = int.Parse(response.Headers.GetValues("Message").FirstOrDefault().ToString());
+            }
+            else
+            {
+                _Result = 0;
+            }
+            return _Result;
+        }
     }
 }

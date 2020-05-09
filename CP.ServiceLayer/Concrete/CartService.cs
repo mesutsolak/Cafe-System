@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace CP.ServiceLayer.Concrete
 {
-    public class CartService:Service<CartDTO>,ICartService
+    public class CartService : Service<CartDTO>, ICartService
     {
+      
     }
 }

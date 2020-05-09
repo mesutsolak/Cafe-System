@@ -13,17 +13,16 @@ using System.Web.Script.Serialization;
 
 namespace CP.WebAPI.Controllers
 {
-    [Route("api/Cart/")]
+    [RoutePrefix("api/Cart")]
     public class CartController : BaseApiController
     {
         [HttpPost]
-        [Route("api/Cart/")]
         public async Task<HttpResponseMessage> Post([FromBody]Cart cart)
         {
             if (!ModelState.IsValid)
             {
                 httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
-                httpResponseMessage.Headers.Add("Message", "Doğrulana başarısız");
+                httpResponseMessage.Headers.Add("Message", "Doğrulama başarısız");
             }
             else
             {
@@ -93,7 +92,7 @@ namespace CP.WebAPI.Controllers
 
         }
         [HttpDelete]
-        [Route("api/User/{id:int}")]
+        [Route("{id:int}")]
         public async Task<HttpResponseMessage> Delete(int id)
         {
             var _result = await CartOperation.CartRemove(id);

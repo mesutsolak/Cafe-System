@@ -15,6 +15,7 @@ namespace CP.ServiceLayer.Concrete.Basic
     {
         public string Url { get; set; }
         public string ResponseMessage { get; set; }
+        public int _Result { get; set; }
         public HttpClient client
         {
             get

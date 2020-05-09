@@ -13,14 +13,14 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using System.Web.Http.ModelBinding;
 using System.Web.Script.Serialization;
+using System.Web.Routing;
 
 namespace CP.WebAPI.Controllers
 {
-    [Route("api/User/")]
+    [RoutePrefix("api/User")]
     public class UserController : BaseApiController
     {
         [HttpPost]
-        [Route("api/User/")]
         public async Task<HttpResponseMessage> Post([FromBody]M.User user)
         {
             if (!ModelState.IsValid)
@@ -45,7 +45,7 @@ namespace CP.WebAPI.Controllers
             return httpResponseMessage;
         }
         [HttpPost]
-        [Route("api/User/Login")]
+        [Route("Login")]
         public async Task<HttpResponseMessage> Login([FromBody]LoginControl loginControl)
         {
             if (!ModelState.IsValid)
@@ -95,7 +95,7 @@ namespace CP.WebAPI.Controllers
             return httpResponseMessage;
         }
         [HttpGet]
-        [Route("api/User/IsThereUserName/{UserName}")]
+        [Route("IsThereUserName/{UserName}")]
         public async Task<HttpResponseMessage> IsThereUserName(string UserName)
         {
             var _bool = await UserOperations.UserNameControl(UserName);
@@ -111,7 +111,7 @@ namespace CP.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("api/User/IsThereEmail")]
+        [Route("IsThereEmail")]
         public async Task<HttpResponseMessage> IsThereEmail(string Email)
         {
             var _bool = await UserOperations.EmailControl(Email);
@@ -154,7 +154,7 @@ namespace CP.WebAPI.Controllers
 
         }
         [HttpDelete]
-        [Route("api/User/{id:int}")]
+        [Route("{id:int}")]
         public async Task<HttpResponseMessage> Delete(int id)
         {
            var _result = await UserOperations.UserRemove(id);
@@ -167,6 +167,23 @@ namespace CP.WebAPI.Controllers
             {
                 httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
                 httpResponseMessage.Headers.Add("Message", "Kullanıcı Silme Başarısız");
+            }
+            return httpResponseMessage;
+        }
+        [Route("UserId/{UserName}")]
+        [HttpPost]
+        public HttpResponseMessage UserId(string UserName)
+        {
+            int _result = UserOperations.UserFindId(UserName);
+            if (_result <= 0)
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+                httpResponseMessage.Headers.Add("Message", "Kullanıcı Bulunamadı");
+            }
+            else
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.OK;
+                httpResponseMessage.Headers.Add("Message", _result.ToString());
             }
             return httpResponseMessage;
         }

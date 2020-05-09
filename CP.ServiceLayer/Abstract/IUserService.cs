@@ -13,5 +13,6 @@ namespace CP.ServiceLayer.Abstract
         Task<string> LoginControl(LoginControl loginControl);
         Task<bool> IsThereUserName(string UserName);
         Task<bool> IsThereEmail(string Email);
+        int UserId(string UserName);
     }
 }

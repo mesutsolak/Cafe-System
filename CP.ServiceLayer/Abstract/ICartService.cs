@@ -10,5 +10,6 @@ namespace CP.ServiceLayer.Abstract
 {
     public interface ICartService:IService<CartDTO>
     {
+       
     }
 }

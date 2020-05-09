@@ -3,6 +3,7 @@ using CP.Mobile.Tools.AlertModals;
 using CP.ServiceLayer.Concrete;
 using CP.ServiceLayer.DTO;
 using DLToolkit.Forms.Controls;
+using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace CP.Mobile.TabbedPage.MenuItemTabbed
     public partial class Meals : ContentPage
     {
         ProductService productService = new ProductService();
+
 
         MainPageModel pageModel;
         public Meals()
@@ -35,16 +37,16 @@ namespace CP.Mobile.TabbedPage.MenuItemTabbed
                 var _id = ((ImageButton)sender).CommandParameter.ToString();
             productService.Url = "api/Product/";
                 ProductDTO p = productService.GetFind(int.Parse(_id));
-                //new QuestionModal()
-                await DisplayAlert(p.Name,p.ProductDetail,"kapat");
+                //await Navigation.PushPopupAsync(new QuestionModal("Çıkış İşlemi", "Çıkmak istiyor musunuz ?", () => { SignOut(); }), true);
+
             }
             catch (Exception ex)
             {
 
                 throw;
             }
-           
 
         }
+
     }
 }
