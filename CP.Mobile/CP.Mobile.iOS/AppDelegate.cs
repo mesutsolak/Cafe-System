@@ -25,9 +25,11 @@ namespace CP.Mobile.iOS
         {
             Rg.Plugins.Popup.Popup.Init();
 
+            Forms.SetFlags("IndicatorView_Experimental");
+           
 
             global::Xamarin.Forms.Forms.Init();
-            Forms.SetFlags("IndicatorView_Experimental");
+
             FlowListView.Init();
             LoadApplication(new App());
 

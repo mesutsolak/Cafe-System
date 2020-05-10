@@ -10,6 +10,6 @@ namespace CP.ServiceLayer.Abstract
 {
     public interface ICartService:IService<CartDTO>
     {
-       
+        List<CartDTO> Carts(int id);
     }
 }

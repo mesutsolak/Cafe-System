@@ -47,7 +47,7 @@ namespace CP.Mobile.MasterDetailPages
             {
                 Title = "Sepet",
                 Icon = "cart.png",
-                TargetType = typeof(TestPage3)
+                TargetType = typeof(Cart)
             });
             menuList.Add(new MasterPageItem()
             {
@@ -73,7 +73,8 @@ namespace CP.Mobile.MasterDetailPages
                 Icon = "clock.png",
                 TargetType = typeof(TestPage3)
             });
-            menuList.Add(new MasterPageItem() {
+            menuList.Add(new MasterPageItem()
+            {
                 Title = "Masalar",
                 Icon = "table.png",
                 TargetType = typeof(Tables)
@@ -88,7 +89,6 @@ namespace CP.Mobile.MasterDetailPages
             // Initial navigation, this can be used for our home page  
             Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(TestPage1)));
             IsPresented = false;
-
         }
         // Event for Menu Item selection, here we are going to handle navigation based  
         // on user selection in menu ListView  

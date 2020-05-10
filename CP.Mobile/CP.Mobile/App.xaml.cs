@@ -17,9 +17,14 @@ namespace CP.Mobile
         public App()
         {
             InitializeComponent();
+
+
             FlowListView.Init();
             MainPage = new NavigationPage(new SplashPage());
-            //MainPage = new TestPage3();
+            //MainPage = new Cart();
+           
+
+         
         }
         protected override void OnStart()
         {

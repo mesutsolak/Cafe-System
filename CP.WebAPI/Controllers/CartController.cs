@@ -17,9 +17,11 @@ namespace CP.WebAPI.Controllers
     [RoutePrefix("api/Cart")]
     public class CartController : BaseApiController
     {
+        List<CartDTO> ct = new List<CartDTO>();
+
         [HttpPost]
         [Route("Add")]
-        public  HttpResponseMessage Post([FromBody]CartDTO cart)
+        public HttpResponseMessage Post([FromBody]CartDTO cart)
         {
             if (!ModelState.IsValid)
             {
@@ -31,7 +33,7 @@ namespace CP.WebAPI.Controllers
                 var _value = mapper.Map<CartDTO, Cart>(cart);
 
 
-                var result =  CartOperation.CartAdd(_value);
+                var result = CartOperation.CartAdd(_value);
 
                 if (result > 0)
                 {
@@ -46,10 +48,24 @@ namespace CP.WebAPI.Controllers
             }
             return httpResponseMessage;
         }
+
         [HttpGet]
-        public async Task<List<Cart>> Get(int UserId)
+        [Route("List/{UserId}")]
+        public List<CartDTO> Get(int UserId)
         {
-            return await CartOperation.GetAllAsync(UserId);
+            var _carts = CartOperation.GetAll(UserId);
+
+
+            foreach (var item in _carts)
+            {
+                var _product = mapper.Map<Product, ProductDTO>(item.Product);
+                var _cart = mapper.Map<Cart, CartDTO>(item);
+                _cart.productDTO = _product;
+
+                ct.Add(_cart);
+            }
+
+            return ct;
         }
         [HttpGet]
         public async Task<HttpResponseMessage> GetFind(int id)

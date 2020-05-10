@@ -24,5 +24,6 @@ namespace CP.ServiceLayer.DTO
         public bool IsUse { get; set; }
         public int? ProductId { get; set; }
         public int? UserId { get; set; }
+        public ProductDTO productDTO { get; set; }
     }
 }

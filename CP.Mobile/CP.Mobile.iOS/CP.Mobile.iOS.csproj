@@ -250,4 +250,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\table.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\confirm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\remove.png" />
+  </ItemGroup>
 </Project>

@@ -38,5 +38,10 @@ namespace CP.BusinessLayer.Operations
         {
             return await _data.CartRepository.GetByIdAsync(id);
         }
+        public static List<Cart> GetAll(int UserId)
+        {
+            return _data.CartRepository.GetAll(x=>x.Product,x => x.UserId == UserId && x.IsDeleted==false); 
+        }
+
     }
 }
