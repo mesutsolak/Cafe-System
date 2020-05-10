@@ -20,6 +20,11 @@ namespace CP.BusinessLayer.Repository.Concrete
 
         public CafeProjectModel CafeDB => _context as CafeProjectModel; //bu cast işlemine sürekli ihtiyac duyacağız.
 
+        public void CartConfirm(int CartId)
+        {
+           var cart =  CafeDB.Cart.FirstOrDefault(x => x.Id == CartId);
+            CafeDB.Entry(cart).Property("IsConfirm").CurrentValue = true;
+        }
 
         public Task<List<Cart>> CartListAsync(int UserId)
         {

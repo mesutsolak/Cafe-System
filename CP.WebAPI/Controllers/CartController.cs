@@ -75,6 +75,28 @@ namespace CP.WebAPI.Controllers
         }
 
         [HttpGet]
+        [Route("Confirm/{CartId}")]
+        public HttpResponseMessage ConfirmCart(int CartId)
+        {
+            var result = CartOperation.CartConfirm(CartId);
+
+            if (result > 0)
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.OK;
+                httpResponseMessage.Headers.Add("Message", "Ürün Onaylandı");
+            }
+            else
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+                httpResponseMessage.Headers.Add("Message", "Ürün Onaylanmadı");
+            }
+            return httpResponseMessage;
+
+        }
+
+
+
+        [HttpGet]
         [Route("List/{UserId}")]
         public List<CartDTO> Get(int UserId)
         {

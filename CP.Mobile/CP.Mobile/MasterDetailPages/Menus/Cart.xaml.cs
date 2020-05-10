@@ -58,10 +58,30 @@ namespace CP.Mobile.MasterDetailPages.Menus
                 await Navigation.PushPopupAsync(new ErrorModal("Ürün Silme Başarısız"), true);
             }
         }
-
-        private void btnSuccess_Clicked(object sender, EventArgs e)
+        public async void Confirm(int CartId)
         {
+            cartservice.Url = "api/Cart/Confirm/";
+            var _result =  cartservice.ConfirmCart(CartId);
 
+            await Navigation.PopPopupAsync(true);
+
+            if (_result.Contains("Onaylandı"))
+            {
+                CartList();
+                await Navigation.PushPopupAsync(new SuccessModal("Ürün Başarıyla Onaylandı"), true);
+            }
+            else
+            {
+                await Navigation.PushPopupAsync(new ErrorModal("Ürün Onaylama Başarısız"), true);
+            }
+        }
+
+
+        private async void btnSuccess_Clicked(object sender, EventArgs e)
+        {
+            var _id = (sender as ImageButton).CommandParameter.ToString();
+
+            await Navigation.PushPopupAsync(new QuestionModal("Onaylama İşlemi", "Ürün Onaylansın mı ?", () => { Confirm(int.Parse(_id)); }), true);
         }
 
     }

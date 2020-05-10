@@ -16,7 +16,6 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\bin\Debug\System.Me
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\bin\Debug\System.Net.Http.Formatting.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.csprojAssemblyReference.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.csproj.CoreCompileInputs.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.csproj.CopyComplete
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.dll

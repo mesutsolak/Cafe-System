@@ -12,7 +12,7 @@
                 HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="Large" FontAttributes="Bold"   Margin="10,0,0,0"/>
                 <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="EndAndExpand">
                     <ImageButton Source="remove.png"   BackgroundColor="Transparent" WidthRequest="32" x:Name="btnRemoveAll"/>
-                    <ImageButton Source="confirm.png" Margin="0,0,15,0" WidthRequest="24" BackgroundColor="Transparent"  x:Name="btnSuccess" Clicked="btnSuccess_Clicked"/>
+                    <ImageButton Source="confirm.png" Margin="0,0,15,0" WidthRequest="24" BackgroundColor="Transparent"  />
                 </StackLayout>
             </StackLayout>
 
@@ -36,7 +36,7 @@
                                     <StackLayout Orientation="Horizontal" Spacing="10" Margin="0,0,15,0" HorizontalOptions="EndAndExpand">
                                          <ImageButton Source="pencil.png" BackgroundColor="Transparent" WidthRequest="24" CommandParameter="{Binding Id}"/>
                                        <ImageButton Source="remove.png" x:Name="btnRemove" Clicked="btnRemove_Clicked" BackgroundColor="Transparent" WidthRequest="32" CommandParameter="{Binding Id}"/>
-                                        <ImageButton Source="confirm.png" BackgroundColor="Transparent" WidthRequest="24" CommandParameter="{Binding Id}"/>
+                                        <ImageButton Source="confirm.png" BackgroundColor="Transparent" WidthRequest="24" CommandParameter="{Binding Id}" x:Name="btnSuccess" Clicked="btnSuccess_Clicked"/>
                                     </StackLayout>
                                 </StackLayout>
                             </Grid>

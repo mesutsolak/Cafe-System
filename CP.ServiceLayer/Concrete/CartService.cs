@@ -56,5 +56,26 @@ namespace CP.ServiceLayer.Concrete
             return ResponseMessage;
         }
 
+        public string ConfirmCart(int CartId)
+        {
+
+            try
+            {
+
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                var response = Task.Run(() => client.GetAsync(Url + CartId)).Result;
+
+                ResponseMessage = response.Headers.GetValues("Message").FirstOrDefault().ToString();
+
+            }
+            catch (Exception ex)
+            {
+                ResponseMessage = "Gönderirken Hata Meydana Geldi";
+
+                throw ex;
+            }
+
+            return ResponseMessage;
+        }
     }
 }
