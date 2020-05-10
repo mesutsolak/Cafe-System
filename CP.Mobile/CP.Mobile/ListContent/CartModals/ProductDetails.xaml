@@ -59,7 +59,7 @@
                                 <Label x:Name="lblNumber" x:Uid="lblNumber"   Text="0" VerticalOptions="Center"></Label>
                                 <Button Text="-" WidthRequest="40" HeightRequest="40" x:Name="btnMinus" x:Uid="btnMinus" Clicked="btnMinus_Clicked"/>
                             </StackLayout>
-                            <ImageButton Margin="10" BackgroundColor="Transparent" Source="cart2.png"  WidthRequest="28"/>
+                            <ImageButton x:Name="CartDetailAdd" Clicked="CartDetailAdd_Clicked" Margin="10" BackgroundColor="Transparent" Source="cart2.png"  WidthRequest="28"/>
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal" Margin="5">

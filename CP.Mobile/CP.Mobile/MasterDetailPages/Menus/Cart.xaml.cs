@@ -21,7 +21,7 @@ namespace CP.Mobile.MasterDetailPages.Menus
         {
             InitializeComponent();
             CartListItems.ItemsSource = CartList();
-   }
+          }
 
         public List<CartDTO> CartList()
         {

@@ -30,10 +30,25 @@ namespace CP.WebAPI.Controllers
             }
             else
             {
+                int result=0;
+
                 var _value = mapper.Map<CartDTO, Cart>(cart);
 
+                var product = CartOperation.IsThereProduct(_value.ProductId.Value);
 
-                var result = CartOperation.CartAdd(_value);
+                if (product.IsNullObject())
+                {
+                    result = CartOperation.CartAdd(_value);
+                }
+                else
+                {
+                    product.Count = product.Count + _value.Count;
+                    product.Price = product.Price + _value.Price;
+                    product.Time = product.Time + _value.Time;
+
+                    result = CartOperation.CartUpdate(product);
+                }
+                
 
                 if (result > 0)
                 {
@@ -98,7 +113,7 @@ namespace CP.WebAPI.Controllers
             }
             else
             {
-                var result = await CartOperation.CartUpdate(cart);
+                var result = await CartOperation.CartUpdateAsync(cart);
                 if (result > 0)
                 {
                     httpResponseMessage.StatusCode = HttpStatusCode.OK;

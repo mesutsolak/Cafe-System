@@ -20,7 +20,14 @@ namespace CP.BusinessLayer.Operations
             _data.CartRepository.Add(cart);
             return _data.Complete(); 
         }
-        public static async Task<int> CartUpdate(Cart cart)
+
+        public static int CartUpdate(Cart cart)
+        {
+            _data.CartRepository.Update(cart);
+            return _data.Complete();
+        }
+
+        public static async Task<int> CartUpdateAsync(Cart cart)
         {
             _data.CartRepository.Update(cart);
             return await _data.CompleteAsync();
@@ -42,6 +49,10 @@ namespace CP.BusinessLayer.Operations
         {
             return _data.CartRepository.GetAll(x=>x.Product,x => x.UserId == UserId && x.IsDeleted==false); 
         }
+        public static Cart IsThereProduct(int productId)
+        {
+           return _data.CartRepository.GetByFilter(x => x.ProductId == productId && x.IsDeleted == false);
+        } 
 
     }
 }
