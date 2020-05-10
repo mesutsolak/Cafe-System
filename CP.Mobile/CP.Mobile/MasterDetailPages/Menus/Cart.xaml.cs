@@ -1,5 +1,7 @@
-﻿using CP.ServiceLayer.Concrete;
+﻿using CP.Mobile.Tools.AlertModals;
+using CP.ServiceLayer.Concrete;
 using CP.ServiceLayer.DTO;
+using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,21 +22,41 @@ namespace CP.Mobile.MasterDetailPages.Menus
         public Cart()
         {
             InitializeComponent();
-            CartListItems.ItemsSource = CartList();
-          }
-
-        public List<CartDTO> CartList()
-        {
-           var _user = Preferences.Get("UserId", 0);
-            cartservice.Url = "api/Cart/List/";
-           return cartservice.Carts(_user);
+            CartList();
         }
 
-      
-     
-        private void btnRemove_Clicked(object sender, EventArgs e)
+        public void CartList()
         {
+            var _user = Preferences.Get("UserId", 0);
+            cartservice.Url = "api/Cart/List/";
+            CartListItems.ItemsSource = cartservice.Carts(_user);
+        }
 
+
+
+        private async void btnRemove_Clicked(object sender, EventArgs e)
+        {
+            var _id = (sender as ImageButton).CommandParameter.ToString();
+
+            await Navigation.PushPopupAsync(new QuestionModal("Silme İşlemi", "Ürün Silinsin mi ?", () => { Remove(int.Parse(_id)); }), true);
+        }
+
+        public async void Remove(int id)
+        {
+            cartservice.Url = "api/Cart/";
+            var _result = await cartservice.RemoveAsync(id);
+
+            await Navigation.PopPopupAsync(true);
+
+            if (_result.Contains("Başarıyla"))
+            {
+                CartList();
+                await Navigation.PushPopupAsync(new SuccessModal("Ürün Başarıyla Silindi"), true);
+            }
+            else
+            {
+                await Navigation.PushPopupAsync(new ErrorModal("Ürün Silme Başarısız"), true);
+            }
         }
 
         private void btnSuccess_Clicked(object sender, EventArgs e)

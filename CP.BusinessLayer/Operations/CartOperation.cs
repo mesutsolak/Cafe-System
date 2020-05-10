@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace CP.BusinessLayer.Operations
 {
-    public class CartOperation:BaseOperation
+    public class CartOperation : BaseOperation
     {
         public static async Task<int> CartAddAsync(Cart cart)
         {
             _data.CartRepository.Add(cart);
-           return await _data.CompleteAsync();
+            return await _data.CompleteAsync();
         }
 
         public static int CartAdd(Cart cart)
         {
             _data.CartRepository.Add(cart);
-            return _data.Complete(); 
+            return _data.Complete();
         }
 
         public static int CartUpdate(Cart cart)
@@ -39,7 +39,7 @@ namespace CP.BusinessLayer.Operations
         }
         public static async Task<List<Cart>> GetAllAsync(int id)
         {
-          return await  _data.CartRepository.CartListAsync(id);
+            return await _data.CartRepository.CartListAsync(id);
         }
         public static async Task<Cart> GetFindCart(int id)
         {
@@ -47,12 +47,12 @@ namespace CP.BusinessLayer.Operations
         }
         public static List<Cart> GetAll(int UserId)
         {
-            return _data.CartRepository.GetAll(x=>x.Product,x => x.UserId == UserId && x.IsDeleted==false); 
+            return _data.CartRepository.GetAll(x => x.Product, x => x.UserId == UserId && x.IsDeleted == false);
         }
-        public static Cart IsThereProduct(int productId)
+        public static Cart IsThereProduct(int productId, int UserId)
         {
-           return _data.CartRepository.GetByFilter(x => x.ProductId == productId && x.IsDeleted == false);
-        } 
+            return _data.CartRepository.GetByFilter(x => x.ProductId == productId && x.UserId == UserId && x.IsDeleted == false);
+        }
 
     }
 }

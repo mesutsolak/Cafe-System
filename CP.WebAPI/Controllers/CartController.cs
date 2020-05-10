@@ -34,7 +34,7 @@ namespace CP.WebAPI.Controllers
 
                 var _value = mapper.Map<CartDTO, Cart>(cart);
 
-                var product = CartOperation.IsThereProduct(_value.ProductId.Value);
+                var product = CartOperation.IsThereProduct(_value.ProductId.Value,_value.UserId.Value);
 
                 if (product.IsNullObject())
                 {
