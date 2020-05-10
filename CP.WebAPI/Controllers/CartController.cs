@@ -65,6 +65,16 @@ namespace CP.WebAPI.Controllers
         }
 
         [HttpGet]
+        [Route("Count/{UserId}")]
+        public HttpResponseMessage CartCount(int UserId)
+        {
+            httpResponseMessage.StatusCode = HttpStatusCode.OK;
+            httpResponseMessage.Headers.Add("Message", CartOperation.CartCount(UserId).ToString());
+
+            return httpResponseMessage;
+        }
+
+        [HttpGet]
         [Route("List/{UserId}")]
         public List<CartDTO> Get(int UserId)
         {

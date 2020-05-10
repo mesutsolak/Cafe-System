@@ -54,5 +54,10 @@ namespace CP.BusinessLayer.Operations
             return _data.CartRepository.GetByFilter(x => x.ProductId == productId && x.UserId == UserId && x.IsDeleted == false);
         }
 
+        public static int CartCount(int UserId)
+        {
+            return _data.CartRepository.GetAll(null, x => x.UserId == UserId && x.IsDeleted == false).Count;
+        }
+
     }
 }

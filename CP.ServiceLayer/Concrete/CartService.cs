@@ -32,10 +32,29 @@ namespace CP.ServiceLayer.Concrete
                 throw ex;
             }
 
-
-
-
             return entities;
         }
+
+        public string CartCount(int UserId)
+        {
+            try
+            {
+
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                var response = Task.Run(() => client.GetAsync(Url+UserId)).Result;
+
+                ResponseMessage = response.Headers.GetValues("Message").FirstOrDefault().ToString();
+
+            }
+            catch (Exception ex)
+            {
+                ResponseMessage = "Gönderirken Hata Meydana Geldi";
+
+                throw ex;
+            }
+
+            return ResponseMessage;
+        }
+
     }
 }

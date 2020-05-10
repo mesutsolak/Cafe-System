@@ -1,5 +1,6 @@
 ﻿using CP.Mobile.ImageSlider;
 using CP.Mobile.Tools.AlertModals;
+using CP.ServiceLayer.Concrete;
 using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,16 @@ namespace CP.Mobile.MasterDetailPages.Menus
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TestPage1 : ContentPage
     {
+        CartService cs = new CartService();
+
+
+        private void CountFound()
+        {
+            cs.Url = "api/Cart/Count/";
+            var result = cs.CartCount(Preferences.Get("UserId", 0));
+            CartCount.Text = result;
+        }
+
         List<string> names = new List<string>
         {
             "Ahmet","Ali","Ceyhan"
@@ -24,7 +35,8 @@ namespace CP.Mobile.MasterDetailPages.Menus
             try
             {
                   InitializeComponent();
-            CVMovies.ItemsSource = new MovieService().GetMoviesList();
+                CountFound();
+                CVMovies.ItemsSource = new MovieService().GetMoviesList();
 
             }
             catch (Exception ex)
