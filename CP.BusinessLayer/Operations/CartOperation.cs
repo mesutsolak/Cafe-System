@@ -51,10 +51,22 @@ namespace CP.BusinessLayer.Operations
         {
             return await _data.CartRepository.GetByIdAsync(id);
         }
+
+        public static Cart GetFind(int id)
+        {
+            return _data.CartRepository.CartFind(id);
+        }
+
         public static List<Cart> GetAll(int UserId)
         {
             return _data.CartRepository.GetAll(x => x.Product, x => x.UserId == UserId && x.IsDeleted == false && x.IsConfirm==false);
         }
+
+        public static Cart GetCart(int Id)
+        {
+            return _data.CartRepository.GetById(Id);
+        }
+
         public static Cart IsThereProduct(int productId, int UserId)
         {
             return _data.CartRepository.GetByFilter(x => x.ProductId == productId && x.UserId == UserId && x.IsDeleted == false && x.IsConfirm==false);

@@ -11,6 +11,7 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netst
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\ContentPages\Register.xaml.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\ContentPages\SignIn.xaml.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\ContentPages\Tables.xaml.g.cs
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\ListContent\CartModals\CartUpdate.xaml.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\ListContent\CartModals\ProductDetails.xaml.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\MasterDetailPages\MainPage.xaml.g.cs

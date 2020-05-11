@@ -42,9 +42,9 @@ namespace CP.WebAPI.Controllers
                 }
                 else
                 {
-                    product.Count = product.Count + _value.Count;
-                    product.Price = product.Price + _value.Price;
-                    product.Time = product.Time + _value.Time;
+                    product.Count += product.Count + _value.Count;
+                    product.Price += product.Price + _value.Price;
+                    product.Time += product.Time + _value.Time;
 
                     result = CartOperation.CartUpdate(product);
                 }
@@ -115,17 +115,24 @@ namespace CP.WebAPI.Controllers
             return ct;
         }
         [HttpGet]
-        public async Task<HttpResponseMessage> GetFind(int id)
+        [Route("Find/{id}")]
+        public HttpResponseMessage GetFind(int id)
         {
-            var _product = await CartOperation.GetFindCart(id);
-            if (_product.IsNullObject())
+            var _cart =  CartOperation.GetFind(id);
+
+            if (_cart.IsNullObject())
             {
                 httpResponseMessage.StatusCode = HttpStatusCode.NotFound;
                 httpResponseMessage.Headers.Add("Message", "Ürün Bulunamadı");
             }
             else
             {
-                var json = new JavaScriptSerializer().Serialize(_product);
+               var _productDTO = mapper.Map<Product, ProductDTO>(_cart.Product);
+               var _cartDTO =  mapper.Map<Cart, CartDTO>(_cart);
+                _cartDTO.productDTO = _productDTO;
+
+                var json = Newtonsoft.Json.JsonConvert.SerializeObject(_cartDTO);
+
 
                 httpResponseMessage.StatusCode = HttpStatusCode.OK;
                 httpResponseMessage.Headers.Add("Message", json);
@@ -145,7 +152,8 @@ namespace CP.WebAPI.Controllers
             }
             else
             {
-                var result = await CartOperation.CartUpdateAsync(cart);
+
+                var result =  CartOperation.CartUpdate(cart);
                 if (result > 0)
                 {
                     httpResponseMessage.StatusCode = HttpStatusCode.OK;

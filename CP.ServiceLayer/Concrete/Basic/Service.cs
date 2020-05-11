@@ -113,6 +113,26 @@ namespace CP.ServiceLayer.Concrete.Basic
             return entities;
         }
 
+        public T GetFindString(int id)
+        {
+            T entity = null;
+            try
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var _result = Task.Run(() => client.GetAsync(Url + id)).Result;
+                entity = JsonConvert.DeserializeObject<T>(_result.Headers.GetValues("Message").FirstOrDefault(), new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore
+                });
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return entity;
+        }
+
         public T GetFind(int id)
         {
             T entity = null;

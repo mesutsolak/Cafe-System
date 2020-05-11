@@ -1,4 +1,5 @@
-﻿using CP.Mobile.Tools.AlertModals;
+﻿using CP.Mobile.ListContent.CartModals;
+using CP.Mobile.Tools.AlertModals;
 using CP.ServiceLayer.Concrete;
 using CP.ServiceLayer.DTO;
 using Rg.Plugins.Popup.Extensions;
@@ -61,7 +62,7 @@ namespace CP.Mobile.MasterDetailPages.Menus
         public async void Confirm(int CartId)
         {
             cartservice.Url = "api/Cart/Confirm/";
-            var _result =  cartservice.ConfirmCart(CartId);
+            var _result = cartservice.ConfirmCart(CartId);
 
             await Navigation.PopPopupAsync(true);
 
@@ -84,5 +85,26 @@ namespace CP.Mobile.MasterDetailPages.Menus
             await Navigation.PushPopupAsync(new QuestionModal("Onaylama İşlemi", "Ürün Onaylansın mı ?", () => { Confirm(int.Parse(_id)); }), true);
         }
 
+
+        private async void btnUpdate_Clicked(object sender, EventArgs e)
+        {
+            var _id = (sender as ImageButton).CommandParameter.ToString();
+
+            try
+            {
+                    cartservice.Url = "api/Cart/Find/";
+            var _cart = cartservice.GetFindString(int.Parse(_id));
+
+            await Navigation.PushPopupAsync(new CartUpdate(_cart, () => { CartList(); }));
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        
+        }
     }
 }

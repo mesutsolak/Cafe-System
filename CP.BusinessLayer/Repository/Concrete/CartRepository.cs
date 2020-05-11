@@ -26,6 +26,11 @@ namespace CP.BusinessLayer.Repository.Concrete
             CafeDB.Entry(cart).Property("IsConfirm").CurrentValue = true;
         }
 
+        public Cart CartFind(int id)
+        {
+           return CafeDB.Cart.Include(x => x.Product).FirstOrDefault(x => x.Id == id);
+        }
+
         public Task<List<Cart>> CartListAsync(int UserId)
         {
            return CafeDB.Cart.Where(x => x.IsConfirm == false && x.IsDeleted == false && x.IsUse == false).ToListAsync();

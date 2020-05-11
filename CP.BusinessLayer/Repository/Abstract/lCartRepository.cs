@@ -13,5 +13,7 @@ namespace CP.BusinessLayer.Repository.Abstract
         Task<List<Cart>> CartListAsync(int UserId);
 
         void CartConfirm(int CartId);
+
+        Cart CartFind(int id);
     }
 }
