@@ -27,9 +27,14 @@ namespace CP.Mobile.ContentPages
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-
-            await this.Navigation.PushPopupAsync(new QuestionModal("Masayı Seçiyormusun ?",((Button)sender).CommandParameter.ToString(), () => { Success(); }));
-
+           var _btn =  ((Button)sender);
+            if (_btn.BackgroundColor == Color.Red)
+            {
+                await Navigation.PushPopupAsync(new ErrorModal("Masa Alınmış"), true);
+            }
+            else {
+                await this.Navigation.PushPopupAsync(new QuestionModal("Masayı Seçiyormusun ?",_btn.CommandParameter.ToString(), () => { Success(); }));
+            }
         }
         private async void Success()
         {

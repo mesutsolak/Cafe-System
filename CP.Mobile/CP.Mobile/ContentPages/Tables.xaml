@@ -16,8 +16,8 @@
             <flv:FlowListView.FlowColumnTemplate>
                 <DataTemplate>
                     
-                        <StackLayout>
-                        <Button WidthRequest="20" HeightRequest="80" Text="{Binding Text}" Clicked="Button_Clicked" TextColor="{Binding TextColor}" CommandParameter="{Binding Text}"/>
+                        <StackLayout Spacing="10">
+                        <Button WidthRequest="20" Margin="5,10,5,5" FontAttributes="Bold" BackgroundColor="{Binding BackgroundColor}" HeightRequest="80" Text="{Binding Text}" Clicked="Button_Clicked" TextColor="{Binding TextColor}" CommandParameter="{Binding Text}"/>
                         </StackLayout>
                 </DataTemplate>
             </flv:FlowListView.FlowColumnTemplate>

@@ -1,4 +1,5 @@
 ﻿using CP.Mobile.Tools.AlertModals;
+using CP.ServiceLayer.Concrete;
 using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,8 @@ namespace CP.Mobile.ListContent
 {
     public class TablePageModal:BindableObject
     {
+        TableService tableService = new TableService();
+        
         private ContentPage _mainPage;
 
         public TablePageModal(ContentPage mainPage)
@@ -20,14 +23,19 @@ namespace CP.Mobile.ListContent
 
         private void AddItems()
         {
-            for (int i = 0; i < 30; i++)
-                Items.Add(new Button { 
-                    Text=i.ToString(),
+            tableService.Url = "api/Table/GetAll";
+           var _TableAll =  tableService.GetAll();
+
+            foreach (var item in _TableAll)
+            {
+                     Items.Add(new Button { 
+                    Text=item.Number.ToString(),
                     TextColor=Color.White,
-                    BackgroundColor=Color.Green,
-                    FontSize=30,
+                    BackgroundColor= (item.IsUse == true ? Color.Red : Color.Green)   ,
+                    FontSize=30,                                
                     FontAttributes=FontAttributes.Bold
                 });
+            }
         }
 
         private ObservableCollection<Button> _items = new ObservableCollection<Button>();
