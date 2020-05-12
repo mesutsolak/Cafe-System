@@ -13,6 +13,7 @@ namespace CP.Entities.Model
             IsConfirm = false;
             IsDeleted = false;
             IsUse = false;
+            AddedDate = DateTime.Now;
         }
 
         public int? Id { get; set; }
@@ -24,6 +25,7 @@ namespace CP.Entities.Model
         public bool? IsUse { get; set; }
         public int? ProductId { get; set; }   
         public int? UserId { get; set; }
+        public DateTime? AddedDate { get; set; }
         public virtual Product Product { get; set; }
         public virtual User User { get; set; }
     }

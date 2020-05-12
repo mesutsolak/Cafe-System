@@ -15,7 +15,6 @@ namespace CP.Entities.Model
         {
             Comment = new HashSet<Comment>();
             Order = new HashSet<Order>();
-            OrderHistory = new HashSet<OrderHistory>();
             UserRoles = new HashSet<UserRoles>();
             IsConfirm = false;
             IsDeleted = false;
@@ -75,9 +74,6 @@ namespace CP.Entities.Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Order { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderHistory> OrderHistory { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserRoles> UserRoles { get; set; }

@@ -98,7 +98,6 @@
     <Compile Include="Model\MusicClaim.cs" />
     <Compile Include="Model\MusicList.cs" />
     <Compile Include="Model\Order.cs" />
-    <Compile Include="Model\OrderHistory.cs" />
     <Compile Include="Model\Phones.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Roles.cs" />

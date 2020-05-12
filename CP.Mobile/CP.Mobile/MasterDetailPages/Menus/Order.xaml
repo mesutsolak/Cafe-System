@@ -34,9 +34,9 @@
                                         <Label TextColor="Black" FontSize="15" HorizontalOptions="Center"  Text="{Binding Time,StringFormat='Zaman : {0:N}'}"/>
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal" Spacing="10" Margin="0,0,15,0" HorizontalOptions="EndAndExpand">
-                                        <ImageButton Source="pencil.png" BackgroundColor="Transparent" x:Name="btnUpdate" Clicked="btnUpdate_Clicked" WidthRequest="24" CommandParameter="{Binding Id}"/>
-                                        <ImageButton Source="remove.png" x:Name="btnRemove" Clicked="btnRemove_Clicked" BackgroundColor="Transparent" WidthRequest="32" CommandParameter="{Binding Id}"/>
-                                        <ImageButton Source="confirm.png" BackgroundColor="Transparent" WidthRequest="24" CommandParameter="{Binding Id}" x:Name="btnSuccess" Clicked="btnSuccess_Clicked"/>
+                                        <ImageButton Source="pencil.png" BackgroundColor="Transparent" x:Name="btnUpdate"  WidthRequest="24" CommandParameter="{Binding Id}"/>
+                                        <ImageButton Source="remove.png" x:Name="btnRemove" BackgroundColor="Transparent" WidthRequest="32" CommandParameter="{Binding Id}"/>
+                                        <ImageButton Source="confirm.png" BackgroundColor="Transparent" WidthRequest="24" CommandParameter="{Binding Id}" x:Name="btnSuccess"/>
                                     </StackLayout>
                                 </StackLayout>
                             </Grid>

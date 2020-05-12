@@ -12,7 +12,7 @@ namespace CP.Entities.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Order()
         {
-            OrderHistory = new HashSet<OrderHistory>();
+            AddedDate = DateTime.Now;
         }
 
         public int Id { get; set; }
@@ -28,9 +28,7 @@ namespace CP.Entities.Model
         public int? TotalPrice { get; set; }
 
         public bool? IsComplete { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderHistory> OrderHistory { get; set; }
+        public DateTime? AddedDate { get; set; }
 
         public virtual Product Product { get; set; }
 

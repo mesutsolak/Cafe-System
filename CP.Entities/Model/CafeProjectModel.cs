@@ -30,7 +30,6 @@ namespace CP.Entities.Model
         public virtual DbSet<MusicClaim> MusicClaim { get; set; }
         public virtual DbSet<MusicList> MusicList { get; set; }
         public virtual DbSet<Order> Order { get; set; }
-        public virtual DbSet<OrderHistory> OrderHistory { get; set; }
         public virtual DbSet<Phones> Phones { get; set; }
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
