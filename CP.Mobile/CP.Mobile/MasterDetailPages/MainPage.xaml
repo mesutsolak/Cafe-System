@@ -21,7 +21,7 @@
                     <Image Source="bg.png" Aspect="AspectFill" />
                     <StackLayout Padding="0,12,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                         <Image  Source="profile.png"  WidthRequest="24"  />
-                        <Label Text="Adam Pedley" TextColor="White" FontSize="Large" />
+                        <Label Text="Adam Pedley" x:Name="FirstAndLast" TextColor="White" FontSize="Large" />
                     </StackLayout>
                 </Grid>
                 <StackLayout  Grid.Row="1" Spacing="15">

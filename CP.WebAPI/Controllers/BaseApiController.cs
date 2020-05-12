@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.UI.WebControls;
 
 namespace CP.WebAPI.Controllers
 {
@@ -25,6 +26,8 @@ namespace CP.WebAPI.Controllers
                 cfg.CreateMap<M.Category, Category>();
                 cfg.CreateMap<CartDTO, M.Cart>();
                 cfg.CreateMap<M.Cart, CartDTO>();
+                cfg.CreateMap<M.Table, TableDTO>();
+                cfg.CreateMap<TableDTO, M.Table>();
             }).CreateMapper();
         }
     }

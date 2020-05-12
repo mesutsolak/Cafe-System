@@ -21,9 +21,18 @@ namespace CP.Mobile.MasterDetailPages.Menus
 
         private void CountFound()
         {
-            cs.Url = "api/Cart/Count/";
+            try
+            {
+                 cs.Url = "api/Cart/Count/";
             var result = cs.CartCount(Preferences.Get("UserId", 0));
             CartCount.Text = result;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+           
         }
 
         List<string> names = new List<string>

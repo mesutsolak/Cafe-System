@@ -89,7 +89,7 @@ namespace CP.BusinessLayer.Operations
             if (_data.UserRepository.GetByFilter(x => x.Username == loginControl.UserName).IsDeleted.Value)
                 return "Kullanıcı Silinmiş";
 
-            return "Başarıyla Giriş Yapıldı";
+            return "Başarıyla Giriş Yapıldı,"+ UserFirstAndLast(loginControl.UserName);
         }
         public static string PasswordForget(string Email)
         {

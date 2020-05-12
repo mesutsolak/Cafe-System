@@ -20,82 +20,92 @@ namespace CP.Mobile.MasterDetailPages
         public List<MasterPageItem> menuList { get; set; }
         public MainPage()
         {
-            InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
-            menuList = new List<MasterPageItem>();
+            try
+            {
+                InitializeComponent();
+                NavigationPage.SetHasNavigationBar(this, false);
+                menuList = new List<MasterPageItem>();
 
-            // Adding menu items to menuList and you can define title ,page and icon  
-            menuList.Add(new MasterPageItem()
-            {
-                Title = "Anasayfa",
-                Icon = "profile.png",
-                TargetType = typeof(TestPage1)
-            });
-            menuList.Add(new MasterPageItem()
-            {
-                Title = "Yiyecekler",
-                Icon = "eat.png",
-                TargetType = typeof(MenuTabbed)
-            });
-            menuList.Add(new MasterPageItem()
-            {
-                Title = "İçecekler",
-                Icon = "drink.png",
-                TargetType = typeof(DrinkTabbed)
-            });
-            menuList.Add(new MasterPageItem()
-            {
-                Title = "Sepet",
-                Icon = "cart.png",
-                TargetType = typeof(Cart)
-            });
-            menuList.Add(new MasterPageItem()
-            {
-                Title = "Siparişlerim",
-                Icon = "order.png",
-                TargetType = typeof(Order)
-            });
-            menuList.Add(new MasterPageItem()
-            {
-                Title = "Müzik Listesi",
-                Icon = "music.png",
-                TargetType = typeof(TestPage3)
+                // Adding menu items to menuList and you can define title ,page and icon  
+                menuList.Add(new MasterPageItem()
+                {
+                    Title = "Anasayfa",
+                    Icon = "profile.png",
+                    TargetType = typeof(TestPage1)
+                });
+                menuList.Add(new MasterPageItem()
+                {
+                    Title = "Yiyecekler",
+                    Icon = "eat.png",
+                    TargetType = typeof(MenuTabbed)
+                });
+                menuList.Add(new MasterPageItem()
+                {
+                    Title = "İçecekler",
+                    Icon = "drink.png",
+                    TargetType = typeof(DrinkTabbed)
+                });
+                menuList.Add(new MasterPageItem()
+                {
+                    Title = "Sepet",
+                    Icon = "cart.png",
+                    TargetType = typeof(Cart)
+                });
+                menuList.Add(new MasterPageItem()
+                {
+                    Title = "Siparişlerim",
+                    Icon = "order.png",
+                    TargetType = typeof(Order)
+                });
+                menuList.Add(new MasterPageItem()
+                {
+                    Title = "Müzik Listesi",
+                    Icon = "music.png",
+                    TargetType = typeof(TestPage3)
 
-            });
-            menuList.Add(new MasterPageItem()
-            {
-                Title = "Hakkımızda",
-                Icon = "information.png",
-                TargetType = typeof(TestPage2)
-            });
-            menuList.Add(new MasterPageItem()
-            {
-                Title = "İletişim",
-                Icon = "contact.png",
-                TargetType = typeof(TestPage3)
-            });
-            menuList.Add(new MasterPageItem()
-            {
-                Title = "Sipariş Geçmişim",
-                Icon = "clock.png",
-                TargetType = typeof(TestPage3)
-            });
-            menuList.Add(new MasterPageItem()
-            {
-                Title = "Masalar",
-                Icon = "table.png",
-                TargetType = typeof(Tables)
-            });
+                });
+                menuList.Add(new MasterPageItem()
+                {
+                    Title = "Hakkımızda",
+                    Icon = "information.png",
+                    TargetType = typeof(TestPage2)
+                });
+                menuList.Add(new MasterPageItem()
+                {
+                    Title = "İletişim",
+                    Icon = "contact.png",
+                    TargetType = typeof(TestPage3)
+                });
+                menuList.Add(new MasterPageItem()
+                {
+                    Title = "Sipariş Geçmişim",
+                    Icon = "clock.png",
+                    TargetType = typeof(TestPage3)
+                });
+                menuList.Add(new MasterPageItem()
+                {
+                    Title = "Masalar",
+                    Icon = "table.png",
+                    TargetType = typeof(Tables)
+                });
+
+                FirstAndLast.Text = Preferences.Get("FirstAndLast", "");
 
 
+                // Setting our list to be ItemSource for ListView in MainPage.xaml  
+                navigationDrawerList.ItemsSource = menuList;
+                navigationDrawerList.SelectedItem = menuList[0];
 
-            // Setting our list to be ItemSource for ListView in MainPage.xaml  
-            navigationDrawerList.ItemsSource = menuList;
-            navigationDrawerList.SelectedItem = menuList[0];
+                // Initial navigation, this can be used for our home page  
+                Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(TestPage1)));
+                IsPresented = false;
+            }
+            catch (Exception ex)
+            {
 
-            // Initial navigation, this can be used for our home page  
-            Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(TestPage1)));
-            IsPresented = false;
+                throw ex;
+            }
+         
         }
         // Event for Menu Item selection, here we are going to handle navigation based  
         // on user selection in menu ListView  

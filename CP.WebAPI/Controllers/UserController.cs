@@ -60,7 +60,7 @@ namespace CP.WebAPI.Controllers
                 if (result.Contains("Başarıyla"))
                 {
                     httpResponseMessage.StatusCode = HttpStatusCode.OK;
-                    httpResponseMessage.Headers.Add("Message", "Başarıyla Giriş Yaptınız");
+                    httpResponseMessage.Headers.Add("Message", result);
                 }
                 else
                 {

@@ -13,6 +13,7 @@ namespace CP.Entities.Model
         public Table()
         {
             Order = new HashSet<Order>();
+            IsUse = false;
         }
 
         public int Id { get; set; }

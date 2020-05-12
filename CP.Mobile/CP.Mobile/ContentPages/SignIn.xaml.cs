@@ -57,7 +57,11 @@ namespace CP.Mobile.ContentPages
                     {
                         userService.Url = "api/User/UserId/";
 
+                        var result = _result.Split(',')[1];
+
                         Preferences.Set("UserName", EntUserName.EntryText);
+
+                        Preferences.Set("FirstAndLast", result);
 
                         Preferences.Set("UserId",  userService.UserId(EntUserName.EntryText));
 

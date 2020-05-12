@@ -13,6 +13,7 @@ namespace CP.ServiceLayer.DTO
             IsConfirm = false;
             IsDeleted = false;
             IsUse = false;
+            AddedDate = DateTime.Now;
         }
         [System.ComponentModel.DataAnnotations.Key]
         public int Id { get; set; }
@@ -24,6 +25,7 @@ namespace CP.ServiceLayer.DTO
         public bool IsUse { get; set; }
         public int? ProductId { get; set; }
         public int? UserId { get; set; }
+        public DateTime? AddedDate { get; set; }
         public ProductDTO productDTO { get; set; }
     }
 }
