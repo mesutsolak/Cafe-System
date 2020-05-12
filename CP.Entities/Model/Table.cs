@@ -14,12 +14,14 @@ namespace CP.Entities.Model
         {
             Order = new HashSet<Order>();
             IsUse = false;
+            IsConfirm = false;
         }
 
         public int Id { get; set; }
 
         public int? Number { get; set; }
         public bool IsUse { get; set; }
+        public bool IsConfirm { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Order { get; set; }
