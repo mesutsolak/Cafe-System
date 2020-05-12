@@ -13,7 +13,7 @@ namespace CP.Entities.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202005011922193_InitialCreate"; }
+            get { return "202005121038122_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

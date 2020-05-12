@@ -23,6 +23,8 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
 
         public ICartRepository CartRepository { get; private set; }
 
+        public ITableRepository TableRepository { get; private set; }
+
         private DbContext _context;
 
         public UnitOfWork(DbContext context)
@@ -33,6 +35,7 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
             CategoryRepository = new CategoryRepository(_context);
             RoleRepository = new RoleRepository(_context);
             CartRepository = new CartRepository(_context);
+            TableRepository = new TableRepository(_context);
         }
 
 

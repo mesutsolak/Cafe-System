@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CP.Mobile.MasterDetailPages.Menus.Order">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="0,0,0,0" HeightRequest="75" BackgroundColor="#ffe0ac" Orientation="Horizontal">
+                <Label Text="Siparişlerim"
+                HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="Large" FontAttributes="Bold"   Margin="10,0,0,0"/>
+                <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="EndAndExpand">
+                    <ImageButton Source="remove.png"   BackgroundColor="Transparent" WidthRequest="32" x:Name="btnRemoveAll"/>
+                    <ImageButton Source="confirm.png" Margin="0,0,15,0" WidthRequest="24" BackgroundColor="Transparent"  />
+                </StackLayout>
+            </StackLayout>
+
+            <ListView x:Name="CartListItems" RowHeight="90" SeparatorVisibility="Default" SeparatorColor="Gray" BackgroundColor="White">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid HeightRequest="80"
+                                      WidthRequest="300"
+                                      BackgroundColor="Transparent">
+                                <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                                    <StackLayout WidthRequest="180"  Orientation="Horizontal"  HorizontalOptions="StartAndExpand">
+                                        <Image Source="{Binding productDTO.Image}" Margin="5" WidthRequest="65" HeightRequest="65"  />
+                                        <Label Text="{Binding productDTO.Name}" Margin="2,0,0,0" VerticalOptions="Center" FontSize="Medium"  TextColor="Black" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical"  HorizontalOptions="CenterAndExpand">
+                                        <Label TextColor="Black" HorizontalOptions="Center" FontSize="15" Text="{Binding Count,StringFormat='Adet : {0:N}'}"/>
+                                        <Label TextColor="Black" HorizontalOptions="Center" FontSize="15"  Text="{Binding Price,StringFormat='Fiyat : {0:N}'}"/>
+                                        <Label TextColor="Black" FontSize="15" HorizontalOptions="Center"  Text="{Binding Time,StringFormat='Zaman : {0:N}'}"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Spacing="10" Margin="0,0,15,0" HorizontalOptions="EndAndExpand">
+                                        <ImageButton Source="pencil.png" BackgroundColor="Transparent" x:Name="btnUpdate" Clicked="btnUpdate_Clicked" WidthRequest="24" CommandParameter="{Binding Id}"/>
+                                        <ImageButton Source="remove.png" x:Name="btnRemove" Clicked="btnRemove_Clicked" BackgroundColor="Transparent" WidthRequest="32" CommandParameter="{Binding Id}"/>
+                                        <ImageButton Source="confirm.png" BackgroundColor="Transparent" WidthRequest="24" CommandParameter="{Binding Id}" x:Name="btnSuccess" Clicked="btnSuccess_Clicked"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

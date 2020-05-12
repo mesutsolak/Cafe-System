@@ -53,7 +53,14 @@ namespace CP.Mobile.MasterDetailPages
             {
                 Title = "Siparişlerim",
                 Icon = "order.png",
+                TargetType = typeof(Order)
+            });
+            menuList.Add(new MasterPageItem()
+            {
+                Title = "Müzik Listesi",
+                Icon = "music.png",
                 TargetType = typeof(TestPage3)
+
             });
             menuList.Add(new MasterPageItem()
             {
