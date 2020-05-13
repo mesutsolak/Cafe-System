@@ -15,10 +15,9 @@ namespace CP.BusinessLayer.Operations
             return await _data.CompleteAsync();
         }
 
-        public static int  CartConfirm(int CartId)
+        public static Cart CartFind(int id)
         {
-             _data.CartRepository.CartConfirm(CartId);
-           return _data.Complete();
+           return _data.CartRepository.GetByFilter(x => x.Id == id);
         }
 
         public static int CartAdd(Cart cart)
@@ -52,14 +51,10 @@ namespace CP.BusinessLayer.Operations
             return await _data.CartRepository.GetByIdAsync(id);
         }
 
-        public static Cart GetFind(int id)
-        {
-            return _data.CartRepository.CartFind(id);
-        }
 
         public static List<Cart> GetAll(int UserId)
         {
-            return _data.CartRepository.GetAll(x => x.Product, x => x.UserId == UserId && x.IsDeleted == false && x.IsConfirm==false);
+            return _data.CartRepository.GetAll(x => x.Product, x => x.UserId == UserId);
         }
 
         public static Cart GetCart(int Id)
@@ -69,12 +64,12 @@ namespace CP.BusinessLayer.Operations
 
         public static Cart IsThereProduct(int productId, int UserId)
         {
-            return _data.CartRepository.GetByFilter(x => x.ProductId == productId && x.UserId == UserId && x.IsDeleted == false && x.IsConfirm==false);
+            return _data.CartRepository.GetByFilter(x => x.ProductId == productId && x.UserId == UserId );
         }                                     
 
         public static int CartCount(int UserId)
         {
-            return _data.CartRepository.GetAll(null, x => x.UserId == UserId && x.IsDeleted == false && x.IsConfirm == false).Count;
+            return _data.CartRepository.GetAll(null, x => x.UserId == UserId).Count;
         }
 
     }

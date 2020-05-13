@@ -32,7 +32,7 @@ namespace CP.Mobile.ListContent.CartModals
             lblClock.Text = product.Time.ToString();
             lblComment.Text = "5";
             lblPrice.Text = product.Price + " TL";
-            lblRating.Text = product.Rating.ToString();
+            lblRating.Text = "5";
             LblName.Text = product.Name;
             lblDescription.Text = product.ProductDetail;
         }

@@ -1,5 +1,6 @@
 ﻿using CP.Mobile.ListContent;
 using CP.Mobile.Tools.AlertModals;
+using CP.ServiceLayer.Concrete;
 using DLToolkit.Forms.Controls;
 using Rg.Plugins.Popup.Extensions;
 using System;
@@ -16,6 +17,7 @@ namespace CP.Mobile.ContentPages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Tables : ContentPage
     {
+        TableService ts = new TableService();
         TablePageModal pageModel;
         public Tables()
         {
@@ -27,19 +29,30 @@ namespace CP.Mobile.ContentPages
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-           var _btn =  ((Button)sender);
+            var _btn = ((Button)sender);
             if (_btn.BackgroundColor == Color.Red)
             {
                 await Navigation.PushPopupAsync(new ErrorModal("Masa Alınmış"), true);
             }
-            else {
-                await this.Navigation.PushPopupAsync(new QuestionModal("Masayı Seçiyormusun ?",_btn.CommandParameter.ToString(), () => { Success(); }));
+            else
+            {
+                await this.Navigation.PushPopupAsync(new QuestionModal("Masayı Seçiyormusun ?", _btn.CommandParameter.ToString(), () => { Success(int.Parse(_btn.CommandParameter.ToString())); }));
             }
         }
-        private async void Success()
+        private async void Success(int id)
         {
             await this.Navigation.PopPopupAsync(true);
-            await this.Navigation.PushPopupAsync(new SuccessModal("Lütfen Bekleyin"), true);
+            ts.Url = "api/Table/IsRequest/";
+            //var result = ts.IsUse(id);
+
+            //if (result.Contains("Oluşturuldu"))
+            //{
+            //    await this.Navigation.PushPopupAsync(new SuccessModal("Masa İsteği Oluşturuldu Lütfen Bekleyin."), true);
+            //}
+            //else
+            //{
+            //    await this.Navigation.PushPopupAsync(new ErrorModal(result), true);
+            //}
         }
     }
 }

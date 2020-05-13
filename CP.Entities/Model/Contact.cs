@@ -9,26 +9,33 @@ namespace CP.Entities.Model
     [Table("Contact")]
     public partial class Contact
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Contact()
-        {
-            Phones = new HashSet<Phones>();
-            Emails = new HashSet<Emails>();
-            Locations = new HashSet<Locations>();
-        }
-
         public int Id { get; set; }
+
+        [StringLength(250)]
+        public string Description { get; set; }
 
         [StringLength(100)]
         public string LocationGeneral { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Phones> Phones { get; set; }
+        [StringLength(11)]
+        public string Phone { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Emails> Emails { get; set; }
+        [StringLength(100)]
+        public string Email { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Locations> Locations { get; set; }
+        [StringLength(100)]
+        public string Fax { get; set; }
+
+        [StringLength(100)]
+        public string Address { get; set; }
+
+        [StringLength(100)]
+        public string Twitter { get; set; }
+
+        [StringLength(100)]
+        public string Facebook { get; set; }
+
+        [StringLength(100)]
+        public string Instagram { get; set; }
     }
 }

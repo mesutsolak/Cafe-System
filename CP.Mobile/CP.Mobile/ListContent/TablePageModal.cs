@@ -12,7 +12,7 @@ namespace CP.Mobile.ListContent
     public class TablePageModal:BindableObject
     {
         TableService tableService = new TableService();
-        
+        public Color _Color;
         private ContentPage _mainPage;
 
         public TablePageModal(ContentPage mainPage)
@@ -22,18 +22,34 @@ namespace CP.Mobile.ListContent
         }
 
         private void AddItems()
-        {
+        {   
+         
             tableService.Url = "api/Table/GetAll";
            var _TableAll =  tableService.GetAll();
 
             foreach (var item in _TableAll)
             {
-                     Items.Add(new Button { 
+       
+                switch (item.ConfirmId)
+                {
+                    case 1:
+                        _Color = Color.Green;
+                        break;
+                    case 2:
+                        _Color = Color.Red;
+                        break;
+                    case 3:
+                        _Color = Color.Yellow;
+                        break;
+                }
+
+                Items.Add(new Button { 
                     Text=item.Number.ToString(),
                     TextColor=Color.White,
-                    BackgroundColor= (item.IsUse == true ? Color.Red : Color.Green)   ,
+                    BackgroundColor= _Color,
                     FontSize=30,                                
-                    FontAttributes=FontAttributes.Bold
+                    FontAttributes=FontAttributes.Bold ,
+                    CommandParameter = item.Id
                 });
             }
         }

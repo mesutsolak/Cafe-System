@@ -210,7 +210,6 @@
     <Compile Include="DTO\LoginControl.cs" />
     <Compile Include="DTO\PasswordForgetDTO.cs" />
     <Compile Include="DTO\ProductDTO.cs" />
-    <Compile Include="DTO\RootObject.cs" />
     <Compile Include="DTO\TableDTO.cs" />
     <Compile Include="DTO\User.cs" />
     <Compile Include="Firebase\FirebaseStorageHelper.cs" />

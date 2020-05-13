@@ -6,7 +6,6 @@ namespace CP.Entities.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
     using System.Web;
-    using System.Web.Mvc;
 
     [Table("Product")]
     public partial class Product
@@ -15,71 +14,45 @@ namespace CP.Entities.Model
         public Product()
         {
             CampProduct = new HashSet<CampProduct>();
+            Cart = new HashSet<Cart>();
             Comment = new HashSet<Comment>();
-            Order = new HashSet<Order>();
-            IsDeleted = false;
+            Rate = new HashSet<Rate>();
         }
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Display(Name ="Ürün Adý")]
-        [Required(ErrorMessage ="Ürün adý boþ býrakýlamaz")]
-        [MaxLength(75,ErrorMessage ="Ürün adý 75 karakterden fazla olamaz")]
-        [RegularExpression("^[a-zA-ZçÇðÐýÝöÖþÞüÜ]*$", ErrorMessage ="Sadece harflerden oluþmalýdýr")]
+        [Required]
+        [StringLength(75)]
         public string Name { get; set; }
-
-        [Required(ErrorMessage = "Ürün detayý boþ býrakýlamaz")]
-        [Display(Name = "Kategori")]
 
         public int? CategoryId { get; set; }
 
         [Column(TypeName = "text")]
-        [Required(ErrorMessage = "Ürün detayý boþ býrakýlamaz")]
-        [AllowHtml]
-        [Display(Name = "Ürün Detayý")]
+        [Required]
         public string ProductDetail { get; set; }
 
-        [Required(ErrorMessage = "Ürün fiyatý boþ býrakýlamaz")]
-        [RegularExpression("^[0-9]*$", ErrorMessage = "Sadece rakamdan oluþmalýdýr")]
-        [Range(0, Double.PositiveInfinity, ErrorMessage = "Pozitif bir deðer girmelisiniz")]
-        [Display(Name = "Ürün Fiyatý")]
         public int? Price { get; set; }
 
-        [Required(ErrorMessage = "Ürün miktarý boþ býrakýlamaz")]
-        [RegularExpression("^[0-9]*$", ErrorMessage = "Sadece rakamdan oluþmalýdýr")]
-        [Range(0, Double.PositiveInfinity, ErrorMessage = "Pozitif bir deðer girmelisiniz")]
-        [Display(Name = "Ürün Miktarý")]
         public int? Amount { get; set; }
-
-
-        [Display(Name = "Görüntülenme Sayýsý")]
 
         public int? Views { get; set; }
 
-        [Display(Name = "Puan")]
-
-        public int? Rating { get; set; }
-
         [Column(TypeName = "text")]
-        [Display(Name = "Resim")]
         public string Image { get; set; }
 
         public bool IsDeleted { get; set; }
-        [Required(ErrorMessage = "Piþme süresi boþ býrakýlamaz")]
-        [RegularExpression("^[0-9]*$", ErrorMessage = "Sadece rakamdan oluþmalýdýr")]
-        [Range(0, Double.PositiveInfinity, ErrorMessage = "Pozitif bir deðer girmelisiniz")]
-        [Display(Name = "Piþirme Süresi")]
 
-        public int? Time { get; set; }
+        public int Time { get; set; }
+
+        public DateTime? AddedDate { get; set; }
 
         [NotMapped]
         public HttpPostedFileBase Images { get; set; }
 
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CampProduct> CampProduct { get; set; }
-              
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cart> Cart { get; set; }
 
@@ -89,6 +62,6 @@ namespace CP.Entities.Model
         public virtual ICollection<Comment> Comment { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Order { get; set; }
+        public virtual ICollection<Rate> Rate { get; set; }
     }
 }

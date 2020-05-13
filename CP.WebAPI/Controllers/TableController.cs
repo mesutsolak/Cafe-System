@@ -52,7 +52,7 @@ namespace CP.WebAPI.Controllers
             else
             {
                 var _result = TableOperation.TableAdd(table);
-                if (_result>0)
+                if (_result > 0)
                 {
                     httpResponseMessage.StatusCode = HttpStatusCode.OK;
                     httpResponseMessage.Headers.Add("Message", "Masa Başarıyla Eklendi");
@@ -110,6 +110,5 @@ namespace CP.WebAPI.Controllers
             }
             return httpResponseMessage;
         }
-
     }
 }

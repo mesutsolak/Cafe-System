@@ -11,9 +11,22 @@ namespace CP.Entities.Model
     {
         public int Id { get; set; }
 
-        [Column(TypeName = "text")]
+        [StringLength(150)]
         public string MusicName { get; set; }
 
+        [StringLength(150)]
+        public string ArtistName { get; set; }
+
+        public int? UserId { get; set; }
+
         public int? Order { get; set; }
+
+        public int? ConfirmId { get; set; }
+
+        public bool? IsComplete { get; set; }
+
+        public virtual ConfirmStatus ConfirmStatus { get; set; }
+
+        public virtual User User { get; set; }
     }
 }

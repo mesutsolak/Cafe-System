@@ -12,6 +12,7 @@ namespace CP.Entities.Model
         public LogStatus()
         {
             Log = new HashSet<Log>();
+            LogInfoes = new HashSet<LogInfoes>();
         }
 
         public int Id { get; set; }
@@ -21,5 +22,8 @@ namespace CP.Entities.Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Log> Log { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LogInfoes> LogInfoes { get; set; }
     }
 }

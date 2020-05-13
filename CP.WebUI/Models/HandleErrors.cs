@@ -15,7 +15,7 @@ namespace CP.WebUI.Models
     [AllowAnonymous]
     public class HandleErrors : ActionFilterAttribute
     {
-        private LogInfo log = new LogInfo();
+        private LogInfoes log = new LogInfoes();
         private Log l = new Log();
         private Stopwatch _stopwatch;
         int UserId;

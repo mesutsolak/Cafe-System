@@ -12,18 +12,18 @@ namespace CP.Entities.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Table()
         {
-            Order = new HashSet<Order>();
-            IsUse = false;
-            IsConfirm = false;
+            Cart = new HashSet<Cart>();
         }
 
         public int Id { get; set; }
 
         public int? Number { get; set; }
-        public bool IsUse { get; set; }
-        public bool IsConfirm { get; set; }
+
+        public int? ConfirmId { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Order { get; set; }
+        public virtual ICollection<Cart> Cart { get; set; }
+
+        public virtual ConfirmStatus ConfirmStatus { get; set; }
     }
 }

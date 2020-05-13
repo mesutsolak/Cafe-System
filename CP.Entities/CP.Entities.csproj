@@ -76,13 +76,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomValidator\IsUniqueProductName.cs" />
-    <Compile Include="Migrations\202005121038122_InitialCreate.cs" />
-    <Compile Include="Migrations\202005121038122_InitialCreate.designer.cs">
-      <DependentUpon>202005121038122_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005121721448_InitialCreate1.cs" />
-    <Compile Include="Migrations\202005121721448_InitialCreate1.designer.cs">
-      <DependentUpon>202005121721448_InitialCreate1.cs</DependentUpon>
+    <Compile Include="Migrations\202005131709239_InitialCreate.cs" />
+    <Compile Include="Migrations\202005131709239_InitialCreate.designer.cs">
+      <DependentUpon>202005131709239_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\CafeProjectModel.cs" />
@@ -92,19 +88,16 @@
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Comment.cs" />
     <Compile Include="Model\CompanyInformation.cs" />
+    <Compile Include="Model\ConfirmStatus.cs" />
     <Compile Include="Model\Contact.cs" />
-    <Compile Include="Model\Emails.cs" />
-    <Compile Include="Model\Locations.cs" />
     <Compile Include="Model\Log.cs" />
-    <Compile Include="Model\LogInfo.cs" />
+    <Compile Include="Model\LogInfoes.cs" />
     <Compile Include="Model\LogStatus.cs" />
-    <Compile Include="Model\Menu.cs" />
-    <Compile Include="Model\MusicClaim.cs" />
     <Compile Include="Model\MusicList.cs" />
-    <Compile Include="Model\Order.cs" />
-    <Compile Include="Model\Phones.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\Rate.cs" />
     <Compile Include="Model\Roles.cs" />
+    <Compile Include="Model\Slider.cs" />
     <Compile Include="Model\Table.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\UserRoles.cs" />
@@ -115,11 +108,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202005121038122_InitialCreate.resx">
-      <DependentUpon>202005121038122_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005121721448_InitialCreate1.resx">
-      <DependentUpon>202005121721448_InitialCreate1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005131709239_InitialCreate.resx">
+      <DependentUpon>202005131709239_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

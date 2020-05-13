@@ -12,9 +12,9 @@ namespace CP.BusinessLayer.Operations
     public class LogOperation
     {
         static CafeProjectModel db = new CafeProjectModel();
-        public static void LogInfoAdd(LogInfo logInfo)
+        public static void LogInfoAdd(LogInfoes logInfo)
         {
-            db.LogInfo.Add(logInfo);
+            db.LogInfoes.Add(logInfo);
             db.SaveChanges();
         }
         public static void LogAdd(Log log)

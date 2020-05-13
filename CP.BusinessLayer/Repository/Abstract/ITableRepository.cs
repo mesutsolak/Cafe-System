@@ -10,5 +10,6 @@ namespace CP.BusinessLayer.Repository.Abstract
 {
     public interface ITableRepository :IRepository<Table>
     {
+
     }
 }

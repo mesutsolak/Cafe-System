@@ -10,12 +10,11 @@ namespace CP.ServiceLayer.DTO
     {
         public TableDTO()
         {
-            IsUse = false;
-            IsConfirm = false;
+            
         }
+
         public int Id { get; set; }
         public int? Number { get; set; }
-        public bool IsUse { get; set; }
-        public bool IsConfirm { get; set; }
+        public int? ConfirmId { get; set; }
     }
 }

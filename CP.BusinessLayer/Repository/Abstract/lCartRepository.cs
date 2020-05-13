@@ -11,9 +11,5 @@ namespace CP.BusinessLayer.Repository.Abstract
     public interface ICartRepository : IRepository<Cart>
     {
         Task<List<Cart>> CartListAsync(int UserId);
-
-        void CartConfirm(int CartId);
-
-        Cart CartFind(int id);
     }
 }

@@ -12,6 +12,5 @@ namespace CP.ServiceLayer.Abstract
     {
         List<CartDTO> Carts(int id);
         string CartCount(int UserId);
-        string ConfirmCart(int CartId); 
     }
 }

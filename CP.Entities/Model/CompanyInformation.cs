@@ -13,5 +13,11 @@ namespace CP.Entities.Model
 
         [Column(TypeName = "text")]
         public string Description { get; set; }
+
+        [StringLength(150)]
+        public string Header1 { get; set; }
+
+        [StringLength(150)]
+        public string Header2 { get; set; }
     }
 }

@@ -62,19 +62,19 @@ namespace CP.Mobile.MasterDetailPages.Menus
         public async void Confirm(int CartId)
         {
             cartservice.Url = "api/Cart/Confirm/";
-            var _result = cartservice.ConfirmCart(CartId);
+            //var _result = cartservice.ConfirmCart(CartId);
 
-            await Navigation.PopPopupAsync(true);
+            //await Navigation.PopPopupAsync(true);
 
-            if (_result.Contains("Onaylandı"))
-            {
-                CartList();
-                await Navigation.PushPopupAsync(new SuccessModal("Ürün Başarıyla Onaylandı"), true);
-            }
-            else
-            {
-                await Navigation.PushPopupAsync(new ErrorModal("Ürün Onaylama Başarısız"), true);
-            }
+            //if (_result.Contains("Onaylandı"))
+            //{
+            //    CartList();
+            //    await Navigation.PushPopupAsync(new SuccessModal("Ürün Başarıyla Onaylandı"), true);
+            //}
+            //else
+            //{
+            //    await Navigation.PushPopupAsync(new ErrorModal("Ürün Onaylama Başarısız"), true);
+            //}
         }
 
 
