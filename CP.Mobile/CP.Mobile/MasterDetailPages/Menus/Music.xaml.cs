@@ -17,14 +17,14 @@ using Xamarin.Forms.Xaml;
 namespace CP.Mobile.MasterDetailPages.Menus
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TestPage3 : ContentPage
+    public partial class Music : ContentPage
     {
         FirebaseStorageHelper firebaseStorageHelper = new FirebaseStorageHelper("cafe-project-bfd17.appspot.com");
 
    
     MediaFile file;
 
-        public TestPage3()
+        public Music()
         {
             InitializeComponent();
 

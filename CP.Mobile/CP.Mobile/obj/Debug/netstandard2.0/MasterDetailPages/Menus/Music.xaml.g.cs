@@ -8,13 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("CP.Mobile.MasterDetailPages.Menus.TestPage3.xaml", "MasterDetailPages/Menus/TestPage3.xaml", typeof(global::CP.Mobile.MasterDetailPages.Menus.TestPage3))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("CP.Mobile.MasterDetailPages.Menus.Music.xaml", "MasterDetailPages/Menus/Music.xaml", typeof(global::CP.Mobile.MasterDetailPages.Menus.Music))]
 
 namespace CP.Mobile.MasterDetailPages.Menus {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("MasterDetailPages\\Menus\\TestPage3.xaml")]
-    public partial class TestPage3 : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("MasterDetailPages\\Menus\\Music.xaml")]
+    public partial class Music : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Image imgBanner;
@@ -45,7 +45,7 @@ namespace CP.Mobile.MasterDetailPages.Menus {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(TestPage3));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(Music));
             imgBanner = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "imgBanner");
             imgChoosed = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "imgChoosed");
             txtFileName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "txtFileName");

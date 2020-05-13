@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace CP.Mobile.ContentPages
+namespace CP.Mobile.MasterDetailPages.Menus
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Tables : ContentPage

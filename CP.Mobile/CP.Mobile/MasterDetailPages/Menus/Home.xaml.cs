@@ -14,7 +14,7 @@ using Xamarin.Forms.Xaml;
 namespace CP.Mobile.MasterDetailPages.Menus
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TestPage1 : ContentPage
+    public partial class Home : ContentPage
     {
         CartService cs = new CartService();
 
@@ -39,7 +39,7 @@ namespace CP.Mobile.MasterDetailPages.Menus
         {
             "Ahmet","Ali","Ceyhan"
         };
-        public TestPage1()
+        public Home()
         {
             try
             {

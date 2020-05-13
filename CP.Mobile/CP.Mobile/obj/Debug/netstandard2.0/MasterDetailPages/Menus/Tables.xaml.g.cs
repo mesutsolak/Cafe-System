@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("CP.Mobile.MasterDetailPages.Menus.TestPage2.xaml", "MasterDetailPages/Menus/TestPage2.xaml", typeof(global::CP.Mobile.MasterDetailPages.Menus.TestPage2))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("CP.Mobile.MasterDetailPages.Menus.Tables.xaml", "MasterDetailPages/Menus/Tables.xaml", typeof(global::CP.Mobile.MasterDetailPages.Menus.Tables))]
 
 namespace CP.Mobile.MasterDetailPages.Menus {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("MasterDetailPages\\Menus\\TestPage2.xaml")]
-    public partial class TestPage2 : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("MasterDetailPages\\Menus\\Tables.xaml")]
+    public partial class Tables : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(TestPage2));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(Tables));
         }
     }
 }

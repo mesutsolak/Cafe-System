@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace CP.Mobile.MasterDetailPages.Menus
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TestPage2 : ContentPage
+    public partial class OrderHistory : ContentPage
     {
-        public TestPage2()
+        public OrderHistory()
         {
             InitializeComponent();
         }

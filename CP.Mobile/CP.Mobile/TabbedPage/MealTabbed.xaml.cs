@@ -13,9 +13,9 @@ using Xamarin.Forms.Xaml;
 namespace CP.Mobile.TabbedPage
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MenuTabbed : Xamarin.Forms.TabbedPage
+    public partial class MealTabbed : Xamarin.Forms.TabbedPage
     {
-        public  MenuTabbed()
+        public MealTabbed()
         {
 
             InitializeComponent();

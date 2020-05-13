@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:forms="http://xamarin.com/schemas/2014/forms"
              mc:Ignorable="d"
-             x:Class="CP.Mobile.MasterDetailPages.Menus.TestPage1">
+             x:Class="CP.Mobile.MasterDetailPages.Menus.Home">
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" Spacing="12">
             <Label Text="Anasayfa" TextColor="White" FontSize="20" />

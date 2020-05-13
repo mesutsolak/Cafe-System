@@ -5,7 +5,7 @@
             xmlns:local="clr-namespace:CP.Mobile.TabbedPage.MenuItemTabbed"
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="CP.Mobile.TabbedPage.MenuTabbed">
+             x:Class="CP.Mobile.TabbedPage.MealTabbed">
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" Spacing="12">

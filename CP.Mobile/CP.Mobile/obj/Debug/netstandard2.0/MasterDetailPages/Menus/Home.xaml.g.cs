@@ -8,13 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("CP.Mobile.MasterDetailPages.Menus.TestPage1.xaml", "MasterDetailPages/Menus/TestPage1.xaml", typeof(global::CP.Mobile.MasterDetailPages.Menus.TestPage1))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("CP.Mobile.MasterDetailPages.Menus.Home.xaml", "MasterDetailPages/Menus/Home.xaml", typeof(global::CP.Mobile.MasterDetailPages.Menus.Home))]
 
 namespace CP.Mobile.MasterDetailPages.Menus {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("MasterDetailPages\\Menus\\TestPage1.xaml")]
-    public partial class TestPage1 : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("MasterDetailPages\\Menus\\Home.xaml")]
+    public partial class Home : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Label CartCount;
@@ -27,7 +27,7 @@ namespace CP.Mobile.MasterDetailPages.Menus {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(TestPage1));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(Home));
             CartCount = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "CartCount");
             CVMovies = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.CarouselView>(this, "CVMovies");
             indicatorView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.IndicatorView>(this, "indicatorView");

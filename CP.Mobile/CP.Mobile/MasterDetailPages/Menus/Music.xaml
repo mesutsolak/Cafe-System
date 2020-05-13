@@ -5,7 +5,7 @@
              xmlns:local="clr-namespace:CP.Mobile" 
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="CP.Mobile.MasterDetailPages.Menus.TestPage3">
+             x:Class="CP.Mobile.MasterDetailPages.Menus.Music">
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>

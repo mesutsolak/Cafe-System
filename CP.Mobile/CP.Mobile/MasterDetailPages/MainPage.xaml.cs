@@ -31,13 +31,13 @@ namespace CP.Mobile.MasterDetailPages
                 {
                     Title = "Anasayfa",
                     Icon = "profile.png",
-                    TargetType = typeof(TestPage1)
+                    TargetType = typeof(Home)
                 });
                 menuList.Add(new MasterPageItem()
                 {
                     Title = "Yiyecekler",
                     Icon = "eat.png",
-                    TargetType = typeof(MenuTabbed)
+                    TargetType = typeof(MealTabbed)
                 });
                 menuList.Add(new MasterPageItem()
                 {
@@ -61,26 +61,26 @@ namespace CP.Mobile.MasterDetailPages
                 {
                     Title = "Müzik Listesi",
                     Icon = "music.png",
-                    TargetType = typeof(TestPage3)
+                    TargetType = typeof(Music)
 
                 });
                 menuList.Add(new MasterPageItem()
                 {
                     Title = "Hakkımızda",
                     Icon = "information.png",
-                    TargetType = typeof(TestPage2)
+                    TargetType = typeof(Information)
                 });
                 menuList.Add(new MasterPageItem()
                 {
                     Title = "İletişim",
                     Icon = "contact.png",
-                    TargetType = typeof(TestPage3)
+                    TargetType = typeof(Contact)
                 });
                 menuList.Add(new MasterPageItem()
                 {
                     Title = "Sipariş Geçmişim",
                     Icon = "clock.png",
-                    TargetType = typeof(TestPage3)
+                    TargetType = typeof(OrderHistory)
                 });
                 menuList.Add(new MasterPageItem()
                 {
@@ -97,7 +97,7 @@ namespace CP.Mobile.MasterDetailPages
                 navigationDrawerList.SelectedItem = menuList[0];
 
                 // Initial navigation, this can be used for our home page  
-                Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(TestPage1)));
+                Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(Home)));
                 IsPresented = false;
             }
             catch (Exception ex)
