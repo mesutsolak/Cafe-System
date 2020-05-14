@@ -33,6 +33,7 @@ namespace CP.Entities.Model
         public virtual DbSet<Slider> Slider { get; set; }
         public virtual DbSet<Table> Table { get; set; }
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<HomePage> HomePage { get; set; }
         public virtual DbSet<UserRoles> UserRoles { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

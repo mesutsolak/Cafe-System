@@ -84,6 +84,10 @@
     <Compile Include="Migrations\202005141103271_CampaignAdd.designer.cs">
       <DependentUpon>202005141103271_CampaignAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005141454245_HomePage.cs" />
+    <Compile Include="Migrations\202005141454245_HomePage.designer.cs">
+      <DependentUpon>202005141454245_HomePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\CafeProjectModel.cs" />
     <Compile Include="Model\Campaign.cs" />
@@ -97,7 +101,7 @@
     <Compile Include="Model\Log.cs" />
     <Compile Include="Model\LogInfoes.cs" />
     <Compile Include="Model\LogStatus.cs" />
-    <Compile Include="Model\MainPage.cs" />
+    <Compile Include="Model\HomePage.cs" />
     <Compile Include="Model\MusicList.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Rate.cs" />
@@ -118,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005141103271_CampaignAdd.resx">
       <DependentUpon>202005141103271_CampaignAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005141454245_HomePage.resx">
+      <DependentUpon>202005141454245_HomePage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

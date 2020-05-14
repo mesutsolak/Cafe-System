@@ -25,6 +25,8 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
 
         public ITableRepository TableRepository { get; private set; }
 
+        public IHomePageRepository HomePageRepository { get; private set; }
+
         private DbContext _context;
 
         public UnitOfWork(DbContext context)
@@ -36,6 +38,7 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
             RoleRepository = new RoleRepository(_context);
             CartRepository = new CartRepository(_context);
             TableRepository = new TableRepository(_context);
+            HomePageRepository = new HomePageRepository(_context);
         }
 
 

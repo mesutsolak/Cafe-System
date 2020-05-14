@@ -28,6 +28,9 @@ namespace CP.WebAPI.Controllers
                 cfg.CreateMap<M.Cart, CartDTO>();
                 cfg.CreateMap<M.Table, TableDTO>();
                 cfg.CreateMap<TableDTO, M.Table>();
+                cfg.CreateMap<M.HomePage, HomePageDTO>();
+                cfg.CreateMap<HomePageDTO, M.HomePage>();
+
             }).CreateMapper();
         }
     }

@@ -56,6 +56,7 @@
     <Compile Include="Operations\BaseOperation.cs" />
     <Compile Include="Operations\CartOperation.cs" />
     <Compile Include="Operations\CategoryOperation.cs" />
+    <Compile Include="Operations\HomePageOperation.cs" />
     <Compile Include="Operations\LogOperation.cs" />
     <Compile Include="Operations\ProductOperation.cs" />
     <Compile Include="Operations\RoleOperation.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Operations\UserOperations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Abstract\Basic\IRepository.cs" />
+    <Compile Include="Repository\Abstract\IHomePageRepository.cs" />
     <Compile Include="Repository\Abstract\ITableRepository.cs" />
     <Compile Include="Repository\Abstract\lCartRepository.cs" />
     <Compile Include="Repository\Abstract\ICategoryRepository.cs" />
@@ -72,6 +74,7 @@
     <Compile Include="Repository\Concrete\Basic\Repository.cs" />
     <Compile Include="Repository\Concrete\CartRepository.cs" />
     <Compile Include="Repository\Concrete\CategoryRepository.cs" />
+    <Compile Include="Repository\Concrete\HomePageRepository.cs" />
     <Compile Include="Repository\Concrete\ProductRepository.cs" />
     <Compile Include="Repository\Concrete\RoleRepository.cs" />
     <Compile Include="Repository\Concrete\TableRepository.cs" />

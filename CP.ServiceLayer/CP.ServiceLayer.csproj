@@ -196,17 +196,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\Basic\IService.cs" />
+    <Compile Include="Abstract\IHomePageService.cs" />
     <Compile Include="Abstract\ICartService.cs" />
     <Compile Include="Abstract\IProductService.cs" />
     <Compile Include="Abstract\ITableService.cs" />
     <Compile Include="Abstract\IUserService.cs" />
     <Compile Include="Concrete\Basic\Service.cs" />
     <Compile Include="Concrete\CartService.cs" />
+    <Compile Include="Concrete\HomePageService.cs" />
     <Compile Include="Concrete\ProductService.cs" />
     <Compile Include="Concrete\TableService.cs" />
     <Compile Include="Concrete\UserService.cs" />
     <Compile Include="DTO\CartDTO.cs" />
     <Compile Include="DTO\Category.cs" />
+    <Compile Include="DTO\HomePageDTO.cs" />
     <Compile Include="DTO\LoginControl.cs" />
     <Compile Include="DTO\PasswordForgetDTO.cs" />
     <Compile Include="DTO\ProductDTO.cs" />
