@@ -1,9 +1,7 @@
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\CP.Mobile.csprojAssemblyReference.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\App.xaml.g.cs
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\ContentPages\Music.xaml.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\ContentPages\Register.xaml.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\ContentPages\SignIn.xaml.g.cs
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\ContentPages\Tables.xaml.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\ListContent\CartModals\CartUpdate.xaml.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\ListContent\CartModals\ProductDetails.xaml.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
@@ -11,8 +9,6 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netst
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\MasterDetailPages\Menus\Cart.xaml.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\MasterDetailPages\Menus\Home.xaml.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\MasterDetailPages\Menus\Order.xaml.g.cs
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\MasterDetailPages\Menus\TestPage2.xaml.g.cs
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\MasterDetailPages\Menus\TestPage3.xaml.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\TabbedPage\DrinkItemTabbed\Cold.xaml.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\TabbedPage\DrinkItemTabbed\Hot.xaml.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\TabbedPage\DrinkTabbed.xaml.g.cs
@@ -28,3 +24,18 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netst
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\CP.Mobile.AssemblyInfo.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\MasterDetailPages\Menus\Information.xaml.g.cs
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\MasterDetailPages\Menus\Music.xaml.g.cs
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\bin\Debug\netstandard2.0\CP.Mobile.deps.json
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\bin\Debug\netstandard2.0\CP.Mobile.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\bin\Debug\netstandard2.0\ref\CP.Mobile.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\bin\Debug\netstandard2.0\CP.Mobile.pdb
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\bin\Debug\netstandard2.0\CP.ServiceLayer.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\bin\Debug\netstandard2.0\CP.ServiceLayer.pdb
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\bin\Debug\netstandard2.0\CP.ServiceLayer.dll.config
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\MasterDetailPages\Menus\Contact.xaml.g.cs
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\MasterDetailPages\Menus\OrderHistory.xaml.g.cs
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\MasterDetailPages\Menus\Tables.xaml.g.cs
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\CP.Mobile.csproj.CopyComplete
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\CP.Mobile.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\ref\CP.Mobile.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\CP.Mobile.pdb

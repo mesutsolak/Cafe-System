@@ -18,9 +18,9 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid>
-                    <Image Source="bg.png" Aspect="AspectFill" />
-                    <StackLayout Padding="0,12,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                        <Image  Source="profile.png"  WidthRequest="24"  />
+                    <Image  Source="bg.png" Aspect="AspectFill" />
+                    <StackLayout  Padding="0,0,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        <Image  Source="profile.png"  WidthRequest="30"  />
                         <Label Text="Adam Pedley" x:Name="FirstAndLast" TextColor="White" FontSize="Large" />
                     </StackLayout>
                 </Grid>
@@ -29,7 +29,7 @@
                         
                     -->
                                    
-                    <ListView x:Name="navigationDrawerList" RowHeight="60" SeparatorVisibility="Default" SeparatorColor="Gray" BackgroundColor="White" ItemSelected="OnMenuItemSelected">
+                    <ListView x:Name="navigationDrawerList" Margin="0,-6,0,0" RowHeight="60" SeparatorVisibility="Default" SeparatorColor="Gray" BackgroundColor="White" ItemSelected="OnMenuItemSelected">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -37,7 +37,7 @@
                                     <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="20,10,0,10" Spacing="20">
                                         <Image Source="{Binding Icon}" WidthRequest="24" HeightRequest="40" VerticalOptions="Center" />
                                         <Label Text="{Binding Title}" FontSize="Medium" VerticalOptions="Center" TextColor="Black" />
-                                    </StackLayout>
+                                    </StackLayout>                         
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>

@@ -35,6 +35,12 @@ namespace CP.Mobile.MasterDetailPages
                 });
                 menuList.Add(new MasterPageItem()
                 {
+                    Title = "Masalar",
+                    Icon = "table.png",
+                    TargetType = typeof(Tables)
+                });
+                menuList.Add(new MasterPageItem()
+                {
                     Title = "Yiyecekler",
                     Icon = "eat.png",
                     TargetType = typeof(MealTabbed)
@@ -66,6 +72,12 @@ namespace CP.Mobile.MasterDetailPages
                 });
                 menuList.Add(new MasterPageItem()
                 {
+                    Title = "Sipariş Geçmişim",
+                    Icon = "clock.png",
+                    TargetType = typeof(OrderHistory)
+                });
+                menuList.Add(new MasterPageItem()
+                {
                     Title = "Hakkımızda",
                     Icon = "information.png",
                     TargetType = typeof(Information)
@@ -76,18 +88,8 @@ namespace CP.Mobile.MasterDetailPages
                     Icon = "contact.png",
                     TargetType = typeof(Contact)
                 });
-                menuList.Add(new MasterPageItem()
-                {
-                    Title = "Sipariş Geçmişim",
-                    Icon = "clock.png",
-                    TargetType = typeof(OrderHistory)
-                });
-                menuList.Add(new MasterPageItem()
-                {
-                    Title = "Masalar",
-                    Icon = "table.png",
-                    TargetType = typeof(Tables)
-                });
+               
+               
 
                 FirstAndLast.Text = Preferences.Get("FirstAndLast", "");
 
