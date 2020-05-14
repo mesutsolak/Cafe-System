@@ -10,7 +10,7 @@ namespace CP.ServiceLayer.DTO
     {
         public int Id { get; set; }
         public string Header1 { get; set; }
-        public string Description { get; set; }
+        public string Description1 { get; set; }
         public string Header2 { get; set; }
         public string Description2 { get; set; }
     }

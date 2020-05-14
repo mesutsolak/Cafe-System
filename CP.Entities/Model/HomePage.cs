@@ -15,11 +15,11 @@ namespace CP.Entities.Model
         public int Id { get; set; }
         [StringLength(20)]
         public string Header1 { get; set; }
-        [StringLength(250)]
-        public string Description { get; set; }
+        [StringLength(500)]
+        public string Description1 { get; set; }
         [StringLength(20)]
         public string Header2 { get; set; }
-        [StringLength(250)]
+        [StringLength(500)]
         public string Description2 { get; set; }
 
     }

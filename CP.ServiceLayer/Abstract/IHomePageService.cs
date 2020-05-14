@@ -10,6 +10,6 @@ namespace CP.ServiceLayer.Abstract
 {
     public interface IHomePageService:IService<HomePageDTO>
     {
-
+        HomePageDTO GetHome();
     }
 }

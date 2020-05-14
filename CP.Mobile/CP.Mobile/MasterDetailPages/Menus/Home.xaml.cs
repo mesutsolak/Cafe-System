@@ -1,6 +1,7 @@
 ﻿using CP.Mobile.ImageSlider;
 using CP.Mobile.Tools.AlertModals;
 using CP.ServiceLayer.Concrete;
+using CP.ServiceLayer.DTO;
 using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace CP.Mobile.MasterDetailPages.Menus
     public partial class Home : ContentPage
     {
         CartService cs = new CartService();
+        HomePageService hps = new HomePageService();
 
 
         private void CountFound()
@@ -44,6 +46,7 @@ namespace CP.Mobile.MasterDetailPages.Menus
             try
             {
                   InitializeComponent();
+                BindingContext = HomePages(); 
                 CountFound();
                 CVMovies.ItemsSource = new MovieService().GetMoviesList();
 
@@ -76,5 +79,11 @@ namespace CP.Mobile.MasterDetailPages.Menus
             Application.Current.MainPage = new NavigationPage(new CP.Mobile.MainPage());
 
         }
+
+        public HomePageDTO HomePages()
+        {
+            hps.Url = "api/HomePage/GetAll";
+            return hps.GetHome();
+        }  
     }
 }

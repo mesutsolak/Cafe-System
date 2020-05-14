@@ -45,8 +45,10 @@
                     <IndicatorView x:Name="indicatorView"  IndicatorColor="LightGray" SelectedIndicatorColor="Black" />
                 </StackLayout>
                 <StackLayout Margin="10,0,0,0" x:Name="ContentStackLayout" x:Uid="ContentStackLayout">
-                    <Label Text="Duyurular"  FontSize="25" FontAttributes="Bold"/>
-                    <Label FontSize="17" Text="Kaf veya Fransızca orijinal yazımıyla café, müşterilere yiyecek ve içecek servisi yapılan küçük işletme. Genellikle kısıtlı bir menüye sahiptir.Aslen kahve servisi yapılan mekanlar olan kafeler zamanla basit yiyeceklerin ve her türlü sıcak-soğuk içeceğin sunulduğu yerler hâlini almıştır."/>
+                    <Label Text="{Binding Header1}" x:Name="Header1" x:Uid="Header1" FontSize="25" FontAttributes="Bold"/>
+                    <Label FontSize="17" Text="{Binding Description1}"/>
+                    <Label Text="{Binding Header2}" x:Name="Header2" x:Uid="Header2" FontSize="25" FontAttributes="Bold"/>
+                    <Label FontSize="17" Text="{Binding Description2}"/>
                 </StackLayout>
                 <StackLayout Margin="10,0,0,0" x:Name="FooterStackLayout" x:Uid="FooterStackLayout">
                     <Label Text="Kampanyalar" FontSize="25" FontAttributes="Bold"/>
