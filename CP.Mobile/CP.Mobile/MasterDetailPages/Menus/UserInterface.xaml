@@ -5,14 +5,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="CP.Mobile.MasterDetailPages.Menus.UserInterface">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" Spacing="12">
+            <Label Text="Hesabım" TextColor="White" FontSize="20" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
         <StackLayout>
             <StackLayout x:Name="StlUserInformations" HeightRequest="150" x:Uid="StlUserInformations">
-
+                <Label Text="Kullanıcı Bilgileri" FontSize="17" Margin="5,5,0,0"/>
             </StackLayout>
                     <BoxView 
             HeightRequest="1" 
-            BackgroundColor="Black" 
+            BackgroundColor="LightGray" 
             HorizontalOptions="FillAndExpand" />
             </StackLayout>
     </ContentPage.Content>

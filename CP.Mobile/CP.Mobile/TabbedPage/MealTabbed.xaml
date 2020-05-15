@@ -30,10 +30,10 @@
     </NavigationPage.TitleView>
 
     <!--Pages can be added as references or inline-->
-    <local:Meals Title="Ana Yemekler" Icon="meat.png"  />
-    <local:Meals Title="Ara Sıcaklar" Icon="patato.png"  />
-    <local:Meals Title="Çorbalar" Icon="soup.png"  />
-    <local:Meals Title="Tatlılar" Icon="dessert.png"  />
+    <local:MainDishes Title="Ana Yemekler" Icon="meat.png"  />
+    <local:IntermediateMeals Title="Ara Sıcaklar" Icon="patato.png"  />
+    <local:Soup Title="Çorbalar" Icon="soup.png"  />
+    <local:Desserts Title="Tatlılar" Icon="dessert.png"  />
 
 
 

@@ -5,6 +5,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="CP.Mobile.MasterDetailPages.Menus.Information">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" Spacing="12">
+            <Label Text="Hakkımızda" TextColor="White" FontSize="20" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"

@@ -46,8 +46,8 @@ namespace CP.Mobile.MasterDetailPages.Menus
             try
             {
                   InitializeComponent();
-                BindingContext = HomePages(); 
-                CountFound();
+                //BindingContext = HomePages(); 
+                //CountFound();
                 CVMovies.ItemsSource = new MovieService().GetMoviesList();
 
             }

@@ -277,4 +277,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\HotDrinkColor.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\MusicAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\MusicList.png" />
+  </ItemGroup>
 </Project>

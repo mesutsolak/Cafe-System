@@ -30,14 +30,17 @@
     <Compile Update="MasterDetailPages\Menus\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
-    <Compile Update="MasterDetailPages\Menus\Music.xaml.cs">
-      <DependentUpon>Music.xaml</DependentUpon>
+    <Compile Update="MasterDetailPages\Menus\Firebase.xaml.cs">
+      <DependentUpon>Firebase.xaml</DependentUpon>
     </Compile>
     <Compile Update="MasterDetailPages\Menus\Information.xaml.cs">
       <DependentUpon>Information.xaml</DependentUpon>
     </Compile>
     <Compile Update="TabbedPage\MealTabbed.xaml.cs">
       <DependentUpon>MealTabbed.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="TabbedPage\MenuItemTabbed\MainDishes.xaml.cs">
+      <DependentUpon>MainDishes.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -52,6 +55,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MasterDetailPages\Menus\Contact.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MasterDetailPages\Menus\MusicList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MasterDetailPages\Menus\Tables.xaml">
@@ -87,7 +93,10 @@
     <EmbeddedResource Update="TabbedPage\MenuItemTabbed\Desserts.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="TabbedPage\MenuItemTabbed\Meals.xaml">
+    <EmbeddedResource Update="TabbedPage\MenuItemTabbed\IntermediateMeals.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TabbedPage\MenuItemTabbed\MainDishes.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MasterDetailPages\Menus\Home.xaml">
@@ -96,10 +105,13 @@
     <EmbeddedResource Update="MasterDetailPages\Menus\Information.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MasterDetailPages\Menus\Music.xaml">
+    <EmbeddedResource Update="MasterDetailPages\Menus\Firebase.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="TabbedPage\MealTabbed.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TabbedPage\MenuItemTabbed\Soup.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Tools\AlertModals\ErrorModal.xaml">

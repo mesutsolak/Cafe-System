@@ -67,12 +67,12 @@ namespace CP.Mobile.MasterDetailPages
                 {
                     Title = "Müzik Listesi",
                     Icon = "music.png",
-                    TargetType = typeof(Music)
+                    TargetType = typeof(MusicList)
 
                 });
                 menuList.Add(new MasterPageItem()
                 {
-                    Title = "Kullanıcı Arayüzü",
+                    Title = "Hesabım",
                     Icon = "user.png",
                     TargetType = typeof(UserInterface)
                 });
