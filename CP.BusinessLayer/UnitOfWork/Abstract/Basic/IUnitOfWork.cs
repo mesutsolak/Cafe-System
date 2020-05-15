@@ -16,6 +16,7 @@ namespace CP.BusinessLayer.UnitOfWork.Abstract.Basic
         ICartRepository CartRepository { get; }
         ITableRepository TableRepository { get; }
         IHomePageRepository HomePageRepository { get; }
+        ISliderRepository SliderRepository { get; }
         int Complete();
         Task<int> CompleteAsync();
     }

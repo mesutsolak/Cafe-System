@@ -25,6 +25,6 @@ namespace CP.Mobile.TabbedPage
             BarTextColor = Color.Black;
 
         }
-     
+
     }
 }

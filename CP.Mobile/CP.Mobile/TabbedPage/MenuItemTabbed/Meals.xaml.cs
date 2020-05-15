@@ -67,5 +67,15 @@ namespace CP.Mobile.TabbedPage.MenuItemTabbed
                 await Navigation.PushPopupAsync(new ErrorModal(result));
 
         }
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void FlowListView_Refreshing(object sender, EventArgs e)
+        {
+
+        }
     }
 }

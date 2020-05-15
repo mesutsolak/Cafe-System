@@ -27,6 +27,8 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
 
         public IHomePageRepository HomePageRepository { get; private set; }
 
+        public ISliderRepository SliderRepository { get; private set; }
+
         private DbContext _context;
 
         public UnitOfWork(DbContext context)
@@ -39,6 +41,7 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
             CartRepository = new CartRepository(_context);
             TableRepository = new TableRepository(_context);
             HomePageRepository = new HomePageRepository(_context);
+            SliderRepository = new SliderRepository(_context);
         }
 
 

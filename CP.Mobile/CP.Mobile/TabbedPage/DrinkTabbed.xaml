@@ -7,6 +7,21 @@
              mc:Ignorable="d"
              x:Class="CP.Mobile.TabbedPage.DrinkTabbed">
 
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="İçecekler" VerticalTextAlignment="Center" TextColor="White" FontSize="17" Margin="0,0,8,0" />
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                <Image Source="ColdDrinkColor.png"  WidthRequest="24"/>
+                <Label Text="0" VerticalTextAlignment="Center" Margin="0,0,5,0" TextColor="White" FontSize="17"/>
+
+                <Image Source="HotDrinkColor.png"  WidthRequest="24"/>
+                <Label Text="0" VerticalTextAlignment="Center" Margin="0,0,5,0" TextColor="White" FontSize="17"/>
+            </StackLayout>
+        </StackLayout>
+
+    </NavigationPage.TitleView>
+
     <local:Cold Title="Soğuk İçecekler" Icon="ColdDrink.png"/>
     <local:Hot Title="Sıcak İçecekler" Icon="HotDrink.png"/>
     

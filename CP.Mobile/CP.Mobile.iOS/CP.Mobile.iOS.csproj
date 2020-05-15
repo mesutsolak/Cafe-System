@@ -259,4 +259,22 @@
   <ItemGroup>
     <BundleResource Include="Resources\remove.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ColdDrinkColor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DessertColor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SoupColor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\PatatoColor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\MeatColor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\HotDrinkColor.png" />
+  </ItemGroup>
 </Project>
