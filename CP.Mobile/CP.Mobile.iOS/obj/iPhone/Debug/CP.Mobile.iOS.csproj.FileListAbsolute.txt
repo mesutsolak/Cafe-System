@@ -81,3 +81,7 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\CP.Mobile.iOS.csproj.CopyComplete
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\CP.Mobile.iOS.exe
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\CP.Mobile.iOS.pdb
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\Xam.Plugin.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\Xam.Plugin.pdb
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\Xam.Plugin.iOS.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\Xam.Plugin.iOS.pdb

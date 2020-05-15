@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8gLctvaphWvc8oZQg36MKQZpLs3UOeJU2AWmgxJpiZ941MJTLw1JWFbCBjhsOqRDxDX1YDRafWK2dTYsML1ubw==",
+  "dgSpecHash": "uI8kNbpb0Bev87xwbVj54flc2rLenBctagU+x+LobI98qIx4iTWrN7/SZyWdeKgzPp0g7Bu51mQAcz7fl7qXmQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile\\CP.Mobile.csproj",
   "expectedPackageFiles": [
@@ -64,9 +64,21 @@
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\xam.plugin.media\\5.0.1\\xam.plugin.media.5.0.1.nupkg.sha512",
+    "C:\\Users\\Mesut Solak\\.nuget\\packages\\xam.plugin.popupmenu\\1.1.0\\xam.plugin.popupmenu.1.1.0.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\xamarin.essentials\\1.5.3.1\\xamarin.essentials.1.5.3.1.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\xamarin.forms\\4.6.0.726\\xamarin.forms.4.6.0.726.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\xamarin.plugins.fluentvalidation\\3.0.64\\xamarin.plugins.fluentvalidation.3.0.64.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Xam.Plugin.PopupMenu 1.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Xam.Plugin.PopupMenu",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

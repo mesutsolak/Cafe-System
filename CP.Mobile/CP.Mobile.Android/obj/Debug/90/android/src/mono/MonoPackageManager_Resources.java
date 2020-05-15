@@ -15,6 +15,8 @@ public class MonoPackageManager_Resources {
 		"Plugin.Media.dll",
 		"Rg.Plugins.Popup.dll",
 		"System.Net.Http.Formatting.dll",
+		"Xam.Plugin.dll",
+		"Xam.Plugin.Droid.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",

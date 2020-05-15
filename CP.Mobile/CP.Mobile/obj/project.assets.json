@@ -881,6 +881,18 @@
           "lib/netstandard2.0/Plugin.Media.dll": {}
         }
       },
+      "Xam.Plugin.PopupMenu/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.3.180"
+        },
+        "compile": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Xam.Plugin.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Xam.Plugin.dll": {}
+        }
+      },
       "Xamarin.Essentials/1.5.3.1": {
         "type": "package",
         "dependencies": {
@@ -4115,6 +4127,42 @@
         "xam.plugin.media.nuspec"
       ]
     },
+    "Xam.Plugin.PopupMenu/1.1.0": {
+      "sha512": "UPib0z0DnsQrl3FtK59E7WTk/jPex+tAHRYrXpm6lFCe/PcgtgO5W9YG03zTGuoWdiPISNaeqncWshbcOYt4Hw==",
+      "type": "package",
+      "path": "xam.plugin.popupmenu/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Xam.Plugin.Droid.dll",
+        "lib/MonoAndroid10/Xam.Plugin.Droid.dll.mdb",
+        "lib/MonoAndroid10/Xam.Plugin.Droid.pdb",
+        "lib/MonoAndroid10/Xam.Plugin.dll",
+        "lib/MonoAndroid10/Xam.Plugin.dll.mdb",
+        "lib/MonoAndroid10/Xam.Plugin.pdb",
+        "lib/Xamarin.iOS10/Xam.Plugin.dll",
+        "lib/Xamarin.iOS10/Xam.Plugin.dll.mdb",
+        "lib/Xamarin.iOS10/Xam.Plugin.iOS.dll",
+        "lib/Xamarin.iOS10/Xam.Plugin.iOS.dll.mdb",
+        "lib/Xamarin.iOS10/Xam.Plugin.iOS.pdb",
+        "lib/Xamarin.iOS10/Xam.Plugin.pdb",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Xam.Plugin.dll",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Xam.Plugin.dll.mdb",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Xam.Plugin.pdb",
+        "lib/uap10.0/Xam.Plugin.UWP.dll",
+        "lib/uap10.0/Xam.Plugin.UWP.pdb",
+        "lib/uap10.0/Xam.Plugin.dll",
+        "lib/uap10.0/Xam.Plugin.pdb",
+        "lib/win81/Xam.Plugin.WindowsPhone.dll",
+        "lib/win81/Xam.Plugin.WindowsPhone.pdb",
+        "lib/win81/Xam.Plugin.WindowsStore.dll",
+        "lib/win81/Xam.Plugin.WindowsStore.pdb",
+        "lib/win81/Xam.Plugin.dll",
+        "lib/win81/Xam.Plugin.pdb",
+        "xam.plugin.popupmenu.1.1.0.nupkg.sha512",
+        "xam.plugin.popupmenu.nuspec"
+      ]
+    },
     "Xamarin.Essentials/1.5.3.1": {
       "sha512": "6sE3kGMhES7dsR8ll+ar+roEIFobjPfDskKNMsU4FF6cV27ZsdArGZHxe1QqPPJcMT6PzJsGvA3l5PNMZgw5ng==",
       "type": "package",
@@ -4504,6 +4552,7 @@
       "NETStandard.Library >= 2.0.3",
       "Rg.Plugins.Popup >= 2.0.0.2",
       "Xam.Plugin.Media >= 5.0.1",
+      "Xam.Plugin.PopupMenu >= 1.1.0",
       "Xamarin.Essentials >= 1.5.3.1",
       "Xamarin.Forms >= 4.6.0.726",
       "Xamarin.Plugins.FluentValidation >= 3.0.64"
@@ -4585,6 +4634,10 @@
             "target": "Package",
             "version": "[5.0.1, )"
           },
+          "Xam.Plugin.PopupMenu": {
+            "target": "Package",
+            "version": "[1.1.0, )"
+          },
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.5.3.1, )"
@@ -4611,5 +4664,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Xam.Plugin.PopupMenu 1.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Xam.Plugin.PopupMenu",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Ygv4sAHoymHfl0tmEXsogfCsZeygYnr5ae2g6FCq6x2hC4eq7d5yqGOSe2fOpsUwsTyeVC9L4G5ncThzfj6xdQ==",
+  "dgSpecHash": "Hg7H+hcpMJasw1bvwrPjxKWqCJHWhMqQhyePGV2RPnJzV7J0HMckRc4mWYWZ6EcLiqZch4ks3qFkoU7zu3n6vw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile.Android\\CP.Mobile.Android.csproj",
   "expectedPackageFiles": [
@@ -69,6 +69,7 @@
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\xam.plugin.media\\5.0.1\\xam.plugin.media.5.0.1.nupkg.sha512",
+    "C:\\Users\\Mesut Solak\\.nuget\\packages\\xam.plugin.popupmenu\\1.1.0\\xam.plugin.popupmenu.1.1.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.common\\1.1.1.3\\xamarin.android.arch.core.common.1.1.1.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.runtime\\1.1.1.3\\xamarin.android.arch.core.runtime.1.1.1.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.lifecycle.common\\1.1.1.3\\xamarin.android.arch.lifecycle.common.1.1.1.3.nupkg.sha512",
