@@ -98,6 +98,7 @@
     <Compile Include="Model\CompanyInformation.cs" />
     <Compile Include="Model\ConfirmStatus.cs" />
     <Compile Include="Model\Contact.cs" />
+    <Compile Include="Model\Gender.cs" />
     <Compile Include="Model\Log.cs" />
     <Compile Include="Model\LogInfoes.cs" />
     <Compile Include="Model\LogStatus.cs" />

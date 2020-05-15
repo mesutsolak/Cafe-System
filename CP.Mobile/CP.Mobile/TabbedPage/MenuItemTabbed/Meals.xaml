@@ -20,6 +20,7 @@
                 FlowItemsSource="{Binding Items}"
                           IsPullToRefreshEnabled="True"
                           Refreshing="FlowListView_Refreshing"
+                          x:Name="ListMeals"
                           >
 
             <flv:FlowListView.FlowColumnTemplate>

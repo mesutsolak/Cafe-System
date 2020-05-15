@@ -9,20 +9,16 @@ namespace CP.ServiceLayer.DTO
     public class User
     {
         public int Id { get; set; }
-
         public string Username { get; set; }
-
         public string Email { get; set; }
-
         public string FirstName { get; set; }
-
         public string Password { get; set; }
-
         public string LastName { get; set; }
-        public string Photo { get; set; }
-
-        public bool? IsConfirm { get; set; } = false;
-        public bool Status { get; set; } = true;
+        public string ProfilPhoto { get; set; }
+        public int? GenderId { get; set; }
+        public string BackGround { get; set; }
+        public bool? IsConfirm { get; set; }
+        public bool IsDeleted { get; set; }
 
     }
 }

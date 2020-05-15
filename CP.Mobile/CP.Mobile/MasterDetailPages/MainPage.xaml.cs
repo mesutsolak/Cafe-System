@@ -72,9 +72,9 @@ namespace CP.Mobile.MasterDetailPages
                 });
                 menuList.Add(new MasterPageItem()
                 {
-                    Title = "Sipariş Geçmişim",
-                    Icon = "clock.png",
-                    TargetType = typeof(OrderHistory)
+                    Title = "Kullanıcı Arayüzü",
+                    Icon = "user.png",
+                    TargetType = typeof(UserInterface)
                 });
                 menuList.Add(new MasterPageItem()
                 {

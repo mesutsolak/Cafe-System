@@ -26,6 +26,11 @@ namespace CP.Mobile.TabbedPage.MenuItemTabbed
         {
             InitializeComponent();
             FlowListView.Init();
+            MealLoad();
+        }
+
+        private void MealLoad()
+        {
             pageModel = new MainPageModel(this);
             BindingContext = pageModel;
         }
@@ -73,9 +78,18 @@ namespace CP.Mobile.TabbedPage.MenuItemTabbed
 
         }
 
-        private void FlowListView_Refreshing(object sender, EventArgs e)
+        private async void FlowListView_Refreshing(object sender, EventArgs e)
         {
 
+            ListMeals.IsRefreshing = true;
+
+
+            MealLoad();
+
+
+            await Task.Delay(1000);
+
+            ListMeals.IsRefreshing = false;
         }
     }
 }

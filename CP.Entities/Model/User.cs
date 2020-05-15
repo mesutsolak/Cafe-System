@@ -18,6 +18,8 @@ namespace CP.Entities.Model
             MusicList = new HashSet<MusicList>();
             Rate = new HashSet<Rate>();
             UserRoles = new HashSet<UserRoles>();
+            IsConfirm = false;
+            IsDeleted = false;
         }
 
         public int Id { get; set; }
@@ -39,8 +41,13 @@ namespace CP.Entities.Model
 
         public bool? IsConfirm { get; set; }
 
-        [StringLength(200)]
-        public string Image { get; set; }
+        [StringLength(500)]
+        public string ProfilPhoto { get; set; }
+
+        [StringLength(500)]
+        public string BackGround { get; set; }
+
+        public int? GenderId { get; set; }
 
         public bool? IsDeleted { get; set; }
 
@@ -50,6 +57,8 @@ namespace CP.Entities.Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cart> Cart { get; set; }
+
+        public virtual Gender Gender { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comment { get; set; }

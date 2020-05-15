@@ -210,10 +210,6 @@ namespace CP.Entities.Model
             modelBuilder.Entity<User>()
                 .Property(e => e.Password)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<User>()
-                .Property(e => e.Image)
-                .IsUnicode(false);
         }
     }
 }

@@ -51,9 +51,9 @@ namespace CP.WebUI.Controllers
         public PartialViewResult UserUpdate(int id)
         {
             var user = UserOperations.UserFind(id);
-            if (user.Image != null)
+            if (user.ProfilPhoto != null)
             {
-                var CategoryName = user.Image.Substring(124, user.Image.Length - 124).Split('?');
+                var CategoryName = user.ProfilPhoto.Substring(124, user.ProfilPhoto.Length - 124).Split('?');
                 ViewBag.CategoryName = CategoryName[0];
             }
 
@@ -93,7 +93,7 @@ namespace CP.WebUI.Controllers
                 if (!user.Images.IsNullObject() && user.Images.ContentLength > 0)
                 {
                     var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(user.Images.FileName);
-                    user.Image = await firebaseStorageHelper.UploadFile(user.Images.InputStream, ImageName, "User");
+                    user.ProfilPhoto = await firebaseStorageHelper.UploadFile(user.Images.InputStream, ImageName, "User");
                 }
 
                 int id = await UserOperations.UserAdd(user);
@@ -164,7 +164,7 @@ namespace CP.WebUI.Controllers
                 if (!user.Images.IsNullObject() && user.Images.ContentLength > 0)
                 {
                     var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(user.Images.FileName);
-                    user.Image = await firebaseStorageHelper.UploadFile(user.Images.InputStream, ImageName, "User");
+                    user.ProfilPhoto = await firebaseStorageHelper.UploadFile(user.Images.InputStream, ImageName, "User");
                 }
 
                 int id = await UserOperations.UserUpdate(user);
