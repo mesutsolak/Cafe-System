@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace CP.ServiceLayer.Abstract
 {
-    public interface IProductService:IService<ProductDTO>
+    public interface IProductService : IService<ProductDTO>
     {
+        List<ProductDTO> GetFilterAll(int CategoryId);
     }
 }

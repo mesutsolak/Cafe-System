@@ -31,7 +31,7 @@ namespace CP.Mobile.TabbedPage.MenuItemTabbed
 
         private void MealLoad()
         {
-            pageModel = new MainPageModel(this);
+            pageModel = new MainPageModel(this, 4);
             BindingContext = pageModel;
         }
 
@@ -75,7 +75,7 @@ namespace CP.Mobile.TabbedPage.MenuItemTabbed
 
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            ListMeals.FlowItemsSource = pageModel.Items.Where(x => x.Name.Contains(MealsSearch.Text)).ToList();
         }
 
         private async void FlowListView_Refreshing(object sender, EventArgs e)

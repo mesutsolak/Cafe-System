@@ -12,7 +12,8 @@
 
 
     <ContentPage.Content>
-        
+        <StackLayout>
+        <SearchBar x:Name="MealsSearch" Placeholder="Yemek Adı Giriniz" PlaceholderColor="LightGray" TextChanged="SearchBar_TextChanged"/>
         <flv:FlowListView FlowColumnCount="2"   
                 SeparatorVisibility="Default"   
                 HasUnevenRows="True"  
@@ -59,5 +60,6 @@
                 </DataTemplate>
             </flv:FlowListView.FlowColumnTemplate>
         </flv:FlowListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

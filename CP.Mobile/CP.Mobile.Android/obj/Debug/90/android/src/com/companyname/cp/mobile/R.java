@@ -4617,11 +4617,12 @@ public final class R {
     public static final int star=0x7f07009d;
     public static final int success=0x7f07009e;
     public static final int table=0x7f07009f;
-    public static final int tooltip_frame_dark=0x7f0700a0;
-    public static final int tooltip_frame_light=0x7f0700a1;
-    public static final int trash=0x7f0700a2;
-    public static final int user=0x7f0700a3;
-    public static final int useradd=0x7f0700a4;
+    public static final int threewhite=0x7f0700a0;
+    public static final int tooltip_frame_dark=0x7f0700a1;
+    public static final int tooltip_frame_light=0x7f0700a2;
+    public static final int trash=0x7f0700a3;
+    public static final int user=0x7f0700a4;
+    public static final int useradd=0x7f0700a5;
   }
   public static final class id {
     public static final int ALT=0x7f080000;

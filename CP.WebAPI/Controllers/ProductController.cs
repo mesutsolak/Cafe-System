@@ -49,7 +49,7 @@ namespace CP.WebAPI.Controllers
         [Route("{id}")]
         public IHttpActionResult Get(int id)
         {
-           var item =  ProductOperation.ProductFind(id);
+            var item = ProductOperation.ProductFind(id);
 
             var categoryDTO = mapper.Map<M.Category, Category>(item.Category);
             var productDTO = mapper.Map<M.Product, ProductDTO>(item);
@@ -57,5 +57,29 @@ namespace CP.WebAPI.Controllers
 
             return Ok(productDTO);
         }
+
+        [HttpGet]
+        [AllowAnonymous]
+        [Route("Category/{id}")]
+        public IHttpActionResult GetFilterAll(int id)
+        {
+
+            ProductDTOs.Clear();
+
+            var _products = ProductOperation.GetFilterCategory(id);
+
+            foreach (var product in _products)
+            {
+
+                var _CategoryDTO = mapper.Map<M.Category, Category>(product.Category);
+                var _ProductDTO = mapper.Map<M.Product, ProductDTO>(product);
+                _ProductDTO.Category = _CategoryDTO;
+
+                ProductDTOs.Add(_ProductDTO);
+            }
+
+            return Ok(ProductDTOs);
+        }
+
     }
 }

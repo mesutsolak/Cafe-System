@@ -5,6 +5,7 @@ using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -17,18 +18,18 @@ namespace CP.Mobile.ListContent
 
         private ContentPage mainPage;
 
-        public MainPageModel(ContentPage mainPage)
+        public MainPageModel(ContentPage mainPage,int CategoryId)
         {
             this.mainPage = mainPage;
-            AddItems();
+            AddItems(CategoryId);
 
         }
 
-        private void AddItems()
+        private void AddItems(int CategoryId)
         {
-            productService.Url = "api/Product/ProductAll";
+            productService.Url = "api/Product/Category/";
 
-            var _ListProduct = productService.GetAll();
+            var _ListProduct = productService.GetFilterAll(CategoryId);
 
             foreach (var item in _ListProduct)
             {

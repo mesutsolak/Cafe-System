@@ -1020,11 +1020,12 @@ int drawable splasscreen 0x7f07009c
 int drawable star 0x7f07009d
 int drawable success 0x7f07009e
 int drawable table 0x7f07009f
-int drawable tooltip_frame_dark 0x7f0700a0
-int drawable tooltip_frame_light 0x7f0700a1
-int drawable trash 0x7f0700a2
-int drawable user 0x7f0700a3
-int drawable useradd 0x7f0700a4
+int drawable threewhite 0x7f0700a0
+int drawable tooltip_frame_dark 0x7f0700a1
+int drawable tooltip_frame_light 0x7f0700a2
+int drawable trash 0x7f0700a3
+int drawable user 0x7f0700a4
+int drawable useradd 0x7f0700a5
 int id ALT 0x7f080000
 int id CTRL 0x7f080001
 int id FUNCTION 0x7f080002

@@ -38,5 +38,9 @@ namespace CP.BusinessLayer.Operations
         {
             return _data.ProductRepository.GetAll(x=>x.Category,y=>y.IsDeleted==false);
         }
+        public static List<Product> GetFilterCategory(int CategoryId)
+        {
+            return _data.ProductRepository.GetAll(x=>x.Category,x => x.CategoryId == CategoryId);
+        }
     }
 }
