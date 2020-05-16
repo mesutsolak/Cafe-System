@@ -9,23 +9,7 @@
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
             <Label Text="Sepetim" VerticalTextAlignment="Center" TextColor="White" FontSize="17" Margin="0,0,8,0" />
-
-            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-                <Image Source="cart.png" Margin="0,0,5,0"   WidthRequest="24"/>
-                <Label Text="0" VerticalTextAlignment="Center" Margin="0,0,5,0" TextColor="White" FontSize="17"/>
-
-                <Image Source="money.png" Margin="0,0,5,0"   WidthRequest="24"/>
-                <Label Text="0" VerticalTextAlignment="Center" Margin="0,0,5,0" TextColor="White" FontSize="17"/>
-
-                <Image Source="clock.png" Margin="0,0,5,0"   WidthRequest="24"/>
-                <Label Text="0" VerticalTextAlignment="Center" Margin="0,0,5,0" TextColor="White" FontSize="17"/>
-
-
-                <ImageButton Source="remove.png" Margin="0,0,5,0"  BackgroundColor="Transparent" WidthRequest="32" x:Name="btnRemoveAll"/>
-                <ImageButton Source="success.png" Margin="0,0,15,0" WidthRequest="24" BackgroundColor="Transparent"  />
-
-
-            </StackLayout>
+            <ImageButton x:Name="CartGeneral"  HorizontalOptions="EndAndExpand"  BackgroundColor="Transparent" Clicked="CartGeneral_Clicked" Source="ThreeWhite.png"  WidthRequest="24"/>
         </StackLayout>
     </NavigationPage.TitleView>
 

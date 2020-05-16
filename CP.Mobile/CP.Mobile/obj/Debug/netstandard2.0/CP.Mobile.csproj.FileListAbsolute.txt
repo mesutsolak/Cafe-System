@@ -44,3 +44,5 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\bin\Debug\netst
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\bin\Debug\netstandard2.0\CP.ServiceLayer.dll.config
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\CP.Mobile.csproj.CopyComplete
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\MasterDetailPages\PopupMenuContent\TableGeneral.xaml.g.cs
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile\obj\Debug\netstandard2.0\MasterDetailPages\PopupMenuContent\CartGeneral.xaml.g.cs

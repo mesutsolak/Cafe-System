@@ -113,6 +113,9 @@ namespace CP.Mobile.MasterDetailPages
         // on user selection in menu ListView  
         private void OnMenuItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            Navigation.PushPopupAsync(new LoaderModal(), true);
+
+
             var item = (MasterPageItem)e.SelectedItem;
 
             Type page = item.TargetType;

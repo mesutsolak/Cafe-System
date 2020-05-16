@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rg.Plugins.Popup.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace CP.Mobile.MasterDetailPages.Menus
         public MusicList()
         {
             InitializeComponent();
+            Navigation.PopPopupAsync(true);
+
         }
     }
 }

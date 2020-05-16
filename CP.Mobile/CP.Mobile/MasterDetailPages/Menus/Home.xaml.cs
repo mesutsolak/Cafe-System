@@ -56,7 +56,8 @@ namespace CP.Mobile.MasterDetailPages.Menus
 
                 throw ex;
             }
-        
+            Navigation.PopPopupAsync(true);
+
 
         }
         protected override void OnAppearing()

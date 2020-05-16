@@ -1,4 +1,6 @@
 ﻿using CP.Mobile.ListContent.CartModals;
+using CP.Mobile.MasterDetailPages.PopupMenu;
+using CP.Mobile.MasterDetailPages.PopupMenuContent;
 using CP.Mobile.Tools.AlertModals;
 using CP.ServiceLayer.Concrete;
 using CP.ServiceLayer.DTO;
@@ -19,11 +21,52 @@ namespace CP.Mobile.MasterDetailPages.Menus
     {
         CartService cartservice = new CartService();
 
+        public CartViewModel ViewModel => CartViewModel.Instance;
+        public Xam.Plugin.PopupMenu Popup;
 
         public Cart()
         {
             InitializeComponent();
             CartList();
+
+            Popup = new Xam.Plugin.PopupMenu()
+            {
+                BindingContext = ViewModel
+            };
+            Popup.OnItemSelected += Popup_OnItemSelected; ;
+
+            Popup.SetBinding(Xam.Plugin.PopupMenu.ItemsSourceProperty, "ListItems");
+
+            Navigation.PopPopupAsync(true);
+
+        }
+
+        private async void Popup_OnItemSelected(string item)
+        {
+            switch (item)
+            {
+                case "Genel Durum":
+                    await Navigation.PushPopupAsync(new CartGeneral(), true);
+                    break;
+                case "Ürünleri Kaldır":
+                    await Navigation.PushPopupAsync(new QuestionModal("Silme İşlemi", "Ürünler silinsin mi ?", () => { CartRemoves(); }), true);
+                    break;
+                case "Ürünleri Onayla":
+                    await Navigation.PushPopupAsync(new QuestionModal("Onaylama İşlemi", "Ürünler Onaylansın mı ?", () => { CartConfirms(); }), true);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public void CartConfirms()
+        {
+
+        }
+
+        public void CartRemoves()
+        {
+
         }
 
         public void CartList()
@@ -92,10 +135,10 @@ namespace CP.Mobile.MasterDetailPages.Menus
 
             try
             {
-                    cartservice.Url = "api/Cart/Find/";
-            var _cart = cartservice.GetFindString(int.Parse(_id));
+                cartservice.Url = "api/Cart/Find/";
+                var _cart = cartservice.GetFindString(int.Parse(_id));
 
-            await Navigation.PushPopupAsync(new CartUpdate(_cart, () => { CartList(); }));
+                await Navigation.PushPopupAsync(new CartUpdate(_cart, () => { CartList(); }));
 
             }
             catch (Exception ex)
@@ -104,7 +147,12 @@ namespace CP.Mobile.MasterDetailPages.Menus
                 throw ex;
             }
 
-        
+
+        }
+
+        private void CartGeneral_Clicked(object sender, EventArgs e)
+        {
+            Popup?.ShowPopup(sender as View);
         }
     }
 }

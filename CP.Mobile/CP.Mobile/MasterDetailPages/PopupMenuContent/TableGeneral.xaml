@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage  xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                  xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                  mc:Ignorable="d"
+             x:Class="CP.Mobile.MasterDetailPages.PopupMenuContent.TableGeneral">
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+
+    <StackLayout x:Name="StlForm" x:Uid="StlForm"
+        VerticalOptions="Center" 
+        HorizontalOptions="FillAndExpand"
+        BackgroundColor="Transparent"
+        Margin="15, 0, 15, 0"
+                 >
+        <Frame BackgroundColor="#EEEEEE" CornerRadius="10">
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                <Label TextColor="Blue" HorizontalOptions="Center" Margin="0,10"  FontAttributes="Bold" FontSize="Large" Text="Masa Bilgileri"  HorizontalTextAlignment="Center" />
+
+                <StackLayout Orientation="Horizontal" Margin="0,10">
+                    <Image Source="table.png" Margin="0,5" WidthRequest="24" HorizontalOptions="Center" />
+                    <Label TextColor="Black" HorizontalOptions="Center" Text="Masa Sayısı :" Margin="3,5" FontSize="20"/>
+                    <Label TextColor="Black" HorizontalOptions="Center" Text="0" Margin="0,5" FontSize="20"/>
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal">
+                    <BoxView BackgroundColor="Green" WidthRequest="35" HeightRequest="2" HorizontalOptions="Center" CornerRadius="30"/>
+                    <Label TextColor="Black" HorizontalOptions="Center" Text="Boş Olan Masa Sayısı :" Margin="3,5" FontSize="20"/>
+                    <Label TextColor="Black" HorizontalOptions="Center" Text="0" Margin="0,5" FontSize="20"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <BoxView BackgroundColor="Orange" WidthRequest="35" HeightRequest="2" HorizontalOptions="Center" CornerRadius="30"/>
+                    <Label TextColor="Black" HorizontalOptions="Center" Text="Bekleyen Masa Sayısı :" Margin="3,5" FontSize="20"/>
+                    <Label TextColor="Black" HorizontalOptions="Center" Text="0" Margin="0,5" FontSize="20"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <BoxView BackgroundColor="Red" WidthRequest="35" HeightRequest="2" HorizontalOptions="Center" CornerRadius="30"/>
+                    <Label TextColor="Black" HorizontalOptions="Center" Text="Dolu Olan Masa Sayısı :" Margin="3,5" FontSize="20"/>
+                    <Label TextColor="Black" HorizontalOptions="Center" Text="0" Margin="0,5" FontSize="20"/>
+                </StackLayout>
+               
+                <Button BackgroundColor="Red" x:Name="btnClose" x:Uid="btnClose" Clicked="btnClose_Clicked"  TextColor="White" Text="Kapat" HorizontalOptions="Center" />
+            </StackLayout>
+        </Frame>
+
+
+    </StackLayout>
+
+
+
+</pages:PopupPage>

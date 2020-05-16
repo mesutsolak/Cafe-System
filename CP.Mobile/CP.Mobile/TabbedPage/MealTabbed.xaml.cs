@@ -37,6 +37,9 @@ namespace CP.Mobile.TabbedPage
             Popup.OnItemSelected += Popup_OnItemSelected; ;
 
             Popup.SetBinding(Xam.Plugin.PopupMenu.ItemsSourceProperty, "ListItems");
+     
+            Navigation.PopPopupAsync(true);
+
         }
 
         private async void Popup_OnItemSelected(string item)

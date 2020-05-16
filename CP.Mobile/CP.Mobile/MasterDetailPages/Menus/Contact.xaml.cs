@@ -1,4 +1,5 @@
 ﻿using CP.Mobile.MasterDetailPages.PopupMenu;
+using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,8 @@ namespace CP.Mobile.MasterDetailPages.Menus
                 Popup.OnItemSelected += Popup_OnItemSelected;
 
                 Popup.SetBinding(Xam.Plugin.PopupMenu.ItemsSourceProperty, "ListItems");
+
+            Navigation.PopPopupAsync(true);
 
         }
 

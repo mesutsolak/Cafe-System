@@ -1,4 +1,6 @@
 ﻿using CP.Mobile.ListContent;
+using CP.Mobile.MasterDetailPages.PopupMenu;
+using CP.Mobile.MasterDetailPages.PopupMenuContent;
 using CP.Mobile.Tools.AlertModals;
 using CP.ServiceLayer.Concrete;
 using DLToolkit.Forms.Controls;
@@ -19,12 +21,39 @@ namespace CP.Mobile.MasterDetailPages.Menus
     {
         TableService ts = new TableService();
         TablePageModal pageModel;
+
+        public TablesViewModel ViewModel => TablesViewModel.Instance;
+        public Xam.Plugin.PopupMenu Popup;
+
         public Tables()
         {
             InitializeComponent();
             FlowListView.Init();
             pageModel = new TablePageModal(this);
             BindingContext = pageModel;
+
+
+            Popup = new Xam.Plugin.PopupMenu()
+            {
+                BindingContext = ViewModel
+            };
+            Popup.OnItemSelected += Popup_OnItemSelected; ;
+
+            Popup.SetBinding(Xam.Plugin.PopupMenu.ItemsSourceProperty, "ListItems");
+
+            Navigation.PopPopupAsync(true);
+        }
+
+        private void Popup_OnItemSelected(string item)
+        {
+            switch (item)
+            {
+                case "Genel Durum":
+                    Navigation.PushPopupAsync(new TableGeneral(), true);
+                    break;
+                default:
+                    break;
+            }
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
@@ -53,6 +82,11 @@ namespace CP.Mobile.MasterDetailPages.Menus
             //{
             //    await this.Navigation.PushPopupAsync(new ErrorModal(result), true);
             //}
+        }
+
+        private void TablesGeneral_Clicked(object sender, EventArgs e)
+        {
+            Popup?.ShowPopup(sender as View);
         }
     }
 }
