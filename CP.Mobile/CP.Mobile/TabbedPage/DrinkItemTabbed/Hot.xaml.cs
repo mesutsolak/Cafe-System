@@ -87,7 +87,7 @@ namespace CP.Mobile.TabbedPage.DrinkItemTabbed
 
         }
 
-        private void HotSearch_TextChanged(object sender, TextChangedEventArgs e)
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             ListHots.ItemsSource = pageModel.Items.Where(x => x.Name.Contains(HotSearch.Text)).ToList();
         }

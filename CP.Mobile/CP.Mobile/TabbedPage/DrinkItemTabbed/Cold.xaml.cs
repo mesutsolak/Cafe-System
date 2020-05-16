@@ -88,7 +88,7 @@ namespace CP.Mobile.TabbedPage.DrinkItemTabbed
 
         }
 
-        private void ColdSearch_TextChanged(object sender, TextChangedEventArgs e)
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             ListColds.ItemsSource = pageModel.Items.Where(x => x.Name.Contains(ColdSearch.Text)).ToList();
         }

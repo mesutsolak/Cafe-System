@@ -10,21 +10,7 @@
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
             <Label Text="Yiyecekler" VerticalTextAlignment="Center" TextColor="White" FontSize="17" Margin="0,0,8,0" />
-
-            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-                <Image Source="MeatColor.png"  WidthRequest="24"/>
-                <Label Text="0" VerticalTextAlignment="Center" Margin="0,0,5,0" TextColor="White" FontSize="17"/>
-
-                <Image Source="PatatoColor.png"  WidthRequest="24"/>
-                <Label Text="0" VerticalTextAlignment="Center" Margin="0,0,5,0" TextColor="White" FontSize="17"/>
-
-                <Image Source="SoupColor.png" Margin="0,0,2,0"  WidthRequest="24"/>
-                <Label Text="0" VerticalTextAlignment="Center" Margin="0,0,5,0" TextColor="White" FontSize="17"/>
-
-                <Image Source="DessertColor.png"  WidthRequest="24"/>
-                <Label Text="0" VerticalTextAlignment="Center" Margin="0,0,5,0" TextColor="White" FontSize="17"/>
-
-            </StackLayout>
+                 <ImageButton x:Name="MealGeneral"  HorizontalOptions="EndAndExpand"  BackgroundColor="Transparent" Clicked="MealGeneral_Clicked" Source="ThreeWhite.png"  WidthRequest="24"/>
         </StackLayout>
 
     </NavigationPage.TitleView>

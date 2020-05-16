@@ -8,7 +8,17 @@
     <ContentPage.Content>
 
         <StackLayout>
-            <SearchBar x:Name="IntermediateSearch" Placeholder="Yemek Adı Giriniz" PlaceholderColor="LightGray" TextChanged="IntermediateSearch_TextChanged"/>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout HorizontalOptions="Start" VerticalOptions="Center" Margin="5,16">
+                    <Label Text="Ara:" Margin="5" FontSize="20" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+                <StackLayout HorizontalOptions="End">
+                    <Frame  BackgroundColor="Transparent" HorizontalOptions="EndAndExpand" Margin="13,10,13,0" CornerRadius="10" Padding="0" BorderColor="LightGray">
+                        <SearchBar x:Name="IntermediateSearch" CancelButtonColor="Red" Placeholder="Yemek Adı Giriniz" PlaceholderColor="LightGray"  TextChanged="SearchBar_TextChanged"/>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+            
             <flv:FlowListView FlowColumnCount="2"   
                 SeparatorVisibility="Default"   
                 HasUnevenRows="True"  

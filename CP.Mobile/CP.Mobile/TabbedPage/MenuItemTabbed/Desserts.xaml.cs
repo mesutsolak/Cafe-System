@@ -89,7 +89,7 @@ namespace CP.Mobile.TabbedPage.MenuItemTabbed
 
         }
 
-        private void DessertsSearch_TextChanged(object sender, TextChangedEventArgs e)
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             ListDesserts.FlowItemsSource = pageModel.Items.Where(x => x.Name.Contains(DessertsSearch.Text)).ToList();
         }

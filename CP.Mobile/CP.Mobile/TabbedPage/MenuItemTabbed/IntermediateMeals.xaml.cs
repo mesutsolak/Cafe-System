@@ -87,7 +87,7 @@ namespace CP.Mobile.TabbedPage.MenuItemTabbed
 
         }
 
-        private void IntermediateSearch_TextChanged(object sender, TextChangedEventArgs e)
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             ListIntermediateMeals.FlowItemsSource = pageModel.Items.Where(x => x.Name.Contains(IntermediateSearch.Text)).ToList();
         }
