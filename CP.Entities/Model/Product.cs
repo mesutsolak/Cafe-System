@@ -17,6 +17,9 @@ namespace CP.Entities.Model
             Cart = new HashSet<Cart>();
             Comment = new HashSet<Comment>();
             Rate = new HashSet<Rate>();
+
+            Preference = false;
+            Choose = false;
         }
 
         public int Id { get; set; }
@@ -45,6 +48,9 @@ namespace CP.Entities.Model
         public int Time { get; set; }
 
         public DateTime? AddedDate { get; set; }
+
+        public bool Preference { get; set; }
+        public bool Choose { get; set; }
 
         [NotMapped]
         public HttpPostedFileBase Images { get; set; }

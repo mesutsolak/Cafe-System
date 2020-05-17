@@ -18,5 +18,10 @@ namespace CP.Mobile.MasterDetailPages.Menus
             InitializeComponent();
             Navigation.PopPopupAsync(true);
         }
+
+        private void btnUserInformationUpdate_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using M=CP.Entities.Model;
+using M = CP.Entities.Model;
 using CP.ServiceLayer.DTO;
 using System;
 using System.Collections.Generic;
@@ -30,7 +30,8 @@ namespace CP.WebAPI.Controllers
                 cfg.CreateMap<TableDTO, M.Table>();
                 cfg.CreateMap<M.HomePage, HomePageDTO>();
                 cfg.CreateMap<HomePageDTO, M.HomePage>();
-
+                cfg.CreateMap<M.Slider, SliderDTO>();
+                cfg.CreateMap<SliderDTO, M.Slider>();
             }).CreateMapper();
         }
     }

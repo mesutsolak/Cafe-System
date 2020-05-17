@@ -1,4 +1,5 @@
-﻿using CP.Mobile.Tools.AlertModals;
+﻿using CP.Mobile.IntermediateModels;
+using CP.Mobile.Tools.AlertModals;
 using CP.ServiceLayer.Concrete;
 using Rg.Plugins.Popup.Extensions;
 using System;
@@ -22,15 +23,14 @@ namespace CP.Mobile.ListContent
         }
 
         private void AddItems()
-        {   
-         
-            tableService.Url = "api/Table/GetAll";
-           var _TableAll =  tableService.GetAll();
+        {
 
-            foreach (var item in _TableAll)
+            tableService.Url = "api/Table/GetAll/";
+            var _ts = tableService.GetAll();
+
+            foreach (var tableDTO in _ts)
             {
-       
-                switch (item.ConfirmId)
+                switch (tableDTO.ConfirmId)
                 {
                     case 1:
                         _Color = Color.Green;
@@ -39,23 +39,23 @@ namespace CP.Mobile.ListContent
                         _Color = Color.Red;
                         break;
                     case 3:
-                        _Color = Color.Yellow;
+                        _Color = Color.Orange;
+                        break;
+                    default:
                         break;
                 }
-
-                Items.Add(new Button { 
-                    Text=item.Number.ToString(),
-                    TextColor=Color.White,
-                    BackgroundColor= _Color,
-                    FontSize=30,                                
-                    FontAttributes=FontAttributes.Bold ,
-                    CommandParameter = item.Id
+                Items.Add(new TableModel
+                {
+                    Id = tableDTO.Id,
+                    Color = _Color,
+                    Number = tableDTO.Number.Value
                 });
             }
+
         }
 
-        private ObservableCollection<Button> _items = new ObservableCollection<Button>();
-        public ObservableCollection<Button> Items
+        private ObservableCollection<TableModel> _items = new ObservableCollection<TableModel>();
+        public ObservableCollection<TableModel> Items
         {
             get
             {

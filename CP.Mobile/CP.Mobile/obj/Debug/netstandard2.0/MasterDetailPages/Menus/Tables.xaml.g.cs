@@ -20,9 +20,13 @@ namespace CP.Mobile.MasterDetailPages.Menus {
         private global::Xamarin.Forms.ImageButton TablesGeneral;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::DLToolkit.Forms.Controls.FlowListView TblList;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(Tables));
             TablesGeneral = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "TablesGeneral");
+            TblList = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::DLToolkit.Forms.Controls.FlowListView>(this, "TblList");
         }
     }
 }

@@ -115,6 +115,7 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Deb
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\musiclist.png
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\points.png
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\threewhite.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\update.png
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\uploadflags.txt
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\resolvedassemblies.hash
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\assets\AutoMapper.dll
@@ -133,7 +134,6 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Deb
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\assets\FormsViewGroup.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\assets\FormsViewGroup.pdb
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\assets\Java.Interop.dll
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\assets\machine.config
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\assets\Microsoft.CSharp.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\assets\Microsoft.CSharp.pdb
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\assets\Mono.Android.dll
@@ -277,6 +277,7 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Deb
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\AndroidManifest.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\__environment__.txt
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\src\mono\MonoRuntimeProvider.java
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\assets\machine.config
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\bin\mono.android.jar
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\static.flag
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\buildid.txt
@@ -299,7 +300,6 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Deb
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\src\android\support\v7\cardview\R.java
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\src\android\support\v7\recyclerview\R.java
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\src\android\support\v7\widget\Toolbar_NavigationOnClickEventDispatcher.java
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\src\com\companyname\cp\mobile\R.java
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\src\crc6414252951f3f66c67\RecyclerViewScrollListener_2.java
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\src\crc643dd37f507f3d9710\PopupPageRenderer.java
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ActionSheetRenderer.java
@@ -567,6 +567,7 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Deb
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\src\mono\MonoPackageManager_Resources.java
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\src\xamarin\essentials\fileProvider.java
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\bin\packaged_resources
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\src\com\companyname\cp\mobile\R.java
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\typemap.jm.arm64-v8a.o
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\typemap.mj.arm64-v8a.o
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\typemap.jm.armeabi-v7a.o

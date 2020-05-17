@@ -4,6 +4,7 @@ using CP.Entities.Model;
 using CP.ServiceLayer.DTO;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -30,11 +31,11 @@ namespace CP.WebAPI.Controllers
             }
             else
             {
-                int result=0;
+                int result = 0;
 
                 var _value = mapper.Map<CartDTO, Cart>(cart);
 
-                var product = CartOperation.IsThereProduct(_value.ProductId.Value,_value.UserId.Value);
+                var product = CartOperation.IsThereProduct(_value.ProductId.Value, _value.UserId.Value);
 
                 if (product.IsNullObject())
                 {
@@ -48,7 +49,7 @@ namespace CP.WebAPI.Controllers
 
                     result = CartOperation.CartUpdate(product);
                 }
-                
+
 
                 if (result > 0)
                 {
@@ -96,17 +97,17 @@ namespace CP.WebAPI.Controllers
         [Route("Find/{id}")]
         public HttpResponseMessage GetFind(int id)
         {
-            var _cart =  CartOperation.CartFind(id);
+            var _cart = CartOperation.CartFind(id);
 
             if (_cart.IsNullObject())
             {
-                httpResponseMessage.StatusCode = HttpStatusCode.NotFound;
+                httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
                 httpResponseMessage.Headers.Add("Message", "Ürün Bulunamadı");
             }
             else
             {
-               var _productDTO = mapper.Map<Product, ProductDTO>(_cart.Product);
-               var _cartDTO =  mapper.Map<Cart, CartDTO>(_cart);
+                var _productDTO = mapper.Map<Product, ProductDTO>(_cart.Product);
+                var _cartDTO = mapper.Map<Cart, CartDTO>(_cart);
                 _cartDTO.productDTO = _productDTO;
 
                 var json = Newtonsoft.Json.JsonConvert.SerializeObject(_cartDTO);
@@ -131,7 +132,7 @@ namespace CP.WebAPI.Controllers
             else
             {
 
-                var result =  CartOperation.CartUpdate(cart);
+                var result = CartOperation.CartUpdate(cart);
                 if (result > 0)
                 {
                     httpResponseMessage.StatusCode = HttpStatusCode.OK;
@@ -163,5 +164,37 @@ namespace CP.WebAPI.Controllers
             }
             return httpResponseMessage;
         }
+
+        [HttpGet]
+        [Route("OrderAll/{id}")]
+        public List<CartDTO> OrderGetAll(int id)
+        {
+            ct.Clear();
+
+            var _carts = CartOperation.GetAllOrder(id);
+
+
+            foreach (var item in _carts)
+            {
+                var _product = mapper.Map<Product, ProductDTO>(item.Product);
+                var _cart = mapper.Map<Cart, CartDTO>(item);
+                _cart.productDTO = _product;
+
+                ct.Add(_cart);
+            }
+
+            return ct;
+        }
+
+        [HttpGet]
+        [Route("OrderCount/{id}")]
+        public HttpResponseMessage OrderCount(int id)
+        {
+            httpResponseMessage.StatusCode = HttpStatusCode.OK;
+            httpResponseMessage.Headers.Add("Message", CartOperation.GetAllOrder(id).Count.ToString());
+
+            return httpResponseMessage;
+        }
     }
 }
+            

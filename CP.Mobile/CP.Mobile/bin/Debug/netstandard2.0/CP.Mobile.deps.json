@@ -799,9 +799,73 @@
           }
         }
       },
+      "CP.Entities/1.0.0": {
+        "runtime": {
+          "CP.Entities.dll": {}
+        }
+      },
       "CP.ServiceLayer/1.0.0": {
+        "dependencies": {
+          "CP.Entities": "1.0.0"
+        },
         "runtime": {
           "CP.ServiceLayer.dll": {}
+        }
+      },
+      "EntityFramework/6.0.0.0": {
+        "runtime": {
+          "EntityFramework.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.400.19.56503"
+          }
+        }
+      },
+      "System.Web.Mvc/5.2.7.0": {
+        "runtime": {
+          "System.Web.Mvc.dll": {
+            "assemblyVersion": "5.2.7.0",
+            "fileVersion": "5.2.61128.0"
+          }
+        }
+      },
+      "System.Web.WebPages/3.0.0.0": {
+        "runtime": {
+          "System.Web.WebPages.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.61128.0"
+          }
+        }
+      },
+      "System.Web.WebPages.Razor/3.0.0.0": {
+        "runtime": {
+          "System.Web.WebPages.Razor.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.61128.0"
+          }
+        }
+      },
+      "System.Web.Razor/3.0.0.0": {
+        "runtime": {
+          "System.Web.Razor.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.61128.0"
+          }
+        }
+      },
+      "Microsoft.Web.Infrastructure/1.0.0.0": {
+        "runtime": {
+          "Microsoft.Web.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.20105.407"
+          }
+        }
+      },
+      "System.Web.WebPages.Deployment/3.0.0.0": {
+        "runtime": {
+          "System.Web.WebPages.Deployment.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.61128.0"
+          }
         }
       }
     }
@@ -1260,8 +1324,48 @@
       "path": "xamarin.plugins.fluentvalidation/3.0.64",
       "hashPath": "xamarin.plugins.fluentvalidation.3.0.64.nupkg.sha512"
     },
+    "CP.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "CP.ServiceLayer/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EntityFramework/6.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Web.Mvc/5.2.7.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Web.WebPages/3.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Web.WebPages.Razor/3.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Web.Razor/3.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Web.Infrastructure/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Web.WebPages.Deployment/3.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

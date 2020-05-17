@@ -1,4 +1,6 @@
-﻿using CP.Mobile.ListContent;
+﻿using CP.Entities.Model;
+using CP.Mobile.IntermediateModels;
+using CP.Mobile.ListContent;
 using CP.Mobile.MasterDetailPages.PopupMenu;
 using CP.Mobile.MasterDetailPages.PopupMenuContent;
 using CP.Mobile.Tools.AlertModals;
@@ -41,6 +43,7 @@ namespace CP.Mobile.MasterDetailPages.Menus
 
             Popup.SetBinding(Xam.Plugin.PopupMenu.ItemsSourceProperty, "ListItems");
 
+
             Navigation.PopPopupAsync(true);
         }
 
@@ -50,6 +53,8 @@ namespace CP.Mobile.MasterDetailPages.Menus
             {
                 case "Genel Durum":
                     Navigation.PushPopupAsync(new TableGeneral(), true);
+                    break;
+                case "Bilgiler":
                     break;
                 default:
                     break;
@@ -63,9 +68,13 @@ namespace CP.Mobile.MasterDetailPages.Menus
             {
                 await Navigation.PushPopupAsync(new ErrorModal("Masa Alınmış"), true);
             }
+            else if (_btn.BackgroundColor == Color.Orange)
+            {
+                await Navigation.PushPopupAsync(new ErrorModal("İstek olarak eklenmiş"), true);
+            }
             else
             {
-                await this.Navigation.PushPopupAsync(new QuestionModal("Masayı Seçiyormusun ?", _btn.CommandParameter.ToString(), () => { Success(int.Parse(_btn.CommandParameter.ToString())); }));
+                await Navigation.PushPopupAsync(new QuestionModal("Masayı Seçiyormusun ?", _btn.CommandParameter.ToString(), () => { Success(int.Parse(_btn.CommandParameter.ToString())); }));
             }
         }
         private async void Success(int id)

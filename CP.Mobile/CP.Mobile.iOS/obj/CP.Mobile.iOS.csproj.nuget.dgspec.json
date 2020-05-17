@@ -4,6 +4,17 @@
     "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile.iOS\\CP.Mobile.iOS.csproj": {}
   },
   "projects": {
+    "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Entities\\CP.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Entities\\CP.Entities.csproj",
+        "projectName": "CP.Entities",
+        "projectPath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Entities\\CP.Entities.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
     "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile.iOS\\CP.Mobile.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -201,7 +212,16 @@
       "restore": {
         "projectUniqueName": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.ServiceLayer\\CP.ServiceLayer.csproj",
         "projectName": "CP.ServiceLayer",
-        "projectPath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.ServiceLayer\\CP.ServiceLayer.csproj"
+        "projectPath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.ServiceLayer\\CP.ServiceLayer.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Entities\\CP.Entities.csproj": {
+                "projectPath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Entities\\CP.Entities.csproj"
+              }
+            }
+          }
+        }
       },
       "frameworks": {
         "net472": {}

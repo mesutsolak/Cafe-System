@@ -1576,6 +1576,15 @@
           "lib/netstandard2.0/Xamarin.Plugins.FluentValidation.dll": {}
         }
       },
+      "CP.Entities/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/CP.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CP.Entities.dll": {}
+        }
+      },
       "CP.Mobile/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1601,6 +1610,9 @@
       },
       "CP.ServiceLayer/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "CP.Entities": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/CP.ServiceLayer.dll": {}
         },
@@ -6163,6 +6175,11 @@
         "xamarin.plugins.fluentvalidation.3.0.64.nupkg.sha512",
         "xamarin.plugins.fluentvalidation.nuspec"
       ]
+    },
+    "CP.Entities/1.0.0": {
+      "type": "project",
+      "path": "../../CP.Entities/CP.Entities.csproj",
+      "msbuildProject": "../../CP.Entities/CP.Entities.csproj"
     },
     "CP.Mobile/1.0.0": {
       "type": "project",

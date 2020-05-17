@@ -11,6 +11,7 @@ namespace CP.Mobile.MasterDetailPages.PopupMenu
         static TablesViewModel _instance;
         public TablesViewModel()
         {
+            ListItems.Add("Bilgiler");
             ListItems.Add("Genel Durum");
         }
         #endregion

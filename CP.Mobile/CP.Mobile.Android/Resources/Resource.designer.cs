@@ -11257,10 +11257,13 @@ namespace CP.Mobile.Droid
 			public const int trash = 2131165347;
 			
 			// aapt resource value: 0x7F0700A4
-			public const int User = 2131165348;
+			public const int Update = 2131165348;
 			
 			// aapt resource value: 0x7F0700A5
-			public const int UserAdd = 2131165349;
+			public const int User = 2131165349;
+			
+			// aapt resource value: 0x7F0700A6
+			public const int UserAdd = 2131165350;
 			
 			static Drawable()
 			{

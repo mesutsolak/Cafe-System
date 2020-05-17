@@ -201,10 +201,12 @@
     <Compile Include="Abstract\IProductService.cs" />
     <Compile Include="Abstract\ITableService.cs" />
     <Compile Include="Abstract\IUserService.cs" />
+    <Compile Include="Abstract\ISliderService.cs" />
     <Compile Include="Concrete\Basic\Service.cs" />
     <Compile Include="Concrete\CartService.cs" />
     <Compile Include="Concrete\HomePageService.cs" />
     <Compile Include="Concrete\ProductService.cs" />
+    <Compile Include="Concrete\SliderService.cs" />
     <Compile Include="Concrete\TableService.cs" />
     <Compile Include="Concrete\UserService.cs" />
     <Compile Include="DTO\CartDTO.cs" />
@@ -223,7 +225,12 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CP.Entities\CP.Entities.csproj">
+      <Project>{BC027EB7-78F7-4106-9963-3426C8DC9C05}</Project>
+      <Name>CP.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

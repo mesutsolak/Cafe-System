@@ -17,7 +17,7 @@ namespace CP.BusinessLayer.Operations
 
         public static Cart CartFind(int id)
         {
-           return _data.CartRepository.GetByFilter(x => x.Id == id);
+            return _data.CartRepository.GetByFilter(x => x.Id == id);
         }
 
         public static int CartAdd(Cart cart)
@@ -57,6 +57,11 @@ namespace CP.BusinessLayer.Operations
             return _data.CartRepository.GetAll(x => x.Product, x => x.UserId == UserId);
         }
 
+        public static List<Cart> GetAllOrder(int UserId)
+        {
+            return _data.CartRepository.GetAll(x => x.Product, y => y.ConfirmId == 1 && y.UserId == UserId).ToList();
+        }
+
         public static Cart GetCart(int Id)
         {
             return _data.CartRepository.GetById(Id);
@@ -64,8 +69,8 @@ namespace CP.BusinessLayer.Operations
 
         public static Cart IsThereProduct(int productId, int UserId)
         {
-            return _data.CartRepository.GetByFilter(x => x.ProductId == productId && x.UserId == UserId );
-        }                                     
+            return _data.CartRepository.GetByFilter(x => x.ProductId == productId && x.UserId == UserId);
+        }
 
         public static int CartCount(int UserId)
         {

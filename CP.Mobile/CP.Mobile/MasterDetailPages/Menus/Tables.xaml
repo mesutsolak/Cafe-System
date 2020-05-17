@@ -16,7 +16,7 @@
 
 
     <ContentPage.Content>
-        <flv:FlowListView FlowColumnCount="3"   
+        <flv:FlowListView x:Name="TblList" FlowColumnCount="3"   
                 SeparatorVisibility="Default"   
                 HasUnevenRows="True"  
                 FlowItemTappedCommand="{Binding ItemTappedCommand}"   
@@ -26,7 +26,7 @@
                 <DataTemplate>
 
                     <StackLayout Spacing="10">
-                        <Button WidthRequest="20" Margin="5,10,5,5" FontAttributes="Bold" BackgroundColor="{Binding BackgroundColor}" HeightRequest="80" Text="{Binding Text}" Clicked="Button_Clicked" TextColor="White" CommandParameter="{Binding CommandParameter}"/>
+                        <Button WidthRequest="20" Margin="5,10,5,5" FontAttributes="Bold" BackgroundColor="{Binding Color}" HeightRequest="80" Text="{Binding Number}" Clicked="Button_Clicked" TextColor="White" CommandParameter="{Binding Id}"/>
                     </StackLayout>
                 </DataTemplate>
             </flv:FlowListView.FlowColumnTemplate>

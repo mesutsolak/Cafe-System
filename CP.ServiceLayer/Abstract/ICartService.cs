@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CP.ServiceLayer.Abstract
 {
-    public interface ICartService:IService<CartDTO>
+    public interface ICartService : IService<CartDTO>
     {
         List<CartDTO> Carts(int id);
         string CartCount(int UserId);

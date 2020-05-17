@@ -1,5 +1,4 @@
-﻿using CP.Mobile.ImageSlider;
-using CP.Mobile.Tools.AlertModals;
+﻿using CP.Mobile.Tools.AlertModals;
 using CP.ServiceLayer.Concrete;
 using CP.ServiceLayer.DTO;
 using Rg.Plugins.Popup.Extensions;
@@ -18,6 +17,7 @@ namespace CP.Mobile.MasterDetailPages.Menus
     public partial class Home : ContentPage
     {
         CartService cs = new CartService();
+        SliderService _ss = new SliderService();
         HomePageService hps = new HomePageService();
 
 
@@ -25,16 +25,17 @@ namespace CP.Mobile.MasterDetailPages.Menus
         {
             try
             {
-                 cs.Url = "api/Cart/Count/";
-            var result = cs.CartCount(Preferences.Get("UserId", 0));
-            CartCount.Text = result;
+                cs.Url = "api/Cart/Count/";
+                var a = Preferences.Get("UserId", 0);
+                var result = cs.CartCount(a);
+                CartCount.Text = result;
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
-           
+
         }
 
         List<string> names = new List<string>
@@ -45,10 +46,11 @@ namespace CP.Mobile.MasterDetailPages.Menus
         {
             try
             {
-                  InitializeComponent();
-                //BindingContext = HomePages(); 
-                //CountFound();
-                CVMovies.ItemsSource = new MovieService().GetMoviesList();
+                InitializeComponent();
+                BindingContext = HomePages();
+                CountFound();
+                Sliders();
+                //OrderCount();
 
             }
             catch (Exception ex)
@@ -85,6 +87,19 @@ namespace CP.Mobile.MasterDetailPages.Menus
         {
             hps.Url = "api/HomePage/GetAll";
             return hps.GetHome();
-        }  
+        }
+
+        public void Sliders()
+        {
+            _ss.Url = "api/Slider/GetAll";
+            CVMovies.ItemsSource = _ss.GetAll();
+        }
+
+        public void OrderCount()
+        {
+            cs.Url = "api/Cart/OrderCount/";
+            OrderCountLbl.Text = cs.CartCount(Preferences.Get("UserId", 0));
+        }
+
     }
 }

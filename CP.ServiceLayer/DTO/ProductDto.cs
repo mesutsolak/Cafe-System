@@ -8,6 +8,8 @@ namespace CP.ServiceLayer.DTO
         public ProductDTO()
         {
             AddedDate = DateTime.Now;
+            Preference = false;
+            Choose = false;
         }
         public int Id { get; set; }
         public string Name { get; set; }
@@ -19,6 +21,8 @@ namespace CP.ServiceLayer.DTO
         public string Image { get; set; }
         public bool IsDeleted { get; set; }
         public int Time { get; set; }
+        public bool Preference { get; set; }
+        public bool Choose { get; set; }
         public DateTime? AddedDate { get; set; }
         public Category Category { get; set; }
 
