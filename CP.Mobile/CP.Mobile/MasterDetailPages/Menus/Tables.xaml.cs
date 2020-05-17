@@ -31,9 +31,7 @@ namespace CP.Mobile.MasterDetailPages.Menus
         {
             InitializeComponent();
             FlowListView.Init();
-            pageModel = new TablePageModal(this);
-            BindingContext = pageModel;
-
+            TableLoad();
 
             Popup = new Xam.Plugin.PopupMenu()
             {
@@ -47,6 +45,12 @@ namespace CP.Mobile.MasterDetailPages.Menus
             Navigation.PopPopupAsync(true);
         }
 
+        private void TableLoad()
+        {
+            pageModel = new TablePageModal(this);
+            BindingContext = pageModel;
+        }
+
         private void Popup_OnItemSelected(string item)
         {
             switch (item)
@@ -55,6 +59,7 @@ namespace CP.Mobile.MasterDetailPages.Menus
                     Navigation.PushPopupAsync(new TableGeneral(), true);
                     break;
                 case "Bilgiler":
+                    Navigation.PushPopupAsync(new TableInformations(), true);
                     break;
                 default:
                     break;
@@ -74,28 +79,41 @@ namespace CP.Mobile.MasterDetailPages.Menus
             }
             else
             {
-                await Navigation.PushPopupAsync(new QuestionModal("Masayı Seçiyormusun ?", _btn.CommandParameter.ToString(), () => { Success(int.Parse(_btn.CommandParameter.ToString())); }));
+                await Navigation.PushPopupAsync(new QuestionModal("Seçme İşlemi", "Masayı Seçiyormusun ?", () => { Success(int.Parse(_btn.CommandParameter.ToString())); }));
             }
         }
         private async void Success(int id)
         {
             await this.Navigation.PopPopupAsync(true);
-            ts.Url = "api/Table/IsRequest/";
-            //var result = ts.IsUse(id);
+            ts.Url = "api/Table/IsConfirm/";
+            var result = ts.IsConfirm(id);
 
-            //if (result.Contains("Oluşturuldu"))
-            //{
-            //    await this.Navigation.PushPopupAsync(new SuccessModal("Masa İsteği Oluşturuldu Lütfen Bekleyin."), true);
-            //}
-            //else
-            //{
-            //    await this.Navigation.PushPopupAsync(new ErrorModal(result), true);
-            //}
+            if (result.Contains("Başarıyla"))
+            {
+                TableLoad();
+                await this.Navigation.PushPopupAsync(new SuccessModal(result), true);
+            }
+            else
+            {
+                await this.Navigation.PushPopupAsync(new ErrorModal(result), true);
+            }
         }
 
         private void TablesGeneral_Clicked(object sender, EventArgs e)
         {
             Popup?.ShowPopup(sender as View);
+        }
+
+        private async void TblList_Refreshing(object sender, EventArgs e)
+        {
+            TblList.IsRefreshing = true;
+
+            TableLoad();
+
+
+            await Task.Delay(1000);
+
+            TblList.IsRefreshing = false;
         }
     }
 }

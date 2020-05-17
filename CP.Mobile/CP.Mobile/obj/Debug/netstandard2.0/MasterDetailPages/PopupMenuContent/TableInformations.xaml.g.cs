@@ -14,11 +14,19 @@ namespace CP.Mobile.MasterDetailPages.PopupMenuContent {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("MasterDetailPages\\PopupMenuContent\\TableInformations.xaml")]
-    public partial class TableInformations : global::Xamarin.Forms.ContentPage {
+    public partial class TableInformations : global::Rg.Plugins.Popup.Pages.PopupPage {
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.StackLayout StlForm;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.Button btnClose;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(TableInformations));
+            StlForm = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "StlForm");
+            btnClose = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "btnClose");
         }
     }
 }

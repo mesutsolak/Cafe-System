@@ -23,63 +23,75 @@
     </pages:PopupPage.Animation>
 
 
-
-    <StackLayout x:Name="StlForm" x:Uid="StlForm"
+    <ScrollView>
+        <StackLayout x:Name="StlForm" x:Uid="StlForm"
         VerticalOptions="Center" 
         HorizontalOptions="FillAndExpand"
         BackgroundColor="Transparent"
         Margin="15, 0, 15, 0"
                  >
-        <Frame BackgroundColor="#EEEEEE" CornerRadius="10">
+            <Frame BackgroundColor="#EEEEEE" CornerRadius="10">
 
-            <StackLayout x:Name="ProductDetail" x:Uid="ProductDetail" Orientation="Vertical">
+                <StackLayout x:Name="ProductDetail" x:Uid="ProductDetail" Orientation="Vertical">
 
-                <StackLayout Orientation="Horizontal">
                     <Image x:Name="ImageMeal" x:Uid="ImageModal"  Margin="0,5" WidthRequest="125" HorizontalOptions="Center" />
-                    <StackLayout Orientation="Vertical">
 
-                        <StackLayout Orientation="Horizontal" Margin="5,8,0,0" Spacing="4">
-                            <Image Source="star.png" WidthRequest="24"/>
-                            <Label TextColor="Black" x:Name="lblRating" Text="9.3" VerticalTextAlignment="Center"/>
-                            <Image Source="comment.png" WidthRequest="24" Margin="7"/>
-                            <Label TextColor="Black" Text="5" x:Name="lblComment"  VerticalTextAlignment="Center" />
-                            <Image Source="clock.png" WidthRequest="24" Margin="6"/>
-                                <Label TextColor="Black" x:Name="lblClock" Text="15 dk" VerticalTextAlignment="Center"/>
-                        </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Ürün Bilgileri :" Margin="0,3,0,0" TextColor="Black" FontAttributes="Bold" FontSize="17" HorizontalOptions="Start"/>
 
-                        <StackLayout Orientation="Horizontal" Margin="5">
-                               <Label TextColor="Green" HorizontalOptions="Start" x:Name="LblName" x:Uid="LblName" Margin="0,2" FontSize="20"/>
-                            <Label TextColor="Red" Text="/ Yiyecek" x:Name="lblCategory" Margin="0" FontSize="20"/>
-                        </StackLayout>
-                       
-                        <StackLayout Orientation="Horizontal">
-                            <Label  Text="Adet:" FontSize="17" VerticalTextAlignment="Center" TextColor="Black"/>
-                            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Orientation="Horizontal">
-                                <Button Text="+"  WidthRequest="40" HeightRequest="40" x:Name="btnPlus" x:Uid="btnPlus" Clicked="btnPlus_Clicked" />
-                                <Label x:Name="lblNumber" x:Uid="lblNumber"   Text="0" VerticalOptions="Center"></Label>
-                                <Button Text="-" WidthRequest="40" HeightRequest="40" x:Name="btnMinus" x:Uid="btnMinus" Clicked="btnMinus_Clicked"/>
-                            </StackLayout>
-                            <ImageButton x:Name="CartDetailAdd" Clicked="CartDetailAdd_Clicked" Margin="10" BackgroundColor="Transparent" Source="cart2.png"  WidthRequest="28"/>
-                        </StackLayout>
-
-                        <StackLayout Orientation="Horizontal" Margin="5">
-                            <Label Text="Fiyat :"  FontSize="17" VerticalTextAlignment="Center" TextColor="Black"/>
-                            <Label Text="35 TL" x:Name="lblPrice"  FontSize="17" VerticalTextAlignment="Center" TextColor="Black"/>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Margin="0,0,3,0">
+                            <Label TextColor="Green" HorizontalOptions="Start" x:Name="LblName" x:Uid="LblName" Margin="0,2" FontSize="17"/>
+                            <Label TextColor="Red" Text="/ Yiyecek" x:Name="lblCategory" Margin="0" FontSize="17"/>
                         </StackLayout>
 
                     </StackLayout>
+
+
+                    <StackLayout Orientation="Horizontal" Margin="5,8,0,0" Spacing="4">
+                        <Label Text="Hakkında:" FontSize="17" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+                        <Image Source="star.png" WidthRequest="24"/>
+                        <Label TextColor="Black" x:Name="lblRating" Text="9.3" VerticalTextAlignment="Center"/>
+                        <Image Source="comment.png" WidthRequest="24" Margin="7"/>
+                        <Label TextColor="Black" Text="5" x:Name="lblComment"  VerticalTextAlignment="Center" />
+                        <Image Source="clock.png" WidthRequest="24" Margin="6"/>
+                        <Label TextColor="Black" x:Name="lblClock" Text="15 dk" VerticalTextAlignment="Center"/>
+                        <Image Source="Eye.png" WidthRequest="24" Margin="6"/>
+                        <Label Text="0" TextColor="Black" VerticalTextAlignment="Center" x:Name="LblEye"/>
+                    </StackLayout>
+
+
+
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Margin="3,0,0,0" Text="Adet:" FontSize="17" VerticalTextAlignment="Center" TextColor="Black"/>
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Orientation="Horizontal">
+                            <Button Text="+"  WidthRequest="40" HeightRequest="40" x:Name="btnPlus" x:Uid="btnPlus" Clicked="btnPlus_Clicked" />
+                            <Label x:Name="lblNumber" x:Uid="lblNumber"   Text="0" VerticalOptions="Center"></Label>
+                            <Button Text="-" WidthRequest="40" HeightRequest="40" x:Name="btnMinus" x:Uid="btnMinus" Clicked="btnMinus_Clicked"/>
+                        </StackLayout>
+                        <ImageButton x:Name="CartDetailAdd" Clicked="CartDetailAdd_Clicked" Margin="10" BackgroundColor="Transparent" Source="cart2.png"  WidthRequest="28"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="5">
+                        <Label Text="Fiyat :"  FontSize="17" VerticalTextAlignment="Center" TextColor="Black"/>
+                        <Label Text="35 TL" x:Name="lblPrice"  FontSize="17" VerticalTextAlignment="Center" TextColor="Black"/>
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Ürün Açıklaması :" FontAttributes="Bold" Margin="0,5" HorizontalOptions="Start" FontSize="17" TextColor="Black" />
+                        <StackLayout Orientation="Horizontal" Margin="0,2,0,0" HorizontalOptions="EndAndExpand">
+                            <ImageButton BackgroundColor="Transparent" Source="CommentAdd.png" Margin="0,0,5,0" WidthRequest="24" x:Name="btnCommentAdd" Clicked="btnCommentAdd_Clicked"/>
+                            <ImageButton Source="RatingAdd.png" Margin="0,0,3,0" BackgroundColor="Transparent" WidthRequest="24" x:Name="btnRatingAdd" Clicked="btnRatingAdd_Clicked"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <Label x:Name="lblDescription"  x:Uid="lblDescription" Margin="0,10" HorizontalOptions="Start" FontSize="15" TextColor="Black" />
+
+
+                    <Button BackgroundColor="Red" x:Name="btnOk" x:Uid="btnOk" Text="Kapat" TextColor="White" Clicked="btnOk_Clicked" HorizontalOptions="Center" />
                 </StackLayout>
-
-
-
-                                                                              
-                <Label x:Name="lblDescription"  x:Uid="lblDescription" Margin="0,2" HorizontalOptions="Center" FontSize="16" TextColor="Black" />
-
-
-                <Button BackgroundColor="Red" x:Name="btnOk" x:Uid="btnOk" Text="Kapat" TextColor="White" Clicked="btnOk_Clicked" HorizontalOptions="Center" />
-            </StackLayout>
-
-
-        </Frame>
-    </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
 </pages:PopupPage>

@@ -29,7 +29,7 @@
                  >
         <Frame BackgroundColor="#EEEEEE" CornerRadius="10">
             <StackLayout Orientation="Vertical" HorizontalOptions="Center">
-                <Label TextColor="Blue" HorizontalOptions="Center" Margin="0,10"  FontAttributes="Bold" FontSize="Large" Text="Masa Bilgileri"  HorizontalTextAlignment="Center" />
+                <Label TextColor="Blue" HorizontalOptions="Center" Margin="0,10"  FontAttributes="Bold" FontSize="Large" Text="Masa Durumları"  HorizontalTextAlignment="Center" />
 
                 <StackLayout Orientation="Horizontal" Margin="0,10">
                     <Image Source="table.png" Margin="0,5" WidthRequest="24" HorizontalOptions="Center" />

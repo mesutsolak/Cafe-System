@@ -26,19 +26,28 @@ namespace CP.Mobile.MasterDetailPages.Menus
 
         public Cart()
         {
-            InitializeComponent();
-            CartList();
-
-            Popup = new Xam.Plugin.PopupMenu()
+            try
             {
-                BindingContext = ViewModel
-            };
-            Popup.OnItemSelected += Popup_OnItemSelected; ;
+                InitializeComponent();
+                CartList();
 
-            Popup.SetBinding(Xam.Plugin.PopupMenu.ItemsSourceProperty, "ListItems");
+                Popup = new Xam.Plugin.PopupMenu()
+                {
+                    BindingContext = ViewModel
+                };
+                Popup.OnItemSelected += Popup_OnItemSelected; ;
 
-            Navigation.PopPopupAsync(true);
+                Popup.SetBinding(Xam.Plugin.PopupMenu.ItemsSourceProperty, "ListItems");
 
+                Navigation.PopPopupAsync(true);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+       
         }
 
         private async void Popup_OnItemSelected(string item)

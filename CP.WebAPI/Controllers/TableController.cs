@@ -110,5 +110,29 @@ namespace CP.WebAPI.Controllers
             }
             return httpResponseMessage;
         }
+
+        [HttpGet]
+        [Route("IsConfirm/{id}")]
+        public HttpResponseMessage IsConfirm(int id)
+        {
+            var _Table = TableOperation.GetTable(id);
+
+            _Table.ConfirmId = 3;
+
+            var _result = TableOperation.TableUpdate(_Table);
+
+            if (_result > 0)
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.OK;
+                httpResponseMessage.Headers.Add("Message", "Başarıyla İstekde Bulunuldu");
+            }
+            else
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+                httpResponseMessage.Headers.Add("Message", "İstekte Bulunma Başarısız");
+            }
+            return httpResponseMessage;
+
+        }
     }
 }

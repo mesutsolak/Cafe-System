@@ -12,6 +12,15 @@ namespace CP.ServiceLayer.Concrete
 {
     public class TableService : Service<TableDTO>, ITableService
     {
-      
+        public string IsConfirm(int id)
+        {
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var response = Task.Run(() => client.GetAsync(Url + id)).Result;
+
+
+            return response.Headers.GetValues("Message").FirstOrDefault();
+
+        }
     }
 }

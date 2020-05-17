@@ -25,8 +25,17 @@ namespace CP.Mobile.TabbedPage.MenuItemTabbed
         public MainDishes()
         {
             InitializeComponent();
-            FlowListView.Init();
+            try
+            {
+                 FlowListView.Init();
             MealLoad();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+           
         }
 
         private void MealLoad()

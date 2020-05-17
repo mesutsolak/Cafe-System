@@ -20,7 +20,10 @@
                 SeparatorVisibility="Default"   
                 HasUnevenRows="True"  
                 FlowItemTappedCommand="{Binding ItemTappedCommand}"   
-                FlowItemsSource="{Binding Items}">
+                FlowItemsSource="{Binding Items}"
+                          IsPullToRefreshEnabled="True"
+                           Refreshing="TblList_Refreshing"
+                          >
 
             <flv:FlowListView.FlowColumnTemplate>
                 <DataTemplate>

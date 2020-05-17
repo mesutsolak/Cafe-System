@@ -88,8 +88,8 @@ namespace CP.Mobile.MasterDetailPages
                     Icon = "contact.png",
                     TargetType = typeof(Contact)
                 });
-               
-               
+
+
 
                 FirstAndLast.Text = Preferences.Get("FirstAndLast", "");
 
@@ -99,6 +99,7 @@ namespace CP.Mobile.MasterDetailPages
                 navigationDrawerList.SelectedItem = menuList[0];
 
                 // Initial navigation, this can be used for our home page  
+                //Detail ve menulist[0] hamburger menu olmaz.Denendi diğerlerinin ne işe yaradığını anla.
                 Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(Home)));
                 IsPresented = false;
             }
@@ -107,7 +108,7 @@ namespace CP.Mobile.MasterDetailPages
 
                 throw ex;
             }
-         
+
         }
         // Event for Menu Item selection, here we are going to handle navigation based  
         // on user selection in menu ListView  
@@ -115,12 +116,21 @@ namespace CP.Mobile.MasterDetailPages
         {
             Navigation.PushPopupAsync(new LoaderModal(), true);
 
+            try
+            {
+                var item = (MasterPageItem)e.SelectedItem;
 
-            var item = (MasterPageItem)e.SelectedItem;
+                Type page = item.TargetType;
+                Detail = new NavigationPage((Page)Activator.CreateInstance(page));
+                IsPresented = false;
+            }
+            catch (Exception ex)
+            {
 
-            Type page = item.TargetType;
-            Detail = new NavigationPage((Page)Activator.CreateInstance(page));
-            IsPresented = false;
+                throw;
+            }
+
+
         }
 
     }

@@ -292,4 +292,16 @@
   <ItemGroup>
     <BundleResource Include="Resources\Update.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\CommentAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\RatingAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\CommentsAll.png" />
+  </ItemGroup>
 </Project>

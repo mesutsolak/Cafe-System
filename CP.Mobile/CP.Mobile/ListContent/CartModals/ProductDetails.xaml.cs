@@ -29,10 +29,10 @@ namespace CP.Mobile.ListContent.CartModals
 
             ImageMeal.Source = product.Image;
             lblCategory.Text = "/ " + product.Category.Name;
-            lblClock.Text = product.Time.ToString();
-            lblComment.Text = "5";
-            lblPrice.Text = product.Price + " TL";
-            lblRating.Text = "5";
+            //lblClock.Text = product.Time.ToString();
+            //lblComment.Text = "5";
+            //lblPrice.Text = product.Price + " TL";
+            //lblRating.Text = "5";
             LblName.Text = product.Name;
             lblDescription.Text = product.ProductDetail;
         }
@@ -44,19 +44,19 @@ namespace CP.Mobile.ListContent.CartModals
 
         private void btnPlus_Clicked(object sender, EventArgs e)
         {
-            var number = int.Parse(lblNumber.Text);
-            number++;
-            lblNumber.Text = number.ToString();
+            //var number = int.Parse(lblNumber.Text);
+            //number++;
+            //lblNumber.Text = number.ToString();
         }
 
         private void btnMinus_Clicked(object sender, EventArgs e)
         {
-            var number = int.Parse(lblNumber.Text);
-            if (number != 0)
-            {
-                number--;
-                lblNumber.Text = number.ToString();
-            }
+            //var number = int.Parse(lblNumber.Text);
+            //if (number != 0)
+            //{
+            //    number--;
+            //    lblNumber.Text = number.ToString();
+            //}
         }
 
         private async void CartDetailAdd_Clicked(object sender, EventArgs e)
@@ -65,7 +65,8 @@ namespace CP.Mobile.ListContent.CartModals
         }
         public async void CartAdd()
         {
-            var number = int.Parse(lblNumber.Text);
+            //lblNumber
+            var number = int.Parse("");
 
 
             if (number > 0)
@@ -97,6 +98,16 @@ namespace CP.Mobile.ListContent.CartModals
                 await Navigation.PopPopupAsync();
                 await Navigation.PushPopupAsync(new ErrorModal("Lütfen ürün sayısı seçiniz"));
             }
+        }
+
+        private void btnCommentAdd_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRatingAdd_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }
