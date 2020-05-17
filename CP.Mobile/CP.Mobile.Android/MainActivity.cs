@@ -25,20 +25,20 @@ namespace CP.Mobile.Droid
         }
         protected override void OnCreate(Bundle savedInstanceState)
         {
-                TabLayoutResource = Resource.Layout.Tabbar;
-                ToolbarResource = Resource.Layout.Toolbar;
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
 
-                Forms.SetFlags("IndicatorView_Experimental");
-              
-                base.OnCreate(savedInstanceState);
+            Forms.SetFlags("IndicatorView_Experimental");
 
-                Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            base.OnCreate(savedInstanceState);
 
-                Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
-                FlowListView.Init();
-                global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-                LoadApplication(new App());
+            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
+
+            FlowListView.Init();
+            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

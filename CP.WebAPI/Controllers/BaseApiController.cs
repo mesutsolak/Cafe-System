@@ -32,6 +32,10 @@ namespace CP.WebAPI.Controllers
                 cfg.CreateMap<HomePageDTO, M.HomePage>();
                 cfg.CreateMap<M.Slider, SliderDTO>();
                 cfg.CreateMap<SliderDTO, M.Slider>();
+                cfg.CreateMap<M.Comment, CommentDTO>();
+                cfg.CreateMap<CommentDTO, M.Comment>();
+                cfg.CreateMap<M.User, User>();
+                cfg.CreateMap<User, M.User>();
             }).CreateMapper();
         }
     }

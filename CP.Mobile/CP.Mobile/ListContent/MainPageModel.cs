@@ -1,4 +1,5 @@
-﻿using CP.Mobile.MasterDetailPages.Menus;
+﻿using CP.Mobile.ContentPages;
+using CP.Mobile.MasterDetailPages.Menus;
 using CP.ServiceLayer.Concrete;
 using CP.ServiceLayer.DTO;
 using Rg.Plugins.Popup.Extensions;
@@ -61,7 +62,7 @@ namespace CP.Mobile.ListContent
                 return new Command((data) =>
                 {
                     var _product = (data as ProductDTO);
-                    mainPage.Navigation.PushPopupAsync(new CP.Mobile.ListContent.CartModals.ProductDetails(_product));
+                    mainPage.Navigation.PushModalAsync(new ProductDetail(_product));
                 });
             }
         }

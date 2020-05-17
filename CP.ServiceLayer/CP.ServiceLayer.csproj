@@ -211,6 +211,7 @@
     <Compile Include="Concrete\UserService.cs" />
     <Compile Include="DTO\CartDTO.cs" />
     <Compile Include="DTO\Category.cs" />
+    <Compile Include="DTO\CommentDTO.cs" />
     <Compile Include="DTO\HomePageDTO.cs" />
     <Compile Include="DTO\LoginControl.cs" />
     <Compile Include="DTO\PasswordForgetDTO.cs" />

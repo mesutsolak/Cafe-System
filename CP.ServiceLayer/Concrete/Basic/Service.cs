@@ -229,5 +229,16 @@ namespace CP.ServiceLayer.Concrete.Basic
 
             return ResponseMessage;
         }
+
+        public List<T> GetAllFilter(int id)
+        {
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            var _result = Task.Run(() => client.GetStringAsync(Url + id)).Result;
+
+            return JsonConvert.DeserializeObject<List<T>>(_result, new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore
+            });
+        }
     }
 }

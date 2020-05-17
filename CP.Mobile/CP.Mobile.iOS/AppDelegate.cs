@@ -31,6 +31,7 @@ namespace CP.Mobile.iOS
             global::Xamarin.Forms.Forms.Init();
 
             FlowListView.Init();
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

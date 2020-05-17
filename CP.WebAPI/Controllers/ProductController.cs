@@ -81,5 +81,27 @@ namespace CP.WebAPI.Controllers
             return Ok(ProductDTOs);
         }
 
+        [HttpGet]
+        [AllowAnonymous]
+        [Route("View/{ProductId}")]
+        public HttpResponseMessage AddView(int ProductId)
+        {
+            var _result = ProductOperation.ViewAdd(ProductId);
+
+            if (_result > 0)
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.OK;
+                httpResponseMessage.Headers.Add("Message", "Başarıyla Eklendi");
+            }
+            else
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+                httpResponseMessage.Headers.Add("Message", "Ekleme İşlemi Başarısız");
+
+            }
+            return httpResponseMessage;
+
+        }
+
     }
 }

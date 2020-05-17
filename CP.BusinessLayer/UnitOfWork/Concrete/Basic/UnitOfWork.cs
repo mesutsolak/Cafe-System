@@ -15,7 +15,7 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
     {
 
         public IUserRepository UserRepository { get; private set; }
-        public IProductRepository  ProductRepository { get; private set; }
+        public IProductRepository ProductRepository { get; private set; }
 
         public ICategoryRepository CategoryRepository { get; private set; }
 
@@ -28,6 +28,8 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
         public IHomePageRepository HomePageRepository { get; private set; }
 
         public ISliderRepository SliderRepository { get; private set; }
+
+        public ICommentRepository CommentRepository { get; private set; }
 
         private DbContext _context;
 
@@ -42,6 +44,7 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
             TableRepository = new TableRepository(_context);
             HomePageRepository = new HomePageRepository(_context);
             SliderRepository = new SliderRepository(_context);
+            CommentRepository = new CommentRepository(_context);
         }
 
 

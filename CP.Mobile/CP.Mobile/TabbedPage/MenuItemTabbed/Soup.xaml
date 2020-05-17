@@ -54,6 +54,7 @@
 
 
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="15" Margin="8">
+                                    <Image Source="money.png" Margin="0,4,0,0" WidthRequest="20"/>
                                     <Label Text="{Binding Price,StringFormat='{0:N} TL'} " FontSize="16" TextColor="Black"/>
                                     <ImageButton x:Name="btnCart" BackgroundColor="Transparent" x:Uid="btnId" Clicked="btnCart_Clicked"  Source="cart.png" WidthRequest="20" CommandParameter="{Binding Id}"/>
                                 </StackLayout>

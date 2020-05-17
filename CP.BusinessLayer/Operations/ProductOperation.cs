@@ -13,12 +13,12 @@ namespace CP.BusinessLayer.Operations
     {
         public static List<Product> GetProducts(Expression<Func<Product, object>> expression = null, Expression<Func<Product, bool>> condition = null)
         {
-            return _data.ProductRepository.GetAll(expression,condition);
+            return _data.ProductRepository.GetAll(expression, condition);
         }
-        public  static int ProductAdd(Product product)
-        {                    
+        public static int ProductAdd(Product product)
+        {
             _data.ProductRepository.Add(product);
-            return  _data.Complete();
+            return _data.Complete();
         }
         public static Product ProductFind(int id)
         {
@@ -36,11 +36,19 @@ namespace CP.BusinessLayer.Operations
         }
         public static List<Product> GetProducts()
         {
-            return _data.ProductRepository.GetAll(x=>x.Category,y=>y.IsDeleted==false);
+            return _data.ProductRepository.GetAll(x => x.Category, y => y.IsDeleted == false);
         }
         public static List<Product> GetFilterCategory(int CategoryId)
         {
-            return _data.ProductRepository.GetAll(x=>x.Category,x => x.CategoryId == CategoryId);
+            return _data.ProductRepository.GetAll(x => x.Category, x => x.CategoryId == CategoryId);
+        }
+
+        public static int ViewAdd(int ProductId)
+        {
+            var product = _data.ProductRepository.GetById(ProductId);
+            product.Views += product.Views + 1;
+            _data.ProductRepository.Update(product);
+            return _data.Complete();
         }
     }
 }

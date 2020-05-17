@@ -1,6 +1,9 @@
 FormsViewGroup
 Plugin.Media
 Rg.Plugins.Popup
+SkiaSharp
+SkiaSharp.Views.Android
+SkiaSharp.Views.Forms
 Xam.Plugin.Droid
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Core.Runtime

@@ -304,4 +304,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\CommentsAll.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Back.png" />
+  </ItemGroup>
 </Project>

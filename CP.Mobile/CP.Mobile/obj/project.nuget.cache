@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WbSfC10Oc3vyj6j3X69pdQeAhWOnZ9oepRQx83a/D892coE4P2Oly3uVe+5Ps7LQoFq1HtAWCKee62kVb3v8KA==",
+  "dgSpecHash": "TRbsooijoxuhF+A3nyvhwJhXeEFsHaqT4EmudRo6JjgOKTfCpFN0Zugn2ArFqLb7bjlUB7C7aaDY97RmlavHeA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mesut Solak\\Source\\Repos\\cafesystem\\CP.Mobile\\CP.Mobile\\CP.Mobile.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,9 @@
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\rg.plugins.popup\\2.0.0.2\\rg.plugins.popup.2.0.0.2.nupkg.sha512",
+    "C:\\Users\\Mesut Solak\\.nuget\\packages\\skiarate.forms\\0.5.2-pre\\skiarate.forms.0.5.2-pre.nupkg.sha512",
+    "C:\\Users\\Mesut Solak\\.nuget\\packages\\skiasharp\\1.59.1\\skiasharp.1.59.1.nupkg.sha512",
+    "C:\\Users\\Mesut Solak\\.nuget\\packages\\skiasharp.views.forms\\1.59.1.1\\skiasharp.views.forms.1.59.1.1.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
     "C:\\Users\\Mesut Solak\\.nuget\\packages\\system.collections.nongeneric\\4.3.0\\system.collections.nongeneric.4.3.0.nupkg.sha512",

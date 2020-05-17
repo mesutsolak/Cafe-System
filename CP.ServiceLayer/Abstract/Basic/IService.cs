@@ -14,6 +14,7 @@ namespace CP.ServiceLayer.Abstract.Basic
         Task<string> UpdateAsync(T entity);
         Task<string> RemoveAsync(int id);
         Task<T> GetFindAsync(int id);
+        List<T> GetAllFilter(int id);
         List<T> GetAll();
         T GetFind(int id);
         string Add(T entity);
