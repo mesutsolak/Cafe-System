@@ -26,7 +26,13 @@ namespace CP.WebAPI.Controllers
             }
             else
             {
+                var _product = mapper.Map<ProductDTO, M.Product>(comment.Product);
+                var _user = mapper.Map<User, M.User>(comment.User);
                 var _comment = mapper.Map<CommentDTO, M.Comment>(comment);
+
+                _comment.Product = _product;
+                _comment.User = _user;
+
                 var _result = CommentOperation.CommentAdd(_comment);
                 if (_result > 0)
                 {
@@ -55,7 +61,13 @@ namespace CP.WebAPI.Controllers
             }
             else
             {
+                var _product = mapper.Map<ProductDTO, M.Product>(comment.Product);
+                var _user = mapper.Map<User, M.User>(comment.User);
                 var _comment = mapper.Map<CommentDTO, M.Comment>(comment);
+
+                _comment.Product = _product;
+                _comment.User = _user;
+                 
                 var _result = CommentOperation.CommentUpdate(_comment);
                 if (_result > 0)
                 {

@@ -16,7 +16,7 @@ namespace CP.Entities.Model
         public int? UserId { get; set; }
 
         [Column("Rate")]
-        public int? Rate1 { get; set; }
+        public int? RateValue { get; set; }
 
         public virtual Product Product { get; set; }
 

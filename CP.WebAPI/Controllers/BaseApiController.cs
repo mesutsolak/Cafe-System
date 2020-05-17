@@ -36,6 +36,8 @@ namespace CP.WebAPI.Controllers
                 cfg.CreateMap<CommentDTO, M.Comment>();
                 cfg.CreateMap<M.User, User>();
                 cfg.CreateMap<User, M.User>();
+                cfg.CreateMap<M.Rate, RateDTO>();
+                cfg.CreateMap<RateDTO, M.Rate>();
             }).CreateMapper();
         }
     }

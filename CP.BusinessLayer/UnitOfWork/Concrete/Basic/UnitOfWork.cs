@@ -31,6 +31,8 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
 
         public ICommentRepository CommentRepository { get; private set; }
 
+        public IRateRepository RateRepository { get; private set; }
+
         private DbContext _context;
 
         public UnitOfWork(DbContext context)
@@ -45,6 +47,7 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
             HomePageRepository = new HomePageRepository(_context);
             SliderRepository = new SliderRepository(_context);
             CommentRepository = new CommentRepository(_context);
+            RateRepository = new RateRepository(_context);
         }
 
 

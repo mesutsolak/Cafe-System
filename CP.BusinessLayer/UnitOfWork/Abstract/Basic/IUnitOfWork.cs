@@ -18,7 +18,8 @@ namespace CP.BusinessLayer.UnitOfWork.Abstract.Basic
         IHomePageRepository HomePageRepository { get; }
         ISliderRepository SliderRepository { get; }
         ICommentRepository CommentRepository { get; }
-        
+        IRateRepository RateRepository { get; }
+
         int Complete();
         Task<int> CompleteAsync();
     }
