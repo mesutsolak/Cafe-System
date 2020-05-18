@@ -22,6 +22,8 @@ namespace CP.BusinessLayer.UnitOfWork.Abstract.Basic
         IMusicListRepository MusicListRepository { get; }
         ICampaignRepository CampaignRepository { get; }
         ICampProductRepository CampProductRepository { get; }
+        ICompanyRepository CompanyRepository { get; }
+        IContactRepository ContactRepository { get; }
         int Complete();
         Task<int> CompleteAsync();
     }

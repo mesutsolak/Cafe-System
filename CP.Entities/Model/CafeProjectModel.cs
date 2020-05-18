@@ -54,9 +54,6 @@ namespace CP.Entities.Model
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<CompanyInformation>()
-                .Property(e => e.Description)
-                .IsUnicode(false);
 
             modelBuilder.Entity<CompanyInformation>()
                 .Property(e => e.Header1)

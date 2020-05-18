@@ -144,6 +144,8 @@
     <Compile Include="Controllers\CampProductController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Controllers\MusicListController.cs" />
     <Compile Include="Controllers\ProductController.cs" />

@@ -12,7 +12,9 @@ namespace CP.Entities.Model
         public int Id { get; set; }
 
         [Column(TypeName = "text")]
-        public string Description { get; set; }
+        public string Description1 { get; set; }
+        [Column(TypeName = "text")]
+        public string Description2 { get; set; }
 
         [StringLength(150)]
         public string Header1 { get; set; }

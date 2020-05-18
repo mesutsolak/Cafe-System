@@ -39,6 +39,10 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
 
         public ICampProductRepository CampProductRepository { get; private set; }
 
+        public ICompanyRepository CompanyRepository { get; private set; }
+
+        public IContactRepository ContactRepository { get; private set; }
+
         private DbContext _context;
 
         public UnitOfWork(DbContext context)
@@ -57,6 +61,8 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
             MusicListRepository = new MusicListRepository(_context);
             CampaignRepository = new CampaignRepository(_context);
             CampProductRepository = new CampProductRepository(_context);
+            CompanyRepository = new CompanyRepository(_context);
+            ContactRepository = new ContactRepository(_context);
         }
 
 
