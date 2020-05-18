@@ -10,6 +10,6 @@ namespace CP.ServiceLayer.Abstract
 {
     public interface IRateService : IService<RateDTO>
     {
-
+        int ProductRate();
     }
 }

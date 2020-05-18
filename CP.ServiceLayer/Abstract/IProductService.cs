@@ -11,5 +11,6 @@ namespace CP.ServiceLayer.Abstract
     public interface IProductService : IService<ProductDTO>
     {
         List<ProductDTO> GetFilterAll(int CategoryId);
+        string ViewsAdd();
     }
 }

@@ -46,7 +46,7 @@ namespace CP.BusinessLayer.Operations
         public static int ViewAdd(int ProductId)
         {
             var product = _data.ProductRepository.GetById(ProductId);
-            product.Views += product.Views + 1;
+            product.Views += 1;
             _data.ProductRepository.Update(product);
             return _data.Complete();
         }

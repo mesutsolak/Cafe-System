@@ -1,5 +1,6 @@
 ﻿using CP.Mobile.ContentPages;
 using CP.Mobile.MasterDetailPages.Menus;
+using CP.Mobile.Tools.AlertModals;
 using CP.ServiceLayer.Concrete;
 using CP.ServiceLayer.DTO;
 using Rg.Plugins.Popup.Extensions;
@@ -19,7 +20,7 @@ namespace CP.Mobile.ListContent
 
         private ContentPage mainPage;
 
-        public MainPageModel(ContentPage mainPage,int CategoryId)
+        public MainPageModel(ContentPage mainPage, int CategoryId)
         {
             this.mainPage = mainPage;
             AddItems(CategoryId);
@@ -61,7 +62,13 @@ namespace CP.Mobile.ListContent
             {
                 return new Command((data) =>
                 {
+                    mainPage.Navigation.PushPopupAsync(new LoaderModal(), true);
+
                     var _product = (data as ProductDTO);
+                    productService.Url = "api/Product/View/" + _product.Id;
+                    productService.ViewsAdd();
+                    _product.Views += 1;
+
                     mainPage.Navigation.PushModalAsync(new ProductDetail(_product));
                 });
             }

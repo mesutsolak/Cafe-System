@@ -19,6 +19,5 @@ namespace CP.ServiceLayer.DTO
         public string BackGround { get; set; }
         public bool? IsConfirm { get; set; }
         public bool IsDeleted { get; set; }
-
     }
 }

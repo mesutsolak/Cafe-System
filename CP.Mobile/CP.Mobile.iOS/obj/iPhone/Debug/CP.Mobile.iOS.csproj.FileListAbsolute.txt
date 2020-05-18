@@ -11,6 +11,10 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\Newtonsoft.Json.Bson.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\Rg.Plugins.Popup.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\Rg.Plugins.Popup.pdb
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\SkiaRate.Forms.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\SkiaSharp.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\SkiaSharp.Views.iOS.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\SkiaSharp.Views.Forms.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\System.IO.Compression.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\System.Net.Http.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
@@ -85,7 +89,3 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\CP.Mobile.iOS.csproj.CopyComplete
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\CP.Mobile.iOS.exe
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\CP.Mobile.iOS.pdb
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\SkiaRate.Forms.dll
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\SkiaSharp.dll
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\SkiaSharp.Views.iOS.dll
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\SkiaSharp.Views.Forms.dll

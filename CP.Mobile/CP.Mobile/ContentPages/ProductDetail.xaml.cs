@@ -17,6 +17,12 @@ namespace CP.Mobile.ContentPages
     public partial class ProductDetail : ContentPage
     {
         CartService cartService = new CartService();
+        RateService rateService = new RateService();
+        CommentService commentService = new CommentService();
+
+        List<CommentDTO> comments = new List<CommentDTO>();
+
+
         public ProductDTO p { get; set; }
 
         public ProductDetail(ProductDTO product)
@@ -26,14 +32,24 @@ namespace CP.Mobile.ContentPages
 
             p = product;
 
+            rateService.Url = "api/Rate/ProductRate/" + product.Id;
+            commentService.Url = "api/Comment/GetAllProduct/" + product.Id;
+            comments = commentService.GetAll();
+
+
             ImageMeal.Source = product.Image;
             lblCategory.Text = "/ " + product.Category.Name;
             lblClock.Text = product.Time.ToString();
-            lblComment.Text = "5";
+            lblComment.Text = comments.Count.ToString();
             lblPrice.Text = product.Price + " TL";
-            lblRating.Text = "5";
+            lblRating.Text = rateService.ProductRate().ToString();
             LblName.Text = product.Name;
             lblDescription.Text = product.ProductDetail;
+            LblEye.Text = product.Views.Value.ToString();
+
+            CommentList.ItemsSource = comments;
+
+            Navigation.PopPopupAsync(true);
 
         }
 
@@ -56,7 +72,7 @@ namespace CP.Mobile.ContentPages
 
         private async void CartDetailAdd_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushPopupAsync(new QuestionModal("Sepet İşlemi", lblNumber.Text + " Adet Ürünü Sepete Eklensin ?", () => { CartAdd(); }));
+            await Navigation.PushPopupAsync(new QuestionModal("Sepet İşlemi", lblNumber.Text + " Adet " + p.Name + " Sepete Eklensin mi ?", () => { CartAdd(); }));
         }
         public async void CartAdd()
         {
@@ -111,6 +127,11 @@ namespace CP.Mobile.ContentPages
         private async void btnBack_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync(true);
+        }
+
+        private void CommentList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+
         }
     }
 }

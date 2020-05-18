@@ -16,7 +16,7 @@ namespace CP.ServiceLayer.Concrete
         public List<ProductDTO> GetFilterAll(int CategoryId)
         {
             client.DefaultRequestHeaders.Add("Accept", "application/json");
-            var _result = Task.Run(() => client.GetStringAsync(Url+CategoryId)).Result;
+            var _result = Task.Run(() => client.GetStringAsync(Url + CategoryId)).Result;
 
             entities = JsonConvert.DeserializeObject<List<ProductDTO>>(_result, new JsonSerializerSettings
             {
@@ -24,6 +24,13 @@ namespace CP.ServiceLayer.Concrete
             });
 
             return entities;
+        }
+
+        public string ViewsAdd()
+        {
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            var _result = Task.Run(() => client.GetAsync(Url)).Result;
+            return _result.Headers.GetValues("Message").Single();
         }
     }
 }

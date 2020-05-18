@@ -22,7 +22,8 @@ namespace CP.BusinessLayer.Repository.Concrete
 
         public int RateAvg(int ProductId)
         {
-            return CafeDB.Database.SqlQuery<int>("DECLARE @EmployeeTotal INT EXECUTE @EmployeeTotal = SP_RatingAVG " + ProductId + "  PRINT @EmployeeTotal").First();
+            var _Rate = CafeDB.Rate.Where(x => x.ProductId == ProductId).Select(x => x.RateValue).ToList();
+            return (int)_Rate.Average().Value;
         }
     }
 }

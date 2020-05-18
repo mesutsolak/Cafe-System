@@ -114,12 +114,12 @@ namespace CP.WebAPI.Controllers
 
         [Route("ProductRate/{ProductId:int}")]
         [HttpGet]
-        public int ProductRate(int ProductId)
+        public HttpResponseMessage ProductRate(int ProductId)
         {
-            return RateOperation.RateProduct(ProductId);
+            httpResponseMessage.StatusCode = HttpStatusCode.OK;
+            httpResponseMessage.Headers.Add("Message", RateOperation.RateProduct(ProductId).ToString());
+            return httpResponseMessage;
         }
-
-
 
     }
 }

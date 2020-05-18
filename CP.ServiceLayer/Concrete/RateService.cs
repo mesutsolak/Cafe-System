@@ -12,6 +12,12 @@ namespace CP.ServiceLayer.Concrete
 {
     public class RateService : Service<RateDTO>, IRateService
     {
+        public int ProductRate()
+        {
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            var _result = Task.Run(() => client.GetAsync(Url)).Result;
 
+            return int.Parse(_result.Headers.GetValues("Message").FirstOrDefault());
+        }
     }
 }
