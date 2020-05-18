@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using M = CP.Entities.Model;
 using CP.ServiceLayer.DTO;
+using C = CP.ServiceLayer.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.UI.WebControls;
+using CP.Entities.Model;
 
 namespace CP.WebAPI.Controllers
 {
@@ -20,10 +22,10 @@ namespace CP.WebAPI.Controllers
         {
             mapper = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<Category, M.Category>();
+                cfg.CreateMap<C.Category, M.Category>();
                 cfg.CreateMap<M.Product, ProductDTO>();
                 cfg.CreateMap<ProductDTO, M.Product>();
-                cfg.CreateMap<M.Category, Category>();
+                cfg.CreateMap<M.Category, C.Category>();
                 cfg.CreateMap<CartDTO, M.Cart>();
                 cfg.CreateMap<M.Cart, CartDTO>();
                 cfg.CreateMap<M.Table, TableDTO>();
@@ -34,10 +36,14 @@ namespace CP.WebAPI.Controllers
                 cfg.CreateMap<SliderDTO, M.Slider>();
                 cfg.CreateMap<M.Comment, CommentDTO>();
                 cfg.CreateMap<CommentDTO, M.Comment>();
-                cfg.CreateMap<M.User, User>();
-                cfg.CreateMap<User, M.User>();
+                cfg.CreateMap<M.User, C.User>();
+                cfg.CreateMap<C.User, M.User>();
                 cfg.CreateMap<M.Rate, RateDTO>();
                 cfg.CreateMap<RateDTO, M.Rate>();
+                cfg.CreateMap<M.Campaign, CampaignDTO>();
+                cfg.CreateMap<CampaignDTO, M.Campaign>();
+                cfg.CreateMap<CampProduct, CampProductDTO>();
+                cfg.CreateMap<CampProductDTO, CampProduct>();
             }).CreateMapper();
         }
     }

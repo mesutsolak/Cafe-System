@@ -9,11 +9,17 @@ namespace CP.Entities.Model
     [Table("CampProduct")]
     public partial class CampProduct
     {
+        public CampProduct()
+        {
+            IsShow = false;
+        }
+
         public int Id { get; set; }
 
         public int? CampaignId { get; set; }
 
         public int? ProductId { get; set; }
+        public bool? IsShow { get; set; }
 
         public virtual Campaign Campaign { get; set; }
 

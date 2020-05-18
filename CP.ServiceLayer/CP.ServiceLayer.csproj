@@ -213,6 +213,8 @@
     <Compile Include="Concrete\SliderService.cs" />
     <Compile Include="Concrete\TableService.cs" />
     <Compile Include="Concrete\UserService.cs" />
+    <Compile Include="DTO\CampaignDTO.cs" />
+    <Compile Include="DTO\CampProductDTO.cs" />
     <Compile Include="DTO\CartDTO.cs" />
     <Compile Include="DTO\Category.cs" />
     <Compile Include="DTO\CommentDTO.cs" />

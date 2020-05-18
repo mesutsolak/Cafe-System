@@ -13,7 +13,6 @@ namespace CP.Entities.Model
         public Campaign()
         {
             CampProduct = new HashSet<CampProduct>();
-            IsShow = false;
         }
 
         public int Id { get; set; }
@@ -25,7 +24,6 @@ namespace CP.Entities.Model
 
         public int? NewPrice { get; set; }
 
-        public bool? IsShow { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CampProduct> CampProduct { get; set; }

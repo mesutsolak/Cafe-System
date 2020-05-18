@@ -25,6 +25,6 @@ namespace CP.ServiceLayer.DTO
         public bool Choose { get; set; }
         public DateTime? AddedDate { get; set; }
         public Category Category { get; set; }
-
+        public virtual ICollection<CampProductDTO> CampProduct { get; set; }
     }
 }

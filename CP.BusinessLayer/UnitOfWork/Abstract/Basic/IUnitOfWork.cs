@@ -20,6 +20,8 @@ namespace CP.BusinessLayer.UnitOfWork.Abstract.Basic
         ICommentRepository CommentRepository { get; }
         IRateRepository RateRepository { get; }
         IMusicListRepository MusicListRepository { get; }
+        ICampaignRepository CampaignRepository { get; }
+        ICampProductRepository CampProductRepository { get; }
         int Complete();
         Task<int> CompleteAsync();
     }
