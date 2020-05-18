@@ -19,7 +19,7 @@ namespace CP.BusinessLayer.UnitOfWork.Abstract.Basic
         ISliderRepository SliderRepository { get; }
         ICommentRepository CommentRepository { get; }
         IRateRepository RateRepository { get; }
-
+        IMusicListRepository MusicListRepository { get; }
         int Complete();
         Task<int> CompleteAsync();
     }

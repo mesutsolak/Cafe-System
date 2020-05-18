@@ -99,11 +99,11 @@ namespace CP.WebAPI.Controllers
             return httpResponseMessage;
         }
 
-        [Route("Find/{UserId:int}/{ProductId:int}")]
+        [Route("Find/{UserId:int}")]
         [HttpGet]
-        public RateDTO GetRate(int UserId, int ProductId)
+        public RateDTO GetRate(int UserId)
         {
-            var _rate = RateOperation.RateFind(UserId, ProductId);
+            var _rate = RateOperation.RateFind(UserId);
             var _UserDTO = mapper.Map<M.User, User>(_rate.User);
             var _ProductDTO = mapper.Map<M.Product, ProductDTO>(_rate.Product);
             var _rateDTO = mapper.Map<M.Rate, RateDTO>(_rate);

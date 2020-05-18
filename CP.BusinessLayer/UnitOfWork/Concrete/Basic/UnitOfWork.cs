@@ -33,6 +33,8 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
 
         public IRateRepository RateRepository { get; private set; }
 
+        public IMusicListRepository MusicListRepository { get; private set; }
+
         private DbContext _context;
 
         public UnitOfWork(DbContext context)
@@ -48,6 +50,7 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
             SliderRepository = new SliderRepository(_context);
             CommentRepository = new CommentRepository(_context);
             RateRepository = new RateRepository(_context);
+            MusicListRepository = new MusicListRepository(_context);
         }
 
 

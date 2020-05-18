@@ -17,6 +17,7 @@ namespace CP.WebAPI.Controllers
 
         List<SliderDTO> sliderDTO = new List<SliderDTO>();
 
+        [HttpGet]
         [Route("GetAll")]
         public List<SliderDTO> GetSliders()
         {

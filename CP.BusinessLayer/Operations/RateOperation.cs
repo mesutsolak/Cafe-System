@@ -24,9 +24,9 @@ namespace CP.BusinessLayer.Operations
             _data.RateRepository.Remove(RateId);
             return _data.Complete();
         }
-        public static Rate RateFind(int UserId, int ProductId)
+        public static Rate RateFind(int UserId)
         {
-            return _data.RateRepository.GetByFilter(x => x.UserId == UserId && x.ProductId == ProductId);
+            return _data.RateRepository.GetByFilter(x => x.UserId == UserId);
         }
         public static int RateProduct(int ProductId)
         {

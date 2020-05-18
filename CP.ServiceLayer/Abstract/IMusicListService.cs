@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace CP.ServiceLayer.Abstract
 {
-    public interface IRateService : IService<RateDTO>
+    public interface IMusicListService :IService<MusicListDTO>
     {
-
+        string IsConfirm(int MusicId);
     }
 }
