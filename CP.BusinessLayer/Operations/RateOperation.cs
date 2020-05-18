@@ -32,5 +32,13 @@ namespace CP.BusinessLayer.Operations
         {
             return _data.RateRepository.RateAvg(ProductId);
         }
+        public static string RateUserValue(int UserId, int ProductId)
+        {
+            return _data.RateRepository.GetByFilter(x => x.UserId == UserId && x.ProductId == ProductId).RateValue.Value.ToString() ?? "0";
+        }
+        public static Rate RateUserValueFind(int UserId, int ProductId)
+        {
+            return _data.RateRepository.GetByFilter(x => x.UserId == UserId && x.ProductId == ProductId);
+        }
     }
 }

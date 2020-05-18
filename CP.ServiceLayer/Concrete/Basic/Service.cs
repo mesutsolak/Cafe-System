@@ -133,7 +133,7 @@ namespace CP.ServiceLayer.Concrete.Basic
             return entity;
         }
 
-        public T GetFind(int id)
+        public T GetFind(int? id = null)
         {
             T entity = null;
             try

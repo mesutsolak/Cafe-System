@@ -1,4 +1,6 @@
 ﻿using CP.Mobile.MasterDetailPages.PopupMenu;
+using CP.ServiceLayer.Concrete;
+using CP.ServiceLayer.DTO;
 using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
@@ -14,34 +16,29 @@ namespace CP.Mobile.MasterDetailPages.Menus
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Contact : ContentPage
     {
-        public CartViewModel ViewModel => CartViewModel.Instance;
-        public Xam.Plugin.PopupMenu Popup;
+        ContactService cs = new ContactService();
 
+        ContactDTO contact;
 
         public Contact()
         {
-                InitializeComponent();
+            InitializeComponent();
 
-                Popup = new Xam.Plugin.PopupMenu()
-                {
-                    BindingContext = ViewModel
-                };
-                Popup.OnItemSelected += Popup_OnItemSelected;
+            cs.Url = "api/Contact/Get";
+            contact = cs.GetFind();
 
-                Popup.SetBinding(Xam.Plugin.PopupMenu.ItemsSourceProperty, "ListItems");
+            Description.Text = contact.Description;
+            lblPhone.Text = contact.Phone;
+            lblEmail.Text = contact.Email;
+            lblFax.Text = contact.Fax;
+            lblAdress.Text = contact.Address;
+            lblTwitter.Text = contact.Twitter;
+            lblFacebook.Text = contact.Facebook;
+
+
 
             Navigation.PopPopupAsync(true);
 
-        }
-
-        private void Popup_OnItemSelected(string item)
-        {
-            
-        }   
-
-        void ShowPopup_Clicked(object sender, EventArgs e)
-        {
-            Popup?.ShowPopup(sender as View);
         }
     }
 }

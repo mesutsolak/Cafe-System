@@ -16,7 +16,7 @@ namespace CP.ServiceLayer.Abstract.Basic
         Task<T> GetFindAsync(int id);
         List<T> GetAllFilter(int id);
         List<T> GetAll();
-        T GetFind(int id);
+        T GetFind(int? id=null);
         string Add(T entity);
     }
 }

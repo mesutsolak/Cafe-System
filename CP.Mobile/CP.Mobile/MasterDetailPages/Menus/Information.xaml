@@ -13,10 +13,11 @@
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="5,5,0,0" Spacing="10">
+            <Label x:Name="Header1" FontAttributes="Bold" FontSize="Large" Text="" />
+            <Label x:Name="Description1"  FontSize="Medium" Text=""/>
+            <Label x:Name="Header2" FontAttributes="Bold" FontSize="Large" Text="" />
+            <Label x:Name="Description2" FontSize="Medium" Text=""/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

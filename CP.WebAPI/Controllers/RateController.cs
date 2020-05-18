@@ -10,6 +10,8 @@ using M = CP.Entities.Model;
 
 namespace CP.WebAPI.Controllers
 {
+    //Result tekrarlanıyor base eklenebilir.
+
     [RoutePrefix("api/Rate")]
     public class RateController : BaseApiController
     {
@@ -31,7 +33,22 @@ namespace CP.WebAPI.Controllers
                 _rate.Product = _product;
                 _rate.User = _user;
 
-                var _result = RateOperation.RateAdd(_rate);
+                var _ratecontrol = RateOperation.RateUserValueFind(_rate.UserId.Value, _rate.ProductId.Value);
+
+                int _result = 0;
+
+                if (_ratecontrol == null)
+                {
+                    _result = RateOperation.RateAdd(_rate);
+                }
+                else
+                {
+                    _rate.Id = _ratecontrol.Id;
+                    _result = RateOperation.RateUpdate(_rate);
+                }
+
+
+
                 if (_result > 0)
                 {
                     httpResponseMessage.StatusCode = HttpStatusCode.OK;
@@ -121,5 +138,13 @@ namespace CP.WebAPI.Controllers
             return httpResponseMessage;
         }
 
+        [Route("Find/{ProductId:int}/{UserId:int}")]
+        [HttpGet]
+        public HttpResponseMessage RateValueFind(int ProductId, int UserId)
+        {
+            httpResponseMessage.StatusCode = HttpStatusCode.OK;
+            httpResponseMessage.Headers.Add("Message", RateOperation.RateUserValue(UserId, ProductId));
+            return httpResponseMessage;
+        }
     }
 }

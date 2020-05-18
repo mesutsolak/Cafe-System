@@ -9,17 +9,55 @@
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" Spacing="12">
             <Label Text="İletişim" TextColor="White" FontSize="20" />
-            <ImageButton x:Name="ShowPopup" Source="ThreeWhite.png" HorizontalOptions="EndAndExpand"  BackgroundColor="Transparent" WidthRequest="24" Clicked="ShowPopup_Clicked"/>
-
-
         </StackLayout>
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Orientation="Vertical" Spacing="10" Margin="10,5,10,5">
+            <StackLayout HeightRequest="200" >
+
+            </StackLayout>
+            <StackLayout HeightRequest="200">
+                <Label Text="Description" FontAttributes="Bold" x:Name="Description" x:Uid="Description"/>
+            </StackLayout>
+            <StackLayout HeightRequest="200" Orientation="Vertical">
+                <Label Text="İletişim Bilgileri" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Start"/>
+                <StackLayout Orientation="Vertical" Spacing="10" Margin="0,5,0,0">
+                    <StackLayout Orientation="Horizontal">
+                    <Image Source="phone.png" WidthRequest="24"/>
+                    <Label x:Name="lblPhone" VerticalTextAlignment="Center" Text="05388967213"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="fax.png" WidthRequest="24"/>
+                        <Label x:Name="lblFax" VerticalTextAlignment="Center"  Text="05388967213"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                    <Image Source="email.png" WidthRequest="24"/>
+                        <Label x:Name="lblEmail" VerticalTextAlignment="Center"  Text="mesuttsolakk@hotmail.com"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                    <Image Source="address.png" WidthRequest="24"/>
+                        <Label x:Name="lblAdress" VerticalTextAlignment="Center"  Text="Kavakpınar Mah."/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout HeightRequest="200" Orientation="Vertical">
+                <Label Text="Sosyal Medya" FontAttributes="Bold"  FontSize="Large" HorizontalOptions="Start"/>
+                <StackLayout Orientation="Vertical" Spacing="10" Margin="0,5,0,0">
+                    <StackLayout Orientation="Horizontal">
+                    <Image Source="twitter.png" WidthRequest="24"/>
+                        <Label x:Name="lblTwitter"  VerticalTextAlignment="Center" Text="mesuttsolak"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                    <Image Source="facebook.png" WidthRequest="24"/>
+                        <Label x:Name="lblFacebook" VerticalTextAlignment="Center"  Text="mesuttsolak"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                    <Image Source="instagram.png" WidthRequest="24"/>
+                        <Label x:Name="lblinstagram" VerticalTextAlignment="Center"  Text="mesuttsolak"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

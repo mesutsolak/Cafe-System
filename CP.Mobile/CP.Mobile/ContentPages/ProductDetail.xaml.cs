@@ -34,23 +34,35 @@ namespace CP.Mobile.ContentPages
 
             rateService.Url = "api/Rate/ProductRate/" + product.Id;
             commentService.Url = "api/Comment/GetAllProduct/" + product.Id;
-            comments = commentService.GetAll();
 
+            CommentsAll();
 
             ImageMeal.Source = product.Image;
             lblCategory.Text = "/ " + product.Category.Name;
             lblClock.Text = product.Time.ToString();
-            lblComment.Text = comments.Count.ToString();
+
             lblPrice.Text = product.Price + " TL";
-            lblRating.Text = rateService.ProductRate().ToString();
+            RateCalculator();
             LblName.Text = product.Name;
             lblDescription.Text = product.ProductDetail;
             LblEye.Text = product.Views.Value.ToString();
 
-            CommentList.ItemsSource = comments;
+
 
             Navigation.PopPopupAsync(true);
 
+        }
+
+        private void RateCalculator()
+        {
+            lblRating.Text = rateService.ProductRate().ToString();
+        }
+
+        private void CommentsAll()
+        {
+            comments = commentService.GetAll();
+            CommentList.ItemsSource = comments;
+            lblComment.Text = comments.Count.ToString();
         }
 
         private void btnPlus_Clicked(object sender, EventArgs e)
@@ -114,14 +126,14 @@ namespace CP.Mobile.ContentPages
             }
         }
 
-        private void btnCommentAdd_Clicked(object sender, EventArgs e)
+        private async void btnCommentAdd_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushPopupAsync(new CommentAdd(p.Id, () => { CommentsAll(); }), true);
         }
 
-        private void btnRatingAdd_Clicked(object sender, EventArgs e)
+        private async void btnRatingAdd_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushPopupAsync(new RateAdd(p.Id, () => { RateCalculator(); }), true);
         }
 
         private async void btnBack_Clicked(object sender, EventArgs e)

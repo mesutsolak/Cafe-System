@@ -121,6 +121,14 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Deb
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\eye.png
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\commentsall.png
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\back.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\phone.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\email.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\fax.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\address.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\twitter.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\facebook.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\instagram.png
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\res\drawable\location.png
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\uploadflags.txt
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\resolvedassemblies.hash
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.Android\obj\Debug\90\android\assets\AutoMapper.dll

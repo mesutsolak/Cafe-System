@@ -11034,32 +11034,35 @@ namespace CP.Mobile.Droid
 			// aapt resource value: 0x7F07006D
 			public const int abc_vector_test = 2131165293;
 			
+			// aapt resource value: 0x7F07006E
+			public const int address = 2131165294;
+			
 			// aapt resource value: 0x7F070000
 			public const int Add_User = 2131165184;
 			
-			// aapt resource value: 0x7F07006E
-			public const int avd_hide_password = 2131165294;
-			
 			// aapt resource value: 0x7F07006F
-			public const int avd_show_password = 2131165295;
+			public const int avd_hide_password = 2131165295;
+			
+			// aapt resource value: 0x7F070070
+			public const int avd_show_password = 2131165296;
 			
 			// aapt resource value: 0x7F070001
 			public const int Back = 2131165185;
 			
-			// aapt resource value: 0x7F070070
-			public const int bg = 2131165296;
-			
 			// aapt resource value: 0x7F070071
-			public const int cafe = 2131165297;
+			public const int bg = 2131165297;
 			
 			// aapt resource value: 0x7F070072
-			public const int cart = 2131165298;
+			public const int cafe = 2131165298;
 			
 			// aapt resource value: 0x7F070073
-			public const int cart2 = 2131165299;
+			public const int cart = 2131165299;
 			
 			// aapt resource value: 0x7F070074
-			public const int clock = 2131165300;
+			public const int cart2 = 2131165300;
+			
+			// aapt resource value: 0x7F070075
+			public const int clock = 2131165301;
 			
 			// aapt resource value: 0x7F070002
 			public const int Close = 2131165186;
@@ -11070,8 +11073,8 @@ namespace CP.Mobile.Droid
 			// aapt resource value: 0x7F070004
 			public const int ColdDrinkColor = 2131165188;
 			
-			// aapt resource value: 0x7F070075
-			public const int comment = 2131165301;
+			// aapt resource value: 0x7F070076
+			public const int comment = 2131165302;
 			
 			// aapt resource value: 0x7F070005
 			public const int CommentAdd = 2131165189;
@@ -11079,41 +11082,44 @@ namespace CP.Mobile.Droid
 			// aapt resource value: 0x7F070006
 			public const int CommentsAll = 2131165190;
 			
-			// aapt resource value: 0x7F070076
-			public const int confirm = 2131165302;
-			
 			// aapt resource value: 0x7F070077
-			public const int contact = 2131165303;
+			public const int confirm = 2131165303;
 			
 			// aapt resource value: 0x7F070078
-			public const int design_bottom_navigation_item_background = 2131165304;
+			public const int contact = 2131165304;
 			
 			// aapt resource value: 0x7F070079
-			public const int design_fab_background = 2131165305;
+			public const int design_bottom_navigation_item_background = 2131165305;
 			
 			// aapt resource value: 0x7F07007A
-			public const int design_ic_visibility = 2131165306;
+			public const int design_fab_background = 2131165306;
 			
 			// aapt resource value: 0x7F07007B
-			public const int design_ic_visibility_off = 2131165307;
+			public const int design_ic_visibility = 2131165307;
 			
 			// aapt resource value: 0x7F07007C
-			public const int design_password_eye = 2131165308;
+			public const int design_ic_visibility_off = 2131165308;
 			
 			// aapt resource value: 0x7F07007D
-			public const int design_snackbar_background = 2131165309;
+			public const int design_password_eye = 2131165309;
 			
 			// aapt resource value: 0x7F07007E
-			public const int dessert = 2131165310;
+			public const int design_snackbar_background = 2131165310;
+			
+			// aapt resource value: 0x7F07007F
+			public const int dessert = 2131165311;
 			
 			// aapt resource value: 0x7F070007
 			public const int DessertColor = 2131165191;
 			
-			// aapt resource value: 0x7F07007F
-			public const int drink = 2131165311;
-			
 			// aapt resource value: 0x7F070080
-			public const int eat = 2131165312;
+			public const int drink = 2131165312;
+			
+			// aapt resource value: 0x7F070081
+			public const int eat = 2131165313;
+			
+			// aapt resource value: 0x7F070082
+			public const int email = 2131165314;
 			
 			// aapt resource value: 0x7F070008
 			public const int Error = 2131165192;
@@ -11121,8 +11127,14 @@ namespace CP.Mobile.Droid
 			// aapt resource value: 0x7F070009
 			public const int Eye = 2131165193;
 			
-			// aapt resource value: 0x7F070081
-			public const int hamburger = 2131165313;
+			// aapt resource value: 0x7F070083
+			public const int facebook = 2131165315;
+			
+			// aapt resource value: 0x7F070084
+			public const int fax = 2131165316;
+			
+			// aapt resource value: 0x7F070085
+			public const int hamburger = 2131165317;
 			
 			// aapt resource value: 0x7F07000A
 			public const int HotDrink = 2131165194;
@@ -11130,38 +11142,44 @@ namespace CP.Mobile.Droid
 			// aapt resource value: 0x7F07000B
 			public const int HotDrinkColor = 2131165195;
 			
-			// aapt resource value: 0x7F070082
-			public const int ic_mtrl_chip_checked_black = 2131165314;
-			
-			// aapt resource value: 0x7F070083
-			public const int ic_mtrl_chip_checked_circle = 2131165315;
-			
-			// aapt resource value: 0x7F070084
-			public const int ic_mtrl_chip_close_circle = 2131165316;
-			
-			// aapt resource value: 0x7F070085
-			public const int information = 2131165317;
-			
 			// aapt resource value: 0x7F070086
-			public const int logout = 2131165318;
+			public const int ic_mtrl_chip_checked_black = 2131165318;
 			
 			// aapt resource value: 0x7F070087
-			public const int meat = 2131165319;
+			public const int ic_mtrl_chip_checked_circle = 2131165319;
+			
+			// aapt resource value: 0x7F070088
+			public const int ic_mtrl_chip_close_circle = 2131165320;
+			
+			// aapt resource value: 0x7F070089
+			public const int information = 2131165321;
+			
+			// aapt resource value: 0x7F07008A
+			public const int instagram = 2131165322;
+			
+			// aapt resource value: 0x7F07008B
+			public const int location = 2131165323;
+			
+			// aapt resource value: 0x7F07008C
+			public const int logout = 2131165324;
+			
+			// aapt resource value: 0x7F07008D
+			public const int meat = 2131165325;
 			
 			// aapt resource value: 0x7F07000C
 			public const int MeatColor = 2131165196;
 			
-			// aapt resource value: 0x7F070088
-			public const int money = 2131165320;
+			// aapt resource value: 0x7F07008E
+			public const int money = 2131165326;
 			
-			// aapt resource value: 0x7F070089
-			public const int mtrl_snackbar_background = 2131165321;
+			// aapt resource value: 0x7F07008F
+			public const int mtrl_snackbar_background = 2131165327;
 			
-			// aapt resource value: 0x7F07008A
-			public const int mtrl_tabs_default_indicator = 2131165322;
+			// aapt resource value: 0x7F070090
+			public const int mtrl_tabs_default_indicator = 2131165328;
 			
-			// aapt resource value: 0x7F07008B
-			public const int music = 2131165323;
+			// aapt resource value: 0x7F070091
+			public const int music = 2131165329;
 			
 			// aapt resource value: 0x7F07000D
 			public const int MusicAdd = 2131165197;
@@ -11169,62 +11187,65 @@ namespace CP.Mobile.Droid
 			// aapt resource value: 0x7F07000E
 			public const int MusicList = 2131165198;
 			
-			// aapt resource value: 0x7F07008C
-			public const int navigation_empty_icon = 2131165324;
-			
-			// aapt resource value: 0x7F07008D
-			public const int notification_action_background = 2131165325;
-			
-			// aapt resource value: 0x7F07008E
-			public const int notification_bg = 2131165326;
-			
-			// aapt resource value: 0x7F07008F
-			public const int notification_bg_low = 2131165327;
-			
-			// aapt resource value: 0x7F070090
-			public const int notification_bg_low_normal = 2131165328;
-			
-			// aapt resource value: 0x7F070091
-			public const int notification_bg_low_pressed = 2131165329;
-			
 			// aapt resource value: 0x7F070092
-			public const int notification_bg_normal = 2131165330;
+			public const int navigation_empty_icon = 2131165330;
 			
 			// aapt resource value: 0x7F070093
-			public const int notification_bg_normal_pressed = 2131165331;
+			public const int notification_action_background = 2131165331;
 			
 			// aapt resource value: 0x7F070094
-			public const int notification_icon_background = 2131165332;
+			public const int notification_bg = 2131165332;
 			
 			// aapt resource value: 0x7F070095
-			public const int notification_template_icon_bg = 2131165333;
+			public const int notification_bg_low = 2131165333;
 			
 			// aapt resource value: 0x7F070096
-			public const int notification_template_icon_low_bg = 2131165334;
+			public const int notification_bg_low_normal = 2131165334;
 			
 			// aapt resource value: 0x7F070097
-			public const int notification_tile_bg = 2131165335;
+			public const int notification_bg_low_pressed = 2131165335;
 			
 			// aapt resource value: 0x7F070098
-			public const int notify_panel_notification_icon_bg = 2131165336;
+			public const int notification_bg_normal = 2131165336;
 			
 			// aapt resource value: 0x7F070099
-			public const int order = 2131165337;
+			public const int notification_bg_normal_pressed = 2131165337;
 			
 			// aapt resource value: 0x7F07009A
-			public const int patato = 2131165338;
+			public const int notification_icon_background = 2131165338;
+			
+			// aapt resource value: 0x7F07009B
+			public const int notification_template_icon_bg = 2131165339;
+			
+			// aapt resource value: 0x7F07009C
+			public const int notification_template_icon_low_bg = 2131165340;
+			
+			// aapt resource value: 0x7F07009D
+			public const int notification_tile_bg = 2131165341;
+			
+			// aapt resource value: 0x7F07009E
+			public const int notify_panel_notification_icon_bg = 2131165342;
+			
+			// aapt resource value: 0x7F07009F
+			public const int order = 2131165343;
+			
+			// aapt resource value: 0x7F0700A0
+			public const int patato = 2131165344;
 			
 			// aapt resource value: 0x7F07000F
 			public const int PatatoColor = 2131165199;
 			
-			// aapt resource value: 0x7F07009B
-			public const int pencil = 2131165339;
+			// aapt resource value: 0x7F0700A1
+			public const int pencil = 2131165345;
+			
+			// aapt resource value: 0x7F0700A2
+			public const int phone = 2131165346;
 			
 			// aapt resource value: 0x7F070010
 			public const int Points = 2131165200;
 			
-			// aapt resource value: 0x7F07009C
-			public const int profile = 2131165340;
+			// aapt resource value: 0x7F0700A3
+			public const int profile = 2131165347;
 			
 			// aapt resource value: 0x7F070011
 			public const int Question = 2131165201;
@@ -11232,17 +11253,17 @@ namespace CP.Mobile.Droid
 			// aapt resource value: 0x7F070012
 			public const int RatingAdd = 2131165202;
 			
-			// aapt resource value: 0x7F07009D
-			public const int remove = 2131165341;
+			// aapt resource value: 0x7F0700A4
+			public const int remove = 2131165348;
 			
-			// aapt resource value: 0x7F07009E
-			public const int save = 2131165342;
+			// aapt resource value: 0x7F0700A5
+			public const int save = 2131165349;
 			
 			// aapt resource value: 0x7F070013
 			public const int SignIn = 2131165203;
 			
-			// aapt resource value: 0x7F07009F
-			public const int soup = 2131165343;
+			// aapt resource value: 0x7F0700A6
+			public const int soup = 2131165350;
 			
 			// aapt resource value: 0x7F070014
 			public const int SoupColor = 2131165204;
@@ -11250,26 +11271,29 @@ namespace CP.Mobile.Droid
 			// aapt resource value: 0x7F070015
 			public const int SplasScreen = 2131165205;
 			
-			// aapt resource value: 0x7F0700A0
-			public const int star = 2131165344;
+			// aapt resource value: 0x7F0700A7
+			public const int star = 2131165351;
 			
-			// aapt resource value: 0x7F0700A1
-			public const int success = 2131165345;
+			// aapt resource value: 0x7F0700A8
+			public const int success = 2131165352;
 			
-			// aapt resource value: 0x7F0700A2
-			public const int table = 2131165346;
+			// aapt resource value: 0x7F0700A9
+			public const int table = 2131165353;
 			
 			// aapt resource value: 0x7F070016
 			public const int ThreeWhite = 2131165206;
 			
-			// aapt resource value: 0x7F0700A3
-			public const int tooltip_frame_dark = 2131165347;
+			// aapt resource value: 0x7F0700AA
+			public const int tooltip_frame_dark = 2131165354;
 			
-			// aapt resource value: 0x7F0700A4
-			public const int tooltip_frame_light = 2131165348;
+			// aapt resource value: 0x7F0700AB
+			public const int tooltip_frame_light = 2131165355;
 			
-			// aapt resource value: 0x7F0700A5
-			public const int trash = 2131165349;
+			// aapt resource value: 0x7F0700AC
+			public const int trash = 2131165356;
+			
+			// aapt resource value: 0x7F0700AD
+			public const int twitter = 2131165357;
 			
 			// aapt resource value: 0x7F070017
 			public const int Update = 2131165207;
