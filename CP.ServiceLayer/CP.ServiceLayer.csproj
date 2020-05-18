@@ -199,6 +199,7 @@
     <Compile Include="Abstract\IHomePageService.cs" />
     <Compile Include="Abstract\ICartService.cs" />
     <Compile Include="Abstract\IProductService.cs" />
+    <Compile Include="Abstract\IRateService.cs" />
     <Compile Include="Abstract\ITableService.cs" />
     <Compile Include="Abstract\IUserService.cs" />
     <Compile Include="Abstract\ISliderService.cs" />
@@ -206,6 +207,7 @@
     <Compile Include="Concrete\CartService.cs" />
     <Compile Include="Concrete\HomePageService.cs" />
     <Compile Include="Concrete\ProductService.cs" />
+    <Compile Include="Concrete\RateService.cs" />
     <Compile Include="Concrete\SliderService.cs" />
     <Compile Include="Concrete\TableService.cs" />
     <Compile Include="Concrete\UserService.cs" />

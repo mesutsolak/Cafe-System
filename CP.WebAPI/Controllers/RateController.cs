@@ -101,7 +101,7 @@ namespace CP.WebAPI.Controllers
 
         [Route("Find/{UserId:int}/{ProductId:int}")]
         [HttpGet]
-        public RateDTO GetComment(int UserId, int ProductId)
+        public RateDTO GetRate(int UserId, int ProductId)
         {
             var _rate = RateOperation.RateFind(UserId, ProductId);
             var _UserDTO = mapper.Map<M.User, User>(_rate.User);
