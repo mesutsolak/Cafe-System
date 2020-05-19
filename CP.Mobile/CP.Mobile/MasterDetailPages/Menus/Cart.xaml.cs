@@ -22,7 +22,12 @@ namespace CP.Mobile.MasterDetailPages.Menus
         CartService cartservice = new CartService();
 
         public CartViewModel ViewModel => CartViewModel.Instance;
+        public List<CartDTO> carts = new List<CartDTO>();
         public Xam.Plugin.PopupMenu Popup;
+
+        int _count;
+        int _price;
+        int _time;
 
         public Cart()
         {
@@ -47,7 +52,7 @@ namespace CP.Mobile.MasterDetailPages.Menus
 
                 throw;
             }
-       
+
         }
 
         private async void Popup_OnItemSelected(string item)
@@ -55,7 +60,8 @@ namespace CP.Mobile.MasterDetailPages.Menus
             switch (item)
             {
                 case "Genel Durum":
-                    await Navigation.PushPopupAsync(new CartGeneral(), true);
+                    CartsGeneral();
+                    await Navigation.PushPopupAsync(new CartGeneral(_count, _price, _time), true);
                     break;
                 case "Ürünleri Kaldır":
                     await Navigation.PushPopupAsync(new QuestionModal("Silme İşlemi", "Ürünler silinsin mi ?", () => { CartRemoves(); }), true);
@@ -68,21 +74,50 @@ namespace CP.Mobile.MasterDetailPages.Menus
             }
         }
 
-        public void CartConfirms()
+        public async void CartConfirms()
         {
+            cartservice.Url = "api/Cart/ConfirmAll/";
+            var _result = cartservice.All(UserId());
+
+            await Navigation.PopPopupAsync(true);
+
+
+            if (_result.Contains("Başarıyla"))
+            {
+                await Navigation.PushPopupAsync(new SuccessModal(_result));
+                CartList();
+            }
+            else
+            {
+                await Navigation.PushPopupAsync(new ErrorModal(_result));
+            }
 
         }
 
-        public void CartRemoves()
+        public async void CartRemoves()
         {
+            cartservice.Url = "api/Cart/RemoveAll/";
+            var _result = cartservice.All(UserId());
 
+            await Navigation.PopPopupAsync(true);
+
+            if (_result.Contains("Başarıyla"))
+            {
+                await Navigation.PushPopupAsync(new SuccessModal(_result));
+                CartList();
+            }
+            else
+            {
+                await Navigation.PushPopupAsync(new ErrorModal(_result));
+            }
         }
 
         public void CartList()
         {
             var _user = Preferences.Get("UserId", 0);
             cartservice.Url = "api/Cart/List/";
-            CartListItems.ItemsSource = cartservice.Carts(_user);
+            carts = cartservice.Carts(_user);
+            CartListItems.ItemsSource = carts;
         }
 
 
@@ -114,19 +149,19 @@ namespace CP.Mobile.MasterDetailPages.Menus
         public async void Confirm(int CartId)
         {
             cartservice.Url = "api/Cart/Confirm/";
-            //var _result = cartservice.ConfirmCart(CartId);
+            var _result = cartservice.CartConfirm(CartId);
 
-            //await Navigation.PopPopupAsync(true);
+            await Navigation.PopPopupAsync(true);
 
-            //if (_result.Contains("Onaylandı"))
-            //{
-            //    CartList();
-            //    await Navigation.PushPopupAsync(new SuccessModal("Ürün Başarıyla Onaylandı"), true);
-            //}
-            //else
-            //{
-            //    await Navigation.PushPopupAsync(new ErrorModal("Ürün Onaylama Başarısız"), true);
-            //}
+            if (_result.Contains("Onaylandı"))
+            {
+                CartList();
+                await Navigation.PushPopupAsync(new SuccessModal("Ürün Başarıyla Onaylandı"), true);
+            }
+            else
+            {
+                await Navigation.PushPopupAsync(new ErrorModal("Ürün Onaylama Başarısız"), true);
+            }
         }
 
 
@@ -146,7 +181,6 @@ namespace CP.Mobile.MasterDetailPages.Menus
             {
                 cartservice.Url = "api/Cart/Find/";
                 var _cart = cartservice.GetFindString(int.Parse(_id));
-
                 await Navigation.PushPopupAsync(new CartUpdate(_cart, () => { CartList(); }));
 
             }
@@ -162,6 +196,19 @@ namespace CP.Mobile.MasterDetailPages.Menus
         private void CartGeneral_Clicked(object sender, EventArgs e)
         {
             Popup?.ShowPopup(sender as View);
+        }
+        public int UserId()
+        {
+            return Preferences.Get("UserId", 0);
+        }
+        public void CartsGeneral()
+        {
+            _count = carts.Count;
+
+            _price = (int)carts.Select(x => x.Price).Sum();
+
+            _time = (int)carts.Select(x => x.Time).Sum();
+
         }
     }
 }

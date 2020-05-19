@@ -55,5 +55,45 @@ namespace CP.ServiceLayer.Concrete
 
             return ResponseMessage;
         }
+        public string CartConfirm(int CartConfirm)
+        {
+            try
+            {
+
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                var response = Task.Run(() => client.GetAsync(Url + CartConfirm)).Result;
+
+                ResponseMessage = response.Headers.GetValues("Message").FirstOrDefault().ToString();
+
+            }
+            catch (Exception ex)
+            {
+                ResponseMessage = "Gönderirken Hata Meydana Geldi";
+
+                throw ex;
+            }
+
+            return ResponseMessage;
+        }
+        public string All(int UserId)
+        {
+            try
+            {
+
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                var response = Task.Run(() => client.GetAsync(Url + UserId)).Result;
+
+                ResponseMessage = response.Headers.GetValues("Message").FirstOrDefault().ToString();
+
+            }
+            catch (Exception ex)
+            {
+                ResponseMessage = "Gönderirken Hata Meydana Geldi";
+
+                throw ex;
+            }
+
+            return ResponseMessage;
+        }
     }
 }

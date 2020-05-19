@@ -14,14 +14,19 @@ namespace CP.Mobile.MasterDetailPages.PopupMenuContent
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CartGeneral : PopupPage
     {
-        public CartGeneral()
+        public CartGeneral(int count, int price, int time)
         {
+
             InitializeComponent();
+
+            lblCount.Text = count.ToString();
+            lblPrice.Text = price.ToString() + " TL";
+            lblClock.Text = time.ToString() + " dk";
         }
 
         private async void btnClose_Clicked(object sender, EventArgs e)
         {
-          await Navigation.PopPopupAsync(true);
+            await Navigation.PopPopupAsync(true);
         }
     }
 }

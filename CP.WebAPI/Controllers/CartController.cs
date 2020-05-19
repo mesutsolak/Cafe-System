@@ -34,7 +34,7 @@ namespace CP.WebAPI.Controllers
                 int result = 0;
 
                 var _value = mapper.Map<CartDTO, Cart>(cart);
-
+                _value.ConfirmId = 2;
                 var product = CartOperation.IsThereProduct(_value.ProductId.Value, _value.UserId.Value);
 
                 if (product.IsNullObject())
@@ -66,7 +66,7 @@ namespace CP.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("Count/{UserId}")]
+        [Route("Count/{UserId:int}")]
         public HttpResponseMessage CartCount(int UserId)
         {
             httpResponseMessage.StatusCode = HttpStatusCode.OK;
@@ -195,6 +195,67 @@ namespace CP.WebAPI.Controllers
 
             return httpResponseMessage;
         }
+
+        [HttpGet]
+        [Route("Confirm/{CartId:int}")]
+        public HttpResponseMessage Confirm(int CartId)
+        {
+            var _cart = CartOperation.CartFind(CartId);
+            _cart.ConfirmId = 3;
+            var _result = CartOperation.CartUpdate(_cart);
+            if (_result > 0)
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.OK;
+                httpResponseMessage.Headers.Add("Message", "Başarıyla Onaylandı");
+            }
+            else
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+                httpResponseMessage.Headers.Add("Message", "Onaylama Başarısız");
+            }
+            return httpResponseMessage;
+        }
+
+        [HttpGet]
+        [Route("ConfirmAll/{UserId:int}")]
+        public HttpResponseMessage ConfirmAll(int UserId)
+        {
+            int _result = CartOperation.ConfirmAll(UserId);
+
+            if (_result>0)
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.OK;
+                httpResponseMessage.Headers.Add("Message", "Başarıyla Onaylandı");
+            }
+            else
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+                httpResponseMessage.Headers.Add("Message", "Onaylama İşlemi Başarısız");
+            }
+            return httpResponseMessage;
+        }
+
+
+        [HttpGet]
+        [Route("RemoveAll/{UserId:int}")]
+        public HttpResponseMessage RemoveAll(int UserId)
+        {
+            int _result = CartOperation.RemoveAll(UserId);
+
+            if (_result > 0)
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.OK;
+                httpResponseMessage.Headers.Add("Message", "Başarıyla Silindi");
+            }
+            else
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+                httpResponseMessage.Headers.Add("Message", "Silme İşlemi Başarısız");
+            }
+            return httpResponseMessage;
+        }
+
+
+
     }
 }
-            

@@ -50,5 +50,11 @@ namespace CP.BusinessLayer.Operations
             _data.ProductRepository.Update(product);
             return _data.Complete();
         }
+
+        public static int ProductCategoryCount(int CategoryId)
+        {
+            return _data.ProductRepository.GetAll(null, x => x.CategoryId == CategoryId).Count;
+        }
+
     }
 }

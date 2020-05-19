@@ -9,6 +9,11 @@ namespace CP.Entities.Model
     [Table("Cart")]
     public partial class Cart
     {
+        public Cart()
+        {
+            IsDelete = false;
+        }
+
         public int Id { get; set; }
 
         public int? Count { get; set; }
@@ -27,7 +32,7 @@ namespace CP.Entities.Model
 
         public int? ConfirmId { get; set; }
 
-        public bool? IsComplete { get; set; }
+        public bool? IsDelete { get; set; }
 
         public virtual Table Table { get; set; }
 

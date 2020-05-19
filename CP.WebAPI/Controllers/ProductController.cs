@@ -103,5 +103,15 @@ namespace CP.WebAPI.Controllers
 
         }
 
+        [HttpGet]
+        [Route("ProductCount/{CategoryId:int}")]
+        public HttpResponseMessage ProductCount(int CategoryId)
+        {
+            httpResponseMessage.StatusCode = HttpStatusCode.OK;
+            httpResponseMessage.Headers.Add("Message", ProductOperation.ProductCategoryCount(CategoryId).ToString());
+
+            return httpResponseMessage;
+        }
+
     }
 }

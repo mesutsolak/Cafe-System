@@ -12,5 +12,6 @@ namespace CP.ServiceLayer.Abstract
     {
         List<ProductDTO> GetFilterAll(int CategoryId);
         string ViewsAdd();
+        string ProductCount();
     }
 }

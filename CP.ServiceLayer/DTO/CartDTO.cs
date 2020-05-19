@@ -10,10 +10,9 @@ namespace CP.ServiceLayer.DTO
     {
         public CartDTO()
         {
-            IsComplete = false;
             AddedDate = DateTime.Now;
+            IsDelete = false;
         }
-        [System.ComponentModel.DataAnnotations.Key]
         public int Id { get; set; }
 
         public int? Count { get; set; }
@@ -32,7 +31,7 @@ namespace CP.ServiceLayer.DTO
 
         public int? ConfirmId { get; set; }
 
-        public bool? IsComplete { get; set; }
+        public bool? IsDelete { get; set; }
 
         public ProductDTO productDTO { get; set; }
     }

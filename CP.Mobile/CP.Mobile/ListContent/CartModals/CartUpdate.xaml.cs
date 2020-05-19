@@ -53,6 +53,7 @@ namespace CP.Mobile.ListContent.CartModals
                     Count = count,
                     Price = _cartDTO.productDTO.Price * count,
                     Time = _cartDTO.productDTO.Time * count,
+                    ConfirmId = 2,
                     UserId = _cartDTO.UserId,
                     ProductId = _cartDTO.ProductId
                 });

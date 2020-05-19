@@ -26,6 +26,13 @@ namespace CP.ServiceLayer.Concrete
             return entities;
         }
 
+        public string ProductCount()
+        {
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            var _result = Task.Run(() => client.GetAsync(Url)).Result;
+            return _result.Headers.GetValues("Message").Single();
+        }
+
         public string ViewsAdd()
         {
             client.DefaultRequestHeaders.Add("Accept", "application/json");

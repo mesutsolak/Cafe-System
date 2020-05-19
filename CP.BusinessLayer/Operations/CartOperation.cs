@@ -54,12 +54,12 @@ namespace CP.BusinessLayer.Operations
 
         public static List<Cart> GetAll(int UserId)
         {
-            return _data.CartRepository.GetAll(x => x.Product, x => x.UserId == UserId);
+            return _data.CartRepository.GetAll(x => x.Product, x => x.UserId == UserId && x.ConfirmId == 2 && x.IsDelete == false);
         }
 
         public static List<Cart> GetAllOrder(int UserId)
         {
-            return _data.CartRepository.GetAll(x => x.Product, y => y.ConfirmId == 1 && y.UserId == UserId).ToList();
+            return _data.CartRepository.GetAll(x => x.Product, y => y.ConfirmId == 1 && y.UserId == UserId && y.IsDelete == false);
         }
 
         public static Cart GetCart(int Id)
@@ -69,12 +69,38 @@ namespace CP.BusinessLayer.Operations
 
         public static Cart IsThereProduct(int productId, int UserId)
         {
-            return _data.CartRepository.GetByFilter(x => x.ProductId == productId && x.UserId == UserId);
+            return _data.CartRepository.GetByFilter(x => x.ProductId == productId && x.UserId == UserId && x.ConfirmId == 2 && x.IsDelete==false);
         }
 
         public static int CartCount(int UserId)
         {
-            return _data.CartRepository.GetAll(null, x => x.UserId == UserId).Count;
+            return _data.CartRepository.GetAll(null, x => x.UserId == UserId && x.ConfirmId == 2 && x.IsDelete == false).Count;
+        }
+
+        public static int ConfirmAll(int UserId)
+        {
+            var _values = _data.CartRepository.GetFilterAll(x => x.UserId == UserId && x.ConfirmId == 2 && x.IsDelete == false);
+
+            foreach (var value in _values)
+            {
+                value.ConfirmId = 3;
+                _data.CartRepository.Update(value);
+            }
+
+            return _data.Complete();
+        }
+
+        public static int RemoveAll(int UserId)
+        {
+            var _values = _data.CartRepository.GetFilterAll(x => x.UserId == UserId && x.ConfirmId == 2);
+
+            foreach (var value in _values)
+            {
+                value.IsDelete = true;
+                _data.CartRepository.Update(value);
+            }
+
+            return _data.Complete();
         }
 
     }

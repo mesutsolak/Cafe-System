@@ -26,8 +26,7 @@ namespace CP.Mobile.MasterDetailPages.Menus
             try
             {
                 cs.Url = "api/Cart/Count/";
-                var a = Preferences.Get("UserId", 0);
-                var result = cs.CartCount(a);
+                var result = cs.CartCount(Preferences.Get("UserId", 0));
                 CartCount.Text = result;
             }
             catch (Exception ex)
@@ -50,7 +49,7 @@ namespace CP.Mobile.MasterDetailPages.Menus
                 BindingContext = HomePages();
                 CountFound();
                 Sliders();
-                //OrderCount();
+                OrderCount();
 
             }
             catch (Exception ex)
