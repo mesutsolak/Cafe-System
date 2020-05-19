@@ -8,7 +8,7 @@
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
-            <Label Text="Sepetim" VerticalTextAlignment="Center" TextColor="White" FontSize="17" Margin="0,0,8,0" />
+            <Label Text="Sepetim" VerticalTextAlignment="Center" TextColor="White" FontSize="Large" Margin="0,0,8,0" />
             <ImageButton x:Name="CartGeneral"  HorizontalOptions="EndAndExpand"  BackgroundColor="Transparent" Clicked="CartGeneral_Clicked" Source="ThreeWhite.png"  WidthRequest="24"/>
         </StackLayout>
     </NavigationPage.TitleView>

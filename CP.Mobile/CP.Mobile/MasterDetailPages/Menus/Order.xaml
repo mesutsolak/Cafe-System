@@ -9,7 +9,7 @@
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
             <Label Text="Siparişlerim"
-                HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontSize="Large" FontAttributes="Bold"   Margin="10,0,0,0"/>
+                HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontSize="Large"   Margin="10,0,0,0"/>
             
         </StackLayout>
     </NavigationPage.TitleView>
@@ -32,11 +32,6 @@
                                         <Label TextColor="Black" HorizontalOptions="Center" FontSize="15" Text="{Binding Count,StringFormat='Adet : {0:N}'}"/>
                                         <Label TextColor="Black" HorizontalOptions="Center" FontSize="15"  Text="{Binding Price,StringFormat='Fiyat : {0:N}'}"/>
                                         <Label TextColor="Black" FontSize="15" HorizontalOptions="Center"  Text="{Binding Time,StringFormat='Zaman : {0:N}'}"/>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal" Spacing="10" Margin="0,0,15,0" HorizontalOptions="EndAndExpand">
-                                        <ImageButton Source="pencil.png" BackgroundColor="Transparent" x:Name="btnUpdate"  WidthRequest="24" CommandParameter="{Binding Id}"/>
-                                        <ImageButton Source="remove.png" x:Name="btnRemove" BackgroundColor="Transparent" WidthRequest="32" CommandParameter="{Binding Id}"/>
-                                        <ImageButton Source="confirm.png" BackgroundColor="Transparent" WidthRequest="24" CommandParameter="{Binding Id}" x:Name="btnSuccess"/>
                                     </StackLayout>
                                 </StackLayout>
                             </Grid>
