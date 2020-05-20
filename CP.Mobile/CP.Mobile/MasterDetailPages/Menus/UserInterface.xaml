@@ -8,27 +8,73 @@
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" Margin="5,5" Spacing="12">
-            <Label Text="Hesabım" TextColor="White" FontSize="25" />
+            <Label Text="Hesabım" TextColor="White" FontSize="Large" />
         </StackLayout>
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
-            <StackLayout Margin="0,10,0,0" Orientation="Horizontal" x:Name="StlUserInformations" HeightRequest="150" x:Uid="StlUserInformations">
-                <Image Margin="0,5,0,0" HorizontalOptions="Center" VerticalOptions="Start" Source="User.png" WidthRequest="24"/>
-                <Label Text="Kullanıcı Bilgileri" FontSize="20" Margin="5,5,0,0"/>
-                <StackLayout HorizontalOptions="EndAndExpand">
-                    <ImageButton BackgroundColor="Transparent" Margin="0,0,5,0" x:Name="btnUserInformationUpdate" Source="update.png" WidthRequest="24" HorizontalOptions="End" Clicked="btnUserInformationUpdate_Clicked"/>
+            <StackLayout Margin="0,10,0,0" Orientation="Vertical" x:Name="StlUserInformations" HeightRequest="150" x:Uid="StlUserInformations">
+                <StackLayout Orientation="Horizontal">
+                    <Image Margin="0,5,0,0" HorizontalOptions="Center" VerticalOptions="Start" Source="User.png" WidthRequest="24"/>
+                    <Label  TextColor="Black" Text="Kullanıcı Bilgileri" FontSize="20" Margin="5,5,0,0"/>
+
+                    <StackLayout HorizontalOptions="EndAndExpand">
+                        <ImageButton BackgroundColor="Transparent" Margin="0,0,5,0" x:Name="btnUserInformationUpdate" Source="update.png" WidthRequest="24" HorizontalOptions="End" Clicked="btnUserInformationUpdate_Clicked"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Horizontal" Margin="5,0,0,0" HorizontalOptions="StartAndExpand">
+                            <Label TextColor="Black" FontAttributes="Bold" Text="Adı :" FontSize="16"/>
+                            <Label TextColor="Black" x:Name="FirstName" FontSize="16" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                            <Label TextColor="Black" FontAttributes="Bold" FontSize="16" Text="Soyadı :"/>
+                            <Label TextColor="Black" x:Name="LastName" FontSize="16" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="0,0,5,0" HorizontalOptions="EndAndExpand">
+                            <Label  TextColor="Black" FontAttributes="Bold" Text="Kullanıcı Adı :" FontSize="16" />
+                            <Label TextColor="Black" x:Name="UserName" FontSize="16" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                         <StackLayout Orientation="Horizontal" Margin="5,0,0,0" HorizontalOptions="StartAndExpand">
+                            <Label TextColor="Black" FontSize="16" FontAttributes="Bold" Text="Parola :"/>
+                            <Label TextColor="Black" FontSize="16"  x:Name="Password" />
+                        </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                            <Label TextColor="Black" FontSize="16" FontAttributes="Bold" Text="Email :"/>
+                            <Label TextColor="Black" FontSize="16"  x:Name="Email" />
+                        </StackLayout>
+                    </StackLayout>
+                    
+                
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Horizontal"  Margin="5,0,0,0" HorizontalOptions="StartAndExpand">
+                            <Label TextColor="Black" FontSize="16" FontAttributes="Bold"  Text="Cinsiyet :"/>
+                            <Label  TextColor="Black" FontSize="16" x:Name="Gender"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal"  Margin="0,0,5,0" HorizontalOptions="CenterAndExpand">
+                            <Label TextColor="Black" FontSize="16" FontAttributes="Bold"  Text="Profil Photo :"/>
+                            <Image x:Name="ProfilPhoto" WidthRequest="24" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="0,0,5,0" HorizontalOptions="EndAndExpand">
+                            <Label TextColor="Black" FontSize="16" FontAttributes="Bold"  Text="Arka Plan :"/>
+                            <Image x:Name="BackPhoto" WidthRequest="24" />
+                        </StackLayout>
+                    </StackLayout>
                 </StackLayout>
             </StackLayout>
-                             <BoxView 
+            <BoxView 
             HeightRequest="1" 
             BackgroundColor="LightGray" 
             HorizontalOptions="FillAndExpand" />
 
             <StackLayout Orientation="Horizontal" x:Name="StlCartHistory" HeightRequest="150" x:Uid="StlCartHistory">
-                <Image Margin="5,5,0,0" HorizontalOptions="Center" VerticalOptions="Start" Source="Chart.png" WidthRequest="24"/>
-                <Label Text="Sepet Geçmişi" FontSize="20" Margin="5,5,0,0"/>
+                <Image Margin="5,5,0,0" HorizontalOptions="Center" VerticalOptions="Start" Source="cart.png" WidthRequest="24"/>
+                <Label Text="Sepet Geçmişi" TextColor="Black" FontSize="20" Margin="5,5,0,0"/>
             </StackLayout>
 
             <BoxView 
@@ -38,8 +84,8 @@
 
             <StackLayout Orientation="Horizontal" x:Name="StlMusicHistory" HeightRequest="150" x:Uid="StlMusicHistory">
                 <Image Margin="5,5,0,0" HorizontalOptions="Center" VerticalOptions="Start" Source="MusicList.png" WidthRequest="24"/>
-                <Label Text="Müzik Geçmişi" FontSize="20" Margin="5,5,0,0"/>
-                </StackLayout>
+                <Label Text="Müzik Geçmişi" TextColor="Black" FontSize="20" Margin="5,5,0,0"/>
+            </StackLayout>
 
         </StackLayout>
 

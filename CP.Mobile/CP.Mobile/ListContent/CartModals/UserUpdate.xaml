@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage  xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                  mc:Ignorable="d"
+             x:Class="CP.Mobile.ListContent.CartModals.UserUpdate">
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinInOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+
+
+
+    <StackLayout x:Name="StlForm" x:Uid="StlForm"
+        HorizontalOptions="FillAndExpand"
+        BackgroundColor="Transparent"
+        Margin="15, 0, 15, 0"
+                 >
+        <Frame BackgroundColor="#EEEEEE" CornerRadius="10">
+            <StackLayout Orientation="Vertical">
+                        <Image Source="User.png" x:Name="PictureShow" Margin="0,5" WidthRequest="100" HorizontalOptions="Center" />
+                <ScrollView>
+
+                    <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+
+                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                            <Label Text="Kullanıcı Adı " FontSize="20" TextColor="Black"/>
+                            <Entry WidthRequest="350" HorizontalOptions="CenterAndExpand" x:Name="EntUserName" Text="{Binding Username}" Placeholder="Kullanıcı Adı" />
+                        </StackLayout>
+
+                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                            <Label Text="Parola " FontSize="20" TextColor="Black"/>
+                            <Entry WidthRequest="350"  x:Name="EntPassword"  Text="{Binding Password}" Placeholder="Parola"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                            <Label Text="Email " FontSize="20" TextColor="Black"/>
+                            <Entry WidthRequest="350"  x:Name="EntEmail"  Text="{Binding Email}" Placeholder="Email"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                            <Label Text="Ad " FontSize="20" TextColor="Black"/>
+                            <Entry WidthRequest="350"  x:Name="EntFirstName"  Text="{Binding FirstName}" Placeholder="Ad"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                            <Label Text="Soyad " FontSize="20" TextColor="Black"/>
+                            <Entry WidthRequest="350"  x:Name="EntLastName" Text="{Binding LastName}" Placeholder="Soyad"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                            <Label Text="Cinsiyet " FontSize="20" TextColor="Black"/>
+                            <Picker WidthRequest="350" x:Name="PickerGender"  HorizontalOptions="FillAndExpand">
+                                <Picker.Items>
+                                    <x:String>Erkek</x:String>
+                                    <x:String>Kadın</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                            <Label Text="Foto " FontSize="20" TextColor="Black"/>
+                            <Image x:Name="ProfilePhoto" Source="{Binding ProfilPhoto}" WidthRequest="24" />
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                            <Label Text="Arka Plan Resmi " FontSize="20" TextColor="Black"/>
+                            <Image x:Name="BackgroundPhoto" Source="{Binding BackGround}" WidthRequest="24" />
+                        </StackLayout>
+                        
+                    </StackLayout>
+                </ScrollView>
+                <StackLayout Orientation="Horizontal"  HorizontalOptions="Center">
+                    <Button BackgroundColor="Blue" x:Name="btnSave" Clicked="btnSave_Clicked"  x:Uid="btnUpdate" TextColor="White" Text="Kaydet" HorizontalOptions="Center" />
+                    <Button BackgroundColor="Red" x:Name="btnCancel" Clicked="btnCancel_Clicked" x:Uid="btnCancel" TextColor="White" Text="Kapat" HorizontalOptions="Center" />
+                </StackLayout>
+
+            </StackLayout>
+        </Frame>
+
+
+    </StackLayout>
+
+
+
+
+</pages:PopupPage>

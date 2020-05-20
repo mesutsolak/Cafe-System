@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CP.Entities.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,5 +20,6 @@ namespace CP.ServiceLayer.DTO
         public string BackGround { get; set; }
         public bool? IsConfirm { get; set; }
         public bool IsDeleted { get; set; }
+        public GenderDTO Gender { get; set; }
     }
 }

@@ -226,6 +226,7 @@
     <Compile Include="DTO\CommentDTO.cs" />
     <Compile Include="DTO\CompanyDTO.cs" />
     <Compile Include="DTO\ContactDTO.cs" />
+    <Compile Include="DTO\GenderDTO.cs" />
     <Compile Include="DTO\HomePageDTO.cs" />
     <Compile Include="DTO\LoginControl.cs" />
     <Compile Include="DTO\MusicListDTO.cs" />

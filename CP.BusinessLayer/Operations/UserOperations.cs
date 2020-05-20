@@ -24,7 +24,7 @@ namespace CP.BusinessLayer.Operations
 
         public static M.User UserFind(int id)
         {
-            return _data.UserRepository.GetById(id);
+            return _data.UserRepository.GetByIdInclue(id);
         }
 
         public static string PasswordFind(string Email)

@@ -3,6 +3,7 @@ using CP.BusinessLayer.Tools;
 using M = CP.Entities.Model;
 using CP.ServiceLayer.Concrete;
 using CP.ServiceLayer.DTO;
+using C = CP.ServiceLayer.DTO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -14,6 +15,7 @@ using System.Web.Http.Description;
 using System.Web.Http.ModelBinding;
 using System.Web.Script.Serialization;
 using System.Web.Routing;
+using CP.Entities.Model;
 
 namespace CP.WebAPI.Controllers
 {
@@ -31,7 +33,7 @@ namespace CP.WebAPI.Controllers
             else
             {
                 var result = await UserOperations.UserAdd(user);
-                if (result >0)
+                if (result > 0)
                 {
                     httpResponseMessage.StatusCode = HttpStatusCode.OK;
                     httpResponseMessage.Headers.Add("Message", "Kullanıcı Başarıyla Eklendi");
@@ -77,22 +79,15 @@ namespace CP.WebAPI.Controllers
             return await UserOperations.GetUsersAsync();
         }
         [HttpGet]
-        public async Task<HttpResponseMessage> GetFind(int id)
+        [Route("Find/{id:int}")]
+        [AllowAnonymous]
+        public C.User GetFind(int id)
         {
-            var _user = await UserOperations.UserFindAsync(id);
-            if (_user.IsNullObject())
-            {
-                httpResponseMessage.StatusCode = HttpStatusCode.NotFound;
-                httpResponseMessage.Headers.Add("Message", "Kullanıcı Bulunamadı");
-            }
-            else
-            {
-                var json = new JavaScriptSerializer().Serialize(_user);
-
-                httpResponseMessage.StatusCode = HttpStatusCode.OK;
-                httpResponseMessage.Headers.Add("Message", json);
-            }
-            return httpResponseMessage;
+            var _user = UserOperations.UserFind(id);
+            var _gender = mapper.Map<Gender, GenderDTO>(_user.Gender);
+            var _userDTO = mapper.Map<M.User, C.User>(_user);
+            _userDTO.Gender = _gender;
+            return _userDTO;
         }
         [HttpGet]
         [Route("IsThereUserName/{UserName}")]
@@ -129,16 +124,26 @@ namespace CP.WebAPI.Controllers
         [AllowAnonymous]
         [HttpPut]
         [ResponseType(typeof(HttpResponseMessage))]
-        public async Task<HttpResponseMessage> Put([FromBody]M.User user)
+        [Route("Update")]
+        public async Task<HttpResponseMessage> Put([FromBody]C.User user)
         {
             if (!ModelState.IsValid)
             {
                 httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
-                httpResponseMessage.Headers.Add("Message", "Doğrulana başarısız");
+                httpResponseMessage.Headers.Add("Message", "Doğrulama başarısız");
             }
             else
             {
-                var result = await UserOperations.UserUpdate(user);
+                var _old = UserOperations.UserFind(user.Id);
+
+                var _user = mapper.Map<C.User, M.User>(user);
+
+                _user.ProfilPhoto = _user.ProfilPhoto ?? _old.ProfilPhoto;
+                _user.BackGround = _user.BackGround ?? _old.BackGround;
+                _user.IsConfirm = _old.IsConfirm;
+                _user.IsDeleted = _old.IsDeleted;
+
+                var result = await UserOperations.UserUpdate(_user);
                 if (result > 0)
                 {
                     httpResponseMessage.StatusCode = HttpStatusCode.OK;
@@ -157,7 +162,7 @@ namespace CP.WebAPI.Controllers
         [Route("{id:int}")]
         public async Task<HttpResponseMessage> Delete(int id)
         {
-           var _result = await UserOperations.UserRemove(id);
+            var _result = await UserOperations.UserRemove(id);
             if (_result > 0)
             {
                 httpResponseMessage.StatusCode = HttpStatusCode.OK;
@@ -170,7 +175,7 @@ namespace CP.WebAPI.Controllers
             }
             return httpResponseMessage;
         }
-        
+
         [HttpGet]
         [Route("UserId/{UserName}")]
         public HttpResponseMessage UserId(string UserName)

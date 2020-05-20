@@ -19,5 +19,9 @@ namespace CP.BusinessLayer.Repository.Concrete
         }
         public CafeProjectModel CafeDB => _context as CafeProjectModel; //bu cast işlemine sürekli ihtiyac duyacağız.
 
+        public User GetByIdInclue(int id)
+        {
+            return CafeDB.User.Include(x => x.Gender).FirstOrDefault(x => x.Id == id);
+        }
     }
 }
