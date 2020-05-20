@@ -16,7 +16,7 @@ namespace CP.ServiceLayer.Concrete
         public string IsConfirm(int MusicId)
         {
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            HttpResponseMessage response = Task.Run(() => client.GetAsync("IsConfirm/" + MusicId)).Result;
+            HttpResponseMessage response = Task.Run(() => client.GetAsync("api/MusicList/IsConfirm/" + MusicId)).Result;
             return response.Headers.GetValues("Message").FirstOrDefault();
         }
     }

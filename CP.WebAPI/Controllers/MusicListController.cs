@@ -93,7 +93,7 @@ namespace CP.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("MusicList")]
+        [Route("All")]
         public List<MusicListDTO> GetMusicLists()
         {
             _musicList.Clear();
@@ -145,6 +145,32 @@ namespace CP.WebAPI.Controllers
                 httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
                 httpResponseMessage.Headers.Add("Message", "Onaylama Başarısız");
             }
+
+            return httpResponseMessage;
+        }
+
+        [HttpGet]
+        [Route("IsConfirmAll/{UserId:int}")]
+        public HttpResponseMessage IsConfirmAll(int UserId)
+        {
+            MusicListOperation.ConfirmAll(UserId);
+
+            httpResponseMessage.StatusCode = HttpStatusCode.OK;
+            httpResponseMessage.Headers.Add("Message", "Müzikler Başarıyla Onaylandı");
+
+
+            return httpResponseMessage;
+        }
+
+
+        [HttpGet]
+        [Route("IsRemoveAll/{UserId:int}")]
+        public HttpResponseMessage IsRemoveAll(int UserId)
+        {
+            MusicListOperation.RemoveAll(UserId);
+
+            httpResponseMessage.StatusCode = HttpStatusCode.OK;
+            httpResponseMessage.Headers.Add("Message", "Müzikler Başarıyla Silindi");
 
             return httpResponseMessage;
         }

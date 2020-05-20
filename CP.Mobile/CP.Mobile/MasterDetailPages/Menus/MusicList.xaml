@@ -11,10 +11,8 @@
             <Label Text="Müzik Listesi" TextColor="White" FontSize="20" />
             <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
                 <Image Source="MusicList.png"  WidthRequest="24"/>
-                <Label x:Name="CartCount" Text="0" TextColor="White" FontSize="20"  Margin="0,0,8,0" />
-
-                <Image Source="MusicAdd.png"  Margin="0,0,8,0" WidthRequest="24"/>
-
+                <Label x:Name="MusicCount" Text="0" TextColor="White" FontSize="20"  Margin="0,0,8,0" />
+                <ImageButton x:Name="MusicMenu"  HorizontalOptions="EndAndExpand"  Margin="0,0,8,0" BackgroundColor="Transparent" Clicked="MusicMenu_Clicked" Source="ThreeWhite.png"  WidthRequest="24"/>
 
             </StackLayout>
         </StackLayout>
@@ -23,9 +21,29 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="MusicListItems" RowHeight="90" SeparatorVisibility="Default" SeparatorColor="Gray" BackgroundColor="White">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid HeightRequest="80"
+                                      WidthRequest="300"
+                                      BackgroundColor="Transparent">
+                                <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                                    <StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
+                                        <Label x:Name="lblMusicName" TextColor="Black" HorizontalOptions="Center" FontSize="15" Text="{Binding MusicName,StringFormat='Şarkı : {0:N}'}"/>
+                                        <Label x:Name="lblArtistName" TextColor="Black" HorizontalOptions="Center" FontSize="15"  Text="{Binding ArtistName,StringFormat='Sanatçı : {0:N}'}"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Spacing="10" Margin="0,0,15,0" HorizontalOptions="EndAndExpand">
+                                        <ImageButton Source="pencil.png" BackgroundColor="Transparent" x:Name="btnUpdate" Clicked="btnUpdate_Clicked" WidthRequest="24" CommandParameter="{Binding Id}"/>
+                                        <ImageButton Source="remove.png" x:Name="btnRemove" Clicked="btnRemove_Clicked" BackgroundColor="Transparent" WidthRequest="32" CommandParameter="{Binding Id}"/>
+                                        <ImageButton Source="confirm.png" BackgroundColor="Transparent" WidthRequest="24" CommandParameter="{Binding Id}" x:Name="btnSuccess" Clicked="btnSuccess_Clicked"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

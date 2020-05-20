@@ -201,6 +201,33 @@ namespace CP.ServiceLayer.Concrete.Basic
             return ResponseMessage;
         }
 
+
+        public string Remove(int id)
+        {
+            try
+            {
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response = client.DeleteAsync(Url + id).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    ResponseMessage = "Başarıyla İşleminiz Gerçekleşti";
+                }
+                else
+                {
+                    ResponseMessage = "İşleminiz Başarısız Oldu";
+                }
+            }
+            catch (Exception ex)
+            {
+                ResponseMessage = "Gönderirken Hata Meydana Geldi";
+
+                throw ex;
+            }
+
+            return ResponseMessage;
+        }
+
+
         public async Task<string> UpdateAsync(T entity)
         {
             try
@@ -230,6 +257,33 @@ namespace CP.ServiceLayer.Concrete.Basic
             return ResponseMessage;
         }
 
+        public string Update(T entity)
+        {
+            try
+            {
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                var response = Task.Run(() => client.PutAsJsonAsync(Url, entity)).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    ResponseMessage = "Başarıyla İşleminiz Gerçekleşti";
+                }
+                else
+                {
+                    ResponseMessage = "İşleminiz Başarısız Oldu";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ResponseMessage = "Gönderirken Hata Meydana Geldi";
+
+                throw ex;
+            }
+
+            return ResponseMessage;
+        }
+
         public List<T> GetAllFilter(int id)
         {
             client.DefaultRequestHeaders.Add("Accept", "application/json");
@@ -239,6 +293,14 @@ namespace CP.ServiceLayer.Concrete.Basic
             {
                 NullValueHandling = NullValueHandling.Ignore
             });
+        }
+
+        public string GetOperation(int id)
+        {
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            var _result = Task.Run(() => client.GetAsync(Url + id)).Result;
+
+            return _result.Headers.GetValues("Message").First();
         }
     }
 }
