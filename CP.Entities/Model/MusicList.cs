@@ -13,7 +13,6 @@ namespace CP.Entities.Model
         public MusicList()
         {
             IsDeleted = false;
-            IsComplete = false;
             ConfirmId = 2;
         }
         public int Id { get; set; }
@@ -27,8 +26,6 @@ namespace CP.Entities.Model
         public int? UserId { get; set; }
 
         public int? ConfirmId { get; set; }
-
-        public bool? IsComplete { get; set; }
         public bool? IsDeleted { get; set; }
 
         public virtual ConfirmStatus ConfirmStatus { get; set; }

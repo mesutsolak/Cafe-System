@@ -55,6 +55,14 @@ namespace CP.BusinessLayer.Operations
         {
             return _data.ProductRepository.GetAll(null, x => x.CategoryId == CategoryId).Count;
         }
+        public static List<Product> GetPreferences()
+        {
+            return _data.ProductRepository.GetAll(x => x.Category, y => y.IsDeleted == false && y.Preference == true);
+        }
+        public static List<Product> GetChooses()
+        {
+            return _data.ProductRepository.GetAll(x => x.Category, y => y.IsDeleted == false && y.Choose == true);
+        }
 
     }
 }

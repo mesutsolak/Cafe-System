@@ -1,3 +1,5 @@
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.csproj.CoreCompileInputs.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\bin\Debug\CP.BusinessLayer.dll.config
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\bin\Debug\CP.BusinessLayer.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\bin\Debug\CP.BusinessLayer.pdb
@@ -27,8 +29,6 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\bin\Debug\System.N
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\bin\Debug\System.Web.Razor.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\bin\Debug\System.Web.WebPages.Deployment.xml
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.csprojAssemblyReference.cache
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.csproj.CoreCompileInputs.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.csproj.CopyComplete
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.BusinessLayer\obj\Debug\CP.BusinessLayer.pdb

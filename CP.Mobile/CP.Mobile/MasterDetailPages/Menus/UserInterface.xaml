@@ -72,9 +72,39 @@
             BackgroundColor="LightGray" 
             HorizontalOptions="FillAndExpand" />
 
-            <StackLayout Orientation="Horizontal" x:Name="StlCartHistory" HeightRequest="150" x:Uid="StlCartHistory">
-                <Image Margin="5,5,0,0" HorizontalOptions="Center" VerticalOptions="Start" Source="cart.png" WidthRequest="24"/>
-                <Label Text="Sepet Geçmişi" TextColor="Black" FontSize="20" Margin="5,5,0,0"/>
+            <StackLayout Orientation="Vertical" x:Name="StlCartHistory" HeightRequest="300" x:Uid="StlCartHistory">
+                <StackLayout Orientation="Horizontal">
+                    <Image Margin="5,5,0,0"  HorizontalOptions="Center" VerticalOptions="Start" Source="cart.png" WidthRequest="24"/>
+                    <Label Text="Sepet Geçmişi" TextColor="Black" FontSize="20" Margin="5,5,0,0"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                <ScrollView>
+                    <ListView x:Name="CartHistory" RowHeight="90" SeparatorVisibility="Default" SeparatorColor="Gray" BackgroundColor="Transparent">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid HeightRequest="80"
+                                      WidthRequest="300"
+                                      BackgroundColor="Transparent">
+                                        <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                                            <StackLayout WidthRequest="180"  Orientation="Horizontal"  HorizontalOptions="StartAndExpand">
+                                                <Image Source="{Binding productDTO.Image}" Margin="5" WidthRequest="65" HeightRequest="65"  />
+                                                <Label Text="{Binding productDTO.Name}" Margin="2,0,0,0" VerticalOptions="Center" FontSize="Medium"  TextColor="Black" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Vertical"  HorizontalOptions="CenterAndExpand">
+                                                <Label TextColor="Black" HorizontalOptions="Center" FontSize="15" Text="{Binding Count,StringFormat='Adet : {0:N}'}"/>
+                                                <Label TextColor="Black" HorizontalOptions="Center" FontSize="15"  Text="{Binding Price,StringFormat='Fiyat : {0:N}'}"/>
+                                                <Label TextColor="Black" FontSize="15" HorizontalOptions="Center"  Text="{Binding Time,StringFormat='Zaman : {0:N}'}"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </ScrollView>
+                </StackLayout>
             </StackLayout>
 
             <BoxView 
@@ -82,9 +112,37 @@
             BackgroundColor="LightGray" 
             HorizontalOptions="FillAndExpand" />
 
-            <StackLayout Orientation="Horizontal" x:Name="StlMusicHistory" HeightRequest="150" x:Uid="StlMusicHistory">
+            <StackLayout Orientation="Vertical" x:Name="StlMusicHistory" HeightRequest="150" x:Uid="StlMusicHistory">
+
+                <StackLayout Orientation="Horizontal">
+                
                 <Image Margin="5,5,0,0" HorizontalOptions="Center" VerticalOptions="Start" Source="MusicList.png" WidthRequest="24"/>
                 <Label Text="Müzik Geçmişi" TextColor="Black" FontSize="20" Margin="5,5,0,0"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <ScrollView>
+                    <ListView x:Name="MusicHistory" RowHeight="90" SeparatorVisibility="Default" SeparatorColor="Gray" BackgroundColor="Transparent">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid HeightRequest="80"
+                                      WidthRequest="300"
+                                      BackgroundColor="Transparent">
+                                        <StackLayout Orientation="Horizontal" Margin="2,5,0,0">
+                                            <StackLayout Orientation="Horizontal"  Spacing="10" HorizontalOptions="StartAndExpand">
+                                                    <Label Text="{Binding MusicName,StringFormat='Müzik Adı : {0:N}'}}" Margin="2,0,0,0"  FontSize="Medium"  TextColor="Black" />
+                                                    <Label Text="{Binding ArtistName,StringFormat='Sanatçı : {0:N}'}}" Margin="2,0,0,0"  FontSize="Medium"  TextColor="Black" />
+                                            </StackLayout>
+                                     </StackLayout>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </ScrollView>
+                </StackLayout>
+
             </StackLayout>
 
         </StackLayout>

@@ -30,11 +30,11 @@ namespace CP.BusinessLayer.Operations
         }
         public static List<MusicList> GetMusicLists()
         {
-            return _data.MusicListRepository.GetAll(x => x.User, y => y.IsComplete == false && y.ConfirmId == 2 && y.IsComplete == false && y.IsDeleted == false);
+            return _data.MusicListRepository.GetAll(x => x.User, y=>y.ConfirmId == 2 && y.IsDeleted == false);
         }
         public static List<MusicList> GetMusicLists(int UserId)
         {
-            return _data.MusicListRepository.GetAll(x => x.User, y => y.UserId == UserId && y.IsComplete == false && y.ConfirmId == 2 && y.IsDeleted == false);
+            return _data.MusicListRepository.GetAll(x => x.User, y => y.UserId == UserId &&  y.ConfirmId == 2 && y.IsDeleted == false);
         }
         public static void RemoveAll(int UserId)
         {
@@ -43,7 +43,7 @@ namespace CP.BusinessLayer.Operations
             {
                 _data.MusicListRepository.Remove(list.Id);
             }
-             _data.Complete();
+            _data.Complete();
         }
         public static void ConfirmAll(int UserId)
         {
@@ -54,7 +54,11 @@ namespace CP.BusinessLayer.Operations
                 item.ConfirmId = 3;
                 MusicUpdate(item);
             }
-             _data.Complete();
+            _data.Complete();
+        }
+        public static List<MusicList> GetHistoryList(int UserId)
+        {
+            return _data.MusicListRepository.GetAll(null, x => x.UserId == UserId && x.ConfirmId == 4);
         }
     }
 }

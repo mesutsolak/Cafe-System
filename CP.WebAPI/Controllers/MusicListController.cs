@@ -175,5 +175,22 @@ namespace CP.WebAPI.Controllers
             return httpResponseMessage;
         }
 
+        [HttpGet]
+        [Route("History/{UserId:int}")]
+        public List<MusicListDTO> GetHistory(int UserId)
+        {
+            _musicList.Clear();
+
+            foreach (var musiclist in MusicListOperation.GetHistoryList(UserId))
+            {
+                var _user = mapper.Map<M.User, S.User>(musiclist.User);
+                var _musicListDTO = mapper.Map<MusicList, S.MusicListDTO>(musiclist);
+
+                _musicList.Add(_musicListDTO);
+            }
+
+            return _musicList;
+        } 
+
     }
 }

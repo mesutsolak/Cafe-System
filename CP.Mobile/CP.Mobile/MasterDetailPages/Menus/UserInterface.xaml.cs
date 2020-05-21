@@ -17,6 +17,9 @@ namespace CP.Mobile.MasterDetailPages.Menus
     public partial class UserInterface : ContentPage
     {
         UserService us = new UserService();
+        CartService cs = new CartService();
+        MusicListService ms = new MusicListService();
+
         User user;
 
         public UserInterface()
@@ -24,6 +27,9 @@ namespace CP.Mobile.MasterDetailPages.Menus
             InitializeComponent();
 
             UserList();
+
+            HistoryCartList();
+            HistoryMusicList();
 
             Navigation.PopPopupAsync(true);
         }
@@ -52,6 +58,17 @@ namespace CP.Mobile.MasterDetailPages.Menus
         public int UserId()
         {
             return Preferences.Get("UserId", 0);
+        }
+
+        public void HistoryMusicList()
+        {
+            ms.Url = "api/MusicList/History/";
+            MusicHistory.ItemsSource = ms.GetAllFilter(UserId());
+        }
+        public void HistoryCartList()
+        {
+            cs.Url = "api/Cart/History/";
+            CartHistory.ItemsSource = cs.GetAllFilter(UserId());
         }
     }
 }

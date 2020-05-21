@@ -103,5 +103,10 @@ namespace CP.BusinessLayer.Operations
             return _data.Complete();
         }
 
+        public static List<Cart> GetHistoryCarts(int UserId)
+        {
+          return  _data.CartRepository.GetAll(x => x.Product, y => y.ConfirmId == 4 && y.UserId == UserId);
+        }
+
     }
 }

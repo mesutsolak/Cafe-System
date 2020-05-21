@@ -222,7 +222,7 @@ namespace CP.WebAPI.Controllers
         {
             int _result = CartOperation.ConfirmAll(UserId);
 
-            if (_result>0)
+            if (_result > 0)
             {
                 httpResponseMessage.StatusCode = HttpStatusCode.OK;
                 httpResponseMessage.Headers.Add("Message", "Başarıyla Onaylandı");
@@ -253,6 +253,28 @@ namespace CP.WebAPI.Controllers
                 httpResponseMessage.Headers.Add("Message", "Silme İşlemi Başarısız");
             }
             return httpResponseMessage;
+        }
+
+        [HttpGet]
+        [Route("History/{UserId:int}")]
+        public List<CartDTO> GetHistories(int UserId)
+        {
+            ct.Clear();
+
+            var _carts = CartOperation.GetHistoryCarts(UserId);
+
+
+
+            foreach (var item in _carts)
+            {
+                var _product = mapper.Map<Product, ProductDTO>(item.Product);
+                var _cart = mapper.Map<Cart, CartDTO>(item);
+                _cart.productDTO = _product;
+
+                ct.Add(_cart);
+            }
+
+            return ct;
         }
 
 

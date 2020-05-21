@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CP.BusinessLayer.Operations;
 using M = CP.Entities.Model;
+using C = CP.ServiceLayer.DTO;
 using CP.ServiceLayer.DTO;
 using System;
 using System.Collections.Generic;
@@ -112,6 +113,45 @@ namespace CP.WebAPI.Controllers
 
             return httpResponseMessage;
         }
+
+        [HttpGet]
+        [Route("Choose")]
+        public List<ProductDTO> ProductChoose()
+        {
+            ProductDTOs.Clear();
+
+            var _products = ProductOperation.GetChooses();
+            foreach (var _product in _products)
+            {
+                var _categoryDTO = mapper.Map<M.Category, C.Category>(_product.Category);
+                var _productDTO = mapper.Map<M.Product, C.ProductDTO>(_product);
+                _productDTO.Category = _categoryDTO;
+
+                ProductDTOs.Add(_productDTO);
+            }
+
+            return ProductDTOs;
+        }
+
+        [HttpGet]
+        [Route("Prefences")]
+        public List<ProductDTO> ProductPrefences()
+        {
+            ProductDTOs.Clear();
+
+            var _products = ProductOperation.GetPreferences();
+            foreach (var _product in _products)
+            {
+                var _categoryDTO = mapper.Map<M.Category, C.Category>(_product.Category);
+                var _productDTO = mapper.Map<M.Product, C.ProductDTO>(_product);
+                _productDTO.Category = _categoryDTO;
+
+                ProductDTOs.Add(_productDTO);
+            }
+
+            return ProductDTOs;
+        }
+
 
     }
 }

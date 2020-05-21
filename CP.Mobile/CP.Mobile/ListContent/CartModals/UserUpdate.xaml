@@ -31,9 +31,9 @@
         <Frame BackgroundColor="#EEEEEE" CornerRadius="10">
             <StackLayout Orientation="Vertical">
                         <Image Source="User.png" x:Name="PictureShow" Margin="0,5" WidthRequest="100" HorizontalOptions="Center" />
-                <ScrollView>
+                <ScrollView WidthRequest="100">
 
-                    <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                    <StackLayout Orientation="Vertical"  HorizontalOptions="StartAndExpand">
 
                         <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
                             <Label Text="Kullanıcı Adı " FontSize="20" TextColor="Black"/>
