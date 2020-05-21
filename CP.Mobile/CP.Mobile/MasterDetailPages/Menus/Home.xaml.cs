@@ -19,6 +19,9 @@ namespace CP.Mobile.MasterDetailPages.Menus
         CartService cs = new CartService();
         SliderService _ss = new SliderService();
         HomePageService hps = new HomePageService();
+        ProductService ps = new ProductService();
+        List<ProductDTO> chooseDTO = new List<ProductDTO>();
+        List<ProductDTO> preferencesDTO = new List<ProductDTO>();
 
 
         private void CountFound()
@@ -50,6 +53,8 @@ namespace CP.Mobile.MasterDetailPages.Menus
                 CountFound();
                 Sliders();
                 OrderCount();
+                ProductPreferences();
+                ProductChoose();
 
             }
             catch (Exception ex)
@@ -100,5 +105,24 @@ namespace CP.Mobile.MasterDetailPages.Menus
             OrderCountLbl.Text = cs.CartCount(Preferences.Get("UserId", 0));
         }
 
+        public void ProductPreferences()
+        {
+            preferencesDTO.Clear();
+
+
+            ps.Url = "api/Product/Prefences";
+
+            preferencesDTO = ps.GetAll();
+            CVPreferred.ItemsSource = preferencesDTO;
+        }
+        public void ProductChoose()
+        {
+            chooseDTO.Clear();
+
+            ps.Url = "api/Product/Choose";
+
+            chooseDTO = ps.GetAll();
+            CVChoose.ItemsSource = chooseDTO;
+        }
     }
 }

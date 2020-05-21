@@ -51,15 +51,15 @@
                     <Label FontSize="17" Text="{Binding Description2}"/>
                 </StackLayout>
                 <StackLayout Margin="10,0,0,0" x:Name="FooterStackLayout" x:Uid="FooterStackLayout">
-                    <Label Text="Kampanyalar" FontSize="25" FontAttributes="Bold"/>
-                    <StackLayout x:Name="CampaignStackLayout" HeightRequest="150" x:Uid="CampaignStackLayout">
+                    <Label TextColor="Black" Text="Kampanyalar" FontSize="25" FontAttributes="Bold"/>
+                    <StackLayout  x:Name="CampaignStackLayout" HeightRequest="150" x:Uid="CampaignStackLayout">
                         <CarouselView x:Name="CVCampaign"  IndicatorView="CampaignIndicator"  PeekAreaInsets="20">
                             <CarouselView.ItemsLayout>
                                 <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
                             </CarouselView.ItemsLayout>
                             <CarouselView.ItemTemplate>
                                 <DataTemplate>
-                                    <Frame CornerRadius="15" Margin="0" HeightRequest="50" BackgroundColor="{Binding Color}">
+                                    <Frame CornerRadius="15" Margin="0" HeightRequest="150" BackgroundColor="{Binding Color}">
                                         <StackLayout>
                                             <Image Source="{Binding ImageUrl}" WidthRequest="35" HeightRequest="40" Aspect="AspectFill"/>
                                             <Label Text="{Binding Title}" FontSize="Title" HorizontalTextAlignment="Center"/>
@@ -71,42 +71,92 @@
                         </CarouselView>
                         <IndicatorView x:Name="CampaignIndicator"  IndicatorColor="LightGray" SelectedIndicatorColor="Black" />
                     </StackLayout>
-                    <Label Text="En çok tercih edilenler" FontSize="25" FontAttributes="Bold"/>
-                    <StackLayout x:Name="PreferredStackLayout" HeightRequest="150" x:Uid="PreferredStackLayout">
-                        <CarouselView x:Name="CVPreferred"  IndicatorView="PreferredIndicator"  PeekAreaInsets="20">
+                    <Label TextColor="Black" Text="En çok tercih edilenler" Margin="0,5,0,0"  FontSize="25" FontAttributes="Bold"/>
+                    <StackLayout x:Name="PreferredStackLayout" Margin="0,0,0,10" HeightRequest="375" x:Uid="PreferredStackLayout">
+                        <CarouselView x:Name="CVPreferred"  IndicatorView="PreferredIndicator"  PeekAreaInsets="10">
                             <CarouselView.ItemsLayout>
                                 <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
                             </CarouselView.ItemsLayout>
                             <CarouselView.ItemTemplate>
                                 <DataTemplate>
-                                    <Frame CornerRadius="15" Margin="0" HeightRequest="100" BackgroundColor="{Binding Color}">
+                                    <Frame HeightRequest="150" CornerRadius="20" BackgroundColor="#fdcb9e"  
+                Margin="5">
                                         <StackLayout>
-                                            <Image Source="{Binding ImageUrl}" WidthRequest="70" HeightRequest="80" Aspect="AspectFill"/>
-                                            <Label Text="{Binding Title}" FontSize="Title" HorizontalTextAlignment="Center"/>
-                                            <Label Text="{Binding Cast}" FontSize="Title" HorizontalTextAlignment="Center"/>
+                                            <Image Source="{Binding Image}" WidthRequest="200" Margin="0,8,0,0">
+
+                                            </Image>
+                                            <Label HorizontalOptions="Fill"   
+                                    FontSize="20"
+                                    VerticalOptions="Fill"   
+                    TextColor="Black"  
+                    XAlign="Center"  
+                    YAlign="Center"   
+                    Text="{Binding Name}" Margin="0,8"/>
+
+                                            <Label HorizontalOptions="Fill"  
+                                  FontSize="18"
+                    VerticalOptions="Fill"   
+                    TextColor="Black"  
+                    XAlign="Center"  
+                    YAlign="Center"   
+                    Text="{Binding Category.Name}" />
+
+
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="15" Margin="8">
+                                                <Image Source="money.png" Margin="0,4,0,0" WidthRequest="20"/>
+                                                <Label Text="{Binding Price,StringFormat='{0:N} TL'} " FontSize="16" TextColor="Black"/>
+                                                <!--<ImageButton x:Name="btnCart" BackgroundColor="Transparent" x:Uid="btnId" Clicked="btnCart_Clicked"  Source="cart.png" WidthRequest="20" CommandParameter="{Binding Id}"/>-->
+                                            </StackLayout>
+
                                         </StackLayout>
+
                                     </Frame>
                                 </DataTemplate>
                             </CarouselView.ItemTemplate>
                         </CarouselView>
                         <IndicatorView x:Name="PreferredIndicator"  IndicatorColor="LightGray" SelectedIndicatorColor="Black" />
                     </StackLayout>
-                    <Label Text="Kafemizin Seçtikleri" FontSize="25" FontAttributes="Bold"/>
-                    <StackLayout x:Name="ChooseStackLayout" HeightRequest="150" x:Uid="ChooseStackLayout">
+                    <Label TextColor="Black" Text="Kafemizin Seçtikleri" Margin="0,5,0,0" FontSize="25" FontAttributes="Bold"/>
+                    <StackLayout Margin="0,0,0,20" x:Name="ChooseStackLayout" HeightRequest="375" x:Uid="ChooseStackLayout">
                         <CarouselView x:Name="CVChoose"  IndicatorView="ChooseIndicator"  PeekAreaInsets="20">
                             <CarouselView.ItemsLayout>
                                 <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
                             </CarouselView.ItemsLayout>
                             <CarouselView.ItemTemplate>
                                 <DataTemplate>
-                                    <Frame CornerRadius="15" Margin="0" HeightRequest="100" BackgroundColor="{Binding Color}">
+                                    <Frame HeightRequest="150" CornerRadius="20" BackgroundColor="#cceabb"  
+                Margin="5">
                                         <StackLayout>
-                                            <Image Source="{Binding ImageUrl}" WidthRequest="70" HeightRequest="80" Aspect="AspectFill"/>
-                                            <Label Text="{Binding Title}" FontSize="Title" HorizontalTextAlignment="Center"/>
-                                            <Label Text="{Binding Cast}" FontSize="Title" HorizontalTextAlignment="Center"/>
+                                            <Image  Source="{Binding Image}" WidthRequest="200" Margin="0,8,0,0">
+
+                                            </Image>
+                                            <Label HorizontalOptions="Fill"   
+                                    FontSize="20"
+                                    VerticalOptions="Fill"   
+                    TextColor="Black"  
+                    XAlign="Center"  
+                    YAlign="Center"   
+                    Text="{Binding Name}" Margin="0,8"/>
+
+                                            <Label HorizontalOptions="Fill"  
+                                  FontSize="18"
+                    VerticalOptions="Fill"   
+                    TextColor="Black"  
+                    XAlign="Center"  
+                    YAlign="Center"   
+                    Text="{Binding Category.Name}" />
+
+
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="15" Margin="8">
+                                                <Image Source="money.png" Margin="0,4,0,0" WidthRequest="20"/>
+                                                <Label Text="{Binding Price,StringFormat='{0:N} TL'} " FontSize="16" TextColor="Black"/>
+                                                <!--<ImageButton x:Name="btnCart" BackgroundColor="Transparent" x:Uid="btnId" Clicked="btnCart_Clicked"  Source="cart.png" WidthRequest="20" CommandParameter="{Binding Id}"/>-->
+                                            </StackLayout>
+
                                         </StackLayout>
+
                                     </Frame>
-                                </DataTemplate>
+                                    </DataTemplate>
                             </CarouselView.ItemTemplate>
                         </CarouselView>
                         <IndicatorView x:Name="ChooseIndicator"  IndicatorColor="LightGray" SelectedIndicatorColor="Black" />

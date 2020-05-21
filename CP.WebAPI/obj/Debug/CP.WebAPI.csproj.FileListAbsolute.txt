@@ -1,5 +1,3 @@
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\obj\Debug\CP.WebAPI.csprojAssemblyReference.cache
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\obj\Debug\CP.WebAPI.csproj.CoreCompileInputs.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\CP.WebAPI.dll.config
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\CP.WebAPI.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\CP.WebAPI.pdb
@@ -103,6 +101,8 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Net.Http.Forma
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.Http.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\System.Web.Http.WebHost.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\obj\Debug\CP.WebAPI.csprojAssemblyReference.cache
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\obj\Debug\CP.WebAPI.csproj.CoreCompileInputs.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\obj\Debug\CP.WebAPI.csproj.CopyComplete
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\obj\Debug\CP.WebAPI.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebAPI\obj\Debug\CP.WebAPI.pdb
