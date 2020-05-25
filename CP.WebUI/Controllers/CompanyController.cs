@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CP.BusinessLayer.Operations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,16 @@ namespace CP.WebUI.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+        [Route("Slider")]
+        public ActionResult Slider()
+        {
+            return View();
+        }
+        [Route("SliderList")]
+        public PartialViewResult SliderList()
+        {
+            return PartialView(SliderOperations.GetSliders());
         }
     }
 }

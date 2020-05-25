@@ -55,11 +55,11 @@
                         @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger error-validate" })
                     </div>
                     <div class="form-group">
-                        @Html.LabelFor(model => model.Image)
+                        @Html.LabelFor(model => model.ProfilPhoto)
                         <div class="custom-file">
-                            @Html.TextBoxFor(model => model.Images, "", new { @type = "file", @class = "custom-file-input" })
-                            @Html.LabelFor(model => model.Image, "Resim Seçiniz", new { @class = "custom-file-label", @data_browse = "Seçiniz" })
-                            @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger error-validate" })
+                            @Html.TextBoxFor(model => model.ProfilPhoto, "", new { @type = "file", @class = "custom-file-input" })
+                            @Html.LabelFor(model => model.ProfilPhoto, "Resim Seçiniz", new { @class = "custom-file-label", @data_browse = "Seçiniz" })
+                            @Html.ValidationMessageFor(model => model.ProfilPhoto, "", new { @class = "text-danger error-validate" })
                         </div>
                     </div>
                 }

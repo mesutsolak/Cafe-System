@@ -12,7 +12,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>@ViewBag.Title</title>
-
+    <link href="~/Content/css/boostrap.css" rel="stylesheet" />
     <link href="~/Content/template/css/styles.css" rel="stylesheet" />
     <link href="~/Content/css/main.css" rel="stylesheet" />
 
@@ -47,7 +47,7 @@
         </form>
 
         <label class="text-white mt-2 mr-2">Hoşgeldiniz @Session["FirstAndLast"]</label>
-        
+
         <!-- Navbar-->
         <ul class="navbar-nav ml-auto ml-md-0">
             <li class="nav-item dropdown">
@@ -85,10 +85,21 @@
                             Kullanıcılar
                         </a>
 
-                        <a class="nav-link" href="~/FirmaBilgileri">
+
+
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-building mr-1"></i></div>
-                            Firma Bilgileri
+                            Firma 
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="/Slider">Slider</a>
+                                <a class="nav-link" href="/Bilgiler">Bilgiler</a>
+                                <a class="nav-link" href="/İletişim">İletişim</a>
+                            </nav>
+                        </div>
+
 
                         @{
                             if (Roles.IsUserInRole(HttpContext.Current.User.Identity.Name, "Admin") && User.IsInRole("Customer"))
@@ -128,12 +139,12 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2019</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
+                        @*<div class="text-muted">Copyright &copy; Your Website 2019</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>*@
                     </div>
                 </div>
             </footer>

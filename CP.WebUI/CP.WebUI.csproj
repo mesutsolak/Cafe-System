@@ -253,6 +253,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\boostrap.css" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\framework\ckeditor\adapters\jquery.js" />
     <Content Include="Content\framework\ckeditor\build-config.js" />
@@ -528,6 +529,8 @@
     <Content Include="Views\Category\CategoryList.cshtml" />
     <Content Include="Views\User\UserUpdate.cshtml" />
     <Content Include="Views\Company\Index.cshtml" />
+    <Content Include="Views\Company\Slider.cshtml" />
+    <Content Include="Views\Company\SliderList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

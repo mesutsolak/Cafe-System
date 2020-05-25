@@ -1,5 +1,5 @@
 ﻿using CP.BusinessLayer.Operations;
-using C=CP.Entities.Model;
+using C = CP.Entities.Model;
 using CP.ServiceLayer.DTO;
 using CP.WebUI.Models;
 using CP.WebUI.Models.Exceptions;
@@ -42,7 +42,7 @@ namespace CP.WebUI.Controllers
         [Route("KullanıcıListele")]
         public PartialViewResult UserList()
         {
-            return PartialView(UserOperations.GetUsers(x=>x.IsDeleted==false));
+            return PartialView(UserOperations.GetUsers(x => x.IsDeleted == false));
         }
 
         [Route("UserUpdate")]
@@ -80,7 +80,7 @@ namespace CP.WebUI.Controllers
                 {
                     jsonResultModel.Icon = "error";
                     jsonResultModel.Description = "Kullanıcı adı alınmış";
-                    return Json(jsonResultModel,JsonRequestBehavior.AllowGet);
+                    return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
                 }
 
                 if (await UserOperations.EmailControl(user.Email))
@@ -217,7 +217,7 @@ namespace CP.WebUI.Controllers
             }
             return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
         }
-        
+
 
         [HttpPost]
         [AllowAnonymous]
@@ -227,7 +227,7 @@ namespace CP.WebUI.Controllers
 
             if (ModelState.IsValid)
             {
-                var _result = UserOperations.Login(loginControl).Result;
+                var _result = Task.Run(() => UserOperations.Login(loginControl)).Result;
 
                 if (_result.StartsWith("Başarıyla"))
                 {
@@ -240,14 +240,14 @@ namespace CP.WebUI.Controllers
                 else
                     jsonResultModel.Icon = "error";
 
-                jsonResultModel.Description = _result ??"Bir hata meydana geldi";
+                jsonResultModel.Description = _result.Split(',')[0] ?? "Bir hata meydana geldi";
             }
             else
             {
                 jsonResultModel.Description = "Lütfen formu eksiksiz doğrulayın";
                 jsonResultModel.Icon = "error";
             }
-            return Json(jsonResultModel,JsonRequestBehavior.AllowGet);
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
