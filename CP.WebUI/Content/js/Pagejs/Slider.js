@@ -24,3 +24,13 @@ $(document).on("click", ".SliderDelete", function () {
 
     RemoveBasicOperations(RemoveItems);
 });
+
+$(document).on("click", ".SliderUpdate", function () {
+    //slider - update
+    var _id = $(this).data("id");
+
+    $.post("/SliderUpdate", { id: _id }, function (result) {
+        $(".slider-update").html(result);
+        ModalShow('SliderUpdateModal');
+    });
+});

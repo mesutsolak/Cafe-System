@@ -13,10 +13,6 @@ $(document).on("change", "input[type='file']",function (e) {
     $(this).next('.custom-file-label').html(fileName);
 });
 
-$("")
-
-
-
 
 $(document).on("click", ".CategoryDelete", function () {
     var _checked = $(this).parent().parent().children().find(".check").is(":checked");
