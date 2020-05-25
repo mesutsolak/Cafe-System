@@ -433,6 +433,7 @@
     <Content Include="Content\js\jquery.js" />
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\Pagejs\category.js" />
+    <Content Include="Content\js\Pagejs\company.js" />
     <Content Include="Content\js\Pagejs\information.js" />
     <Content Include="Content\js\Pagejs\LogOn.js" />
     <Content Include="Content\js\Pagejs\Meal.js" />
@@ -538,6 +539,7 @@
     <Content Include="Views\Company\Informations.cshtml" />
     <Content Include="Views\Company\InformationList.cshtml" />
     <Content Include="Views\Company\InformationAdd.cshtml" />
+    <Content Include="Views\Company\InformationUpdate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

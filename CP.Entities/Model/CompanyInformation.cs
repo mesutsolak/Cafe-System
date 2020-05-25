@@ -10,16 +10,19 @@ namespace CP.Entities.Model
     public partial class CompanyInformation
     {
         public int Id { get; set; }
-
         [Column(TypeName = "text")]
+        [Display(Name ="Açýklama 1")]
         public string Description1 { get; set; }
         [Column(TypeName = "text")]
+        [Display(Name = "Açýklama 2")]
         public string Description2 { get; set; }
 
         [StringLength(150)]
+        [Display(Name = "Baþlýk 1")]
         public string Header1 { get; set; }
 
         [StringLength(150)]
+        [Display(Name = "Baþlýk 2")]
         public string Header2 { get; set; }
     }
 }

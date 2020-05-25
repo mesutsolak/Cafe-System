@@ -17,8 +17,8 @@ $(document).on("click", ".SliderDelete", function () {
     var RemoveItems = {
         id: _id,
         name: _fullname,
-        url: "/SliderRemove",
-        fullname: _fullname + " isimli slider",
+        url: "/InformationRemove",
+        fullname: _fullname + " isimli bilgi",
         Method: SliderList
     };
 

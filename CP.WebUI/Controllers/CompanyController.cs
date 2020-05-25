@@ -160,6 +160,13 @@ namespace CP.WebUI.Controllers
         {
             return PartialView(new CompanyInformation());
         }
+        [Route("BilgiGüncelle")]
+        public PartialViewResult InformationUpdate(int id)
+        {
+            var _information = CompanyOperation.GetCompanyInformation();
+            return PartialView(_information);
+        }
+
         public JsonResult InformationAddOperation(CompanyInformation companyInformation)
         {
             jsonResultModel.Title = "Ekleme İşlemi";
@@ -186,7 +193,7 @@ namespace CP.WebUI.Controllers
         {
             jsonResultModel.Title = "Silme İşlemi";
 
-            
+
             int result = CompanyOperation.CompanyInfoRemove(id);
 
             if (result > 0)
@@ -202,6 +209,28 @@ namespace CP.WebUI.Controllers
 
             return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
 
+        }
+
+        public JsonResult InformationUpdateOperation(CompanyInformation companyInformation)
+        {
+            jsonResultModel.Title = "Güncelleme İşlemi";
+
+            int result = CompanyOperation.CompanyInfoUpdate(companyInformation);
+
+            if (result > 0)
+            {
+                jsonResultModel.Icon = "success";
+                jsonResultModel.Modal = "InformationUpdateModal";
+                jsonResultModel.Description = "Bilgi Başarıyla Güncellendi";
+            }
+            else
+            {
+                jsonResultModel.Icon = "error";
+                jsonResultModel.Description = "Bilgi Güncelleme Başarısız";
+            }
+
+
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
         }
 
     }
