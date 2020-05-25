@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Bilgiler";
+}
+
+
+<div class="d-flex mb-2 mt-3">
+    <div class="p-2 bd-highlight">
+        <h2>Bilgiler</h2>
+    </div>
+    <div class="ml-auto p-2 mt-2">
+        <button class="btn btn-primary" id="btnInformationAdd">
+            <i class="fas fa-plus"></i> Bilgi Ekle
+        </button>
+    </div>
+</div>
+
+
+<div class="information-list">
+    @Html.Action("InformationList", "Company")
+</div>
+
+<div class="information-add">
+    @*@Html.Action("SliderAdd", "Company")*@
+</div>
+
+<div class="information-update">
+
+</div>
+
+
+@section js {
+    <script src="~/Content/js/Pagejs/information.js"></script>
+}
+

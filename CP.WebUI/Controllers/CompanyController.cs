@@ -145,6 +145,16 @@ namespace CP.WebUI.Controllers
 
             return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
         }
+        [Route("Bilgiler")]
+        public ActionResult Informations()
+        {
+            return View();
+        }
+        [Route("BilgiList")]
+        public PartialViewResult InformationList()
+        {
+            return PartialView(CompanyOperation.GetCompanyInformation());
+        }
 
     }
 }

@@ -433,6 +433,7 @@
     <Content Include="Content\js\jquery.js" />
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\Pagejs\category.js" />
+    <Content Include="Content\js\Pagejs\information.js" />
     <Content Include="Content\js\Pagejs\LogOn.js" />
     <Content Include="Content\js\Pagejs\Meal.js" />
     <Content Include="Content\js\Pagejs\Role.js" />
@@ -534,6 +535,8 @@
     <Content Include="Views\Company\SliderList.cshtml" />
     <Content Include="Views\Company\SliderAdd.cshtml" />
     <Content Include="Views\Company\SliderUpdate.cshtml" />
+    <Content Include="Views\Company\Informations.cshtml" />
+    <Content Include="Views\Company\InformationList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
