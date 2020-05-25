@@ -1,7 +1,9 @@
-# Kafe Sistemi
+# Cafe System
 
-## Proje Konusu
+## Project Subject
 
-Cafe sistemi müþterilerin uzaktan yemek sipariþ edeceði ve müzik isteðinde bulunacaðý mobil bir uygulamadýr.
+Cafe system is a mobile application where customers will order food from a distance and request music.
+
+
 
 
