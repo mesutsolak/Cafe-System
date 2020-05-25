@@ -8,4 +8,19 @@ $("#btnSliderAdd").on("click", function () {
     $("#SliderAddModal").modal("show");
 });
 
-//SliderAddModal
+$(document).on("click", ".SliderDelete", function () {
+
+    var _id = $(this).data("id");
+
+    var _fullname = $(this).parent().parent().children(":nth-child(2)").html().trim();
+
+    var RemoveItems = {
+        id: _id,
+        name: _fullname,
+        url: "/SliderRemove",
+        fullname: _fullname + " isimli slider",
+        Method: SliderList
+    };
+
+    RemoveBasicOperations(RemoveItems);
+});

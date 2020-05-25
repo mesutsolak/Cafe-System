@@ -52,5 +52,26 @@ namespace CP.WebUI.Controllers
 
             return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
         }
+        [Route("SliderRemove")]
+        public JsonResult SliderRemoveOperation(int id)
+        {
+            jsonResultModel.Title = "Silme İşlemi";
+
+            int result = SliderOperations.SliderRemove(id);
+
+            if (result > 0)
+            {
+                jsonResultModel.Description = "Başarıyla Silindi";
+                jsonResultModel.Icon = "success";
+            }
+            else
+            {
+                jsonResultModel.Description = "Slider Silme Başarısız";
+                jsonResultModel.Icon = "error";
+            }
+
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
+
+        }
     }
 }
