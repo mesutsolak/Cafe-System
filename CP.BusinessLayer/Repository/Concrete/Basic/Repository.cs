@@ -32,7 +32,7 @@ namespace CP.BusinessLayer.Repository.Concrete.Basic
             {
                 if (condition==null)
                 {
-                    return _dbset.ToList();
+                      return _dbset.ToList();
                 }
                 else  return _dbset.Where(condition).ToList();
                 

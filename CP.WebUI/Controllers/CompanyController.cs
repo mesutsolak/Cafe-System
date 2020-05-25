@@ -155,6 +155,54 @@ namespace CP.WebUI.Controllers
         {
             return PartialView(CompanyOperation.GetCompanyInformation());
         }
+        [Route("BilgiEkle")]
+        public PartialViewResult InformationAdd()
+        {
+            return PartialView(new CompanyInformation());
+        }
+        public JsonResult InformationAddOperation(CompanyInformation companyInformation)
+        {
+            jsonResultModel.Title = "Ekleme İşlemi";
+
+            int result = CompanyOperation.CompanyInfoAdd(companyInformation);
+
+            if (result > 0)
+            {
+                jsonResultModel.Icon = "success";
+                jsonResultModel.Modal = "InformationAddModal";
+                jsonResultModel.Description = "Bilgi Başarıyla Eklendi";
+            }
+            else
+            {
+                jsonResultModel.Icon = "error";
+                jsonResultModel.Description = "Bilgi Ekleme Başarısız";
+            }
+
+
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
+        }
+        [Route("InformationRemove")]
+        public JsonResult InformationRemoveOperation(int id)
+        {
+            jsonResultModel.Title = "Silme İşlemi";
+
+            
+            int result = CompanyOperation.CompanyInfoRemove(id);
+
+            if (result > 0)
+            {
+                jsonResultModel.Description = "Başarıyla Silindi";
+                jsonResultModel.Icon = "success";
+            }
+            else
+            {
+                jsonResultModel.Description = "Slider Silme Başarısız";
+                jsonResultModel.Icon = "error";
+            }
+
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
+
+        }
 
     }
 }

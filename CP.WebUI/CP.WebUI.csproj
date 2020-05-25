@@ -537,6 +537,7 @@
     <Content Include="Views\Company\SliderUpdate.cshtml" />
     <Content Include="Views\Company\Informations.cshtml" />
     <Content Include="Views\Company\InformationList.cshtml" />
+    <Content Include="Views\Company\InformationAdd.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
