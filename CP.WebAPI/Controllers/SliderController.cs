@@ -13,7 +13,6 @@ namespace CP.WebAPI.Controllers
     [RoutePrefix("api/Slider")]
     public class SliderController : BaseApiController
     {
-        SliderOperations so = new SliderOperations();
 
         List<SliderDTO> sliderDTO = new List<SliderDTO>();
 
@@ -21,7 +20,7 @@ namespace CP.WebAPI.Controllers
         [Route("GetAll")]
         public List<SliderDTO> GetSliders()
         {
-            foreach (var slider in so.GetSliders())
+            foreach (var slider in SliderOperations.GetSliders())
             {
                 var _slider = mapper.Map<Slider, SliderDTO>(slider);
                 sliderDTO.Add(_slider);
