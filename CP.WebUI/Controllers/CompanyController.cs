@@ -320,5 +320,15 @@ namespace CP.WebUI.Controllers
 
             return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult GeneralInformation()
+        {
+            return View();
+        }
+        [Route("GenelBilgiler")]
+        public PartialViewResult GeneralList()
+        {
+            return PartialView();
+        }
     }
 }

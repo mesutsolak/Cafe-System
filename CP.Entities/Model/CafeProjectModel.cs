@@ -35,6 +35,7 @@ namespace CP.Entities.Model
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<HomePage> HomePage { get; set; }
         public virtual DbSet<UserRoles> UserRoles { get; set; }
+        public virtual DbSet<General> General { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

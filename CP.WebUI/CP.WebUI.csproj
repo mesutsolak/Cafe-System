@@ -545,6 +545,8 @@
     <Content Include="Views\Company\ContactAdd.cshtml" />
     <Content Include="Views\Company\ContactList.cshtml" />
     <Content Include="Views\Company\ContactUpdate.cshtml" />
+    <Content Include="Views\Company\GeneralInformation.cshtml" />
+    <Content Include="Views\Company\GeneralList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

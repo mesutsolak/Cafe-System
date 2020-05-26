@@ -76,17 +76,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomValidator\IsUniqueProductName.cs" />
-    <Compile Include="Migrations\202005131709239_InitialCreate.cs" />
-    <Compile Include="Migrations\202005131709239_InitialCreate.designer.cs">
-      <DependentUpon>202005131709239_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005141103271_CampaignAdd.cs" />
-    <Compile Include="Migrations\202005141103271_CampaignAdd.designer.cs">
-      <DependentUpon>202005141103271_CampaignAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005141454245_HomePage.cs" />
-    <Compile Include="Migrations\202005141454245_HomePage.designer.cs">
-      <DependentUpon>202005141454245_HomePage.cs</DependentUpon>
+    <Compile Include="Migrations\202005261221084_InitialCreate.cs" />
+    <Compile Include="Migrations\202005261221084_InitialCreate.designer.cs">
+      <DependentUpon>202005261221084_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\CafeProjectModel.cs" />
@@ -99,6 +91,7 @@
     <Compile Include="Model\ConfirmStatus.cs" />
     <Compile Include="Model\Contact.cs" />
     <Compile Include="Model\Gender.cs" />
+    <Compile Include="Model\General.cs" />
     <Compile Include="Model\Log.cs" />
     <Compile Include="Model\LogInfoes.cs" />
     <Compile Include="Model\LogStatus.cs" />
@@ -118,14 +111,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202005131709239_InitialCreate.resx">
-      <DependentUpon>202005131709239_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005141103271_CampaignAdd.resx">
-      <DependentUpon>202005141103271_CampaignAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005141454245_HomePage.resx">
-      <DependentUpon>202005141454245_HomePage.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005261221084_InitialCreate.resx">
+      <DependentUpon>202005261221084_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

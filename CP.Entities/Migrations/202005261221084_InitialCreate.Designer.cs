@@ -7,13 +7,13 @@ namespace CP.Entities.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class CampaignAdd : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CampaignAdd));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202005141103271_CampaignAdd"; }
+            get { return "202005261221084_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source
