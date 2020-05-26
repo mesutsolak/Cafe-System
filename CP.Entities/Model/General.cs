@@ -9,7 +9,8 @@ using System.Web;
 
 namespace CP.Entities.Model
 {
-    public class General
+    [Table("General")]
+    public partial class General
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -18,6 +19,8 @@ namespace CP.Entities.Model
         public string Image { get; set; }
         [StringLength(20)]
         public string Title { get; set; }
+
+
         [NotMapped]
         public HttpPostedFileBase Images { get; set; }
     }
