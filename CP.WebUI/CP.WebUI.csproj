@@ -255,6 +255,7 @@
   <ItemGroup>
     <Content Include="Content\css\boostrap.css" />
     <Content Include="Content\css\Chart.css" />
+    <Content Include="Content\css\home.css" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\framework\ckeditor\adapters\jquery.js" />
     <Content Include="Content\framework\ckeditor\build-config.js" />
@@ -477,7 +478,6 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
-    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
