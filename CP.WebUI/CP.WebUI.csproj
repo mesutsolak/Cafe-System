@@ -254,6 +254,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\boostrap.css" />
+    <Content Include="Content\css\Chart.css" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\framework\ckeditor\adapters\jquery.js" />
     <Content Include="Content\framework\ckeditor\build-config.js" />
@@ -429,6 +430,7 @@
     <Content Include="Content\image\no-image.png" />
     <Content Include="Content\js\all.min.js" />
     <Content Include="Content\js\boostrap.js" />
+    <Content Include="Content\js\Chart.js" />
     <Content Include="Content\js\jquery-cookie.js" />
     <Content Include="Content\js\jquery.js" />
     <Content Include="Content\js\main.js" />
@@ -436,6 +438,7 @@
     <Content Include="Content\js\Pagejs\company.js" />
     <Content Include="Content\js\Pagejs\Contact.js" />
     <Content Include="Content\js\Pagejs\General.js" />
+    <Content Include="Content\js\Pagejs\home.js" />
     <Content Include="Content\js\Pagejs\information.js" />
     <Content Include="Content\js\Pagejs\LogOn.js" />
     <Content Include="Content\js\Pagejs\Meal.js" />
@@ -509,7 +512,6 @@
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Products.cshtml" />
     <Content Include="Views\Home\ProductAdd.cshtml" />
     <Content Include="Views\User\Logon.cshtml" />
@@ -550,6 +552,7 @@
     <Content Include="Views\Company\GeneralList.cshtml" />
     <Content Include="Views\Company\GeneralAdd.cshtml" />
     <Content Include="Views\Company\GeneralUpdate.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
