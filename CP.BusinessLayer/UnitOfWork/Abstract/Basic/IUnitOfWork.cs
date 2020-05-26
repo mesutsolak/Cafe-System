@@ -24,6 +24,7 @@ namespace CP.BusinessLayer.UnitOfWork.Abstract.Basic
         ICampProductRepository CampProductRepository { get; }
         ICompanyRepository CompanyRepository { get; }
         IContactRepository ContactRepository { get; }
+        IGeneralRepository GeneralRepository { get; }
         int Complete();
         Task<int> CompleteAsync();
     }

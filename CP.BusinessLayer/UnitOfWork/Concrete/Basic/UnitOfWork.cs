@@ -43,6 +43,8 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
 
         public IContactRepository ContactRepository { get; private set; }
 
+        public IGeneralRepository GeneralRepository { get; private set; }
+
         private DbContext _context;
 
         public UnitOfWork(DbContext context)
@@ -63,19 +65,13 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
             CampProductRepository = new CampProductRepository(_context);
             CompanyRepository = new CompanyRepository(_context);
             ContactRepository = new ContactRepository(_context);
+            GeneralRepository = new GeneralRepository(_context);
         }
 
 
         public int Complete()
         {
-            try
-            {
-                return _context.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return _context.SaveChanges();
         }
 
         public void Dispose()

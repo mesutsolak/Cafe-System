@@ -61,6 +61,7 @@
     <Compile Include="Operations\CommentOperation.cs" />
     <Compile Include="Operations\CompanyOperation.cs" />
     <Compile Include="Operations\ContactOperation.cs" />
+    <Compile Include="Operations\GeneralOperation.cs" />
     <Compile Include="Operations\HomePageOperation.cs" />
     <Compile Include="Operations\LogOperation.cs" />
     <Compile Include="Operations\MusicListOperation.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Repository\Abstract\ICommentRepository.cs" />
     <Compile Include="Repository\Abstract\ICompanyRepository.cs" />
     <Compile Include="Repository\Abstract\IContactRepository.cs" />
+    <Compile Include="Repository\Abstract\IGeneralRepository.cs" />
     <Compile Include="Repository\Abstract\IHomePageRepository.cs" />
     <Compile Include="Repository\Abstract\IMusicListRepository.cs" />
     <Compile Include="Repository\Abstract\IRateRepository.cs" />
@@ -95,6 +97,7 @@
     <Compile Include="Repository\Concrete\CommentRepository.cs" />
     <Compile Include="Repository\Concrete\CompanyRepository.cs" />
     <Compile Include="Repository\Concrete\ContactRepository.cs" />
+    <Compile Include="Repository\Concrete\GeneralRepository.cs" />
     <Compile Include="Repository\Concrete\HomePageRepository.cs" />
     <Compile Include="Repository\Concrete\MusicListRepository.cs" />
     <Compile Include="Repository\Concrete\ProductRepository.cs" />
