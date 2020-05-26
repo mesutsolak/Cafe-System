@@ -1,0 +1,72 @@
+﻿@model  CP.Entities.Model.Contact
+
+
+
+<div class="table table-responsive tblContact">
+    <table class="table table-bordered display no-wrap" cellspacing="0" width="100%" id="tblContact">
+        <thead>
+            <tr>
+                <th name="first">
+                    <div class="custom-control Checkall  custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="CheckAll">
+                        <label class="custom-control-label" for="CheckAll"></label>
+                    </div>
+                </th>
+                <th>Açıklama</th>
+                <th>Konum</th>
+                <th>Telefon</th>
+                <th>Email</th>
+                <th>Fax</th>
+                <th>Adres</th>
+                <th>Twitter</th>
+                <th>Facebook</th>
+                <th>Instagram</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody id="TdContactList">
+            <tr>
+                <td>
+                    <div class="custom-control  custom-checkbox">
+                        <input type="checkbox" class="custom-control-input check" value="@Model.Id" id="Check-@Model.Id">
+                        <label class="custom-control-label" for="Check-@Model.Id"></label>
+                    </div>
+                </td>
+                <td>
+                    @Model.Description
+                </td>
+                <td>
+                    @Model.LocationGeneral
+                </td>
+                <td>
+                    @Model.Phone
+                </td>
+                <td>
+                    @Model.Email
+                </td>
+                <td>
+                    @Model.Fax
+                </td>
+                <td>
+                    @Model.Address
+                </td>
+                <td>
+                    @Model.Twitter
+                </td>
+                <td>
+                    @Model.Facebook
+                </td>
+                <td>
+                    @Model.Instagram
+                </td>
+                <td class="text-center">
+                    <i class="fas fa-pencil-alt pencil-edit btnContactUpdate mr-2" data-id="@Model.Id"></i>
+
+                    <i class="fa fa-trash trash-edit btnContactDelete" data-id="@Model.Id"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+

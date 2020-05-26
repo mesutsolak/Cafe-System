@@ -12,21 +12,27 @@ namespace CP.Entities.Model
         public int Id { get; set; }
 
         [StringLength(250)]
+        [Display(Name ="Açýklama")]
         public string Description { get; set; }
 
         [StringLength(100)]
+        [Display(Name = "Konum")]
         public string LocationGeneral { get; set; }
 
         [StringLength(11)]
+        [Display(Name = "Telefon")]
         public string Phone { get; set; }
 
         [StringLength(100)]
+        [Display(Name = "Email")]
         public string Email { get; set; }
 
         [StringLength(100)]
+        [Display(Name = "Fax")]
         public string Fax { get; set; }
 
         [StringLength(100)]
+        [Display(Name = "Adres")]
         public string Address { get; set; }
 
         [StringLength(100)]

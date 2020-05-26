@@ -229,9 +229,96 @@ namespace CP.WebUI.Controllers
                 jsonResultModel.Description = "Bilgi Güncelleme Başarısız";
             }
 
-
             return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
         }
 
+        [Route("İletişim")]
+        public ActionResult Contact()
+        {
+            return View();
+        }
+        [Route("İletişimListele")]
+        public PartialViewResult ContactList()
+        {
+            return PartialView(ContactOperation.GetContact());
+        }
+        [Route("ContactAdd")]
+        public PartialViewResult ContactAdd()
+        {
+            return PartialView(new Contact());
+        }
+        [Route("ContactUpdate")]
+        public PartialViewResult ContactUpdate()
+        {
+            return PartialView(ContactOperation.GetContact());
+        }
+        [Route("İletişimSil")]
+        public JsonResult ContactRemove(int id)
+        {
+
+            jsonResultModel.Title = "Silme İşlemi";
+
+
+            int result = ContactOperation.ContactRemove(id);
+
+            if (result > 0)
+            {
+                jsonResultModel.Description = "Başarıyla Silindi";
+                jsonResultModel.Icon = "success";
+            }
+            else
+            {
+                jsonResultModel.Description = "İletişim Silme Başarısız";
+                jsonResultModel.Icon = "error";
+            }
+
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
+        }
+        [Route("İletişimEkle")]
+        [HttpPost]
+        public JsonResult ContactAdd(Contact contact)
+        {
+            jsonResultModel.Title = "Ekleme İşlemi";
+
+            int result = ContactOperation.ContactAdd(contact);
+
+            if (result > 0)
+            {
+                jsonResultModel.Icon = "success";
+                jsonResultModel.Modal = "ContactAddModal";
+                jsonResultModel.Description = "İletişim Başarıyla Eklendi";
+            }
+            else
+            {
+                jsonResultModel.Icon = "error";
+                jsonResultModel.Description = "İletişim Ekleme Başarısız";
+            }
+
+
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
+        }
+        [Route("İletişimGüncelle")]
+        [HttpPost]
+        public JsonResult ContactUpdateOperation(Contact contact)
+        {
+            jsonResultModel.Title = "Güncelleme İşlemi";
+
+            int result = ContactOperation.ContactUpdate(contact);
+
+            if (result > 0)
+            {
+                jsonResultModel.Icon = "success";
+                jsonResultModel.Modal = "ContactUpdateModal";
+                jsonResultModel.Description = "İletişim Başarıyla Güncellendi";
+            }
+            else
+            {
+                jsonResultModel.Icon = "error";
+                jsonResultModel.Description = "İletişim Güncelleme Başarısız";
+            }
+
+
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
+        }
     }
 }

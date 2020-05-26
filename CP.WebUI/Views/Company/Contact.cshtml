@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "İletişim";
+}
+
+<div class="d-flex mb-2 mt-3">
+    <div class="p-2 bd-highlight">
+        <h2>İletişim</h2>
+    </div>
+    <div class="ml-auto p-2 mt-2">
+        <button class="btn btn-primary" id="btnContactAdd">
+            <i class="fas fa-plus"></i> İletişim Ekle
+        </button>
+    </div>
+</div>
+
+<div class="contact-list">
+    @Html.Action("ContactList", "Company")
+</div>
+
+<div class="contact-add">
+    @Html.Action("ContactAdd", "Company")
+</div>
+
+<div class="contact-update">
+
+</div>
+
+
+@section js {
+    <script src="~/Content/js/Pagejs/Contact.js"></script>
+}
