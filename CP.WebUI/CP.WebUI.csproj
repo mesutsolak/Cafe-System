@@ -435,6 +435,7 @@
     <Content Include="Content\js\Pagejs\category.js" />
     <Content Include="Content\js\Pagejs\company.js" />
     <Content Include="Content\js\Pagejs\Contact.js" />
+    <Content Include="Content\js\Pagejs\General.js" />
     <Content Include="Content\js\Pagejs\information.js" />
     <Content Include="Content\js\Pagejs\LogOn.js" />
     <Content Include="Content\js\Pagejs\Meal.js" />
@@ -547,6 +548,8 @@
     <Content Include="Views\Company\ContactUpdate.cshtml" />
     <Content Include="Views\Company\GeneralInformation.cshtml" />
     <Content Include="Views\Company\GeneralList.cshtml" />
+    <Content Include="Views\Company\GeneralAdd.cshtml" />
+    <Content Include="Views\Company\GeneralUpdate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

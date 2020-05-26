@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace CP.Entities.Model
 {
@@ -14,8 +15,10 @@ namespace CP.Entities.Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [StringLength(500)]
-        public string Picture { get; set; }
+        public string Image { get; set; }
         [StringLength(20)]
         public string Title { get; set; }
+        [NotMapped]
+        public HttpPostedFileBase Images { get; set; }
     }
 }

@@ -321,14 +321,130 @@ namespace CP.WebUI.Controllers
             return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
         }
 
+        [Route("GenelBilgiler")]
         public ActionResult GeneralInformation()
         {
             return View();
         }
-        [Route("GenelBilgiler")]
+        [Route("GenelList")]
         public PartialViewResult GeneralList()
-        {
-            return PartialView();
+        {                       
+            return PartialView(GeneralOperation.FirstRecord());
         }
+        [Route("GenelEkle")]
+        public PartialViewResult GeneralAdd()
+        {
+            return PartialView(new General());
+        }
+        [Route("GenelGüncelle")]
+        public PartialViewResult GeneralUpdate()
+        {
+            General g = GeneralOperation.FirstRecord();
+
+            if (g.Image != null)
+            {
+                var general = g.Image.Substring(124, g.Image.Length - 124).Split('?');
+                ViewBag.GeneralImage = general[0];
+            }
+
+            return PartialView(g);
+        }
+        [Route("GeneralRemove")]
+        public JsonResult GeneralRemove(int id)
+        {
+            jsonResultModel.Title = "Silme İşlemi";
+
+
+            int result = GeneralOperation.GeneralRemove(id);
+
+            if (result > 0)
+            {
+                jsonResultModel.Description = "Başarıyla Silindi";
+                jsonResultModel.Icon = "success";
+            }
+            else
+            {
+                jsonResultModel.Description = "Genel Bilgi Silme Başarısız";
+                jsonResultModel.Icon = "error";
+            }
+
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
+        }
+        public async Task<JsonResult> GeneralAddOperation(General general)
+        {
+            jsonResultModel.Title = "Ekleme İşlemi";
+
+            if (ModelState.IsValid)
+            {
+                jsonResultModel.Modal = "GeneralAddModal";
+
+                if (!general.Images.IsNullObject() && general.Images.ContentLength > 0)
+                {
+                    var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(general.Images.FileName);
+                    general.Image = await firebaseStorageHelper.UploadFile(general.Images.InputStream, ImageName, "General");
+                }
+
+
+                int result = GeneralOperation.GeneralAdd(general);
+
+                if (result > 0)
+                {
+                    jsonResultModel.Description = "Genel Bilgi Ekleme Başarılı";
+                    jsonResultModel.Icon = "success";
+                }
+                else
+                {
+                    jsonResultModel.Description = "Genel Bilgi Ekleme Başarısız";
+                    jsonResultModel.Icon = "error";
+                }
+            }
+            else
+            {
+
+                jsonResultModel.Description = "Lütfen formu eksiksiz doldurun.";
+                jsonResultModel.Icon = "error";
+            }
+
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        public async Task<JsonResult> GeneralUpdateOperation(General general)
+        {
+            jsonResultModel.Title = "Güncelleme İşlemi";
+
+            if (ModelState.IsValid)
+            {
+                jsonResultModel.Modal = "GeneralUpdateModal";
+
+                if (!general.Images.IsNullObject() && general.Images.ContentLength > 0)
+                {
+                    var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(general.Images.FileName);
+                    general.Image = await firebaseStorageHelper.UploadFile(general.Images.InputStream, ImageName, "General");
+                }
+
+
+                int result = GeneralOperation.GeneralUpdate(general);
+
+                if (result > 0)
+                {
+                    jsonResultModel.Description = "Genel Bilgi Güncelleme Başarılı";
+                    jsonResultModel.Icon = "success";
+                }
+                else
+                {
+                    jsonResultModel.Description = "Genel Bilgi Güncelleme Başarısız";
+                    jsonResultModel.Icon = "error";
+                }
+            }
+            else
+            {
+
+                jsonResultModel.Description = "Lütfen formu eksiksiz doldurun.";
+                jsonResultModel.Icon = "error";
+            }
+
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

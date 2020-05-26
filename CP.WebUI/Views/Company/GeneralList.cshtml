@@ -1,1 +1,44 @@
-﻿
+﻿@model  CP.Entities.Model.General
+
+
+
+<div class="table table-responsive tblGeneral">
+    <table class="table table-bordered display no-wrap" cellspacing="0" width="100%" id="tblGeneral">
+        <thead>
+            <tr>
+                <th name="first">
+                    <div class="custom-control Checkall  custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="CheckAll">
+                        <label class="custom-control-label" for="CheckAll"></label>
+                    </div>
+                </th>
+                <th>Resim</th>
+                <th>Başlık</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody id="TdGeneralList">
+            <tr>
+                <td>
+                    <div class="custom-control  custom-checkbox">
+                        <input type="checkbox" class="custom-control-input check" value="@Model.Id" id="Check-@Model.Id">
+                        <label class="custom-control-label" for="Check-@Model.Id"></label>
+                    </div>
+                </td>
+                <td class="text-center">
+                    <img src="@(Url.Content(Model.Image ?? "~/Content/image/no-image.png"))" height="30" class="avatar-sm" id="ImageView" />
+                </td>
+                <td>
+                    @Model.Title
+                </td>
+                <td class="text-center">
+                    <i class="fas fa-pencil-alt pencil-edit btnGeneralUpdate mr-2" data-id="@Model.Id"></i>
+
+                    <i class="fa fa-trash trash-edit btnGeneralDelete" data-id="@Model.Id"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+

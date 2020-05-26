@@ -80,6 +80,10 @@
     <Compile Include="Migrations\202005261221084_InitialCreate.designer.cs">
       <DependentUpon>202005261221084_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005261352547_GeneralChangeModel.cs" />
+    <Compile Include="Migrations\202005261352547_GeneralChangeModel.designer.cs">
+      <DependentUpon>202005261352547_GeneralChangeModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\CafeProjectModel.cs" />
     <Compile Include="Model\Campaign.cs" />
@@ -113,6 +117,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202005261221084_InitialCreate.resx">
       <DependentUpon>202005261221084_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005261352547_GeneralChangeModel.resx">
+      <DependentUpon>202005261352547_GeneralChangeModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
