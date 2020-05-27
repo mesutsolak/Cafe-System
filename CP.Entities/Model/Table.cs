@@ -7,16 +7,13 @@ namespace CP.Entities.Model
     using System.Data.Entity.Spatial;
 
     [Table("Table")]
-    public partial class Table
+    public partial class Table : BaseEntity<int>
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Table()
         {
             Cart = new HashSet<Cart>();
         }
-
-        public int Id { get; set; }
-
         public int? Number { get; set; }
 
         public int? ConfirmId { get; set; }

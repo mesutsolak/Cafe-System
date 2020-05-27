@@ -7,7 +7,7 @@ namespace CP.Entities.Model
     using System.Data.Entity.Spatial;
 
     [Table("MusicList")]
-    public partial class MusicList
+    public partial class MusicList : BaseEntity<int>
     {
 
         public MusicList()
@@ -15,8 +15,6 @@ namespace CP.Entities.Model
             IsDeleted = false;
             ConfirmId = 2;
         }
-        public int Id { get; set; }
-
         [StringLength(150)]
         public string MusicName { get; set; }
 

@@ -8,12 +8,8 @@ using System.Threading.Tasks;
 
 namespace CP.Entities.Model
 {
-    public class Gender
+    public class Gender : BaseEntity<int>
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-
         [StringLength(120)]
         public string Name { get; set; }
 

@@ -8,7 +8,7 @@ namespace CP.Entities.Model
     using System.Web;
 
     [Table("User")]
-    public partial class User
+    public partial class User : BaseEntity<int>
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
@@ -21,8 +21,6 @@ namespace CP.Entities.Model
             IsConfirm = false;
             IsDeleted = false;
         }
-
-        public int Id { get; set; }
 
         [StringLength(150)]
         public string Username { get; set; }

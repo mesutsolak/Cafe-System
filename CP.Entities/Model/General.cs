@@ -10,17 +10,12 @@ using System.Web;
 namespace CP.Entities.Model
 {
     [Table("General")]
-    public partial class General
+    public partial class General : BaseEntity<int>
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
         [StringLength(500)]
         public string Image { get; set; }
         [StringLength(20)]
         public string Title { get; set; }
-
-
         [NotMapped]
         public HttpPostedFileBase Images { get; set; }
     }

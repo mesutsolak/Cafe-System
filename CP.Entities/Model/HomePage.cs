@@ -8,11 +8,8 @@ using System.Threading.Tasks;
 
 namespace CP.Entities.Model
 {
-    public class HomePage
+    public class HomePage:BaseEntity<int>
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
         [StringLength(20)]
         public string Header1 { get; set; }
         [StringLength(500)]

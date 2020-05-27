@@ -6,7 +6,7 @@ namespace CP.Entities.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class LogStatus
+    public partial class LogStatus : BaseEntity<int>
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LogStatus()
@@ -14,8 +14,6 @@ namespace CP.Entities.Model
             Log = new HashSet<Log>();
             LogInfoes = new HashSet<LogInfoes>();
         }
-
-        public int Id { get; set; }
 
         [StringLength(150)]
         public string Name { get; set; }

@@ -7,14 +7,13 @@ namespace CP.Entities.Model
     using System.Data.Entity.Spatial;
 
     [Table("Cart")]
-    public partial class Cart
+    public partial class Cart : BaseEntity<int>
     {
         public Cart()
         {
             IsDelete = false;
         }
 
-        public int Id { get; set; }
 
         public int? Count { get; set; }
 

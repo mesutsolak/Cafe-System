@@ -7,14 +7,13 @@ namespace CP.Entities.Model
     using System.Data.Entity.Spatial;
 
     [Table("CampProduct")]
-    public partial class CampProduct
+    public partial class CampProduct : BaseEntity<int>
     {
         public CampProduct()
         {
             IsShow = false;
         }
 
-        public int Id { get; set; }
 
         public int? CampaignId { get; set; }
 

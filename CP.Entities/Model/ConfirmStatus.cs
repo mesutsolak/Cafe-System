@@ -6,7 +6,7 @@ namespace CP.Entities.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class ConfirmStatus
+    public partial class ConfirmStatus : BaseEntity<int>
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ConfirmStatus()
@@ -15,8 +15,6 @@ namespace CP.Entities.Model
             MusicList = new HashSet<MusicList>();
             Table = new HashSet<Table>();
         }
-
-        public int Id { get; set; }
 
         [StringLength(150)]
         public string Name { get; set; }

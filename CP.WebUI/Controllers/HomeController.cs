@@ -142,6 +142,8 @@ namespace CP.WebUI.Controllers
         {
             if (ModelState.IsValid)
             {
+                jsonResultModel.Title = "Ekleme İşlemi";
+
                 if (!product.Images.IsNullObject() && product.Images.ContentLength > 0)
                 {
                     var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(product.Images.FileName);
@@ -153,6 +155,7 @@ namespace CP.WebUI.Controllers
                 if (id > 0)
                 {
                     jsonResultModel.Icon = "success";
+                    jsonResultModel.Modal = "ProductAddModal";
                     jsonResultModel.Description = "Ürün Başarıyla Eklendi";
                 }
                 else

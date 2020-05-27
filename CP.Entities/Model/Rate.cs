@@ -7,10 +7,8 @@ namespace CP.Entities.Model
     using System.Data.Entity.Spatial;
 
     [Table("Rate")]
-    public partial class Rate
+    public partial class Rate : BaseEntity<int>
     {
-        public int Id { get; set; }
-
         public int? ProductId { get; set; }
 
         public int? UserId { get; set; }

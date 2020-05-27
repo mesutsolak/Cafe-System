@@ -8,10 +8,8 @@ namespace CP.Entities.Model
     using System.Web;
 
     [Table("Slider")]
-    public partial class Slider
+    public partial class Slider : BaseEntity<int>
     {
-        public int Id { get; set; }
-
         [StringLength(500)]
         [Display(Name = "Resim")]
         public string Image { get; set; }

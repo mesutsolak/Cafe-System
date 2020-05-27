@@ -7,10 +7,8 @@ namespace CP.Entities.Model
     using System.Data.Entity.Spatial;
 
     [Table("Comment")]
-    public partial class Comment
+    public partial class Comment : BaseEntity<int>
     {
-        public int Id { get; set; }
-
         public int? UserId { get; set; }
 
         public int? ProductId { get; set; }

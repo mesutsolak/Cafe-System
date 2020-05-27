@@ -7,7 +7,7 @@ namespace CP.Entities.Model
     using System.Data.Entity.Spatial;
 
     [Table("Campaign")]
-    public partial class Campaign
+    public partial class Campaign : BaseEntity<int>
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Campaign()
@@ -15,7 +15,6 @@ namespace CP.Entities.Model
             CampProduct = new HashSet<CampProduct>();
         }
 
-        public int Id { get; set; }
 
         [Column(TypeName = "text")]
         public string Description { get; set; }

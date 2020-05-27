@@ -6,10 +6,8 @@ namespace CP.Entities.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class LogInfoes
+    public partial class LogInfoes : BaseEntity<int>
     {
-        public int Id { get; set; }
-
         public int? UserId { get; set; }
 
         [StringLength(50)]

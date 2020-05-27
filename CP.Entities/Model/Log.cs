@@ -7,9 +7,8 @@ namespace CP.Entities.Model
     using System.Data.Entity.Spatial;
 
     [Table("Log")]
-    public partial class Log
+    public partial class Log : BaseEntity<int>
     {
-        public int Id { get; set; }
 
         public int? LogStatusId { get; set; }
 

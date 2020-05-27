@@ -8,7 +8,7 @@ namespace CP.Entities.Model
     using System.Web;
 
     [Table("Product")]
-    public partial class Product
+    public partial class Product : BaseEntity<int>
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
@@ -21,9 +21,6 @@ namespace CP.Entities.Model
             Preference = false;
             Choose = false;
         }
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
 
         [Required(ErrorMessage = "Ürün adý boþ býrakýlamaz.")]
         [StringLength(75)]

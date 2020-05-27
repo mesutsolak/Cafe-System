@@ -7,10 +7,8 @@ namespace CP.Entities.Model
     using System.Data.Entity.Spatial;
 
     [Table("Contact")]
-    public partial class Contact
+    public partial class Contact:BaseEntity<int>
     {
-        public int Id { get; set; }
-
         [StringLength(250)]
         [Display(Name ="Açýklama")]
         public string Description { get; set; }

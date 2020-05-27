@@ -6,15 +6,13 @@ namespace CP.Entities.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Roles
+    public partial class Roles : BaseEntity<int>
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Roles()
         {
             UserRoles = new HashSet<UserRoles>();
         }
-
-        public int Id { get; set; }
 
         [StringLength(100)]
         public string Name { get; set; }

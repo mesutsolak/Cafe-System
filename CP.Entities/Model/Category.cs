@@ -8,7 +8,7 @@ namespace CP.Entities.Model
     using System.Web;
 
     [Table("Category")]
-    public partial class Category
+    public partial class Category : BaseEntity<int>
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Category()
@@ -16,7 +16,6 @@ namespace CP.Entities.Model
             Product = new HashSet<Product>();
         }
 
-        public int Id { get; set; }
 
         [StringLength(100)]
         public string Name { get; set; }

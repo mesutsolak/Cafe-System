@@ -7,11 +7,10 @@ namespace CP.Entities.Model
     using System.Data.Entity.Spatial;
 
     [Table("CompanyInformation")]
-    public partial class CompanyInformation
+    public partial class CompanyInformation : BaseEntity<int>
     {
-        public int Id { get; set; }
         [Column(TypeName = "text")]
-        [Display(Name ="Açýklama 1")]
+        [Display(Name = "Açýklama 1")]
         public string Description1 { get; set; }
         [Column(TypeName = "text")]
         [Display(Name = "Açýklama 2")]

@@ -85,6 +85,7 @@
       <DependentUpon>202005261352547_GeneralChangeModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\BaseEntity.cs" />
     <Compile Include="Model\CafeProjectModel.cs" />
     <Compile Include="Model\Campaign.cs" />
     <Compile Include="Model\CampProduct.cs" />
