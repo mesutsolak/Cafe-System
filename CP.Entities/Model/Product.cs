@@ -21,29 +21,44 @@ namespace CP.Entities.Model
             Preference = false;
             Choose = false;
         }
-
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Ürün adý boþ býrakýlamaz.")]
         [StringLength(75)]
+        [Display(Name = "Adý")]
+        [RegularExpression(@"^[a-zA-Z]*$", ErrorMessage = "Ürün adý sadece harflerden oluþmalýdýr.")]
         public string Name { get; set; }
 
+        [Display(Name = "Kategori")]
+        [Required(ErrorMessage = "Kategori boþ býrakýlamaz")]
         public int? CategoryId { get; set; }
 
         [Column(TypeName = "text")]
-        [Required]
+        [Required(ErrorMessage = "Ürün detayý boþ býrakýlamaz")]
+        [Display(Name = "Ürün Detayý")]
         public string ProductDetail { get; set; }
 
+        [Display(Name = "Fiyat")]
+        [Required(ErrorMessage = "Ürün fiyatý boþ býrakýlamaz")]
+        [RegularExpression(@"^[0-9]*$", ErrorMessage = "Ürün fiyatý sadece rakamlardan oluþmalýdýr")]
         public int? Price { get; set; }
-
+        [Display(Name = "Miktar")]
+        [Required(ErrorMessage = "Ürün miktarý boþ býrakýlamaz")]
+        [RegularExpression(@"^[0-9]*$", ErrorMessage = " Ürün fiyatý sadece rakamlardan oluþmalýdýr")]
         public int? Amount { get; set; }
 
         public int? Views { get; set; }
 
         [Column(TypeName = "text")]
+        [Display(Name = "Ürün Resmi")]
         public string Image { get; set; }
 
         public bool IsDeleted { get; set; }
+        [Display(Name = "Zaman")]
+        [Required(ErrorMessage = "Ürün zamaný boþ býrakýlamaz")]
+        [RegularExpression(@"^[0-9]*$", ErrorMessage = " Ürün zamaný sadece rakamlardan oluþmalýdýr")]
 
         public int Time { get; set; }
 
@@ -53,6 +68,8 @@ namespace CP.Entities.Model
         public bool Choose { get; set; }
 
         [NotMapped]
+        [Display(Name = "Ürün Resmi")]
+
         public HttpPostedFileBase Images { get; set; }
 
 
