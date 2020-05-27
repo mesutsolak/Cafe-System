@@ -63,6 +63,10 @@ namespace CP.BusinessLayer.Operations
         {
             return _data.ProductRepository.GetAll(x => x.Category, y => y.IsDeleted == false && y.Choose == true);
         }
+        public static int ProductCount()
+        {
+            return GetProducts().Count;
+        }
 
     }
 }

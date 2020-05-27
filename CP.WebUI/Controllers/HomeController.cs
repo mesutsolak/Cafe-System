@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI;
+using CP.Entities.ViewModel;
+
 
 namespace CP.WebUI.Controllers
 {
@@ -20,7 +22,11 @@ namespace CP.WebUI.Controllers
         [AccessDeniedAuthorize(Roles = "Customer,Employee")]
         public ActionResult Index()
         {
-            return View();
+            var pagemodel = new HomeViewModel();
+            pagemodel.CategoryCount = CategoryOperation.CategoryCount();
+            pagemodel.ProductCount = ProductOperation.ProductCount();
+            pagemodel.UserCount = UserOperations.UsersCount();
+            return View(pagemodel);
         }
         [Route("Ürünler")]
         [AccessDeniedAuthorize(Roles = "Customer,Admin")]
@@ -44,12 +50,12 @@ namespace CP.WebUI.Controllers
         {
             var product = ProductOperation.ProductFind(id);
 
-            if (product.Image!=null)
-            {             
-                var productName = product.Image.Substring(124, product.Image.Length-124).Split('?');
+            if (product.Image != null)
+            {
+                var productName = product.Image.Substring(124, product.Image.Length - 124).Split('?');
                 ViewBag.ProductName = productName[0];
             }
-           
+
 
             SelectListItems.Clear();
 
@@ -61,7 +67,7 @@ namespace CP.WebUI.Controllers
                     {
                         Text = item.Name,
                         Value = item.Id.ToString(),
-                        Selected=true
+                        Selected = true
                     });
                 }
                 else
@@ -77,7 +83,7 @@ namespace CP.WebUI.Controllers
             TempData["Categories"] = SelectListItems;
 
             return PartialView(product);
-        }  
+        }
 
         [HttpPost]
         public async Task<JsonResult> ProductUpdateOperation(Product product)

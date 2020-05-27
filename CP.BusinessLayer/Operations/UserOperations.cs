@@ -42,7 +42,7 @@ namespace CP.BusinessLayer.Operations
         {
             return await _data.UserRepository.GetAllAsync();
         }
-        public static List<M.User> GetUsers(Expression<Func<M.User,bool>> expression=null) => _data.UserRepository.GetAll(null,expression);
+        public static List<M.User> GetUsers(Expression<Func<M.User, bool>> expression = null) => _data.UserRepository.GetAll(null, expression);
         public async static Task<M.User> UserFindAsync(int id)
         {
             return await _data.UserRepository.GetByIdAsync(id);
@@ -89,7 +89,7 @@ namespace CP.BusinessLayer.Operations
             if (_data.UserRepository.GetByFilter(x => x.Username == loginControl.UserName).IsDeleted.Value)
                 return "Kullanıcı Silinmiş";
 
-            return "Başarıyla Giriş Yapıldı,"+ UserFirstAndLast(loginControl.UserName);
+            return "Başarıyla Giriş Yapıldı," + UserFirstAndLast(loginControl.UserName);
         }
         public static string PasswordForget(string Email)
         {
@@ -127,5 +127,10 @@ namespace CP.BusinessLayer.Operations
                 }
             }
         }
+        public static int UsersCount()
+        {
+            return GetUsers(x => x.IsConfirm == true && x.IsDeleted == false).Count;
+        }
+
     }
 }

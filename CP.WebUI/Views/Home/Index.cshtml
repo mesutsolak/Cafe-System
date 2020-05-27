@@ -1,4 +1,4 @@
-﻿
+﻿@model  CP.Entities.ViewModel.HomeViewModel
 @{
     ViewBag.Title = "Anasayfa";
 }
@@ -16,12 +16,12 @@
                 <i class="fas fa-box-open mr-2"></i>
                 Ürünler
                 <label class="text-right">
-                    0
+                    @Model.ProductCount
                 </label>
             </div>
             <div class="card-body">
                 <p class="card-text">
-                    Kafe içerisindeki satılan ürünlerin genel sayısı.
+                    Kafe içerisindeki satılan ürünlerin genel sayısını göstermektedir.
                 </p>
             </div>
         </div>
@@ -32,12 +32,12 @@
                 <i class="fas fa-bars mr-2"></i>
                 Kategoriler
                 <label class="text-right">
-                    0
+                    @Model.CategoryCount
                 </label>
             </div>
             <div class="card-body">
                 <p class="card-text">
-                    Ürünler için kullanılan kategorilerin genel sayısı.
+                    Ürünler için kullanılan kategorilerin genel sayısını göstermektedir.
                 </p>
             </div>
         </div>
@@ -48,7 +48,7 @@
                 <i class="fas fa-users mr-2"></i>
                 Kullanıcılar
                 <label class="text-right">
-                    0
+                    @Model.UserCount
                 </label>
             </div>
             <div class="card-body">
