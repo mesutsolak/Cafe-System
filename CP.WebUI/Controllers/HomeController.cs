@@ -187,5 +187,11 @@ namespace CP.WebUI.Controllers
 
             return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
         }
+        [HttpPost]
+        [Route("ProcCatModel")]
+        public JsonResult ProcCatModel()
+        {
+            return Json(ProductOperation.CategoryProduct(), JsonRequestBehavior.AllowGet);
+        }
     }
 }

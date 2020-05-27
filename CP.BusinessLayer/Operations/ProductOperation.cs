@@ -6,11 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Linq.Expressions;
+using CP.Entities.ViewModel;
 
 namespace CP.BusinessLayer.Operations
 {
     public class ProductOperation : BaseOperation
     {
+        private static ProcCatViewModel _ChartModel;
         public static List<Product> GetProducts(Expression<Func<Product, object>> expression = null, Expression<Func<Product, bool>> condition = null)
         {
             return _data.ProductRepository.GetAll(expression, condition);
@@ -67,6 +69,14 @@ namespace CP.BusinessLayer.Operations
         {
             return GetProducts().Count;
         }
-
+        public static ProcCatViewModel CategoryProduct()
+        {
+            foreach (var category in CategoryOperation.GetCategories())
+            {
+                _ChartModel.Category.Add(category.Name);
+                _ChartModel.Product.Add(ProductCategoryCount(category.Id));
+            }
+            return _ChartModel;
+        }
     }
 }
