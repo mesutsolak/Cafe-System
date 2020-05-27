@@ -45,6 +45,8 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
 
         public IGeneralRepository GeneralRepository { get; private set; }
 
+        public IUserRoleRepository UserRoleRepository { get; private set; }
+
         private DbContext _context;
 
         public UnitOfWork(DbContext context)
@@ -66,6 +68,7 @@ namespace CP.BusinessLayer.UnitOfWork.Concrete.Basic
             CompanyRepository = new CompanyRepository(_context);
             ContactRepository = new ContactRepository(_context);
             GeneralRepository = new GeneralRepository(_context);
+            UserRoleRepository = new UserRoleRepository(_context);
         }
 
 

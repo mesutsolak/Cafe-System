@@ -10,11 +10,14 @@ using System.Net.Http;
 using System.Web;
 using System.Net.Mail;
 using System.Linq.Expressions;
+using CP.Entities.ViewModel;
 
 namespace CP.BusinessLayer.Operations
 {
     public class UserOperations : BaseOperation
     {
+        private static RoleUserViewModel _ChartModel = new RoleUserViewModel();
+
         static Random rnd = new Random();
         public static string UserFirstAndLast(string username)
         {

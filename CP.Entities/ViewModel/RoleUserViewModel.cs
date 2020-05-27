@@ -8,7 +8,12 @@ namespace CP.Entities.ViewModel
 {
     public class RoleUserViewModel
     {
-        public IList<string> Role { get; set; }
-        public IList<int> User { get; set; }
+        public RoleUserViewModel()
+        {
+            Role = new List<string>();
+            User = new List<int>();
+        }
+        public List<string> Role { get; set; }
+        public List<int> User { get; set; }
     }
 }

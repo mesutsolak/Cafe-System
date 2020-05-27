@@ -193,5 +193,11 @@ namespace CP.WebUI.Controllers
         {
             return Json(ProductOperation.CategoryProduct(), JsonRequestBehavior.AllowGet);
         }
+        [HttpPost]
+        [Route("UserRoleModel")]
+        public JsonResult UserRoleModel()
+        {
+            return Json(RoleOperation.RoleUser(), JsonRequestBehavior.AllowGet);
+        }
     }
 }

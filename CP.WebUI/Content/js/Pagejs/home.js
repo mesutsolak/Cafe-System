@@ -1,11 +1,17 @@
 ﻿
 $(function () {
     ProductCategoryBar();
+    UserRoleBar();
 });
 
 function ProductCategoryBar() {
     $.post("/ProcCatModel", null, function (result) {
         ChartCreate(new ChartModal("products-chart", "Ürün Sayısı", result.Category, result.Product, "pie"));
+    });
+}
+function UserRoleBar() {
+    $.post("/UserRoleModel", null, function (result) {
+        ChartCreate(new ChartModal("users-chart", "Kullanıcı Sayısı", result.Role, result.User, "bar"))
     });
 }
 
