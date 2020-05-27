@@ -8,7 +8,12 @@ namespace CP.Entities.ViewModel
 {
     public class ProcCatViewModel
     {
-        public IList<string> Category { get; set; }
-        public IList<int> Product { get; set; }
+        public ProcCatViewModel()
+        {
+            Category = new List<string>();
+            Product = new List<int>();
+        }
+        public List<string> Category { get; set; }
+        public List<int> Product { get; set; }
     }
 }

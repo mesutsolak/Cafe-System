@@ -12,7 +12,7 @@ namespace CP.BusinessLayer.Operations
 {
     public class ProductOperation : BaseOperation
     {
-        private static ProcCatViewModel _ChartModel;
+        private static ProcCatViewModel _ChartModel = new ProcCatViewModel();
         public static List<Product> GetProducts(Expression<Func<Product, object>> expression = null, Expression<Func<Product, bool>> condition = null)
         {
             return _data.ProductRepository.GetAll(expression, condition);
@@ -71,6 +71,8 @@ namespace CP.BusinessLayer.Operations
         }
         public static ProcCatViewModel CategoryProduct()
         {
+            _ChartModel.Category.Clear();
+            _ChartModel.Product.Clear();
             foreach (var category in CategoryOperation.GetCategories())
             {
                 _ChartModel.Category.Add(category.Name);

@@ -1,36 +1,29 @@
 ﻿
 $(function () {
-    ProductsBar();
-    CategoryLine();
+    ProductCategoryBar();
 });
 
-function ProductsBar() {
-
-  
+function ProductCategoryBar() {
+    $.post("/ProcCatModel", null, function (result) {
+        ChartCreate(new ChartModal("products-chart", "Ürün Sayısı", result.Category, result.Product, "pie"));
+    });
 }
 
-function CategoryLine() {
-    
-}
 
 
 /**
  * 
- * @param {string} inputname Chart'ın oluşacağı canvas id'si
- * @param {string[]} labels  Chart'ın gözükecek isimleri
- * @param {string} Title Chart'ın başlığını belli eder
- * @param {number[]} values Chart'ın gözükecek değerleri
- * @param {string} ChartType Chart'ın tipini belli eder
+ * @param {ChartModal} ChartModal
  */
-function ChartCreate(canvasId, Title, labels, values, ChartType) {
-    var ctx = document.getElementById(canvasId).getContext('2d');
+function ChartCreate(ChartModal) {
+    var ctx = document.getElementById(ChartModal.canvasId).getContext('2d');
     var myChart = new Chart(ctx, {
-        type: ChartType,
+        type: ChartModal.ChartType,
         data: {
-            labels: labels,
+            labels: ChartModal.labels,
             datasets: [{
-                label: Title,
-                data: values,
+                label: ChartModal.Title,
+                data: ChartModal.values,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -60,4 +53,14 @@ function ChartCreate(canvasId, Title, labels, values, ChartType) {
             }
         }
     });
+}
+
+class ChartModal {
+    constructor(canvasId, Title, labels, values, ChartType) {
+        this.canvasId = canvasId;
+        this.Title = Title;
+        this.labels = labels;
+        this.values = values;
+        this.ChartType = ChartType;
+    }
 }
