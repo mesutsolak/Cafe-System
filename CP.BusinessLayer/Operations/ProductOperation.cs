@@ -80,5 +80,14 @@ namespace CP.BusinessLayer.Operations
             }
             return _ChartModel;
         }
+        public static bool IsThereProduct(string ProductName, int? id = null)
+        {
+            if (id == null)
+            {
+                return _data.ProductRepository.IsThereResult(x => x.Name == ProductName);
+            }
+            return _data.ProductRepository.IsThereResult(x => x.Name == ProductName && x.Id != id);
+
+        }
     }
 }

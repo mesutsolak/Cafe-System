@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace CP.Entities.Model
 {
-    public class BaseEntity<T> where T : struct
+    public class BaseEntity<T> 
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        protected T Id { get; set; }
+        public T Id { get; set; }
     }
 }

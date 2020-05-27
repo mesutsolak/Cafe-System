@@ -435,6 +435,7 @@
     <Content Include="Content\js\jquery-cookie.js" />
     <Content Include="Content\js\jquery.js" />
     <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\nicescroll.js" />
     <Content Include="Content\js\Pagejs\category.js" />
     <Content Include="Content\js\Pagejs\company.js" />
     <Content Include="Content\js\Pagejs\Contact.js" />

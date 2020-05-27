@@ -22,11 +22,12 @@ namespace CP.WebUI.Controllers
         [AccessDeniedAuthorize(Roles = "Customer,Employee")]
         public ActionResult Index()
         {
-            var pagemodel = new HomeViewModel();
-            pagemodel.CategoryCount = CategoryOperation.CategoryCount();
-            pagemodel.ProductCount = ProductOperation.ProductCount();
-            pagemodel.UserCount = UserOperations.UsersCount();
-            return View(pagemodel);
+            return View(new HomeViewModel
+            {
+                CategoryCount = CategoryOperation.CategoryCount(),
+                ProductCount = ProductOperation.ProductCount(),
+                UserCount = UserOperations.UsersCount()
+            });
         }
         [Route("Ürünler")]
         [AccessDeniedAuthorize(Roles = "Customer,Admin")]
@@ -61,7 +62,7 @@ namespace CP.WebUI.Controllers
 
             foreach (var item in CategoryOperation.GetCategories())
             {
-                if (product.CategoryId == item.Id)
+                if (product.CategoryId.Value == item.Id)
                 {
                     SelectListItems.Add(new SelectListItem
                     {
@@ -90,24 +91,34 @@ namespace CP.WebUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (!product.Images.IsNullObject() && product.Images.ContentLength > 0)
-                {
-                    var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(product.Images.FileName);
-                    product.Image = await firebaseStorageHelper.UploadFile(product.Images.InputStream, ImageName, "Product");
-                }
+                jsonResultModel.Title = "Güncelleme İşlemi";
 
-                int id = ProductOperation.ProductUpdate(product);
-
-                if (id > 0)
+                if (!ProductOperation.IsThereProduct(product.Name, product.Id))
                 {
-                    jsonResultModel.Icon = "success";
-                    jsonResultModel.Description = "Ürün Başarıyla Güncellendi";
-                    jsonResultModel.Modal = "ProductUpdateModal";
+                    if (!product.Images.IsNullObject() && product.Images.ContentLength > 0)
+                    {
+                        var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(product.Images.FileName);
+                        product.Image = await firebaseStorageHelper.UploadFile(product.Images.InputStream, ImageName, "Product");
+                    }
+
+                    int id = ProductOperation.ProductUpdate(product);
+
+                    if (id > 0)
+                    {
+                        jsonResultModel.Icon = "success";
+                        jsonResultModel.Description = "Ürün Başarıyla Güncellendi";
+                        jsonResultModel.Modal = "ProductUpdateModal";
+                    }
+                    else
+                    {
+                        jsonResultModel.Icon = "error";
+                        jsonResultModel.Description = "Ürün Güncelleme Başarısız";
+                    }
                 }
                 else
                 {
                     jsonResultModel.Icon = "error";
-                    jsonResultModel.Description = "Ürün Güncelleme Başarısız";
+                    jsonResultModel.Description = "Ürün adı zaten kullanılmış";
                 }
             }
             else
@@ -144,24 +155,32 @@ namespace CP.WebUI.Controllers
             {
                 jsonResultModel.Title = "Ekleme İşlemi";
 
-                if (!product.Images.IsNullObject() && product.Images.ContentLength > 0)
+                if (!ProductOperation.IsThereProduct(product.Name))
                 {
-                    var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(product.Images.FileName);
-                    product.Image = await firebaseStorageHelper.UploadFile(product.Images.InputStream, ImageName, "Product");
-                }
+                    if (!product.Images.IsNullObject() && product.Images.ContentLength > 0)
+                    {
+                        var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(product.Images.FileName);
+                        product.Image = await firebaseStorageHelper.UploadFile(product.Images.InputStream, ImageName, "Product");
+                    }
 
-                int id = ProductOperation.ProductAdd(product);
+                    int id = ProductOperation.ProductAdd(product);
 
-                if (id > 0)
-                {
-                    jsonResultModel.Icon = "success";
-                    jsonResultModel.Modal = "ProductAddModal";
-                    jsonResultModel.Description = "Ürün Başarıyla Eklendi";
+                    if (id > 0)
+                    {
+                        jsonResultModel.Icon = "success";
+                        jsonResultModel.Modal = "ProductAddModal";
+                        jsonResultModel.Description = "Ürün Başarıyla Eklendi";
+                    }
+                    else
+                    {
+                        jsonResultModel.Icon = "error";
+                        jsonResultModel.Description = "Ürün Ekleme Başarısız";
+                    }
                 }
                 else
                 {
                     jsonResultModel.Icon = "error";
-                    jsonResultModel.Description = "Ürün Ekleme Başarısız";
+                    jsonResultModel.Description = "Ürün adı zaten kullanılmış";
                 }
             }
             else

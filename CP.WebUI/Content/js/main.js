@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
     $(function () {
-
+        NiceScrool(new ScroolModel("menu-scrool", "7px","#E1E1E1"))
     });
 });
 
@@ -8,7 +8,7 @@ $(document).on("click", ".form-clear", function () {
     $(".CategoryUpdateModalContent").find('form').get(0).reset();
 });
 
-$(document).on("change", "input[type='file']",function (e) {
+$(document).on("change", "input[type='file']", function (e) {
     var fileName = e.target.files[0].name;
     $(this).next('.custom-file-label').html(fileName);
 });
@@ -282,9 +282,9 @@ function returnPostJson(data) {
     if (!$.null(data.Url)) {
         setTimeout(function () {
             window.location.replace(data.Url);
-        },1500);
+        }, 1500);
     }
-   
+
 }
 
 $.extend({
@@ -320,3 +320,22 @@ $("#btnSignOut").on("click", function () {
         }
     })
 });
+
+
+/**
+ * 
+ * @param {ScroolModel} Scrool
+ */
+function NiceScrool(Scrool) {
+    $("." + Scrool.ClassName).niceScroll({ cursorwidth: Scrool.Width, cursorborder: "1px solid #B5AEAE",autohidemode: false, zindex: 999, cursorcolor: Scrool.CurserColor });
+}
+
+
+class ScroolModel {
+
+    constructor(ClassName, Width, CurserColor) {
+        this.ClassName = ClassName;
+        this.Width = Width;
+        this.CurserColor = CurserColor;
+    }
+}

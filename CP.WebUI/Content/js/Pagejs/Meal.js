@@ -5,6 +5,9 @@ $(function () {
     ProductList();
 });
 
+$(document).ready(function () {
+});
+
 
 $(document).on("click", ".ProductDelete", function () {
     var _id = $(this).data("id");
@@ -21,7 +24,7 @@ $(document).on("click", ".ProductDelete", function () {
 
 
 $(document).on("click", "#ImageView", function () {
-   var _src = $(this).attr("src");
+    var _src = $(this).attr("src");
 
     if (_src.startsWith("/Content")) {
         debugger;
@@ -57,6 +60,8 @@ $(document).on("click", ".ProductUpdate", function () {
         success: function (data) {
             $(".product-update-modal").html(data);
             $(document).find("#ProductUpdateModal").modal("show");
+            NiceScrool(new ScroolModel("modal-product-update", "10px", "#A5A5A5"))
+            //$(".modal-product-update").niceScroll({ cursorwidth: '10px', autohidemode: false, zindex: 999, cursorcolor: "#A5A5A5" });
         },
         error: function (xhr) { // if error occured
             alert("Error occured.please try again" + xhr.statusText + xhr.responseText);

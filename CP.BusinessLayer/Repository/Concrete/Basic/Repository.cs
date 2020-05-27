@@ -30,18 +30,18 @@ namespace CP.BusinessLayer.Repository.Concrete.Basic
         {
             if (expression == null)
             {
-                if (condition==null)
+                if (condition == null)
                 {
-                      return _dbset.ToList();
+                    return _dbset.ToList();
                 }
-                else  return _dbset.Where(condition).ToList();
-                
+                else return _dbset.Where(condition).ToList();
+
             }
             else
             {
-                if (condition==null)
+                if (condition == null)
                 {
-                   return _dbset.Include(expression).ToList();
+                    return _dbset.Include(expression).ToList();
                 }
                 else return _dbset.Include(expression).Where(condition).ToList();
             }
@@ -124,6 +124,11 @@ namespace CP.BusinessLayer.Repository.Concrete.Basic
         public async Task<T> GetByIdAsync(int id)
         {
             return await _dbset.FindAsync(id);
+        }
+
+        public bool IsThereResult(Expression<Func<T, bool>> expression)
+        {
+            return _dbset.Any(expression);
         }
     }
 }
