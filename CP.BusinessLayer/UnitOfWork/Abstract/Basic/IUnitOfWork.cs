@@ -26,6 +26,8 @@ namespace CP.BusinessLayer.UnitOfWork.Abstract.Basic
         IContactRepository ContactRepository { get; }
         IGeneralRepository GeneralRepository { get; }
         IUserRoleRepository UserRoleRepository { get; }
+        IGenderRepository GenderRepository { get; }
+
         int Complete();
         Task<int> CompleteAsync();
     }

@@ -1,4 +1,6 @@
 ﻿@model List<CP.Entities.Model.User>
+@using CP.BusinessLayer.Tools
+
 
 
 <div class="table table-responsive tblresponsive">
@@ -46,7 +48,7 @@
                         @user.Email
                     </td>
                     <td class="text-center">
-                        <img src="@(Url.Content(user.Image ?? "~/Content/image/no-image.png"))" height="30" class="avatar-sm" id="ImageView" />
+                        <img src="@(Url.Content((user.ProfilPhoto.IsNullString() == true) ? "~/Content/image/no-image.png" : user.ProfilPhoto))" height="30" class="avatar-sm" id="ImageView" />
                     </td>
                     <td class="text-center">
                         <i class="fas fa-pencil-alt UserUpdate mr-2 pencil-edit" data-id="@user.Id"></i>
@@ -58,11 +60,11 @@
                         }
                         @if (user.IsConfirm.Value)
                         {
-                            <i class="fas fa-times CancelConfirm" style="color:red" data-id="@user.Id"  data-toggle="tooltip" data-placement="top" title="Onay Kaldır" />
+                            <i class="fas fa-times CancelConfirm" style="color:red" data-id="@user.Id" data-toggle="tooltip" data-placement="top" title="Onay Kaldır" />
                         }
                         else
                         {
-                            <i class="fas fa-check TrueConfirm" style="color:green" data-id="@user.Id"  data-toggle="tooltip" data-placement="top" title="Onayla" />
+                            <i class="fas fa-check TrueConfirm" style="color:green" data-id="@user.Id" data-toggle="tooltip" data-placement="top" title="Onayla" />
                         }
                     </td>
                 </tr>
