@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
     $(function () {
-        NiceScrool(new ScroolModel("menu-scrool", "7px","#E1E1E1"))
+        NiceScrool(new ScroolModel("menu-scrool", "7px", "#E1E1E1"))
     });
 });
 
@@ -9,8 +9,12 @@ $(document).on("click", ".form-clear", function () {
 });
 
 $(document).on("change", "input[type='file']", function (e) {
-    var fileName = e.target.files[0].name;
-    $(this).next('.custom-file-label').html(fileName);
+    if (e.target.files[0] != undefined) {
+        var fileName = e.target.files[0].name;
+        $(this).next('.custom-file-label').html(fileName);
+        $(document).find(".ImageCancel").show();
+    }
+
 });
 
 
@@ -144,7 +148,7 @@ function FormClear(FormId) {
             _children.html("Afiş Seçiniz");
         }
     });
-
+    $(document).find(".ImageCancel").hide();
 }
 
 
@@ -327,7 +331,7 @@ $("#btnSignOut").on("click", function () {
  * @param {ScroolModel} Scrool
  */
 function NiceScrool(Scrool) {
-    $("." + Scrool.ClassName).niceScroll({ cursorwidth: Scrool.Width, cursorborder: "1px solid #B5AEAE",autohidemode: false, zindex: 999, cursorcolor: Scrool.CurserColor });
+    $("." + Scrool.ClassName).niceScroll({ cursorwidth: Scrool.Width, cursorborder: "1px solid #B5AEAE", autohidemode: false, zindex: 999, cursorcolor: Scrool.CurserColor });
 }
 
 
@@ -339,3 +343,10 @@ class ScroolModel {
         this.CurserColor = CurserColor;
     }
 }
+
+
+$(document).on("click", ".ImageCancel", function () {
+    $(document).find("input[name='Image']").attr("value", "");
+    $(document).find(".custom-file-label").html("Resim Seçiniz");
+    $(this).hide();
+});
