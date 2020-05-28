@@ -1,4 +1,5 @@
-﻿@model List<CP.Entities.Model.Category>
+﻿@using CP.BusinessLayer.Tools
+@model List<CP.Entities.Model.Category>
 
 <div class="table table-responsive tblresponsive">
     <table class="table table-bordered display no-wrap" cellspacing="0" width="100%" id="tblcategory">
@@ -26,11 +27,10 @@
                         </div>
                     </td>
                     <td>
-                        @(category.Name ?? "Kategori Boş")
+                        @((category.Name.IsNullString() == true) ? "Kategori Boş":category.Name)
                     </td>
                     <td class="text-center">
-
-                        <img src="@(Url.Content(category.Image ?? "~/Content/image/no-image.png"))" height="30" class="avatar-sm" id="ImageView" />
+                        <img src="@(Url.Content((category.Image.IsNullString() == true) ? "~/Content/image/no-image.png" : category.Image))" height="30" class="avatar-sm" id="ImageView" />
                     </td>
                     <td class="text-center">
                         <i class="fas fa-pencil-alt categoryUpdate pencil-edit mr-2" data-id="@category.Id"></i>

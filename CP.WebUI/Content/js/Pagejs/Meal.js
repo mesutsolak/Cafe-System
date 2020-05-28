@@ -3,6 +3,7 @@ $(function () {
     TableConvertDataTables("tblProduct");
     //ConvertCkEditor("ProductDetail", "tr");
     ProductList();
+    NiceScrool(new ScroolModel("modal-body", "10px", "#A5A5A5"))
 });
 
 $(document).ready(function () {
@@ -27,7 +28,6 @@ $(document).on("click", "#ImageView", function () {
     var _src = $(this).attr("src");
 
     if (_src.startsWith("/Content")) {
-        debugger;
         SweetAlert("error", "Hata", "Resim Bulunamadı");
     }
     else {

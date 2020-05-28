@@ -23,7 +23,7 @@ namespace CP.BusinessLayer.Tools
         }
         public static bool IsNullString(this string value)
         {
-            return value == null ? false : true;
+            return string.IsNullOrEmpty(value);
         }
         public static int ObjectIntConvert(this object value)
         {

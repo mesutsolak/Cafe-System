@@ -12,6 +12,16 @@ $(document).on("change", "input[type='file']", function (e) {
     if (e.target.files[0] != undefined) {
         var fileName = e.target.files[0].name;
         $(this).next('.custom-file-label').html(fileName);
+        /*
+         * İlk açıldıgında img olmayabilir ama sonra eklenebilir.Eklendigi zamanda orda bulunnmadıgı için show yapılamayacak hata vericektir
+           bunun önüne geçmek için kullanılır
+          */
+        if (!$(document).hasClass(".ImageCancel")) {
+            var _string = '<div class="mt-2 ImageCancel">' +
+                '<i class="fas fa-times text-danger mr-2" style = "color:red" ></i><label class="text-danger">Resmi kaldır</label>' +
+                '</div>';
+            $(".modal-body").append(_string);
+        }
         $(document).find(".ImageCancel").show();
     }
 

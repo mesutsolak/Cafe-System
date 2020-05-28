@@ -18,6 +18,8 @@ namespace CP.Entities.Model
             Comment = new HashSet<Comment>();
             Rate = new HashSet<Rate>();
 
+            Views = 0;
+
             Preference = false;
             Choose = false;
         }

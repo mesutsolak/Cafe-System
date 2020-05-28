@@ -1,4 +1,5 @@
 ﻿@model CP.Entities.Model.Category
+@using CP.BusinessLayer.Tools
 
 <div class="modal inmodal" id="CategoryUpdateModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
@@ -43,7 +44,7 @@
                             @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger error-validate" })
                             <input type="hidden" value="@Model.Image" name="Image" />
                         </div>
-                        @if (Model.Image != null)
+                        @if (!Model.Image.IsNullString())
                         {
                             <div class="mt-2 ImageCancel">
                                 <i class="fas fa-times text-danger mr-2" style="color:red"></i><label class="text-danger">Resmi kaldır</label>

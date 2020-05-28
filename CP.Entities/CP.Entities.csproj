@@ -84,6 +84,10 @@
     <Compile Include="Migrations\202005261352547_GeneralChangeModel.designer.cs">
       <DependentUpon>202005261352547_GeneralChangeModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005281018073_CategoryIsDeletedColumnAdd.cs" />
+    <Compile Include="Migrations\202005281018073_CategoryIsDeletedColumnAdd.designer.cs">
+      <DependentUpon>202005281018073_CategoryIsDeletedColumnAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\BaseEntity.cs" />
     <Compile Include="Model\CafeProjectModel.cs" />
@@ -124,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005261352547_GeneralChangeModel.resx">
       <DependentUpon>202005261352547_GeneralChangeModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005281018073_CategoryIsDeletedColumnAdd.resx">
+      <DependentUpon>202005281018073_CategoryIsDeletedColumnAdd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

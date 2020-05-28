@@ -14,14 +14,20 @@ namespace CP.Entities.Model
         public Category()
         {
             Product = new HashSet<Product>();
+            IsDeleted = false;
         }
 
 
         [StringLength(100)]
+        [Display(Name = "Kategori Adý")]
+        [Required(ErrorMessage = "Kategori adý boþ geçilemez")]
         public string Name { get; set; }
 
         [StringLength(250)]
+        [Display(Name = "Resim")]
         public string Image { get; set; }
+
+        public bool IsDeleted { get; set; }
 
         [NotMapped]
         public HttpPostedFileBase Images { get; set; }

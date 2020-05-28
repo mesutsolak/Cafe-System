@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace CP.WebUI.Controllers
 {
-    public class CategoryController :BaseController
+    public class CategoryController : BaseController
     {
         // GET: Category
         [Route("Kategoriler")]
@@ -19,7 +19,7 @@ namespace CP.WebUI.Controllers
         {
             return View();
         }
-        
+
         public PartialViewResult CategoryAdd()
         {
             return PartialView(new Category());
@@ -28,19 +28,20 @@ namespace CP.WebUI.Controllers
         [Route("KategoriList")]
         public PartialViewResult CategoryList()
         {
-            return PartialView(CategoryOperation.GetCategories());
+            var _result = CategoryOperation.GetCategories();
+
+            return PartialView(_result);
         }
 
         [Route("KategoriUpdate")]
         public PartialViewResult CategoryUpdate(int id)
         {
             var category = CategoryOperation.GetCategory(id);
-            if (category.Image != null)
+            if (!category.Image.IsNullString())
             {
                 var CategoryName = category.Image.Substring(124, category.Image.Length - 124).Split('?');
                 ViewBag.CategoryName = CategoryName[0];
             }
-
             return PartialView(category);
         }
 
@@ -50,25 +51,33 @@ namespace CP.WebUI.Controllers
             jsonResultModel.Title = "Kategori Ekleme";
             if (ModelState.IsValid)
             {
-                if (!category.Images.IsNullObject() && category.Images.ContentLength > 0)
+                if (!CategoryOperation.IsThereCategory(category.Name))
                 {
-                    var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(category.Images.FileName);
-                    category.Image = await firebaseStorageHelper.UploadFile(category.Images.InputStream, ImageName, "category");
-                }
+                    if (!category.Images.IsNullObject() && category.Images.ContentLength > 0)
+                    {
+                        var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(category.Images.FileName);
+                        category.Image = await firebaseStorageHelper.UploadFile(category.Images.InputStream, ImageName, "category");
+                    }
 
-                var result = CategoryOperation.CategoryAdd(category);
+                    var result = CategoryOperation.CategoryAdd(category);
 
-                if (result > 0)
-                {
-                    jsonResultModel.Icon = "success";
-                    jsonResultModel.Modal = "CategoryAddModal";
-                    jsonResultModel.Description = "Kategori Ekleme Başarılı";
-                    jsonResultModel.Function = "CategoryList";
+                    if (result > 0)
+                    {
+                        jsonResultModel.Icon = "success";
+                        jsonResultModel.Modal = "CategoryAddModal";
+                        jsonResultModel.Description = "Kategori Ekleme Başarılı";
+                        jsonResultModel.Function = "CategoryList";
+                    }
+                    else
+                    {
+                        jsonResultModel.Icon = "error";
+                        jsonResultModel.Description = "Kategori Ekleme Başarısız";
+                    }
                 }
                 else
                 {
                     jsonResultModel.Icon = "error";
-                    jsonResultModel.Description = "Kategori Ekleme Başarısız";
+                    jsonResultModel.Description = "Kategori adı zaten kullanılmış";
                 }
             }
             else
@@ -83,26 +92,34 @@ namespace CP.WebUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (!category.Images.IsNullObject() && category.Images.ContentLength > 0)
-                {
-                    var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(category.Images.FileName);
-                    category.Image = await firebaseStorageHelper.UploadFile(category.Images.InputStream, ImageName, "category");
-                }
+                if (!CategoryOperation.IsThereCategory(category.Name, category.Id)) 
+                    {
+                        if (!category.Images.IsNullObject() && category.Images.ContentLength > 0)
+                        {
+                            var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(category.Images.FileName);
+                            category.Image = await firebaseStorageHelper.UploadFile(category.Images.InputStream, ImageName, "category");
+                        }
 
-                int id = CategoryOperation.CategoryUpdate(category);
+                        int id = CategoryOperation.CategoryUpdate(category);
 
-                if (id > 0)
-                {
-                    jsonResultModel.Icon = "success";
-                    jsonResultModel.Description = "Kategori Başarıyla Güncellendi";
-                    jsonResultModel.Modal = "CategoryUpdateModal";
+                        if (id > 0)
+                        {
+                            jsonResultModel.Icon = "success";
+                            jsonResultModel.Description = "Kategori Başarıyla Güncellendi";
+                            jsonResultModel.Modal = "CategoryUpdateModal";
+                        }
+                        else
+                        {
+                            jsonResultModel.Icon = "error";
+                            jsonResultModel.Description = "Kategori Güncelleme Başarısız";
+                        }
+                    }
+                    else
+                    {
+                        jsonResultModel.Icon = "error";
+                        jsonResultModel.Description = "Kategori adı zaten kullanılmış";
+                    }
                 }
-                else
-                {
-                    jsonResultModel.Icon = "error";
-                    jsonResultModel.Description = "Kategori Güncelleme Başarısız";
-                }
-            }
             else
             {
                 jsonResultModel.Icon = "error";
@@ -130,5 +147,6 @@ namespace CP.WebUI.Controllers
 
             return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
         }
+
     }
 }
