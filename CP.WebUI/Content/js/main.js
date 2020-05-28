@@ -12,17 +12,18 @@ $(document).on("change", "input[type='file']", function (e) {
     if (e.target.files[0] != undefined) {
         var fileName = e.target.files[0].name;
         $(this).next('.custom-file-label').html(fileName);
+        var _formgroup = $(this).parent().parent();
         /*
          * İlk açıldıgında img olmayabilir ama sonra eklenebilir.Eklendigi zamanda orda bulunnmadıgı için show yapılamayacak hata vericektir
            bunun önüne geçmek için kullanılır
           */
-        if (!$(document).hasClass(".ImageCancel")) {
+        if ($(_formgroup).find(".ImageCancel").length == 0) {
             var _string = '<div class="mt-2 ImageCancel">' +
                 '<i class="fas fa-times text-danger mr-2" style = "color:red" ></i><label class="text-danger">Resmi kaldır</label>' +
                 '</div>';
-            $(".modal-body").append(_string);
+            $(_formgroup).append(_string);
         }
-        $(document).find(".ImageCancel").show();
+        $(_formgroup).find(".ImageCancel").show();
     }
 
 });
@@ -356,7 +357,8 @@ class ScroolModel {
 
 
 $(document).on("click", ".ImageCancel", function () {
-    $(document).find("input[name='Image']").attr("value", "");
-    $(document).find(".custom-file-label").html("Resim Seçiniz");
+    var custom_file = $(this).parent();
+    custom_file.find("input[name='Image']").attr("value", "");
+    custom_file.find(".custom-file-label").html("Resim Seçiniz");
     $(this).hide();
 });

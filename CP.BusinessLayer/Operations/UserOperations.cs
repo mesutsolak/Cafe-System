@@ -45,7 +45,10 @@ namespace CP.BusinessLayer.Operations
         {
             return await _data.UserRepository.GetAllAsync();
         }
-        public static List<M.User> GetUsers(Expression<Func<M.User, bool>> expression = null) => _data.UserRepository.GetAll(null, expression);
+        public static List<M.User> GetUsers()
+        {
+            return _data.UserRepository.GetAll(x => x.Gender, x => x.IsDeleted == false);
+        }
         public async static Task<M.User> UserFindAsync(int id)
         {
             return await _data.UserRepository.GetByIdAsync(id);
@@ -66,13 +69,18 @@ namespace CP.BusinessLayer.Operations
             return _data.UserRepository.GetByFilter(x => x.Username == UserName).Id;
         }
 
-        public async static Task<bool> UserNameControl(string UserName)
+        public async static Task<bool> UserNameControl(string UserName, int? id = null)
         {
-            return await _data.UserRepository.IsThere(x => x.Username == UserName);
+            if (id == null)
+                return await _data.UserRepository.IsThere(x => x.Username == UserName);
+            return await _data.UserRepository.IsThere(x => x.Username == UserName && x.Id != id);
+
         }
-        public async static Task<bool> EmailControl(string Email)
+        public async static Task<bool> EmailControl(string Email, int? id = null)
         {
-            return await _data.UserRepository.IsThere(x => x.Email == Email);
+            if (id == null)
+                return await _data.UserRepository.IsThere(x => x.Email == Email);
+            return await _data.UserRepository.IsThere(x => x.Email == Email && x.Id != id);
         }
         public static async Task<string> Login(LoginControl loginControl)
         {
@@ -132,7 +140,7 @@ namespace CP.BusinessLayer.Operations
         }
         public static int UsersCount()
         {
-            return GetUsers(x => x.IsConfirm == true && x.IsDeleted == false).Count;
+            return _data.UserRepository.GetAll(null, x => x.IsConfirm == true && x.IsDeleted == false).Count;
         }
 
     }

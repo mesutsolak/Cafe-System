@@ -42,20 +42,51 @@ namespace CP.WebUI.Controllers
         [Route("KullanıcıListele")]
         public PartialViewResult UserList()
         {
-            return PartialView(UserOperations.GetUsers(x => x.IsDeleted == false));
+            return PartialView(UserOperations.GetUsers());
         }
 
         [Route("UserUpdate")]
         [AllowAnonymous]
-        [HttpGet]
+        [HttpPost]
         public PartialViewResult UserUpdate(int id)
         {
             var user = UserOperations.UserFind(id);
             if (user.ProfilPhoto != null)
             {
-                var CategoryName = user.ProfilPhoto.Substring(124, user.ProfilPhoto.Length - 124).Split('?');
-                ViewBag.CategoryName = CategoryName[0];
+                var ProfilName = user.ProfilPhoto.Substring(124, user.ProfilPhoto.Length - 124).Split('?');
+                ViewBag.ProfilName = ProfilName[0];
             }
+
+            if (user.BackGroundPhoto != null)
+            {
+                var BackGroundPhoto = user.BackGroundPhoto.Substring(124, user.ProfilPhoto.Length - 124).Split('?');
+                ViewBag.BackGroundPhoto = BackGroundPhoto[0];
+            }
+
+            SelectListItems.Clear();
+
+            foreach (var item in GenderOperation.GetGenders())
+            {
+                if (user.GenderId.Value == item.Id)
+                {
+                    SelectListItems.Add(new SelectListItem
+                    {
+                        Text = item.Name,
+                        Value = item.Id.ToString(),
+                        Selected = true
+                    });
+                }
+                else
+                {
+                    SelectListItems.Add(new SelectListItem
+                    {
+                        Text = item.Name,
+                        Value = item.Id.ToString()
+                    });
+                }
+            }
+
+            TempData["Gender"] = SelectListItems;
 
             return PartialView(user);
         }
@@ -90,10 +121,16 @@ namespace CP.WebUI.Controllers
                     return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
                 }
 
-                if (!user.Images.IsNullObject() && user.Images.ContentLength > 0)
+                if (!user.ProfilPhotos.IsNullObject() && user.ProfilPhotos.ContentLength > 0)
                 {
-                    var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(user.Images.FileName);
-                    user.ProfilPhoto = await firebaseStorageHelper.UploadFile(user.Images.InputStream, ImageName, "User");
+                    var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(user.ProfilPhotos.FileName);
+                    user.ProfilPhoto = await firebaseStorageHelper.UploadFile(user.ProfilPhotos.InputStream, ImageName, "User");
+                }
+
+                if (!user.BackGroundPhotos.IsNullObject() && user.BackGroundPhotos.ContentLength > 0)
+                {
+                    var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(user.BackGroundPhotos.FileName);
+                    user.BackGroundPhoto = await firebaseStorageHelper.UploadFile(user.BackGroundPhotos.InputStream, ImageName, "User");
                 }
 
                 int id = await UserOperations.UserAdd(user);
@@ -122,6 +159,20 @@ namespace CP.WebUI.Controllers
         [AllowAnonymous]
         public PartialViewResult Register()
         {
+
+            SelectListItems.Clear();
+
+            foreach (var item in GenderOperation.GetGenders())
+            {
+                SelectListItems.Add(new SelectListItem
+                {
+                    Text = item.Name,
+                    Value = item.Id.ToString()
+                });
+            }
+
+            TempData["Gender"] = SelectListItems;
+
             return PartialView(new C.User());
         }
 
@@ -143,28 +194,35 @@ namespace CP.WebUI.Controllers
         [ValidateAntiForgeryToken]
         public async Task<JsonResult> UserUpdateOperation(C.User user)
         {
+            jsonResultModel.Title = "Kullanıcı Güncelle";
+
+
             if (ModelState.IsValid)
             {
-                jsonResultModel.Title = "Kullanıcı Güncelle";
-
-                if (await UserOperations.UserNameControl(user.Username))
+                if (await UserOperations.UserNameControl(user.Username, user.Id))
                 {
                     jsonResultModel.Icon = "error";
                     jsonResultModel.Description = "Kullanıcı adı alınmış";
                     return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
                 }
 
-                if (await UserOperations.EmailControl(user.Email))
+                if (await UserOperations.EmailControl(user.Email, user.Id))
                 {
                     jsonResultModel.Icon = "error";
                     jsonResultModel.Description = "Email alınmış";
                     return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
                 }
 
-                if (!user.Images.IsNullObject() && user.Images.ContentLength > 0)
+                if (!user.ProfilPhotos.IsNullObject() && user.ProfilPhotos.ContentLength > 0)
                 {
-                    var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(user.Images.FileName);
-                    user.ProfilPhoto = await firebaseStorageHelper.UploadFile(user.Images.InputStream, ImageName, "User");
+                    var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(user.ProfilPhotos.FileName);
+                    user.ProfilPhoto = await firebaseStorageHelper.UploadFile(user.ProfilPhotos.InputStream, ImageName, "User");
+                }
+
+                if (!user.BackGroundPhotos.IsNullObject() && user.BackGroundPhotos.ContentLength > 0)
+                {
+                    var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(user.BackGroundPhotos.FileName);
+                    user.BackGroundPhoto = await firebaseStorageHelper.UploadFile(user.BackGroundPhotos.InputStream, ImageName, "User");
                 }
 
                 int id = await UserOperations.UserUpdate(user);

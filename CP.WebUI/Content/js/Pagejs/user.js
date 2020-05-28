@@ -11,7 +11,7 @@ $('#UserClear').on('click', function () {
 
 $(document).on("click", ".UserUpdate", function () {
     var _id = $(this).data("id");
-    $.get("/UserUpdate", { id: _id }, function (result) {
+    $.post("/UserUpdate", { id: _id }, function (result) {
         $(".modal-user-update").html(result);
         $('#UserUpdateModal').modal('show');
     });
@@ -20,7 +20,7 @@ $(document).on("click", ".UserUpdate", function () {
 
 function UserList() {
     $.get("/KullanıcıListele", null, function (result) {
-        $(".User-Body").html(result);
+        $(".User-body").html(result);
     }); 
 }
 

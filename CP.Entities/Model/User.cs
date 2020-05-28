@@ -49,7 +49,8 @@ namespace CP.Entities.Model
         [StringLength(150)]
         [Display(Name = "Parola")]
         [Required(ErrorMessage = "Parola boþ býrakýlamaz.")]
-        [DataType(DataType.Password)]
+        //Parola password yapýlýrsa gösterilmez
+        //[DataType(DataType.Password)]
         public string Password { get; set; }
 
         public bool? IsConfirm { get; set; }
@@ -60,7 +61,7 @@ namespace CP.Entities.Model
 
         [StringLength(500)]
         [Display(Name = "Arka Plan Fotoðrafý")]
-        public string BackGround { get; set; }
+        public string BackGroundPhoto { get; set; }
 
         [Display(Name = "Cinsiyet")]
         [Required(ErrorMessage = "Cinsiyet boþ býrakýlamaz.")]

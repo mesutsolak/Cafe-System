@@ -139,7 +139,7 @@ namespace CP.WebAPI.Controllers
                 var _user = mapper.Map<C.User, M.User>(user);
 
                 _user.ProfilPhoto = _user.ProfilPhoto ?? _old.ProfilPhoto;
-                _user.BackGround = _user.BackGround ?? _old.BackGround;
+                _user.BackGroundPhoto = _user.BackGroundPhoto ?? _old.BackGroundPhoto;
                 _user.IsConfirm = _old.IsConfirm;
                 _user.IsDeleted = _old.IsDeleted;
 
