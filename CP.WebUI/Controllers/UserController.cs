@@ -327,6 +327,50 @@ namespace CP.WebUI.Controllers
 
             return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
         }
+        [Route("OnayKaldırma")]
+        [HttpPost]
+        public JsonResult ConfirmRemove(int id)
+        {
+            var _user = UserOperations.UserFind(id);
+            _user.IsConfirm = false;
+            int _result = Task.Run(() => UserOperations.UserUpdate(_user)).Result;
+
+
+            if (_result > 0)
+            {
+                jsonResultModel.Icon = "success";
+                jsonResultModel.Description = "Başarıyla Onay Kaldırıldı";
+            }
+            else
+            {
+                jsonResultModel.Icon = "error";
+                jsonResultModel.Description = "Onay Kaldırma Başarısız";
+            }
+
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
+        }
+        [Route("OnaylaEkle")]
+        [HttpPost]
+        public JsonResult ConfirmAdd(int id)
+        {
+            var _user = UserOperations.UserFind(id);
+            _user.IsConfirm = true;
+            int _result = Task.Run(() => UserOperations.UserUpdate(_user)).Result;
+
+
+            if (_result > 0)
+            {
+                jsonResultModel.Icon = "success";
+                jsonResultModel.Description = "Başarıyla Onay Eklendi";
+            }
+            else
+            {
+                jsonResultModel.Icon = "error";
+                jsonResultModel.Description = "Onay Ekleme Başarısız";
+            }
+
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
+        }
 
     }
 }

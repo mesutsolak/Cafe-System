@@ -27,7 +27,7 @@ namespace CP.Entities.Model
         [Required(ErrorMessage = "Ürün adı boş bırakılamaz.")]
         [StringLength(75)]
         [Display(Name = "Adı")]
-        [RegularExpression(@"^[a-zA-Z]*$", ErrorMessage = "Ürün adı sadece harflerden oluşmalıdır.")]
+        [RegularExpression(@"^[a-zA-ZçÇIiğĞşŞüÜöÖ]*$", ErrorMessage = "Ürün adı sadece harflerden oluşmalıdır.")]
         public string Name { get; set; }
 
         [Display(Name = "Kategori")]

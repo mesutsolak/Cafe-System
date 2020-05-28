@@ -21,14 +21,14 @@ $(document).on("click", ".UserUpdate", function () {
 function UserList() {
     $.get("/KullanıcıListele", null, function (result) {
         $(".User-body").html(result);
-    }); 
+    });
 }
 
-$(document).on("click","#UserUpdatesSave", function () {
+$(document).on("click", "#UserUpdatesSave", function () {
     FormPost('frmUserUpdate');
 });
 
-$(document).on('click','#UserUpdateClear', function () {
+$(document).on('click', '#UserUpdateClear', function () {
     FormClear('frmUserUpdate');
 });
 
@@ -56,4 +56,82 @@ $(document).on("click", "#ImageView", function () {
         $("#ImageShowModal").modal("show");
     }
 
+});
+
+$(document).on("click", ".CancelConfirm", function () {
+    var _id = $(this).data("id");
+    var _Name = $(this).parent().parent().children(":nth-child(2)").html().trim();
+
+    Swal.fire({
+        title: 'Kaldırma İşlemi',
+        text: _Name + " isimli kullanıcının onayı kaldırılsın mı ?",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Evet',
+        cancelButtonText: "Kapat"
+    }).then((result) => {
+        if (result.value) {
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                async: false,
+                url: "/OnayKaldırma",
+                data: '{id:' + _id + '}',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.Description.includes("Başarıyla")) {
+                        SweetAlert(data.Icon, "Kaldırma İşlemi", "Onay Başarıyla Silindi");
+                        UserList();
+                    }
+                    else {
+                        SweetAlert("error", "Kaldırma İşlemi", data.Description);
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert("error", ajaxOptions + "" + xhr.status + "" + thrownError);
+                }
+            });
+        }
+    });
+});
+
+$(document).on("click", ".TrueConfirm", function () {
+    var _id = $(this).data("id");
+    var _Name = $(this).parent().parent().children(":nth-child(2)").html().trim();
+
+    Swal.fire({
+        title: 'Onaylama İşlemi',
+        text: _Name + " isimli kullanıcı onaylansın mı?",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Evet',
+        cancelButtonText: "Kapat"
+    }).then((result) => {
+        if (result.value) {
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                async: false,
+                url: "/OnaylaEkle",
+                data: '{id:' + _id + '}',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.Description.includes("Başarıyla")) {
+                        SweetAlert(data.Icon, "Onaylama İşlemi", data.Description);
+                        UserList();
+                    }
+                    else {
+                        SweetAlert("error", "Onaylama İşlemi", data.Description);
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert("error", ajaxOptions + "" + xhr.status + "" + thrownError);
+                }
+            });
+        }
+    });
 });

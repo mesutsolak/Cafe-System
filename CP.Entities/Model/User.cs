@@ -37,13 +37,13 @@ namespace CP.Entities.Model
         [StringLength(150)]
         [Display(Name = "Adı")]
         [Required(ErrorMessage = "İsim boş bırakılamaz.")]
-        [RegularExpression(@"^[a-zA-Z]*$", ErrorMessage = "İsim sadece harflerden oluşmalıdır.")]
+        [RegularExpression(@"^[a-zA-ZçÇIiğĞşŞüÜöÖ]*$", ErrorMessage = "İsim sadece harflerden oluşmalıdır.")]
         public string FirstName { get; set; }
 
         [StringLength(150)]
         [Display(Name = "Soyadı")]
         [Required(ErrorMessage = "Soyisim boş bırakılamaz.")]
-        [RegularExpression(@"^[a-zA-Z]*$", ErrorMessage = "Soyisim sadece harflerden oluşmalıdır.")]
+        [RegularExpression(@"^[a-zA-ZçÇIiğĞşŞüÜöÖ]*$", ErrorMessage = "Soyisim sadece harflerden oluşmalıdır.")]
         public string LastName { get; set; }
 
         [StringLength(150)]
