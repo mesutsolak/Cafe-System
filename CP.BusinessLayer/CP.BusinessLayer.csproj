@@ -112,7 +112,9 @@
     <Compile Include="Repository\Concrete\TableRepository.cs" />
     <Compile Include="Repository\Concrete\UserRepository.cs" />
     <Compile Include="Repository\Concrete\UserRoleRepository.cs" />
+    <Compile Include="Tools\CookieManager.cs" />
     <Compile Include="Tools\Extension.cs" />
+    <Compile Include="Tools\SessionManager.cs" />
     <Compile Include="Tools\SingletonClass.cs" />
     <Compile Include="UnitOfWork\Abstract\Basic\IUnitOfWork.cs" />
     <Compile Include="UnitOfWork\Concrete\Basic\UnitOfWork.cs" />
