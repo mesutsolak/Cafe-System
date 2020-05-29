@@ -1,5 +1,5 @@
 ﻿$("#btnGeneralAdd").on("click", function () {
-    if ($("#TdGeneralList").html() == null) {
+    if ($("#TdGeneralList").html().trim().length <= 0) {
         ModalShow("GeneralAddModal");
     }
     else {
@@ -36,5 +36,18 @@ $(document).on("click", ".btnGeneralDelete", function () {
     };
 
     RemoveBasicOperations(RemoveItems);
+
+});
+
+$(document).on("click", "#ImageView", function () {
+    var _src = $(this).attr("src");
+
+    if (_src.startsWith("/Content")) {
+        SweetAlert("error", "Hata", "Resim Bulunamadı");
+    }
+    else {
+        $("#ImgViewSrc").attr("src", _src);
+        $("#ImageShowModal").modal("show");
+    }
 
 });

@@ -328,7 +328,7 @@ namespace CP.WebUI.Controllers
         }
         [Route("GenelList")]
         public PartialViewResult GeneralList()
-        {                       
+        {
             return PartialView(GeneralOperation.FirstRecord());
         }
         [Route("GenelEkle")]

@@ -1,6 +1,6 @@
 ﻿$("#btnContactAdd").on("click", function () {
-    var _td = $(document).find("#TdContactList").html();
-    if (_td == null) {
+    var _td = $(document).find("#TdContactList").html().trim().length;
+    if (_td <= 0) {
         $("#ContactAddModal").modal("show");
     }
     else {

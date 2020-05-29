@@ -1,4 +1,6 @@
 ﻿@model  CP.Entities.Model.CompanyInformation
+@using CP.BusinessLayer.Tools
+
 
 
 
@@ -20,31 +22,34 @@
             </tr>
         </thead>
         <tbody id="TdCompanyList">
-            <tr>
-                <td>
-                    <div class="custom-control  custom-checkbox">
-                        <input type="checkbox" class="custom-control-input check" value="@Model.Id" id="Check-@Model.Id">
-                        <label class="custom-control-label" for="Check-@Model.Id"></label>
-                    </div>
-                </td>
-                <td>
-                    @Model.Header1
-                </td>
-                <td>
-                    @Model.Description2
-                </td>
-                <td>
-                    @Model.Header2
-                </td>
-                <td>
-                    @Model.Description2
-                </td>
-                <td class="text-center">
-                    <i class="fas fa-pencil-alt pencil-edit btnInformationUpdate mr-2" data-id="@Model.Id"></i>
+            @if (!Model.IsNullObject())
+            {
+                <tr>
+                    <td>
+                        <div class="custom-control  custom-checkbox">
+                            <input type="checkbox" class="custom-control-input check" value="@Model.Id" id="Check-@Model.Id">
+                            <label class="custom-control-label" for="Check-@Model.Id"></label>
+                        </div>
+                    </td>
+                    <td>
+                        @Model.Header1
+                    </td>
+                    <td>
+                        @Model.Description2
+                    </td>
+                    <td>
+                        @Model.Header2
+                    </td>
+                    <td>
+                        @Model.Description2
+                    </td>
+                    <td class="text-center">
+                        <i class="fas fa-pencil-alt pencil-edit btnInformationUpdate mr-2" data-id="@Model.Id"></i>
 
-                    <i class="fa fa-trash trash-edit btnInformationDelete" data-id="@Model.Id"></i>
-                </td>
-            </tr>
+                        <i class="fa fa-trash trash-edit btnInformationDelete" data-id="@Model.Id"></i>
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
 </div>

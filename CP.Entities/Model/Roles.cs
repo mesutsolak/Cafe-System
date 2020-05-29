@@ -15,6 +15,8 @@ namespace CP.Entities.Model
         }
 
         [StringLength(100)]
+        [Required(ErrorMessage = "Rol adý gereklidir.")]
+        [Display(Name = "Rol Adý")]
         public string Name { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

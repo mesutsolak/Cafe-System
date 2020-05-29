@@ -11,6 +11,7 @@ namespace CP.Entities.Model
     {
         [Column(TypeName = "text")]
         [Display(Name = "Açýklama 1")]
+        [Required(ErrorMessage ="1.ci açýklamayý girmek zorunludur.")]
         public string Description1 { get; set; }
         [Column(TypeName = "text")]
         [Display(Name = "Açýklama 2")]
@@ -18,6 +19,7 @@ namespace CP.Entities.Model
 
         [StringLength(150)]
         [Display(Name = "Baþlýk 1")]
+        [Required(ErrorMessage = "1.ci baþlýðý girmek zorunludur.")]
         public string Header1 { get; set; }
 
         [StringLength(150)]

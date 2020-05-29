@@ -25,7 +25,7 @@
     background-size: 100% 100%;
 }
 
-.pencil-edit, .trash-edit, user-tag-edit {
+.pencil-edit, .trash-edit, .user-tag-edit, .CancelConfirm, .TrueConfirm {
     cursor: pointer;
     pointer-events: auto;
     font-size: 18px;
@@ -36,26 +36,26 @@
 }
 
 
-.pencil-edit {
+.pencil-edit, .TrueConfirm {
     color: rgb(0, 128, 0);
     opacity: 0.7;
     transform: scale(1);
 }
 
-    .pencil-edit:hover {
+    .pencil-edit:hover, .TrueConfirm:hover {
         z-index: 2;
         color: rgb(0, 128, 0);
         opacity: 1;
         transform: scale(1.1);
     }
 
-.trash-edit {
+.trash-edit, .CancelConfirm  {
     color: rgb(255, 0, 0);
     opacity: 0.7;
     transform: scale(1);
 }
 
-    .trash-edit :hover {
+    .trash-edit :hover,.CancelConfirm:hover {
         color: rgb(255, 0, 0);
         opacity: 1;
         transform: scale(1.1);
@@ -73,6 +73,9 @@
         transform: scale(1.1);
     }
 
+.CancelConfirm{
+
+}
 
 
 
@@ -96,4 +99,11 @@
     z-index: 10000;
     margin-left: 47%;
     margin-top: 23%;
+}
+
+
+.custom-file-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

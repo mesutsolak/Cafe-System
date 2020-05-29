@@ -34,3 +34,17 @@ $(document).on("click", ".SliderUpdate", function () {
         ModalShow('SliderUpdateModal');
     });
 });
+
+
+$(document).on("click", "#ImageView", function () {
+    var _src = $(this).attr("src");
+
+    if (_src.startsWith("/Content")) {
+        SweetAlert("error", "Hata", "Resim Bulunamadı");
+    }
+    else {
+        $("#ImgViewSrc").attr("src", _src);
+        $("#ImageShowModal").modal("show");
+    }
+
+});

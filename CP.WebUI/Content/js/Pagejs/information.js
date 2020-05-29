@@ -1,5 +1,5 @@
 ﻿$("#btnInformationAdd").on("click", function () {
-    if ($("#TdCompanyList").html() == null) {
+    if ($("#TdCompanyList").html().trim().length <= 0) {
         $("#InformationAddModal").modal("show");
     }
     else {

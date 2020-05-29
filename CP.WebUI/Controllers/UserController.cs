@@ -402,7 +402,6 @@ namespace CP.WebUI.Controllers
                 {
                     _rolemodel.Roles.Add(new Role
                     {
-                        //Id = _roleFind.Id,
                         RoleId = _role.Id,
                         RoleName = _role.Name
                     });

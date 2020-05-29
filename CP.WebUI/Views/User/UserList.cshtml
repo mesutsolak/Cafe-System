@@ -59,9 +59,9 @@
                     <img src="@(Url.Content((user.BackGroundPhoto.IsNullString() == true) ? "~/Content/image/no-image.png" : user.BackGroundPhoto))" height="30" class="avatar-sm" id="ImageView" />
                 </td>
                 <td class="text-center">
-                    <i class="fas fa-pencil-alt UserUpdate mr-2 pencil-edit" data-id="@user.Id"></i>
+                    <i class="fas fa-pencil-alt UserUpdate mr-2 pencil-edit" data-id="@user.Id" data-toggle="tooltip" data-placement="top" title="Rol Güncelle"></i>
 
-                    <i class="fa fa-trash UserDelete mr-2 trash-edit" data-id="@user.Id"></i>
+                    <i class="fa fa-trash UserDelete mr-2 trash-edit" data-id="@user.Id" data-toggle="tooltip" data-placement="top" title="Rol Sil"></i>
                     @if (User.IsInRole("Admin"))
                     {
                         <i class="fa fa-user-tag UserRole user-tag-edit mr-1" data-id="@user.Id" data-toggle="tooltip" data-placement="top" title="Rol Ata"></i>
