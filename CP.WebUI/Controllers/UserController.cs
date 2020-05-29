@@ -12,6 +12,7 @@ using System.Web.Security;
 using System.Threading.Tasks;
 using CP.BusinessLayer.Tools;
 using System.IO;
+using CP.Entities.ViewModel;
 
 namespace CP.WebUI.Controllers
 {
@@ -371,6 +372,47 @@ namespace CP.WebUI.Controllers
 
             return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
         }
+        [Route("UserFindRole")]
+        [HttpPost]
+        public PartialViewResult RoleFind(int id)
+        {
+            RoleListModel _rolemodel = new RoleListModel
+            {
+                Id = id
+            };
 
+
+            var _myroles = UserRoleOperation.UserFindRole(id);
+
+            foreach (var _role in RoleOperation.GetRoles())
+            {
+                if (_myroles.Any(x => x.RoleId == _role.Id))
+                {
+                    _rolemodel.Roles.Add(new Role
+                    {
+                        RoleId = _role.Id,
+                        RoleName = _role.Name,
+                        Selected = true
+                    });
+                }
+                else
+                {
+                    _rolemodel.Roles.Add(new Role
+                    {
+                        RoleId = _role.Id,
+                        RoleName = _role.Name
+                    });
+
+                }
+            }
+
+            return PartialView(_rolemodel);
+        }
+        [Route("RoleAssignmentOperation")]
+        [HttpPost]
+        public JsonResult RoleAssignmentOperation(RoleListModel roleListModel)
+        {
+    
+        }
     }
 }

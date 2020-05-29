@@ -554,6 +554,7 @@
     <Content Include="Views\Company\GeneralAdd.cshtml" />
     <Content Include="Views\Company\GeneralUpdate.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\User\RoleFind.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -46,13 +46,13 @@
             </div>
         </div>
         <div class="card-text User-body">
-            @Html.Action("UserList","User")
+            @Html.Action("UserList", "User")
         </div>
     </div>
 </div>
 
 <div class="modal-user-add">
-    @Html.Action("Register","User")
+    @Html.Action("Register", "User")
 </div>
 
 <div class="modal-user-update">
@@ -69,11 +69,18 @@
                 </button>
             </div>
             <div class="modal-body">
-                <img src=   "" id="ImgViewSrc" width="465" />
+                <img src="" id="ImgViewSrc" width="465" />
             </div>
         </div>
     </div>
 </div>
+
+<div class="role-user-modal">
+
+</div>
+
+
+
 
 @section js{
     <script src="~/Content/js/Pagejs/user.js"></script>

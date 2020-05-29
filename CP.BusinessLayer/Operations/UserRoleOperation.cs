@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CP.Entities.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,10 @@ namespace CP.BusinessLayer.Operations
         public static int UserRoleCount(int RoleId)
         {
             return _data.UserRoleRepository.GetFilterAll(x => x.RoleId == RoleId).Count;
+        }
+        public static List<UserRoles> UserFindRole(int UserId)
+        {
+            return _data.UserRoleRepository.GetAll(null, x => x.UserId == UserId);
         }
     }
 }

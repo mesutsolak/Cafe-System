@@ -134,8 +134,8 @@ function RemoveAllOperations(RemoveItems) {
     });
 }
 
-function ModalShow(FormId) {
-    $(document).find('#' + FormId).modal('show');
+function ModalShow(ModalId) {
+    $(document).find('#' + ModalId).modal('show');
 }
 
 function FormPost(FormId) {
