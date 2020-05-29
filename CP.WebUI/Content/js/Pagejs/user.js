@@ -139,7 +139,7 @@ $(document).on("click", ".TrueConfirm", function () {
 $(document).on("click", ".UserRole", function () {
 
     var _id = $(this).data("id");
-    $.post("/UserFindRole", { id: _id }, function (result) {
+    $.post("/UserFindRole", { UserId: _id }, function (result) {
         $(".role-user-modal").html(result);
         ModalShow('RoleShowModal');
     });

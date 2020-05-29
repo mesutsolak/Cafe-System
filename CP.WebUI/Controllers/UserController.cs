@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using CP.BusinessLayer.Tools;
 using System.IO;
 using CP.Entities.ViewModel;
+using CP.Entities.Model;
 
 namespace CP.WebUI.Controllers
 {
@@ -374,22 +375,24 @@ namespace CP.WebUI.Controllers
         }
         [Route("UserFindRole")]
         [HttpPost]
-        public PartialViewResult RoleFind(int id)
+        public PartialViewResult RoleFind(int UserId)
         {
             RoleListModel _rolemodel = new RoleListModel
             {
-                Id = id
+                UserId = UserId
             };
 
 
-            var _myroles = UserRoleOperation.UserFindRole(id);
+            var _myroles = UserRoleOperation.UserFindRole(UserId);
 
             foreach (var _role in RoleOperation.GetRoles())
             {
-                if (_myroles.Any(x => x.RoleId == _role.Id))
+                var _roleFind = _myroles.FirstOrDefault(x => x.RoleId == _role.Id);
+                if (_roleFind != null)
                 {
                     _rolemodel.Roles.Add(new Role
                     {
+                        Id = _roleFind.Id,
                         RoleId = _role.Id,
                         RoleName = _role.Name,
                         Selected = true
@@ -399,10 +402,10 @@ namespace CP.WebUI.Controllers
                 {
                     _rolemodel.Roles.Add(new Role
                     {
+                        //Id = _roleFind.Id,
                         RoleId = _role.Id,
                         RoleName = _role.Name
                     });
-
                 }
             }
 
@@ -412,7 +415,45 @@ namespace CP.WebUI.Controllers
         [HttpPost]
         public JsonResult RoleAssignmentOperation(RoleListModel roleListModel)
         {
-    
+            int result = 0;
+            var _myroles = UserRoleOperation.UserFindRole(roleListModel.UserId);
+
+            foreach (var role in roleListModel.Roles)
+            {
+                //Eğer role varsa
+                if (UserRoleOperation.HasUserRole(roleListModel.UserId, role.RoleId))
+                {
+                    if (!role.Selected)
+                        result += UserRoleOperation.Remove(role.Id);
+                }
+                //Eğer rol yoksa
+                else
+                {
+                    if (role.Selected)
+                        result += UserRoleOperation.UserRoleAdd(new C.UserRoles
+                        {
+                            RoleId = role.RoleId,
+                            UserId = roleListModel.UserId
+                        });
+                }
+            }
+
+
+            jsonResultModel.Title = "Rol Atama İşlemi";
+
+            if (result > 0)
+            {
+                jsonResultModel.Icon = "success";
+                jsonResultModel.Description = "Rol atama başarıyla gerçekleşti";
+                jsonResultModel.Modal = "RoleShowModal";
+            }
+            else
+            {
+                jsonResultModel.Icon = "error";
+                jsonResultModel.Description = "Rol atama başarısız";
+            }
+
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
         }
     }
 }
