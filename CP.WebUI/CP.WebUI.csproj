@@ -441,6 +441,7 @@
     <Content Include="Content\js\Pagejs\Contact.js" />
     <Content Include="Content\js\Pagejs\General.js" />
     <Content Include="Content\js\Pagejs\home.js" />
+    <Content Include="Content\js\Pagejs\homepage.js" />
     <Content Include="Content\js\Pagejs\information.js" />
     <Content Include="Content\js\Pagejs\LogOn.js" />
     <Content Include="Content\js\Pagejs\Meal.js" />
@@ -536,7 +537,6 @@
     <Content Include="Views\Report\Index.cshtml" />
     <Content Include="Views\Category\CategoryList.cshtml" />
     <Content Include="Views\User\UserUpdate.cshtml" />
-    <Content Include="Views\Company\Index.cshtml" />
     <Content Include="Views\Company\Slider.cshtml" />
     <Content Include="Views\Company\SliderList.cshtml" />
     <Content Include="Views\Company\SliderAdd.cshtml" />
@@ -555,6 +555,10 @@
     <Content Include="Views\Company\GeneralUpdate.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\RoleFind.cshtml" />
+    <Content Include="Views\Company\Index.cshtml" />
+    <Content Include="Views\Company\HomeList.cshtml" />
+    <Content Include="Views\Company\HomeAdd.cshtml" />
+    <Content Include="Views\Company\HomeUpdate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

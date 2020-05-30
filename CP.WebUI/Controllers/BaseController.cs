@@ -15,14 +15,13 @@ namespace CP.WebUI.Controllers
         //public CafeProjectModel db = new CafeProjectModel();
         protected FirebaseStorageHelper firebaseStorageHelper = new FirebaseStorageHelper("cafe-project-bfd17.appspot.com");
         protected JsonResultModel jsonResultModel = new JsonResultModel();
-        protected CookieManager _CM = new CookieManager();
-        protected SessionManager _SM = new SessionManager();
+        protected CookieManager _Cookie = new CookieManager();
+        protected SessionManager _Session = new SessionManager();
 
         [AllowAnonymous]
         public ActionResult AccessDenied(string roles)
         {
             string message = "Sayfaya ulaşmak için kullanıcının <b>" + roles + "</b>";
-
             if (roles != null)
             {
                 var _result = roles.IndexOf(",");

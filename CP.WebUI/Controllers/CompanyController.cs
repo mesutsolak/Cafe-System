@@ -13,12 +13,86 @@ namespace CP.WebUI.Controllers
 {
     public class CompanyController : BaseController
     {
-        // GET: Company
-        [Route("FirmaBilgileri")]
+        [Route("AnasayfaBilgileri")]
         public ActionResult Index()
         {
             return View();
         }
+        [Route("AnasayfaList")]
+        public PartialViewResult HomeList()
+        {
+            return PartialView(HomePageOperation.DefaultHomePage());
+        }
+        [Route("AnasayfaAdd")]
+        public PartialViewResult HomeAdd()
+        {
+            return PartialView(new HomePage());
+        }
+        [Route("AnasayfaGüncelle")]
+        public PartialViewResult HomeUpdate()
+        {
+            var _result = HomePageOperation.DefaultHomePage();
+            return PartialView(_result);
+        }
+
+        public JsonResult HomePageAddOperation(HomePage homePage)
+        {
+            jsonResultModel.Title = "Ekleme İşlemi";
+            var _result = HomePageOperation.HomePageAdd(homePage);
+            if (_result > 0)
+            {
+                jsonResultModel.Icon = "success";
+                jsonResultModel.Description = "Anasayfa bilgi ekleme işlemi başarıyla gerçekleşti";
+                jsonResultModel.Modal = "HomePageAddModal";
+            }
+            else
+            {
+                jsonResultModel.Icon = "error";
+                jsonResultModel.Description = "Ekleme işlemi başarısız.";
+            }
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
+        }
+
+
+        [HttpPost]
+        public JsonResult HomePageUpdateOperation(HomePage homePage)
+        {
+            jsonResultModel.Title = "Güncelleme İşlemi";
+            var _result = HomePageOperation.HomePageUpdate(homePage);
+            if (_result > 0)
+            {
+                jsonResultModel.Icon = "success";
+                jsonResultModel.Description = "Anasayfa bilgisi başarıyla güncellendi";
+                jsonResultModel.Modal = "HomePageUpdateModal";
+            }
+            else
+            {
+                jsonResultModel.Icon = "error";
+                jsonResultModel.Description = "Güncelleme işlemi başarısız.";
+            }
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        [Route("HomeRemove")]
+        public JsonResult HomePageRemoveOperation(int id)
+        {
+            jsonResultModel.Title = "Silme İşlemi";
+            var _result = HomePageOperation.HomeRemove(id);
+            if (_result > 0)
+            {
+                jsonResultModel.Icon = "success";
+                jsonResultModel.Description = "Başarıyla Silindi";
+            }
+            else
+            {
+                jsonResultModel.Icon = "error";
+                jsonResultModel.Description = "Silme işlemi başarısız.";
+            }
+            return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
+        }
+
+
         [Route("Slider")]
         public ActionResult Slider()
         {
@@ -276,7 +350,7 @@ namespace CP.WebUI.Controllers
         }
         [Route("İletişimEkle")]
         [HttpPost]
-        public JsonResult ContactAdd(Contact contact)
+        public JsonResult ContactAddOperation(Contact contact)
         {
             jsonResultModel.Title = "Ekleme İşlemi";
 

@@ -10,11 +10,18 @@ using System.Threading.Tasks;
 
 namespace CP.BusinessLayer.Repository.Concrete
 {
-    public class HomePageRepository:Repository<HomePage>,IHomePageRepository
+    public class HomePageRepository : Repository<HomePage>, IHomePageRepository
     {
-        public HomePageRepository(DbContext dbContext):base(dbContext)
+        public HomePageRepository(DbContext dbContext) : base(dbContext)
         {
 
+        }
+
+        public CafeProjectModel CafeDB => _context as CafeProjectModel; //bu cast işlemine sürekli ihtiyac duyacağız.
+
+        public HomePage FirstRecord()
+        {
+            return CafeDB.HomePage.FirstOrDefault();
         }
     }
 }

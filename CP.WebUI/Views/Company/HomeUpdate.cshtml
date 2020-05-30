@@ -1,0 +1,69 @@
+﻿@model CP.Entities.Model.HomePage
+
+
+
+<div class="modal inmodal" id="HomePageUpdateModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-pencil-alt mr-2"></i>Bilgi Güncelle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Ajax.BeginForm("HomePageUpdateOperation", "Company", FormMethod.Post, new AjaxOptions()
+                {
+                    InsertionMode = InsertionMode.Replace,
+                    HttpMethod = "POST",
+                    OnSuccess = "returnPostJson(data)",
+                    LoadingElementId = "loading-background",
+                    OnComplete = "HomePageList()"
+                },
+                new
+                {
+                    @class = "InformationUpdate",
+                    @id = "frmInformationUpdate",
+                    @name = "frmInformationUpdate",
+                }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <input type="hidden" value="@Model.Id" name="Id" />
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Header1)
+                        @Html.EditorFor(model => model.Header1, "", new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Header1, "", new { @class = "text-danger error-validate" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Description1)
+                        @Html.TextAreaFor(model => model.Description1, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Description1, "", new { @class = "text-danger error-validate" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Header2)
+                        @Html.EditorFor(model => model.Header2, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Header2, "", new { @class = "text-danger error-validate" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Description2)
+                        @Html.TextAreaFor(model => model.Description2, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Description2, "", new { @class = "text-danger error-validate" })
+                    </div>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" onclick="FormClear('frmInformationUpdate')" id="btnHomePageClear">
+                    <i class="fa fa-trash mr-1"></i>
+                    Temizle
+                </button>
+                <button type="button" class="btn btn-primary" onclick="FormPost('frmInformationUpdate')" id="btnHomePageUpdate">
+                    <i class="fa fa-save mr-1"></i>
+                    Kaydet
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,6 +1,37 @@
 ﻿
 @{
-    ViewBag.Title = "Firma Bilgileri";
+    ViewBag.Title = "Anasayfa Bilgileri";
 }
 
-<h2 class="mt-3">Firma Bilgileri</h2>
+<div class="d-flex mb-2 mt-3">
+    <div class="p-2 bd-highlight">
+        <h2>Anasayfa Bilgileri</h2>
+    </div>
+    <div class="ml-auto p-2 mt-2">
+        <button class="btn btn-primary" id="btnHomeInformationAdd">
+            <i class="fas fa-plus"></i> Bilgi Ekle
+        </button>
+    </div>
+</div>
+
+
+<div class="home-information-list">
+    @(Html.Action("HomeList", "Company"))
+</div>
+
+<div class="home-information-add">
+    @Html.Action("HomeAdd", "Company")
+</div>
+
+<div class="home-information-update">
+
+</div>
+
+
+@section js {
+
+    <script src="~/Content/js/Pagejs/homepage.js"></script>
+}
+
+
+

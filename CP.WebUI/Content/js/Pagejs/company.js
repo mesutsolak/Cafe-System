@@ -6,9 +6,9 @@
     var RemoveItems = {
         id: _id,
         name: _fullname,
-        url: "/SliderRemove",
-        fullname: _fullname + " isimli slider",
-        Method: SliderList
+        url: "/InformationRemove",
+        fullname: "Bilgi" ,
+        Method: CompanyList
     };
 
     RemoveBasicOperations(RemoveItems);

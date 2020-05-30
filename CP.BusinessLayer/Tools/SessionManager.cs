@@ -35,7 +35,7 @@ namespace CP.BusinessLayer.Tools
         {
             _Session.Clear();
         }
-        public void RemoveAll()                                                  
+        public void RemoveAll()
         {
             _Session.RemoveAll();
         }

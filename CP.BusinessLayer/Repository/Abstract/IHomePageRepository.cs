@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace CP.BusinessLayer.Repository.Abstract
 {
-    public interface IHomePageRepository:IRepository<HomePage>
+    public interface IHomePageRepository : IRepository<HomePage>
     {
+        HomePage FirstRecord();
     }
 }

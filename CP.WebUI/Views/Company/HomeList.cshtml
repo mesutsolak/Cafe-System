@@ -1,0 +1,56 @@
+﻿@model  CP.Entities.Model.HomePage
+@using CP.BusinessLayer.Tools
+
+
+
+<div class="table table-responsive tblHomeList">
+    <table class="table table-bordered display no-wrap" cellspacing="0" width="100%" id="tblHomeList">
+        <thead>
+            <tr>
+                <th name="first">
+                    <div class="custom-control Checkall  custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="CheckAll">
+                        <label class="custom-control-label" for="CheckAll"></label>
+                    </div>
+                </th>
+                <th>Başlık 1</th>
+                <th>Açıklama 1</th>
+                <th>Başlık 2</th>
+                <th>Açıklama 2</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody id="tdHomeList">
+            @if (!Model.IsNullObject())
+            {
+                <tr>
+                    <td>
+                        <div class="custom-control  custom-checkbox">
+                            <input type="checkbox" class="custom-control-input check" value="@Model.Id" id="Check-@Model.Id">
+                            <label class="custom-control-label" for="Check-@Model.Id"></label>
+                        </div>
+                    </td>
+                    <td>
+                        @Model.Header1
+                    </td>
+                    <td>
+                        @Model.Description1
+                    </td>
+                    <td>
+                        @(Model.Header2 ?? "Başlık 2 bulunamadı")
+                    </td>
+                    <td>
+                        @(Model.Description2 ??"Açıklama 2 bulunamadı")
+                    </td>
+                    <td class="text-center">
+                        <i class="fas fa-pencil-alt pencil-edit btnHomeListUpdate mr-2" data-id="@Model.Id"></i>
+
+                        <i class="fa fa-trash trash-edit btnHomeListDelete" data-id="@Model.Id"></i>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
