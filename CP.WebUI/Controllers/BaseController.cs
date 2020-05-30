@@ -17,6 +17,7 @@ namespace CP.WebUI.Controllers
         protected JsonResultModel jsonResultModel = new JsonResultModel();
         protected CookieManager _Cookie = new CookieManager();
         protected SessionManager _Session = new SessionManager();
+        protected IDictionary<string, string> _cookieItem = new Dictionary<string, string>();
 
         [AllowAnonymous]
         public ActionResult AccessDenied(string roles)

@@ -3,6 +3,11 @@
     ViewBag.Title = "Kullanıcılar";
 }
 
+
+@section css{
+    <link href="~/Content/framework/DataTable/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+}
+
 <div class="alert alert-info mt-3" role="alert">
     <div class="d-flex flex-row bd-highlight">
         <div class="p-2 bd-highlight">
@@ -101,5 +106,7 @@
 
 
 @section js{
+    <script src="~/Content/framework/DataTable/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/framework/DataTable/js/dataTables.bootstrap4.min.js"></script>
     <script src="~/Content/js/Pagejs/user.js"></script>
 }

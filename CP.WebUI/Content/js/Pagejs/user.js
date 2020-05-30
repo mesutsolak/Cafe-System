@@ -1,4 +1,11 @@
-﻿$("#UserAdd").on("click", function () {
+﻿$(function () {
+
+    setTimeout(function () {
+        TableConvertDataTables("tblUser");
+    }, 500);
+});
+
+$("#UserAdd").on("click", function () {
     $("#UserAddModal").modal('show');
 });
 $("#UserSave").on('click', function () {

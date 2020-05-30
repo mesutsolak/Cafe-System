@@ -1,6 +1,8 @@
 ﻿
 $(function () {
-    TableConvertDataTables("tblProduct");
+    setTimeout(function () {
+        TableConvertDataTables("tblProduct");
+    }, 500);
     //ConvertCkEditor("ProductDetail", "tr");
     ProductList();
     NiceScrool(new ScroolModel("modal-body", "10px", "#A5A5A5"))
@@ -103,33 +105,5 @@ function SweetAlert2(erroricon, errortitle, errortext) {
     })
 }
 
-/**
- * 
- * @param {string} _id Tablo Id'si
- * @returns {void}
- * Convert table to datatable
- */
-function TableConvertDataTables(_id) {
 
-    //bool dönücektir burda 
-    /*
-      Gelen id'ye sahip table datatable jquery'mi ? bunu kontrol ediyorsun eğer değilse çevir demiş olduk.Kontrol etmek
-      her zaman hataları önler.
-     Default olarak dil ingilizce ayarladır.Bunu Türkçeye çevirmek için ya localden ya da cdn yardımıyla json datası alınır.
-    Çoklu silme işlemlerinde ya da herhangi bir tablo yapısında ilk sütunun order(sıralama) almasını istemeyebiliriz.Bu gibi durumlarda aşağıdaki kod bloğu kullanılmalıdır.Order ve columnDefs kullanilmalidir/
-*/
-
-    if (!$.fn.DataTable.isDataTable('#' + _id)) {
-        $("#" + _id).DataTable({
-
-            "language": {
-                "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/Turkish.json",
-            },
-            order: [],
-            columnDefs: [
-                { "orderable": false, "targets": [0] }
-            ]
-        });
-    }
-}
 

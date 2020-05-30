@@ -98,7 +98,7 @@ namespace CP.WebUI.Controllers
         public void LogOut()
         {
             FormsAuthentication.SignOut();
-            Session.Abandon();
+            _Cookie.CookieClear("User");
         }
 
         [HttpPost]
@@ -283,6 +283,8 @@ namespace CP.WebUI.Controllers
         [AllowAnonymous]
         public JsonResult LogonOperation(LoginControl loginControl)
         {
+
+
             jsonResultModel.Title = "Giriş İşlemi";
 
             if (ModelState.IsValid)
@@ -291,7 +293,11 @@ namespace CP.WebUI.Controllers
 
                 if (_result.StartsWith("Başarıyla"))
                 {
-                    Session["FirstAndLast"] = UserOperations.UserFirstAndLast(loginControl.UserName);
+
+                    _cookieItem.Add("FirstAndLast", UserOperations.UserFirstAndLast(loginControl.UserName));
+
+                    _Cookie.CookieCreateValue("User", _cookieItem);
+
 
                     jsonResultModel.Icon = "success";
                     jsonResultModel.Url = "/Anasayfa";
@@ -382,6 +388,8 @@ namespace CP.WebUI.Controllers
                 UserId = UserId
             };
 
+            var _user = UserOperations.UserFind(UserId);
+            ViewBag.FirstAndLast = _user.FirstName + " " + _user.LastName;
 
             var _myroles = UserRoleOperation.UserFindRole(UserId);
 

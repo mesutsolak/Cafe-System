@@ -20,9 +20,9 @@ namespace CP.BusinessLayer.Tools
         {
             _response[key].Value = value;
         }
-        public string CookieGetValue(string key)
+        public HttpCookie CookieGetValue(string key)
         {
-            return _request[key].Value;
+            return _request[key];
         }
         public void CookieCreateValue(string key, IDictionary<string, string> keyValues)
         {
@@ -33,13 +33,13 @@ namespace CP.BusinessLayer.Tools
                 cookies[item.Key] = item.Value;
             }
 
-            cookies.Expires.Add(new TimeSpan(0, 1, 0));
+            cookies.Expires = DateTime.Now.AddDays(3);
             _response.Add(cookies);
         }
-        public void CookieClear(HttpCookie cookie)
+        public void CookieClear(string name)
         {
             //Silmek için kullanılır
-            cookie.Expires = DateTime.Now.AddHours(-1);
+            _response[name].Expires = DateTime.Now.AddHours(-1);
         }
     }
 }
