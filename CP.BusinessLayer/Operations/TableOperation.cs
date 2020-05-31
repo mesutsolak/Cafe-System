@@ -34,7 +34,22 @@ namespace CP.BusinessLayer.Operations
         }
         public static List<Table> GetAllWaitTable()
         {
-            return _data.TableRepository.GetAll(null, x => x.ConfirmId == 3);
+            return _data.TableRepository.GetAll(x => x.User, x => x.ConfirmId == 3);
+        }
+        public static int TableApproved(int id)
+        {
+            var _table = _data.TableRepository.GetById(id);
+            _table.ConfirmId = 1;
+            _data.TableRepository.Update(_table);
+            return _data.Complete();
+        }
+        public static int TableConfirmRemove(int id)
+        {
+
+            var _table = _data.TableRepository.GetById(id);
+            _table.ConfirmId = 5;
+            _data.TableRepository.Update(_table);
+            return _data.Complete();
         }
     }
 }

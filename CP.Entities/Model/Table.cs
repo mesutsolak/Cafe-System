@@ -22,5 +22,6 @@ namespace CP.Entities.Model
         public virtual ICollection<Cart> Cart { get; set; }
 
         public virtual ConfirmStatus ConfirmStatus { get; set; }
+        public virtual User User { get; set; }
     }
 }

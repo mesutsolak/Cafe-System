@@ -90,5 +90,6 @@ namespace CP.Entities.Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserRoles> UserRoles { get; set; }
+        public virtual ICollection<Table> Table { get; set; }
     }
 }
