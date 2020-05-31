@@ -61,3 +61,4 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\obj\Debug\CP.DesktopUI
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\obj\Debug\CP.DesktopUI.csproj.CopyComplete
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\obj\Debug\CP.DesktopUI.exe
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\obj\Debug\CP.DesktopUI.pdb
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.DesktopUI\bin\Debug\De.TorstenMandelkow.MetroChart.dll
