@@ -25,7 +25,20 @@ $(document).on("change", "input[type='file']", function (e) {
         }
         $(_formgroup).find(".ImageCancel").show();
     }
+});
 
+
+$(document).on("change", "input[type='checkbox']", function () {
+    var _result = $(this).prop("checked");
+    if (_result == true) {
+        $(this).val("true");
+        $(this).prop("checked", true);
+    }
+    else {
+        $(this).val("false");
+        $(this).prop("checked", false);
+
+    }
 });
 
 

@@ -18,10 +18,15 @@
                 TextColor="Blue"
                    FontSize="20"
                    Margin="10,5"
-                HorizontalOptions="StartAndExpand" />
+                HorizontalOptions="StartAndExpand" />    
+            
+         
+
+
             <StackLayout x:Name="StlForm" x:Uid="StlForm" Margin="10">
 
-            
+              
+
                 <Label Text="Kullanıcı Adı" x:Name="lblUserName" x:Uid="lblUserName"/>
                 <custom:ValidatableEntryControl   x:Name="EntUserName" x:Uid="EntUserName" Placeholder="Kullanıcı Adı Giriniz" BindingName="UserName"></custom:ValidatableEntryControl>
 

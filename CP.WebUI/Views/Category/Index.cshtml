@@ -15,12 +15,22 @@
 
 <div class="card mt-4">
     <div class="card-header">
-        <div class="d-flex flex-row bd-highlight">
+        <div class="d-flex bd-highlight">
             <div class="p-2 bd-highlight mt-1">
                 <i class="fas fa-bars fa-2x"></i>
             </div>
             <div class="p-2 bd-highlight">
                 <h2>Kategoriler</h2>
+            </div>
+            <div class="ml-auto p-2 bd-highlight">
+                <div class="row">
+                    <div class="col-3 mt-1">
+                        <h5>Ara :</h5>
+                    </div>
+                    <div class="col-9">
+                        <input type="search" id="CategorySearch" placeholder="Kategori Adı Giriniz"  class="form-control" />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -92,6 +102,11 @@
     </div>
 </div>
 
+@section css {
+    <link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
+}
+
 @section js {
+    <script src="~/Content/js/jquery-ui.js"></script>
     <script src="~/Content/js/Pagejs/category.js"></script>
 }

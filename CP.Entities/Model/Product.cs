@@ -63,8 +63,12 @@ namespace CP.Entities.Model
 
         public DateTime? AddedDate { get; set; }
 
-        public bool Preference { get; set; }
-        public bool Choose { get; set; }
+        [Display(Name = "Tercih")]
+        [Required(ErrorMessage ="Lütfen belli ediniz")]
+        public bool? Preference { get; set; }
+        [Display(Name = "Kafe")]
+        [Required(ErrorMessage = "Lütfen belli ediniz")]
+        public bool? Choose { get; set; }
 
         [NotMapped]
         [Display(Name = "Ürün Resmi")]

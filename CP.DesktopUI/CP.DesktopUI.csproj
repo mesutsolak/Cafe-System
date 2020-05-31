@@ -158,6 +158,10 @@
       <Project>{DF82C02B-D7D9-41FF-AC7D-F7C85BB56C3E}</Project>
       <Name>CP.BusinessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CP.Entities\CP.Entities.csproj">
+      <Project>{BC027EB7-78F7-4106-9963-3426C8DC9C05}</Project>
+      <Name>CP.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CP.ServiceLayer\CP.ServiceLayer.csproj">
       <Project>{B50E3529-B401-4EA7-9C5A-EAF8DE0FE60F}</Project>
       <Name>CP.ServiceLayer</Name>

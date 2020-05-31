@@ -11,7 +11,7 @@ $("#CategoryClear").on("click", function () {
     FormClear('frmCategoryAdd');
 });
 
-$(document).on("click",".categoryUpdate", function () {
+$(document).on("click", ".categoryUpdate", function () {
     var _id = $(this).data("id");
     $.get("/KategoriUpdate", { id: _id }, function (result) {
         $(".modal-update").html(result);
@@ -26,11 +26,11 @@ function CategoryList() {
     });
 }
 
-$(document).on("click", "#CategoryUpdateSave",function () {
+$(document).on("click", "#CategoryUpdateSave", function () {
     FormPost('frmCategoryUpdate');
 });
 
-$(document).on("click","#CategoryUpdateClear", function () {
+$(document).on("click", "#CategoryUpdateClear", function () {
     FormClear('frmCategoryUpdate');
 });
 $(document).on("click", ".categoryDelete", function () {
@@ -58,4 +58,24 @@ $(document).on("click", "#ImageView", function () {
         $("#ImageShowModal").modal("show");
     }
 
+});
+
+
+$("#CategorySearch").autocomplete({
+    source: function (request, response) {
+        $.ajax({
+            url: "/SearchCategory",
+            type: "POST",
+            dataType: "json",
+            data: { Prefix: request.term },
+            success: function (data) {
+                response($.map(data, function (item) {
+                    return { label: item.Name, value: item.Name};
+                }))
+            }
+        })
+    },
+    messages: {
+        noResults: "", results: ""
+    }  
 });

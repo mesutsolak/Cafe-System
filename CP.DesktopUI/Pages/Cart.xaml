@@ -11,7 +11,7 @@
             <StackPanel Orientation="Horizontal">
                 <Label Content="Sipariş Listesi" Margin="10,10,10,0" FontSize="24"/>
             </StackPanel>
-            <Button x:Name="btnOrderRefresh" Width="160" Margin="10"  HorizontalAlignment="Right">
+            <Button x:Name="btnOrderRefresh" Width="160" Margin="10" Click="btnOrderRefresh_Click"  HorizontalAlignment="Right">
                 <StackPanel Orientation="Horizontal" Cursor="Hand">
                     <materialDesign:PackIcon Kind="Refresh" Width="25" Height="18" />
                     <TextBlock><Run Text="Siparişleri Yenile"/></TextBlock>
@@ -20,17 +20,20 @@
             <Separator Background="Gray" Margin="2,30,-2,-26"></Separator>
         </Grid>
         <Grid>
-            <ListView x:Name="CartView" ItemsSource="{Binding users}" Margin="0,65,0,-65" SelectionChanged="CartView_SelectionChanged">
+            <ListView x:Name="CartView" ItemsSource="{Binding carts}" Margin="0,65,0,-65" SelectionChanged="CartView_SelectionChanged">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="Id" Width="50"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding FirstName}" Header="İsim" Width="75"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding LastName}" Header="Soyisim" Width="95"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Product.Name}" Header="Ürün Adı" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Count}" Header="Miktarı" Width="75"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Price}" Header="Fiyatı" Width="75"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding User.FirstName}" Header="İsim" Width="55"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding User.LastName}" Header="Soyisim" Width="95"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Table.Number}" Header="Masa Numarası" Width="150"/>
                         <GridViewColumn Header="İşlemler">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Left">
-                                        <materialDesign:PackIcon  x:Name="btnCartUpdate" Cursor="Hand" ToolTip="Sipariş Onayla"   Kind="Tick"  Margin="5" Foreground="Green"  Width="15" Tag="{Binding Id}"  Height="25" VerticalAlignment="Center"/>
+                                        <materialDesign:PackIcon  x:Name="btnCartUpdate" Cursor="Hand" ToolTip="Sipariş Onayla"  MouseDoubleClick="btnCartUpdate_MouseDoubleClick"  Kind="Tick"  Margin="5" Foreground="Green"  Width="15" Tag="{Binding Id}"  Height="25" VerticalAlignment="Center"/>
                                         <materialDesign:PackIcon  x:Name="btnCartTrash" Cursor="Hand" ToolTip="Siparişi Sil" MouseDoubleClick="btnCartTrash_MouseDoubleClick" Kind="Trash" Width="15" Foreground="Red" Height="25" Tag="{Binding Id}" VerticalAlignment="Center"/>
                                     </StackPanel>
                                 </DataTemplate>

@@ -18,8 +18,8 @@
      
         <Image Source="cafe.png" WidthRequest="200"/>
         <Label Text="Beyoğlu Kafesi" FontFamily="Lobster-Regular" FontSize="30"/>
-        <Button Text="Giriş Yap" CornerRadius="5" ContentLayout="Left,5" WidthRequest="130" HorizontalOptions="Start" ImageSource="SignIn.png" BackgroundColor="Green" TextColor="White"  x:Name="btnSignIn" x:Uid="btnSignIn" Clicked="btnSignIn_Clicked" />
-        <Button Text="Kayıt Ol" CornerRadius="5" ContentLayout="Left,5" WidthRequest="130" HorizontalOptions="Start" ImageSource="Add_User.png" BackgroundColor="Blue" TextColor="White"   x:Name="btnRegister" x:Uid="btnRegister" Clicked="btnRegister_Clicked" />
+        <Button Text="Giriş Yap" CornerRadius="5" ContentLayout="Left,5" WidthRequest="130" HorizontalOptions="Center" ImageSource="SignIn.png" BackgroundColor="Green" TextColor="White"  x:Name="btnSignIn" x:Uid="btnSignIn" Clicked="btnSignIn_Clicked" />
+        <Button Text="Kayıt Ol" CornerRadius="5" ContentLayout="Left,5" WidthRequest="130" HorizontalOptions="Center" ImageSource="Add_User.png" BackgroundColor="Blue" TextColor="White"   x:Name="btnRegister" x:Uid="btnRegister" Clicked="btnRegister_Clicked" />
 
     </StackLayout>
 

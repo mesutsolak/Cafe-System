@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace CP.BusinessLayer.Repository.Concrete
 {
-    public class CategoryRepository : Repository<Category> , ICategoryRepository
+    public class CategoryRepository : Repository<Category>, ICategoryRepository
     {
-        public CategoryRepository(DbContext dbContext):base(dbContext)
+        public CategoryRepository(DbContext dbContext) : base(dbContext)
         {
 
         }

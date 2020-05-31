@@ -40,9 +40,13 @@
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock x:Name="FirstLast" Text="Abel Dutra" VerticalAlignment="Center" FontSize="18"/>
                 <materialDesign:PopupBox  Margin="10" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
-                    <StackPanel Width="150" Height="50">
+                    <StackPanel Width="150" Height="120">
                         <Button x:Name="btnLogOut" Click="btnLogOut_Click" Width="150" Content="Çıkış Yap"/>
+                        <Separator/>
+                        <Button x:Name="btnShutDown" Click="btnShutDown_Click" Width="150" Content="Uygulamadan Çık"/>
                     </StackPanel>
+                  
+                    
                 </materialDesign:PopupBox>
             </StackPanel>
         </Grid>

@@ -13,9 +13,17 @@ namespace CP.DesktopUI
     /// </summary>
     public partial class App : Application
     {
+        string Url = "";
         void App_Startup(object sender, StartupEventArgs e)
         {
-            StartupUri = new Uri("Main.xaml",UriKind.Relative);
+
+            if (Application.Current.Properties["UserName"] == null)
+                Url = "LoginScreen.xaml";
+            else
+                Url = "Main.xaml";
+
+
+            StartupUri = new Uri(Url, UriKind.Relative);
         }
 
     }

@@ -10,6 +10,7 @@ namespace CP.BusinessLayer.Repository.Abstract
 {
     public interface ICartRepository : IRepository<Cart>
     {
+        List<Cart> GetAllWaitCart();
         Task<List<Cart>> CartListAsync(int UserId);
     }
 }

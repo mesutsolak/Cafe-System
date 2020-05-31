@@ -75,6 +75,20 @@
                             </div>
                         }
                     </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Preference)
+                        <div class="custom-control  custom-checkbox">
+                            <input type="checkbox" checked="@(Model.Preference)" class="custom-control-input check" value="@(Model.Preference == true?"true":"false")" name="Preference" id="Check-Preference">
+                            <label class="custom-control-label" for="Check-Preference"></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Choose)
+                        <div class="custom-control  custom-checkbox">
+                            <input type="checkbox" checked="@(Model.Choose)" class="custom-control-input check" name="Choose" value="@(Model.Choose == true?"true":"false")" id="Check-Choose">
+                            <label class="custom-control-label" for="Check-Choose"></label>
+                        </div>
+                    </div>
                 }
             </div>
             <div class="modal-footer">

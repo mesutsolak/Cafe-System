@@ -16,6 +16,8 @@
                 <th>Fiyat</th>
                 <th>Miktar</th>
                 <th>Resim</th>
+                <th>Tercih</th>
+                <th>Kafe</th>
                 <th>İşlemler</th>
             </tr>
         </thead>
@@ -52,8 +54,13 @@
                         @product.Amount
                     </td>
                     <td class="text-center">
-
                         <img src="@(Url.Content(product.Image ?? "~/Content/image/no-image.png"))" height="30" class="avatar-sm" id="ImageView" />
+                    </td>
+                    <td>
+                        @(product.Preference == true ? "Seçildi" : "Seçilmedi") 
+                    </td>
+                    <td>
+                        @(product.Choose == true ? "Seçildi" : "Seçilmedi")
                     </td>
                     <td class="text-center">
                         <i class="fas fa-pencil-alt pencil-edit ProductUpdate mr-2" data-id="@product.Id"></i>

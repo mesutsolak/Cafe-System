@@ -13,6 +13,7 @@ namespace CP.WebUI.Controllers
 {
     public class CategoryController : BaseController
     {
+
         // GET: Category
         [Route("Kategoriler")]
         public ActionResult Index()
@@ -28,10 +29,19 @@ namespace CP.WebUI.Controllers
         [Route("KategoriList")]
         public PartialViewResult CategoryList()
         {
-            var _result = CategoryOperation.GetCategories();
+            var categories = CategoryOperation.GetCategories();
 
-            return PartialView(_result);
+            return PartialView(categories);
         }
+
+        [Route("SearchCategory")]
+        [HttpPost]
+        public JsonResult CategorySearch(string Prefix)
+        {
+            var item = CategoryOperation.CategorySearch(Prefix);
+            return Json(item, JsonRequestBehavior.AllowGet);
+        }
+
 
         [Route("KategoriUpdate")]
         public PartialViewResult CategoryUpdate(int id)
@@ -92,34 +102,34 @@ namespace CP.WebUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (!CategoryOperation.IsThereCategory(category.Name, category.Id)) 
+                if (!CategoryOperation.IsThereCategory(category.Name, category.Id))
+                {
+                    if (!category.Images.IsNullObject() && category.Images.ContentLength > 0)
                     {
-                        if (!category.Images.IsNullObject() && category.Images.ContentLength > 0)
-                        {
-                            var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(category.Images.FileName);
-                            category.Image = await firebaseStorageHelper.UploadFile(category.Images.InputStream, ImageName, "category");
-                        }
+                        var ImageName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(category.Images.FileName);
+                        category.Image = await firebaseStorageHelper.UploadFile(category.Images.InputStream, ImageName, "category");
+                    }
 
-                        int id = CategoryOperation.CategoryUpdate(category);
+                    int id = CategoryOperation.CategoryUpdate(category);
 
-                        if (id > 0)
-                        {
-                            jsonResultModel.Icon = "success";
-                            jsonResultModel.Description = "Kategori Başarıyla Güncellendi";
-                            jsonResultModel.Modal = "CategoryUpdateModal";
-                        }
-                        else
-                        {
-                            jsonResultModel.Icon = "error";
-                            jsonResultModel.Description = "Kategori Güncelleme Başarısız";
-                        }
+                    if (id > 0)
+                    {
+                        jsonResultModel.Icon = "success";
+                        jsonResultModel.Description = "Kategori Başarıyla Güncellendi";
+                        jsonResultModel.Modal = "CategoryUpdateModal";
                     }
                     else
                     {
                         jsonResultModel.Icon = "error";
-                        jsonResultModel.Description = "Kategori adı zaten kullanılmış";
+                        jsonResultModel.Description = "Kategori Güncelleme Başarısız";
                     }
                 }
+                else
+                {
+                    jsonResultModel.Icon = "error";
+                    jsonResultModel.Description = "Kategori adı zaten kullanılmış";
+                }
+            }
             else
             {
                 jsonResultModel.Icon = "error";

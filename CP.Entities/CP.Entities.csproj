@@ -88,6 +88,10 @@
     <Compile Include="Migrations\202005281018073_CategoryIsDeletedColumnAdd.designer.cs">
       <DependentUpon>202005281018073_CategoryIsDeletedColumnAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005311737338_CartIsDeletedAdd.cs" />
+    <Compile Include="Migrations\202005311737338_CartIsDeletedAdd.designer.cs">
+      <DependentUpon>202005311737338_CartIsDeletedAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\BaseEntity.cs" />
     <Compile Include="Model\CafeProjectModel.cs" />
@@ -132,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005281018073_CategoryIsDeletedColumnAdd.resx">
       <DependentUpon>202005281018073_CategoryIsDeletedColumnAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005311737338_CartIsDeletedAdd.resx">
+      <DependentUpon>202005311737338_CartIsDeletedAdd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

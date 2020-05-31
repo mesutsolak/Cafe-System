@@ -34,8 +34,7 @@ namespace CP.DesktopUI
                 Password = txtPassword.Password
             });
 
-
-            MessageBox.Show(_result,"Sonuç");
+            MessageBox.Show(_result.Split(',')[0], "Sonuç", MessageBoxButton.OK, MessageBoxImage.Information);
             if (_result.StartsWith("Başarıyla"))
             {
                 Application.Current.Properties["UserName"] = txtUserName.Text;

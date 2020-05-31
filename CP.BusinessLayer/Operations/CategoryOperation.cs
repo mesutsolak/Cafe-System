@@ -45,5 +45,9 @@ namespace CP.BusinessLayer.Operations
             return _data.CategoryRepository.IsThereResult(x => x.Name == CategoryName && x.Id != id);
 
         }
+        public static List<Category> CategorySearch(string Search)
+        {
+            return _data.CategoryRepository.GetFilterAll(x => x.Name.Contains(Search));
+        }
     }
 }

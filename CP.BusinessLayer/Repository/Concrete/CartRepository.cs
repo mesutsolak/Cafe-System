@@ -25,5 +25,10 @@ namespace CP.BusinessLayer.Repository.Concrete
         {
            return CafeDB.Cart.Where(x=>x.ConfirmId==1).ToListAsync();
         }
+
+        public List<Cart> GetAllWaitCart()
+        {
+            return CafeDB.Cart.Include(x => x.Product).Include(x => x.Table).Where(x => x.ConfirmId == 3 && x.IsDeleted == false).ToList();
+        }
     }
 }

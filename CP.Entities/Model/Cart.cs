@@ -11,7 +11,7 @@ namespace CP.Entities.Model
     {
         public Cart()
         {
-            IsDelete = false;
+            IsDeleted = false;
         }
 
 
@@ -31,7 +31,7 @@ namespace CP.Entities.Model
 
         public int? ConfirmId { get; set; }
 
-        public bool? IsDelete { get; set; }
+        public bool? IsDeleted { get; set; }
 
         public virtual Table Table { get; set; }
 

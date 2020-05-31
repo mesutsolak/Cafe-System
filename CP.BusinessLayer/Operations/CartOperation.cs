@@ -54,12 +54,12 @@ namespace CP.BusinessLayer.Operations
 
         public static List<Cart> GetAll(int UserId)
         {
-            return _data.CartRepository.GetAll(x => x.Product, x => x.UserId == UserId && x.ConfirmId == 2 && x.IsDelete == false);
+            return _data.CartRepository.GetAll(x => x.Product, x => x.UserId == UserId && x.ConfirmId == 2 && x.IsDeleted == false);
         }
 
         public static List<Cart> GetAllOrder(int UserId)
         {
-            return _data.CartRepository.GetAll(x => x.Product, y => y.ConfirmId == 1 && y.UserId == UserId && y.IsDelete == false);
+            return _data.CartRepository.GetAll(x => x.Product, y => y.ConfirmId == 1 && y.UserId == UserId && y.IsDeleted == false);
         }
 
         public static Cart GetCart(int Id)
@@ -69,17 +69,17 @@ namespace CP.BusinessLayer.Operations
 
         public static Cart IsThereProduct(int productId, int UserId)
         {
-            return _data.CartRepository.GetByFilter(x => x.ProductId == productId && x.UserId == UserId && x.ConfirmId == 2 && x.IsDelete==false);
+            return _data.CartRepository.GetByFilter(x => x.ProductId == productId && x.UserId == UserId && x.ConfirmId == 2 && x.IsDeleted == false);
         }
 
         public static int CartCount(int UserId)
         {
-            return _data.CartRepository.GetAll(null, x => x.UserId == UserId && x.ConfirmId == 2 && x.IsDelete == false).Count;
+            return _data.CartRepository.GetAll(null, x => x.UserId == UserId && x.ConfirmId == 2 && x.IsDeleted == false).Count;
         }
 
         public static int ConfirmAll(int UserId)
         {
-            var _values = _data.CartRepository.GetFilterAll(x => x.UserId == UserId && x.ConfirmId == 2 && x.IsDelete == false);
+            var _values = _data.CartRepository.GetFilterAll(x => x.UserId == UserId && x.ConfirmId == 2 && x.IsDeleted == false);
 
             foreach (var value in _values)
             {
@@ -96,7 +96,7 @@ namespace CP.BusinessLayer.Operations
 
             foreach (var value in _values)
             {
-                value.IsDelete = true;
+                value.IsDeleted = true;
                 _data.CartRepository.Update(value);
             }
 
@@ -105,8 +105,26 @@ namespace CP.BusinessLayer.Operations
 
         public static List<Cart> GetHistoryCarts(int UserId)
         {
-          return  _data.CartRepository.GetAll(x => x.Product, y => y.ConfirmId == 4 && y.UserId == UserId);
+            return _data.CartRepository.GetAll(x => x.Product, y => y.ConfirmId == 4 && y.UserId == UserId);
         }
+        public static List<Cart> GetAllWaitCart()
+        {
+            return _data.CartRepository.GetAllWaitCart();
+        }
+        public static int CartApproved(int id)
+        {
+            var _cart = _data.CartRepository.GetById(id);
+            _cart.ConfirmId = 1;
+            _data.CartRepository.Update(_cart);
+            return _data.Complete();
+        }
+        public static int CartConfirmRemove(int id)
+        {
 
+            var _cart = _data.CartRepository.GetById(id);
+            _cart.ConfirmId = 5;
+            _data.CartRepository.Update(_cart);
+            return _data.Complete();
+        }
     }
 }

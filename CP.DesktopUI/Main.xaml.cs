@@ -23,29 +23,32 @@ namespace CP.DesktopUI
         public Main()
         {
             InitializeComponent();
-            FirstLast.Text = "İsim ve Soyisim";
+            FirstLast.Text = "Hoşgeldin " + Application.Current.Properties["Name"] as string;
             MenuListView.SelectedIndex = 0;
         }
 
         private void btnLogOut_Click(object sender, RoutedEventArgs e)
         {
-           MessageBoxResult messageBoxResult =  MessageBox.Show("Çıkmak İstiyormusunuz ?", "Çıkış İşlemi", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult messageBoxResult = MessageBox.Show("Hesabınızdan çıkmak istiyor musunuz ?", "Çıkış İşlemi", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
-            if (messageBoxResult==MessageBoxResult.Yes)
+            if (messageBoxResult == MessageBoxResult.Yes)
             {
-                Application.Current.Shutdown();
+                LoginScreen login = new LoginScreen();
+                login.Show();
+                this.Close();
+                //Application.Current.Shutdown();
             }
         }
 
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
         {
-             ButtonOpenMenu.Visibility = Visibility.Collapsed;
-            ButtonCloseMenu.Visibility = Visibility.Visible; 
+            ButtonOpenMenu.Visibility = Visibility.Collapsed;
+            ButtonCloseMenu.Visibility = Visibility.Visible;
         }
 
         private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
         {
-                      
+
             ButtonOpenMenu.Visibility = Visibility.Visible;
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
         }
@@ -76,6 +79,13 @@ namespace CP.DesktopUI
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             PageOpen((e.AddedItems[0] as ListViewItem).Name);
+        }
+
+        private void btnShutDown_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult messageBoxResult = MessageBox.Show("Uygulamadan çıkmak istiyor musunuz ?", "Çıkış İşlemi", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (messageBoxResult == MessageBoxResult.Yes)
+                Application.Current.Shutdown();
         }
     }
 }
