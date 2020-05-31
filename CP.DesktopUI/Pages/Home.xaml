@@ -7,6 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="530" d:DesignWidth="1020" Background="White">
     <Grid>
+
         <Grid>
             <ScrollViewer>
                 <Grid>
@@ -32,16 +33,15 @@
                                 <Grid.Effect>
                                     <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Quality" ShadowDepth="1"/>
                                 </Grid.Effect>
-                                <materialDesign:PackIcon Kind="ContentCopy" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Foreground="White" Width="20" Height="20"/>
+                                <materialDesign:PackIcon Kind="Cart" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Foreground="White" Width="20" Height="20"/>
                             </Grid>
-                            <TextBlock Text="Espaço Usado" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="5" VerticalAlignment="Top" Foreground="Gray"/>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10 20">
-                                <TextBlock Text="49/50" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center" Foreground="Gray" FontSize="50"/>
-                                <TextBlock Text="GB" FontFamily="Champagne &amp; Limousines" Margin="0 5" Foreground="Gray" FontSize="20" VerticalAlignment="Bottom"/>
+                            <TextBlock Text="Sipariş Sayısı" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="5" VerticalAlignment="Top" Foreground="Gray"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10 30">
+                                <TextBlock Text="75" Name="txtCartCount" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center" Foreground="Gray" FontSize="40"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="20" Cursor="Hand">
-                                <materialDesign:PackIcon Kind="AlertOutline" Foreground="Red" Width="10" Height="10" VerticalAlignment="Center" Margin="5 0"/>
-                                <TextBlock Text="Adquirir mais espaço" FontSize="8" Foreground="#FF8522BD"/>
+                                <materialDesign:PackIcon Kind="Information" Foreground="Red" Width="10" Height="10" VerticalAlignment="Center" Margin="5 0"/>
+                                <TextBlock Text="Aktif Sipariş Sayısını Gösterir." FontSize="10" Foreground="Gray"/>
                             </StackPanel>
                         </Grid>
                     </Grid>
@@ -56,16 +56,15 @@
                                 <Grid.Effect>
                                     <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Quality" ShadowDepth="1"/>
                                 </Grid.Effect>
-                                <materialDesign:PackIcon Kind="Store" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Foreground="White" Width="20" Height="20"/>
+                                <materialDesign:PackIcon Kind="TableChair" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Foreground="White" Width="20" Height="20"/>
                             </Grid>
-                            <TextBlock Text="Receita" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="5" VerticalAlignment="Top" Foreground="Gray"/>
+                            <TextBlock Text="Masa Sayısı" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="5" VerticalAlignment="Top" Foreground="Gray"/>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10 30">
-                                <TextBlock Text="R$" FontFamily="Champagne &amp; Limousines" Margin="0 2" Foreground="Gray" FontSize="20" VerticalAlignment="Bottom"/>
-                                <TextBlock Text="35.674,00" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center" Foreground="Gray" FontSize="30"/>
+                                <TextBlock Text="75" Name="txtTableCount" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center" Foreground="Gray" FontSize="40"/>
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="20">
-                                <materialDesign:PackIcon Kind="Calendar" Foreground="Gray" Width="10" Height="10" VerticalAlignment="Center" Margin="5 0"/>
-                                <TextBlock Text="Ultimas 24h" FontSize="8" Foreground="Gray"/>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="20" Cursor="Hand">
+                                <materialDesign:PackIcon Kind="Information" Foreground="Red" Width="10" Height="10" VerticalAlignment="Center" Margin="5 0"/>
+                                <TextBlock Text="Aktif Masa Sayısını Gösterir." FontSize="10" Foreground="Gray"/>
                             </StackPanel>
                         </Grid>
                     </Grid>
@@ -80,37 +79,25 @@
                                 <Grid.Effect>
                                     <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Quality" ShadowDepth="1"/>
                                 </Grid.Effect>
-                                <materialDesign:PackIcon Kind="InformationOutline" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Foreground="White" Width="20" Height="20"/>
+                                <materialDesign:PackIcon Kind="Music" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Foreground="White" Width="20" Height="20"/>
                             </Grid>
-                            <TextBlock Text="Erros Corrigidos" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="5" VerticalAlignment="Top" Foreground="Gray"/>
+                            <TextBlock Text="Müzik Sayısı" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="5" VerticalAlignment="Top" Foreground="Gray"/>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10 30">
-                                <TextBlock Text="75" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center" Foreground="Gray" FontSize="40"/>
+                                <TextBlock Text="75" x:Name="txtMusicCount" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center" Foreground="Gray" FontSize="40"/>
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="20">
-                                <materialDesign:PackIcon Kind="Circle" Foreground="Gray" Width="10" Height="10" VerticalAlignment="Center" Margin="5 0"/>
-                                <TextBlock Text="Monitorado pelo GitHub" FontSize="8" Foreground="Gray"/>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="20" Cursor="Hand">
+                                <materialDesign:PackIcon Kind="Information" Foreground="Red" Width="10" Height="10" VerticalAlignment="Center" Margin="5 0"/>
+                                <TextBlock Text="Aktif Müzik Sayısını Gösterir." FontSize="10" Foreground="Gray"/>
                             </StackPanel>
                         </Grid>
                     </Grid>
 
-                    <Grid Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" Width="580" Height="510">
+                    <Grid Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="3" HorizontalAlignment="Center" Width="580" Height="450">
                         <Grid Background="White" Margin="20 50 20 20">
                             <Grid.OpacityMask>
                                 <VisualBrush Visual="{ Binding ElementName=BorderG1 }"/>
                             </Grid.OpacityMask>
                             <Border x:Name="BorderG1" CornerRadius="5" Background="White"/>
-                            <StackPanel VerticalAlignment="Bottom" >
-                                <TextBlock Text="Receita Diária" Margin="10 0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="20"/>
-                                <StackPanel Orientation="Horizontal" Margin="20 5">
-                                    <materialDesign:PackIcon Kind="ArrowUp" Foreground="Green" VerticalAlignment="Center"/>
-                                    <TextBlock Text="55%" FontFamily="Champagne &amp; Limousines" Foreground="Green" FontSize="15"/>
-                                    <TextBlock Text="Crescimento nas vendas hoje" Margin="20 0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15"/>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="10 5">
-                                    <materialDesign:PackIcon Kind="Clock" Foreground="Gray" VerticalAlignment="Center"/>
-                                    <TextBlock Text="Atualizado a 4 minutos" Margin="5 0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15"/>
-                                </StackPanel>
-                            </StackPanel>
                         </Grid>
                         <Grid Margin="50 20 50 150">
                             <Grid.OpacityMask>
@@ -118,7 +105,7 @@
                             </Grid.OpacityMask>
                             <Border x:Name="BorderG2" CornerRadius="15" Background="#FF340051"/>
 
-                            <MetroChart:RadialGaugeChart Background="{x:Null}" ChartTitle="Consumo" ChartSubTitle="" Foreground="LightGray" Margin="0,-30,0,30" >
+                            <MetroChart:RadialGaugeChart Background="{x:Null}" ChartTitle="Grafik" ChartSubTitle="" FontFamily="Bold" Foreground="Gray" Margin="0,-30,0,0" >
                                 <MetroChart:RadialGaugeChart.Series>
                                     <MetroChart:ChartSeries
                                         DisplayMember="Titulo"

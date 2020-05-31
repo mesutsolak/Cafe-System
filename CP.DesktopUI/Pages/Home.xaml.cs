@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CP.BusinessLayer.Operations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,11 +21,15 @@ namespace CP.DesktopUI.Pages
     /// </summary>
     public partial class Home : UserControl
     {
+
         public Home()
         {
-                InitializeComponent();
+            InitializeComponent();
             Consumo consumo = new Consumo();
             DataContext = new ConsumoViewModel(consumo);
+            txtCartCount.Text = CartOperation.GetAllWaitCart().Count.ToString();
+            txtMusicCount.Text = MusicListOperation.GetAllWaitMusic().Count.ToString();
+            txtTableCount.Text = TableOperation.GetAllWaitTable().Count.ToString();
         }
         internal class ConsumoViewModel
         {
@@ -44,13 +49,21 @@ namespace CP.DesktopUI.Pages
 
             public Consumo()
             {
-                Titulo = "Consumo Atual";
+                Titulo = "Toplam Doluluk Oranı";
                 Porcentagem = CalcularPorcentagem();
             }
 
-            private int CalcularPorcentagem()
+            public int CalcularPorcentagem()
             {
-                return 47; //Calculo da porcentagem de consumo
+                int total = 0;
+
+
+                total += CartOperation.GetAllWaitCart().Count;
+                total += MusicListOperation.GetAllWaitMusic().Count;
+                total += TableOperation.GetAllWaitTable().Count;
+
+
+                return total > 100 ? 100 : total; //Calculo da porcentagem de consumo
             }
         }
     }
