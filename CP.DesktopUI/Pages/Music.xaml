@@ -20,12 +20,13 @@
             <Separator Background="Gray" Margin="2,30,-2,-26"></Separator>
         </Grid>
         <Grid>
-            <ListView x:Name="CartView" ItemsSource="{Binding users}" Margin="0,65,0,-65">
+            <ListView x:Name="MusicView" ItemsSource="{Binding musics}" Margin="0,65,0,-65">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="Id" Width="50"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding FirstName}" Header="İsim" Width="75"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding LastName}" Header="Soyisim" Width="95"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding MusicName}" Header="Müzik Adı" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding ArtistName}" Header="Sanatçı Adı" Width="120"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding User.FirstName}" Header="İsim" Width="75"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding User.LastName}" Header="Soyisim" Width="75"/>
                         <GridViewColumn Header="İşlemler">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>

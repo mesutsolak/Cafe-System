@@ -62,7 +62,22 @@ namespace CP.BusinessLayer.Operations
         }
         public static List<MusicList> GetAllWaitMusic()
         {
-            return _data.MusicListRepository.GetAll(null, x => x.ConfirmId == 3 && x.IsDeleted == false);
+            return _data.MusicListRepository.GetAll(x=>x.User, x => x.ConfirmId == 3 && x.IsDeleted == false);
+        }
+        public static int MusicApproved(int id)
+        {
+            var _music = _data.MusicListRepository.GetById(id);
+            _music.ConfirmId = 1;
+            _data.MusicListRepository.Update(_music);
+            return _data.Complete();
+        }
+        public static int MusicConfirmRemove(int id)
+        {
+
+            var _music = _data.MusicListRepository.GetById(id);
+            _music.ConfirmId = 5;
+            _data.MusicListRepository.Update(_music);
+            return _data.Complete();
         }
     }
 }
