@@ -44,5 +44,18 @@ namespace CP.DesktopUI
                 this.Close();
             }
         }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            txtPassword.Password = "";
+            txtUserName.Text = "";
+        }
+
+        private void PackIcon_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            MessageBoxResult messageBoxResult = MessageBox.Show("Uygulamadan çıkmak istiyor musunuz ?", "Çıkış İşlemi", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (messageBoxResult == MessageBoxResult.Yes)
+                Application.Current.Shutdown();
+        }
     }
 }

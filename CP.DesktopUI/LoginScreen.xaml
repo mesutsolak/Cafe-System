@@ -3,19 +3,42 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CP.DesktopUI"
+        xmlns:local="clr-namespace:CP.DesktopUI" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Giriş Yap" Height="359" Width="300" WindowStartupLocation="CenterScreen" WindowStyle="None" FontSize="14" Background="#04c582">
-    <Border Background="#2e3137" CornerRadius="20" Margin="20">
-    <StackPanel Margin="20">
-       <Image Source="/Images/User.png" Height="50" />
- <Label Content="Giriş Yap" Foreground="White" FontSize="25" HorizontalAlignment="Center"/>
-            <Separator></Separator>
-            <Label Content="Kullanıcı Adı" Foreground="White"/>
-            <TextBox Name="txtUserName" Background="#545d6a" Foreground="White" FontSize="18"/>
-            <Label Content="Şifre" Foreground="White"/>
-            <PasswordBox Name="txtPassword" Background="#545d6a" Foreground="White" FontSize="18"/>
-            <Button  Name="btnSubmit" Content="Giriş Yap" Margin="60,10,42,10" Background="#545d6a" Foreground="White" FontSize="18" Click="btnSubmit_Click" RenderTransformOrigin="1.413,0.607" Height="39"/>
+        Title="Giriş Yap" Height="359" Width="364" WindowStartupLocation="CenterScreen" WindowStyle="None" FontSize="14" Background="#04c582">
+    <StackPanel>
+        <StackPanel HorizontalAlignment="Right" >
+            <materialDesign:PackIcon Margin="4" Kind="CloseBox" Width="30" MouseDoubleClick="PackIcon_MouseDoubleClick" Foreground="Red" Height="18" />
         </StackPanel>
-    </Border>
+        <Border Background="#2e3137" CornerRadius="20" Margin="10,-3">
+            <StackPanel Margin="20">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Image Source="/Images/User.png" Height="50" HorizontalAlignment="Center" />
+                </StackPanel>
+                <Label Content="Giriş Yap" Foreground="White" FontSize="25" HorizontalAlignment="Center"/>
+                <Separator></Separator>
+                <Label Content="Kullanıcı Adı" Foreground="White"/>
+                <TextBox Name="txtUserName" Background="#545d6a" Foreground="White" FontSize="18"/>
+                <Label Content="Şifre" Foreground="White"/>
+                <PasswordBox Name="txtPassword" Background="#545d6a" Foreground="White" FontSize="18"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button Name="btnClear"  Margin="0,10,4,10" Background="#545d6a" Foreground="White" FontSize="18" Click="btnClear_Click" RenderTransformOrigin="1.413,0.607" Height="39" Width="150">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Margin="4" Kind="Trash" Width="25" Height="18" />
+                            <TextBlock><Run Text="Temizle"/></TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="btnSubmit"  Margin="0,10,4,10" Background="#545d6a" Foreground="White" FontSize="18" Click="btnSubmit_Click" RenderTransformOrigin="1.413,0.607" Height="39" Width="141">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Margin="4" Kind="Login" Width="25" Height="18" />
+                            <TextBlock>Giriş Yap</TextBlock>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
+                <!--<Button  Name="btnSubmit" Content="Giriş Yap" Margin="60,10,42,10" Background="#545d6a" Foreground="White" FontSize="18" Click="btnSubmit_Click" RenderTransformOrigin="1.413,0.607" Height="39"/>-->
+            </StackPanel>
+        </Border>
+    </StackPanel>
+
 </Window>
