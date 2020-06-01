@@ -1,0 +1,84 @@
+﻿@model List<CP.Entities.Model.User>
+@using CP.BusinessLayer.Tools
+
+
+
+<div class="table table-responsive tblresponsive">
+    <table class="table table-bordered display no-wrap" cellspacing="0" width="100%" id="tblUser">
+        <thead>
+            <tr>
+                <th name="first">
+                    <div class="custom-control Checkall  custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="CheckAll">
+                        <label class="custom-control-label" for="CheckAll"></label>
+                    </div>
+                </th>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Kullanıcı Adı</th>
+                <th>Cinsiyet</th>
+                <th>Parola</th>
+                <th>Email</th>
+                <th>Profil</th>
+                <th>Arka Plan</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody id="TdUserList">
+            @foreach (var user in Model)
+            {
+            <tr>
+                <td>
+                    <div class="custom-control  custom-checkbox">
+                        <input type="checkbox" class="custom-control-input check" value="@user.Id" id="Check-@user.Id">
+                        <label class="custom-control-label" for="Check-@user.Id"></label>
+                    </div>
+                </td>
+                <td>
+                    @user.FirstName
+                </td>
+                <td>
+                    @user.LastName
+                </td>
+                <td>
+                    @user.Gender.Name
+                </td>
+                <td>
+                    @user.Username
+                </td>
+                <td>
+                    @user.Password
+                </td>
+                <td>
+                    @user.Email
+                </td>
+                <td class="text-center">
+                    <img src="@(Url.Content((user.ProfilPhoto.IsNullString() == true) ? "~/Content/image/no-image.png" : user.ProfilPhoto))" height="30" class="avatar-sm" id="ImageView" />
+                </td>
+                <td class="text-center">
+                    <img src="@(Url.Content((user.BackGroundPhoto.IsNullString() == true) ? "~/Content/image/no-image.png" : user.BackGroundPhoto))" height="30" class="avatar-sm" id="ImageView" />
+                </td>
+                <td class="text-center">
+                    <i class="fas fa-pencil-alt UserUpdate mr-2 pencil-edit" data-id="@user.Id" data-toggle="tooltip" data-placement="top" title="Rol Güncelle"></i>
+
+                    <i class="fa fa-trash UserDelete mr-2 trash-edit" data-id="@user.Id" data-toggle="tooltip" data-placement="top" title="Rol Sil"></i>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <i class="fa fa-user-tag UserRole user-tag-edit mr-1" data-id="@user.Id" data-toggle="tooltip" data-placement="top" title="Rol Ata"></i>
+                    }
+                    @if (user.IsConfirm.Value)
+                    {
+                        <i class="fas fa-times CancelConfirm" style="color:red" data-id="@user.Id" data-toggle="tooltip" data-placement="top" title="Onay Kaldır" />
+                    }
+                    else
+                    {
+                        <i class="fas fa-check TrueConfirm" style="color:green" data-id="@user.Id" data-toggle="tooltip" data-placement="top" title="Onayla" />
+                    }
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+

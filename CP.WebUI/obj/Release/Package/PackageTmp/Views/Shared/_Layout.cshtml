@@ -1,0 +1,178 @@
+﻿@using CP.WebUI.Controllers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/css/boostrap.css" rel="stylesheet" />
+    <link href="~/Content/template/css/styles.css" rel="stylesheet" />
+    <link href="~/Content/css/main.css" rel="stylesheet" />
+
+    <link rel="Shortcut Icon" href="~/Content/image/cafe.ico" type="image/x-icon">
+
+
+    @RenderSection("css", false)
+
+
+</head>
+<body class="sb-nav-fixed">
+    <div id="loading-background">
+        <div id="loading-img">
+            <img width="100" src="~/Content/image/Loading2.gif" />
+        </div>
+    </div>
+
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="~/Anasayfa">
+            <img src="~/Content/image/cafe.png" width="38" />
+            <label class="mt-2 ml-2 text-center">Beyoğlu Kafesi</label>
+        </a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#">
+            <i class="fas fa-bars"></i>
+        </button><!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ml-auto mr-2 mr-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Kelime Giriniz .." aria-label="Search" aria-describedby="basic-addon2" />
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+
+        <label class="text-white mt-2 mr-2">Hoşgeldiniz @{
+
+            CP.BusinessLayer.Tools.CookieManager cm = new CP.BusinessLayer.Tools.CookieManager();
+            var _cookie =  cm.CookieGetValue("User");
+            @_cookie["FirstAndLast"];
+
+        }</label>
+
+        <!-- Navbar-->
+        <ul class="navbar-nav ml-auto ml-md-0">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" id="btnSignOut">Çıkış</a>
+
+                    @*<a class="dropdown-item" href="#">Settings</a>
+                        <a class="dropdown-item" href="#">Activity Log</a>
+                        <div class="dropdown-divider"></div>*@
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu menu-scrool">
+                    <div class="nav">
+
+                        <div class="sb-sidenav-menu-heading">Kullanıcı</div>
+
+                        <a class="nav-link" href="~/Anasayfa">
+                            <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
+                            Anasayfa
+                        </a>
+                        <a class="nav-link" href="~/Ürünler">
+                            <div class="sb-nav-link-icon"><i class="fas fa-box-open"></i></div>
+                            Ürünler
+                        </a>
+                        <a class="nav-link" href="~/Kategoriler">
+                            <div class="sb-nav-link-icon"><i class="fas fa-bars mr-1"></i></div>
+                            Kategoriler
+                        </a>
+                        <a class="nav-link" href="~/Kullanıcılar">
+                            <div class="sb-nav-link-icon"><i class="fas fa-user mr-1"></i></div>
+                            Kullanıcılar
+                        </a>
+
+
+
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-building mr-1"></i></div>
+                            Firma
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+
+                                <a class="nav-link" href="/AnasayfaBilgileri">Anasayfa Bilgileri</a>
+                                <a class="nav-link" href="/GenelBilgiler">Genel Bilgiler</a>
+                                <a class="nav-link" href="/Slider">Slider</a>
+                                <a class="nav-link" href="/Bilgiler">Bilgiler</a>
+                                <a class="nav-link" href="/İletişim">İletişim</a>
+                            </nav>
+                        </div>
+
+
+                        @{
+                            if (Roles.IsUserInRole(HttpContext.Current.User.Identity.Name, "Admin") && User.IsInRole("Customer"))
+                            {
+                                <div class="sb-sidenav-menu-heading">Admin</div>
+
+                                <a class="nav-link" href="~/Roller">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-user-tag"></i></div>
+                                    Roller
+                                </a>
+                                <a class="nav-link" href="~/Raporlar">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-chart-pie"></i></div>
+                                    Raporlar
+                                </a>
+                            }
+
+                        }
+
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">Uygulama:</div>
+                    Cafe Sistemi
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid">
+                    @RenderBody()
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        @*<div class="text-muted">Copyright &copy; Your Website 2019</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>*@
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="~/Content/js/jquery.js"></script>
+    <script src="~/Content/template/js/scripts.js"></script>
+    <script src="~/Content/js/all.min.js"></script>
+    <script src="~/Content/js/popper.js"></script>
+    <script src="~/Content/js/boostrap.js"></script>
+    <script src="~/Content/js/sweetalert2.js"></script>
+    <script src="~/Content/js/jquery.validate.js"></script>
+    <script src="~/Content/js/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Content/js/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Content/js/nicescroll.js"></script>
+    <script src="~/Content/js/main.js"></script>
+
+
+    @RenderSection("js", false)
+
+
+</body>
+</html>

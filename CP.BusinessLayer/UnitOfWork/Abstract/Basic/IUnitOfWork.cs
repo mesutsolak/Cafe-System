@@ -21,7 +21,6 @@ namespace CP.BusinessLayer.UnitOfWork.Abstract.Basic
         IRateRepository RateRepository { get; }
         IMusicListRepository MusicListRepository { get; }
         ICampaignRepository CampaignRepository { get; }
-        ICampProductRepository CampProductRepository { get; }
         ICompanyRepository CompanyRepository { get; }
         IContactRepository ContactRepository { get; }
         IGeneralRepository GeneralRepository { get; }

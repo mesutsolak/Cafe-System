@@ -1,0 +1,54 @@
+﻿@model List<CP.Entities.Model.Slider>
+
+<div class="table table-responsive tblresponsive">
+    <table class="table table-bordered display no-wrap" cellspacing="0" width="100%" id="tblSlider">
+        <thead>
+            <tr>
+                <th name="first">
+                    <div class="custom-control Checkall  custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="CheckAll">
+                        <label class="custom-control-label" for="CheckAll"></label>
+                    </div>
+                </th>
+                <th>Başlık</th>
+                <th>Açıklama</th>
+                <th>Resim</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody id="TdSliderList">
+            @foreach (var slider in Model)
+            {
+                <tr>
+                    <td>
+                        <div class="custom-control  custom-checkbox">
+                            <input type="checkbox" class="custom-control-input check" value="@slider.Id" id="Check-@slider.Id">
+                            <label class="custom-control-label" for="Check-@slider.Id"></label>
+                        </div>
+                    </td>
+                    <td>
+                        @slider.Title
+                    </td>
+                    <td>
+                        @slider.Description
+                    </td>
+                    <td class="text-center">
+
+                        <img src="@(Url.Content(slider.Image ?? "~/Content/image/no-image.png"))" height="30" class="avatar-sm" id="ImageView" />
+                    </td>
+                    <td class="text-center">
+                        <i class="fas fa-pencil-alt pencil-edit SliderUpdate mr-2" data-id="@slider.Id"></i>
+
+                        <i class="fa fa-trash trash-edit SliderDelete" data-id="@slider.Id"></i>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <div class="col">
+        Toplam @Model.Count adet slider bulunmaktadır.
+    </div>
+</div>
+

@@ -1,0 +1,109 @@
+﻿button, input[type='button,reset'], #btnSignOut {
+    cursor: pointer;
+    pointer-events: all;
+}
+
+#ImageView, .product-detail {
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.product-detail-modals {
+    word-wrap: break-word;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+}
+
+.background {
+    background-image: url('../image/background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.pencil-edit, .trash-edit, .user-tag-edit, .CancelConfirm, .TrueConfirm {
+    cursor: pointer;
+    pointer-events: auto;
+    font-size: 18px;
+    margin-right: 8px;
+    cursor: pointer;
+    pointer-events: all;
+    transition-duration: 0.5s;
+}
+
+
+.pencil-edit, .TrueConfirm {
+    color: rgb(0, 128, 0);
+    opacity: 0.7;
+    transform: scale(1);
+}
+
+    .pencil-edit:hover, .TrueConfirm:hover {
+        z-index: 2;
+        color: rgb(0, 128, 0);
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+.trash-edit, .CancelConfirm  {
+    color: rgb(255, 0, 0);
+    opacity: 0.7;
+    transform: scale(1);
+}
+
+    .trash-edit :hover,.CancelConfirm:hover {
+        color: rgb(255, 0, 0);
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+.user-tag-edit {
+    color: rgb(0,0,250);
+    opacity: 0.7;
+    transform: scale(1);
+}
+
+    .user-tag-edit :hover {
+        color: rgb(0,0,255);
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+.CancelConfirm{
+
+}
+
+
+
+#btnSecilenler {
+    color: white;
+}
+
+#loading-background {
+    margin-top: -7.4%;
+    background-color: rgba(247,247,247,0.5);
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    height: 120%;
+    display: none;
+}
+
+#loading-img {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 10000;
+    margin-left: 47%;
+    margin-top: 23%;
+}
+
+
+.custom-file-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

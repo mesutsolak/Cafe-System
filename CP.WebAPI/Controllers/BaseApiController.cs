@@ -42,8 +42,6 @@ namespace CP.WebAPI.Controllers
                 cfg.CreateMap<RateDTO, M.Rate>();
                 cfg.CreateMap<M.Campaign, CampaignDTO>();
                 cfg.CreateMap<CampaignDTO, M.Campaign>();
-                cfg.CreateMap<CampProduct, CampProductDTO>();
-                cfg.CreateMap<CampProductDTO, CampProduct>();       
                 cfg.CreateMap<CompanyInformation, CompanyDTO>();
                 cfg.CreateMap<CompanyDTO, CompanyInformation>();
                 cfg.CreateMap<Contact, C.ContactDTO>();

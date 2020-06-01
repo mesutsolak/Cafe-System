@@ -13,11 +13,10 @@ namespace CP.WebAPI.Controllers
     [RoutePrefix("api/HomePage")]
     public class HomePageController : BaseApiController
     {
-        HomePageOperation hpo = new HomePageOperation();
         [Route("GetAll")]
         public HomePageDTO GetHomePage()
         {
-           return mapper.Map<HomePage,HomePageDTO>(hpo.DefaultHomePage());
+           return mapper.Map<HomePage,HomePageDTO>(HomePageOperation.DefaultHomePage());
         }
     }
 }

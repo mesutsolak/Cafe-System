@@ -5,6 +5,7 @@ namespace CP.Entities.Model
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web;
 
     [Table("Campaign")]
     public partial class Campaign : BaseEntity<int>
@@ -12,19 +13,32 @@ namespace CP.Entities.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Campaign()
         {
-            CampProduct = new HashSet<CampProduct>();
+            IsDeleted = false;
         }
+        [Column(TypeName = "varchar")]
+        [StringLength(25)]
+        [Display(Name = "Baþlýk")]
+        public string Title { get; set; }
 
-
+        [Display(Name = "Açýklama")]
         [Column(TypeName = "text")]
         public string Description { get; set; }
 
-        public int? OldPrice { get; set; }
 
-        public int? NewPrice { get; set; }
+        [Display(Name = "Fiyat")]
+        public int Price { get; set; }
 
+        [Display(Name = "Miktar")]
+        public int Amount { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CampProduct> CampProduct { get; set; }
+        [Display(Name = "Resim")]
+        [Column(TypeName = "text")]
+        public string Image { get; set; }
+
+        public bool IsDeleted { get; set; }
+
+        [NotMapped]
+        public HttpPostedFileBase Images { get; set; }
+
     }
 }

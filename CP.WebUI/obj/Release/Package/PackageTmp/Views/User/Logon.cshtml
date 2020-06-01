@@ -1,0 +1,120 @@
+﻿@model CP.ServiceLayer.DTO.LoginControl
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Giriş Yap</title>
+    <link href="~/Content/template/css/styles.css" rel="stylesheet" />
+    <link href="~/Content/css/main.css" rel="stylesheet" />
+    <link rel="Shortcut Icon" href="~/Content/image/cafe.ico" type="image/x-icon">
+</head>
+<body class="bg-primary background">
+    <div id="loading-background">
+        <div id="loading-img">
+            <img width="100" src="~/Content/image/Loading2.gif" />
+        </div>
+    </div>
+    <div id="layoutAuthentication">
+        <div id="layoutAuthentication_content">
+            <main>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5">
+                            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <div class="card-header">
+                                    <img src="https://image.flaticon.com/icons/png/512/33/33308.png" class="center mt-2" width="75">
+                                    <h3 class="text-center text-bold font-weight-bold my-3">Login</h3>
+                                </div>
+                                <div class="card-body">
+                                    @using (Ajax.BeginForm("LogonOperation", "User", FormMethod.Post, new AjaxOptions()
+                                    {
+                                        InsertionMode = InsertionMode.Replace,
+                                        HttpMethod = "POST",
+                                        OnSuccess = "returnPostJson(data)",
+                                        LoadingElementId = "loading-background",
+                                    },
+                            new
+                            {
+                                @class = "UserLogOn",
+                                @id = "frmUserLogOn",
+                                @name = "frmUserLogOn",
+                            }))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.UserName, new { @class = "small mb-1" })
+                                            @Html.EditorFor(model => model.UserName, "", new { htmlAttributes = new { @class = "form-control py-4", @placeholder = "Kullanıcı adı giriniz" } })
+                                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger error-validate" })
+                                        </div>
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Password, new { @class = "small mb-1" })
+                                            @Html.EditorFor(model => model.Password, "", new { htmlAttributes = new { @class = "form-control py-4", @placeholder = "Parola giriniz" } })
+                                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger error-validate" })
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="d-flex bd-highlight">
+                                                <div class="p-2 flex-grow-1 bd-highlight mt-2">
+                                                    <a class="small" href="javascript:void(0)" id="PasswordForget">Parolamı Unuttum</a>
+                                                </div>
+                                                <div class="p-2 bd-highlight">
+                                                    <button class="btn btn-danger" onclick="FormClear('frmUserLogOn')" type="button">
+                                                        <i class="fas fa-trash mr-1"></i>
+                                                        Temizle
+                                                    </button>
+                                                </div>
+                                                <div class="p-2 bd-highlight">
+                                                    <button class="btn btn-primary" type="submit">
+                                                        <i class="fas fa-sign-in-alt mr-1"></i>
+                                                        Giriş Yap
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer mt-3 text-center">
+                                            <div class="small">
+                                                <a href="javascript:void(0)" id="btnRegister">Hesabınız yok mu ? Kayıt Olun</a>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="modal-register">
+        @{Html.RenderAction("Register", "User");}
+    </div>
+
+    <div class="modal-forget">
+        @{Html.RenderAction("PasswordForget", "User");}
+    </div>
+
+
+
+    <script src="~/Content/js/all.min.js"></script>
+    <script src="~/Content/js/jquery.js"></script>
+    <script src="~/Content/js/boostrap.js"></script>
+    <script src="~/Content/js/popper.js"></script>
+    <script src="~/Content/js/sweetalert2.js"></script>
+    <script src="~/Content/js/main.js"></script>
+    <script src="~/Content/template/js/scripts.js"></script>
+    <script src="~/Content/js/jquery.validate.js"></script>
+    <script src="~/Content/js/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Content/js/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Content/js/Pagejs/LogOn.js"></script>
+</body>
+</html>
+

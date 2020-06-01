@@ -13,7 +13,6 @@ namespace CP.Entities.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
-            CampProduct = new HashSet<CampProduct>();
             Cart = new HashSet<Cart>();
             Comment = new HashSet<Comment>();
             Rate = new HashSet<Rate>();
@@ -74,10 +73,6 @@ namespace CP.Entities.Model
         [Display(Name = "Ürün Resmi")]
 
         public HttpPostedFileBase Images { get; set; }
-
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CampProduct> CampProduct { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cart> Cart { get; set; }

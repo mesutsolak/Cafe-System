@@ -1,0 +1,61 @@
+﻿@model CP.Entities.Model.General
+
+
+<div class="modal inmodal" id="GeneralAddModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-plus mr-2"></i>Genel Bilgi Ekle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Ajax.BeginForm("GeneralAddOperation", "Company", FormMethod.Post, new AjaxOptions()
+                {
+                    InsertionMode = InsertionMode.Replace,
+                    HttpMethod = "POST",
+                    OnSuccess = "returnPostJson(data)",
+                    LoadingElementId = "loading-background",
+                    OnComplete = "GeneralList()"
+                },
+                new
+                {
+                    @class = "GeneralAdd",
+                    @id = "frmGeneralAdd",
+                    @name = "frmGeneralAdd",
+                }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Image)
+                        <div class="custom-file">
+                            @Html.TextBoxFor(model => model.Images, "", new { @type = "file", @class = "custom-file-input" })
+                            @Html.LabelFor(model => model.Image, "Resim Seçiniz", new { @class = "custom-file-label", @data_browse = "Seçiniz" })
+                            @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger error-validate" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Title)
+                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger error-validate" })
+                    </div>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" onclick="FormClear('frmGeneralAdd')" id="btnContactClear">
+                    <i class="fa fa-trash mr-1"></i>
+                    Temizle
+                </button>
+                <button type="button" class="btn btn-primary" onclick="FormPost('frmGeneralAdd')" id="btnContactAdd">
+                    <i class="fa fa-save mr-1"></i>
+                    Kaydet
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

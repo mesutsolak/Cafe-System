@@ -180,9 +180,6 @@
     <Resource Include="Images\User.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\cafe.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="cafe.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

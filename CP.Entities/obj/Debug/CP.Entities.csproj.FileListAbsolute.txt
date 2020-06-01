@@ -1,3 +1,10 @@
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.InitialCreate.resources
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.GeneralChangeModel.resources
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.CategoryIsDeletedColumnAdd.resources
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.CartIsDeletedAdd.resources
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.TableUserAdd.resources
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.csproj.GenerateResource.cache
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.csproj.CoreCompileInputs.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\bin\Debug\CP.Entities.dll.config
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\bin\Debug\CP.Entities.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\bin\Debug\CP.Entities.pdb
@@ -18,14 +25,8 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\bin\Debug\System.Web.Ra
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\bin\Debug\System.Web.WebPages.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\bin\Debug\System.Web.WebPages.Razor.xml
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.csprojAssemblyReference.cache
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.InitialCreate.resources
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.GeneralChangeModel.resources
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.CategoryIsDeletedColumnAdd.resources
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.csproj.GenerateResource.cache
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.csproj.CoreCompileInputs.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.csproj.CopyComplete
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.pdb
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.CartIsDeletedAdd.resources
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.TableUserAdd.resources
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.CampaignChangeData.resources
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.CampaignProductTypeName.resources

@@ -1,0 +1,74 @@
+﻿@model List<CP.Entities.Model.Product>
+
+<div class="table table-responsive tblresponsive">
+    <table class="table table-bordered display no-wrap" cellspacing="0" width="100%" id="tblProduct">
+        <thead>
+            <tr>
+                <th name="first">
+                    <div class="custom-control Checkall  custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="CheckAll">
+                        <label class="custom-control-label" for="CheckAll"></label>
+                    </div>
+                </th>
+                <th>Adı</th>
+                <th>Açıklama</th>
+                <th>Kategori</th>
+                <th>Fiyat</th>
+                <th>Miktar</th>
+                <th>Resim</th>
+                <th>Tercih</th>
+                <th>Kafe</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody id="TdCategoryList">
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>
+                        <div class="custom-control  custom-checkbox">
+                            <input type="checkbox" class="custom-control-input check" value="@product.Id" id="Check-@product.Id">
+                            <label class="custom-control-label" for="Check-@product.Id"></label>
+                        </div>
+                    </td>
+                    <td>
+                        @product.Name
+                    </td>
+                    <td>
+                        @if (product.ProductDetail.Length>45)
+                        {
+                        <label class="product-detail" value="@(product.ProductDetail)"> @(product.ProductDetail.Substring(0, 25)+"...") </label>
+                        }
+                        else
+                        {
+                            @product.ProductDetail
+                        }
+                    </td>
+                    <td>
+                        @product.Category.Name
+                    </td>
+                    <td>
+                        @product.Price
+                    </td>
+                    <td>
+                        @product.Amount
+                    </td>
+                    <td class="text-center">
+                        <img src="@(Url.Content(product.Image ?? "~/Content/image/no-image.png"))" height="30" class="avatar-sm" id="ImageView" />
+                    </td>
+                    <td>
+                        @(product.Preference == true ? "Seçildi" : "Seçilmedi") 
+                    </td>
+                    <td>
+                        @(product.Choose == true ? "Seçildi" : "Seçilmedi")
+                    </td>
+                    <td class="text-center">
+                        <i class="fas fa-pencil-alt pencil-edit ProductUpdate mr-2" data-id="@product.Id"></i>
+
+                        <i class="fa fa-trash trash-edit ProductDelete" data-id="@product.Id"></i>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

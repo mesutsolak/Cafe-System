@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Bilgiler";
+}
+
+<div class="alert alert-info mt-3" role="alert">
+    <div class="d-flex flex-row bd-highlight">
+        <div class="p-2 bd-highlight">
+            <i class="fas fa-info-circle fa-2x"></i>
+        </div>
+        <div class="p-2 bd-highlight mt-1">
+            Bilgi üzerinde işlem yapmak için aşağıdaki listeyi kullanın.
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="card mt-4">
+    <div class="card-header">
+        <div class="d-flex flex-row bd-highlight">
+            <div class="p-2 bd-highlight mt-1">
+                <i class="fas fa-file-alt fa-2x"></i>
+            </div>
+            <div class="p-2 bd-highlight">
+                <h2>Bilgi</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="card-title">
+            <div class="row">
+                <div class="col-7 mt-1">
+                    <div class="d-flex flex-row bd-highlight mb-3">
+                        <div class="p-2 bd-highlight">
+                            <div class="dropdown">
+                                <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-folder mr-1"></i> Dosya İşlemleri
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="#"><i class="fas fa-file-import mr-1"></i> Excel ile Ekle</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-file-export mr-1"></i> Excel'e Aktar</a>
+                                    <a class="dropdown-item" href="#"><i class="fa fa-print mr-1"></i> Yazdır</a>
+                                    <a class="dropdown-item" href="#"><i class="fa fa-file-image-o mr-1"></i> Görsel Al</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="d-flex flex-row-reverse bd-highlight">
+                        <div class="p-2 bd-highlight">
+                            <button class="btn btn-primary" id="btnInformationAdd">
+                                <i class="fas fa-plus mr-2"></i> Bilgi Ekle
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="information-list">
+            @(Html.Action("InformationList", "Company"))
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="information-add">
+    @Html.Action("InformationAdd", "Company")
+</div>
+
+<div class="information-update">
+
+</div>
+
+
+@section js {
+    <script src="~/Content/js/Pagejs/information.js"></script>
+}
+

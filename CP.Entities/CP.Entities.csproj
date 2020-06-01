@@ -96,11 +96,18 @@
     <Compile Include="Migrations\202005311803592_TableUserAdd.designer.cs">
       <DependentUpon>202005311803592_TableUserAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006011819231_CampaignChangeData.cs" />
+    <Compile Include="Migrations\202006011819231_CampaignChangeData.designer.cs">
+      <DependentUpon>202006011819231_CampaignChangeData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006011823304_CampaignProductTypeName.cs" />
+    <Compile Include="Migrations\202006011823304_CampaignProductTypeName.designer.cs">
+      <DependentUpon>202006011823304_CampaignProductTypeName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\BaseEntity.cs" />
     <Compile Include="Model\CafeProjectModel.cs" />
     <Compile Include="Model\Campaign.cs" />
-    <Compile Include="Model\CampProduct.cs" />
     <Compile Include="Model\Cart.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Comment.cs" />
@@ -146,6 +153,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005311803592_TableUserAdd.resx">
       <DependentUpon>202005311803592_TableUserAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006011819231_CampaignChangeData.resx">
+      <DependentUpon>202006011819231_CampaignChangeData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006011823304_CampaignProductTypeName.resx">
+      <DependentUpon>202006011823304_CampaignProductTypeName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

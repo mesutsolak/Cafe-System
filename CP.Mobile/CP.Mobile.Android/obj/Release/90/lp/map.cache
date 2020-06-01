@@ -41,3 +41,7 @@ Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Plugin.Media
 Rg.Plugins.Popup
+SkiaSharp
+SkiaSharp.Views.Android
+SkiaSharp.Views.Forms
+Xam.Plugin.Droid
