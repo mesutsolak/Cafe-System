@@ -2,7 +2,7 @@
 $(function () {
     setTimeout(function () {
         TableConvertDataTables("tblProduct");
-    }, 500);
+    }, 750);
     //ConvertCkEditor("ProductDetail", "tr");
     ProductList();
     NiceScrool(new ScroolModel("modal-body", "10px", "#A5A5A5"))

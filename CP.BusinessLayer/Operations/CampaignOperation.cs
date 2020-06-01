@@ -34,7 +34,7 @@ namespace CP.BusinessLayer.Operations
 
         public static List<Campaign> GetListCampaigns()
         {
-            return _data.CampaignRepository.GetAll();
+            return _data.CampaignRepository.GetAll(null, x => x.IsDeleted == false);
         }
     }
 }

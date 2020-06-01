@@ -18,6 +18,7 @@ namespace CP.Entities.Model
         [Column(TypeName = "varchar")]
         [StringLength(25)]
         [Display(Name = "Baþlýk")]
+        [Required(ErrorMessage ="Baþlýk Girmek Zorunludur")]
         public string Title { get; set; }
 
         [Display(Name = "Açýklama")]
@@ -25,10 +26,12 @@ namespace CP.Entities.Model
         public string Description { get; set; }
 
 
+        [Required(ErrorMessage = "Fiyat Girmek Zorunludur")]
         [Display(Name = "Fiyat")]
         public int Price { get; set; }
 
         [Display(Name = "Miktar")]
+        [Required(ErrorMessage = "Miktar Girmek Zorunludur")]
         public int Amount { get; set; }
 
         [Display(Name = "Resim")]

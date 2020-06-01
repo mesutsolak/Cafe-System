@@ -8,14 +8,14 @@ namespace CP.ServiceLayer.DTO
 {
     public class CampaignDTO
     {
+
         public int Id { get; set; }
-
+        public string Title { get; set; }
         public string Description { get; set; }
+        public int Price { get; set; }
+        public int Amount { get; set; }
+        public string Image { get; set; }
+        public bool IsDeleted { get; set; }
 
-        public int? OldPrice { get; set; }
-
-        public int? NewPrice { get; set; }
-
-        public virtual ICollection<CampProductDTO> CampProduct { get; set; }
     }
 }

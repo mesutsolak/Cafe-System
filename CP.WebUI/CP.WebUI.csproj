@@ -438,6 +438,7 @@
     <Content Include="Content\js\jquery.js" />
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\nicescroll.js" />
+    <Content Include="Content\js\Pagejs\Campaign.js" />
     <Content Include="Content\js\Pagejs\category.js" />
     <Content Include="Content\js\Pagejs\company.js" />
     <Content Include="Content\js\Pagejs\Contact.js" />
@@ -480,6 +481,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CampaignController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
@@ -562,6 +564,10 @@
     <Content Include="Views\Company\HomeList.cshtml" />
     <Content Include="Views\Company\HomeAdd.cshtml" />
     <Content Include="Views\Company\HomeUpdate.cshtml" />
+    <Content Include="Views\Campaign\Index.cshtml" />
+    <Content Include="Views\Campaign\CampaignList.cshtml" />
+    <Content Include="Views\Campaign\CampaignAdd.cshtml" />
+    <Content Include="Views\Campaign\CampaignUpdate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

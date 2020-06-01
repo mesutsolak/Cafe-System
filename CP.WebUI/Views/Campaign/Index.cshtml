@@ -1,8 +1,8 @@
-﻿@model List<CP.Entities.Model.Product>
-
+﻿
 @{
-    ViewBag.Title = "Ürünler";
+    ViewBag.Title = "Kampanyalar";
 }
+
 
 @section css{
     <link href="~/Content/framework/DataTable/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
@@ -14,7 +14,7 @@
             <i class="fas fa-info-circle fa-2x"></i>
         </div>
         <div class="p-2 bd-highlight mt-1">
-            Ürünler üzerinde işlem yapmak için aşağıdaki listeyi kullanın.
+            Kampanyalar üzerinde işlem yapmak için aşağıdaki listeyi kullanın.
         </div>
     </div>
 </div>
@@ -22,10 +22,10 @@
     <div class="card-header">
         <div class="d-flex flex-row bd-highlight">
             <div class="p-2 bd-highlight mt-1">
-                <i class="fas fa-box-open fa-2x"></i>
+                <i class="fas fa-bullhorn fa-2x"></i>
             </div>
             <div class="p-2 bd-highlight">
-                <h2>Ürünler</h2>
+                <h2>Kampanyalar</h2>
             </div>
         </div>
     </div>
@@ -35,14 +35,15 @@
                 <div class="col">
                     <div class="d-flex flex-row-reverse bd-highlight">
                         <div class="p-2 bd-highlight">
-                            <button class="btn btn-primary" id="ProductAdd">
-                                <i class="fas fa-plus mr-1"></i> Ürün Ekle
+                            <button class="btn btn-primary" onclick="ModalShow('CampaignAddModal')" id="CampaignAdd">
+                                <i class="fas fa-plus mr-1"></i> Kampanya Ekle
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card-text product-body">
+            <div class="card-text campaign-body">
+                @Html.Action("CampaignList", "Campaign")
             </div>
         </div>
     </div>
@@ -63,21 +64,21 @@
         </div>
     </div>
 
-    <div class="product-update-modal">
+    <div class="campaign-update-modal">
 
     </div>
 
-    <div class="product-detail-modal-content">
-        <div class="modal inmodal" id="ProductDetailModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="campaign-detail-modal-content">
+        <div class="modal inmodal" id="CampaignDetailModal" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content animated bounceInRight">
                     <div class="modal-header">
-                        <h5 class="modal-title"><i class="fa fa-box-open mr-2"></i>Ürün Açıklaması</h5>
+                        <h5 class="modal-title"><i class="fas fa-bullhorn mr-2"></i>Kampanya Açıklaması</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body product-detail-modals">
+                    <div class="modal-body campaign-detail-modals">
 
                     </div>
                 </div>
@@ -86,8 +87,8 @@
 
     </div>
 
-    <div class="product-add-modal">
-        @Html.Action("ProductAdd", new { Controller = "Home", Action = "ProductAdd" })
+    <div class="campaign-add">
+        @Html.Action("CampaignAdd", "Campaign")
     </div>
 
 
@@ -96,5 +97,6 @@
 
         <script src="~/Content/framework/DataTable/js/jquery.dataTables.min.js"></script>
         <script src="~/Content/framework/DataTable/js/dataTables.bootstrap4.min.js"></script>
-        <script src="~/Content/js/Pagejs/Meal.js"></script>
+        <script src="~/Content/js/Pagejs/Campaign.js"></script>
     }
+
