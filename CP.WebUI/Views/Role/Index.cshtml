@@ -16,28 +16,22 @@
 
 <div class="card mt-4">
     <div class="card-header">
-        <div class="d-flex flex-row bd-highlight">
+        <div class="d-flex bd-highlight">
             <div class="p-2 bd-highlight mt-1">
                 <i class="fas fa-user-tag fa-2x"></i>
             </div>
             <div class="p-2 bd-highlight">
                 <h2>Roller</h2>
             </div>
+            <div class="ml-auto p-2 bd-highlight">
+                <button class="btn btn-primary" onclick="ModalShow('RoleAddModal')" id="RoleAdd">
+                    <i class="fas fa-plus mr-1"></i> Rol Ekle
+                </button>
+            </div>
         </div>
     </div>
     <div class="card-body">
         <div class="card-title">
-            <div class="row">
-                <div class="col">
-                    <div class="d-flex flex-row-reverse bd-highlight">
-                        <div class="p-2 bd-highlight">
-                            <button class="btn btn-primary" onclick="ModalShow('RoleAddModal')" id="RoleAdd">
-                                <i class="fas fa-plus mr-1"></i> Rol Ekle
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="card-text role-body">
             @Html.Action("RoleList", "Role")
@@ -53,6 +47,13 @@
 
 </div>
 
+@section css{
+    <link href="~/Content/framework/DataTable/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+}
+
+
 @section js{
+    <script src="~/Content/framework/DataTable/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/framework/DataTable/js/dataTables.bootstrap4.min.js"></script>
     <script src="~/Content/js/Pagejs/Role.js"></script>
 }

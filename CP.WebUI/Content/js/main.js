@@ -401,7 +401,13 @@ function TableConvertDataTables(_id) {
             },
             order: [],
             columnDefs: [
-                { "orderable": false, "targets": [0] }
+                {
+                    "orderable": false,
+                    "targets": [0],
+                    "render": function (data, type, full, meta) {
+                        return meta.settings._iDisplayStart + meta.row + 1;
+                    }
+                }
             ]
         });
     }

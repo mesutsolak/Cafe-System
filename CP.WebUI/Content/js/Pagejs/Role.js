@@ -1,4 +1,12 @@
-﻿
+﻿$(function () {
+    setTimeout(function () {
+        TableConvertDataTables("tblRole");
+    }, 500);
+    NiceScrool(new ScroolModel("modal-body", "10px", "#A5A5A5"))
+});
+
+
+
 function RoleList() {
     $.get("/RolList", null, function (result) {
         $(document).find(".role-body").html(result);

@@ -4,6 +4,13 @@
     });
 }
 
+$(function () {
+    setTimeout(function () {
+        TableConvertDataTables("tblSlider");
+    }, 750);
+    NiceScrool(new ScroolModel("modal-body", "10px", "#A5A5A5"))
+});
+
 $("#btnSliderAdd").on("click", function () {
     $("#SliderAddModal").modal("show");
 });
