@@ -8,9 +8,14 @@ namespace CP.Entities.Model
 
     public partial class UserRoles : BaseEntity<int>
     {
+        public UserRoles()
+        {
+            IsDeleted = false;
+        }
         public int? UserId { get; set; }
 
         public int? RoleId { get; set; }
+        public bool? IsDeleted { get; set; }
 
         public virtual Roles Roles { get; set; }
 

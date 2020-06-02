@@ -33,8 +33,10 @@ $(document).on("click", "#ImageView", function () {
 
 function CampaignList() {
     $.get("/KampanyaList", null, function (result) {
-        debugger;
         $(document).find(".campaign-body").html(result);
+        setTimeout(function () {
+            TableConvertDataTables("tblCampaign");
+        }, 750);
     });
 }
 

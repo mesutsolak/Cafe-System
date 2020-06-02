@@ -1,0 +1,52 @@
+﻿@model CP.Entities.Model.Table
+
+<div class="modal inmodal" id="TableUpdateModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-chair mr-2"></i>Masa Güncelle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Ajax.BeginForm("TableUpdateOperation", "Table", FormMethod.Post, new AjaxOptions()
+                {
+                    InsertionMode = InsertionMode.Replace,
+                    HttpMethod = "POST",
+                    OnSuccess = "returnPostJson(data)",
+                    LoadingElementId = "loading-background",
+                    OnComplete = "TableList()"
+                },
+                new
+                {
+                    @class = "TableUpdatesModal",
+                    @id = "frmTableUpdate",
+                    @name = "frmTableUpdate"
+                }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <input type="hidden" value="@Model.Id" name="Id" />
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Number)
+                        @Html.EditorFor(model => model.Number, "", new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Number, "", new { @class = "text-danger error-validate" })
+                    </div>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" onclick="FormClear('frmTableUpdate')" id="TableUpdateClear">
+                    <i class="fa fa-trash mr-1"></i>
+                    Temizle
+                </button>
+                <button type="button" class="btn btn-primary" onclick="FormPost('frmTableUpdate')" id="TableUpdateSave">
+                    <i class="fa fa-save mr-1"></i>
+                    Kaydet
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+

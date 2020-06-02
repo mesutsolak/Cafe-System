@@ -1,0 +1,37 @@
+﻿@model List<CP.Entities.Model.Table>
+@using CP.BusinessLayer.Tools
+
+
+<div class="table table-responsive tblresponsive">
+    <table class="table table-bordered display no-wrap" cellspacing="0" width="100%" id="tblTable">
+        <thead>
+            <tr>
+                <th name="first">
+                    #
+                </th>
+                <th>Masa Numarası</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody id="TdTableList">
+            @foreach (var table in Model)
+            {
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        @table.Number
+                    </td>
+
+                    <td class="text-center">
+                        <i class="fas fa-pencil-alt TableUpdate mr-2 pencil-edit" data-id="@table.Id" data-toggle="tooltip" data-placement="top" title="Tablo Güncelle"></i>
+
+                        <i class="fa fa-trash TableDelete mr-2 trash-edit" data-id="@table.Id" data-toggle="tooltip" data-placement="top" title="Tablo Sil"></i>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+

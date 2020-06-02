@@ -18,7 +18,7 @@ namespace CP.Entities.Model
             Rate = new HashSet<Rate>();
 
             Views = 0;
-
+            IsDeleted = false;
             Preference = false;
             Choose = false;
         }
@@ -63,11 +63,12 @@ namespace CP.Entities.Model
         public DateTime? AddedDate { get; set; }
 
         [Display(Name = "Tercih")]
-        [Required(ErrorMessage ="Lütfen belli ediniz")]
+        [Required(ErrorMessage = "Lütfen belli ediniz")]
         public bool? Preference { get; set; }
         [Display(Name = "Kafe")]
         [Required(ErrorMessage = "Lütfen belli ediniz")]
         public bool? Choose { get; set; }
+
 
         [NotMapped]
         [Display(Name = "Ürün Resmi")]

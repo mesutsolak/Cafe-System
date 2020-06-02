@@ -30,3 +30,5 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.d
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.pdb
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.CampaignChangeData.resources
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.CampaignProductTypeName.resources
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.csprojAssemblyReference.cache
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Debug\CP.Entities.Migrations.IsDeletedColumn.resources

@@ -12,12 +12,15 @@ namespace CP.Entities.Model
         public Roles()
         {
             UserRoles = new HashSet<UserRoles>();
+            IsDeleted = false;
         }
 
         [StringLength(100)]
         [Required(ErrorMessage = "Rol adý gereklidir.")]
         [Display(Name = "Rol Adý")]
         public string Name { get; set; }
+
+        public bool IsDeleted { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserRoles> UserRoles { get; set; }

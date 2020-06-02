@@ -39,17 +39,19 @@
         </button><!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ml-auto mr-2 mr-md-3 my-2 my-md-0">
             <div class="input-group">
-               
+
             </div>
         </form>
 
-        <label class="text-white mt-2 mr-2">Hoşgeldiniz @{
+        <label class="text-white mt-2 mr-2">
+            Hoşgeldiniz @{
 
-            CP.BusinessLayer.Tools.CookieManager cm = new CP.BusinessLayer.Tools.CookieManager();
-            var _cookie =  cm.CookieGetValue("User");
-            @_cookie["FirstAndLast"];
+                CP.BusinessLayer.Tools.CookieManager cm = new CP.BusinessLayer.Tools.CookieManager();
+                var _cookie = cm.CookieGetValue("User");
+                @_cookie["FirstAndLast"];
 
-        }</label>
+            }
+        </label>
 
         <!-- Navbar-->
         <ul class="navbar-nav ml-auto ml-md-0">
@@ -89,6 +91,10 @@
                         <a class="nav-link" href="~/Kategoriler">
                             <div class="sb-nav-link-icon"><i class="fas fa-bars mr-1"></i></div>
                             Kategoriler
+                        </a>
+                        <a class="nav-link" href="~/Masalar">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chair mr-1"></i></div>
+                            Masalar
                         </a>
                         <a class="nav-link" href="~/Kullanıcılar">
                             <div class="sb-nav-link-icon"><i class="fas fa-user mr-1"></i></div>

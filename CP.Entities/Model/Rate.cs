@@ -9,6 +9,10 @@ namespace CP.Entities.Model
     [Table("Rate")]
     public partial class Rate : BaseEntity<int>
     {
+        public Rate()
+        {
+            IsDeleted = false;
+        }
         public int? ProductId { get; set; }
 
         public int? UserId { get; set; }
@@ -16,6 +20,7 @@ namespace CP.Entities.Model
         [Column("Rate")]
         public int? RateValue { get; set; }
 
+        public bool IsDeleted { get; set; }
         public virtual Product Product { get; set; }
 
         public virtual User User { get; set; }

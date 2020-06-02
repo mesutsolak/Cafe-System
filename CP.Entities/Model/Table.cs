@@ -13,10 +13,16 @@ namespace CP.Entities.Model
         public Table()
         {
             Cart = new HashSet<Cart>();
+            IsDeleted = false;
+            ConfirmId = 2;
         }
+        [Display(Name="Numara")]
+        [Required(ErrorMessage ="Numara Girilmesi Zorunludur")]
         public int? Number { get; set; }
 
         public int? ConfirmId { get; set; }
+
+        public bool? IsDeleted { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cart> Cart { get; set; }

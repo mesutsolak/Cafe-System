@@ -43,6 +43,9 @@ function ProductList() {
     $.get("/ProductList", null, function (result) {
         debugger;
         $(document).find(".product-body").html(result);
+        setTimeout(function () {
+            TableConvertDataTables("tblProduct");
+        }, 750);
     });
 }
 

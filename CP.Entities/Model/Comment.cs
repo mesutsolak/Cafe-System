@@ -9,6 +9,10 @@ namespace CP.Entities.Model
     [Table("Comment")]
     public partial class Comment : BaseEntity<int>
     {
+        public Comment()
+        {
+            IsDeleted = false;
+        }
         public int? UserId { get; set; }
 
         public int? ProductId { get; set; }
@@ -16,6 +20,7 @@ namespace CP.Entities.Model
         [Column(TypeName = "text")]
         public string Description { get; set; }
 
+        public bool IsDeleted { get; set; }
         public virtual Product Product { get; set; }
 
         public virtual User User { get; set; }

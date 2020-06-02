@@ -29,6 +29,9 @@ $(document).on("click", ".categoryUpdate", function () {
 function CategoryList() {
     $.get('/KategoriList', null, function (result) {
         $(".category-body").html(result);
+        setTimeout(function () {
+            TableConvertDataTables("tblcategory");
+        }, 750);
     });
 }
 

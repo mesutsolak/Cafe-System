@@ -1,6 +1,9 @@
 ﻿function SliderList() {
     $.post("/SliderList", null, function (result) {
         $(".slider-list").html(result);
+        setTimeout(function () {
+            TableConvertDataTables("tblSlider");
+        }, 750);
     });
 }
 

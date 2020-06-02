@@ -30,7 +30,7 @@ namespace CP.BusinessLayer.Operations
         }
         public static List<Table> GetTables()
         {
-            return _data.TableRepository.GetAll();
+            return _data.TableRepository.GetAll(x => x.User, y => y.IsDeleted == false);
         }
         public static List<Table> GetAllWaitTable()
         {
@@ -50,6 +50,17 @@ namespace CP.BusinessLayer.Operations
             _table.ConfirmId = 5;
             _data.TableRepository.Update(_table);
             return _data.Complete();
+        }
+        public static bool TableNumberControl(int Number)
+        {    
+            //Null eşitse eklenebilir yani false ise true ise eklenemez
+            return (_data.TableRepository.GetByFilter(x => x.Number == Number) == null) ? false : true;
+        }
+        public static bool TableUpdateContol(int? number, int id)
+        {
+            //Null eşitse eklenebilir yani false ise true ise eklenemez
+
+            return (_data.TableRepository.GetByFilter(x => x.Number == number && x.Id != id) == null) ? false : true;
         }
     }
 }

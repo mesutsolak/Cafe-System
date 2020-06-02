@@ -110,7 +110,7 @@ namespace CP.BusinessLayer.Operations
             {
                 MailMessage eposta = new MailMessage
                 {
-                    Subject = "CP | Şifreniz",
+                    Subject = "Beyoğlu Kafesi  | Şifreniz",
                     Body = "Şifre : " + PasswordFind(Email),
                     From = new MailAddress("mesuttsolakk@gmail.com")
                 };
@@ -121,7 +121,8 @@ namespace CP.BusinessLayer.Operations
 
                 SmtpClient smtp = new SmtpClient
                 {
-                    Credentials = new System.Net.NetworkCredential("mesuttsolakk@gmail.com", "Mesut123+-"),
+                    UseDefaultCredentials = false,
+                Credentials = new System.Net.NetworkCredential("mesuttsolakk@gmail.com", "Mesut123+-"),
                     Port = 587,
                     Host = "smtp.gmail.com",
                     EnableSsl = true

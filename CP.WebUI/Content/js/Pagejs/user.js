@@ -28,6 +28,9 @@ $(document).on("click", ".UserUpdate", function () {
 function UserList() {
     $.get("/KullanıcıListele", null, function (result) {
         $(".User-body").html(result);
+        setTimeout(function () {
+            TableConvertDataTables("tblUser");
+        }, 500);
     });
 }
 

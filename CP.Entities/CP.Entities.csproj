@@ -104,6 +104,10 @@
     <Compile Include="Migrations\202006011823304_CampaignProductTypeName.designer.cs">
       <DependentUpon>202006011823304_CampaignProductTypeName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006021528459_IsDeletedColumn.cs" />
+    <Compile Include="Migrations\202006021528459_IsDeletedColumn.designer.cs">
+      <DependentUpon>202006021528459_IsDeletedColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\BaseEntity.cs" />
     <Compile Include="Model\CafeProjectModel.cs" />
@@ -159,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006011823304_CampaignProductTypeName.resx">
       <DependentUpon>202006011823304_CampaignProductTypeName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006021528459_IsDeletedColumn.resx">
+      <DependentUpon>202006021528459_IsDeletedColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
