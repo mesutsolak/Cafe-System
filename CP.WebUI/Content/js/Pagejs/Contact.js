@@ -23,7 +23,7 @@ $(document).on("click", ".btnContactDelete", function () {
 
 function ContactList() {
     $.post("/İletişimListele", null, function (result) {
-        $(".information-list").html(result);
+        $(".contact-list").html(result);
     });
 }
 

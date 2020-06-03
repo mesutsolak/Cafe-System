@@ -437,7 +437,6 @@
               </TextRuns>
               <Style>
                 <TextAlign>Center</TextAlign>
-                <LineHeight>1000pt</LineHeight>
               </Style>
             </Paragraph>
           </Paragraphs>

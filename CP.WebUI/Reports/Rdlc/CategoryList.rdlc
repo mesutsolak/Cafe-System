@@ -163,7 +163,7 @@
         </TablixRowHierarchy>
         <DataSetName>ReportDataset</DataSetName>
         <Height>4.97416cm</Height>
-        <Width>26.80229cm</Width>
+        <Width>26.8023cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -174,7 +174,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>10.55208in</Width>
+  <Width>10.55209in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
@@ -197,7 +197,6 @@
               </TextRuns>
               <Style>
                 <TextAlign>Center</TextAlign>
-                <LineHeight>1000pt</LineHeight>
               </Style>
             </Paragraph>
           </Paragraphs>
@@ -245,7 +244,6 @@
               </TextRuns>
               <Style>
                 <TextAlign>Center</TextAlign>
-                <LineHeight>1000pt</LineHeight>
               </Style>
             </Paragraph>
           </Paragraphs>

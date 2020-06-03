@@ -249,6 +249,7 @@ namespace CP.WebUI.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public JsonResult PasswordOperation(PasswordForgetDTO passwordForgetDTO)
         {
             jsonResultModel.Title = "Şifremi Unuttum";

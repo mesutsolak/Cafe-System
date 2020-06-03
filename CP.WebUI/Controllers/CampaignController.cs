@@ -19,7 +19,6 @@ namespace CP.WebUI.Controllers
     {
         // GET: Campaign
         [Route("Kampanyalar")]
-        [AccessDeniedAuthorize(]
         public ActionResult Index()
         {
             return View();
