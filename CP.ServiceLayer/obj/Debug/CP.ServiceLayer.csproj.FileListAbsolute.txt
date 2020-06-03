@@ -1,4 +1,3 @@
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.csproj.CoreCompileInputs.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\bin\Debug\CP.ServiceLayer.dll.config
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\bin\Debug\CP.ServiceLayer.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\bin\Debug\CP.ServiceLayer.pdb
@@ -34,6 +33,7 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\bin\Debug\System.We
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\bin\Debug\System.Web.Razor.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.csprojAssemblyReference.cache
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.csproj.CoreCompileInputs.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.csproj.CopyComplete
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.ServiceLayer\obj\Debug\CP.ServiceLayer.pdb

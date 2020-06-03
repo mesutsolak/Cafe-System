@@ -1287,10 +1287,10 @@ namespace CP.WebUI.Reports.Dataset {
                 this.columnNumber = base.Columns["Number"];
                 this.columnFirstName = base.Columns["FirstName"];
                 this.columnLastName = base.Columns["LastName"];
-                this.columnProduct_Name = base.Columns["Product Name"];
-                this.columnProduct_Count = base.Columns["Product Count"];
-                this.columnCart_Price = base.Columns["Cart Price"];
-                this.columnTable_Number = base.Columns["Table Number"];
+                this.columnProduct_Name = base.Columns["Product_Name"];
+                this.columnProduct_Count = base.Columns["Product_Count"];
+                this.columnCart_Price = base.Columns["Cart_Price"];
+                this.columnTable_Number = base.Columns["Table_Number"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1302,13 +1302,13 @@ namespace CP.WebUI.Reports.Dataset {
                 base.Columns.Add(this.columnFirstName);
                 this.columnLastName = new global::System.Data.DataColumn("LastName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLastName);
-                this.columnProduct_Name = new global::System.Data.DataColumn("Product Name", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnProduct_Name = new global::System.Data.DataColumn("Product_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProduct_Name);
-                this.columnProduct_Count = new global::System.Data.DataColumn("Product Count", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnProduct_Count = new global::System.Data.DataColumn("Product_Count", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProduct_Count);
-                this.columnCart_Price = new global::System.Data.DataColumn("Cart Price", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnCart_Price = new global::System.Data.DataColumn("Cart_Price", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCart_Price);
-                this.columnTable_Number = new global::System.Data.DataColumn("Table Number", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnTable_Number = new global::System.Data.DataColumn("Table_Number", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTable_Number);
                 this.columnFirstName.MaxLength = 150;
                 this.columnLastName.MaxLength = 150;
@@ -1862,7 +1862,7 @@ namespace CP.WebUI.Reports.Dataset {
                 this.columnNumber = base.Columns["Number"];
                 this.columnFirstName = base.Columns["FirstName"];
                 this.columnLastName = base.Columns["LastName"];
-                this.columnProduct_Name = base.Columns["Product Name"];
+                this.columnProduct_Name = base.Columns["Product_Name"];
                 this.columnComment = base.Columns["Comment"];
             }
             
@@ -1875,7 +1875,7 @@ namespace CP.WebUI.Reports.Dataset {
                 base.Columns.Add(this.columnFirstName);
                 this.columnLastName = new global::System.Data.DataColumn("LastName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLastName);
-                this.columnProduct_Name = new global::System.Data.DataColumn("Product Name", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnProduct_Name = new global::System.Data.DataColumn("Product_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProduct_Name);
                 this.columnComment = new global::System.Data.DataColumn("Comment", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnComment);
@@ -3600,9 +3600,9 @@ namespace CP.WebUI.Reports.Dataset {
             
             private global::System.Data.DataColumn columnAddedDate;
             
-            private global::System.Data.DataColumn columnSeçilme_Durumu;
+            private global::System.Data.DataColumn columnChoose_Status;
             
-            private global::System.Data.DataColumn columnTercih;
+            private global::System.Data.DataColumn columnPreference_Choose;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -3711,17 +3711,17 @@ namespace CP.WebUI.Reports.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Seçilme_DurumuColumn {
+            public global::System.Data.DataColumn Choose_StatusColumn {
                 get {
-                    return this.columnSeçilme_Durumu;
+                    return this.columnChoose_Status;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TercihColumn {
+            public global::System.Data.DataColumn Preference_ChooseColumn {
                 get {
-                    return this.columnTercih;
+                    return this.columnPreference_Choose;
                 }
             }
             
@@ -3762,7 +3762,7 @@ namespace CP.WebUI.Reports.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProductListRow AddProductListRow(long Number, string Name, string ProductDetail, int Amount, int Price, string CategoryName, int Time, int Views, System.DateTime AddedDate, string Seçilme_Durumu, string Tercih) {
+            public ProductListRow AddProductListRow(long Number, string Name, string ProductDetail, int Amount, int Price, string CategoryName, int Time, int Views, System.DateTime AddedDate, string Choose_Status, string Preference_Choose) {
                 ProductListRow rowProductListRow = ((ProductListRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Number,
@@ -3774,8 +3774,8 @@ namespace CP.WebUI.Reports.Dataset {
                         Time,
                         Views,
                         AddedDate,
-                        Seçilme_Durumu,
-                        Tercih};
+                        Choose_Status,
+                        Preference_Choose};
                 rowProductListRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProductListRow);
                 return rowProductListRow;
@@ -3807,8 +3807,8 @@ namespace CP.WebUI.Reports.Dataset {
                 this.columnTime = base.Columns["Time"];
                 this.columnViews = base.Columns["Views"];
                 this.columnAddedDate = base.Columns["AddedDate"];
-                this.columnSeçilme_Durumu = base.Columns["Seçilme Durumu"];
-                this.columnTercih = base.Columns["Tercih"];
+                this.columnChoose_Status = base.Columns["Choose_Status"];
+                this.columnPreference_Choose = base.Columns["Preference_Choose"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3832,20 +3832,20 @@ namespace CP.WebUI.Reports.Dataset {
                 base.Columns.Add(this.columnViews);
                 this.columnAddedDate = new global::System.Data.DataColumn("AddedDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAddedDate);
-                this.columnSeçilme_Durumu = new global::System.Data.DataColumn("Seçilme Durumu", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSeçilme_Durumu);
-                this.columnTercih = new global::System.Data.DataColumn("Tercih", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTercih);
+                this.columnChoose_Status = new global::System.Data.DataColumn("Choose_Status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnChoose_Status);
+                this.columnPreference_Choose = new global::System.Data.DataColumn("Preference_Choose", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPreference_Choose);
                 this.columnName.AllowDBNull = false;
                 this.columnName.MaxLength = 75;
                 this.columnProductDetail.AllowDBNull = false;
                 this.columnProductDetail.MaxLength = 2147483647;
                 this.columnCategoryName.MaxLength = 100;
                 this.columnTime.AllowDBNull = false;
-                this.columnSeçilme_Durumu.ReadOnly = true;
-                this.columnSeçilme_Durumu.MaxLength = 10;
-                this.columnTercih.ReadOnly = true;
-                this.columnTercih.MaxLength = 16;
+                this.columnChoose_Status.ReadOnly = true;
+                this.columnChoose_Status.MaxLength = 10;
+                this.columnPreference_Choose.ReadOnly = true;
+                this.columnPreference_Choose.MaxLength = 16;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4132,7 +4132,7 @@ namespace CP.WebUI.Reports.Dataset {
                 this.columnNumber = base.Columns["Number"];
                 this.columnFirstName = base.Columns["FirstName"];
                 this.columnLastName = base.Columns["LastName"];
-                this.columnProduct_Name = base.Columns["Product Name"];
+                this.columnProduct_Name = base.Columns["Product_Name"];
                 this.columnRate = base.Columns["Rate"];
             }
             
@@ -4145,7 +4145,7 @@ namespace CP.WebUI.Reports.Dataset {
                 base.Columns.Add(this.columnFirstName);
                 this.columnLastName = new global::System.Data.DataColumn("LastName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLastName);
-                this.columnProduct_Name = new global::System.Data.DataColumn("Product Name", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnProduct_Name = new global::System.Data.DataColumn("Product_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProduct_Name);
                 this.columnRate = new global::System.Data.DataColumn("Rate", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRate);
@@ -5562,7 +5562,7 @@ namespace CP.WebUI.Reports.Dataset {
                 this.columnFirstName = base.Columns["FirstName"];
                 this.columnLastName = base.Columns["LastName"];
                 this.columnUsername = base.Columns["Username"];
-                this.columnRole_Name = base.Columns["Role Name"];
+                this.columnRole_Name = base.Columns["Role_Name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5576,7 +5576,7 @@ namespace CP.WebUI.Reports.Dataset {
                 base.Columns.Add(this.columnLastName);
                 this.columnUsername = new global::System.Data.DataColumn("Username", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUsername);
-                this.columnRole_Name = new global::System.Data.DataColumn("Role Name", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnRole_Name = new global::System.Data.DataColumn("Role_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRole_Name);
                 this.columnFirstName.MaxLength = 150;
                 this.columnLastName.MaxLength = 150;
@@ -5893,7 +5893,7 @@ namespace CP.WebUI.Reports.Dataset {
                         return ((int)(this[this.tableCartList.Product_CountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Product Count\' in table \'CartList\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Product_Count\' in table \'CartList\' is DBNull.", e);
                     }
                 }
                 set {
@@ -5909,7 +5909,7 @@ namespace CP.WebUI.Reports.Dataset {
                         return ((int)(this[this.tableCartList.Cart_PriceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Cart Price\' in table \'CartList\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Cart_Price\' in table \'CartList\' is DBNull.", e);
                     }
                 }
                 set {
@@ -5925,7 +5925,7 @@ namespace CP.WebUI.Reports.Dataset {
                         return ((int)(this[this.tableCartList.Table_NumberColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Table Number\' in table \'CartList\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Table_Number\' in table \'CartList\' is DBNull.", e);
                     }
                 }
                 set {
@@ -7191,33 +7191,33 @@ namespace CP.WebUI.Reports.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Seçilme_Durumu {
+            public string Choose_Status {
                 get {
                     try {
-                        return ((string)(this[this.tableProductList.Seçilme_DurumuColumn]));
+                        return ((string)(this[this.tableProductList.Choose_StatusColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Seçilme Durumu\' in table \'ProductList\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Choose_Status\' in table \'ProductList\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableProductList.Seçilme_DurumuColumn] = value;
+                    this[this.tableProductList.Choose_StatusColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Tercih {
+            public string Preference_Choose {
                 get {
                     try {
-                        return ((string)(this[this.tableProductList.TercihColumn]));
+                        return ((string)(this[this.tableProductList.Preference_ChooseColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Tercih\' in table \'ProductList\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Preference_Choose\' in table \'ProductList\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableProductList.TercihColumn] = value;
+                    this[this.tableProductList.Preference_ChooseColumn] = value;
                 }
             }
             
@@ -7295,26 +7295,26 @@ namespace CP.WebUI.Reports.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSeçilme_DurumuNull() {
-                return this.IsNull(this.tableProductList.Seçilme_DurumuColumn);
+            public bool IsChoose_StatusNull() {
+                return this.IsNull(this.tableProductList.Choose_StatusColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSeçilme_DurumuNull() {
-                this[this.tableProductList.Seçilme_DurumuColumn] = global::System.Convert.DBNull;
+            public void SetChoose_StatusNull() {
+                this[this.tableProductList.Choose_StatusColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTercihNull() {
-                return this.IsNull(this.tableProductList.TercihColumn);
+            public bool IsPreference_ChooseNull() {
+                return this.IsNull(this.tableProductList.Preference_ChooseColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTercihNull() {
-                this[this.tableProductList.TercihColumn] = global::System.Convert.DBNull;
+            public void SetPreference_ChooseNull() {
+                this[this.tableProductList.Preference_ChooseColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7966,7 +7966,7 @@ namespace CP.WebUI.Reports.Dataset {
                         return ((string)(this[this.tableUserRoleList.Role_NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Role Name\' in table \'UserRoleList\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Role_Name\' in table \'UserRoleList\' is DBNull.", e);
                     }
                 }
                 set {
@@ -8878,10 +8878,10 @@ namespace CP.WebUI.Reports.Dataset.ReportDatasetTableAdapters {
             tableMapping.ColumnMappings.Add("Number", "Number");
             tableMapping.ColumnMappings.Add("FirstName", "FirstName");
             tableMapping.ColumnMappings.Add("LastName", "LastName");
-            tableMapping.ColumnMappings.Add("Product Name", "Product Name");
-            tableMapping.ColumnMappings.Add("Product Count", "Product Count");
-            tableMapping.ColumnMappings.Add("Cart Price", "Cart Price");
-            tableMapping.ColumnMappings.Add("Table Number", "Table Number");
+            tableMapping.ColumnMappings.Add("Product_Name", "Product_Name");
+            tableMapping.ColumnMappings.Add("Product_Count", "Product_Count");
+            tableMapping.ColumnMappings.Add("Cart_Price", "Cart_Price");
+            tableMapping.ColumnMappings.Add("Table_Number", "Table_Number");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -8898,8 +8898,8 @@ namespace CP.WebUI.Reports.Dataset.ReportDatasetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Number, FirstName, LastName, [Product Name], [Product Count], [Cart Price]" +
-                ", [Table Number] FROM dbo.CartList";
+            this._commandCollection[0].CommandText = "SELECT Number, FirstName, LastName, Product_Name, Product_Count, Cart_Price, Tabl" +
+                "e_Number FROM dbo.CartList";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -9220,7 +9220,7 @@ namespace CP.WebUI.Reports.Dataset.ReportDatasetTableAdapters {
             tableMapping.ColumnMappings.Add("Number", "Number");
             tableMapping.ColumnMappings.Add("FirstName", "FirstName");
             tableMapping.ColumnMappings.Add("LastName", "LastName");
-            tableMapping.ColumnMappings.Add("Product Name", "Product Name");
+            tableMapping.ColumnMappings.Add("Product_Name", "Product_Name");
             tableMapping.ColumnMappings.Add("Comment", "Comment");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -9238,7 +9238,7 @@ namespace CP.WebUI.Reports.Dataset.ReportDatasetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Number, FirstName, LastName, [Product Name], Comment FROM dbo.CommentList";
+            this._commandCollection[0].CommandText = "SELECT Number, FirstName, LastName, Product_Name, Comment FROM dbo.CommentList";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -10257,8 +10257,8 @@ namespace CP.WebUI.Reports.Dataset.ReportDatasetTableAdapters {
             tableMapping.ColumnMappings.Add("Time", "Time");
             tableMapping.ColumnMappings.Add("Views", "Views");
             tableMapping.ColumnMappings.Add("AddedDate", "AddedDate");
-            tableMapping.ColumnMappings.Add("Seçilme Durumu", "Seçilme Durumu");
-            tableMapping.ColumnMappings.Add("Tercih", "Tercih");
+            tableMapping.ColumnMappings.Add("Choose_Status", "Choose_Status");
+            tableMapping.ColumnMappings.Add("Preference_Choose", "Preference_Choose");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -10276,7 +10276,7 @@ namespace CP.WebUI.Reports.Dataset.ReportDatasetTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Number, Name, ProductDetail, Amount, Price, CategoryName, Time, Views, Add" +
-                "edDate, [Seçilme Durumu], Tercih FROM dbo.ProductList";
+                "edDate, Choose_Status, Preference_Choose FROM dbo.ProductList";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -10429,7 +10429,7 @@ namespace CP.WebUI.Reports.Dataset.ReportDatasetTableAdapters {
             tableMapping.ColumnMappings.Add("Number", "Number");
             tableMapping.ColumnMappings.Add("FirstName", "FirstName");
             tableMapping.ColumnMappings.Add("LastName", "LastName");
-            tableMapping.ColumnMappings.Add("Product Name", "Product Name");
+            tableMapping.ColumnMappings.Add("Product_Name", "Product_Name");
             tableMapping.ColumnMappings.Add("Rate", "Rate");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -10447,7 +10447,7 @@ namespace CP.WebUI.Reports.Dataset.ReportDatasetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Number, FirstName, LastName, [Product Name], Rate FROM dbo.RateList";
+            this._commandCollection[0].CommandText = "SELECT Number, FirstName, LastName, Product_Name, Rate FROM dbo.RateList";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -11278,7 +11278,7 @@ namespace CP.WebUI.Reports.Dataset.ReportDatasetTableAdapters {
             tableMapping.ColumnMappings.Add("FirstName", "FirstName");
             tableMapping.ColumnMappings.Add("LastName", "LastName");
             tableMapping.ColumnMappings.Add("Username", "Username");
-            tableMapping.ColumnMappings.Add("Role Name", "Role Name");
+            tableMapping.ColumnMappings.Add("Role_Name", "Role_Name");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -11295,7 +11295,7 @@ namespace CP.WebUI.Reports.Dataset.ReportDatasetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Number, FirstName, LastName, Username, [Role Name] FROM dbo.UserRoleList";
+            this._commandCollection[0].CommandText = "SELECT Number, FirstName, LastName, Username, Role_Name FROM dbo.UserRoleList";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

@@ -32,7 +32,7 @@
               <DbSource ConnectionRef="CafeProjectModel (Web.config)" DbObjectName="CafeProjectDB.dbo.CartList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Number, FirstName, LastName, [Product Name], [Product Count], [Cart Price], [Table Number] FROM dbo.CartList</CommandText>
+                    <CommandText>SELECT Number, FirstName, LastName, Product_Name, Product_Count, Cart_Price, Table_Number FROM dbo.CartList</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -42,10 +42,10 @@
               <Mapping SourceColumn="Number" DataSetColumn="Number" />
               <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
               <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
-              <Mapping SourceColumn="Product Name" DataSetColumn="Product Name" />
-              <Mapping SourceColumn="Product Count" DataSetColumn="Product Count" />
-              <Mapping SourceColumn="Cart Price" DataSetColumn="Cart Price" />
-              <Mapping SourceColumn="Table Number" DataSetColumn="Table Number" />
+              <Mapping SourceColumn="Product_Name" DataSetColumn="Product_Name" />
+              <Mapping SourceColumn="Product_Count" DataSetColumn="Product_Count" />
+              <Mapping SourceColumn="Cart_Price" DataSetColumn="Cart_Price" />
+              <Mapping SourceColumn="Table_Number" DataSetColumn="Table_Number" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -71,7 +71,7 @@
               <DbSource ConnectionRef="CafeProjectModel (Web.config)" DbObjectName="CafeProjectDB.dbo.CommentList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Number, FirstName, LastName, [Product Name], Comment FROM dbo.CommentList</CommandText>
+                    <CommandText>SELECT Number, FirstName, LastName, Product_Name, Comment FROM dbo.CommentList</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -81,7 +81,7 @@
               <Mapping SourceColumn="Number" DataSetColumn="Number" />
               <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
               <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
-              <Mapping SourceColumn="Product Name" DataSetColumn="Product Name" />
+              <Mapping SourceColumn="Product_Name" DataSetColumn="Product_Name" />
               <Mapping SourceColumn="Comment" DataSetColumn="Comment" />
             </Mappings>
             <Sources />
@@ -193,7 +193,7 @@
               <DbSource ConnectionRef="CafeProjectModel (Web.config)" DbObjectName="CafeProjectDB.dbo.ProductList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Number, Name, ProductDetail, Amount, Price, CategoryName, Time, Views, AddedDate, [Seçilme Durumu], Tercih FROM dbo.ProductList</CommandText>
+                    <CommandText>SELECT Number, Name, ProductDetail, Amount, Price, CategoryName, Time, Views, AddedDate, Choose_Status, Preference_Choose FROM dbo.ProductList</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -209,8 +209,8 @@
               <Mapping SourceColumn="Time" DataSetColumn="Time" />
               <Mapping SourceColumn="Views" DataSetColumn="Views" />
               <Mapping SourceColumn="AddedDate" DataSetColumn="AddedDate" />
-              <Mapping SourceColumn="Seçilme Durumu" DataSetColumn="Seçilme Durumu" />
-              <Mapping SourceColumn="Tercih" DataSetColumn="Tercih" />
+              <Mapping SourceColumn="Choose_Status" DataSetColumn="Choose_Status" />
+              <Mapping SourceColumn="Preference_Choose" DataSetColumn="Preference_Choose" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -219,7 +219,7 @@
               <DbSource ConnectionRef="CafeProjectModel (Web.config)" DbObjectName="CafeProjectDB.dbo.RateList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Number, FirstName, LastName, [Product Name], Rate FROM dbo.RateList</CommandText>
+                    <CommandText>SELECT Number, FirstName, LastName, Product_Name, Rate FROM dbo.RateList</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -229,7 +229,7 @@
               <Mapping SourceColumn="Number" DataSetColumn="Number" />
               <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
               <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
-              <Mapping SourceColumn="Product Name" DataSetColumn="Product Name" />
+              <Mapping SourceColumn="Product_Name" DataSetColumn="Product_Name" />
               <Mapping SourceColumn="Rate" DataSetColumn="Rate" />
             </Mappings>
             <Sources />
@@ -312,7 +312,7 @@
               <DbSource ConnectionRef="CafeProjectModel (Web.config)" DbObjectName="CafeProjectDB.dbo.UserRoleList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Number, FirstName, LastName, Username, [Role Name] FROM dbo.UserRoleList</CommandText>
+                    <CommandText>SELECT Number, FirstName, LastName, Username, Role_Name FROM dbo.UserRoleList</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -323,7 +323,7 @@
               <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
               <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
               <Mapping SourceColumn="Username" DataSetColumn="Username" />
-              <Mapping SourceColumn="Role Name" DataSetColumn="Role Name" />
+              <Mapping SourceColumn="Role_Name" DataSetColumn="Role_Name" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -376,16 +376,16 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Product_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnProduct_Name" msprop:Generator_ColumnPropNameInRow="Product_Name" msprop:Generator_ColumnPropNameInTable="Product_NameColumn" msprop:Generator_UserColumnName="Product Name">
+              <xs:element name="Product_Name" msprop:Generator_ColumnVarNameInTable="columnProduct_Name" msprop:Generator_ColumnPropNameInRow="Product_Name" msprop:Generator_ColumnPropNameInTable="Product_NameColumn" msprop:Generator_UserColumnName="Product_Name">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="75" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Product_x0020_Count" msprop:Generator_ColumnVarNameInTable="columnProduct_Count" msprop:Generator_ColumnPropNameInRow="Product_Count" msprop:Generator_ColumnPropNameInTable="Product_CountColumn" msprop:Generator_UserColumnName="Product Count" type="xs:int" minOccurs="0" />
-              <xs:element name="Cart_x0020_Price" msprop:Generator_ColumnVarNameInTable="columnCart_Price" msprop:Generator_ColumnPropNameInRow="Cart_Price" msprop:Generator_ColumnPropNameInTable="Cart_PriceColumn" msprop:Generator_UserColumnName="Cart Price" type="xs:int" minOccurs="0" />
-              <xs:element name="Table_x0020_Number" msprop:Generator_ColumnVarNameInTable="columnTable_Number" msprop:Generator_ColumnPropNameInRow="Table_Number" msprop:Generator_ColumnPropNameInTable="Table_NumberColumn" msprop:Generator_UserColumnName="Table Number" type="xs:int" minOccurs="0" />
+              <xs:element name="Product_Count" msprop:Generator_ColumnVarNameInTable="columnProduct_Count" msprop:Generator_ColumnPropNameInRow="Product_Count" msprop:Generator_ColumnPropNameInTable="Product_CountColumn" msprop:Generator_UserColumnName="Product_Count" type="xs:int" minOccurs="0" />
+              <xs:element name="Cart_Price" msprop:Generator_ColumnVarNameInTable="columnCart_Price" msprop:Generator_ColumnPropNameInRow="Cart_Price" msprop:Generator_ColumnPropNameInTable="Cart_PriceColumn" msprop:Generator_UserColumnName="Cart_Price" type="xs:int" minOccurs="0" />
+              <xs:element name="Table_Number" msprop:Generator_ColumnVarNameInTable="columnTable_Number" msprop:Generator_ColumnPropNameInRow="Table_Number" msprop:Generator_ColumnPropNameInTable="Table_NumberColumn" msprop:Generator_UserColumnName="Table_Number" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -421,7 +421,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Product_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnProduct_Name" msprop:Generator_ColumnPropNameInRow="Product_Name" msprop:Generator_ColumnPropNameInTable="Product_NameColumn" msprop:Generator_UserColumnName="Product Name">
+              <xs:element name="Product_Name" msprop:Generator_ColumnVarNameInTable="columnProduct_Name" msprop:Generator_ColumnPropNameInRow="Product_Name" msprop:Generator_ColumnPropNameInTable="Product_NameColumn" msprop:Generator_UserColumnName="Product_Name">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="75" />
@@ -657,14 +657,14 @@
               <xs:element name="Time" msprop:Generator_ColumnVarNameInTable="columnTime" msprop:Generator_ColumnPropNameInRow="Time" msprop:Generator_ColumnPropNameInTable="TimeColumn" msprop:Generator_UserColumnName="Time" type="xs:int" />
               <xs:element name="Views" msprop:Generator_ColumnVarNameInTable="columnViews" msprop:Generator_ColumnPropNameInRow="Views" msprop:Generator_ColumnPropNameInTable="ViewsColumn" msprop:Generator_UserColumnName="Views" type="xs:int" minOccurs="0" />
               <xs:element name="AddedDate" msprop:Generator_ColumnVarNameInTable="columnAddedDate" msprop:Generator_ColumnPropNameInRow="AddedDate" msprop:Generator_ColumnPropNameInTable="AddedDateColumn" msprop:Generator_UserColumnName="AddedDate" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Seçilme_x0020_Durumu" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSeçilme_Durumu" msprop:Generator_ColumnPropNameInRow="Seçilme_Durumu" msprop:Generator_ColumnPropNameInTable="Seçilme_DurumuColumn" msprop:Generator_UserColumnName="Seçilme Durumu" minOccurs="0">
+              <xs:element name="Choose_Status" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnChoose_Status" msprop:Generator_ColumnPropNameInRow="Choose_Status" msprop:Generator_ColumnPropNameInTable="Choose_StatusColumn" msprop:Generator_UserColumnName="Choose_Status" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Tercih" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTercih" msprop:Generator_ColumnPropNameInRow="Tercih" msprop:Generator_ColumnPropNameInTable="TercihColumn" msprop:Generator_UserColumnName="Tercih" minOccurs="0">
+              <xs:element name="Preference_Choose" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPreference_Choose" msprop:Generator_ColumnPropNameInRow="Preference_Choose" msprop:Generator_ColumnPropNameInTable="Preference_ChooseColumn" msprop:Generator_UserColumnName="Preference_Choose" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="16" />
@@ -692,7 +692,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Product_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnProduct_Name" msprop:Generator_ColumnPropNameInRow="Product_Name" msprop:Generator_ColumnPropNameInTable="Product_NameColumn" msprop:Generator_UserColumnName="Product Name">
+              <xs:element name="Product_Name" msprop:Generator_ColumnVarNameInTable="columnProduct_Name" msprop:Generator_ColumnPropNameInRow="Product_Name" msprop:Generator_ColumnPropNameInTable="Product_NameColumn" msprop:Generator_UserColumnName="Product_Name">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="75" />
@@ -813,7 +813,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Role_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnRole_Name" msprop:Generator_ColumnPropNameInRow="Role_Name" msprop:Generator_ColumnPropNameInTable="Role_NameColumn" msprop:Generator_UserColumnName="Role Name" minOccurs="0">
+              <xs:element name="Role_Name" msprop:Generator_ColumnVarNameInTable="columnRole_Name" msprop:Generator_ColumnPropNameInRow="Role_Name" msprop:Generator_ColumnPropNameInTable="Role_NameColumn" msprop:Generator_UserColumnName="Role_Name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />

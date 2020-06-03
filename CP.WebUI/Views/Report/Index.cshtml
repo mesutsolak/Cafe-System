@@ -17,22 +17,50 @@
 
 <div class="card mt-4">
     <div class="card-header">
-        <div class="d-flex flex-row bd-highlight">
+        <div class="d-flex bd-highlight">
             <div class="p-2 bd-highlight mt-1">
                 <i class="fas fa-chart-area fa-2x"></i>
             </div>
             <div class="p-2 bd-highlight">
                 <h2>Raporlar</h2>
             </div>
+            <div class="ml-auto p-2 bd-highlight">
+                <select class="custom-select" id="ReportSelect">
+                    <option selected>Rapor Seçiniz</option>
+                    <option value="KampanyaListesi">Kampanya Listesi</option>
+                    <option value="SiparişListesi">Sipariş Listesi</option>
+                    <option value="KategoriListesi">Kategori Listesi</option>
+                    <option value="YorumListesi">Yorum Listesi</option>
+                    <option value="FirmaBilgisiListesi">Firma Bilgisi Listesi</option>
+                    <option value="İletişimListesi">İletişim Listesi</option>
+                    <option value="AnasayfaListesi">Anasayfa Listesi</option>
+                    <option value="MüzikListesi">Müzik Listesi</option>
+                    <option value="ÜrünListesi">Ürün Listesi</option>
+                    <option value="DeğerlendirmeListesi">Değerlendirme Listesi</option>
+                    <option value="RolListesi">Rol Listesi</option>
+                    <option value="SliderListesi">Slider Listesi</option>
+                    <option value="MasaListesi">Masa Listesi</option>
+                    <option value="KullanıcıListesi">Kullanıcı Listesi</option>
+                    <option value="KullanıcıRolüListesi">Kullanıcı Rolü Listesi</option>
+                </select>
+            </div>
         </div>
-    </div>                                                                      
+    </div>
     <div class="card-body">
         <div class="card-title">
             <div class="row">
             </div>
         </div>
-        <div class="card-text product-body">
+        <div class="card-text report-body">
         </div>
     </div>
 </div>
+
+@section css {
+    <link href="~/Content/css/report.css" rel="stylesheet" />
+}
+
+@section js {
+    <script src="~/Content/js/Pagejs/report.js"></script>
+}
 

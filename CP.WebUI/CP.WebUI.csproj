@@ -282,6 +282,7 @@
     <Content Include="Content\css\home.css" />
     <Content Include="Content\css\jquery-ui.css" />
     <Content Include="Content\css\main.css" />
+    <Content Include="Content\css\report.css" />
     <Content Include="Content\framework\ckeditor\adapters\jquery.js" />
     <Content Include="Content\framework\ckeditor\build-config.js" />
     <Content Include="Content\framework\ckeditor\ckeditor.js" />
@@ -473,6 +474,7 @@
     <Content Include="Content\js\Pagejs\information.js" />
     <Content Include="Content\js\Pagejs\LogOn.js" />
     <Content Include="Content\js\Pagejs\Meal.js" />
+    <Content Include="Content\js\Pagejs\report.js" />
     <Content Include="Content\js\Pagejs\Role.js" />
     <Content Include="Content\js\Pagejs\Slider.js" />
     <Content Include="Content\js\Pagejs\table.js" />
