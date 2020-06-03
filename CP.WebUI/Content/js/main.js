@@ -341,7 +341,7 @@ $.extend({
 
 $("#btnSignOut").on("click", function () {
     Swal.fire({
-        title: 'Çıkış İşlemi?',
+        title: 'Çıkış İşlemi',
         text: "Çıkmak İstiyor musunuz ?",
         icon: 'question',
         showCancelButton: true,

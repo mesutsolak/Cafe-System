@@ -547,10 +547,7 @@
     <Content Include="Reports\Dataset\ReportDataset.xss">
       <DependentUpon>ReportDataset.xsd</DependentUpon>
     </Content>
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="ReportViewerWebForm.aspx" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Views\web.config" />
     <Content Include="Content\framework\ckeditor\CHANGES.md" />
     <Content Include="Content\framework\ckeditor\LICENSE.md" />

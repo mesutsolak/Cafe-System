@@ -295,6 +295,8 @@ namespace CP.WebUI.Controllers
                 {
 
                     _cookieItem.Add("FirstAndLast", UserOperations.UserFirstAndLast(loginControl.UserName));
+                    _cookieItem.Add("ProfilPhoto", UserOperations.UserProfilPhoto(loginControl.UserName));
+
 
                     _Cookie.CookieCreateValue("User", _cookieItem);
 

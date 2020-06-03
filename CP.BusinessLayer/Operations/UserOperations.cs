@@ -25,6 +25,11 @@ namespace CP.BusinessLayer.Operations
             return user.FirstName + " " + user.LastName;
         }
 
+        public static string UserProfilPhoto(string username)
+        {
+            return _data.UserRepository.GetByFilter(x => x.Username == username).ProfilPhoto;
+        }
+
         public static M.User UserFind(int id)
         {
             return _data.UserRepository.GetByIdInclue(id);
@@ -122,7 +127,7 @@ namespace CP.BusinessLayer.Operations
                 SmtpClient smtp = new SmtpClient
                 {
                     UseDefaultCredentials = false,
-                Credentials = new System.Net.NetworkCredential("mesuttsolakk@gmail.com", "Mesut123+-"),
+                    Credentials = new System.Net.NetworkCredential("mesuttsolakk@gmail.com", "Mesut123+-"),
                     Port = 587,
                     Host = "smtp.gmail.com",
                     EnableSsl = true
