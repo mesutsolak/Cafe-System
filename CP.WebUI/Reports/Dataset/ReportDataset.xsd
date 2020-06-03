@@ -1,0 +1,829 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReportDataset" targetNamespace="http://tempuri.org/ReportDataset.xsd" xmlns:mstns="http://tempuri.org/ReportDataset.xsd" xmlns="http://tempuri.org/ReportDataset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="CafeProjectModel" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CafeProjectModel (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.CafeProjectModel.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CampaignListTableAdapter" GeneratorDataComponentClassName="CampaignListTableAdapter" Name="CampaignList" UserDataComponentName="CampaignListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CafeProjectModel (Web.config)" DbObjectName="CafeProjectDB.dbo.CampaignList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Number, Title, Description, Amount, Price FROM dbo.CampaignList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Number" DataSetColumn="Number" />
+              <Mapping SourceColumn="Title" DataSetColumn="Title" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="Price" DataSetColumn="Price" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CartListTableAdapter" GeneratorDataComponentClassName="CartListTableAdapter" Name="CartList" UserDataComponentName="CartListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CafeProjectModel (Web.config)" DbObjectName="CafeProjectDB.dbo.CartList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Number, FirstName, LastName, [Product Name], [Product Count], [Cart Price], [Table Number] FROM dbo.CartList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Number" DataSetColumn="Number" />
+              <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
+              <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
+              <Mapping SourceColumn="Product Name" DataSetColumn="Product Name" />
+              <Mapping SourceColumn="Product Count" DataSetColumn="Product Count" />
+              <Mapping SourceColumn="Cart Price" DataSetColumn="Cart Price" />
+              <Mapping SourceColumn="Table Number" DataSetColumn="Table Number" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CategoryListTableAdapter" GeneratorDataComponentClassName="CategoryListTableAdapter" Name="CategoryList" UserDataComponentName="CategoryListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CafeProjectModel (Web.config)" DbObjectName="CafeProjectDB.dbo.CategoryList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Number, Name FROM dbo.CategoryList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Number" DataSetColumn="Number" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CommentListTableAdapter" GeneratorDataComponentClassName="CommentListTableAdapter" Name="CommentList" UserDataComponentName="CommentListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CafeProjectModel (Web.config)" DbObjectName="CafeProjectDB.dbo.CommentList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Number, FirstName, LastName, [Product Name], Comment FROM dbo.CommentList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Number" DataSetColumn="Number" />
+              <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
+              <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
+              <Mapping SourceColumn="Product Name" DataSetColumn="Product Name" />
+              <Mapping SourceColumn="Comment" DataSetColumn="Comment" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CompanyInformationListTableAdapter" GeneratorDataComponentClassName="CompanyInformationListTableAdapter" Name="CompanyInformationList" UserDataComponentName="CompanyInformationListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CafeProjectModel (Web.config)" DbObjectName="CafeProjectDB.dbo.CompanyInformationList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Number, Header1, Description1, Header2, Description2 FROM dbo.CompanyInformationList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Number" DataSetColumn="Number" />
+              <Mapping SourceColumn="Header1" DataSetColumn="Header1" />
+              <Mapping SourceColumn="Description1" DataSetColumn="Description1" />
+              <Mapping SourceColumn="Header2" DataSetColumn="Header2" />
+              <Mapping SourceColumn="Description2" DataSetColumn="Description2" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ContactListTableAdapter" GeneratorDataComponentClassName="ContactListTableAdapter" Name="ContactList" UserDataComponentName="ContactListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CafeProjectModel (Web.config)" DbObjectName="CafeProjectDB.dbo.ContactList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Number, Description, Address, Email, Fax, Instagram, Twitter, Facebook, LocationGeneral, Phone FROM dbo.ContactList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Number" DataSetColumn="Number" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="Address" DataSetColumn="Address" />
+              <Mapping SourceColumn="Email" DataSetColumn="Email" />
+              <Mapping SourceColumn="Fax" DataSetColumn="Fax" />
+              <Mapping SourceColumn="Instagram" DataSetColumn="Instagram" />
+              <Mapping SourceColumn="Twitter" DataSetColumn="Twitter" />
+              <Mapping SourceColumn="Facebook" DataSetColumn="Facebook" />
+              <Mapping SourceColumn="LocationGeneral" DataSetColumn="LocationGeneral" />
+              <Mapping SourceColumn="Phone" DataSetColumn="Phone" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GeneralListTableAdapter" GeneratorDataComponentClassName="GeneralListTableAdapter" Name="GeneralList" UserDataComponentName="GeneralListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CafeProjectModel (Web.config)" DbObjectName="CafeProjectDB.dbo.GeneralList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Number, Title FROM dbo.GeneralList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Number" DataSetColumn="Number" />
+              <Mapping SourceColumn="Title" DataSetColumn="Title" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HomePageListTableAdapter" GeneratorDataComponentClassName="HomePageListTableAdapter" Name="HomePageList" UserDataComponentName="HomePageListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CafeProjectModel (Web.config)" DbObjectName="CafeProjectDB.dbo.HomePageList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Number, Header1, Description1, Header2, Description2 FROM dbo.HomePageList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Number" DataSetColumn="Number" />
+              <Mapping SourceColumn="Header1" DataSetColumn="Header1" />
+              <Mapping SourceColumn="Description1" DataSetColumn="Description1" />
+              <Mapping SourceColumn="Header2" DataSetColumn="Header2" />
+              <Mapping SourceColumn="Description2" DataSetColumn="Description2" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MusicListViewTableAdapter" GeneratorDataComponentClassName="MusicListViewTableAdapter" Name="MusicListView" UserDataComponentName="MusicListViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CafeProjectModel (Web.config)" DbObjectName="CafeProjectDB.dbo.MusicListView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Number, FirstName, LastName, ArtistName, MusicName FROM dbo.MusicListView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Number" DataSetColumn="Number" />
+              <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
+              <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
+              <Mapping SourceColumn="ArtistName" DataSetColumn="ArtistName" />
+              <Mapping SourceColumn="MusicName" DataSetColumn="MusicName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProductListTableAdapter" GeneratorDataComponentClassName="ProductListTableAdapter" Name="ProductList" UserDataComponentName="ProductListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CafeProjectModel (Web.config)" DbObjectName="CafeProjectDB.dbo.ProductList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Number, Name, ProductDetail, Amount, Price, CategoryName, Time, Views, AddedDate, [Seçilme Durumu], Tercih FROM dbo.ProductList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Number" DataSetColumn="Number" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="ProductDetail" DataSetColumn="ProductDetail" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="Price" DataSetColumn="Price" />
+              <Mapping SourceColumn="CategoryName" DataSetColumn="CategoryName" />
+              <Mapping SourceColumn="Time" DataSetColumn="Time" />
+              <Mapping SourceColumn="Views" DataSetColumn="Views" />
+              <Mapping SourceColumn="AddedDate" DataSetColumn="AddedDate" />
+              <Mapping SourceColumn="Seçilme Durumu" DataSetColumn="Seçilme Durumu" />
+              <Mapping SourceColumn="Tercih" DataSetColumn="Tercih" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RateListTableAdapter" GeneratorDataComponentClassName="RateListTableAdapter" Name="RateList" UserDataComponentName="RateListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CafeProjectModel (Web.config)" DbObjectName="CafeProjectDB.dbo.RateList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Number, FirstName, LastName, [Product Name], Rate FROM dbo.RateList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Number" DataSetColumn="Number" />
+              <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
+              <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
+              <Mapping SourceColumn="Product Name" DataSetColumn="Product Name" />
+              <Mapping SourceColumn="Rate" DataSetColumn="Rate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RoleListTableAdapter" GeneratorDataComponentClassName="RoleListTableAdapter" Name="RoleList" UserDataComponentName="RoleListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CafeProjectModel (Web.config)" DbObjectName="CafeProjectDB.dbo.RoleList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Number, Name FROM dbo.RoleList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Number" DataSetColumn="Number" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TableListTableAdapter" GeneratorDataComponentClassName="TableListTableAdapter" Name="TableList" UserDataComponentName="TableListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CafeProjectModel (Web.config)" DbObjectName="CafeProjectDB.dbo.TableList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Number, Numbers FROM dbo.TableList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Number" DataSetColumn="Number" />
+              <Mapping SourceColumn="Numbers" DataSetColumn="Numbers" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SliderListTableAdapter" GeneratorDataComponentClassName="SliderListTableAdapter" Name="SliderList" UserDataComponentName="SliderListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CafeProjectModel (Web.config)" DbObjectName="CafeProjectDB.dbo.SliderList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Number, Title, Description FROM dbo.SliderList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Number" DataSetColumn="Number" />
+              <Mapping SourceColumn="Title" DataSetColumn="Title" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UserListTableAdapter" GeneratorDataComponentClassName="UserListTableAdapter" Name="UserList" UserDataComponentName="UserListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CafeProjectModel (Web.config)" DbObjectName="CafeProjectDB.dbo.UserList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Number, FirstName, LastName, Name, Email, Username FROM dbo.UserList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Number" DataSetColumn="Number" />
+              <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
+              <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Email" DataSetColumn="Email" />
+              <Mapping SourceColumn="Username" DataSetColumn="Username" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UserRoleListTableAdapter" GeneratorDataComponentClassName="UserRoleListTableAdapter" Name="UserRoleList" UserDataComponentName="UserRoleListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CafeProjectModel (Web.config)" DbObjectName="CafeProjectDB.dbo.UserRoleList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Number, FirstName, LastName, Username, [Role Name] FROM dbo.UserRoleList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Number" DataSetColumn="Number" />
+              <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
+              <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
+              <Mapping SourceColumn="Username" DataSetColumn="Username" />
+              <Mapping SourceColumn="Role Name" DataSetColumn="Role Name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ReportDataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ReportDataset" msprop:Generator_UserDSName="ReportDataset">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CampaignList" msprop:Generator_TableClassName="CampaignListDataTable" msprop:Generator_TableVarName="tableCampaignList" msprop:Generator_TablePropName="CampaignList" msprop:Generator_RowDeletingName="CampaignListRowDeleting" msprop:Generator_RowChangingName="CampaignListRowChanging" msprop:Generator_RowEvHandlerName="CampaignListRowChangeEventHandler" msprop:Generator_RowDeletedName="CampaignListRowDeleted" msprop:Generator_UserTableName="CampaignList" msprop:Generator_RowChangedName="CampaignListRowChanged" msprop:Generator_RowEvArgName="CampaignListRowChangeEvent" msprop:Generator_RowClassName="CampaignListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:long" minOccurs="0" />
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:int" />
+              <xs:element name="Price" msprop:Generator_ColumnVarNameInTable="columnPrice" msprop:Generator_ColumnPropNameInRow="Price" msprop:Generator_ColumnPropNameInTable="PriceColumn" msprop:Generator_UserColumnName="Price" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CartList" msprop:Generator_TableClassName="CartListDataTable" msprop:Generator_TableVarName="tableCartList" msprop:Generator_TablePropName="CartList" msprop:Generator_RowDeletingName="CartListRowDeleting" msprop:Generator_RowChangingName="CartListRowChanging" msprop:Generator_RowEvHandlerName="CartListRowChangeEventHandler" msprop:Generator_RowDeletedName="CartListRowDeleted" msprop:Generator_UserTableName="CartList" msprop:Generator_RowChangedName="CartListRowChanged" msprop:Generator_RowEvArgName="CartListRowChangeEvent" msprop:Generator_RowClassName="CartListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:long" minOccurs="0" />
+              <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_UserColumnName="LastName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Product_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnProduct_Name" msprop:Generator_ColumnPropNameInRow="Product_Name" msprop:Generator_ColumnPropNameInTable="Product_NameColumn" msprop:Generator_UserColumnName="Product Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Product_x0020_Count" msprop:Generator_ColumnVarNameInTable="columnProduct_Count" msprop:Generator_ColumnPropNameInRow="Product_Count" msprop:Generator_ColumnPropNameInTable="Product_CountColumn" msprop:Generator_UserColumnName="Product Count" type="xs:int" minOccurs="0" />
+              <xs:element name="Cart_x0020_Price" msprop:Generator_ColumnVarNameInTable="columnCart_Price" msprop:Generator_ColumnPropNameInRow="Cart_Price" msprop:Generator_ColumnPropNameInTable="Cart_PriceColumn" msprop:Generator_UserColumnName="Cart Price" type="xs:int" minOccurs="0" />
+              <xs:element name="Table_x0020_Number" msprop:Generator_ColumnVarNameInTable="columnTable_Number" msprop:Generator_ColumnPropNameInRow="Table_Number" msprop:Generator_ColumnPropNameInTable="Table_NumberColumn" msprop:Generator_UserColumnName="Table Number" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CategoryList" msprop:Generator_TableClassName="CategoryListDataTable" msprop:Generator_TableVarName="tableCategoryList" msprop:Generator_TablePropName="CategoryList" msprop:Generator_RowDeletingName="CategoryListRowDeleting" msprop:Generator_RowChangingName="CategoryListRowChanging" msprop:Generator_RowEvHandlerName="CategoryListRowChangeEventHandler" msprop:Generator_RowDeletedName="CategoryListRowDeleted" msprop:Generator_UserTableName="CategoryList" msprop:Generator_RowChangedName="CategoryListRowChanged" msprop:Generator_RowEvArgName="CategoryListRowChangeEvent" msprop:Generator_RowClassName="CategoryListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:long" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CommentList" msprop:Generator_TableClassName="CommentListDataTable" msprop:Generator_TableVarName="tableCommentList" msprop:Generator_TablePropName="CommentList" msprop:Generator_RowDeletingName="CommentListRowDeleting" msprop:Generator_RowChangingName="CommentListRowChanging" msprop:Generator_RowEvHandlerName="CommentListRowChangeEventHandler" msprop:Generator_RowDeletedName="CommentListRowDeleted" msprop:Generator_UserTableName="CommentList" msprop:Generator_RowChangedName="CommentListRowChanged" msprop:Generator_RowEvArgName="CommentListRowChangeEvent" msprop:Generator_RowClassName="CommentListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:long" minOccurs="0" />
+              <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_UserColumnName="LastName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Product_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnProduct_Name" msprop:Generator_ColumnPropNameInRow="Product_Name" msprop:Generator_ColumnPropNameInTable="Product_NameColumn" msprop:Generator_UserColumnName="Product Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Comment" msprop:Generator_ColumnVarNameInTable="columnComment" msprop:Generator_ColumnPropNameInRow="Comment" msprop:Generator_ColumnPropNameInTable="CommentColumn" msprop:Generator_UserColumnName="Comment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CompanyInformationList" msprop:Generator_TableClassName="CompanyInformationListDataTable" msprop:Generator_TableVarName="tableCompanyInformationList" msprop:Generator_TablePropName="CompanyInformationList" msprop:Generator_RowDeletingName="CompanyInformationListRowDeleting" msprop:Generator_RowChangingName="CompanyInformationListRowChanging" msprop:Generator_RowEvHandlerName="CompanyInformationListRowChangeEventHandler" msprop:Generator_RowDeletedName="CompanyInformationListRowDeleted" msprop:Generator_UserTableName="CompanyInformationList" msprop:Generator_RowChangedName="CompanyInformationListRowChanged" msprop:Generator_RowEvArgName="CompanyInformationListRowChangeEvent" msprop:Generator_RowClassName="CompanyInformationListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:long" minOccurs="0" />
+              <xs:element name="Header1" msprop:Generator_ColumnVarNameInTable="columnHeader1" msprop:Generator_ColumnPropNameInRow="Header1" msprop:Generator_ColumnPropNameInTable="Header1Column" msprop:Generator_UserColumnName="Header1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description1" msprop:Generator_ColumnVarNameInTable="columnDescription1" msprop:Generator_ColumnPropNameInRow="Description1" msprop:Generator_ColumnPropNameInTable="Description1Column" msprop:Generator_UserColumnName="Description1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Header2" msprop:Generator_ColumnVarNameInTable="columnHeader2" msprop:Generator_ColumnPropNameInRow="Header2" msprop:Generator_ColumnPropNameInTable="Header2Column" msprop:Generator_UserColumnName="Header2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description2" msprop:Generator_ColumnVarNameInTable="columnDescription2" msprop:Generator_ColumnPropNameInRow="Description2" msprop:Generator_ColumnPropNameInTable="Description2Column" msprop:Generator_UserColumnName="Description2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ContactList" msprop:Generator_TableClassName="ContactListDataTable" msprop:Generator_TableVarName="tableContactList" msprop:Generator_TablePropName="ContactList" msprop:Generator_RowDeletingName="ContactListRowDeleting" msprop:Generator_RowChangingName="ContactListRowChanging" msprop:Generator_RowEvHandlerName="ContactListRowChangeEventHandler" msprop:Generator_RowDeletedName="ContactListRowDeleted" msprop:Generator_UserTableName="ContactList" msprop:Generator_RowChangedName="ContactListRowChanged" msprop:Generator_RowEvArgName="ContactListRowChangeEvent" msprop:Generator_RowClassName="ContactListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:long" minOccurs="0" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_UserColumnName="Address" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fax" msprop:Generator_ColumnVarNameInTable="columnFax" msprop:Generator_ColumnPropNameInRow="Fax" msprop:Generator_ColumnPropNameInTable="FaxColumn" msprop:Generator_UserColumnName="Fax" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Instagram" msprop:Generator_ColumnVarNameInTable="columnInstagram" msprop:Generator_ColumnPropNameInRow="Instagram" msprop:Generator_ColumnPropNameInTable="InstagramColumn" msprop:Generator_UserColumnName="Instagram" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Twitter" msprop:Generator_ColumnVarNameInTable="columnTwitter" msprop:Generator_ColumnPropNameInRow="Twitter" msprop:Generator_ColumnPropNameInTable="TwitterColumn" msprop:Generator_UserColumnName="Twitter" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Facebook" msprop:Generator_ColumnVarNameInTable="columnFacebook" msprop:Generator_ColumnPropNameInRow="Facebook" msprop:Generator_ColumnPropNameInTable="FacebookColumn" msprop:Generator_UserColumnName="Facebook" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LocationGeneral" msprop:Generator_ColumnVarNameInTable="columnLocationGeneral" msprop:Generator_ColumnPropNameInRow="LocationGeneral" msprop:Generator_ColumnPropNameInTable="LocationGeneralColumn" msprop:Generator_UserColumnName="LocationGeneral" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Phone" msprop:Generator_ColumnVarNameInTable="columnPhone" msprop:Generator_ColumnPropNameInRow="Phone" msprop:Generator_ColumnPropNameInTable="PhoneColumn" msprop:Generator_UserColumnName="Phone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GeneralList" msprop:Generator_TableClassName="GeneralListDataTable" msprop:Generator_TableVarName="tableGeneralList" msprop:Generator_TablePropName="GeneralList" msprop:Generator_RowDeletingName="GeneralListRowDeleting" msprop:Generator_RowChangingName="GeneralListRowChanging" msprop:Generator_RowEvHandlerName="GeneralListRowChangeEventHandler" msprop:Generator_RowDeletedName="GeneralListRowDeleted" msprop:Generator_UserTableName="GeneralList" msprop:Generator_RowChangedName="GeneralListRowChanged" msprop:Generator_RowEvArgName="GeneralListRowChangeEvent" msprop:Generator_RowClassName="GeneralListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:long" minOccurs="0" />
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HomePageList" msprop:Generator_TableClassName="HomePageListDataTable" msprop:Generator_TableVarName="tableHomePageList" msprop:Generator_TablePropName="HomePageList" msprop:Generator_RowDeletingName="HomePageListRowDeleting" msprop:Generator_RowChangingName="HomePageListRowChanging" msprop:Generator_RowEvHandlerName="HomePageListRowChangeEventHandler" msprop:Generator_RowDeletedName="HomePageListRowDeleted" msprop:Generator_UserTableName="HomePageList" msprop:Generator_RowChangedName="HomePageListRowChanged" msprop:Generator_RowEvArgName="HomePageListRowChangeEvent" msprop:Generator_RowClassName="HomePageListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:long" minOccurs="0" />
+              <xs:element name="Header1" msprop:Generator_ColumnVarNameInTable="columnHeader1" msprop:Generator_ColumnPropNameInRow="Header1" msprop:Generator_ColumnPropNameInTable="Header1Column" msprop:Generator_UserColumnName="Header1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description1" msprop:Generator_ColumnVarNameInTable="columnDescription1" msprop:Generator_ColumnPropNameInRow="Description1" msprop:Generator_ColumnPropNameInTable="Description1Column" msprop:Generator_UserColumnName="Description1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Header2" msprop:Generator_ColumnVarNameInTable="columnHeader2" msprop:Generator_ColumnPropNameInRow="Header2" msprop:Generator_ColumnPropNameInTable="Header2Column" msprop:Generator_UserColumnName="Header2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description2" msprop:Generator_ColumnVarNameInTable="columnDescription2" msprop:Generator_ColumnPropNameInRow="Description2" msprop:Generator_ColumnPropNameInTable="Description2Column" msprop:Generator_UserColumnName="Description2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MusicListView" msprop:Generator_TableClassName="MusicListViewDataTable" msprop:Generator_TableVarName="tableMusicListView" msprop:Generator_TablePropName="MusicListView" msprop:Generator_RowDeletingName="MusicListViewRowDeleting" msprop:Generator_RowChangingName="MusicListViewRowChanging" msprop:Generator_RowEvHandlerName="MusicListViewRowChangeEventHandler" msprop:Generator_RowDeletedName="MusicListViewRowDeleted" msprop:Generator_UserTableName="MusicListView" msprop:Generator_RowChangedName="MusicListViewRowChanged" msprop:Generator_RowEvArgName="MusicListViewRowChangeEvent" msprop:Generator_RowClassName="MusicListViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:long" minOccurs="0" />
+              <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_UserColumnName="LastName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ArtistName" msprop:Generator_ColumnVarNameInTable="columnArtistName" msprop:Generator_ColumnPropNameInRow="ArtistName" msprop:Generator_ColumnPropNameInTable="ArtistNameColumn" msprop:Generator_UserColumnName="ArtistName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MusicName" msprop:Generator_ColumnVarNameInTable="columnMusicName" msprop:Generator_ColumnPropNameInRow="MusicName" msprop:Generator_ColumnPropNameInTable="MusicNameColumn" msprop:Generator_UserColumnName="MusicName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProductList" msprop:Generator_TableClassName="ProductListDataTable" msprop:Generator_TableVarName="tableProductList" msprop:Generator_TablePropName="ProductList" msprop:Generator_RowDeletingName="ProductListRowDeleting" msprop:Generator_RowChangingName="ProductListRowChanging" msprop:Generator_RowEvHandlerName="ProductListRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductListRowDeleted" msprop:Generator_UserTableName="ProductList" msprop:Generator_RowChangedName="ProductListRowChanged" msprop:Generator_RowEvArgName="ProductListRowChangeEvent" msprop:Generator_RowClassName="ProductListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:long" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProductDetail" msprop:Generator_ColumnVarNameInTable="columnProductDetail" msprop:Generator_ColumnPropNameInRow="ProductDetail" msprop:Generator_ColumnPropNameInTable="ProductDetailColumn" msprop:Generator_UserColumnName="ProductDetail">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:int" minOccurs="0" />
+              <xs:element name="Price" msprop:Generator_ColumnVarNameInTable="columnPrice" msprop:Generator_ColumnPropNameInRow="Price" msprop:Generator_ColumnPropNameInTable="PriceColumn" msprop:Generator_UserColumnName="Price" type="xs:int" minOccurs="0" />
+              <xs:element name="CategoryName" msprop:Generator_ColumnVarNameInTable="columnCategoryName" msprop:Generator_ColumnPropNameInRow="CategoryName" msprop:Generator_ColumnPropNameInTable="CategoryNameColumn" msprop:Generator_UserColumnName="CategoryName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Time" msprop:Generator_ColumnVarNameInTable="columnTime" msprop:Generator_ColumnPropNameInRow="Time" msprop:Generator_ColumnPropNameInTable="TimeColumn" msprop:Generator_UserColumnName="Time" type="xs:int" />
+              <xs:element name="Views" msprop:Generator_ColumnVarNameInTable="columnViews" msprop:Generator_ColumnPropNameInRow="Views" msprop:Generator_ColumnPropNameInTable="ViewsColumn" msprop:Generator_UserColumnName="Views" type="xs:int" minOccurs="0" />
+              <xs:element name="AddedDate" msprop:Generator_ColumnVarNameInTable="columnAddedDate" msprop:Generator_ColumnPropNameInRow="AddedDate" msprop:Generator_ColumnPropNameInTable="AddedDateColumn" msprop:Generator_UserColumnName="AddedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Seçilme_x0020_Durumu" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSeçilme_Durumu" msprop:Generator_ColumnPropNameInRow="Seçilme_Durumu" msprop:Generator_ColumnPropNameInTable="Seçilme_DurumuColumn" msprop:Generator_UserColumnName="Seçilme Durumu" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tercih" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTercih" msprop:Generator_ColumnPropNameInRow="Tercih" msprop:Generator_ColumnPropNameInTable="TercihColumn" msprop:Generator_UserColumnName="Tercih" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RateList" msprop:Generator_TableClassName="RateListDataTable" msprop:Generator_TableVarName="tableRateList" msprop:Generator_TablePropName="RateList" msprop:Generator_RowDeletingName="RateListRowDeleting" msprop:Generator_RowChangingName="RateListRowChanging" msprop:Generator_RowEvHandlerName="RateListRowChangeEventHandler" msprop:Generator_RowDeletedName="RateListRowDeleted" msprop:Generator_UserTableName="RateList" msprop:Generator_RowChangedName="RateListRowChanged" msprop:Generator_RowEvArgName="RateListRowChangeEvent" msprop:Generator_RowClassName="RateListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:long" minOccurs="0" />
+              <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_UserColumnName="LastName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Product_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnProduct_Name" msprop:Generator_ColumnPropNameInRow="Product_Name" msprop:Generator_ColumnPropNameInTable="Product_NameColumn" msprop:Generator_UserColumnName="Product Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Rate" msprop:Generator_ColumnVarNameInTable="columnRate" msprop:Generator_ColumnPropNameInRow="Rate" msprop:Generator_ColumnPropNameInTable="RateColumn" msprop:Generator_UserColumnName="Rate" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RoleList" msprop:Generator_TableClassName="RoleListDataTable" msprop:Generator_TableVarName="tableRoleList" msprop:Generator_TablePropName="RoleList" msprop:Generator_RowDeletingName="RoleListRowDeleting" msprop:Generator_RowChangingName="RoleListRowChanging" msprop:Generator_RowEvHandlerName="RoleListRowChangeEventHandler" msprop:Generator_RowDeletedName="RoleListRowDeleted" msprop:Generator_UserTableName="RoleList" msprop:Generator_RowChangedName="RoleListRowChanged" msprop:Generator_RowEvArgName="RoleListRowChangeEvent" msprop:Generator_RowClassName="RoleListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:long" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TableList" msprop:Generator_TableClassName="TableListDataTable" msprop:Generator_TableVarName="tableTableList" msprop:Generator_TablePropName="TableList" msprop:Generator_RowDeletingName="TableListRowDeleting" msprop:Generator_RowChangingName="TableListRowChanging" msprop:Generator_RowEvHandlerName="TableListRowChangeEventHandler" msprop:Generator_RowDeletedName="TableListRowDeleted" msprop:Generator_UserTableName="TableList" msprop:Generator_RowChangedName="TableListRowChanged" msprop:Generator_RowEvArgName="TableListRowChangeEvent" msprop:Generator_RowClassName="TableListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:long" minOccurs="0" />
+              <xs:element name="Numbers" msprop:Generator_ColumnVarNameInTable="columnNumbers" msprop:Generator_ColumnPropNameInRow="Numbers" msprop:Generator_ColumnPropNameInTable="NumbersColumn" msprop:Generator_UserColumnName="Numbers" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SliderList" msprop:Generator_TableClassName="SliderListDataTable" msprop:Generator_TableVarName="tableSliderList" msprop:Generator_TablePropName="SliderList" msprop:Generator_RowDeletingName="SliderListRowDeleting" msprop:Generator_RowChangingName="SliderListRowChanging" msprop:Generator_RowEvHandlerName="SliderListRowChangeEventHandler" msprop:Generator_RowDeletedName="SliderListRowDeleted" msprop:Generator_UserTableName="SliderList" msprop:Generator_RowChangedName="SliderListRowChanged" msprop:Generator_RowEvArgName="SliderListRowChangeEvent" msprop:Generator_RowClassName="SliderListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:long" minOccurs="0" />
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UserList" msprop:Generator_TableClassName="UserListDataTable" msprop:Generator_TableVarName="tableUserList" msprop:Generator_TablePropName="UserList" msprop:Generator_RowDeletingName="UserListRowDeleting" msprop:Generator_RowChangingName="UserListRowChanging" msprop:Generator_RowEvHandlerName="UserListRowChangeEventHandler" msprop:Generator_RowDeletedName="UserListRowDeleted" msprop:Generator_UserTableName="UserList" msprop:Generator_RowChangedName="UserListRowChanged" msprop:Generator_RowEvArgName="UserListRowChangeEvent" msprop:Generator_RowClassName="UserListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:long" minOccurs="0" />
+              <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_UserColumnName="LastName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="120" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Username" msprop:Generator_ColumnVarNameInTable="columnUsername" msprop:Generator_ColumnPropNameInRow="Username" msprop:Generator_ColumnPropNameInTable="UsernameColumn" msprop:Generator_UserColumnName="Username" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UserRoleList" msprop:Generator_TableClassName="UserRoleListDataTable" msprop:Generator_TableVarName="tableUserRoleList" msprop:Generator_TablePropName="UserRoleList" msprop:Generator_RowDeletingName="UserRoleListRowDeleting" msprop:Generator_RowChangingName="UserRoleListRowChanging" msprop:Generator_RowEvHandlerName="UserRoleListRowChangeEventHandler" msprop:Generator_RowDeletedName="UserRoleListRowDeleted" msprop:Generator_UserTableName="UserRoleList" msprop:Generator_RowChangedName="UserRoleListRowChanged" msprop:Generator_RowEvArgName="UserRoleListRowChangeEvent" msprop:Generator_RowClassName="UserRoleListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:long" minOccurs="0" />
+              <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_UserColumnName="LastName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Username" msprop:Generator_ColumnVarNameInTable="columnUsername" msprop:Generator_ColumnPropNameInRow="Username" msprop:Generator_ColumnPropNameInTable="UsernameColumn" msprop:Generator_UserColumnName="Username" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Role_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnRole_Name" msprop:Generator_ColumnPropNameInRow="Role_Name" msprop:Generator_ColumnPropNameInTable="Role_NameColumn" msprop:Generator_UserColumnName="Role Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
