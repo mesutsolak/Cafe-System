@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Masalar";
+}
+
+@section css{
+    <link href="~/Content/framework/DataTable/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+}
+
+
+<div class="alert alert-info mt-3" role="alert">
+    <div class="d-flex flex-row bd-highlight">
+        <div class="p-2 bd-highlight">
+            <i class="fas fa-info-circle fa-2x"></i>
+        </div>
+        <div class="p-2 bd-highlight mt-1">
+            Masalar üzerinde işlem yapmak için aşağıdaki listeyi kullanın.
+        </div>
+    </div>
+</div>
+
+<div class="card mt-4">
+    <div class="card-header">
+        <div class="d-flex bd-highlightt">
+            <div class="p-2 bd-highlight mt-1">
+                <i class="fas fa-chair fa-2x"></i>
+            </div>
+            <div class="p-2 bd-highlight">
+                <h2>Masalar</h2>
+            </div>
+            <div class="ml-auto p-2 bd-highlight">
+                <button class="btn btn-primary" onclick="ModalShow('TableAddModal')" id="TableAdd">
+                    <i class="fas fa-plus mr-1"></i> Masa Ekle
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="card-title">
+        </div>
+        <div class="card-text table-body">
+            @Html.Action("TableList", "Table")
+        </div>
+    </div>
+</div>
+
+<div class="modal-user-add">
+    @Html.Action("TableAdd", "Table")
+</div>
+
+<div class="modal-table-update">
+
+</div>
+
+
+
+
+
+@section js{
+    <script src="~/Content/framework/DataTable/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/framework/DataTable/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Content/js/Pagejs/table.js"></script>
+}>
+

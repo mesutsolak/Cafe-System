@@ -6,10 +6,7 @@
         <thead>
             <tr>
                 <th name="first">
-                    <div class="custom-control Checkall  custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="CheckAll">
-                        <label class="custom-control-label" for="CheckAll"></label>
-                    </div>
+                    #
                 </th>
                 <th>Adı</th>
                 <th>Resim</th>
@@ -21,10 +18,7 @@
             {
                 <tr>
                     <td>
-                        <div class="custom-control  custom-checkbox">
-                            <input type="checkbox" class="custom-control-input check" value="@category.Id" id="Check-@category.Id">
-                            <label class="custom-control-label" for="Check-@category.Id"></label>
-                        </div>
+                        
                     </td>
                     <td>
                         @((category.Name.IsNullString() == true) ? "Kategori Boş":category.Name)
@@ -41,10 +35,5 @@
             }
         </tbody>
     </table>
-</div>
-<div class="row">
-    <div class="col">
-        Toplam @Model.Count adet kategori bulunmaktadır.
-    </div>
 </div>
 

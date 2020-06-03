@@ -30,49 +30,49 @@ namespace CP.WebUI.Controllers
             switch (name)
             {
                 case "KampanyaListesi":
-                    ReportViewOperation("CampaignList", _rd.CampaignList.TableName, "CampaignList");
+                    ReportViewOperation("CampaignList", _rd.CampaignList.TableName, "CampaignList", 0);
                     break;
                 case "SiparişListesi":
-                    ReportViewOperation("CartList", _rd.CartList.TableName, "CartList");
+                    ReportViewOperation("CartList", _rd.CartList.TableName, "CartList", 1);
                     break;
                 case "KategoriListesi":
-                    ReportViewOperation("CategoryList", _rd.CategoryList.TableName, "CategoryList");
+                    ReportViewOperation("CategoryList", _rd.CategoryList.TableName, "CategoryList", 2);
                     break;
                 case "YorumListesi":
-                    ReportViewOperation("CommentList", _rd.CommentList.TableName, "CommentList");
+                    ReportViewOperation("CommentList", _rd.CommentList.TableName, "CommentList", 3);
                     break;
                 case "FirmaBilgisiListesi":
-                    ReportViewOperation("CompanyInformationList", _rd.CompanyInformationList.TableName, "CompanyInformationList");
+                    ReportViewOperation("CompanyInformationList", _rd.CompanyInformationList.TableName, "CompanyInformationList", 4);
                     break;
                 case "İletişimListesi":
-                    ReportViewOperation("ContactList", _rd.ContactList.TableName, "ContactList");
+                    ReportViewOperation("ContactList", _rd.ContactList.TableName, "ContactList", 5);
                     break;
                 case "AnasayfaListesi":
-                    ReportViewOperation("HomePageList", _rd.HomePageList.TableName, "HomePageList");
+                    ReportViewOperation("HomePageList", _rd.HomePageList.TableName, "HomePageList", 7);
                     break;
                 case "MüzikListesi":
-                    ReportViewOperation("MusicListView", _rd.MusicListView.TableName, "MusicListView");
+                    ReportViewOperation("MusicListView", _rd.MusicListView.TableName, "MusicListView", 8);
                     break;
                 case "ÜrünListesi":
-                    ReportViewOperation("ProductList", _rd.ProductList.TableName, "ProductList");
+                    ReportViewOperation("ProductList", _rd.ProductList.TableName, "ProductList", 9);
                     break;
                 case "DeğerlendirmeListesi":
-                    ReportViewOperation("RateList", _rd.RateList.TableName, "RateList");
+                    ReportViewOperation("RateList", _rd.RateList.TableName, "RateList", 10);
                     break;
                 case "RolListesi":
-                    ReportViewOperation("RoleList", _rd.RoleList.TableName, "RoleList");
+                    ReportViewOperation("RoleList", _rd.RoleList.TableName, "RoleList", 11);
                     break;
                 case "SliderListesi":
-                    ReportViewOperation("SliderList", _rd.SliderList.TableName, "SliderList");
+                    ReportViewOperation("SliderList", _rd.SliderList.TableName, "SliderList", 13);
                     break;
                 case "MasaListesi":
-                    ReportViewOperation("TableList", _rd.TableList.TableName, "TableList");
+                    ReportViewOperation("TableList", _rd.TableList.TableName, "TableList", 12);
                     break;
                 case "KullanıcıListesi":
-                    ReportViewOperation("UserList", _rd.UserList.TableName, "UserList");
+                    ReportViewOperation("UserList", _rd.UserList.TableName, "UserList", 14);
                     break;
                 case "KullanıcıRolüListesi":
-                    ReportViewOperation("UserRoleList", _rd.UserRoleList.TableName, "UserRoleList");
+                    ReportViewOperation("UserRoleList", _rd.UserRoleList.TableName, "UserRoleList", 15);
                     break;
                 default:
                     break;
@@ -80,7 +80,7 @@ namespace CP.WebUI.Controllers
 
             return PartialView();
         }
-        public void ReportViewOperation(string queryname, string tablename, string rdlc)
+        public void ReportViewOperation(string queryname, string tablename, string rdlc, int index)
         {
             ReportViewer reportViewer = new ReportViewer
             {
@@ -97,14 +97,17 @@ namespace CP.WebUI.Controllers
             var connectionString = ConfigurationManager.ConnectionStrings["CafeProjectModel"].ConnectionString;
 
 
-            SqlConnection conx = new SqlConnection(connectionString); SqlDataAdapter adp = new SqlDataAdapter("SELECT * FROM " + queryname, conx);
+            SqlConnection conx = new SqlConnection(connectionString);
+            SqlDataAdapter adp = new SqlDataAdapter("SELECT * FROM " + queryname, conx);
 
             adp.Fill(_rd, tablename);
 
             reportViewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"Reports\Rdlc\" + rdlc + ".rdlc";
-            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("ReportDataset", _rd.Tables[0]));
+            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("ReportDataset", _rd.Tables[index]));
 
             ViewBag.ReportViewer = reportViewer;
+
+
 
 
         }

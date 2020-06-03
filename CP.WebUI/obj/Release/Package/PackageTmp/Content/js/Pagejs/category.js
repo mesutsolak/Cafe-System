@@ -1,4 +1,10 @@
-﻿
+﻿$(function () {
+    setTimeout(function () {
+        TableConvertDataTables("tblcategory");
+    }, 750);
+    NiceScrool(new ScroolModel("modal-body", "10px", "#A5A5A5"))
+});
+
 $("#CategoryAdd").on("click", function () {
     $("#CategoryAddModal").modal("show");
 });
@@ -23,6 +29,9 @@ $(document).on("click", ".categoryUpdate", function () {
 function CategoryList() {
     $.get('/KategoriList', null, function (result) {
         $(".category-body").html(result);
+        setTimeout(function () {
+            TableConvertDataTables("tblcategory");
+        }, 750);
     });
 }
 
@@ -40,7 +49,7 @@ $(document).on("click", ".categoryDelete", function () {
         id: _id,
         name: _fullname,
         url: "/RemoveCategory",
-        fullname: _fullname + " isimli ürün",
+        fullname: _fullname + " isimli kategori",
         Method: CategoryList
     };
     RemoveBasicOperations(RemoveItems);
@@ -60,22 +69,3 @@ $(document).on("click", "#ImageView", function () {
 
 });
 
-
-$("#CategorySearch").autocomplete({
-    source: function (request, response) {
-        $.ajax({
-            url: "/SearchCategory",
-            type: "POST",
-            dataType: "json",
-            data: { Prefix: request.term },
-            success: function (data) {
-                response($.map(data, function (item) {
-                    return { label: item.Name, value: item.Name};
-                }))
-            }
-        })
-    },
-    messages: {
-        noResults: "", results: ""
-    }  
-});

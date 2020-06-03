@@ -6,10 +6,7 @@
         <thead>
             <tr>
                 <th name="first">
-                    <div class="custom-control Checkall  custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="CheckAll">
-                        <label class="custom-control-label" for="CheckAll"></label>
-                    </div>
+                   #
                 </th>
                 <th>Adı</th>
                 <th>İşlemler</th>
@@ -20,10 +17,7 @@
             {
                 <tr>
                     <td>
-                        <div class="custom-control  custom-checkbox">
-                            <input type="checkbox" class="custom-control-input check" value="@Role.Id" id="Check-@Role.Id">
-                            <label class="custom-control-label" for="Check-@Role.Id"></label>
-                        </div>
+                        
                     </td>
                     <td>
                         @Role.Name
@@ -38,9 +32,3 @@
         </tbody>
     </table>
 </div>
-<div class="row">
-    <div class="col">
-        Toplam @Model.Count adet rol bulunmaktadır.
-    </div>
-</div>
-

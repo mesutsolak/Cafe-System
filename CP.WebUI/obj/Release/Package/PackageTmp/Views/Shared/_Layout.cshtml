@@ -1,6 +1,9 @@
 ﻿@using CP.WebUI.Controllers
+@using CP.BusinessLayer.Tools;
 @{
     Layout = null;
+    CP.BusinessLayer.Tools.CookieManager cm = new CP.BusinessLayer.Tools.CookieManager();
+    var _cookie = cm.CookieGetValue("User");
 }
 
 <!DOCTYPE html>
@@ -39,31 +42,30 @@
         </button><!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ml-auto mr-2 mr-md-3 my-2 my-md-0">
             <div class="input-group">
-                <input class="form-control" type="text" placeholder="Kelime Giriniz .." aria-label="Search" aria-describedby="basic-addon2" />
-                <div class="input-group-append">
-                    <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-                </div>
+
             </div>
         </form>
 
-        <label class="text-white mt-2 mr-2">Hoşgeldiniz @{
-
-            CP.BusinessLayer.Tools.CookieManager cm = new CP.BusinessLayer.Tools.CookieManager();
-            var _cookie =  cm.CookieGetValue("User");
-            @_cookie["FirstAndLast"];
-
-        }</label>
+        <label class="text-white mt-2 mr-2">
+            Hoşgeldiniz
+            @_cookie["FirstAndLast"]
+        </label>
 
         <!-- Navbar-->
         <ul class="navbar-nav ml-auto ml-md-0">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    @if ((_cookie["ProfilPhoto"] as string).IsNullString())
+                    {
+                        <i class="fas fa-user fa-fw"></i>
+                    }
+                    else
+                    {
+                        <img src="@(_cookie["ProfilPhoto"] as string)" width="24" />
+                    }
+                </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                     <a class="dropdown-item" id="btnSignOut">Çıkış</a>
-
-                    @*<a class="dropdown-item" href="#">Settings</a>
-                        <a class="dropdown-item" href="#">Activity Log</a>
-                        <div class="dropdown-divider"></div>*@
                 </div>
             </li>
         </ul>
@@ -84,9 +86,18 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-box-open"></i></div>
                             Ürünler
                         </a>
+                        <a class="nav-link" href="~/Kampanyalar">
+                            <div class="sb-nav-link-icon"><i class="fas fa-bullhorn mr-1"></i></div>
+                            Kampanyalar
+                        </a>
+
                         <a class="nav-link" href="~/Kategoriler">
                             <div class="sb-nav-link-icon"><i class="fas fa-bars mr-1"></i></div>
                             Kategoriler
+                        </a>
+                        <a class="nav-link" href="~/Masalar">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chair mr-1"></i></div>
+                            Masalar
                         </a>
                         <a class="nav-link" href="~/Kullanıcılar">
                             <div class="sb-nav-link-icon"><i class="fas fa-user mr-1"></i></div>
@@ -112,6 +123,7 @@
                         </div>
 
 
+
                         @{
                             if (Roles.IsUserInRole(HttpContext.Current.User.Identity.Name, "Admin") && User.IsInRole("Customer"))
                             {
@@ -133,7 +145,7 @@
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">Uygulama:</div>
-                    Cafe Sistemi
+                    Kafe Sistemi
                 </div>
             </nav>
         </div>
@@ -146,12 +158,6 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid">
                     <div class="d-flex align-items-center justify-content-between small">
-                        @*<div class="text-muted">Copyright &copy; Your Website 2019</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>*@
                     </div>
                 </div>
             </footer>

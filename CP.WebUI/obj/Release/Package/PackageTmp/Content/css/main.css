@@ -3,6 +3,12 @@
     pointer-events: all;
 }
 
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
 #ImageView, .product-detail {
     cursor: pointer;
     pointer-events: all;
@@ -19,11 +25,15 @@
     margin-top: auto;
 }
 
+
+
 .background {
-    background-image: url('../image/background.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url('../image/background-photo.jpg') no-repeat;
+    background-size: cover;
 }
+
 
 .pencil-edit, .trash-edit, .user-tag-edit, .CancelConfirm, .TrueConfirm {
     cursor: pointer;

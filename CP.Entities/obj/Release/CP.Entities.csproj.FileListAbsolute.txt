@@ -29,3 +29,6 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Release\CP.Entities
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Release\CP.Entities.csproj.CopyComplete
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Release\CP.Entities.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Release\CP.Entities.pdb
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Release\CP.Entities.Migrations.CampaignChangeData.resources
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Release\CP.Entities.Migrations.CampaignProductTypeName.resources
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Entities\obj\Release\CP.Entities.Migrations.IsDeletedColumn.resources

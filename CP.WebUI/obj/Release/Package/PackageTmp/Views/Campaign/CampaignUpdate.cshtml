@@ -1,0 +1,82 @@
+﻿@model CP.Entities.Model.Campaign
+
+<div class="modal inmodal" id="CampaignUpdateModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-bullhorn mr-2"></i>Kampanya Güncelle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body  modal-campaign-update">
+                @using (Ajax.BeginForm("CampaignUpdateOperation", "Campaign", FormMethod.Post, new AjaxOptions()
+                {
+                    InsertionMode = InsertionMode.Replace,
+                    HttpMethod = "POST",
+                    OnSuccess = "returnPostJson(data)",
+                    LoadingElementId = "loading-background",
+                    OnComplete = "CampaignList()"
+                },
+                new
+                {
+                    @class = "CampaignUpdateForm",
+                    @id = "frmCampaignUpdate",
+                    @name = "frmCampaignUpdate",
+                    @enctype = "multipart/form-data"
+                }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <input type="hidden" value="@Model.Id" name="Id" />
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Title)
+                        @Html.EditorFor(model => model.Title, "", new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger error-validate" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Description)
+                        @Html.TextAreaFor(model => model.Description, new { @class = "form-control text-editor", @spellcheck = "false" })
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger error-validate" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Price)
+                        @Html.TextBoxFor(model => model.Price, new { @class = "form-control", @type = "number" })
+                        @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger error-validate" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Amount)
+                        @Html.TextBoxFor(model => model.Amount, new { @class = "form-control", @type = "number" })
+                        @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger error-validate" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Image)
+                        <div class="custom-file">
+                            @Html.TextBoxFor(model => model.Images, "", new { @type = "file", @class = "custom-file-input" })
+                            @Html.LabelFor(model => model.Image, (ViewBag._campaignName as string) ?? "Resim Seçiniz", new { @class = "custom-file-label", @data_browse = "Seçiniz" })
+                            @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger error-validate" })
+                            <input type="hidden" value="@Model.Image" name="Image" />
+                        </div>
+                        @if (Model.Image != null)
+                        {
+                            <div class="mt-2 ImageCancel">
+                                <i class="fas fa-times text-danger mr-2" style="color:red"></i><label class="text-danger">Resmi kaldır</label>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" onclick="FormClear('frmCampaignUpdate')" id="CampaignUpdateClear">
+                    <i class="fa fa-trash mr-1"></i>
+                    Temizle
+                </button>
+                <button type="button" class="btn btn-primary" onclick="FormPost('frmCampaignUpdate')" id="CampaignUpdateSave">
+                    <i class="fa fa-save mr-1"></i>
+                    Kaydet
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

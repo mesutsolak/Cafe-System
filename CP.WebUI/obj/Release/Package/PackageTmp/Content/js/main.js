@@ -1,6 +1,8 @@
 ﻿$(document).ready(function () {
     $(function () {
         NiceScrool(new ScroolModel("menu-scrool", "7px", "#E1E1E1"))
+        NiceScrool(new ScroolModel("modal-body", "10px", "#A5A5A5"))
+        NiceScrool(new ScroolModel("tblresponsive", "10px", "#A5A5A5"))
     });
 });
 
@@ -328,7 +330,7 @@ $.extend({
 
 $("#btnSignOut").on("click", function () {
     Swal.fire({
-        title: 'Çıkış İşlemi?',
+        title: 'Çıkış İşlemi',
         text: "Çıkmak İstiyor musunuz ?",
         icon: 'question',
         showCancelButton: true,
@@ -401,7 +403,13 @@ function TableConvertDataTables(_id) {
             },
             order: [],
             columnDefs: [
-                { "orderable": false, "targets": [0] }
+                {
+                    "orderable": false,
+                    "targets": [0],
+                    "render": function (data, type, full, meta) {
+                        return meta.settings._iDisplayStart + meta.row + 1;
+                    }
+                }
             ]
         });
     }

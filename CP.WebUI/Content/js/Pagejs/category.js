@@ -49,7 +49,7 @@ $(document).on("click", ".categoryDelete", function () {
         id: _id,
         name: _fullname,
         url: "/RemoveCategory",
-        fullname: _fullname + " isimli ürün",
+        fullname: _fullname + " isimli kategori",
         Method: CategoryList
     };
     RemoveBasicOperations(RemoveItems);

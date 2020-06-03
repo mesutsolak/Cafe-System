@@ -4,11 +4,8 @@
     <table class="table table-bordered display no-wrap" cellspacing="0" width="100%" id="tblProduct">
         <thead>
             <tr>
-                <th name="first">
-                    <div class="custom-control Checkall  custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="CheckAll">
-                        <label class="custom-control-label" for="CheckAll"></label>
-                    </div>
+                <th>
+                    #
                 </th>
                 <th>Adı</th>
                 <th>Açıklama</th>
@@ -26,18 +23,15 @@
             {
                 <tr>
                     <td>
-                        <div class="custom-control  custom-checkbox">
-                            <input type="checkbox" class="custom-control-input check" value="@product.Id" id="Check-@product.Id">
-                            <label class="custom-control-label" for="Check-@product.Id"></label>
-                        </div>
+                       
                     </td>
                     <td>
                         @product.Name
                     </td>
                     <td>
-                        @if (product.ProductDetail.Length>45)
+                        @if (product.ProductDetail.Length > 45)
                         {
-                        <label class="product-detail" value="@(product.ProductDetail)"> @(product.ProductDetail.Substring(0, 25)+"...") </label>
+                            <label class="product-detail" value="@(product.ProductDetail)"> @(product.ProductDetail.Substring(0, 25)+"...") </label>
                         }
                         else
                         {
@@ -57,7 +51,7 @@
                         <img src="@(Url.Content(product.Image ?? "~/Content/image/no-image.png"))" height="30" class="avatar-sm" id="ImageView" />
                     </td>
                     <td>
-                        @(product.Preference == true ? "Seçildi" : "Seçilmedi") 
+                        @(product.Preference == true ? "Seçildi" : "Seçilmedi")
                     </td>
                     <td>
                         @(product.Choose == true ? "Seçildi" : "Seçilmedi")

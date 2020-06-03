@@ -1,8 +1,18 @@
 ﻿function SliderList() {
     $.post("/SliderList", null, function (result) {
         $(".slider-list").html(result);
+        setTimeout(function () {
+            TableConvertDataTables("tblSlider");
+        }, 750);
     });
 }
+
+$(function () {
+    setTimeout(function () {
+        TableConvertDataTables("tblSlider");
+    }, 750);
+    NiceScrool(new ScroolModel("modal-body", "10px", "#A5A5A5"))
+});
 
 $("#btnSliderAdd").on("click", function () {
     $("#SliderAddModal").modal("show");
@@ -17,8 +27,8 @@ $(document).on("click", ".SliderDelete", function () {
     var RemoveItems = {
         id: _id,
         name: _fullname,
-        url: "/InformationRemove",
-        fullname: _fullname + " isimli bilgi",
+        url: "/SliderRemove",
+        fullname: _fullname + " isimli slider",
         Method: SliderList
     };
 
