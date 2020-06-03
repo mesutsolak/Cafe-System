@@ -15,11 +15,11 @@ using CP.Entities.ViewModel;
 
 namespace CP.WebUI.Controllers
 {
+    [AccessDeniedAuthorize(Roles = "Customer,Employee")]
     public class HomeController : BaseController
     {
         // GET: Home
         [Route("Anasayfa")]
-        [AccessDeniedAuthorize(Roles = "Customer,Employee")]
         public ActionResult Index()
         {
             return View(new HomeViewModel
@@ -30,13 +30,11 @@ namespace CP.WebUI.Controllers
             });
         }
         [Route("Ürünler")]
-        [AccessDeniedAuthorize(Roles = "Customer,Admin")]
         public ActionResult Products()
         {
             return View();
         }
         [Route("ProductList")]
-        [AllowAnonymous]
         [OutputCache(Duration = 0, Location = OutputCacheLocation.Server, VaryByParam = "none")]
         public PartialViewResult ProductList()
         {
@@ -45,7 +43,6 @@ namespace CP.WebUI.Controllers
         }
 
         [Route("ProductUpdate")]
-        [AllowAnonymous]
         [HttpPost]
         public PartialViewResult ProductUpdate(int id)
         {

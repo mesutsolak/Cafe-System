@@ -1,6 +1,7 @@
 ﻿using CP.BusinessLayer.Operations;
 using CP.BusinessLayer.Tools;
 using CP.Entities.Model;
+using CP.WebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,6 +12,7 @@ using System.Web.Mvc;
 
 namespace CP.WebUI.Controllers
 {
+    [AccessDeniedAuthorize(Roles = "Customer,Employee")]
     public class CompanyController : BaseController
     {
         [Route("AnasayfaBilgileri")]

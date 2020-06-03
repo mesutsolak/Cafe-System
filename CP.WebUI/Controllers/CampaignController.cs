@@ -2,6 +2,7 @@
 using CP.BusinessLayer.Repository.Concrete;
 using CP.BusinessLayer.Tools;
 using CP.Entities.Model;
+using CP.WebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,10 +14,12 @@ using System.Web.UI.WebControls.WebParts;
 
 namespace CP.WebUI.Controllers
 {
+    [AccessDeniedAuthorize(Roles = "Customer,Employee")]
     public class CampaignController : BaseController
     {
         // GET: Campaign
         [Route("Kampanyalar")]
+        [AccessDeniedAuthorize(]
         public ActionResult Index()
         {
             return View();

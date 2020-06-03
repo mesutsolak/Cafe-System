@@ -7,17 +7,18 @@ using System.Web.Mvc;
 
 namespace CP.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class ErrorController : Controller
     {
         ErrorModel models = new ErrorModel();
 
         //401,403,404,500
 
-        public ActionResult PageError(Exception exception=null)
+        public ActionResult PageError(Exception exception = null)
         {
             if (exception != null)
             {
-                Session["Exception"]= exception;
+                Session["Exception"] = exception;
             }
             return View(models);
         }
@@ -45,7 +46,7 @@ namespace CP.WebUI.Controllers
 
             Session["Url"] = "https://cdn.dribbble.com/users/516732/screenshots/4527062/dribbble-403.png";
 
-            return View("PageError",null);
+            return View("PageError", null);
         }
         public ActionResult Page500(string aspxerrorpath)
         {
@@ -58,7 +59,7 @@ namespace CP.WebUI.Controllers
 
             Session["Url"] = "https://cdn1.iconfinder.com/data/icons/browser-5/100/ui-brower-go-25-512.png";
 
-            return View("PageError",null);
+            return View("PageError", null);
         }
         public ActionResult Page401(string aspxerrorpath)
         {
@@ -71,7 +72,7 @@ namespace CP.WebUI.Controllers
 
             Session["Title"] = "İstek için kimlik doğrulaması gerekiyor.";
 
-            return View("PageError",null);
+            return View("PageError", null);
         }
         [Route("Hata")]
         public ActionResult CustomError()

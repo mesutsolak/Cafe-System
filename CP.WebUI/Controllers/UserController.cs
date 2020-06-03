@@ -17,6 +17,7 @@ using CP.Entities.Model;
 
 namespace CP.WebUI.Controllers
 {
+    [AccessDeniedAuthorize(Roles = "Customer,Employee")]
     public class UserController : BaseController
     {
         // GET: User
@@ -48,7 +49,6 @@ namespace CP.WebUI.Controllers
         }
 
         [Route("UserUpdate")]
-        [AllowAnonymous]
         [HttpPost]
         public PartialViewResult UserUpdate(int id)
         {
@@ -184,14 +184,12 @@ namespace CP.WebUI.Controllers
             return PartialView(new PasswordForgetDTO());
         }
 
-        [AllowAnonymous]
         [Route("Kullanıcılar")]
         public ActionResult Users()
         {
             return View();
         }
 
-        [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<JsonResult> UserUpdateOperation(C.User user)
@@ -250,7 +248,6 @@ namespace CP.WebUI.Controllers
 
         }
 
-        [AllowAnonymous]
         [HttpPost]
         public JsonResult PasswordOperation(PasswordForgetDTO passwordForgetDTO)
         {

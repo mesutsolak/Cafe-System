@@ -1,5 +1,6 @@
 ﻿using CP.BusinessLayer.Operations;
 using CP.Entities.Model;
+using CP.WebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,8 @@ using System.Web.Mvc;
 
 namespace CP.WebUI.Controllers
 {
+
+    [AccessDeniedAuthorize(Roles = "Admin")]
     public class RoleController : BaseController
     {
         // GET: Role
@@ -15,10 +18,10 @@ namespace CP.WebUI.Controllers
         public ActionResult Index()
         {
             return View();
-        }                    
+        }
         public PartialViewResult RoleAdd()
         {
-            return PartialView(new Roles()); 
+            return PartialView(new Roles());
         }
 
         [Route("RoleUpdate")]
@@ -111,4 +114,4 @@ namespace CP.WebUI.Controllers
             return Json(jsonResultModel, JsonRequestBehavior.AllowGet);
         }
     }
-}                                      
+}

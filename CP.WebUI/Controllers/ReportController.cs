@@ -1,4 +1,5 @@
-﻿using CP.WebUI.Reports.Dataset;
+﻿using CP.WebUI.Models;
+using CP.WebUI.Reports.Dataset;
 using Microsoft.Reporting.WebForms;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,8 @@ using System.Web.UI.WebControls;
 
 namespace CP.WebUI.Controllers
 {
+
+    [AccessDeniedAuthorize(Roles = "Admin")]
     public class ReportController : BaseController
     {
         ReportDataset _rd = new ReportDataset();

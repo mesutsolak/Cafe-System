@@ -1,5 +1,6 @@
 ﻿using CP.BusinessLayer.Operations;
 using CP.Entities.Model;
+using CP.WebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Web.Mvc;
 
 namespace CP.WebUI.Controllers
 {
+    [AccessDeniedAuthorize(Roles = "Customer,Employee")]
     public class TableController : BaseController
     {
         // GET: Table
