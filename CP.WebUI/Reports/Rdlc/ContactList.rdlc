@@ -6,34 +6,34 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.71431cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.71431cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.71431cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.71431cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.71431cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.71431cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.71431cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.71431cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.71431cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.71431cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -676,7 +676,7 @@
         <DataSetName>ReportDataset</DataSetName>
         <Top>0.03528cm</Top>
         <Height>5.04472cm</Height>
-        <Width>25cm</Width>
+        <Width>27.1431cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -687,7 +687,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>9.84252in</Width>
+  <Width>10.68627in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
@@ -710,7 +710,6 @@
               </TextRuns>
               <Style>
                 <TextAlign>Center</TextAlign>
-                <LineHeight>1000pt</LineHeight>
               </Style>
             </Paragraph>
           </Paragraphs>
@@ -758,7 +757,6 @@
               </TextRuns>
               <Style>
                 <TextAlign>Center</TextAlign>
-                <LineHeight>1000pt</LineHeight>
               </Style>
             </Paragraph>
           </Paragraphs>

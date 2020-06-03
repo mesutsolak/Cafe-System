@@ -6,10 +6,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>8.255cm</Width>
+              <Width>13.38792cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>8.255cm</Width>
+              <Width>13.38792cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -163,7 +163,7 @@
         </TablixRowHierarchy>
         <DataSetName>ReportDataset</DataSetName>
         <Height>5.04472cm</Height>
-        <Width>16.51cm</Width>
+        <Width>26.77584cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -174,7 +174,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>10.54167in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
@@ -197,13 +197,12 @@
               </TextRuns>
               <Style>
                 <TextAlign>Center</TextAlign>
-                <LineHeight>1000pt</LineHeight>
               </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.49671cm</Top>
-          <Left>3.52573cm</Left>
+          <Left>8.60573cm</Left>
           <Height>1.54658cm</Height>
           <Width>9.45854cm</Width>
           <Style>
@@ -245,13 +244,12 @@
               </TextRuns>
               <Style>
                 <TextAlign>Center</TextAlign>
-                <LineHeight>1000pt</LineHeight>
               </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.49671cm</Top>
-          <Left>3.52573cm</Left>
+          <Left>8.92323cm</Left>
           <Height>1.54658cm</Height>
           <Width>9.45854cm</Width>
           <Style>

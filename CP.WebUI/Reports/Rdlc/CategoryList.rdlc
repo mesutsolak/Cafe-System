@@ -6,10 +6,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>8.255cm</Width>
+              <Width>13.40115cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>8.255cm</Width>
+              <Width>13.40115cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -162,8 +162,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>ReportDataset</DataSetName>
-        <Height>4.97417cm</Height>
-        <Width>16.51cm</Width>
+        <Height>4.97416cm</Height>
+        <Width>26.80229cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -174,7 +174,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>10.55208in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
@@ -203,7 +203,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.49671cm</Top>
-          <Left>3.52573cm</Left>
+          <Left>7.65323cm</Left>
           <Height>1.54658cm</Height>
           <Width>9.45854cm</Width>
           <Style>
@@ -236,7 +236,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Beyoğlu Listesi</Value>
+                  <Value>Beyoğlu Kafesi</Value>
                   <Style>
                     <FontSize>28pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -251,7 +251,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.49671cm</Top>
-          <Left>3.52573cm</Left>
+          <Left>7.65323cm</Left>
           <Height>1.54658cm</Height>
           <Width>9.45854cm</Width>
           <Style>

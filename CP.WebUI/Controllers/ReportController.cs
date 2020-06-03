@@ -86,7 +86,7 @@ namespace CP.WebUI.Controllers
                 //SizeToReportContent = true,
                 //Width = Unit.Percentage(300),
                 //Height = Unit.Percentage(200),
-                Width = Unit.Pixel(1045),
+                Width = Unit.Pixel(1035),
                 Height = Unit.Pixel(700),
                 ShowExportControls = true
             };

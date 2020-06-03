@@ -1,19 +1,7 @@
 ﻿$(document).ready(function () {
     $(function () {
-        var $loading = $('#loading-background').hide();
-        $(document)
-            .ajaxStart(function () {
-                //ajax request went so show the loading image
-                $loading.delay(1500).show();
-            })
-            .ajaxStop(function () {
-                //got response so hide the loading image
-                $loading.delay(1500).hide();
-                //$("#loading-background").css("background-color", "none");
-            });
         NiceScrool(new ScroolModel("menu-scrool", "7px", "#E1E1E1"))
         NiceScrool(new ScroolModel("modal-body", "10px", "#A5A5A5"))
-
     });
 });
 
