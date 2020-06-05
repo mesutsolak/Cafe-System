@@ -1,7 +1,3 @@
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\Microsoft.VisualStudio.Shell.Interop.dll
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\obj\Debug\CP.WebUI.csprojAssemblyReference.cache
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\obj\Debug\RdlCompile.cache
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\obj\Debug\RdlCompile.compiled
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\CP.WebUI.dll.config
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\CP.WebUI.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\CP.WebUI.pdb
@@ -87,6 +83,7 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\System.Web.Webpages.Ra
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\WebGrease.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\System.Net.Http.Formatting.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\EnvDTE.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\Microsoft.VisualStudio.Shell.Interop.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\Microsoft.ReportViewer.WinForms.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\stdole.dll
@@ -178,6 +175,9 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\pt\Microsoft.ReportVie
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\obj\Debug\CP.WebUI.csprojAssemblyReference.cache
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\obj\Debug\RdlCompile.cache
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\obj\Debug\RdlCompile.compiled
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\obj\Debug\CP.WebUI.csproj.CoreCompileInputs.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\obj\Debug\CP.WebUI.csproj.CopyComplete
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.WebUI\obj\Debug\CP.WebUI.dll

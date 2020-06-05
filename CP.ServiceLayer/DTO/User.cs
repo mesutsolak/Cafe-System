@@ -9,6 +9,11 @@ namespace CP.ServiceLayer.DTO
 {
     public class User
     {
+        public User()
+        {
+            IsConfirm = false;
+            IsDeleted = false;
+        }
         public int Id { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }
@@ -17,7 +22,7 @@ namespace CP.ServiceLayer.DTO
         public string LastName { get; set; }
         public string ProfilPhoto { get; set; }
         public int? GenderId { get; set; }
-        public string BackGround { get; set; }
+        public string BackGroundPhoto { get; set; }
         public bool? IsConfirm { get; set; }
         public bool IsDeleted { get; set; }
         public GenderDTO Gender { get; set; }

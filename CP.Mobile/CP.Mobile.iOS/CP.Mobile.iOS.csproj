@@ -307,4 +307,16 @@
   <ItemGroup>
     <BundleResource Include="Resources\Back.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Female.png" />
+  </ItemGroup>
 </Project>

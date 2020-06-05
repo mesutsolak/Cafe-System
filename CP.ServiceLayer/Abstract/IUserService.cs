@@ -11,8 +11,8 @@ namespace CP.ServiceLayer.Abstract
     public interface IUserService : IService<User>
     {
         Task<string> LoginControl(LoginControl loginControl);
-        Task<bool> IsThereUserName(string UserName);
-        Task<bool> IsThereEmail(string Email);
+        bool IsThereUserName(string UserName);
+        bool IsThereEmail();
         int UserId(string UserName);
     }
 }

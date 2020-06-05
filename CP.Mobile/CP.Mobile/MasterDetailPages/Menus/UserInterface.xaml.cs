@@ -48,7 +48,7 @@ namespace CP.Mobile.MasterDetailPages.Menus
             Password.Text = _user.Password;
             ProfilPhoto.Source = _user.ProfilPhoto;
             Gender.Text = _user.GenderId == 1 ? "Erkek" : "Kadın";
-            BackPhoto.Source = _user.BackGround;
+            BackPhoto.Source = _user.BackGroundPhoto;
         }
 
         private async void btnUserInformationUpdate_Clicked(object sender, EventArgs e)

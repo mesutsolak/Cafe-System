@@ -16,6 +16,7 @@
             <Image Source="User.png" Margin="0,15" WidthRequest="150"/>
             <Label Text="Kullanıcı Bilgileri"
                 TextColor="Blue"
+                     FontAttributes="Bold"
                    FontSize="20"
                    Margin="10,5"
                 HorizontalOptions="StartAndExpand" />    
@@ -25,7 +26,6 @@
 
             <StackLayout x:Name="StlForm" x:Uid="StlForm" Margin="10">
 
-              
 
                 <Label Text="Kullanıcı Adı" x:Name="lblUserName" x:Uid="lblUserName"/>
                 <custom:ValidatableEntryControl   x:Name="EntUserName" x:Uid="EntUserName" Placeholder="Kullanıcı Adı Giriniz" BindingName="UserName"></custom:ValidatableEntryControl>
@@ -34,6 +34,7 @@
                 <Label Text="Parola" x:Name="lblPassword" x:Uid="lblPassword"/>
                <custom:ValidatableEntryControl   x:Name="EntPassword" x:Uid="EntPassword" IsPassword="True" Placeholder="Parola  Giriniz" BindingName="Password"></custom:ValidatableEntryControl>
 
+                <Label Text="Parolamı Unutttum"   FontAttributes="Bold" x:Name="lblPasswordForget" TextColor="LightBlue"/>
 
 
                 <StackLayout Spacing="10" Margin="0,10,0,10" Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="Center">

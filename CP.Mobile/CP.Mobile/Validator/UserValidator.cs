@@ -53,32 +53,32 @@ namespace CP.Mobile.Validator
 
 
 
-        protected bool IsUniqueUserName(string UserName)
-        {
-            if (UserName != null)
-            {
-                userService.Url = "api/User/IsThereUserName/" + UserName;
-                var r = userService.IsThereUserName(UserName).Result;
-                return r;
-            }
-            else
-            {
-                return false;
-            }
+        //protected bool IsUniqueUserName(string UserName)
+        //{
+        //    if (UserName != null)
+        //    {
+        //        userService.Url = "api/User/IsThereUserName/" + UserName;
+        //        var r = userService.IsThereUserName(UserName).Result;
+        //        return r;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
 
-        }
-        protected bool IsUniqueEmail(string Email)
-        {
-            if (Email != null)
-            {
-                userService.Url = "api/User/IsThereEmail/"+ Email;
-                var e = userService.IsThereEmail(Email).Result;
-                return e;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        //}
+        //protected bool IsUniqueEmail(string Email)
+        //{
+        //    if (Email != null)
+        //    {
+        //        userService.Url = "api/User/IsThereEmail/"+ Email;
+        //        var e = userService.IsThereEmail(Email).Result;
+        //        return e;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
     }
 }

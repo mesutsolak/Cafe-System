@@ -1,4 +1,5 @@
 ﻿using CP.Mobile.ContentPages;
+using CP.ServiceLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,19 @@ namespace CP.Mobile
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        GeneralService _gs = new GeneralService();
         public MainPage()
         {
             InitializeComponent();
+            FormGeneral();
+        }
+
+        private void FormGeneral()
+        {
+            _gs.Url = "api/General/Get";
+            var _general = _gs.Get();
+            Image.Source = _general.Image ?? "cafe.png";
+            Title.Text = _general.Title ?? "Beyoğlu Kafesi";
         }
 
         private async void btnRegister_Clicked(object sender, EventArgs e)

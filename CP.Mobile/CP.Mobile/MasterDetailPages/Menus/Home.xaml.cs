@@ -5,7 +5,9 @@ using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -46,25 +48,14 @@ namespace CP.Mobile.MasterDetailPages.Menus
         };
         public Home()
         {
-            try
-            {
-                InitializeComponent();
-                BindingContext = HomePages();
-                CountFound();
-                Sliders();
-                OrderCount();
-                ProductPreferences();
-                ProductChoose();
-
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
+            InitializeComponent();
+            BindingContext = HomePages();
+            CountFound();
+            Sliders();
+            OrderCount();
+            ProductPreferences();
+            ProductChoose();
             Navigation.PopPopupAsync(true);
-
-
         }
         protected override void OnAppearing()
         {

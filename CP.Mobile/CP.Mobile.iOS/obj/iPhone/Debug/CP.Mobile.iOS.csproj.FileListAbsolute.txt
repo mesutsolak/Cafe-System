@@ -1,10 +1,3 @@
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\coremlc\_PartialAppManifest.items
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\coremlc\_BundleResourceWithLogicalName.items
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\optimized\
-C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\CP.Mobile.iOS.csproj.CoreCompileInputs.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\CP.Mobile.iOS.exe
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\CP.Mobile.iOS.pdb
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\AutoMapper.dll
@@ -84,7 +77,14 @@ C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\CP.ServiceLayer.pdb
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\CP.ServiceLayer.dll.config
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\bin\iPhone\Debug\CP.ServiceLayer.dll.mdb
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\coremlc\_PartialAppManifest.items
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\coremlc\_BundleResourceWithLogicalName.items
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\optimized\
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\CP.Mobile.iOS.csprojAssemblyReference.cache
+C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\CP.Mobile.iOS.csproj.CoreCompileInputs.cache
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\XamlC.stamp
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\CP.Mobile.iOS.csproj.CopyComplete
 C:\Users\Mesut Solak\Source\Repos\cafesystem\CP.Mobile\CP.Mobile.iOS\obj\iPhone\Debug\CP.Mobile.iOS.exe

@@ -50,6 +50,8 @@ namespace CP.WebAPI.Controllers
                 cfg.CreateMap<MusicListDTO, MusicList>();
                 cfg.CreateMap<Gender, GenderDTO>();
                 cfg.CreateMap<GenderDTO, Gender>();
+                cfg.CreateMap<General, GeneralDTO>();
+                cfg.CreateMap<GeneralDTO, General>();
             }).CreateMapper();
         }
     }

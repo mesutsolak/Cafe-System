@@ -19,25 +19,38 @@ namespace CP.Mobile.ContentPages
     public partial class SignIn : ContentPage
     {
         UserService userService = new UserService();
-        LoginViewModel userViewModel = new LoginViewModel();
+        LoginViewModel loginViewModel = new LoginViewModel();
         public SignIn()
         {
             InitializeComponent();
-            BindingContext = userViewModel;
+            BindingContext = loginViewModel;
+            PasswordClick();
+        }
+        void PasswordClick()
+        {
+
+            lblPasswordForget.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(async () =>
+                {
+                    await Navigation.PushPopupAsync(new PasswordForget(), true);
+                })
+            });
         }
 
         private void btnClear_Clicked(object sender, EventArgs e)
         {
             FormTools.FormClear(StlForm);
+            loginViewModel.ErrorClear();
         }
 
         private async void btnSignUp_Clicked(object sender, EventArgs e)
         {
             try
             {
-                if (!userViewModel.ModelResult())
+                if (!loginViewModel.ModelResult())
                 {
-                    await Navigation.PushPopupAsync(new ErrorModal("Lütfen Gerekli Yerleri Doldurun"));
+                    await Navigation.PushPopupAsync(new ErrorModal("Lütfen eksiksiz doldurun."));
                 }
                 else
                 {
@@ -63,7 +76,7 @@ namespace CP.Mobile.ContentPages
 
                         Preferences.Set("FirstAndLast", result);
 
-                        Preferences.Set("UserId",  userService.UserId(EntUserName.EntryText));
+                        Preferences.Set("UserId", userService.UserId(EntUserName.EntryText));
 
                         await Navigation.PushPopupAsync(new SuccessModal("Başarıyla Giriş Yapıldı", () => { RootMain(); }));
 
@@ -71,7 +84,7 @@ namespace CP.Mobile.ContentPages
                     }
                     else
                     {
-                        await Navigation.PushPopupAsync(new ErrorModal("Giriş Başarısız"));
+                        await Navigation.PushPopupAsync(new ErrorModal(_result));
                     }
                 }
             }

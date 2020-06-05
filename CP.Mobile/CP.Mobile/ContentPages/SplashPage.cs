@@ -41,7 +41,7 @@ namespace CP.Mobile.ContentPages
       
 
             if (Preferences.ContainsKey("UserName"))
-            {
+             {
                 Application.Current.MainPage = new CP.Mobile.MasterDetailPages.MainPage();
             }
             else

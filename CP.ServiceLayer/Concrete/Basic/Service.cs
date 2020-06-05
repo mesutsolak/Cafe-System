@@ -22,7 +22,8 @@ namespace CP.ServiceLayer.Concrete.Basic
             {
                 return new HttpClient
                 {
-                    BaseAddress = new Uri("http://192.168.1.106:44318/")
+                    BaseAddress = new Uri("http://192.168.1.106:44318/"),
+                    Timeout = TimeSpan.FromMinutes(60)
                 };
             }
         }
@@ -201,6 +202,25 @@ namespace CP.ServiceLayer.Concrete.Basic
             return ResponseMessage;
         }
 
+        public T Get()
+        {
+            T entity = null;
+            try
+            {
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                var _result = Task.Run(() => client.GetStringAsync(Url)).Result;
+                entity = JsonConvert.DeserializeObject<T>(_result, new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore
+                });
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return entity;
+        }
+
 
         public string Remove(int id)
         {
@@ -283,6 +303,8 @@ namespace CP.ServiceLayer.Concrete.Basic
 
             return ResponseMessage;
         }
+
+
 
         public List<T> GetAllFilter(int id)
         {

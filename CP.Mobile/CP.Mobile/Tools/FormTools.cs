@@ -23,6 +23,7 @@ namespace CP.Mobile.Tools
                     else if (item.GetType() == typeof(ValidatableEntryControl))
                     {
                         (item as ValidatableEntryControl).EntryText = string.Empty;
+                       
                     }
                 }
             }

@@ -199,6 +199,7 @@
     <Compile Include="Abstract\ICommentService.cs" />
     <Compile Include="Abstract\ICompanyService.cs" />
     <Compile Include="Abstract\IContactService.cs" />
+    <Compile Include="Abstract\IGeneralService.cs" />
     <Compile Include="Abstract\IHomePageService.cs" />
     <Compile Include="Abstract\ICartService.cs" />
     <Compile Include="Abstract\IMusicListService.cs" />
@@ -212,6 +213,7 @@
     <Compile Include="Concrete\CommentService.cs" />
     <Compile Include="Concrete\CompanyService.cs" />
     <Compile Include="Concrete\ContactService.cs" />
+    <Compile Include="Concrete\GeneralService.cs" />
     <Compile Include="Concrete\HomePageService.cs" />
     <Compile Include="Concrete\MusicListService.cs" />
     <Compile Include="Concrete\ProductService.cs" />
@@ -226,6 +228,7 @@
     <Compile Include="DTO\CompanyDTO.cs" />
     <Compile Include="DTO\ContactDTO.cs" />
     <Compile Include="DTO\GenderDTO.cs" />
+    <Compile Include="DTO\GeneralDTO.cs" />
     <Compile Include="DTO\HomePageDTO.cs" />
     <Compile Include="DTO\LoginControl.cs" />
     <Compile Include="DTO\MusicListDTO.cs" />

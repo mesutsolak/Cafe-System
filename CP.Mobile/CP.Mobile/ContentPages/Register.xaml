@@ -22,8 +22,9 @@
                 TextColor="Blue"
                    FontSize="20"
                    Margin="10,5"
+                   FontAttributes="Bold"
                 HorizontalOptions="StartAndExpand" />
-            <StackLayout x:Name="StlForm" x:Uid="StlForm" Margin="10">
+                <StackLayout x:Name="StlRegister" x:Uid="StlRegister" Margin="10">
 
                 <Label Text="İsim" x:Name="lblFirstName" x:Uid="lblFirstName"/>
                     <custom:ValidatableEntryControl   x:Name="EntFirstName" x:Uid="EntFirstName" Placeholder="İsminizi Giriniz" BindingName="FirstName"></custom:ValidatableEntryControl>
@@ -40,9 +41,30 @@
                     <Label Text="Email" x:Name="lblEmail" x:Uid="lblEmail"/>
                     <custom:ValidatableEntryControl   x:Name="EntEmail" x:Uid="EntEmail" Placeholder="Email Giriniz" BindingName="Email"></custom:ValidatableEntryControl>
 
-
-                <Label Text="Parola" x:Name="lblPassword" x:Uid="lblPassword"/>
+                    <Label Text="Cinsiyet" x:Name="lblGender" x:Uid="lblGender"/>
+                    <Picker x:Name="picker" Title="Cinsiyet Seçiniz" TitleColor="Black">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Erkek</x:String>
+                                <x:String>Kadın</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    
+                    <Label Text="Parola" x:Name="lblPassword" x:Uid="lblPassword"/>
                     <custom:ValidatableEntryControl IsPassword="true"  x:Name="EntPassword" x:Uid="EntPassword" Placeholder="Parola Giriniz" BindingName="Password"></custom:ValidatableEntryControl>
+
+                    <Label Text="Profil Fotoğrafı" x:Name="lblProfilPhoto" x:Uid="lblProfilPhoto"/>
+                    <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+                        <Button x:Name="btnProfilPhoto" WidthRequest="150" HeightRequest="50" HorizontalOptions="Start" VerticalOptions="Start" Text="Profil Fotografı" Clicked="btnProfilPhoto_Clicked"/>
+                        <Image x:Name="imgProfil" HeightRequest="150"></Image>
+                    </StackLayout>
+
+                    <Label Text="Arka Plan Fotoğrafı" x:Name="lblBackgroundPhoto" x:Uid="lblBackgroundPhoto"/>
+                    <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+                        <Button x:Name="btnBackGroundPhoto" WidthRequest="200" HeightRequest="50"  HorizontalOptions="Start" VerticalOptions="Start"   Text="Arka Plan Fotografı" Clicked="btnBackGroundPhoto_Clicked"/>
+                        <Image x:Name="imgBackGround" HeightRequest="150"></Image>
+                    </StackLayout>
 
 
                     <StackLayout Spacing="10" Margin="0,10,0,10" Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="Center">

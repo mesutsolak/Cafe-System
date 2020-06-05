@@ -16,20 +16,18 @@ namespace CP.ServiceLayer.Concrete
     {
         bool Status;
 
-        public async Task<bool> IsThereEmail(string Email)
+        public bool IsThereEmail()
         {
             var u = Url;
             try
             {
-                await Task.Run(async () =>
-                {
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    var response = client.GetAsync(u).Result;
 
-                    Status =  (response.StatusCode == System.Net.HttpStatusCode.OK) ? false : true;
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var response = Task.Run(() => client.GetAsync(u)).Result;
 
-                });
+                Status = (response.StatusCode == System.Net.HttpStatusCode.OK) ? false : true;
+
             }
             catch (Exception ex)
             {
@@ -39,20 +37,16 @@ namespace CP.ServiceLayer.Concrete
             return Status;
         }
 
-        public async Task<bool> IsThereUserName(string UserName)
+        public bool IsThereUserName(string UserName)
         {
             var u = Url;
             try
             {
-                await Task.Run(async () =>
-                {
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    var response = client.GetAsync(u).Result;
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var response = Task.Run(() => client.GetAsync(u)).Result;
 
-                    Status = (response.StatusCode == System.Net.HttpStatusCode.OK) ? false : true;
-
-                });
+                Status = (response.StatusCode == System.Net.HttpStatusCode.OK) ? false : true;
             }
             catch (Exception ex)
             {
@@ -80,7 +74,7 @@ namespace CP.ServiceLayer.Concrete
 
                     ResponseMessage = headerValues.FirstOrDefault().ToString();
 
-                 });
+                });
             }
             catch (Exception ex)
             {
@@ -97,9 +91,9 @@ namespace CP.ServiceLayer.Concrete
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            var response = Task.Run(()=>  client.GetAsync(Url + UserName)).Result;
+            var response = Task.Run(() => client.GetAsync(Url + UserName)).Result;
 
-             if (response.IsSuccessStatusCode)
+            if (response.IsSuccessStatusCode)
             {
                 _Result = int.Parse(response.Headers.GetValues("Message").FirstOrDefault().ToString());
             }
@@ -109,5 +103,23 @@ namespace CP.ServiceLayer.Concrete
             }
             return _Result;
         }
+        public string PasswordFind(string Email)
+        {
+
+            try
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var response = Task.Run(() => client.GetAsync(Url + Email)).Result;
+
+                return response.Headers.GetValues("Message").FirstOrDefault().ToString();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
+
 }

@@ -67,7 +67,7 @@ namespace CP.WebAPI.Controllers
                 else
                 {
                     httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
-                    httpResponseMessage.Headers.Add("Message", "Başarısız");
+                    httpResponseMessage.Headers.Add("Message", result);
                 }
             }
             return httpResponseMessage;
@@ -106,7 +106,7 @@ namespace CP.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("IsThereEmail")]
+        [Route("IsThereEmail/{Email}")]
         public async Task<HttpResponseMessage> IsThereEmail(string Email)
         {
             var _bool = await UserOperations.EmailControl(Email);
@@ -190,6 +190,24 @@ namespace CP.WebAPI.Controllers
             {
                 httpResponseMessage.StatusCode = HttpStatusCode.OK;
                 httpResponseMessage.Headers.Add("Message", _result.ToString());
+            }
+            return httpResponseMessage;
+        }
+        [HttpGet]
+        [Route("PasswordForget/{Email}")]
+        public HttpResponseMessage PasswordForget(string Email)
+        {
+            var _result = UserOperations.PasswordForget(Email);
+
+            if (string.IsNullOrEmpty(_result))
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+                httpResponseMessage.Headers.Add("Message", "Bir hata meydana geldi");
+            }
+            else
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.OK;
+                httpResponseMessage.Headers.Add("Message", _result);
             }
             return httpResponseMessage;
         }
