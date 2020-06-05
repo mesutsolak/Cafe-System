@@ -22,8 +22,10 @@ namespace CP.Mobile.MasterDetailPages.Menus
         SliderService _ss = new SliderService();
         HomePageService hps = new HomePageService();
         ProductService ps = new ProductService();
+        CampaignService _cs = new CampaignService();
         List<ProductDTO> chooseDTO = new List<ProductDTO>();
         List<ProductDTO> preferencesDTO = new List<ProductDTO>();
+        List<CampaignDTO> CampaignDTO = new List<CampaignDTO>();
 
 
         private void CountFound()
@@ -42,10 +44,7 @@ namespace CP.Mobile.MasterDetailPages.Menus
 
         }
 
-        List<string> names = new List<string>
-        {
-            "Ahmet","Ali","Ceyhan"
-        };
+   
         public Home()
         {
             InitializeComponent();
@@ -55,6 +54,7 @@ namespace CP.Mobile.MasterDetailPages.Menus
             OrderCount();
             ProductPreferences();
             ProductChoose();
+            Campaigns();
             Navigation.PopPopupAsync(true);
         }
         protected override void OnAppearing()
@@ -114,6 +114,33 @@ namespace CP.Mobile.MasterDetailPages.Menus
 
             chooseDTO = ps.GetAll();
             CVChoose.ItemsSource = chooseDTO;
+        }
+        public void Campaigns()
+        {
+            CampaignDTO.Clear();
+
+            _cs.Url = "api/Campaign/All";
+
+            CampaignDTO = _cs.GetAll();
+
+            CVCampaign.ItemsSource = CampaignDTO;
+
+
+        }
+
+        private void btnCampaignCart_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPreferenceCart_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnChooseCart_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

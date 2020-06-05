@@ -2,6 +2,7 @@
 using CP.Mobile.MasterDetailPages.Menus;
 using CP.Mobile.TabbedPage;
 using CP.Mobile.Tools.AlertModals;
+using CP.ServiceLayer.Concrete;
 using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace CP.Mobile.MasterDetailPages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : MasterDetailPage
     {
+        UserService _us = new UserService();
         public List<MasterPageItem> menuList { get; set; }
         public MainPage()
         {
@@ -102,6 +104,9 @@ namespace CP.Mobile.MasterDetailPages
                 //Detail ve menulist[0] hamburger menu olmaz.Denendi diğerlerinin ne işe yaradığını anla.
                 Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(Home)));
                 IsPresented = false;
+
+                LoadMain();
+
             }
             catch (Exception ex)
             {
@@ -110,6 +115,17 @@ namespace CP.Mobile.MasterDetailPages
             }
 
         }
+
+        private void LoadMain()
+        {
+            var _id = Preferences.Get("UserId", 0);
+            _us.Url = "api/User/Find/";
+            var _user = _us.GetFind(_id);
+            ProfileImage.Source = _user.ProfilPhoto;
+            BgImage.Source = _user.BackGroundPhoto;
+
+        }
+
         // Event for Menu Item selection, here we are going to handle navigation based  
         // on user selection in menu ListView  
         private void OnMenuItemSelected(object sender, SelectedItemChangedEventArgs e)

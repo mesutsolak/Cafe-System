@@ -196,6 +196,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\Basic\IService.cs" />
+    <Compile Include="Abstract\ICampaignService.cs" />
     <Compile Include="Abstract\ICommentService.cs" />
     <Compile Include="Abstract\ICompanyService.cs" />
     <Compile Include="Abstract\IContactService.cs" />
@@ -209,6 +210,7 @@
     <Compile Include="Abstract\IUserService.cs" />
     <Compile Include="Abstract\ISliderService.cs" />
     <Compile Include="Concrete\Basic\Service.cs" />
+    <Compile Include="Concrete\CampaignService.cs" />
     <Compile Include="Concrete\CartService.cs" />
     <Compile Include="Concrete\CommentService.cs" />
     <Compile Include="Concrete\CompanyService.cs" />

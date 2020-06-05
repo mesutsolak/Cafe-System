@@ -17,7 +17,7 @@ namespace CP.WebAPI.Controllers
 
         [HttpGet]
         [Route("All")]
-        public List<CampaignDTO> OrderGetAll(int id)
+        public List<CampaignDTO> CampaignAll()
         {
             _campaignDTO.Clear();
 

@@ -18,9 +18,9 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid>
-                    <Image  Source="bg.png" Aspect="AspectFill" />
+                    <Image x:Name="BgImage"  Source="bg.png" Aspect="AspectFill" />
                     <StackLayout  Padding="0,0,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                        <Image  Source="profile.png"  WidthRequest="30"  />
+                        <Image x:Name="ProfileImage"  Source="profile.png"  WidthRequest="30"  />
                         <Label Text="Adam Pedley" x:Name="FirstAndLast" TextColor="White" FontSize="Large" />
                     </StackLayout>
                 </Grid>

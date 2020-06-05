@@ -52,18 +52,25 @@
                 </StackLayout>
                 <StackLayout Margin="10,0,0,0" x:Name="FooterStackLayout" x:Uid="FooterStackLayout">
                     <Label TextColor="Black" Text="Kampanyalar" FontSize="25" FontAttributes="Bold"/>
-                    <StackLayout  x:Name="CampaignStackLayout" HeightRequest="150" x:Uid="CampaignStackLayout">
+                    <StackLayout  x:Name="CampaignStackLayout" HeightRequest="300" x:Uid="CampaignStackLayout">
                         <CarouselView x:Name="CVCampaign"  IndicatorView="CampaignIndicator"  PeekAreaInsets="20">
                             <CarouselView.ItemsLayout>
                                 <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
                             </CarouselView.ItemsLayout>
                             <CarouselView.ItemTemplate>
                                 <DataTemplate>
-                                    <Frame CornerRadius="15" Margin="0" HeightRequest="150" BackgroundColor="{Binding Color}">
+                                    <Frame CornerRadius="15" Margin="0" HeightRequest="150" BackgroundColor="#ff847c">
                                         <StackLayout>
-                                            <Image Source="{Binding ImageUrl}" WidthRequest="35" HeightRequest="40" Aspect="AspectFill"/>
-                                            <Label Text="{Binding Title}" FontSize="Title" HorizontalTextAlignment="Center"/>
-                                            <Label Text="{Binding Cast}" FontSize="Title" HorizontalTextAlignment="Center"/>
+                                            <Image Source="{Binding Image}" WidthRequest="35" HeightRequest="40" Aspect="AspectFill"/>
+                                            <Label Text="{Binding Title}" TextColor="Black" FontSize="Title" HorizontalTextAlignment="Center"/>
+                                            <Label Text="{Binding Description}" TextColor="Black" FontSize="Title" HorizontalTextAlignment="Center"/>
+
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="15" Margin="8">
+                                                <Image Source="money.png" Margin="0,4,0,0" WidthRequest="20"/>
+                                                <Label Text="{Binding Price,StringFormat='{0:N} TL'} " FontSize="16" TextColor="Black"/>
+                                                <ImageButton x:Name="btnCampaignCart" BackgroundColor="Transparent" x:Uid="btnCampaignCart" Clicked="btnCampaignCart_Clicked"  Source="cart.png" WidthRequest="20" CommandParameter="{Binding Id}"/>
+                                            </StackLayout>
+                                            
                                         </StackLayout>
                                     </Frame>
                                 </DataTemplate>
@@ -105,7 +112,7 @@
                                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="15" Margin="8">
                                                 <Image Source="money.png" Margin="0,4,0,0" WidthRequest="20"/>
                                                 <Label Text="{Binding Price,StringFormat='{0:N} TL'} " FontSize="16" TextColor="Black"/>
-                                                <!--<ImageButton x:Name="btnCart" BackgroundColor="Transparent" x:Uid="btnId" Clicked="btnCart_Clicked"  Source="cart.png" WidthRequest="20" CommandParameter="{Binding Id}"/>-->
+                                                <ImageButton x:Name="btnPreferenceCart" BackgroundColor="Transparent" x:Uid="btnPreferenceCart" Clicked="btnPreferenceCart_Clicked"  Source="cart.png" WidthRequest="20" CommandParameter="{Binding Id}"/>
                                             </StackLayout>
 
                                         </StackLayout>
@@ -150,7 +157,7 @@
                                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="15" Margin="8">
                                                 <Image Source="money.png" Margin="0,4,0,0" WidthRequest="20"/>
                                                 <Label Text="{Binding Price,StringFormat='{0:N} TL'} " FontSize="16" TextColor="Black"/>
-                                                <!--<ImageButton x:Name="btnCart" BackgroundColor="Transparent" x:Uid="btnId" Clicked="btnCart_Clicked"  Source="cart.png" WidthRequest="20" CommandParameter="{Binding Id}"/>-->
+                                                <ImageButton x:Name="btnChooseCart" BackgroundColor="Transparent" x:Uid="btnChooseCart" Clicked="btnChooseCart_Clicked"  Source="cart.png" WidthRequest="20" CommandParameter="{Binding Id}"/>
                                             </StackLayout>
 
                                         </StackLayout>
