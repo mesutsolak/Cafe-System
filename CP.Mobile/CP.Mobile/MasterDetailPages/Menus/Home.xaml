@@ -20,7 +20,7 @@
             </StackLayout>
         </StackLayout>
     </NavigationPage.TitleView>
-    
+
     <ContentPage.Content>
         <ScrollView>
             <StackLayout x:Name="MainStackLayout" x:Uid="MainStackLayout">
@@ -68,9 +68,7 @@
                                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="15" Margin="8">
                                                 <Image Source="money.png" Margin="0,4,0,0" WidthRequest="20"/>
                                                 <Label Text="{Binding Price,StringFormat='{0:N} TL'} " FontSize="16" TextColor="Black"/>
-                                                <ImageButton x:Name="btnCampaignCart" BackgroundColor="Transparent" x:Uid="btnCampaignCart" Clicked="btnCampaignCart_Clicked"  Source="cart.png" WidthRequest="20" CommandParameter="{Binding Id}"/>
                                             </StackLayout>
-                                            
                                         </StackLayout>
                                     </Frame>
                                 </DataTemplate>
@@ -163,7 +161,7 @@
                                         </StackLayout>
 
                                     </Frame>
-                                    </DataTemplate>
+                                </DataTemplate>
                             </CarouselView.ItemTemplate>
                         </CarouselView>
                         <IndicatorView x:Name="ChooseIndicator"  IndicatorColor="LightGray" SelectedIndicatorColor="Black" />

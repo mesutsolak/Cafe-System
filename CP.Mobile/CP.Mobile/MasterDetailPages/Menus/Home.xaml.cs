@@ -44,7 +44,7 @@ namespace CP.Mobile.MasterDetailPages.Menus
 
         }
 
-   
+
         public Home()
         {
             InitializeComponent();
@@ -133,13 +133,41 @@ namespace CP.Mobile.MasterDetailPages.Menus
 
         }
 
-        private void btnPreferenceCart_Clicked(object sender, EventArgs e)
+        private async void btnPreferenceCart_Clicked(object sender, EventArgs e)
         {
-
+            var _id = ((ImageButton)sender).CommandParameter.ToString();
+            ps.Url = "api/Product/";
+            ProductDTO p = ps.GetFind(int.Parse(_id));
+            await Navigation.PushPopupAsync(new QuestionModal("Sepet İşlemi", p.Name + " adlı ürünü sepete eklemek istiyor musunuz ?", () => { CartAdd(p); }), true);
         }
 
-        private void btnChooseCart_Clicked(object sender, EventArgs e)
+        private async void btnChooseCart_Clicked(object sender, EventArgs e)
         {
+
+            var _id = ((ImageButton)sender).CommandParameter.ToString();
+            ps.Url = "api/Product/";
+            ProductDTO p = ps.GetFind(int.Parse(_id));
+            await Navigation.PushPopupAsync(new QuestionModal("Sepet İşlemi", p.Name + " adlı ürünü sepete eklemek istiyor musunuz ?", () => { CartAdd(p); }), true);
+        }
+        public async void CartAdd(ProductDTO p)
+        {
+            var id = Preferences.Get("UserId", 0);
+            cs.Url = "api/Cart/Add";
+            var result = cs.Add(new CartDTO
+            {
+                Count = 1,
+                UserId = id,
+                Price = p.Price,
+                ProductId = p.Id,
+                Time = p.Time
+            });
+
+            await Navigation.PopPopupAsync();
+
+            if (result.Contains("Başarıyla"))
+                await Navigation.PushPopupAsync(new SuccessModal(result, null), true);
+            else
+                await Navigation.PushPopupAsync(new ErrorModal(result));
 
         }
     }

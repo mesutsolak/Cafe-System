@@ -51,7 +51,7 @@ namespace CP.Mobile.TabbedPage.MenuItemTabbed
                 var _id = ((ImageButton)sender).CommandParameter.ToString();
                 productService.Url = "api/Product/";
                 ProductDTO p = productService.GetFind(int.Parse(_id));
-                await Navigation.PushPopupAsync(new QuestionModal("Sepet İşlemi", p.Name + "adlı ürünü sepete eklemek istiyor musunuz ?", () => { CartAdd(p); }), true);
+                await Navigation.PushPopupAsync(new QuestionModal("Sepet İşlemi", p.Name + " adlı ürünü sepete eklemek istiyor musunuz ?", () => { CartAdd(p); }), true);
 
             }
             catch (Exception ex)
