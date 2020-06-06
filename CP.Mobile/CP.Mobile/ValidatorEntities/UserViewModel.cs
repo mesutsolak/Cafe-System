@@ -16,6 +16,9 @@ namespace CP.Mobile.ValidatorEntities
         public ValidatableProperty<string> FirstName { get; set; } = new ValidatableProperty<string>();
         public ValidatableProperty<string> LastName { get; set; } = new ValidatableProperty<string>();
 
+        public string ProfilPhoto { get; set; }
+        public string BackGroundPhoto { get; set; }
+
         protected override bool Validate()
         {
             return base.Validate();

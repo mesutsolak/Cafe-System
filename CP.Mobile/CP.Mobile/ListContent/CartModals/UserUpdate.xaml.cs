@@ -10,22 +10,44 @@ using CP.ServiceLayer.Concrete;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using CP.Mobile.Tools.AlertModals;
-
+using CP.Mobile.ValidatorEntities;
+using CP.Mobile.Tools;
+using CP.ServiceLayer.Firebase;
+using Plugin.Media.Abstractions;
 
 namespace CP.Mobile.ListContent.CartModals
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UserUpdate : PopupPage
     {
+        UserViewModel uvm = new UserViewModel(); 
+
         UserService us = new UserService();
         public User _user;
         public Action _action;
+
+
+        MediaFile _profilPhoto;
+        MediaFile _BackgroundPhoto;
+        string ProfilPhoto;
+        string BackGroundPhoto;
+        FirebaseStorageHelper firebaseStorageHelper = new FirebaseStorageHelper("cafe-project-bfd17.appspot.com");
+
         public UserUpdate(User user, Action action)
         {
             InitializeComponent();
 
             _user = user;
-            BindingContext = user;
+            uvm.Email.Value = user.Email;
+            uvm.FirstName.Value = user.FirstName;
+            uvm.LastName.Value = user.LastName;
+            uvm.UserName.Value = user.Username;
+            uvm.Password.Value = user.Password;
+            uvm.ProfilPhoto = user.ProfilPhoto;
+            uvm.BackGroundPhoto = user.BackGroundPhoto;
+
+            BindingContext = uvm;
+
             _action = action;
             GenderFind();
         }
@@ -39,11 +61,11 @@ namespace CP.Mobile.ListContent.CartModals
             var _result = us.Update(new User
             {
                 Id = _user.Id,
-                FirstName = EntFirstName.Text,
-                LastName = EntLastName.Text,
-                Username = EntUserName.Text,
-                Password = EntPassword.Text,
-                Email = EntEmail.Text,
+                FirstName = EntFirstName.EntryText,
+                LastName = EntLastName.EntryText,
+                Username = EntUserName.EntryText,
+                Password = EntPassword.EntryText,
+                Email = EntEmail.EntryText,
                 GenderId = _genderId
             });
 
@@ -75,6 +97,19 @@ namespace CP.Mobile.ListContent.CartModals
             {
                 PickerGender.SelectedIndex = 1;
             }
+        }
+
+        private async void ClosePassword_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAllPopupAsync(true);
+        }
+
+        private void btnClear_Clicked(object sender, EventArgs e)
+        {
+            uvm.ErrorClear();
+            FormTools.FormClear(UserUpdateBody);
+            imgBackGround.Source = null;
+            imgProfil.Source = null;
         }
     }
 }

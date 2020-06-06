@@ -4,7 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                  xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                  xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup" xmlns:custom="clr-namespace:Xamarin.Plugins.UnobtrusiveFluentValidation;assembly=Xamarin.Plugins.FluentValidation"
                   mc:Ignorable="d"
              x:Class="CP.Mobile.ListContent.CartModals.UserUpdate">
 
@@ -25,67 +25,68 @@
 
     <StackLayout x:Name="StlForm" x:Uid="StlForm"
         HorizontalOptions="FillAndExpand"
+                 VerticalOptions="CenterAndExpand"
         BackgroundColor="Transparent"
         Margin="15, 0, 15, 0"
                  >
         <Frame BackgroundColor="#EEEEEE" CornerRadius="10">
-            <StackLayout Orientation="Vertical">
-                        <Image Source="User.png" x:Name="PictureShow" Margin="0,5" WidthRequest="100" HorizontalOptions="Center" />
-                <ScrollView WidthRequest="100">
+            <StackLayout Orientation="Vertical" >
+                <StackLayout>
+                    <ImageButton HorizontalOptions="End" WidthRequest="40"  Source="Close.png" BackgroundColor="Transparent" VerticalOptions="Start" x:Name="ClosePassword" Clicked="ClosePassword_Clicked"/>
 
-                    <StackLayout Orientation="Vertical"  HorizontalOptions="StartAndExpand">
-
-                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
-                            <Label Text="Kullanıcı Adı " FontSize="20" TextColor="Black"/>
-                            <Entry WidthRequest="350" HorizontalOptions="CenterAndExpand" x:Name="EntUserName" Text="{Binding Username}" Placeholder="Kullanıcı Adı" />
-                        </StackLayout>
-
-                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
-                            <Label Text="Parola " FontSize="20" TextColor="Black"/>
-                            <Entry WidthRequest="350"  x:Name="EntPassword"  Text="{Binding Password}" Placeholder="Parola"/>
-                        </StackLayout>
-
-                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
-                            <Label Text="Email " FontSize="20" TextColor="Black"/>
-                            <Entry WidthRequest="350"  x:Name="EntEmail"  Text="{Binding Email}" Placeholder="Email"/>
-                        </StackLayout>
-
-                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
-                            <Label Text="Ad " FontSize="20" TextColor="Black"/>
-                            <Entry WidthRequest="350"  x:Name="EntFirstName"  Text="{Binding FirstName}" Placeholder="Ad"/>
-                        </StackLayout>
-
-                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
-                            <Label Text="Soyad " FontSize="20" TextColor="Black"/>
-                            <Entry WidthRequest="350"  x:Name="EntLastName" Text="{Binding LastName}" Placeholder="Soyad"/>
-                        </StackLayout>
-
-                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
-                            <Label Text="Cinsiyet " FontSize="20" TextColor="Black"/>
-                            <Picker WidthRequest="350" x:Name="PickerGender"  HorizontalOptions="FillAndExpand">
-                                <Picker.Items>
-                                    <x:String>Erkek</x:String>
-                                    <x:String>Kadın</x:String>
-                                </Picker.Items>
-                            </Picker>
-                        </StackLayout>
-                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
-                            <Label Text="Foto " FontSize="20" TextColor="Black"/>
-                            <Image x:Name="ProfilePhoto" Source="{Binding ProfilPhoto}" WidthRequest="24" />
-                        </StackLayout>
-                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
-                            <Label Text="Arka Plan Resmi " FontSize="20" TextColor="Black"/>
-                            <Image x:Name="BackgroundPhoto" Source="{Binding BackGround}" WidthRequest="24" />
-                        </StackLayout>
-                        
-                    </StackLayout>
-                </ScrollView>
-                <StackLayout Orientation="Horizontal"  HorizontalOptions="Center">
-                    <Button BackgroundColor="Blue" x:Name="btnSave" Clicked="btnSave_Clicked"  x:Uid="btnUpdate" TextColor="White" Text="Kaydet" HorizontalOptions="Center" />
-                    <Button BackgroundColor="Red" x:Name="btnCancel" Clicked="btnCancel_Clicked" x:Uid="btnCancel" TextColor="White" Text="Kapat" HorizontalOptions="Center" />
+                    <Image Source="User.png" x:Name="PictureShow" Margin="0,5" WidthRequest="100" HorizontalOptions="Center" />
                 </StackLayout>
+               <ScrollView HeightRequest="350">
+                    <StackLayout x:Name="UserUpdateBody" x:Uid="UserUpdateBody">
 
+                        <Label Text="Ad " FontSize="20" TextColor="Black"/>
+                        <custom:ValidatableEntryControl   x:Name="EntFirstName" x:Uid="EntFirstName"   Placeholder="Ad" BindingName="FirstName"></custom:ValidatableEntryControl>
+
+                        <Label Text="Soyad " FontSize="20" TextColor="Black"/>
+                        <custom:ValidatableEntryControl   x:Name="EntLastName" x:Uid="EntLastName"   Placeholder="Soyad" BindingName="LastName"></custom:ValidatableEntryControl>
+
+                        <Label Text="Kullanıcı Adı " FontSize="20" TextColor="Black"/>
+                        <custom:ValidatableEntryControl   x:Name="EntUserName" x:Uid="EntUserName"   Placeholder="Kullanıcı Adı" BindingName="Username"></custom:ValidatableEntryControl>
+
+
+                        <Label Text="Parola " FontSize="20" TextColor="Black"/>
+                        <custom:ValidatableEntryControl   x:Name="EntPassword" x:Uid="EntPassword"  IsPassword="True"  Placeholder="Parola" BindingName="Password"></custom:ValidatableEntryControl>
+
+
+                        <Label Text="Email " FontSize="20" TextColor="Black"/>
+                        <custom:ValidatableEntryControl   x:Name="EntEmail" x:Uid="EntEmail"   Placeholder="Email" BindingName="Email"></custom:ValidatableEntryControl>
+
+
+                   
+                        <Label Text="Cinsiyet " FontSize="20" TextColor="Black"/>
+                        <Picker WidthRequest="350" x:Name="PickerGender" Title="Cinsiyet Seçiniz"  HorizontalOptions="FillAndExpand">
+                            <Picker.Items>
+                                <x:String>Erkek</x:String>
+                                <x:String>Kadın</x:String>
+                            </Picker.Items>
+                        </Picker>
+
+                        <Label Text="Profil Fotoğrafı" x:Name="lblProfilPhoto" x:Uid="lblProfilPhoto"/>
+                        <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+                            <Button x:Name="btnProfilPhoto" WidthRequest="150" HeightRequest="50" HorizontalOptions="Start" VerticalOptions="Start" Text="Profil Fotografı" Clicked="btnProfilPhoto_Clicked"/>
+                            <Image x:Name="imgProfil"  Source="{Binding ProfilPhoto}" HeightRequest="150"></Image>
+                        </StackLayout>
+
+                        <Label Text="Arka Plan Fotoğrafı" x:Name="lblBackgroundPhoto" x:Uid="lblBackgroundPhoto"/>
+                        <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+                            <Button x:Name="btnBackGroundPhoto" WidthRequest="200" HeightRequest="50"  HorizontalOptions="Start" VerticalOptions="Start"   Text="Arka Plan Fotografı" Clicked="btnBackGroundPhoto_Clicked"/>
+                            <Image x:Name="imgBackGround" Source="{Binding BackGround}" HeightRequest="150"></Image>
+                        </StackLayout>
+
+                    </StackLayout>       
+                </ScrollView>
+
+                <StackLayout Orientation="Horizontal" Margin="0,10,0,0" Spacing="10" HorizontalOptions="Center">
+                    <Button CornerRadius="5" ContentLayout="Left,5" WidthRequest="110" HorizontalOptions="Start" ImageSource="trash.png" BackgroundColor="red" TextColor="White" Text="Temizle" x:Name="btnClear" Clicked="btnClear_Clicked" />
+                    <Button  CornerRadius="5" ContentLayout="Left,5" WidthRequest="110" HorizontalOptions="Start" ImageSource="save.png" BackgroundColor="Blue" TextColor="White" Text="Kaydet" x:Name="btnSave" x:Uid="btnSave" Clicked="btnSave_Clicked" Command="{Binding ValidateCommand}" />
+                </StackLayout>
             </StackLayout>
+           
         </Frame>
 
 

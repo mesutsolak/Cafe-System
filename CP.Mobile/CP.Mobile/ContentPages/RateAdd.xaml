@@ -31,9 +31,15 @@
         <Frame BackgroundColor="#EEEEEE" CornerRadius="10">
             <StackLayout Orientation="Vertical" Spacing="10">
 
+
+                <ImageButton HorizontalOptions="End" WidthRequest="40" BackgroundColor="Transparent" Source="Close.png" VerticalOptions="Start" x:Name="CloseRate" Clicked="btnRateClose_Clicked"/>
+
+
+                <Image Source="RatingAdd.png" x:Name="PictureShow" Margin="0,5" WidthRequest="60" HorizontalOptions="Center" />
+
                 <Label Text="Oran Ekle" TextColor="Blue" FontAttributes="Bold" FontSize="Large" Margin="0,5,0,0" HorizontalOptions="Center" />
 
-                <Label Text="Oran" TextColor="Black" FontAttributes="Bold" FontSize="20"/>
+                <Label Text="Oran" TextColor="Black" FontAttributes="Bold" FontSize="15"/>
 
                 <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
                     <Label Margin="3,0,0,0" Text="Oran:" FontSize="17" VerticalTextAlignment="Center" TextColor="Black"/>
@@ -44,9 +50,10 @@
                     </StackLayout>
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Button BackgroundColor="Green" TextColor="White" Text="Kaydet" x:Name="btnRateAdd" Clicked="btnRateAdd_Clicked" />
-                    <Button BackgroundColor="Red" TextColor="White" Text="Kapat" x:Name="btnRateClose" Clicked="btnRateClose_Clicked" />
+
+                <StackLayout Orientation="Horizontal" Margin="0,10,0,0" Spacing="10" HorizontalOptions="Center">
+                    <Button CornerRadius="5" ContentLayout="Left,5" WidthRequest="110" HorizontalOptions="Start" ImageSource="trash.png" BackgroundColor="red" TextColor="White" Text="Temizle" x:Name="btnRateClear" Clicked="btnRateClear_Clicked" />
+                    <Button  CornerRadius="5" ContentLayout="Left,5" WidthRequest="110" HorizontalOptions="Start" ImageSource="save.png" BackgroundColor="Blue" TextColor="White" Text="Kaydet" x:Name="btnRateSave" Clicked="btnRateAdd_Clicked"  />
                 </StackLayout>
 
             </StackLayout>

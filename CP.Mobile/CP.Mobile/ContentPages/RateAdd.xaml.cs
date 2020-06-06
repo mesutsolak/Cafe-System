@@ -37,25 +37,35 @@ namespace CP.Mobile.ContentPages
 
         private async void btnRateAdd_Clicked(object sender, EventArgs e)
         {
-            rs.Url = "api/Rate/Add";
-            var result = rs.Add(new RateDTO
+            if (lblNumber.Text != "0")
             {
-                ProductId = _ProductId,
-                UserId = Preferences.Get("UserId", 0),
-                RateValue = int.Parse(lblNumber.Text)
-            });
+                await Navigation.PushPopupAsync(new LoaderModal());
 
-            await Navigation.PopAllPopupAsync(true);
 
-            if (result.Contains("Başarıyla"))
-            {
-                _action.Invoke();
+                rs.Url = "api/Rate/Add";
+                var result = rs.Add(new RateDTO
+                {
+                    ProductId = _ProductId,
+                    UserId = Preferences.Get("UserId", 0),
+                    RateValue = int.Parse(lblNumber.Text)
+                });
 
-                await Navigation.PushPopupAsync(new SuccessModal(result), true);
+                await Navigation.PopAllPopupAsync(true);
+
+                if (result.Contains("Başarıyla"))
+                {
+                    _action.Invoke();
+
+                    await Navigation.PushPopupAsync(new SuccessModal(result), true);
+                }
+                else
+                {
+                    await Navigation.PushPopupAsync(new ErrorModal(result), true);
+                }
             }
             else
             {
-                await Navigation.PushPopupAsync(new ErrorModal(result), true);
+                await Navigation.PushPopupAsync(new ErrorModal("Değerlendirme 0 olamaz."), true);
             }
         }
 
@@ -67,12 +77,12 @@ namespace CP.Mobile.ContentPages
         private void btnPlus_Clicked(object sender, EventArgs e)
         {
             var number = int.Parse(lblNumber.Text);
-            if (number!=10)
+            if (number != 10)
             {
                 number++;
                 lblNumber.Text = number.ToString();
             }
-           
+
         }
 
         private void btnMinus_Clicked(object sender, EventArgs e)
@@ -83,6 +93,11 @@ namespace CP.Mobile.ContentPages
                 number--;
                 lblNumber.Text = number.ToString();
             }
+        }
+
+        private void btnRateClear_Clicked(object sender, EventArgs e)
+        {
+            lblNumber.Text = "0";
         }
     }
 }

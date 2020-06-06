@@ -10,12 +10,16 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
 using CP.Mobile.Tools.AlertModals;
+using CP.Mobile.ValidatorEntities;
+using CP.Mobile.Tools;
 
 namespace CP.Mobile.ContentPages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CommentAdd : PopupPage
     {
+
+        CommentViewModel CWM = new CommentViewModel();
         CommentService cs = new CommentService();
 
 
@@ -23,6 +27,7 @@ namespace CP.Mobile.ContentPages
         Action _action;
         public CommentAdd(int ProductId, Action action)
         {
+            BindingContext = CWM;
             _productId = ProductId;
             _action = action;
             InitializeComponent();
@@ -30,24 +35,33 @@ namespace CP.Mobile.ContentPages
 
         private async void btnCommentAdd_Clicked(object sender, EventArgs e)
         {
-            cs.Url = "api/Comment/Add";
-            string result = cs.Add(new ServiceLayer.DTO.CommentDTO
+            if (CWM.ModelResult())
             {
-                UserId = Preferences.Get("UserId", 0),
-                ProductId = _productId,
-                Description = txtComment.Text
-            });
+                await Navigation.PushPopupAsync(new LoaderModal());
 
-            await Navigation.PopAllPopupAsync(true);
+                cs.Url = "api/Comment/Add";
+                string result = cs.Add(new ServiceLayer.DTO.CommentDTO
+                {
+                    UserId = Preferences.Get("UserId", 0),
+                    ProductId = _productId,
+                    Description = txtComment.EntryText
+                });
 
-            if (result.Contains("Başarıyla"))
-            {
-                _action.Invoke();
-                await Navigation.PushPopupAsync(new SuccessModal(result));
+                await Navigation.PopAllPopupAsync(true);
+
+                if (result.Contains("Başarıyla"))
+                {
+                    _action.Invoke();
+                    await Navigation.PushPopupAsync(new SuccessModal(result));
+                }
+                else
+                {
+                    await Navigation.PushPopupAsync(new ErrorModal(result));
+                }
             }
             else
             {
-                await Navigation.PushPopupAsync(new ErrorModal(result));
+                await Navigation.PushPopupAsync(new ErrorModal("Lütfen eksiksiz doldurun"), true);
             }
 
         }
@@ -55,6 +69,17 @@ namespace CP.Mobile.ContentPages
         private async void btnCommentClose_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopPopupAsync(true);
+        }
+
+        private async void ClosePassword_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopPopupAsync(true);
+        }
+
+        private void btnCommentClear_Clicked(object sender, EventArgs e)
+        {
+            FormTools.FormClear(CommentStl);
+            CWM.ErrorClear();
         }
     }
 }

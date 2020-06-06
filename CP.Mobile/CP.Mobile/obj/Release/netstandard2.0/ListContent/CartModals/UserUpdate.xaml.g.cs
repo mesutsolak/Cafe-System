@@ -20,22 +20,28 @@ namespace CP.Mobile.ListContent.CartModals {
         private global::Xamarin.Forms.StackLayout StlForm;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.ImageButton ClosePassword;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Image PictureShow;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry EntUserName;
+        private global::Xamarin.Forms.StackLayout UserUpdateBody;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry EntPassword;
+        private global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl EntFirstName;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry EntEmail;
+        private global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl EntLastName;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry EntFirstName;
+        private global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl EntUserName;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry EntLastName;
+        private global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl EntPassword;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl EntEmail;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Picker PickerGender;
@@ -47,26 +53,28 @@ namespace CP.Mobile.ListContent.CartModals {
         private global::Xamarin.Forms.Image BackgroundPhoto;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Button btnSave;
+        private global::Xamarin.Forms.Button btnClear;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Button btnCancel;
+        private global::Xamarin.Forms.Button btnSave;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(UserUpdate));
             StlForm = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "StlForm");
+            ClosePassword = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "ClosePassword");
             PictureShow = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "PictureShow");
-            EntUserName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "EntUserName");
-            EntPassword = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "EntPassword");
-            EntEmail = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "EntEmail");
-            EntFirstName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "EntFirstName");
-            EntLastName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "EntLastName");
+            UserUpdateBody = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "UserUpdateBody");
+            EntFirstName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl>(this, "EntFirstName");
+            EntLastName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl>(this, "EntLastName");
+            EntUserName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl>(this, "EntUserName");
+            EntPassword = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl>(this, "EntPassword");
+            EntEmail = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl>(this, "EntEmail");
             PickerGender = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "PickerGender");
             ProfilePhoto = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "ProfilePhoto");
             BackgroundPhoto = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "BackgroundPhoto");
+            btnClear = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "btnClear");
             btnSave = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "btnSave");
-            btnCancel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "btnCancel");
         }
     }
 }

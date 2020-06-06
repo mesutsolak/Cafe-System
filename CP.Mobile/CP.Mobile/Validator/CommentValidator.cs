@@ -14,7 +14,7 @@ namespace CP.Mobile.Validator
             this.CascadeMode = CascadeMode.StopOnFirstFailure;
 
             RuleForProp(x => x.Description)
-                .NotNull().NotEmpty().WithMessage("Kullanıcı adı boş gecilemez");
+                .NotNull().NotEmpty().WithMessage("Yorum boş gecilemez");
         }
     }
 }
