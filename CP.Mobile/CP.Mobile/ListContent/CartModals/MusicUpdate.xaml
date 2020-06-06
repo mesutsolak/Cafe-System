@@ -5,9 +5,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-                     xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
-                
-             x:Class="CP.Mobile.ListContent.CartModals.MusicUpdate">
+                     xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup" 
+                  xmlns:custom="clr-namespace:Xamarin.Plugins.UnobtrusiveFluentValidation;assembly=Xamarin.Plugins.FluentValidation"
+                  x:Class="CP.Mobile.ListContent.CartModals.MusicUpdate">
 
     <pages:PopupPage.Animation>
         <animations:ScaleAnimation 
@@ -29,23 +29,21 @@
         Margin="15, 0, 15, 0"
                  >
         <Frame BackgroundColor="#EEEEEE" CornerRadius="10">
-            <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical" x:Name="MusicUpdateStl">
+                <ImageButton HorizontalOptions="End" WidthRequest="40" Source="Close.png" VerticalOptions="Start" x:Name="ClosePassword" Clicked="ClosePassword_Clicked"/>
+
 
                 <Image Source="MusicAdd.png" x:Name="PictureShow" Margin="0,5" WidthRequest="100" HorizontalOptions="Center" />
 
-                <StackLayout Orientation="Vertical" HorizontalOptions="Center">
                     <Label Text="Müzik Adı :" FontSize="20" TextColor="Black"/>
-                    <Entry x:Name="EntMusicNames" Text="{Binding MusicName}" Placeholder="Müzik Adı" />
-                </StackLayout>
+                    <custom:ValidatableEntryControl   x:Name="EntMusicNames" x:Uid="EntMusicNames"   Placeholder="Müzik Adı" BindingName="MusicName"></custom:ValidatableEntryControl>
 
-                <StackLayout Orientation="Vertical" HorizontalOptions="Center">
                     <Label Text="Sanatçı Adı :" FontSize="20" TextColor="Black"/>
-                    <Entry  x:Name="EntArtistNames" Text="{Binding ArtistName}" Placeholder="Sanatçı Adı"/>
-                </StackLayout>
+                    <custom:ValidatableEntryControl   x:Name="EntArtistNames" x:Uid="EntArtistNames"   Placeholder="Sanatçı Adı" BindingName="ArtistName"></custom:ValidatableEntryControl>
 
-                <StackLayout Orientation="Horizontal"  HorizontalOptions="Center">
-                    <Button BackgroundColor="Blue" x:Name="btnSave" Clicked="btnSave_Clicked"  x:Uid="btnUpdate" CommandParameter="{Binding Id}" TextColor="White" Text="Kaydet" HorizontalOptions="Center" />
-                    <Button BackgroundColor="Red" x:Name="btnCancel" Clicked="btnCancel_Clicked" x:Uid="btnCancel" TextColor="White" Text="Kapat" HorizontalOptions="Center" />
+                <StackLayout Orientation="Horizontal" Margin="0,10,0,0" Spacing="10" HorizontalOptions="Center">
+                    <Button CornerRadius="5" ContentLayout="Left,5" WidthRequest="110" HorizontalOptions="Start" ImageSource="trash.png" BackgroundColor="red" TextColor="White" Text="Temizle" x:Name="btnMusicClear" Clicked="btnMusicClear_Clicked" />
+                    <Button  CornerRadius="5" ContentLayout="Left,5" WidthRequest="120" HorizontalOptions="Start" ImageSource="save.png" BackgroundColor="Blue" CommandParameter="{Binding Id}"  TextColor="White" Text="Güncelle" x:Name="btnUpdate" Clicked="btnSave_Clicked" Command="{Binding ValidateCommand}" />
                 </StackLayout>
 
             </StackLayout>

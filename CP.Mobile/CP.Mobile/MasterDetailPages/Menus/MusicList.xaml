@@ -21,7 +21,7 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="MusicListItems" RowHeight="90" SeparatorVisibility="Default" SeparatorColor="Gray" BackgroundColor="White">
+            <ListView x:Name="MusicListItems" IsPullToRefreshEnabled="True" Refreshing="MusicListItems_Refreshing" RowHeight="90" SeparatorVisibility="Default" SeparatorColor="Gray" BackgroundColor="White">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

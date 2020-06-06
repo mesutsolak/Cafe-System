@@ -175,5 +175,17 @@ namespace CP.Mobile.MasterDetailPages.Menus
         {
             Popup?.ShowPopup(sender as View);
         }
+
+        private async void MusicListItems_Refreshing(object sender, EventArgs e)
+        {
+            MusicListItems.IsRefreshing = true;
+
+            MusicListLoad();
+
+
+            await Task.Delay(1000);
+
+            MusicListItems.IsRefreshing = false;
+        }
     }
 }

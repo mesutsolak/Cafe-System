@@ -61,7 +61,7 @@ namespace CP.Mobile.MasterDetailPages.Menus
             {
                 case "Genel Durum":
                     CartsGeneral();
-                    await Navigation.PushPopupAsync(new CartGeneral(_count, _price, _time), true);
+                    await Navigation.PushPopupAsync(new CartGeneral("Sepet Bilgileri",_count, _price, _time), true);
                     break;
                 case "Ürünleri Kaldır":
                     await Navigation.PushPopupAsync(new QuestionModal("Silme İşlemi", "Ürünler silinsin mi ?", () => { CartRemoves(); }), true);
