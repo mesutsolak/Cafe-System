@@ -210,5 +210,18 @@ namespace CP.Mobile.MasterDetailPages.Menus
             _time = (int)carts.Select(x => x.Time).Sum();
 
         }
+
+        private async void CartListItems_Refreshing(object sender, EventArgs e)
+        {
+            CartListItems.IsRefreshing = true;
+
+            CartList();
+
+
+            await Task.Delay(1000);
+
+            CartListItems.IsRefreshing = false;
+        }
+
     }
 }

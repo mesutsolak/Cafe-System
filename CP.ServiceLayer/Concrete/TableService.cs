@@ -12,11 +12,11 @@ namespace CP.ServiceLayer.Concrete
 {
     public class TableService : Service<TableDTO>, ITableService
     {
-        public string IsConfirm(int id)
+        public string IsConfirm(int TableId, int UserId)
         {
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            var response = Task.Run(() => client.GetAsync(Url + id)).Result;
+            var response = Task.Run(() => client.GetAsync(Url + TableId + "/" + UserId)).Result;
 
 
             return response.Headers.GetValues("Message").FirstOrDefault();

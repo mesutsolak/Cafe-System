@@ -34,7 +34,11 @@ namespace CP.BusinessLayer.Operations
         }
         public static string RateUserValue(int UserId, int ProductId)
         {
-            return _data.RateRepository.GetByFilter(x => x.UserId == UserId && x.ProductId == ProductId).RateValue.Value.ToString() ?? "0";
+            var _result = _data.RateRepository.GetByFilter(x => x.UserId == UserId && x.ProductId == ProductId);
+            if (_result == null)
+                return "0";
+
+            return _result.RateValue.Value.ToString() ?? "0";
         }
         public static Rate RateUserValueFind(int UserId, int ProductId)
         {

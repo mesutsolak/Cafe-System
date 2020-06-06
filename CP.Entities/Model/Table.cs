@@ -21,6 +21,7 @@ namespace CP.Entities.Model
         public int? Number { get; set; }
 
         public int? ConfirmId { get; set; }
+        public int? UserId { get; set; }
 
         public bool? IsDeleted { get; set; }
 

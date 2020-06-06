@@ -76,37 +76,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomValidator\IsUniqueProductName.cs" />
-    <Compile Include="Migrations\202005261221084_InitialCreate.cs" />
-    <Compile Include="Migrations\202005261221084_InitialCreate.designer.cs">
-      <DependentUpon>202005261221084_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005261352547_GeneralChangeModel.cs" />
-    <Compile Include="Migrations\202005261352547_GeneralChangeModel.designer.cs">
-      <DependentUpon>202005261352547_GeneralChangeModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005281018073_CategoryIsDeletedColumnAdd.cs" />
-    <Compile Include="Migrations\202005281018073_CategoryIsDeletedColumnAdd.designer.cs">
-      <DependentUpon>202005281018073_CategoryIsDeletedColumnAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005311737338_CartIsDeletedAdd.cs" />
-    <Compile Include="Migrations\202005311737338_CartIsDeletedAdd.designer.cs">
-      <DependentUpon>202005311737338_CartIsDeletedAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005311803592_TableUserAdd.cs" />
-    <Compile Include="Migrations\202005311803592_TableUserAdd.designer.cs">
-      <DependentUpon>202005311803592_TableUserAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006011819231_CampaignChangeData.cs" />
-    <Compile Include="Migrations\202006011819231_CampaignChangeData.designer.cs">
-      <DependentUpon>202006011819231_CampaignChangeData.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006011823304_CampaignProductTypeName.cs" />
-    <Compile Include="Migrations\202006011823304_CampaignProductTypeName.designer.cs">
-      <DependentUpon>202006011823304_CampaignProductTypeName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006021528459_IsDeletedColumn.cs" />
-    <Compile Include="Migrations\202006021528459_IsDeletedColumn.designer.cs">
-      <DependentUpon>202006021528459_IsDeletedColumn.cs</DependentUpon>
+    <Compile Include="Migrations\202006052120278_InitialCreateNew.cs" />
+    <Compile Include="Migrations\202006052120278_InitialCreateNew.designer.cs">
+      <DependentUpon>202006052120278_InitialCreateNew.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\BaseEntity.cs" />
@@ -143,29 +115,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202005261221084_InitialCreate.resx">
-      <DependentUpon>202005261221084_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005261352547_GeneralChangeModel.resx">
-      <DependentUpon>202005261352547_GeneralChangeModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005281018073_CategoryIsDeletedColumnAdd.resx">
-      <DependentUpon>202005281018073_CategoryIsDeletedColumnAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005311737338_CartIsDeletedAdd.resx">
-      <DependentUpon>202005311737338_CartIsDeletedAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005311803592_TableUserAdd.resx">
-      <DependentUpon>202005311803592_TableUserAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006011819231_CampaignChangeData.resx">
-      <DependentUpon>202006011819231_CampaignChangeData.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006011823304_CampaignProductTypeName.resx">
-      <DependentUpon>202006011823304_CampaignProductTypeName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006021528459_IsDeletedColumn.resx">
-      <DependentUpon>202006021528459_IsDeletedColumn.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006052120278_InitialCreateNew.resx">
+      <DependentUpon>202006052120278_InitialCreateNew.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

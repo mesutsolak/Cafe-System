@@ -10,6 +10,6 @@ namespace CP.ServiceLayer.Abstract
 {
     public interface ITableService : IService<TableDTO>
     {
-        string IsConfirm(int id);
+        string IsConfirm(int TableId, int UserId);
     }
 }

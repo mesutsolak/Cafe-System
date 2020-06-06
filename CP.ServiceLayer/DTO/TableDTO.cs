@@ -15,6 +15,8 @@ namespace CP.ServiceLayer.DTO
 
         public int Id { get; set; }
         public int? Number { get; set; }
+        public int? UserId { get; set; }
+
         public int? ConfirmId { get; set; }
     }
 }

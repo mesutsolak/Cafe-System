@@ -25,7 +25,7 @@ namespace CP.Mobile.ListContent
         private void AddItems()
         {
 
-            tableService.Url = "api/Table/GetAll/";
+            tableService.Url = "api/Table/GetAll";
             var _ts = tableService.GetAll();
 
             foreach (var tableDTO in _ts)

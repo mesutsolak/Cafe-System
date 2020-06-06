@@ -16,7 +16,7 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <ListView x:Name="CartListItems" RowHeight="90" SeparatorVisibility="Default" SeparatorColor="Gray" BackgroundColor="White">
+            <ListView x:Name="CartListItems" RowHeight="90" IsPullToRefreshEnabled="True" Refreshing="CartListItems_Refreshing"  SeparatorVisibility="Default" SeparatorColor="Gray" BackgroundColor="White">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

@@ -5,18 +5,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="CP.Mobile.MasterDetailPages.Menus.Order">
-
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
             <Label Text="Siparişlerim"
                 HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontSize="Large"   Margin="10,0,0,0"/>
-            
+
         </StackLayout>
     </NavigationPage.TitleView>
-    
+
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="CartListItems" RowHeight="90" SeparatorVisibility="Default" SeparatorColor="Gray" BackgroundColor="White">
+            <ListView x:Name="CartListItems" RowHeight="90" IsPullToRefreshEnabled="True" Refreshing="CartListItems_Refreshing" SeparatorVisibility="Default" SeparatorColor="Gray" BackgroundColor="White">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

@@ -112,12 +112,13 @@ namespace CP.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("IsConfirm/{id}")]
-        public HttpResponseMessage IsConfirm(int id)
+        [Route("IsConfirm/{TableId}/{UserId}")]
+        public HttpResponseMessage IsConfirm(int TableId, int UserId)
         {
-            var _Table = TableOperation.GetTable(id);
+            var _Table = TableOperation.GetTable(TableId);
 
             _Table.ConfirmId = 3;
+            _Table.UserId = UserId;
 
             var _result = TableOperation.TableUpdate(_Table);
 

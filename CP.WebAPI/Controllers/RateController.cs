@@ -133,8 +133,12 @@ namespace CP.WebAPI.Controllers
         [HttpGet]
         public HttpResponseMessage ProductRate(int ProductId)
         {
+            var _result = RateOperation.RateProduct(ProductId).ToString();
+            if (string.IsNullOrEmpty(_result))
+                _result = "0";
+
             httpResponseMessage.StatusCode = HttpStatusCode.OK;
-            httpResponseMessage.Headers.Add("Message", RateOperation.RateProduct(ProductId).ToString());
+            httpResponseMessage.Headers.Add("Message", _result);
             return httpResponseMessage;
         }
 

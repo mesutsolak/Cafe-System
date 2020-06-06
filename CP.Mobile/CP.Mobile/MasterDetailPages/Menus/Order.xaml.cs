@@ -27,5 +27,15 @@ namespace CP.Mobile.MasterDetailPages.Menus
             cs.Url = "api/Cart/OrderAll/";
             CartListItems.ItemsSource = cs.GetAllFilter(Preferences.Get("UserId", 0));
         }
+        private async void CartListItems_Refreshing(object sender, EventArgs e)
+        {
+            CartListItems.IsRefreshing = true;
+
+            OrderList();
+
+            await Task.Delay(1000);
+
+            CartListItems.IsRefreshing = false;
+        }
     }
 }

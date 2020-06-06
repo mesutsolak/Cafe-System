@@ -68,9 +68,7 @@ namespace CP.Mobile.MasterDetailPages.Menus
         }
         public async void SignOut()
         {
-            Preferences.Remove("UserName");
-
-            Preferences.Remove("UserId");
+            Preferences.Clear();
 
             await Navigation.PopPopupAsync();
 
@@ -128,10 +126,6 @@ namespace CP.Mobile.MasterDetailPages.Menus
 
         }
 
-        private void btnCampaignCart_Clicked(object sender, EventArgs e)
-        {
-
-        }
 
         private async void btnPreferenceCart_Clicked(object sender, EventArgs e)
         {
@@ -148,6 +142,7 @@ namespace CP.Mobile.MasterDetailPages.Menus
             ps.Url = "api/Product/";
             ProductDTO p = ps.GetFind(int.Parse(_id));
             await Navigation.PushPopupAsync(new QuestionModal("Sepet İşlemi", p.Name + " adlı ürünü sepete eklemek istiyor musunuz ?", () => { CartAdd(p); }), true);
+
         }
         public async void CartAdd(ProductDTO p)
         {
@@ -165,7 +160,11 @@ namespace CP.Mobile.MasterDetailPages.Menus
             await Navigation.PopPopupAsync();
 
             if (result.Contains("Başarıyla"))
+            {
                 await Navigation.PushPopupAsync(new SuccessModal(result, null), true);
+                CountFound();
+                OrderCount();
+            }
             else
                 await Navigation.PushPopupAsync(new ErrorModal(result));
 
