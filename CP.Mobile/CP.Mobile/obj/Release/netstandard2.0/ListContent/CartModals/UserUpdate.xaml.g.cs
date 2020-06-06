@@ -47,10 +47,22 @@ namespace CP.Mobile.ListContent.CartModals {
         private global::Xamarin.Forms.Picker PickerGender;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Image ProfilePhoto;
+        private global::Xamarin.Forms.Label lblProfilPhoto;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Image BackgroundPhoto;
+        private global::Xamarin.Forms.Button btnProfilPhoto;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.Image imgProfil;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.Label lblBackgroundPhoto;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.Button btnBackGroundPhoto;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.Image imgBackGround;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Button btnClear;
@@ -71,8 +83,12 @@ namespace CP.Mobile.ListContent.CartModals {
             EntPassword = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl>(this, "EntPassword");
             EntEmail = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Plugins.UnobtrusiveFluentValidation.ValidatableEntryControl>(this, "EntEmail");
             PickerGender = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "PickerGender");
-            ProfilePhoto = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "ProfilePhoto");
-            BackgroundPhoto = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "BackgroundPhoto");
+            lblProfilPhoto = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblProfilPhoto");
+            btnProfilPhoto = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "btnProfilPhoto");
+            imgProfil = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "imgProfil");
+            lblBackgroundPhoto = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblBackgroundPhoto");
+            btnBackGroundPhoto = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "btnBackGroundPhoto");
+            imgBackGround = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "imgBackGround");
             btnClear = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "btnClear");
             btnSave = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "btnSave");
         }

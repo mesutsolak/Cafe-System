@@ -14,21 +14,20 @@ using CP.Mobile.ValidatorEntities;
 using CP.Mobile.Tools;
 using CP.ServiceLayer.Firebase;
 using Plugin.Media.Abstractions;
+using System.IO;
+using Xamarin.Essentials;
 
 namespace CP.Mobile.ListContent.CartModals
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UserUpdate : PopupPage
     {
-        UserViewModel uvm = new UserViewModel(); 
+        UserViewModel uvm = new UserViewModel();
 
         UserService us = new UserService();
         public User _user;
         public Action _action;
 
-
-        MediaFile _profilPhoto;
-        MediaFile _BackgroundPhoto;
         string ProfilPhoto;
         string BackGroundPhoto;
         FirebaseStorageHelper firebaseStorageHelper = new FirebaseStorageHelper("cafe-project-bfd17.appspot.com");
@@ -54,33 +53,75 @@ namespace CP.Mobile.ListContent.CartModals
 
         private async void btnSave_Clicked(object sender, EventArgs e)
         {
-            var value = PickerGender.SelectedIndex;
-            var _genderId = (value == 0) ? 1 : 2;
-
-            us.Url = "api/User/Update/";
-            var _result = us.Update(new User
+            if (!uvm.ModelResult())
             {
-                Id = _user.Id,
-                FirstName = EntFirstName.EntryText,
-                LastName = EntLastName.EntryText,
-                Username = EntUserName.EntryText,
-                Password = EntPassword.EntryText,
-                Email = EntEmail.EntryText,
-                GenderId = _genderId
-            });
-
-            await Navigation.PopPopupAsync(true);
-
-            if (_result.Contains("Başarıyla"))
-            {
-                _action.Invoke();
-                await Navigation.PushPopupAsync(new SuccessModal(_result), true);
+                await Navigation.PushPopupAsync(new ErrorModal("Lütfen eksiksiz doldurun"));
             }
             else
             {
-                await Navigation.PushPopupAsync(new ErrorModal(_result), true);
-            }
 
+                if (PickerGender.SelectedItem == null)
+                {
+                    await Navigation.PushPopupAsync(new ErrorModal("Lütfen cinsiyet seçiniz"), true);
+                    return;
+                }
+
+                try
+                { 
+                    await Navigation.PushPopupAsync(new LoaderModal());
+
+                   
+                    us.Url = "api/User/EmailControl/" + EntEmail.EntryText + "/"+Preferences.Get("UserId",0);
+                    if (us.IsThereEmail())
+                    {
+                        await Navigation.PopPopupAsync(true);
+                        await Navigation.PushPopupAsync(new ErrorModal("Email kullanılmış"), true);
+                        return;
+                    }
+
+                    us.Url = "api/User/UserNameControl/" + EntUserName.EntryText + "/" + Preferences.Get("UserId", 0);
+
+                    if (us.IsThereUserName(EntUserName.EntryText))
+                    {
+                        await Navigation.PopPopupAsync(true);
+                        await Navigation.PushPopupAsync(new ErrorModal("Kullanıcı adı kullanılmış"), true);
+                        return;
+                    }
+
+                    var value = PickerGender.SelectedIndex;
+                    var _genderId = (value == 0) ? 1 : 2;
+
+                    us.Url = "api/User/Update/";
+                    var _result = us.Update(new User
+                    {
+                        Id = _user.Id,
+                        FirstName = EntFirstName.EntryText,
+                        LastName = EntLastName.EntryText,
+                        Username = EntUserName.EntryText,
+                        Password = EntPassword.EntryText,
+                        Email = EntEmail.EntryText,
+                        GenderId = _genderId
+                    });
+
+                    await Navigation.PopAllPopupAsync(true);
+
+                    if (_result.Contains("Başarıyla"))
+                    {
+                        _action.Invoke();
+                        await Navigation.PushPopupAsync(new SuccessModal(_result), true);
+                    }
+                    else
+                    {
+                        await Navigation.PushPopupAsync(new ErrorModal(_result), true);
+                    }
+                }
+                catch(Exception ex)
+                {
+                    await Navigation.PushPopupAsync(new ErrorModal("Kayıt Güncellenirken Hata Meydana Geldi"));
+
+                    throw ex;
+                }       
+            }
         }
 
         private async void btnCancel_Clicked(object sender, EventArgs e)
@@ -110,6 +151,7 @@ namespace CP.Mobile.ListContent.CartModals
             FormTools.FormClear(UserUpdateBody);
             imgBackGround.Source = null;
             imgProfil.Source = null;
+            PickerGender.SelectedItem = null;
         }
     }
 }

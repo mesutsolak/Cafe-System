@@ -211,5 +211,39 @@ namespace CP.WebAPI.Controllers
             }
             return httpResponseMessage;
         }
+        [HttpGet]
+        [Route("UserNameControl/{UserName}/{id:int}")]
+        public async Task<HttpResponseMessage> UserNameControl(string UserName,int id)
+        {
+
+            var _bool = await UserOperations.UserNameControl(UserName,id);
+            if (_bool)
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+            }
+            else
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.OK;
+            }
+            return httpResponseMessage;
+        }
+        [HttpGet]
+        [Route("EmailControl/{Email}/{id:int}")]
+        public async Task<HttpResponseMessage> EmailControl(string Email, int id)
+        {
+
+            var _bool = await UserOperations.EmailControl(Email, id);
+            if (_bool)
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+            }
+            else
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.OK;
+            }
+            return httpResponseMessage;
+        }
+
+
     }
 }

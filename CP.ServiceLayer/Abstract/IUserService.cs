@@ -14,5 +14,7 @@ namespace CP.ServiceLayer.Abstract
         bool IsThereUserName(string UserName);
         bool IsThereEmail();
         int UserId(string UserName);
+        bool UserNameControl();
+        bool EmailControl();
     }
 }

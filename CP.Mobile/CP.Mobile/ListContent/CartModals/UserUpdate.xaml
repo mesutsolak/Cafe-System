@@ -34,7 +34,7 @@
                 <StackLayout>
                     <ImageButton HorizontalOptions="End" WidthRequest="40"  Source="Close.png" BackgroundColor="Transparent" VerticalOptions="Start" x:Name="ClosePassword" Clicked="ClosePassword_Clicked"/>
 
-                    <Image Source="User.png" x:Name="PictureShow" Margin="0,5" WidthRequest="100" HorizontalOptions="Center" />
+                    <Image Source="User.png" x:Name="PictureShow" WidthRequest="100" HorizontalOptions="Center" />
                 </StackLayout>
                <ScrollView HeightRequest="350">
                     <StackLayout x:Name="UserUpdateBody" x:Uid="UserUpdateBody">
@@ -46,7 +46,7 @@
                         <custom:ValidatableEntryControl   x:Name="EntLastName" x:Uid="EntLastName"   Placeholder="Soyad" BindingName="LastName"></custom:ValidatableEntryControl>
 
                         <Label Text="Kullanıcı Adı " FontSize="20" TextColor="Black"/>
-                        <custom:ValidatableEntryControl   x:Name="EntUserName" x:Uid="EntUserName"   Placeholder="Kullanıcı Adı" BindingName="Username"></custom:ValidatableEntryControl>
+                        <custom:ValidatableEntryControl   x:Name="EntUserName" x:Uid="EntUserName"   Placeholder="Kullanıcı Adı" BindingName="UserName"></custom:ValidatableEntryControl>
 
 
                         <Label Text="Parola " FontSize="20" TextColor="Black"/>
@@ -68,13 +68,13 @@
 
                         <Label Text="Profil Fotoğrafı" x:Name="lblProfilPhoto" x:Uid="lblProfilPhoto"/>
                         <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
-                            <Button x:Name="btnProfilPhoto" WidthRequest="150" HeightRequest="50" HorizontalOptions="Start" VerticalOptions="Start" Text="Profil Fotografı" Clicked="btnProfilPhoto_Clicked"/>
+                            <Button x:Name="btnProfilPhoto" WidthRequest="150" HeightRequest="50" HorizontalOptions="Start" VerticalOptions="Start" Text="Profil Fotografı"/>
                             <Image x:Name="imgProfil"  Source="{Binding ProfilPhoto}" HeightRequest="150"></Image>
                         </StackLayout>
 
                         <Label Text="Arka Plan Fotoğrafı" x:Name="lblBackgroundPhoto" x:Uid="lblBackgroundPhoto"/>
                         <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
-                            <Button x:Name="btnBackGroundPhoto" WidthRequest="200" HeightRequest="50"  HorizontalOptions="Start" VerticalOptions="Start"   Text="Arka Plan Fotografı" Clicked="btnBackGroundPhoto_Clicked"/>
+                            <Button x:Name="btnBackGroundPhoto" WidthRequest="200" HeightRequest="50"  HorizontalOptions="Start" VerticalOptions="Start"   Text="Arka Plan Fotografı"/>
                             <Image x:Name="imgBackGround" Source="{Binding BackGround}" HeightRequest="150"></Image>
                         </StackLayout>
 

@@ -120,6 +120,42 @@ namespace CP.ServiceLayer.Concrete
                 throw ex;
             }
         }
+
+        public bool UserNameControl()
+        {
+            try
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var response = Task.Run(() => client.GetAsync(Url)).Result;
+
+                Status = (response.StatusCode == System.Net.HttpStatusCode.OK) ? true : false;
+            }
+            catch (Exception ex)
+            {
+                Status = false;
+                throw ex;
+            }
+            return Status;
+        }
+
+        public bool EmailControl()
+        {
+            try
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var response = Task.Run(() => client.GetAsync(Url)).Result;
+
+                Status = (response.StatusCode == System.Net.HttpStatusCode.OK) ? true : false;
+            }
+            catch (Exception ex)
+            {
+                Status = false;
+                throw ex;
+            }
+            return Status;
+        }
     }
 
 }
