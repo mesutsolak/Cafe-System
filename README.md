@@ -14,6 +14,6 @@ Masaüstü : WPF
 
 ## Bilgiler
 
- Tez : [mesutsolak18010501003Tez.rar](/uploads/98999906a23e8997ff5d9a9f5efee72b/mesutsolak18010501003Tez.rar)
+ Tez : [Tez.rar](/uploads/98999906a23e8997ff5d9a9f5efee72b/mesutsolak18010501003Tez.rar)
 
- Proje Sunumu : [](https://dosya.co/qdzqikppf9sa/Sunum.rar.html) 
+ Proje Sunumu : [Sunum Dosyası](https://dosya.co/qdzqikppf9sa/Sunum.rar.html) 
